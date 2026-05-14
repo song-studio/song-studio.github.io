@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&family=Jost:ital,wght@0,300;0,500;0,700;1,300&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>路线规划 · 气象查询</title>
+<style>
+/* ═══════════════════════════════════════════
+   Grove Route · 路线规划
+   Dark forest immersive · warm cream text
+   ═══════════════════════════════════════════ */
+:root{
+  --bg:#192B1B;
+  --bg-elevated:#1E3320;
+  --text:#D4CFBF;
+  --text-dim:#A8A090;
+  --text-muted:#6B6758;
+  --ink:#EDE8DC;
+  --accent:#C8524A;
+  --accent-dim:rgba(200,82,74,.12);
+  --cool:#7BA4B8;
+  --cool-dim:rgba(123,164,184,.12);
+  --warm:#D4943A;
+  --warm-dim:rgba(212,148,58,.12);
+  --green:#6B9E6F;
+  --green-dim:rgba(107,158,111,.12);
+  --rule:rgba(212,207,191,.08);
+  --rule-strong:rgba(212,207,191,.15);
+  --surface:#1E3320;
+}
+*{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{
+  font-family:'Jost','Noto Serif SC',-apple-system,sans-serif;
+  font-weight:300;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+  line-height:1.55;font-size:17px;text-wrap:pretty;
+}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px 80px}
+
+/* ── Header ── */
+.page-header{
+  text-align:center;padding:28px 0 20px;
+}
+.page-header h1{
+  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
+  font-size:1.6em;font-weight:400;color:var(--ink);
+  letter-spacing:.02em;
+}
+.page-header .sub{
+  font-size:.5em;color:var(--text-muted);margin-top:6px;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;
+}
+.back-link{
+  display:inline-block;font-size:.5em;color:var(--text-dim);text-decoration:none;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.04em;
+  margin-bottom:8px;transition:color .2s;
+}
+.back-link:hover{color:var(--accent)}
+
+/* ── Route search ── */
+.route-search{
+  padding:20px;margin-bottom:2px;
+  background:var(--bg-elevated);
+  border:1px solid var(--rule-strong);
+}
+.route-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.route-row .rdot{width:8px;height:8px;flex-shrink:0;border-radius:50%}
+.route-row .rdot.from{background:var(--green)}
+.route-row .rdot.to{background:var(--accent)}
+.route-row input{
+  flex:1;border:none;border-bottom:1px solid var(--rule-strong);color:var(--text);
+  padding:10px 0;font-size:.88em;outline:none;background:none;min-width:0;
+  font-family:'Jost','Noto Serif SC',sans-serif;font-weight:300;
+}
+.route-row input:focus{border-bottom-color:var(--accent)}
+.route-row input::placeholder{color:var(--text-muted)}
+.swap-btn{
+  flex-shrink:0;width:34px;height:34px;
+  border:1px solid var(--rule-strong);background:transparent;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:1em;transition:all .3s;color:var(--text-dim);
+}
+.swap-btn:hover{transform:rotate(180deg);color:var(--accent);border-color:var(--accent)}
+.modes{display:flex;gap:1px;margin-bottom:2px;background:var(--rule-strong)}
+.mode-chip{
+  flex:1;text-align:center;padding:14px 10px;
+  background:var(--bg-elevated);cursor:pointer;font-size:.74em;font-weight:500;
+  transition:all .15s;letter-spacing:.02em;
+}
+.mode-chip:hover{background:#223625}
+.mode-chip.sel{color:#FFF;font-weight:700}
+.mode-chip.sel.drive{background:var(--green)}
+.mode-chip.sel.bike{background:var(--accent)}
+.mode-chip.sel.walk{background:var(--cool)}
+.go-btn{
+  width:100%;padding:16px;border:none;background:var(--accent);color:#FFF;
+  font-size:.78em;cursor:pointer;letter-spacing:.04em;font-weight:700;
+  transition:all .2s;font-family:'Jost','Noto Serif SC',sans-serif;
+}
+.go-btn:hover{background:#E06A5E}
+.go-btn:disabled{opacity:.3;pointer-events:none}
+.map-wrap{overflow:hidden;height:420px;margin-bottom:2px;border:1px solid var(--rule-strong)}
+@media(max-width:480px){.map-wrap{height:280px}}
+#rmap{width:100%;height:100%}
+
+/* ── Route summary ── */
+.route-summary{padding:20px;margin-bottom:2px;background:var(--bg-elevated);border:1px solid var(--rule-strong);display:none}
+.route-summary .rs-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--rule-strong);
+}
+.rs-header .rs-mode-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.2em;flex-shrink:0}
+.rs-header .rs-route-name{font-weight:500;font-size:.78em;color:var(--ink)}
+.rs-header .rs-route-sub{font-size:.48em;color:var(--text-dim);font-weight:300}
+.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-strong)}
+@media(max-width:480px){.rs-grid{grid-template-columns:repeat(2,1fr)}}
+.rs-item{text-align:center;padding:14px 6px;background:var(--bg)}
+.rs-item .rsv{font-size:.84em;font-weight:700;color:var(--ink)}
+.rs-item .rsl{font-size:.42em;color:var(--text-muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:500;font-family:'JetBrains Mono',monospace}
+.rs-mini{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1px;background:var(--rule-strong)}
+
+/* ── Route steps ── */
+.route-steps{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule-strong)}
+.route-steps .steps-title{font-size:.52em;font-weight:500;margin-bottom:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-family:'JetBrains Mono',monospace}
+.step-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.step-item:last-child{border-bottom:none}
+.step-turn{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:.7em;font-weight:700}
+.step-turn.left,.step-turn.right,.step-turn.arrive,.step-turn.depart{background:var(--green-dim);color:var(--green)}
+.step-turn.straight{background:transparent;color:var(--text-dim)}
+.step-turn.rotary{background:var(--warm-dim);color:var(--warm)}
+.step-info{flex:1;min-width:0}
+.step-info .step-dir{font-size:.5em;color:var(--text-dim);margin-bottom:1px}
+.step-info .step-road{font-size:.58em;font-weight:500;color:var(--ink)}
+.step-info .step-dist{font-size:.48em;color:var(--text-muted);margin-top:2px}
+
+/* ── Waypoint weather panels ── */
+.weather-panels{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-bottom:2px;background:var(--rule-strong)}
+@media(max-width:500px){.weather-panels{grid-template-columns:1fr}}
+.wp{padding:18px;background:var(--bg-elevated)}
+.wp.from{border-left:3px solid var(--green)}
+.wp.to{border-left:3px solid var(--accent)}
+.wp .wpn{font-size:.46em;color:var(--accent);margin-bottom:4px;letter-spacing:.12em;font-weight:500;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+.wp .wpt{font-size:.7em;font-weight:500;margin-bottom:10px;color:var(--ink)}
+.wp .wph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.wp .wph .big{font-size:2em;font-weight:400;color:var(--ink);font-family:'Playfair Display','Noto Serif SC',Georgia,serif}
+.wp .wph .icon{font-size:1.4em}
+.wpg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule-strong)}
+.wgi{padding:8px;text-align:center;font-size:.52em;background:var(--bg)}
+.wgi .wgiv{font-weight:700;display:block;margin-bottom:2px}
+.wgi .wgil{color:var(--text-dim);font-size:.85em}
+
+/* ── Elevation profile ── */
+.elev-profile{margin:16px 0;padding:16px;background:var(--bg-elevated);border:1px solid var(--rule-strong)}
+.elev-profile .ep-title{font-size:.5em;font-weight:500;letter-spacing:.08em;color:var(--accent);margin-bottom:10px;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+
+/* ── Preset routes ── */
+.route-sug{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.rsug{
+  font-size:.5em;padding:4px 10px;background:none;cursor:pointer;
+  color:var(--text-dim);border:1px solid var(--rule-strong);font-weight:300;
+  transition:all .2s;
+}
+.rsug:hover{background:var(--accent);color:#FFF;border-color:var(--accent)}
+
+footer{
+  text-align:center;padding:48px 0 0;color:var(--text-muted);
+  font-size:.5em;letter-spacing:.04em;font-weight:300;
+}
+footer a{color:var(--text-dim);text-decoration:none}
+footer a:hover{color:var(--accent)}
+.hidden{display:none}
+</style>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+<div class="wrap" id="app">
+
+
+
+<div class="tab-panel" id="tab-route">
+<div class="page-header">
+  <a href="weather-pro.html" class="back-link">← Weather · 气象</a>
+  <h1>路线规划</h1>
+  <div class="sub">Route Planner · Driving · Cycling · Walking</div>
+</div>
+
+<div class="route-search">
+  <div class="route-row">
+    <span class="rdot from"></span>
+    <input type="text" id="fromInput" placeholder="起点… 例：贵阳" autocomplete="off">
+    <button class="swap-btn" onclick="swap()" title="交换起终点">↕</button>
+  </div>
+  <div class="route-row">
+    <span class="rdot to"></span>
+    <input type="text" id="toInput" placeholder="终点… 例：六盘水" autocomplete="off">
+  </div>
+  <div class="modes">
+    <div class="mode-chip sel drive" data-mode="driving" onclick="setMode('driving')">驾车</div>
+    <div class="mode-chip bike" data-mode="cycling" onclick="setMode('cycling')">骑行</div>
+    <div class="mode-chip walk" data-mode="walking" onclick="setMode('walking')">步行</div>
+  </div>
+  <button class="go-btn" id="goBtn" onclick="plan()">开始规划</button>
+  <div class="route-sug">
+    <span class="rsug" onclick="preset('北京','上海','driving')">北京 → 上海</span>
+    <span class="rsug" onclick="preset('北京','天津','cycling')">北京 → 天津</span>
+    <span class="rsug" onclick="preset('成都','重庆','driving')">成都 → 重庆</span>
+    <span class="rsug" onclick="preset('贵阳','遵义','cycling')">贵阳 → 遵义</span>
+    <span class="rsug" onclick="preset('昆明','大理','driving')">昆明 → 大理</span>
+    <span class="rsug" onclick="preset('六盘水','贵阳','driving')">六盘水 → 贵阳</span>
+    <span class="rsug" onclick="preset('凤凰','张家界','driving')">凤凰 → 张家界</span>
+    <span class="rsug" onclick="preset('黄果树','贵阳','driving')">黄果树 → 贵阳</span>
+  </div>
+</div>
+
+<div class="map-wrap"><div id="rmap"></div></div>
+
+<div class="route-summary" id="routeSummary"></div>
+<div class="weather-panels" id="weatherPanels"></div>
+</div>
+
+<footer><a href="https://song-studio.github.io">song-studio.github.io</a> · <a href="weather-pro.html">气象查询</a></footer>
+</div>
+
+<script>
+// ── State ────────────────────────────────────────────
+let STATE={lat:39.90,lon:116.40,name:'北京',country:'中国',elev:55,admin:'北京',data:null};
+const WMO={0:{i:'☀️',l:'晴'},1:{i:'🌤️',l:'少云'},2:{i:'⛅',l:'多云'},3:{i:'☁️',l:'阴'},45:{i:'🌫️',l:'雾'},48:{i:'🌫️',l:'冻雾'},51:{i:'🌧️',l:'小雨'},53:{i:'🌧️',l:'中雨'},55:{i:'🌧️',l:'大雨'},56:{i:'🌧️',l:'冻雨'},57:{i:'🌧️',l:'冻雨'},61:{i:'🌦️',l:'小阵雨'},63:{i:'🌧️',l:'中阵雨'},65:{i:'🌧️',l:'大阵雨'},66:{i:'🌧️',l:'冻雨'},67:{i:'🌧️',l:'冻雨'},71:{i:'❄️',l:'小雪'},73:{i:'❄️',l:'中雪'},75:{i:'❄️',l:'大雪'},77:{i:'❄️',l:'雪粒'},80:{i:'🌦️',l:'阵雨'},81:{i:'🌦️',l:'中阵雨'},82:{i:'🌧️',l:'大阵雨'},85:{i:'❄️',l:'小阵雪'},86:{i:'❄️',l:'大阵雪'},95:{i:'⛈️',l:'雷暴'},96:{i:'⛈️',l:'雷暴冰雹'},99:{i:'⛈️',l:'强雷暴冰雹'}};
+function w(c){return WMO[c]||{i:'🌥️',l:'未知'}}
+const WK=['周日','周一','周二','周三','周四','周五','周六'];
+const AMAP_KEY='39a8c2f6ef75e494198f3e3751701ebe';
+
+// GCJ-02 → WGS-84 (Amap coords → OSM/Open-Meteo compatibility)
+function gcj2wgs(lng,lat){
+  const PI=Math.PI,a=6378245,ee=0.006693421622965943;
+  function tx(x,y){let r=300+x+2*y+0.1*x*x+0.1*x*y+0.1*Math.sqrt(Math.abs(x));r+=(20*Math.sin(6*x*PI)+20*Math.sin(2*x*PI))*2/3;r+=(20*Math.sin(x*PI)+40*Math.sin(x/3*PI))*2/3;r+=(150*Math.sin(x/12*PI)+300*Math.sin(x/30*PI))*2/3;return r}
+  function ty(x,y){let r=-100+2*x+3*y+0.2*y*y+0.1*x*y+0.2*Math.sqrt(Math.abs(x));r+=(20*Math.sin(6*x*PI)+20*Math.sin(2*x*PI))*2/3;r+=(20*Math.sin(y*PI)+40*Math.sin(y/3*PI))*2/3;r+=(160*Math.sin(y/12*PI)+320*Math.sin(y*PI/30))*2/3;return r}
+  const dlng=tx(lng-105,lat-35),dlat=ty(lng-105,lat-35);
+  const radLat=lat/180*PI,magic=1-ee*Math.sin(radLat)*Math.sin(radLat);
+  return[lng-dlng*180/(a/Math.sqrt(magic)*Math.cos(radLat)*PI),lat-dlat*180/(a*(1-ee)/(magic*Math.sqrt(magic))*PI)];
+}
+
+// ── Geocode (高德 + Open-Meteo 双源) ──────────────────
+async function geocode(q){
+  const hasLatin=/[a-zA-Z]/.test(q);
+
+  // Open-Meteo geocoding (free, global, WGS-84)
+  async function omGeo(){
+    try{
+      const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=1&language=zh&format=json`);
+      const d=await r.json();
+      if(d.results&&d.results.length)return d.results[0];
+    }catch(e){}
+    return null;
+  }
+
+  // Latin-script queries → Open-Meteo directly (Amap only covers China)
+  if(hasLatin){
+    const om=await omGeo();
+    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
+  }
+
+  // Chinese → Amap; Latin → Open-Meteo. No parallel mixing to avoid wrong matches.
+  if(hasLatin){
+    const om=await omGeo();
+    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
+    return null;
+  }
+
+  // Chinese query: Amap only (Open-Meteo doesn't understand Chinese地名 well)
+  const amapR=await fetch(`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}`).then(r=>r.json());
+  if(!amapR.geocodes||!amapR.geocodes.length){
+    // Amap failed → try Open-Meteo as last resort
+    const om=await omGeo();
+    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
+    return null;
+  }
+
+  const g=amapR.geocodes[0];
+  const [lng,lat]=g.location.split(',').map(Number);
+  const [wgsLng,wgsLat]=gcj2wgs(lng,lat);
+
+  let short=g.name||q;
+  // If Amap returned empty name, parse formatted_address
+  if(!g.name&&g.formatted_address){
+    const parts=g.formatted_address.split(/省|市|区|县|自治州/);
+    short=parts[parts.length-1]||g.formatted_address;
+  }
+  // Build admin from province/city/district
+  let admin=g.province||g.city||'';
+  // If province only says e.g. "陕西省" but city has the real info, prefer city for well-known places
+  if(g.city&&g.city!==g.province)admin=g.city;
+
+  return{
+    latitude:wgsLat,longitude:wgsLng,
+    name:short,country:g.country||'中国',
+    admin1:admin,elevation:0,
+    rawLat:lat,rawLng:lng
+  };
+}
+
+async function fetchWeather(lat,lon){
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,weather_code,wind_speed_10m_max,wind_direction_10m_dominant,uv_index_max,sunshine_duration,sunrise,sunset,pressure_msl_max,visibility_max&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,relative_humidity_2m,uv_index,cloud_cover,dew_point_2m,pressure_msl&timezone=auto&forecast_days=4`;
+  const c=new AbortController();
+  const t=setTimeout(()=>c.abort(),12000);
+  try{const r=await fetch(u,{signal:c.signal});clearTimeout(t);return await r.json();}
+  catch(e){clearTimeout(t);throw e;}
+}
+
+async function initFromParams(){
+  const p=new URLSearchParams(location.search);
+  const q=p.get('q');
+  if(q){
+    document.getElementById('q').value=q;
+    document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>加载中…</div>';
+    const geo=await geocode(q);
+    if(!geo){document.getElementById('main').innerHTML='<div class="status error">未找到「'+q+'」，请换个关键词试试</div>';return}
+    STATE.lat=geo.latitude;STATE.lon=geo.longitude;STATE.name=geo.name;STATE.country=geo.country||'';
+    STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
+    STATE.data=await fetchWeather(STATE.lat,STATE.lon);
+    render();
+  }
+}
+
+async function doSearch(){
+  const q=document.getElementById('q').value.trim();
+  if(!q)return;
+  document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>搜索中…</div>';
+  const geo=await geocode(q);
+  if(!geo){document.getElementById('main').innerHTML='<div class="status error">未找到「'+q+'」，请换个关键词试试</div>';return}
+  STATE.lat=geo.latitude;STATE.lon=geo.longitude;STATE.name=geo.name;STATE.country=geo.country||'';
+  STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
+  history.pushState(null,'','?q='+encodeURIComponent(q));
+  document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>获取气象数据…</div>';
+  STATE.data=await fetchWeather(STATE.lat,STATE.lon);
+  render();
+}
+
+
+
+
+// ── Route state ─────────────────────────────────────────
+let RSTATE={mode:'driving',fromGeo:null,toGeo:null,route:null,rmap:null,markers:[],routeLine:null,_hikingOn:false,mapStyle:'amap'};
+
+
+
+function initRMap(){
+  RSTATE.rmap=L.map('rmap').setView([27,106],6);
+  // Amap tiles (GCJ-02) — road names in Chinese, perfect route alignment
+  L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',{
+    subdomains:'1234',attribution:'&copy; 高德地图',
+    maxZoom:18
+  }).addTo(RSTATE.rmap);
+  // OSM hiking trail overlay
+  RSTATE.hikingLayer=L.tileLayer('https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png',{
+    opacity:.5,attribution:'WaymarkedTrails'
+  });
+  RSTATE.mapStyle='amap';
+}
+
+function setMode(m){
+  RSTATE.mode=m;
+  document.querySelectorAll('#tab-route .mode-chip').forEach(c=>{
+    c.classList.remove('sel');
+    if(c.dataset.mode===m)c.classList.add('sel');
+  });
+}
+
+async function swap(){
+  const t=document.getElementById('fromInput').value;
+  document.getElementById('fromInput').value=document.getElementById('toInput').value;
+  document.getElementById('toInput').value=t;
+  if(RSTATE.fromGeo&&RSTATE.toGeo){
+    const tmp=RSTATE.fromGeo;RSTATE.fromGeo=RSTATE.toGeo;RSTATE.toGeo=tmp;
+    await renderRouteAll();
+  }
+}
+
+function preset(f,t,m){
+  document.getElementById('fromInput').value=f;
+  document.getElementById('toInput').value=t;
+  setMode(m);
+  plan();
+}
+
+async function routeGeocode(q){return await geocode(q);}
+
+async function getRoute(from,to,mode){
+  const [flng,flat]=[from.rawLng,from.rawLat];
+  const [tlng,tlat]=[to.rawLng,to.rawLat];
+  let url;
+  if(mode==='cycling'){
+    url=`https://restapi.amap.com/v4/direction/bicycling?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}`;
+  }else if(mode==='walking'){
+    url=`https://restapi.amap.com/v3/direction/walking?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}`;
+  }else{
+    url=`https://restapi.amap.com/v3/direction/driving?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}&extensions=all`;
+  }
+  const r=await fetch(url);
+  const d=await r.json();
+  // Normalize v3 (route.paths) and v4 (data.paths) formats
+  let path;
+  if(d.route&&d.route.paths&&d.route.paths.length)path=d.route.paths[0];
+  else if(d.data&&d.data.paths&&d.data.paths.length)path=d.data.paths[0];
+  if(!path){
+    // Walking v3 failed — try cycling as fallback
+    if(mode==='walking'){
+      const fr=await fetch(`https://restapi.amap.com/v4/direction/bicycling?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}`);
+      const fd=await fr.json();
+      if(fd.data&&fd.data.paths&&fd.data.paths.length){
+        path=fd.data.paths[0];
+        path._walkingFallback=true;
+      }
+    }
+    if(!path)return null;
+  }
+  // Build polyline coords (keep GCJ-02 — display on Amap tiles)
+  const coords=[];
+  if(path.steps){
+    path.steps.forEach(s=>{
+      if(s.polyline){
+        s.polyline.split(';').forEach(p=>{
+          const [lng,lat]=p.split(',').map(Number);
+          coords.push([lng,lat]);
+        });
+      }
+    });
+  }
+  return {
+    distance:parseInt(path.distance),duration:parseInt(path.duration),
+    steps:path.steps||[],geometry:{coordinates:coords},
+    _walkingFallback:!!path._walkingFallback
+  };
+}
+
+async function getRouteWeather(lat,lon){
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,relative_humidity_2m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code,wind_speed_10m_max,uv_index_max,sunshine_duration,sunrise,sunset,precipitation_sum&hourly=cloud_cover&timezone=auto&forecast_days=3`;
+  const r=await fetch(u);
+  return await r.json();
+}
+
+async function plan(){
+  const fromQ=document.getElementById('fromInput').value.trim();
+  const toQ=document.getElementById('toInput').value.trim();
+  if(!fromQ||!toQ)return;
+
+  document.getElementById('routeSummary').style.display='none';
+  document.getElementById('weatherPanels').innerHTML='';
+  const goBtn=document.getElementById('goBtn');
+  goBtn.disabled=true;goBtn.textContent='规划中…';
+
+  try{
+    const[fg,tg]=await Promise.all([routeGeocode(fromQ),routeGeocode(toQ)]);
+    if(!fg||!tg){
+      alert(`未找到：${!fg?fromQ:''} ${!tg?toQ:''}`);
+      goBtn.disabled=false;goBtn.textContent='开始规划';
+      return;
+    }
+    RSTATE.fromGeo=fg;RSTATE.toGeo=tg;
+
+    const[route,fromW,toW]=await Promise.all([
+      getRoute(fg,tg,RSTATE.mode),
+      getRouteWeather(fg.latitude,fg.longitude),
+      getRouteWeather(tg.latitude,tg.longitude)
+    ]);
+
+    if(!route){
+      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
+      goBtn.disabled=false;goBtn.textContent='开始规划';
+      return;
+    }
+    RSTATE.route=route;
+    RSTATE.fromW=fromW;RSTATE.toW=toW;
+    await renderRouteAll();
+  }catch(e){
+    alert('网络错误：'+e.message);
+  }
+  goBtn.disabled=false;goBtn.textContent='开始规划';
+}
+
+async function renderRouteAll(){
+  const m=RSTATE.rmap;
+  if(!m)return;
+  RSTATE.markers.forEach(mk=>mk.remove());
+  if(RSTATE.routeLine)m.removeLayer(RSTATE.routeLine);
+
+  // Use GCJ-02 coords for Amap tile alignment
+  const fLat=RSTATE.fromGeo.rawLat||RSTATE.fromGeo.latitude;
+  const fLng=RSTATE.fromGeo.rawLng||RSTATE.fromGeo.longitude;
+  const tLat=RSTATE.toGeo.rawLat||RSTATE.toGeo.latitude;
+  const tLng=RSTATE.toGeo.rawLng||RSTATE.toGeo.longitude;
+
+  const bounds=L.latLngBounds([[fLat,fLng],[tLat,tLng]]);
+
+  const fromM=L.marker([fLat,fLng],{
+    icon:L.divIcon({html:'<div style="background:#15803D;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">起</div>',iconSize:[28,28],iconAnchor:[14,14]})
+  }).addTo(m).bindPopup(`<b>起点</b><br>${RSTATE.fromGeo.name}`);
+  const toM=L.marker([tLat,tLng],{
+    icon:L.divIcon({html:'<div style="background:#E03C31;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">终</div>',iconSize:[28,28],iconAnchor:[14,14]})
+  }).addTo(m).bindPopup(`<b>终点</b><br>${RSTATE.toGeo.name}`);
+  RSTATE.markers=[fromM,toM];
+
+  const coords=RSTATE.route.geometry.coordinates.map(c=>[c[1],c[0]]);
+  RSTATE.routeLine=L.polyline(coords,{color:'#E03C31',weight:4,opacity:.8}).addTo(m);
+  bounds.extend(coords);
+  m.fitBounds(bounds,{padding:[40,40]});
+
+  const dist=(RSTATE.route.distance/1000).toFixed(1);
+  const dur=Math.round(RSTATE.route.duration/60);
+  const hrs=Math.floor(dur/60),mins=dur%60;
+  const durStr=hrs>0?`${hrs}h${mins}m`:`${mins}分钟`;
+  const modeName={driving:'驾车',cycling:'骑行',walking:'步行'};
+  const speed=(RSTATE.route.distance/1000)/(RSTATE.route.duration/3600);
+
+  // Elevation: sample route coords, convert to WGS-84 for Open-Meteo API
+  let elevationGain='...',elevData=null;
+  try{
+    const geom=RSTATE.route.geometry.coordinates;
+    const step=Math.max(1,Math.floor(geom.length/40));
+    const pts=[],wgsPts=[];
+    for(let i=0;i<geom.length;i+=step){pts.push(geom[i]);const [wl,wa]=gcj2wgs(geom[i][0],geom[i][1]);wgsPts.push([wl,wa]);}
+    if(pts.length>1){
+      const lats=wgsPts.map(p=>p[1].toFixed(4)).join(',');
+      const lons=wgsPts.map(p=>p[0].toFixed(4)).join(',');
+      const er=await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lats}&longitude=${lons}`);
+      const ed=await er.json();
+      if(ed.elevation&&ed.elevation.length>1){
+        let g=0;let d=0;
+        for(let i=1;i<ed.elevation.length;i++){
+          const diff=ed.elevation[i]-ed.elevation[i-1];
+          if(diff>0)g+=diff;else d+=Math.abs(diff);
+        }
+        elevationGain=Math.round(g);
+        RSTATE._elevLoss=Math.round(d);
+        RSTATE._elevStart=Math.round(ed.elevation[0]);
+        RSTATE._elevEnd=Math.round(ed.elevation[ed.elevation.length-1]);
+        elevData={elevations:ed.elevation,distances:[]};
+        let cumDist=0;
+        for(let i=1;i<pts.length;i++){
+          const [lng1,lat1]=pts[i-1],[lng2,lat2]=pts[i];
+          cumDist+=Math.sqrt((lng2-lng1)**2+(lat2-lat1)**2)*111000;
+          elevData.distances.push(cumDist/1000);
+        }
+      }
+    }
+  }catch(e){}
+
+  const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
+  const modeColors={driving:'#15803D',cycling:'#E03C31',walking:'#2563EB'};
+  document.getElementById('routeSummary').style.display='block';
+  const mc=modeColors[RSTATE.mode];
+  const mi=modeIcons[RSTATE.mode];
+  const fromT=(RSTATE.fromW.current.temperature_2m||0).toFixed(1);
+  const toT=(RSTATE.toW.current.temperature_2m||0).toFixed(1);
+  const fromWC=w(RSTATE.fromW.current.weather_code);
+  const toWC=w(RSTATE.toW.current.weather_code);
+  const elevInfo=elevationGain!=='...'?`↑${elevationGain}m ↓${RSTATE._elevLoss||0}m`:'计算中…';
+
+  document.getElementById('routeSummary').innerHTML=`
+    <div class="rs-header">
+      <div class="rs-mode-icon" style="color:${mc}">${mi}</div>
+      <div>
+        <div class="rs-route-name">${modeName[RSTATE.mode]}路线${RSTATE.route._walkingFallback?' <span style="font-size:.72em;color:var(--accent);font-weight:400">(步行→骑行)</span>':''}</div>
+        <div style="font-size:.6em;color:var(--sub)">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:.78em;font-weight:700;color:${mc}">${dist} km</div>
+        <div style="font-size:.58em;color:var(--sub)">${durStr}</div>
+      </div>
+    </div>
+    <div class="rs-grid">
+      <div class="rs-item"><div class="rsv">${dist} km</div><div class="rsl">总距离</div></div>
+      <div class="rs-item"><div class="rsv">${durStr}</div><div class="rsl">${modeName[RSTATE.mode]}用时</div></div>
+      <div class="rs-item"><div class="rsv">${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
+      <div class="rs-item"><div class="rsv">${elevInfo}</div><div class="rsl">爬升/下降</div></div>
+    </div>
+    ${elevData?`<div class="elev-profile"><div class="ep-title">⛰️ 海拔剖面 (${RSTATE._elevStart||0}m → ${RSTATE._elevEnd||0}m)</div><canvas id="elevCanvas"></canvas></div>`:''}
+    <div class="rs-mini">
+      <div class="rs-item" style="border-top:2px solid var(--green)">
+        <div class="rsv">${fromT}° ${fromWC.i}</div>
+        <div class="rsl">📍 ${RSTATE.fromGeo.name}</div>
+      </div>
+      <div class="rs-item" style="border-top:2px solid var(--accent)">
+        <div class="rsv">${toT}° ${toWC.i}</div>
+        <div class="rsl">📍 ${RSTATE.toGeo.name}</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;display:flex;gap:6px;font-size:.58em;font-family:-apple-system,'PingFang SC',sans-serif">
+      <span data-map-btn="amap" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='amap'?'var(--accent)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">标准</span>
+      <span data-map-btn="osm" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='osm'?'var(--ink)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">OSM</span>
+      <span data-map-btn="hiking" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE._hikingOn?'var(--ink)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">徒步道</span>
+    </div>
+    ${buildRouteSteps()}
+  `;
+
+  if(elevData)setTimeout(()=>drawElevProfile(elevData),100);
+
+  const container=document.getElementById('weatherPanels');
+  container.innerHTML='';
+  renderRouteWP('from',RSTATE.fromGeo,RSTATE.fromW,container);
+  renderRouteWP('to',RSTATE.toGeo,RSTATE.toW,container);
+}
+
+function switchMapStyle(style){
+  const m=RSTATE.rmap;if(!m)return;
+  RSTATE.mapStyle=style;
+  // Remove all tile layers except hiking
+  m.eachLayer(l=>{if(l instanceof L.TileLayer&&l!==RSTATE.hikingLayer&&l._url&&!l._url.includes('waymarkedtrails'))m.removeLayer(l);});
+  if(style==='amap'){
+    RSTATE.baseLayer=L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',{subdomains:'1234',attribution:'&copy; 高德',maxZoom:18}).addTo(m);
+  }else{
+    RSTATE.baseLayer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OSM',maxZoom:18}).addTo(m);
+  }
+  // Update toggle buttons in DOM
+  const btns=document.querySelectorAll('#routeSummary [data-map-btn]');
+  btns.forEach(b=>{
+    const v=b.getAttribute('data-map-btn');
+    const active=(v==='amap'&&style==='amap')||(v==='osm'&&style==='osm');
+    b.style.background=active?'var(--ink)':'none';b.style.color=active?'#fff':'var(--sub)';
+  });
+}
+function toggleHiking(){
+  const m=RSTATE.rmap;if(!m)return;
+  RSTATE._hikingOn=!RSTATE._hikingOn;
+  if(RSTATE._hikingOn)m.addLayer(RSTATE.hikingLayer);else m.removeLayer(RSTATE.hikingLayer);
+  const btn=document.querySelector('#routeSummary [data-map-btn="hiking"]');
+  if(btn){btn.style.background=RSTATE._hikingOn?'var(--ink)':'none';btn.style.color=RSTATE._hikingOn?'#fff':'var(--sub)';}
+}
+
+function drawElevProfile(data){
+  const c=document.getElementById('elevCanvas');if(!c)return;
+  const W=c.parentElement.clientWidth-32;c.width=W;c.height=120;
+  const ctx=c.getContext('2d');
+  const ev=data.elevations,ds=data.distances;
+  const min=Math.min(...ev),max=Math.max(...ev),range=max-min||1;
+  const pad=10,h=c.height-pad*2,w=c.width-pad*2;
+  ctx.clearRect(0,0,c.width,c.height);
+  // Fill
+  ctx.beginPath();
+  ctx.moveTo(pad,c.height-pad);
+  for(let i=0;i<ev.length;i++){
+    const x=pad+(i/(ev.length-1))*w;
+    const y=pad+h-((ev[i]-min)/range)*h;
+    ctx.lineTo(x,y);
+  }
+  ctx.lineTo(pad+(ev.length-1)/(ev.length-1)*w,c.height-pad);
+  ctx.closePath();
+  ctx.fillStyle='rgba(200,82,74,.12)';ctx.fill();
+  // Line
+  ctx.beginPath();
+  ctx.strokeStyle='#E03C31';ctx.lineWidth=2;ctx.lineJoin='round';
+  for(let i=0;i<ev.length;i++){
+    const x=pad+(i/(ev.length-1))*w;
+    const y=pad+h-((ev[i]-min)/range)*h;
+    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+  }
+  ctx.stroke();
+  // Labels
+  ctx.fillStyle='#6E6E6E';ctx.font='10px -apple-system,PingFang SC,sans-serif';
+  ctx.fillText(min+'m',4,c.height-4);
+  ctx.fillText(max+'m',4,pad+10);
+  if(ds.length)ctx.fillText(ds[ds.length-1].toFixed(0)+'km',c.width-40,c.height-4);
+}
+
+function buildRouteSteps(){
+  const steps=RSTATE.route.steps;
+  if(!steps||steps.length===0)return'';
+  if(steps.length<2)return'';
+  function parseStep(s){
+    const inst=s.instruction||'';
+    const road=s.road||'';
+    let icon='↑',cls='straight',dir='直行';
+    if(inst.includes('左转')||inst.includes('向左')){icon='←';cls='left';dir='左转'}
+    else if(inst.includes('右转')||inst.includes('向右')){icon='→';cls='right';dir='右转'}
+    else if(inst.includes('调头')||inst.includes('掉头')){icon='↩';cls='rotary';dir='调头'}
+    else if(inst.includes('到达')||inst.includes('终点')||inst.includes('目的地')){icon='🏁';cls='arrive';dir='到达'}
+    else if(inst.includes('出发')||inst.includes('起点')||inst.includes('开始')){icon='▶';cls='depart';dir='出发'}
+    else if(inst.includes('环岛')||inst.includes('转盘')){icon='↻';cls='rotary';dir='环岛'}
+    else if(inst.includes('左前方')||inst.includes('左后方')){icon='←';cls='left';dir='左前方'}
+    else if(inst.includes('右前方')||inst.includes('右后方')){icon='→';cls='right';dir='右前方'}
+    return{icon,cls,dir,road:road||inst.replace(/^沿?/,'').replace(/[，,].*/,'')||'前行'};
+  }
+  let html='<div class="route-steps"><div class="steps-title">🧭 逐段导航</div><div class="step-list">';
+  for(let i=0;i<Math.min(steps.length,80);i++){
+    const s=steps[i];
+    const si=parseStep(s);
+    const d=(parseInt(s.distance)/1000).toFixed(1);
+    const dur=Math.round(parseInt(s.duration)/60);
+    html+=`<div class="step-item">
+      <div class="step-turn ${si.cls}">${si.icon}</div>
+      <div class="step-info">
+        <div class="step-dir">${si.dir}</div>
+        <div class="step-road">${si.road}</div>
+        <div class="step-dist">${d} km · ${dur}分钟</div>
+      </div>
+    </div>`;
+  }
+  html+='</div></div>';
+  return html;
+}
+
+function renderRouteWP(side,geo,data,container){
+  const now=data.current;
+  const today=data.daily;
+  const wc=w(now.weather_code);
+  const label=side==='from'?'起点':'终点';
+  const cls=side==='from'?'from':'to';
+
+  const panel=document.createElement('div');
+  panel.className='wp '+cls;
+  panel.innerHTML=`
+    <div class="wpn">${label}</div>
+    <div class="wpt">${geo.name} · ${geo.admin1||''} · ${geo.country||''}</div>
+    <div class="wph">
+      <span class="big">${now.temperature_2m.toFixed(1)}°</span>
+      <span class="icon">${wc.i}</span>
+      <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>体感 ${now.apparent_temperature.toFixed(1)}°</span>
+    </div>
+    <div class="wpg">
+      <div class="wgi"><span class="wgiv">🌬 ${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
+      <div class="wgi"><span class="wgiv">💧 ${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
+      <div class="wgi"><span class="wgiv">🌧 ${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
+      <div class="wgi"><span class="wgiv">☀️ UV${today.uv_index_max[0]}</span><span class="wgil">紫外线</span></div>
+      <div class="wgi"><span class="wgiv">🌡 ${today.temperature_2m_max[0]}°/${today.temperature_2m_min[0]}°</span><span class="wgil">最高/低</span></div>
+      <div class="wgi"><span class="wgiv">☀ ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照</span></div>
+    </div>
+  `;
+  if(side==='from')container.prepend(panel);
+  else container.appendChild(panel);
+}
+
+// Route enter key
+document.getElementById('fromInput').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('toInput').focus()});
+document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='Enter')plan()});
+
+</script>
+</body>
+</html>
