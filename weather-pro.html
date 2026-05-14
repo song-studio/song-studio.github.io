@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>气象查询 · 路线规划</title>
+<title>æ°è±¡æ¥è¯¢ Â· è·¯çº¿è§å</title>
 <style>
 :root{--bg:#f5f3ef;--card:#fff;--text:#2c2c2c;--sub:#767676;--accent:#4a7eb5;--rain:#5b8cb8;--warm:#d47a2e;--uv:#e07b39;--green:#5a9a6a;--shadow:0 1px 3px rgba(0,0,0,.06)}
 *{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -191,11 +191,11 @@ footer a{color:#bbb}
 
 </style>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-// ── Route state ─────────────────────────────────────────
+// ââ Route state âââââââââââââââââââââââââââââââââââââââââ
 let RSTATE={mode:'driving',fromGeo:null,toGeo:null,route:null,rmap:null,markers:[],routeLine:null};
 
 function switchTab(tab){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.textContent.includes(tab==='weather'?'天气':'路线')));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.textContent.includes(tab==='weather'?'å¤©æ°':'è·¯çº¿')));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('show'));
   document.getElementById('tab-'+tab).classList.add('show');
   if(tab==='route'&&!RSTATE.rmap)initRMap();
@@ -277,13 +277,13 @@ async function plan(){
   document.getElementById('routeSummary').style.display='none';
   document.getElementById('weatherPanels').innerHTML='';
   const goBtn=document.getElementById('goBtn');
-  goBtn.disabled=true;goBtn.textContent='规划中…';
+  goBtn.disabled=true;goBtn.textContent='è§åä¸­â¦';
 
   try{
     const[fg,tg]=await Promise.all([routeGeocode(fromQ),routeGeocode(toQ)]);
     if(!fg||!tg){
-      alert(`未找到：${!fg?fromQ:''} ${!tg?toQ:''}`);
-      goBtn.disabled=false;goBtn.textContent='开始规划';
+      alert(`æªæ¾å°ï¼${!fg?fromQ:''} ${!tg?toQ:''}`);
+      goBtn.disabled=false;goBtn.textContent='å¼å§è§å';
       return;
     }
     RSTATE.fromGeo=fg;RSTATE.toGeo=tg;
@@ -295,17 +295,17 @@ async function plan(){
     ]);
 
     if(!route){
-      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远或太近\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
-      goBtn.disabled=false;goBtn.textContent='开始规划';
+      alert('æªæ¾å°å¯è¡è·¯çº¿\n\nå¯è½åå ï¼\n1. ä¸¤å°è·ç¦»å¤ªè¿æå¤ªè¿\n2. è¯¥åºåä¸æ¯ææéäº¤éæ¹å¼\n3. ç½ç»é®é¢\n\nè¯·å°è¯ï¼æ´æ¢äº¤éæ¹å¼ãè°æ´èµ·ç»ç¹ãæéæ©é¢è®¾è·¯çº¿');
+      goBtn.disabled=false;goBtn.textContent='å¼å§è§å';
       return;
     }
     RSTATE.route=route;
     RSTATE.fromW=fromW;RSTATE.toW=toW;
     renderRouteAll();
   }catch(e){
-    alert('网络错误：'+e.message);
+    alert('ç½ç»éè¯¯ï¼'+e.message);
   }
-  goBtn.disabled=false;goBtn.textContent='开始规划';
+  goBtn.disabled=false;goBtn.textContent='å¼å§è§å';
 }
 
 function renderRouteAll(){
@@ -320,11 +320,11 @@ function renderRouteAll(){
   ]);
 
   const fromM=L.marker([RSTATE.fromGeo.latitude,RSTATE.fromGeo.longitude],{
-    icon:L.divIcon({html:'<div style="background:#4a7eb5;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">起</div>',iconSize:[28,28],iconAnchor:[14,14]})
-  }).addTo(m).bindPopup(`<b>起点</b><br>${RSTATE.fromGeo.name}`);
+    icon:L.divIcon({html:'<div style="background:#4a7eb5;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">èµ·</div>',iconSize:[28,28],iconAnchor:[14,14]})
+  }).addTo(m).bindPopup(`<b>èµ·ç¹</b><br>${RSTATE.fromGeo.name}`);
   const toM=L.marker([RSTATE.toGeo.latitude,RSTATE.toGeo.longitude],{
-    icon:L.divIcon({html:'<div style="background:#d47a2e;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">终</div>',iconSize:[28,28],iconAnchor:[14,14]})
-  }).addTo(m).bindPopup(`<b>终点</b><br>${RSTATE.toGeo.name}`);
+    icon:L.divIcon({html:'<div style="background:#d47a2e;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">ç»</div>',iconSize:[28,28],iconAnchor:[14,14]})
+  }).addTo(m).bindPopup(`<b>ç»ç¹</b><br>${RSTATE.toGeo.name}`);
   RSTATE.markers=[fromM,toM];
 
   const coords=RSTATE.route.geometry.coordinates.map(c=>[c[1],c[0]]);
@@ -335,36 +335,36 @@ function renderRouteAll(){
   const dist=(RSTATE.route.distance/1000).toFixed(1);
   const dur=Math.round(RSTATE.route.duration/60);
   const hrs=Math.floor(dur/60),mins=dur%60;
-  const durStr=hrs>0?`${hrs}h${mins}m`:`${mins}分钟`;
-  const modeName={driving:'驾车',cycling:'骑行',walking:'步行'};
+  const durStr=hrs>0?`${hrs}h${mins}m`:`${mins}åé`;
+  const modeName={driving:'é©¾è½¦',cycling:'éªè¡',walking:'æ­¥è¡'};
   const speed=(RSTATE.route.distance/1000)/(RSTATE.route.duration/3600);
   let gain=0;
   for(let i=1;i<coords.length;i++){const diff=coords[i][0]-coords[i-1][0];if(diff>0)gain+=diff*111000;}
   gain=Math.round(gain);
 
-  const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
+  const modeIcons={driving:'ð',cycling:'ð´',walking:'ð¥¾'};
   const modeColors={driving:'#4a7eb5',cycling:'#5a9a6a',walking:'#d47a2e'};
   document.getElementById('routeSummary').style.display='block';
   document.getElementById('routeSummary').innerHTML=`
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding:0 4px">
       <span style="font-size:1.3em">${modeIcons[RSTATE.mode]}</span>
-      <span style="font-weight:600;font-size:.95em">${modeName[RSTATE.mode]}路线</span>
-      <span style="font-size:.7em;color:var(--sub);margin-left:auto">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</span>
+      <span style="font-weight:600;font-size:.95em">${modeName[RSTATE.mode]}è·¯çº¿</span>
+      <span style="font-size:.7em;color:var(--sub);margin-left:auto">${RSTATE.fromGeo.name} â ${RSTATE.toGeo.name}</span>
     </div>
     <div class="rs-grid">
-      <div class="rs-item"><div class="rsv">📏 ${dist} km</div><div class="rsl">总距离</div></div>
-      <div class="rs-item"><div class="rsv">⏱ ${durStr}</div><div class="rsl">预计用时</div></div>
-      <div class="rs-item"><div class="rsv">🏃 ${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
-      <div class="rs-item"><div class="rsv">⛰ ~${gain}m</div><div class="rsl">估算爬升</div></div>
+      <div class="rs-item"><div class="rsv">ð ${dist} km</div><div class="rsl">æ»è·ç¦»</div></div>
+      <div class="rs-item"><div class="rsv">â± ${durStr}</div><div class="rsl">é¢è®¡ç¨æ¶</div></div>
+      <div class="rs-item"><div class="rsv">ð ${speed.toFixed(1)} km/h</div><div class="rsl">å¹³åéåº¦</div></div>
+      <div class="rs-item"><div class="rsv">â° ~${gain}m</div><div class="rsl">ä¼°ç®ç¬å</div></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px">
       <div class="rs-item" style="border-left:3px solid ${modeColors[RSTATE.mode]}">
         <div class="rsv" style="font-size:.9em">${RSTATE.fromGeo.name}</div>
-        <div class="rsl">起点 · ${(RSTATE.fromW.current.temperature_2m||0).toFixed(1)}° ${w(RSTATE.fromW.current.weather_code).i}</div>
+        <div class="rsl">èµ·ç¹ Â· ${(RSTATE.fromW.current.temperature_2m||0).toFixed(1)}Â° ${w(RSTATE.fromW.current.weather_code).i}</div>
       </div>
       <div class="rs-item" style="border-left:3px solid var(--warm)">
         <div class="rsv" style="font-size:.9em">${RSTATE.toGeo.name}</div>
-        <div class="rsl">终点 · ${(RSTATE.toW.current.temperature_2m||0).toFixed(1)}° ${w(RSTATE.toW.current.weather_code).i}</div>
+        <div class="rsl">ç»ç¹ Â· ${(RSTATE.toW.current.temperature_2m||0).toFixed(1)}Â° ${w(RSTATE.toW.current.weather_code).i}</div>
       </div>
     </div>
   `;
@@ -379,26 +379,26 @@ function renderRouteWP(side,geo,data,container){
   const now=data.current;
   const today=data.daily;
   const wc=w(now.weather_code);
-  const label=side==='from'?'起点':'终点';
+  const label=side==='from'?'èµ·ç¹':'ç»ç¹';
   const cls=side==='from'?'from':'to';
 
   const panel=document.createElement('div');
   panel.className='wp '+cls;
   panel.innerHTML=`
     <div class="wpn">${label}</div>
-    <div class="wpt">${geo.name} · ${geo.admin1||''} · ${geo.country||''}</div>
+    <div class="wpt">${geo.name} Â· ${geo.admin1||''} Â· ${geo.country||''}</div>
     <div class="wph">
-      <span class="big">${now.temperature_2m.toFixed(1)}°</span>
+      <span class="big">${now.temperature_2m.toFixed(1)}Â°</span>
       <span class="icon">${wc.i}</span>
-      <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>体感 ${now.apparent_temperature.toFixed(1)}°</span>
+      <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>ä½æ ${now.apparent_temperature.toFixed(1)}Â°</span>
     </div>
     <div class="wpg">
-      <div class="wgi"><span class="wgiv">🌬 ${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
-      <div class="wgi"><span class="wgiv">💧 ${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
-      <div class="wgi"><span class="wgiv">🌧 ${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
-      <div class="wgi"><span class="wgiv">☀️ ${today.uv_index_max[0]}</span><span class="wgil">UV 指数</span></div>
-      <div class="wgi"><span class="wgiv">🌡 ${today.temperature_2m_max[0]}° / ${today.temperature_2m_min[0]}°</span><span class="wgil">今日高/低</span></div>
-      <div class="wgi"><span class="wgiv">☀ ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照时长</span></div>
+      <div class="wgi"><span class="wgiv">ð¬ ${now.wind_speed_10m} km/h</span><span class="wgil">é£é</span></div>
+      <div class="wgi"><span class="wgiv">ð§ ${now.relative_humidity_2m}%</span><span class="wgil">æ¹¿åº¦</span></div>
+      <div class="wgi"><span class="wgiv">ð§ ${today.precipitation_probability_max[0]}%</span><span class="wgil">éé¨æ¦ç</span></div>
+      <div class="wgi"><span class="wgiv">âï¸ ${today.uv_index_max[0]}</span><span class="wgil">UV ææ°</span></div>
+      <div class="wgi"><span class="wgiv">ð¡ ${today.temperature_2m_max[0]}Â° / ${today.temperature_2m_min[0]}Â°</span><span class="wgil">ä»æ¥é«/ä½</span></div>
+      <div class="wgi"><span class="wgiv">â ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">æ¥ç§æ¶é¿</span></div>
     </div>
   `;
   if(side==='from')container.prepend(panel);
@@ -416,33 +416,33 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
 
 
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('weather')">☁️ 天气查询</button>
-  <button class="tab-btn" onclick="switchTab('route')">🗺️ 路线规划</button>
+  <button class="tab-btn active" onclick="switchTab('weather')">âï¸ å¤©æ°æ¥è¯¢</button>
+  <button class="tab-btn" onclick="switchTab('route')">ðºï¸ è·¯çº¿è§å</button>
 </div>
 
 <div class="tab-panel show" id="tab-weather">
 <div class="search-bar">
   <div class="search-box">
-    <input type="text" id="q" placeholder="输入地名搜索…&#10;例：上海 / 乌镇 / 大理 / Tokyo / Paris" autocomplete="off">
-    <button onclick="doSearch()">搜索</button>
+    <input type="text" id="q" placeholder="è¾å¥å°åæç´¢â¦&#10;ä¾ï¼ä¸æµ· / ä¹é / å¤§ç / Tokyo / Paris" autocomplete="off">
+    <button onclick="doSearch()">æç´¢</button>
   </div>
-  <div class="search-hint">支持中文/英文/拼音 · 全球地理编码 · 乡镇村庄均可搜</div>
+  <div class="search-hint">æ¯æä¸­æ/è±æ/æ¼é³ Â· å¨çå°çç¼ç  Â· ä¹¡éæåºåå¯æ</div>
   <div class="suggestions">
-    <span class="sug-chip" onclick="quickSearch('北京')">北京</span>
-    <span class="sug-chip" onclick="quickSearch('上海')">上海</span>
-    <span class="sug-chip" onclick="quickSearch('贵阳')">贵阳</span>
-    <span class="sug-chip" onclick="quickSearch('成都')">成都</span>
-    <span class="sug-chip" onclick="quickSearch('昆明')">昆明</span>
-    <span class="sug-chip" onclick="quickSearch('大理')">大理</span>
-    <span class="sug-chip" onclick="quickSearch('乌镇')">乌镇</span>
-    <span class="sug-chip" onclick="quickSearch('凤凰')">凤凰</span>
-    <span class="sug-chip" onclick="quickSearch('Tokyo')">东京</span>
-    <span class="sug-chip" onclick="quickSearch('Paris')">巴黎</span>
+    <span class="sug-chip" onclick="quickSearch('åäº¬')">åäº¬</span>
+    <span class="sug-chip" onclick="quickSearch('ä¸æµ·')">ä¸æµ·</span>
+    <span class="sug-chip" onclick="quickSearch('è´µé³')">è´µé³</span>
+    <span class="sug-chip" onclick="quickSearch('æé½')">æé½</span>
+    <span class="sug-chip" onclick="quickSearch('ææ')">ææ</span>
+    <span class="sug-chip" onclick="quickSearch('å¤§ç')">å¤§ç</span>
+    <span class="sug-chip" onclick="quickSearch('ä¹é')">ä¹é</span>
+    <span class="sug-chip" onclick="quickSearch('å¤å°')">å¤å°</span>
+    <span class="sug-chip" onclick="quickSearch('Tokyo')">ä¸äº¬</span>
+    <span class="sug-chip" onclick="quickSearch('Paris')">å·´é»</span>
   </div>
 </div>
 
 <div id="main">
-  <div class="status"><div class="spinner"></div><br><br>加载北京气象数据…</div>
+  <div class="status"><div class="spinner"></div><br><br>å è½½åäº¬æ°è±¡æ°æ®â¦</div>
 </div>
 
 
@@ -452,34 +452,34 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
 <div class="route-search">
   <div class="route-row">
     <span class="rdot from"></span>
-    <input type="text" id="fromInput" placeholder="起点… 例：北京" autocomplete="off">
-    <button class="swap-btn" onclick="swap()" title="交换起终点">⇅</button>
+    <input type="text" id="fromInput" placeholder="èµ·ç¹â¦ ä¾ï¼åäº¬" autocomplete="off">
+    <button class="swap-btn" onclick="swap()" title="äº¤æ¢èµ·ç»ç¹">â</button>
   </div>
   <div class="route-row">
     <span class="rdot to"></span>
-    <input type="text" id="toInput" placeholder="终点… 例：上海" autocomplete="off">
+    <input type="text" id="toInput" placeholder="ç»ç¹â¦ ä¾ï¼ä¸æµ·" autocomplete="off">
   </div>
   <div class="modes">
     <div class="mode-chip sel drive" data-mode="driving" onclick="setMode('driving')">
-      <span class="emoji">🚗</span>驾车
+      <span class="emoji">ð</span>é©¾è½¦
     </div>
     <div class="mode-chip bike" data-mode="cycling" onclick="setMode('cycling')">
-      <span class="emoji">🚴</span>骑行
+      <span class="emoji">ð´</span>éªè¡
     </div>
     <div class="mode-chip walk" data-mode="walking" onclick="setMode('walking')">
-      <span class="emoji">🥾</span>步行
+      <span class="emoji">ð¥¾</span>æ­¥è¡
     </div>
   </div>
-  <button class="go-btn" id="goBtn" onclick="plan()">开始规划</button>
+  <button class="go-btn" id="goBtn" onclick="plan()">å¼å§è§å</button>
   <div class="route-sug">
-    <span class="rsug" onclick="preset('北京','上海','driving')">🚗 北京→上海</span>
-    <span class="rsug" onclick="preset('北京','天津','cycling')">🚴 北京→天津</span>
-    <span class="rsug" onclick="preset('成都','重庆','driving')">🚗 成都→重庆</span>
-    <span class="rsug" onclick="preset('贵阳','遵义','cycling')">🚴 贵阳→遵义</span>
-    <span class="rsug" onclick="preset('昆明','大理','driving')">🚗 昆明→大理</span>
-    <span class="rsug" onclick="preset('乌镇','杭州','walking')">🥾 乌镇→杭州</span>
-    <span class="rsug" onclick="preset('凤凰','张家界','driving')">🚗 凤凰→张家界</span>
-    <span class="rsug" onclick="preset('黄果树','贵阳','driving')">🚗 黄果树→贵阳</span>
+    <span class="rsug" onclick="preset('åäº¬','ä¸æµ·','driving')">ð åäº¬âä¸æµ·</span>
+    <span class="rsug" onclick="preset('åäº¬','å¤©æ´¥','cycling')">ð´ åäº¬âå¤©æ´¥</span>
+    <span class="rsug" onclick="preset('æé½','éåº','driving')">ð æé½âéåº</span>
+    <span class="rsug" onclick="preset('è´µé³','éµä¹','cycling')">ð´ è´µé³âéµä¹</span>
+    <span class="rsug" onclick="preset('ææ','å¤§ç','driving')">ð ææâå¤§ç</span>
+    <span class="rsug" onclick="preset('ä¹é','æ­å·','walking')">ð¥¾ ä¹éâæ­å·</span>
+    <span class="rsug" onclick="preset('å¤å°','å¼ å®¶ç','driving')">ð å¤å°âå¼ å®¶ç</span>
+    <span class="rsug" onclick="preset('é»ææ ','è´µé³','driving')">ð é»ææ âè´µé³</span>
   </div>
 </div>
 
@@ -489,17 +489,17 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
 <div class="weather-panels" id="weatherPanels"></div>
 </div><!-- end tab-route -->
 
-<footer><a href="https://song-studio.github.io">song-studio.github.io</a> · Open-Meteo + Windy + Meteoblue</footer>
+<footer><a href="https://song-studio.github.io">song-studio.github.io</a> Â· Open-Meteo + Windy + Meteoblue</footer>
 </div>
 
 <script>
-// ── State ────────────────────────────────────────────
-let STATE={lat:39.90,lon:116.40,name:'北京',country:'中国',elev:55,admin:'北京',data:null};
-const WMO={0:{i:'☀️',l:'晴'},1:{i:'🌤️',l:'少云'},2:{i:'⛅',l:'多云'},3:{i:'☁️',l:'阴'},45:{i:'🌫️',l:'雾'},48:{i:'🌫️',l:'冻雾'},51:{i:'🌧️',l:'小雨'},53:{i:'🌧️',l:'中雨'},55:{i:'🌧️',l:'大雨'},56:{i:'🌧️',l:'冻雨'},57:{i:'🌧️',l:'冻雨'},61:{i:'🌦️',l:'小阵雨'},63:{i:'🌧️',l:'中阵雨'},65:{i:'🌧️',l:'大阵雨'},66:{i:'🌧️',l:'冻雨'},67:{i:'🌧️',l:'冻雨'},71:{i:'❄️',l:'小雪'},73:{i:'❄️',l:'中雪'},75:{i:'❄️',l:'大雪'},77:{i:'❄️',l:'雪粒'},80:{i:'🌦️',l:'阵雨'},81:{i:'🌦️',l:'中阵雨'},82:{i:'🌧️',l:'大阵雨'},85:{i:'❄️',l:'小阵雪'},86:{i:'❄️',l:'大阵雪'},95:{i:'⛈️',l:'雷暴'},96:{i:'⛈️',l:'雷暴冰雹'},99:{i:'⛈️',l:'强雷暴冰雹'}};
-function w(c){return WMO[c]||{i:'🌥️',l:'未知'}}
-const WK=['周日','周一','周二','周三','周四','周五','周六'];
+// ââ State ââââââââââââââââââââââââââââââââââââââââââââ
+let STATE={lat:39.90,lon:116.40,name:'åäº¬',country:'ä¸­å½',elev:55,admin:'åäº¬',data:null};
+const WMO={0:{i:'âï¸',l:'æ´'},1:{i:'ð¤ï¸',l:'å°äº'},2:{i:'â',l:'å¤äº'},3:{i:'âï¸',l:'é´'},45:{i:'ð«ï¸',l:'é¾'},48:{i:'ð«ï¸',l:'å»é¾'},51:{i:'ð§ï¸',l:'å°é¨'},53:{i:'ð§ï¸',l:'ä¸­é¨'},55:{i:'ð§ï¸',l:'å¤§é¨'},56:{i:'ð§ï¸',l:'å»é¨'},57:{i:'ð§ï¸',l:'å»é¨'},61:{i:'ð¦ï¸',l:'å°éµé¨'},63:{i:'ð§ï¸',l:'ä¸­éµé¨'},65:{i:'ð§ï¸',l:'å¤§éµé¨'},66:{i:'ð§ï¸',l:'å»é¨'},67:{i:'ð§ï¸',l:'å»é¨'},71:{i:'âï¸',l:'å°éª'},73:{i:'âï¸',l:'ä¸­éª'},75:{i:'âï¸',l:'å¤§éª'},77:{i:'âï¸',l:'éªç²'},80:{i:'ð¦ï¸',l:'éµé¨'},81:{i:'ð¦ï¸',l:'ä¸­éµé¨'},82:{i:'ð§ï¸',l:'å¤§éµé¨'},85:{i:'âï¸',l:'å°éµéª'},86:{i:'âï¸',l:'å¤§éµéª'},95:{i:'âï¸',l:'é·æ´'},96:{i:'âï¸',l:'é·æ´å°é¹'},99:{i:'âï¸',l:'å¼ºé·æ´å°é¹'}};
+function w(c){return WMO[c]||{i:'ð¥ï¸',l:'æªç¥'}}
+const WK=['å¨æ¥','å¨ä¸','å¨äº','å¨ä¸','å¨å','å¨äº','å¨å­'];
 
-// ── Geocode & fetch ──────────────────────────────────
+// ââ Geocode & fetch ââââââââââââââââââââââââââââââââââ
 async function geocode(q){
   // Try Nominatim first (better small-place coverage, but blocked in China)
   try{
@@ -544,13 +544,13 @@ async function initFromParams(){
 async function doSearch(){
   const q=document.getElementById('q').value.trim();
   if(!q)return;
-  document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>搜索中…</div>';
+  document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>æç´¢ä¸­â¦</div>';
   const geo=await geocode(q);
-  if(!geo){document.getElementById('main').innerHTML='<div class="status error">未找到「'+q+'」，请换个关键词试试</div>';return}
+  if(!geo){document.getElementById('main').innerHTML='<div class="status error">æªæ¾å°ã'+q+'ãï¼è¯·æ¢ä¸ªå³é®è¯è¯è¯</div>';return}
   STATE.lat=geo.latitude;STATE.lon=geo.longitude;STATE.name=geo.name;STATE.country=geo.country||'';
   STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
   history.pushState(null,'','?q='+encodeURIComponent(q));
-  document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>获取气象数据…</div>';
+  document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>è·åæ°è±¡æ°æ®â¦</div>';
   STATE.data=await fetchWeather(STATE.lat,STATE.lon);
   render();
 }
@@ -558,10 +558,10 @@ async function doSearch(){
 function quickSearch(q){document.getElementById('q').value=q;doSearch();}
 document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch()});
 
-// ── Render ───────────────────────────────────────────
+// ââ Render âââââââââââââââââââââââââââââââââââââââââââ
 function render(){
   const d=STATE.data;
-  const locName=[STATE.name,STATE.admin,STATE.country].filter(Boolean).join(' · ');
+  const locName=[STATE.name,STATE.admin,STATE.country].filter(Boolean).join(' Â· ');
   const now=d.current;
 
   // Outdoor indices
@@ -575,13 +575,13 @@ function render(){
 
   // Comfort index: temp + humidity adjustment
   const comfortT=now.apparent_temperature;
-  let comfortL='舒适',comfortC='good';
-  if(comfortT<5){comfortL='偏冷';comfortC='warn'}
-  else if(comfortT>32){comfortL='炎热';comfortC='bad'}
-  else if(comfortT>28){comfortL='偏热';comfortC='warn'}
+  let comfortL='èé',comfortC='good';
+  if(comfortT<5){comfortL='åå·';comfortC='warn'}
+  else if(comfortT>32){comfortL='çç­';comfortC='bad'}
+  else if(comfortT>28){comfortL='åç­';comfortC='warn'}
 
   // Hiking index
-  let hikeScore=10,hikeL='极佳',hikeC='good';
+  let hikeScore=10,hikeL='æä½³',hikeC='good';
   if(maxRain>80)hikeScore-=4;
   else if(maxRain>50)hikeScore-=2;
   if(avgWind>30)hikeScore-=2;
@@ -589,17 +589,17 @@ function render(){
   if(avgVis<2)hikeScore-=2;
   else if(avgVis<5)hikeScore-=1;
   if(maxUV>10)hikeScore-=1;
-  if(hikeScore>=8){hikeL='极佳';hikeC='good'}
-  else if(hikeScore>=6){hikeL='适宜';hikeC='good'}
-  else if(hikeScore>=4){hikeL='可出行';hikeC='warn'}
-  else{hikeL='不建议';hikeC='bad'}
+  if(hikeScore>=8){hikeL='æä½³';hikeC='good'}
+  else if(hikeScore>=6){hikeL='éå®';hikeC='good'}
+  else if(hikeScore>=4){hikeL='å¯åºè¡';hikeC='warn'}
+  else{hikeL='ä¸å»ºè®®';hikeC='bad'}
 
   // UV risk
-  let uvL='安全',uvC='good';
-  if(maxUV>10){uvL='极高风险';uvC='bad'}
-  else if(maxUV>7){uvL='高风险';uvC='warn'}
-  else if(maxUV>5){uvL='中等';uvC='warn'}
-  else if(maxUV>2){uvL='低风险';uvC='good'}
+  let uvL='å®å¨',uvC='good';
+  if(maxUV>10){uvL='æé«é£é©';uvC='bad'}
+  else if(maxUV>7){uvL='é«é£é©';uvC='warn'}
+  else if(maxUV>5){uvL='ä¸­ç­';uvC='warn'}
+  else if(maxUV>2){uvL='ä½é£é©';uvC='good'}
 
   // Best window: find a time period with low rain probability and comfortable temp
   const hrs=d.hourly;
@@ -614,7 +614,7 @@ function render(){
   const html=`
 <div class="site-header">
   <h1>${w(dailyW(0)).i} ${locName}</h1>
-  <div class="loc">${STATE.lat.toFixed(4)}°N, ${STATE.lon.toFixed(4)}°E · 海拔 ${STATE.elev||'~'}m</div>
+  <div class="loc">${STATE.lat.toFixed(4)}Â°N, ${STATE.lon.toFixed(4)}Â°E Â· æµ·æ ${STATE.elev||'~'}m</div>
 </div>
 <div class="src-bar">
   <span><span class="dot om"></span> Open-Meteo</span>
@@ -626,49 +626,49 @@ function render(){
 <div class="now-card">
   <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px">
     <div>
-      <div class="now-temp">${now.temperature_2m.toFixed(1)}°</div>
-      <div class="now-label">体感 ${now.apparent_temperature.toFixed(1)}° · ${w(now.weather_code).l} ${w(now.weather_code).i}</div>
+      <div class="now-temp">${now.temperature_2m.toFixed(1)}Â°</div>
+      <div class="now-label">ä½æ ${now.apparent_temperature.toFixed(1)}Â° Â· ${w(now.weather_code).l} ${w(now.weather_code).i}</div>
     </div>
     <div style="font-size:.72em;opacity:.8;text-align:right">
-      风向 ${windDir(now.wind_direction_10m)} · 风速 ${now.wind_speed_10m} km/h<br>
-      湿度 ${now.relative_humidity_2m}% · 气压 ~${Math.round(d.hourly.pressure_msl[0])}hPa
+      é£å ${windDir(now.wind_direction_10m)} Â· é£é ${now.wind_speed_10m} km/h<br>
+      æ¹¿åº¦ ${now.relative_humidity_2m}% Â· æ°å ~${Math.round(d.hourly.pressure_msl[0])}hPa
     </div>
   </div>
   <div class="now-grid">
-    <div class="now-item"><div class="nv">${now.wind_speed_10m} km/h</div><div class="nl">风速 ${windDir(now.wind_direction_10m)}</div></div>
-    <div class="now-item"><div class="nv">${now.relative_humidity_2m}%</div><div class="nl">相对湿度</div></div>
-    <div class="now-item"><div class="nv">${sunshineH}h</div><div class="nl">今日日照</div></div>
-    <div class="now-item"><div class="nv">${today.precipitation_sum[0]}mm</div><div class="nl">今日降水量</div></div>
+    <div class="now-item"><div class="nv">${now.wind_speed_10m} km/h</div><div class="nl">é£é ${windDir(now.wind_direction_10m)}</div></div>
+    <div class="now-item"><div class="nv">${now.relative_humidity_2m}%</div><div class="nl">ç¸å¯¹æ¹¿åº¦</div></div>
+    <div class="now-item"><div class="nv">${sunshineH}h</div><div class="nl">ä»æ¥æ¥ç§</div></div>
+    <div class="now-item"><div class="nv">${today.precipitation_sum[0]}mm</div><div class="nl">ä»æ¥éæ°´é</div></div>
   </div>
 </div>
 
 <!-- Outdoor indices -->
-<div class="sec-title">🏕️ 户外与出行指数</div>
+<div class="sec-title">ðï¸ æ·å¤ä¸åºè¡ææ°</div>
 <div class="outdoor">
   <div class="oc">
-    <div class="oh">🥾 徒步适宜度</div>
+    <div class="oh">ð¥¾ å¾æ­¥éå®åº¦</div>
     <div class="ov"><span class="oe ${hikeC}">${hikeL}</span> ${hikeScore}/10</div>
-    <div class="od">综合降雨概率${maxRain}%、风速${avgWind}km/h、能见度${avgVis}km、UV${maxUV}评估</div>
+    <div class="od">ç»¼åéé¨æ¦ç${maxRain}%ãé£é${avgWind}km/hãè½è§åº¦${avgVis}kmãUV${maxUV}è¯ä¼°</div>
   </div>
   <div class="oc">
-    <div class="oh">🌡️ 体感舒适度</div>
-    <div class="ov"><span class="oe ${comfortC}">${comfortL}</span> 体感${comfortT.toFixed(1)}°</div>
-    <div class="od">体感温度综合气温、湿度、风速计算。${comfortT<10?'需穿厚外套':comfortT>30?'注意防暑降温':'温度适宜出行'}</div>
+    <div class="oh">ð¡ï¸ ä½æèéåº¦</div>
+    <div class="ov"><span class="oe ${comfortC}">${comfortL}</span> ä½æ${comfortT.toFixed(1)}Â°</div>
+    <div class="od">ä½ææ¸©åº¦ç»¼åæ°æ¸©ãæ¹¿åº¦ãé£éè®¡ç®ã${comfortT<10?'éç©¿åå¤å¥':comfortT>30?'æ³¨æé²æéæ¸©':'æ¸©åº¦éå®åºè¡'}</div>
   </div>
   <div class="oc">
-    <div class="oh">☀️ 紫外线风险</div>
-    <div class="ov"><span class="oe ${uvC}">${uvL}</span> UV峰值${maxUV}</div>
-    <div class="od">${maxUV>7?'需SPF30+防晒霜、遮阳帽、墨镜':maxUV>5?'建议涂防晒霜':'无需特殊防护'}。高海拔地区紫外线偏强</div>
+    <div class="oh">âï¸ ç´«å¤çº¿é£é©</div>
+    <div class="ov"><span class="oe ${uvC}">${uvL}</span> UVå³°å¼${maxUV}</div>
+    <div class="od">${maxUV>7?'éSPF30+é²æéãé®é³å¸½ãå¢¨é':maxUV>5?'å»ºè®®æ¶é²æé':'æ éç¹æ®é²æ¤'}ãé«æµ·æå°åºç´«å¤çº¿åå¼º</div>
   </div>
   <div class="oc">
-    <div class="oh">⏰ 最佳户外窗口</div>
+    <div class="oh">â° æä½³æ·å¤çªå£</div>
     <div class="ov">${bestDate} ${bestTime}</div>
-    <div class="od">48小时内综合温湿风雨最优时段。累计降水${totalRain}mm，${maxRain>80?'建议室内活动':maxRain>50?'带伞可出行':'出行无忧'}</div>
+    <div class="od">48å°æ¶åç»¼åæ¸©æ¹¿é£é¨æä¼æ¶æ®µãç´¯è®¡éæ°´${totalRain}mmï¼${maxRain>80?'å»ºè®®å®¤åæ´»å¨':maxRain>50?'å¸¦ä¼å¯åºè¡':'åºè¡æ å¿§'}</div>
   </div>
 </div>
 
 <!-- 6-day cards -->
-<div class="sec-title">📅 6日预报 · 点击查看逐时详情</div>
+<div class="sec-title">ð 6æ¥é¢æ¥ Â· ç¹å»æ¥çéæ¶è¯¦æ</div>
 <div class="days" id="days"></div>
 
 <div class="detail" id="detail">
@@ -676,7 +676,7 @@ function render(){
   <div class="dg" id="detail-grid"></div>
   <div class="sun-row" id="sun-row"></div>
   <div class="hs-wrap">
-    <div class="hs-label">24 小时逐时 (温度·降雨·UV·体感·气压·云量·露点) — 左右滑动</div>
+    <div class="hs-label">24 å°æ¶éæ¶ (æ¸©åº¦Â·éé¨Â·UVÂ·ä½æÂ·æ°åÂ·äºéÂ·é²ç¹) â å·¦å³æ»å¨</div>
     <div class="hs" id="hourly-strip"></div>
   </div>
   <div class="chart-wrap"><svg id="chart"></svg></div>
@@ -684,16 +684,16 @@ function render(){
 
 <!-- Windy -->
 <div class="extern">
-  <h4>🌍 Windy 实时风场 & 雷达</h4>
+  <h4>ð Windy å®æ¶é£åº & é·è¾¾</h4>
   <div class="windy-box">
     <iframe src="https://embed.windy.com/embed2.html?lat=${STATE.lat}&lon=${STATE.lon}&detailLat=${STATE.lat}&detailLon=${STATE.lon}&zoom=10&level=surface&overlay=wind&product=ecmwf&calendar=now&pressure=true&type=map&location=coordinates&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1" loading="lazy"></iframe>
   </div>
   <div class="ext-links">
     <a class="ext-link" href="https://www.windy.com/?${STATE.lat},${STATE.lon},10" target="_blank" rel="noopener">
-      🔗 <strong>Windy</strong> 全图层<br><small style="color:var(--sub)">风·雨·雷·温·浪·气压</small>
+      ð <strong>Windy</strong> å¨å¾å±<br><small style="color:var(--sub)">é£Â·é¨Â·é·Â·æ¸©Â·æµªÂ·æ°å</small>
     </a>
     <a class="ext-link" href="https://www.meteoblue.com/en/weather/week/index?lat=${STATE.lat}&lon=${STATE.lon}" target="_blank" rel="noopener">
-      🔗 <strong>Meteoblue</strong> 专业预报<br><small style="color:var(--sub)">瑞士模型·14天·多模式对比</small>
+      ð <strong>Meteoblue</strong> ä¸ä¸é¢æ¥<br><small style="color:var(--sub)">çå£«æ¨¡åÂ·14å¤©Â·å¤æ¨¡å¼å¯¹æ¯</small>
     </a>
   </div>
 </div>
@@ -714,15 +714,15 @@ function dailyW(i){
 }
 
 function windDir(d){
-  const dirs=['北','东北','东','东南','南','西南','西','西北'];
+  const dirs=['å','ä¸å','ä¸','ä¸å','å','è¥¿å','è¥¿','è¥¿å'];
   return dirs[Math.round(d/45)%8];
 }
 
 function uvLabel(v){
-  if(v<3)return'低';if(v<6)return'中';if(v<8)return'高';if(v<11)return'很高';return'极高';
+  if(v<3)return'ä½';if(v<6)return'ä¸­';if(v<8)return'é«';if(v<11)return'å¾é«';return'æé«';
 }
 function visLabel(m){
-  if(m>10000)return'优秀';if(m>5000)return'良好';if(m>2000)return'一般';if(m>500)return'较差';return'极差';
+  if(m>10000)return'ä¼ç§';if(m>5000)return'è¯å¥½';if(m>2000)return'ä¸è¬';if(m>500)return'è¾å·®';return'æå·®';
 }
 
 function buildDays(){
@@ -735,7 +735,7 @@ function buildDays(){
     const c=document.createElement('div');
     c.className='day-card'+(i===0?' active':'');
     c.dataset.idx=i;
-    c.innerHTML=`<div class="dow">${i===0?'今天':WK[dt.getDay()]}</div><div class="date">${(dt.getMonth()+1)+'/'+dt.getDate()}</div><span class="icon">${wc.i}</span><div class="temps"><span>${today.temperature_2m_max[i]}°</span><span class="lo">${today.temperature_2m_min[i]}°</span></div><div class="rain-bar"><div class="fill" style="width:${today.precipitation_probability_max[i]}%"></div></div><div class="tag">${wc.l} · 雨${today.precipitation_probability_max[i]}%</div>`;
+    c.innerHTML=`<div class="dow">${i===0?'ä»å¤©':WK[dt.getDay()]}</div><div class="date">${(dt.getMonth()+1)+'/'+dt.getDate()}</div><span class="icon">${wc.i}</span><div class="temps"><span>${today.temperature_2m_max[i]}Â°</span><span class="lo">${today.temperature_2m_min[i]}Â°</span></div><div class="rain-bar"><div class="fill" style="width:${today.precipitation_probability_max[i]}%"></div></div><div class="tag">${wc.l} Â· é¨${today.precipitation_probability_max[i]}%</div>`;
     c.onclick=()=>showDetail(i);
     daysEl.appendChild(c);
   });
@@ -749,17 +749,17 @@ function showDetail(i){
   const panel=document.getElementById('detail');
   if(!panel)return;
   panel.classList.add('show');
-  document.getElementById('detail-title').textContent=`${i===0?'今天':WK[dt.getDay()]} ${(dt.getMonth()+1)+'月'+dt.getDate()+'日'} · ${wc.l}`;
+  document.getElementById('detail-title').textContent=`${i===0?'ä»å¤©':WK[dt.getDay()]} ${(dt.getMonth()+1)+'æ'+dt.getDate()+'æ¥'} Â· ${wc.l}`;
   document.getElementById('detail-grid').innerHTML=`
-    <div class="di"><div class="l">最高/低温</div><div class="v">${today.temperature_2m_max[i]}° / ${today.temperature_2m_min[i]}°</div></div>
-    <div class="di"><div class="l">降雨概率</div><div class="v" style="color:var(--rain)">${today.precipitation_probability_max[i]}%</div></div>
-    <div class="di"><div class="l">降水量</div><div class="v">${today.precipitation_sum[i]} mm</div></div>
-    <div class="di"><div class="l">UV 峰值</div><div class="v" style="color:var(--uv)">${today.uv_index_max[i]} · ${uvLabel(today.uv_index_max[i])}</div></div>
-    <div class="di"><div class="l">日照时长</div><div class="v">${(today.sunshine_duration[i]/3600).toFixed(1)} h</div></div>
-    <div class="di"><div class="l">风速</div><div class="v">${today.wind_speed_10m_max[i]} km/h</div></div>
-    <div class="di"><div class="l">风向</div><div class="v">${windDir(today.wind_direction_10m_dominant[i])}</div></div>
-    <div class="di"><div class="l">气压</div><div class="v">${today.pressure_msl_max[i]} hPa</div></div>
-    <div class="di"><div class="l">能见度</div><div class="v">${(today.visibility_max[i]/1000).toFixed(1)} km</div></div>
+    <div class="di"><div class="l">æé«/ä½æ¸©</div><div class="v">${today.temperature_2m_max[i]}Â° / ${today.temperature_2m_min[i]}Â°</div></div>
+    <div class="di"><div class="l">éé¨æ¦ç</div><div class="v" style="color:var(--rain)">${today.precipitation_probability_max[i]}%</div></div>
+    <div class="di"><div class="l">éæ°´é</div><div class="v">${today.precipitation_sum[i]} mm</div></div>
+    <div class="di"><div class="l">UV å³°å¼</div><div class="v" style="color:var(--uv)">${today.uv_index_max[i]} Â· ${uvLabel(today.uv_index_max[i])}</div></div>
+    <div class="di"><div class="l">æ¥ç§æ¶é¿</div><div class="v">${(today.sunshine_duration[i]/3600).toFixed(1)} h</div></div>
+    <div class="di"><div class="l">é£é</div><div class="v">${today.wind_speed_10m_max[i]} km/h</div></div>
+    <div class="di"><div class="l">é£å</div><div class="v">${windDir(today.wind_direction_10m_dominant[i])}</div></div>
+    <div class="di"><div class="l">æ°å</div><div class="v">${today.pressure_msl_max[i]} hPa</div></div>
+    <div class="di"><div class="l">è½è§åº¦</div><div class="v">${(today.visibility_max[i]/1000).toFixed(1)} km</div></div>
   `;
 
   // Hourly strip
@@ -772,10 +772,10 @@ function showDetail(i){
     const isNow=(i===0&&hour===nowH);
     hh+=`<div class="hc${isNow?' nw':''}">
       <span class="h">${String(hour).padStart(2,'0')}:00</span>
-      <span class="t">${hrs.temperature_2m[h].toFixed(1)}°</span>
+      <span class="t">${hrs.temperature_2m[h].toFixed(1)}Â°</span>
       <span class="r">${w(hrs.weather_code[h]).i} ${hrs.precipitation_probability[h]}%</span>
-      <span style="font-size:.85em;color:#999;display:block">体感${hrs.apparent_temperature[h].toFixed(1)}° · UV${hrs.uv_index[h].toFixed(1)}</span>
-      <span style="font-size:.8em;color:#bbb;display:block">☁️${(hrs.cloud_cover?hrs.cloud_cover[h]:'?')}% · 💧${(hrs.dew_point_2m?hrs.dew_point_2m[h].toFixed(1):'?')}°</span>
+      <span style="font-size:.85em;color:#999;display:block">ä½æ${hrs.apparent_temperature[h].toFixed(1)}Â° Â· UV${hrs.uv_index[h].toFixed(1)}</span>
+      <span style="font-size:.8em;color:#bbb;display:block">âï¸${(hrs.cloud_cover?hrs.cloud_cover[h]:'?')}% Â· ð§${(hrs.dew_point_2m?hrs.dew_point_2m[h].toFixed(1):'?')}Â°</span>
     </div>`;
   }
   document.getElementById('hourly-strip').innerHTML=hh;
@@ -798,10 +798,10 @@ function drawChart(s,e){
   const path=pts.map((x,i)=>(i===0?'M':'L')+x.x.toFixed(1)+','+x.y.toFixed(1)).join(' ');
   const pathF=ptsF.map((x,i)=>(i===0?'M':'L')+x.x.toFixed(1)+','+x.y.toFixed(1)).join(' ');
   let labels='';for(let h=0;h<24;h+=3)labels+=`<text x="${pts[h].x.toFixed(1)}" y="${H-6}" text-anchor="middle" font-size="9" fill="#aaa">${h}h</text>`;
-  let dots=pts.filter((_,i)=>i%3===0).map(p=>`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="#4a7eb5"/><text x="${p.x.toFixed(1)}" y="${p.y-7}" text-anchor="middle" font-size="9" font-weight="600" fill="#333">${p.t.toFixed(1)}°</text>`).join('');
+  let dots=pts.filter((_,i)=>i%3===0).map(p=>`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="#4a7eb5"/><text x="${p.x.toFixed(1)}" y="${p.y-7}" text-anchor="middle" font-size="9" font-weight="600" fill="#333">${p.t.toFixed(1)}Â°</text>`).join('');
   document.getElementById('chart').innerHTML=`
-    <text x="10" y="14" font-size="10" fill="#4a7eb5">━ 实际温度</text>
-    <text x="10" y="28" font-size="10" fill="#d47a2e">━ 体感温度</text>
+    <text x="10" y="14" font-size="10" fill="#4a7eb5">â å®éæ¸©åº¦</text>
+    <text x="10" y="28" font-size="10" fill="#d47a2e">â ä½ææ¸©åº¦</text>
     <path d="${path}" fill="none" stroke="#4a7eb5" stroke-width="2" stroke-linejoin="round"/>
     <path d="${pathF}" fill="none" stroke="#d47a2e" stroke-width="1.5" stroke-dasharray="5,3" stroke-linejoin="round"/>
     ${dots}
@@ -813,11 +813,11 @@ function drawChart(s,e){
 // Boot
 initFromParams();
 
-// ── Route state ─────────────────────────────────────────
+// ââ Route state âââââââââââââââââââââââââââââââââââââââââ
 let RSTATE={mode:'driving',fromGeo:null,toGeo:null,route:null,rmap:null,markers:[],routeLine:null};
 
 function switchTab(tab){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.textContent.includes(tab==='weather'?'天气':'路线')));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.textContent.includes(tab==='weather'?'å¤©æ°':'è·¯çº¿')));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('show'));
   document.getElementById('tab-'+tab).classList.add('show');
   if(tab==='route'&&!RSTATE.rmap)initRMap();
@@ -899,13 +899,13 @@ async function plan(){
   document.getElementById('routeSummary').style.display='none';
   document.getElementById('weatherPanels').innerHTML='';
   const goBtn=document.getElementById('goBtn');
-  goBtn.disabled=true;goBtn.textContent='规划中…';
+  goBtn.disabled=true;goBtn.textContent='è§åä¸­â¦';
 
   try{
     const[fg,tg]=await Promise.all([routeGeocode(fromQ),routeGeocode(toQ)]);
     if(!fg||!tg){
-      alert(`未找到：${!fg?fromQ:''} ${!tg?toQ:''}`);
-      goBtn.disabled=false;goBtn.textContent='开始规划';
+      alert(`æªæ¾å°ï¼${!fg?fromQ:''} ${!tg?toQ:''}`);
+      goBtn.disabled=false;goBtn.textContent='å¼å§è§å';
       return;
     }
     RSTATE.fromGeo=fg;RSTATE.toGeo=tg;
@@ -917,17 +917,17 @@ async function plan(){
     ]);
 
     if(!route){
-      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远或太近\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
-      goBtn.disabled=false;goBtn.textContent='开始规划';
+      alert('æªæ¾å°å¯è¡è·¯çº¿\n\nå¯è½åå ï¼\n1. ä¸¤å°è·ç¦»å¤ªè¿æå¤ªè¿\n2. è¯¥åºåä¸æ¯ææéäº¤éæ¹å¼\n3. ç½ç»é®é¢\n\nè¯·å°è¯ï¼æ´æ¢äº¤éæ¹å¼ãè°æ´èµ·ç»ç¹ãæéæ©é¢è®¾è·¯çº¿');
+      goBtn.disabled=false;goBtn.textContent='å¼å§è§å';
       return;
     }
     RSTATE.route=route;
     RSTATE.fromW=fromW;RSTATE.toW=toW;
     renderRouteAll();
   }catch(e){
-    alert('网络错误：'+e.message);
+    alert('ç½ç»éè¯¯ï¼'+e.message);
   }
-  goBtn.disabled=false;goBtn.textContent='开始规划';
+  goBtn.disabled=false;goBtn.textContent='å¼å§è§å';
 }
 
 function renderRouteAll(){
@@ -942,11 +942,11 @@ function renderRouteAll(){
   ]);
 
   const fromM=L.marker([RSTATE.fromGeo.latitude,RSTATE.fromGeo.longitude],{
-    icon:L.divIcon({html:'<div style="background:#4a7eb5;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">起</div>',iconSize:[28,28],iconAnchor:[14,14]})
-  }).addTo(m).bindPopup(`<b>起点</b><br>${RSTATE.fromGeo.name}`);
+    icon:L.divIcon({html:'<div style="background:#4a7eb5;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">èµ·</div>',iconSize:[28,28],iconAnchor:[14,14]})
+  }).addTo(m).bindPopup(`<b>èµ·ç¹</b><br>${RSTATE.fromGeo.name}`);
   const toM=L.marker([RSTATE.toGeo.latitude,RSTATE.toGeo.longitude],{
-    icon:L.divIcon({html:'<div style="background:#d47a2e;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">终</div>',iconSize:[28,28],iconAnchor:[14,14]})
-  }).addTo(m).bindPopup(`<b>终点</b><br>${RSTATE.toGeo.name}`);
+    icon:L.divIcon({html:'<div style="background:#d47a2e;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">ç»</div>',iconSize:[28,28],iconAnchor:[14,14]})
+  }).addTo(m).bindPopup(`<b>ç»ç¹</b><br>${RSTATE.toGeo.name}`);
   RSTATE.markers=[fromM,toM];
 
   const coords=RSTATE.route.geometry.coordinates.map(c=>[c[1],c[0]]);
@@ -957,36 +957,36 @@ function renderRouteAll(){
   const dist=(RSTATE.route.distance/1000).toFixed(1);
   const dur=Math.round(RSTATE.route.duration/60);
   const hrs=Math.floor(dur/60),mins=dur%60;
-  const durStr=hrs>0?`${hrs}h${mins}m`:`${mins}分钟`;
-  const modeName={driving:'驾车',cycling:'骑行',walking:'步行'};
+  const durStr=hrs>0?`${hrs}h${mins}m`:`${mins}åé`;
+  const modeName={driving:'é©¾è½¦',cycling:'éªè¡',walking:'æ­¥è¡'};
   const speed=(RSTATE.route.distance/1000)/(RSTATE.route.duration/3600);
   let gain=0;
   for(let i=1;i<coords.length;i++){const diff=coords[i][0]-coords[i-1][0];if(diff>0)gain+=diff*111000;}
   gain=Math.round(gain);
 
-  const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
+  const modeIcons={driving:'ð',cycling:'ð´',walking:'ð¥¾'};
   const modeColors={driving:'#4a7eb5',cycling:'#5a9a6a',walking:'#d47a2e'};
   document.getElementById('routeSummary').style.display='block';
   document.getElementById('routeSummary').innerHTML=`
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding:0 4px">
       <span style="font-size:1.3em">${modeIcons[RSTATE.mode]}</span>
-      <span style="font-weight:600;font-size:.95em">${modeName[RSTATE.mode]}路线</span>
-      <span style="font-size:.7em;color:var(--sub);margin-left:auto">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</span>
+      <span style="font-weight:600;font-size:.95em">${modeName[RSTATE.mode]}è·¯çº¿</span>
+      <span style="font-size:.7em;color:var(--sub);margin-left:auto">${RSTATE.fromGeo.name} â ${RSTATE.toGeo.name}</span>
     </div>
     <div class="rs-grid">
-      <div class="rs-item"><div class="rsv">📏 ${dist} km</div><div class="rsl">总距离</div></div>
-      <div class="rs-item"><div class="rsv">⏱ ${durStr}</div><div class="rsl">预计用时</div></div>
-      <div class="rs-item"><div class="rsv">🏃 ${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
-      <div class="rs-item"><div class="rsv">⛰ ~${gain}m</div><div class="rsl">估算爬升</div></div>
+      <div class="rs-item"><div class="rsv">ð ${dist} km</div><div class="rsl">æ»è·ç¦»</div></div>
+      <div class="rs-item"><div class="rsv">â± ${durStr}</div><div class="rsl">é¢è®¡ç¨æ¶</div></div>
+      <div class="rs-item"><div class="rsv">ð ${speed.toFixed(1)} km/h</div><div class="rsl">å¹³åéåº¦</div></div>
+      <div class="rs-item"><div class="rsv">â° ~${gain}m</div><div class="rsl">ä¼°ç®ç¬å</div></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px">
       <div class="rs-item" style="border-left:3px solid ${modeColors[RSTATE.mode]}">
         <div class="rsv" style="font-size:.9em">${RSTATE.fromGeo.name}</div>
-        <div class="rsl">起点 · ${(RSTATE.fromW.current.temperature_2m||0).toFixed(1)}° ${w(RSTATE.fromW.current.weather_code).i}</div>
+        <div class="rsl">èµ·ç¹ Â· ${(RSTATE.fromW.current.temperature_2m||0).toFixed(1)}Â° ${w(RSTATE.fromW.current.weather_code).i}</div>
       </div>
       <div class="rs-item" style="border-left:3px solid var(--warm)">
         <div class="rsv" style="font-size:.9em">${RSTATE.toGeo.name}</div>
-        <div class="rsl">终点 · ${(RSTATE.toW.current.temperature_2m||0).toFixed(1)}° ${w(RSTATE.toW.current.weather_code).i}</div>
+        <div class="rsl">ç»ç¹ Â· ${(RSTATE.toW.current.temperature_2m||0).toFixed(1)}Â° ${w(RSTATE.toW.current.weather_code).i}</div>
       </div>
     </div>
   `;
@@ -1001,26 +1001,26 @@ function renderRouteWP(side,geo,data,container){
   const now=data.current;
   const today=data.daily;
   const wc=w(now.weather_code);
-  const label=side==='from'?'起点':'终点';
+  const label=side==='from'?'èµ·ç¹':'ç»ç¹';
   const cls=side==='from'?'from':'to';
 
   const panel=document.createElement('div');
   panel.className='wp '+cls;
   panel.innerHTML=`
     <div class="wpn">${label}</div>
-    <div class="wpt">${geo.name} · ${geo.admin1||''} · ${geo.country||''}</div>
+    <div class="wpt">${geo.name} Â· ${geo.admin1||''} Â· ${geo.country||''}</div>
     <div class="wph">
-      <span class="big">${now.temperature_2m.toFixed(1)}°</span>
+      <span class="big">${now.temperature_2m.toFixed(1)}Â°</span>
       <span class="icon">${wc.i}</span>
-      <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>体感 ${now.apparent_temperature.toFixed(1)}°</span>
+      <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>ä½æ ${now.apparent_temperature.toFixed(1)}Â°</span>
     </div>
     <div class="wpg">
-      <div class="wgi"><span class="wgiv">🌬 ${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
-      <div class="wgi"><span class="wgiv">💧 ${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
-      <div class="wgi"><span class="wgiv">🌧 ${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
-      <div class="wgi"><span class="wgiv">☀️ ${today.uv_index_max[0]}</span><span class="wgil">UV 指数</span></div>
-      <div class="wgi"><span class="wgiv">🌡 ${today.temperature_2m_max[0]}° / ${today.temperature_2m_min[0]}°</span><span class="wgil">今日高/低</span></div>
-      <div class="wgi"><span class="wgiv">☀ ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照时长</span></div>
+      <div class="wgi"><span class="wgiv">ð¬ ${now.wind_speed_10m} km/h</span><span class="wgil">é£é</span></div>
+      <div class="wgi"><span class="wgiv">ð§ ${now.relative_humidity_2m}%</span><span class="wgil">æ¹¿åº¦</span></div>
+      <div class="wgi"><span class="wgiv">ð§ ${today.precipitation_probability_max[0]}%</span><span class="wgil">éé¨æ¦ç</span></div>
+      <div class="wgi"><span class="wgiv">âï¸ ${today.uv_index_max[0]}</span><span class="wgil">UV ææ°</span></div>
+      <div class="wgi"><span class="wgiv">ð¡ ${today.temperature_2m_max[0]}Â° / ${today.temperature_2m_min[0]}Â°</span><span class="wgil">ä»æ¥é«/ä½</span></div>
+      <div class="wgi"><span class="wgiv">â ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">æ¥ç§æ¶é¿</span></div>
     </div>
   `;
   if(side==='from')container.prepend(panel);
