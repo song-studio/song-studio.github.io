@@ -53,22 +53,22 @@ body{
 /* ── Tab bar ── */
 .tab-bar{
   display:flex;gap:0;
-  margin-bottom:24px;
+  margin-bottom:28px;
   border-bottom:2px solid var(--rule);
   position:sticky;top:0;z-index:20;
   background:var(--bg);
-  padding:8px 0 0;
+  padding:10px 0 0;
 }
 .tab-btn{
   flex:1;text-align:center;
-  padding:12px 8px 14px;
+  padding:12px 8px 16px;
   border:none;background:none;
   cursor:pointer;
-  font-family:'Georgia','Noto Serif SC',serif;
-  font-size:.88em;font-weight:400;
+  font-family:'Playfair Display','Noto Serif SC',serif;
+  font-size:1em;font-weight:400;
   color:var(--muted);
-  letter-spacing:.04em;
-  transition:all .2s;
+  letter-spacing:.1em;
+  transition:all .25s;
   border-bottom:2px solid transparent;
   margin-bottom:-2px;
   position:relative;
@@ -324,27 +324,27 @@ body{
 .modes{display:flex;gap:8px;flex-wrap:wrap}
 .mode-chip{
   flex:1;min-width:80px;text-align:center;
-  padding:14px 10px;
+  padding:15px 10px;
   border:1px solid var(--rule);background:var(--card);
-  cursor:pointer;font-size:.78em;font-weight:600;
+  cursor:pointer;font-size:.82em;font-weight:600;
   transition:all .2s;
   font-family:'Playfair Display','Noto Serif SC',serif;
-  letter-spacing:.04em;
+  letter-spacing:.06em;
 }
 .mode-chip:hover{border-color:var(--ink);background:var(--bg)}
-.mode-chip.sel{color:#fff;border-color:transparent;font-weight:700;letter-spacing:.06em}
+.mode-chip.sel{color:#fff;border-color:transparent;font-weight:700;letter-spacing:.08em}
 .mode-chip.sel.drive{background:var(--forest)}
 .mode-chip.sel.bike{background:var(--ochre)}
 .mode-chip.sel.walk{background:var(--sky)}
 
 /* ── Go button ── */
 .go-btn{
-  width:100%;margin-top:12px;padding:14px;
+  width:100%;margin-top:12px;padding:15px;
   border:1px solid var(--ink);background:var(--ink);color:#fff;
-  font-size:.8em;font-weight:700;
-  cursor:pointer;letter-spacing:.08em;text-transform:uppercase;
+  font-size:.84em;font-weight:700;
+  cursor:pointer;letter-spacing:.1em;
   transition:all .2s;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Playfair Display','Noto Serif SC',serif;
 }
 .go-btn:hover{background:var(--ochre);border-color:var(--ochre)}
 .go-btn:active{transform:scale(.98)}
@@ -467,8 +467,8 @@ footer a:hover{color:var(--ink)}
 
 
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('weather')">☁️ 天气查询</button>
-  <button class="tab-btn" onclick="switchTab('route')">🗺️ 路线规划</button>
+  <button class="tab-btn active" onclick="switchTab('weather')">天气</button>
+  <button class="tab-btn" onclick="switchTab('route')">路线</button>
 </div>
 
 <div class="tab-panel show" id="tab-weather">
