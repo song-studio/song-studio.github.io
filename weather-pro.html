@@ -236,11 +236,21 @@ function preset(f,t,m){
 }
 
 async function routeGeocode(q){
-  const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`);
+  try{
+    const c=new AbortController();
+    const t=setTimeout(()=>c.abort(),5000);
+    const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`,{signal:c.signal});
+    clearTimeout(t);
+    const d=await r.json();
+    if(d&&d.length){
+      const p=d[0].display_name.split(', ');
+      return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
+    }
+  }catch(e){}
+  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=3&language=zh&format=json`);
   const d=await r.json();
-  if(!d||!d.length)return null;
-  const p=d[0].display_name.split(', ');
-  return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
+  if(!d.results||!d.results.length)return null;
+  return d.results[0];
 }
 
 async function getRoute(from,to,mode){
@@ -399,7 +409,7 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
     <input type="text" id="q" placeholder="输入地名搜索…&#10;例：六盘水 / 贵阳 / 北京 / Tokyo / Paris" autocomplete="off">
     <button onclick="doSearch()">搜索</button>
   </div>
-  <div class="search-hint">支持中文/英文/拼音 · 使用 OSM 地理编码（乡镇村庄均可搜）</div>
+  <div class="search-hint">支持中文/英文/拼音 · 全球地理编码 · 乡镇村庄均可搜</div>
   <div class="suggestions">
     <span class="sug-chip" onclick="quickSearch('六盘水')">六盘水</span>
     <span class="sug-chip" onclick="quickSearch('贵阳')">贵阳</span>
@@ -468,11 +478,23 @@ const WK=['周日','周一','周二','周三','周四','周五','周六'];
 
 // ── Geocode & fetch ──────────────────────────────────
 async function geocode(q){
-  const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=5&accept-language=zh`);
+  // Try Nominatim first (better small-place coverage, but blocked in China)
+  try{
+    const c=new AbortController();
+    const t=setTimeout(()=>c.abort(),5000);
+    const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=5&accept-language=zh`,{signal:c.signal});
+    clearTimeout(t);
+    const d=await r.json();
+    if(d&&d.length){
+      const p=d[0].display_name.split(', ');
+      return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:'',elevation:0};
+    }
+  }catch(e){}
+  // Fallback to Open-Meteo (works in China, but fewer small places)
+  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=5&language=zh&format=json`);
   const d=await r.json();
-  if(!d||!d.length)return null;
-  const p=d[0].display_name.split(', ');
-  return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:'',elevation:0};
+  if(!d.results||!d.results.length)return null;
+  return d.results[0];
 }
 
 async function fetchWeather(lat,lon){
@@ -813,11 +835,21 @@ function preset(f,t,m){
 }
 
 async function routeGeocode(q){
-  const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`);
+  try{
+    const c=new AbortController();
+    const t=setTimeout(()=>c.abort(),5000);
+    const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`,{signal:c.signal});
+    clearTimeout(t);
+    const d=await r.json();
+    if(d&&d.length){
+      const p=d[0].display_name.split(', ');
+      return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
+    }
+  }catch(e){}
+  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=3&language=zh&format=json`);
   const d=await r.json();
-  if(!d||!d.length)return null;
-  const p=d[0].display_name.split(', ');
-  return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
+  if(!d.results||!d.results.length)return null;
+  return d.results[0];
 }
 
 async function getRoute(from,to,mode){
