@@ -567,23 +567,56 @@ function gcj2wgs(lng,lat){
   return[lng-dlng*180/(a/Math.sqrt(magic)*Math.cos(radLat)*PI),lat-dlat*180/(a*(1-ee)/(magic*Math.sqrt(magic))*PI)];
 }
 
-// ── Geocode (高德 API) ──────────────────────────────────
+// ── Geocode (高德 + Open-Meteo 双源) ──────────────────
 async function geocode(q){
-  const r=await fetch(`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}`);
-  const d=await r.json();
-  if(!d.geocodes||!d.geocodes.length)return null;
-  const g=d.geocodes[0];
+  const hasLatin=/[a-zA-Z]/.test(q);
+
+  // Open-Meteo geocoding (free, global, WGS-84)
+  async function omGeo(){
+    try{
+      const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=1&language=zh&format=json`);
+      const d=await r.json();
+      if(d.results&&d.results.length)return d.results[0];
+    }catch(e){}
+    return null;
+  }
+
+  // Latin-script queries → Open-Meteo directly (Amap only covers China)
+  if(hasLatin){
+    const om=await omGeo();
+    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
+  }
+
+  // Chinese queries → Amap first, Open-Meteo as international fallback
+  const[amapR,omResult]=await Promise.all([
+    fetch(`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}`).then(r=>r.json()),
+    hasLatin?Promise.resolve(null):omGeo()
+  ]);
+
+  // Use Open-Meteo if Amap failed entirely
+  if(!amapR.geocodes||!amapR.geocodes.length){
+    if(omResult)return{latitude:omResult.latitude,longitude:omResult.longitude,name:omResult.name||q,country:omResult.country||'',admin1:omResult.admin1||'',elevation:0};
+    return null;
+  }
+
+  const g=amapR.geocodes[0];
   const [lng,lat]=g.location.split(',').map(Number);
   const [wgsLng,wgsLat]=gcj2wgs(lng,lat);
-  // Extract short name: last segment of formatted_address or use the name field
+
+  // If Amap returned a village/township-level match but Open-Meteo has an international
+  // result, Amap likely matched an obscure domestic place name → prefer Open-Meteo
+  if(omResult&&omResult.country_code!=='CN'&&(g.level==='village'||g.level==='乡镇'||g.level==='street')){
+    return{latitude:omResult.latitude,longitude:omResult.longitude,name:omResult.name||q,country:omResult.country||'',admin1:omResult.admin1||'',elevation:0};
+  }
+
   let short=g.name||q;
   if(g.formatted_address&&!g.name){
     const parts=g.formatted_address.split(/省|市|区|县|自治州/);
     short=parts[parts.length-1]||g.formatted_address;
   }
-  return {
+  return{
     latitude:wgsLat,longitude:wgsLng,
-    name:short,country:'中国',
+    name:short,country:g.country||'中国',
     admin1:g.province||g.city||'',elevation:0,
     rawLat:lat,rawLng:lng
   };
@@ -871,7 +904,7 @@ function showDetail(i){
 
   // Chart
   drawChart(s,e);
-  panel.scrollIntoView({behavior:'smooth',block:'center'});
+  // Detail shown above — user scrolls naturally
 }
 
 function drawChart(s,e){
