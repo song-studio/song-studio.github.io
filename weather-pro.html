@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>气象查询 · 任意地点</title>
+<style>
+:root{--bg:#f5f3ef;--card:#fff;--text:#2c2c2c;--sub:#767676;--accent:#4a7eb5;--rain:#5b8cb8;--warm:#d47a2e;--uv:#e07b39;--green:#5a9a6a;--shadow:0 1px 3px rgba(0,0,0,.06)}
+*{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,'PingFang SC','Noto Sans SC',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 50px;}
+
+/* Search */
+.search-bar{position:sticky;top:0;z-index:10;background:var(--bg);padding:8px 0 12px}
+.search-box{display:flex;gap:8px;background:var(--card);border-radius:14px;padding:6px 6px 6px 16px;box-shadow:0 2px 8px rgba(0,0,0,.08);align-items:center}
+.search-box input{flex:1;border:none;outline:none;font-size:1em;background:none;color:var(--text);padding:8px 0;min-width:0}
+.search-box input::placeholder{color:#ccc}
+.search-box button{flex-shrink:0;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:9px 18px;font-size:.88em;font-weight:600;cursor:pointer}
+.search-box button:active{opacity:.8}
+.search-hint{font-size:.64em;color:#bbb;margin-top:6px;padding-left:4px}
+.suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.sug-chip{font-size:.7em;padding:4px 10px;background:var(--card);border-radius:20px;cursor:pointer;color:var(--sub);box-shadow:var(--shadow)}
+.sug-chip:active{background:#eee}
+
+/* Status */
+.status{text-align:center;padding:60px 0;color:var(--sub)}
+.status.error{color:var(--warm)}
+.spinner{display:inline-block;width:24px;height:24px;border:2px solid #ddd;border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Header */
+.site-header{text-align:center;padding:12px 0 8px}
+.site-header h1{font-size:1.1em;font-weight:600}
+.site-header .loc{font-size:.82em;color:var(--sub);margin-top:2px}
+.site-header .elev{font-size:.68em;color:#bbb}
+.src-bar{display:flex;justify-content:center;gap:14px;padding:4px 0 12px;font-size:.66em;color:#bbb;flex-wrap:wrap}
+.src-bar span{display:flex;align-items:center;gap:4px}
+.src-bar .dot{width:4px;height:4px;border-radius:50%}
+.dot.om{background:var(--accent)}.dot.wy{background:#1e88e5}.dot.mb{background:#f48fb1}
+
+/* Now card */
+.now-card{background:linear-gradient(135deg,#4a7eb5,#6a9ec5);color:#fff;border-radius:16px;padding:22px 20px;margin-bottom:16px;box-shadow:0 2px 12px rgba(74,126,181,.2)}
+.now-card .now-temp{font-size:3em;font-weight:200;line-height:1}
+.now-card .now-label{font-size:.88em;opacity:.9;margin-top:4px}
+.now-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+@media(max-width:480px){.now-grid{grid-template-columns:repeat(2,1fr)}}
+.now-item{background:rgba(255,255,255,.15);border-radius:10px;padding:10px 8px;text-align:center}
+.now-item .nv{font-size:1.1em;font-weight:600}
+.now-item .nl{font-size:.64em;opacity:.75;margin-top:2px}
+
+/* Day cards */
+.sec-title{font-size:.78em;color:var(--sub);margin:20px 0 8px;letter-spacing:.03em}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:18px}
+@media(max-width:680px){.days{grid-template-columns:repeat(3,1fr);gap:6px}}
+@media(max-width:380px){.days{grid-template-columns:repeat(2,1fr)}}
+.day-card{background:var(--card);border-radius:12px;padding:14px 8px 12px;text-align:center;cursor:pointer;transition:all .18s;box-shadow:var(--shadow);user-select:none}
+.day-card:active{transform:scale(.96)}
+.day-card.active{box-shadow:0 0 0 2px var(--accent)}
+.day-card .dow{font-size:.78em;font-weight:600}
+.day-card .date{font-size:.64em;color:var(--sub);margin-bottom:4px}
+.day-card .icon{font-size:1.7em;margin:4px 0;display:block}
+.day-card .temps{font-size:.88em;font-weight:500}
+.day-card .temps .lo{color:var(--sub);margin-left:3px}
+.day-card .rain-bar{margin-top:7px;height:3px;background:rgba(0,0,0,.06);border-radius:2px;overflow:hidden}
+.day-card .rain-bar .fill{height:100%;background:var(--rain);border-radius:2px;transition:width .3s}
+.day-card .tag{font-size:.6em;color:var(--sub);margin-top:3px}
+
+/* Detail panel */
+.detail{background:var(--card);border-radius:14px;padding:20px 16px;margin-bottom:16px;box-shadow:var(--shadow);display:none}
+.detail.show{display:block}
+.detail h3{font-size:.95em;margin-bottom:14px;color:var(--accent)}
+.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:480px){.dg{grid-template-columns:repeat(2,1fr);gap:8px}}
+.di{background:#fafaf8;border-radius:10px;padding:12px 10px;text-align:center}
+.di .l{font-size:.66em;color:var(--sub)}
+.di .v{font-size:1em;font-weight:600;margin-top:4px}
+
+/* Hourly strip */
+.hs-wrap{margin-top:16px}
+.hs-label{font-size:.72em;color:var(--sub);margin-bottom:8px}
+.hs{display:flex;overflow-x:auto;gap:5px;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.hs::-webkit-scrollbar{height:3px}.hs::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px}
+.hc{flex:0 0 auto;min-width:50px;text-align:center;padding:7px 5px;background:#fafaf8;border-radius:8px;font-size:.62em}
+.hc.nw{background:#e8f0f8;border:1px solid #c8d8e8}
+.hc .h{font-weight:600;margin-bottom:4px;display:block}
+.hc .t{margin-bottom:1px}
+.hc .r{color:var(--rain)}
+
+.chart-wrap{margin-top:14px;width:100%;overflow-x:auto}
+.chart-wrap svg{min-width:520px;width:100%;height:auto}
+
+/* Outdoor indices */
+.outdoor{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+@media(max-width:480px){.outdoor{grid-template-columns:1fr}}
+.oc{background:var(--card);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+.oc .oh{font-size:.8em;font-weight:600;margin-bottom:8px}
+.oc .ov{font-size:1.2em;font-weight:300;margin-bottom:4px}
+.oc .od{font-size:.7em;color:var(--sub);line-height:1.5}
+.oe{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.72em;font-weight:600}
+.oe.good{background:#e6f4ea;color:var(--green)}
+.oe.warn{background:#fef3e4;color:var(--warm)}
+.oe.bad{background:#fce4e4;color:#c44}
+
+/* Windy */
+.extern{margin:20px 0}
+.extern h4{font-size:.78em;color:var(--sub);margin-bottom:10px}
+.windy-box{border-radius:12px;overflow:hidden;box-shadow:var(--shadow);height:340px}
+.windy-box iframe{width:100%;height:100%;border:0}
+@media(max-width:480px){.windy-box{height:230px}}
+.ext-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.ext-link{flex:1;min-width:130px;background:var(--card);border-radius:10px;padding:14px;text-align:center;text-decoration:none;color:var(--text);box-shadow:var(--shadow);font-size:.78em;transition:all .2s}
+.ext-link:hover{transform:translateY(-1px)}
+.ext-link strong{color:var(--accent)}
+
+/* Sun row */
+.sun-row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.sun-row .sun-item{display:flex;align-items:center;gap:5px;font-size:.74em;color:var(--sub)}
+
+footer{text-align:center;padding:30px 0 0;color:#ccc;font-size:.64em}
+footer a{color:#bbb}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+
+<div class="search-bar">
+  <div class="search-box">
+    <input type="text" id="q" placeholder="输入地名搜索…&#10;例：六盘水 / 贵阳 / 北京 / Tokyo / Paris" autocomplete="off">
+    <button onclick="doSearch()">搜索</button>
+  </div>
+  <div class="search-hint">支持中文/英文/拼音 · 使用 Open-Meteo 地理编码 API</div>
+  <div class="suggestions">
+    <span class="sug-chip" onclick="quickSearch('六盘水')">六盘水</span>
+    <span class="sug-chip" onclick="quickSearch('贵阳')">贵阳</span>
+    <span class="sug-chip" onclick="quickSearch('北京')">北京</span>
+    <span class="sug-chip" onclick="quickSearch('成都')">成都</span>
+    <span class="sug-chip" onclick="quickSearch('昆明')">昆明</span>
+    <span class="sug-chip" onclick="quickSearch('Tokyo')">东京</span>
+    <span class="sug-chip" onclick="quickSearch('Paris')">巴黎</span>
+  </div>
+</div>
+
+<div id="main">
+  <div class="status"><div class="spinner"></div><br><br>加载六盘水气象数据…</div>
+</div>
+
+<footer><a href="https://song-studio.github.io">song-studio.github.io</a> · Open-Meteo + Windy + Meteoblue</footer>
+</div>
+
+<script>
+// ── State ────────────────────────────────────────────
+let STATE={lat:26.58,lon:104.83,name:'六盘水',country:'中国',elev:1884,admin:'贵州',data:null};
+const WMO={0:{i:'☀️',l:'晴'},1:{i:'🌤️',l:'少云'},2:{i:'⛅',l:'多云'},3:{i:'☁️',l:'阴'},45:{i:'🌫️',l:'雾'},48:{i:'🌫️',l:'冻雾'},51:{i:'🌧️',l:'小雨'},53:{i:'🌧️',l:'中雨'},55:{i:'🌧️',l:'大雨'},56:{i:'🌧️',l:'冻雨'},57:{i:'🌧️',l:'冻雨'},61:{i:'🌦️',l:'小阵雨'},63:{i:'🌧️',l:'中阵雨'},65:{i:'🌧️',l:'大阵雨'},66:{i:'🌧️',l:'冻雨'},67:{i:'🌧️',l:'冻雨'},71:{i:'❄️',l:'小雪'},73:{i:'❄️',l:'中雪'},75:{i:'❄️',l:'大雪'},77:{i:'❄️',l:'雪粒'},80:{i:'🌦️',l:'阵雨'},81:{i:'🌦️',l:'中阵雨'},82:{i:'🌧️',l:'大阵雨'},85:{i:'❄️',l:'小阵雪'},86:{i:'❄️',l:'大阵雪'},95:{i:'⛈️',l:'雷暴'},96:{i:'⛈️',l:'雷暴冰雹'},99:{i:'⛈️',l:'强雷暴冰雹'}};
+function w(c){return WMO[c]||{i:'🌥️',l:'未知'}}
+const WK=['周日','周一','周二','周三','周四','周五','周六'];
+
+// ── Geocode & fetch ──────────────────────────────────
+async function geocode(q){
+  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=5&language=zh&format=json`);
+  const d=await r.json();
+  if(!d.results||!d.results.length)return null;
+  return d.results[0];
+}
+
+async function fetchWeather(lat,lon){
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,weather_code,wind_speed_10m_max,wind_direction_10m_dominant,uv_index_max,sunshine_duration,pressure_msl_max,visibility_max&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,wind_direction_10m,relative_humidity_2m,uv_index,pressure_msl,visibility,cloud_cover,dew_point_2m&timezone=auto&forecast_days=6`;
+  const r=await fetch(u);
+  return await r.json();
+}
+
+async function initFromParams(){
+  const p=new URLSearchParams(location.search);
+  const q=p.get('q');
+  if(q){
+    document.getElementById('q').value=q;
+    const geo=await geocode(q);
+    if(geo){
+      STATE.lat=geo.latitude;STATE.lon=geo.longitude;STATE.name=geo.name;STATE.country=geo.country||'';
+      STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
+    }
+  }
+  STATE.data=await fetchWeather(STATE.lat,STATE.lon);
+  render();
+}
+
+async function doSearch(){
+  const q=document.getElementById('q').value.trim();
+  if(!q)return;
+  document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>搜索中…</div>';
+  const geo=await geocode(q);
+  if(!geo){document.getElementById('main').innerHTML='<div class="status error">未找到「'+q+'」，请换个关键词试试</div>';return}
+  STATE.lat=geo.latitude;STATE.lon=geo.longitude;STATE.name=geo.name;STATE.country=geo.country||'';
+  STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
+  history.pushState(null,'','?q='+encodeURIComponent(q));
+  document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>获取气象数据…</div>';
+  STATE.data=await fetchWeather(STATE.lat,STATE.lon);
+  render();
+}
+
+function quickSearch(q){document.getElementById('q').value=q;doSearch();}
+document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch()});
+
+// ── Render ───────────────────────────────────────────
+function render(){
+  const d=STATE.data;
+  const locName=[STATE.name,STATE.admin,STATE.country].filter(Boolean).join(' · ');
+  const now=d.current;
+
+  // Outdoor indices
+  const today=d.daily;
+  const maxRain=Math.max(...today.precipitation_probability_max);
+  const avgWind=Math.round(today.wind_speed_10m_max.reduce((a,b)=>a+b,0)/6);
+  const avgVis=Math.round(today.visibility_max.reduce((a,b)=>a+b,0)/6/1000);
+  const maxUV=Math.max(...today.uv_index_max);
+  const totalRain=today.precipitation_sum.reduce((a,b)=>a+b,0).toFixed(1);
+  const sunshineH=(today.sunshine_duration[0]/3600).toFixed(1);
+
+  // Comfort index: temp + humidity adjustment
+  const comfortT=now.apparent_temperature;
+  let comfortL='舒适',comfortC='good';
+  if(comfortT<5){comfortL='偏冷';comfortC='warn'}
+  else if(comfortT>32){comfortL='炎热';comfortC='bad'}
+  else if(comfortT>28){comfortL='偏热';comfortC='warn'}
+
+  // Hiking index
+  let hikeScore=10,hikeL='极佳',hikeC='good';
+  if(maxRain>80)hikeScore-=4;
+  else if(maxRain>50)hikeScore-=2;
+  if(avgWind>30)hikeScore-=2;
+  else if(avgWind>15)hikeScore-=1;
+  if(avgVis<2)hikeScore-=2;
+  else if(avgVis<5)hikeScore-=1;
+  if(maxUV>10)hikeScore-=1;
+  if(hikeScore>=8){hikeL='极佳';hikeC='good'}
+  else if(hikeScore>=6){hikeL='适宜';hikeC='good'}
+  else if(hikeScore>=4){hikeL='可出行';hikeC='warn'}
+  else{hikeL='不建议';hikeC='bad'}
+
+  // UV risk
+  let uvL='安全',uvC='good';
+  if(maxUV>10){uvL='极高风险';uvC='bad'}
+  else if(maxUV>7){uvL='高风险';uvC='warn'}
+  else if(maxUV>5){uvL='中等';uvC='warn'}
+  else if(maxUV>2){uvL='低风险';uvC='good'}
+
+  // Best window: find a time period with low rain probability and comfortable temp
+  const hrs=d.hourly;
+  let bestH=0,bestScore=999;
+  for(let i=0;i<Math.min(48,hrs.time.length);i++){
+    const score=hrs.precipitation_probability[i]*2+Math.abs(hrs.temperature_2m[i]-22)*3+(hrs.cloud_cover?hrs.cloud_cover[i]:0)/10;
+    if(score<bestScore){bestScore=score;bestH=i;}
+  }
+  const bestTime=hrs.time[bestH].slice(11,16);
+  const bestDate=hrs.time[bestH].slice(5,10);
+
+  const html=`
+<div class="site-header">
+  <h1>${w(dailyW(0)).i} ${locName}</h1>
+  <div class="loc">${STATE.lat.toFixed(4)}°N, ${STATE.lon.toFixed(4)}°E · 海拔 ${STATE.elev||'~'}m</div>
+</div>
+<div class="src-bar">
+  <span><span class="dot om"></span> Open-Meteo</span>
+  <span><span class="dot wy"></span> Windy</span>
+  <span><span class="dot mb"></span> Meteoblue</span>
+</div>
+
+<!-- Current conditions -->
+<div class="now-card">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div>
+      <div class="now-temp">${now.temperature_2m.toFixed(1)}°</div>
+      <div class="now-label">体感 ${now.apparent_temperature.toFixed(1)}° · ${w(now.weather_code).l} ${w(now.weather_code).i}</div>
+    </div>
+    <div style="font-size:.72em;opacity:.8;text-align:right">
+      风向 ${windDir(now.wind_direction_10m)} · 风速 ${now.wind_speed_10m} km/h<br>
+      湿度 ${now.relative_humidity_2m}% · 气压 ~${Math.round(d.hourly.pressure_msl[0])}hPa
+    </div>
+  </div>
+  <div class="now-grid">
+    <div class="now-item"><div class="nv">${now.wind_speed_10m} km/h</div><div class="nl">风速 ${windDir(now.wind_direction_10m)}</div></div>
+    <div class="now-item"><div class="nv">${now.relative_humidity_2m}%</div><div class="nl">相对湿度</div></div>
+    <div class="now-item"><div class="nv">${sunshineH}h</div><div class="nl">今日日照</div></div>
+    <div class="now-item"><div class="nv">${today.precipitation_sum[0]}mm</div><div class="nl">今日降水量</div></div>
+  </div>
+</div>
+
+<!-- Outdoor indices -->
+<div class="sec-title">🏕️ 户外与出行指数</div>
+<div class="outdoor">
+  <div class="oc">
+    <div class="oh">🥾 徒步适宜度</div>
+    <div class="ov"><span class="oe ${hikeC}">${hikeL}</span> ${hikeScore}/10</div>
+    <div class="od">综合降雨概率${maxRain}%、风速${avgWind}km/h、能见度${avgVis}km、UV${maxUV}评估</div>
+  </div>
+  <div class="oc">
+    <div class="oh">🌡️ 体感舒适度</div>
+    <div class="ov"><span class="oe ${comfortC}">${comfortL}</span> 体感${comfortT.toFixed(1)}°</div>
+    <div class="od">体感温度综合气温、湿度、风速计算。${comfortT<10?'需穿厚外套':comfortT>30?'注意防暑降温':'温度适宜出行'}</div>
+  </div>
+  <div class="oc">
+    <div class="oh">☀️ 紫外线风险</div>
+    <div class="ov"><span class="oe ${uvC}">${uvL}</span> UV峰值${maxUV}</div>
+    <div class="od">${maxUV>7?'需SPF30+防晒霜、遮阳帽、墨镜':maxUV>5?'建议涂防晒霜':'无需特殊防护'}。高海拔地区紫外线偏强</div>
+  </div>
+  <div class="oc">
+    <div class="oh">⏰ 最佳户外窗口</div>
+    <div class="ov">${bestDate} ${bestTime}</div>
+    <div class="od">48小时内综合温湿风雨最优时段。累计降水${totalRain}mm，${maxRain>80?'建议室内活动':maxRain>50?'带伞可出行':'出行无忧'}</div>
+  </div>
+</div>
+
+<!-- 6-day cards -->
+<div class="sec-title">📅 6日预报 · 点击查看逐时详情</div>
+<div class="days" id="days"></div>
+
+<div class="detail" id="detail">
+  <h3 id="detail-title"></h3>
+  <div class="dg" id="detail-grid"></div>
+  <div class="sun-row" id="sun-row"></div>
+  <div class="hs-wrap">
+    <div class="hs-label">24 小时逐时 (温度·降雨·UV·体感·气压·云量·露点) — 左右滑动</div>
+    <div class="hs" id="hourly-strip"></div>
+  </div>
+  <div class="chart-wrap"><svg id="chart"></svg></div>
+</div>
+
+<!-- Windy -->
+<div class="extern">
+  <h4>🌍 Windy 实时风场 & 雷达</h4>
+  <div class="windy-box">
+    <iframe src="https://embed.windy.com/embed2.html?lat=${STATE.lat}&lon=${STATE.lon}&detailLat=${STATE.lat}&detailLon=${STATE.lon}&zoom=10&level=surface&overlay=wind&product=ecmwf&calendar=now&pressure=true&type=map&location=coordinates&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1" loading="lazy"></iframe>
+  </div>
+  <div class="ext-links">
+    <a class="ext-link" href="https://www.windy.com/?${STATE.lat},${STATE.lon},10" target="_blank" rel="noopener">
+      🔗 <strong>Windy</strong> 全图层<br><small style="color:var(--sub)">风·雨·雷·温·浪·气压</small>
+    </a>
+    <a class="ext-link" href="https://www.meteoblue.com/en/weather/week/index?lat=${STATE.lat}&lon=${STATE.lon}" target="_blank" rel="noopener">
+      🔗 <strong>Meteoblue</strong> 专业预报<br><small style="color:var(--sub)">瑞士模型·14天·多模式对比</small>
+    </a>
+  </div>
+</div>
+`;
+
+  document.getElementById('main').innerHTML=html;
+
+  // Build day cards
+  buildDays();
+  // Show first day detail
+  showDetail(0);
+  // Scroll to top
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function dailyW(i){
+  return STATE.data.daily.weather_code[i];
+}
+
+function windDir(d){
+  const dirs=['北','东北','东','东南','南','西南','西','西北'];
+  return dirs[Math.round(d/45)%8];
+}
+
+function uvLabel(v){
+  if(v<3)return'低';if(v<6)return'中';if(v<8)return'高';if(v<11)return'很高';return'极高';
+}
+function visLabel(m){
+  if(m>10000)return'优秀';if(m>5000)return'良好';if(m>2000)return'一般';if(m>500)return'较差';return'极差';
+}
+
+function buildDays(){
+  const daysEl=document.getElementById('days');
+  if(!daysEl)return;
+  const today=STATE.data.daily;
+  today.time.forEach((d,i)=>{
+    const dt=new Date(d+'T12:00');
+    const wc=w(today.weather_code[i]);
+    const c=document.createElement('div');
+    c.className='day-card'+(i===0?' active':'');
+    c.dataset.idx=i;
+    c.innerHTML=`<div class="dow">${i===0?'今天':WK[dt.getDay()]}</div><div class="date">${(dt.getMonth()+1)+'/'+dt.getDate()}</div><span class="icon">${wc.i}</span><div class="temps"><span>${today.temperature_2m_max[i]}°</span><span class="lo">${today.temperature_2m_min[i]}°</span></div><div class="rain-bar"><div class="fill" style="width:${today.precipitation_probability_max[i]}%"></div></div><div class="tag">${wc.l} · 雨${today.precipitation_probability_max[i]}%</div>`;
+    c.onclick=()=>showDetail(i);
+    daysEl.appendChild(c);
+  });
+}
+
+function showDetail(i){
+  document.querySelectorAll('.day-card').forEach((c,j)=>c.classList.toggle('active',j===i));
+  const today=STATE.data.daily;
+  const dt=new Date(today.time[i]+'T12:00');
+  const wc=w(today.weather_code[i]);
+  const panel=document.getElementById('detail');
+  if(!panel)return;
+  panel.classList.add('show');
+  document.getElementById('detail-title').textContent=`${i===0?'今天':WK[dt.getDay()]} ${(dt.getMonth()+1)+'月'+dt.getDate()+'日'} · ${wc.l}`;
+  document.getElementById('detail-grid').innerHTML=`
+    <div class="di"><div class="l">最高/低温</div><div class="v">${today.temperature_2m_max[i]}° / ${today.temperature_2m_min[i]}°</div></div>
+    <div class="di"><div class="l">降雨概率</div><div class="v" style="color:var(--rain)">${today.precipitation_probability_max[i]}%</div></div>
+    <div class="di"><div class="l">降水量</div><div class="v">${today.precipitation_sum[i]} mm</div></div>
+    <div class="di"><div class="l">UV 峰值</div><div class="v" style="color:var(--uv)">${today.uv_index_max[i]} · ${uvLabel(today.uv_index_max[i])}</div></div>
+    <div class="di"><div class="l">日照时长</div><div class="v">${(today.sunshine_duration[i]/3600).toFixed(1)} h</div></div>
+    <div class="di"><div class="l">风速</div><div class="v">${today.wind_speed_10m_max[i]} km/h</div></div>
+    <div class="di"><div class="l">风向</div><div class="v">${windDir(today.wind_direction_10m_dominant[i])}</div></div>
+    <div class="di"><div class="l">气压</div><div class="v">${today.pressure_msl_max[i]} hPa</div></div>
+    <div class="di"><div class="l">能见度</div><div class="v">${(today.visibility_max[i]/1000).toFixed(1)} km</div></div>
+  `;
+
+  // Hourly strip
+  const hrs=STATE.data.hourly;
+  const s=i*24,e=s+24;
+  const nowH=new Date().getHours();
+  let hh='';
+  for(let h=s;h<e;h++){
+    const hour=h%24;
+    const isNow=(i===0&&hour===nowH);
+    hh+=`<div class="hc${isNow?' nw':''}">
+      <span class="h">${String(hour).padStart(2,'0')}:00</span>
+      <span class="t">${hrs.temperature_2m[h].toFixed(1)}°</span>
+      <span class="r">${w(hrs.weather_code[h]).i} ${hrs.precipitation_probability[h]}%</span>
+      <span style="font-size:.85em;color:#999;display:block">体感${hrs.apparent_temperature[h].toFixed(1)}° · UV${hrs.uv_index[h].toFixed(1)}</span>
+      <span style="font-size:.8em;color:#bbb;display:block">☁️${(hrs.cloud_cover?hrs.cloud_cover[h]:'?')}% · 💧${(hrs.dew_point_2m?hrs.dew_point_2m[h].toFixed(1):'?')}°</span>
+    </div>`;
+  }
+  document.getElementById('hourly-strip').innerHTML=hh;
+
+  // Chart
+  drawChart(s,e);
+  panel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function drawChart(s,e){
+  const temps=STATE.data.hourly.temperature_2m.slice(s,e);
+  const feels=STATE.data.hourly.apparent_temperature.slice(s,e);
+  const all=[...temps,...feels];
+  const min=Math.floor(Math.min(...all))-1,max=Math.ceil(Math.max(...all))+1,range=max-min||1;
+  const W=720,H=130,p=28;
+  const toXY=(arr)=>{
+    return arr.map((t,i)=>({x:p+(i/(arr.length-1))*(W-p*2),y:H-p-((t-min)/range)*(H-p*2),t}));
+  };
+  const pts=toXY(temps),ptsF=toXY(feels);
+  const path=pts.map((x,i)=>(i===0?'M':'L')+x.x.toFixed(1)+','+x.y.toFixed(1)).join(' ');
+  const pathF=ptsF.map((x,i)=>(i===0?'M':'L')+x.x.toFixed(1)+','+x.y.toFixed(1)).join(' ');
+  let labels='';for(let h=0;h<24;h+=3)labels+=`<text x="${pts[h].x.toFixed(1)}" y="${H-6}" text-anchor="middle" font-size="9" fill="#aaa">${h}h</text>`;
+  let dots=pts.filter((_,i)=>i%3===0).map(p=>`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="#4a7eb5"/><text x="${p.x.toFixed(1)}" y="${p.y-7}" text-anchor="middle" font-size="9" font-weight="600" fill="#333">${p.t.toFixed(1)}°</text>`).join('');
+  document.getElementById('chart').innerHTML=`
+    <text x="10" y="14" font-size="10" fill="#4a7eb5">━ 实际温度</text>
+    <text x="10" y="28" font-size="10" fill="#d47a2e">━ 体感温度</text>
+    <path d="${path}" fill="none" stroke="#4a7eb5" stroke-width="2" stroke-linejoin="round"/>
+    <path d="${pathF}" fill="none" stroke="#d47a2e" stroke-width="1.5" stroke-dasharray="5,3" stroke-linejoin="round"/>
+    ${dots}
+    ${labels}
+  `;
+  document.getElementById('chart').setAttribute('viewBox',`0 0 ${W} ${H}`);
+}
+
+// Boot
+initFromParams();
+</script>
+</body>
+</html>
