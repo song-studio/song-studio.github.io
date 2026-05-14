@@ -177,9 +177,11 @@ function preset(f,t,m){
 
 // Geocode
 async function geocode(q){
-  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=3&language=zh&format=json`);
+  const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`);
   const d=await r.json();
-  return d.results&&d.results.length?d.results[0]:null;
+  if(!d||!d.length)return null;
+  const p=d[0].display_name.split(', ');
+  return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
 }
 
 // Route (OSRM)
