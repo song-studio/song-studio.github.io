@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>气象查询 · 任意地点</title>
+<title>气象查询 · 路线规划</title>
 <style>
 :root{--bg:#f5f3ef;--card:#fff;--text:#2c2c2c;--sub:#767676;--accent:#4a7eb5;--rain:#5b8cb8;--warm:#d47a2e;--uv:#e07b39;--green:#5a9a6a;--shadow:0 1px 3px rgba(0,0,0,.06)}
 *{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -256,7 +256,7 @@ async function routeGeocode(q){
 async function getRoute(from,to,mode){
   const profiles={driving:'car',cycling:'bike',walking:'foot'};
   const profile=profiles[mode]||'car';
-  const u=`https://router.project-osrm.org/route/v1/${profile}/${from.lon},${from.lat};${to.lon},${to.lat}?overview=full&geometries=geojson&steps=true&alternatives=false`;
+  const u=`https://router.project-osrm.org/route/v1/${profile}/${from.longitude},${from.latitude};${to.longitude},${to.latitude}?overview=full&geometries=geojson&steps=true&alternatives=false`;
   const r=await fetch(u);
   const d=await r.json();
   if(!d.routes||!d.routes.length)return null;
@@ -295,7 +295,7 @@ async function plan(){
     ]);
 
     if(!route){
-      alert('未找到可行路线，请尝试其他交通方式');
+      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远或太近\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
       goBtn.disabled=false;goBtn.textContent='开始规划';
       return;
     }
@@ -342,13 +342,30 @@ function renderRouteAll(){
   for(let i=1;i<coords.length;i++){const diff=coords[i][0]-coords[i-1][0];if(diff>0)gain+=diff*111000;}
   gain=Math.round(gain);
 
+  const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
+  const modeColors={driving:'#4a7eb5',cycling:'#5a9a6a',walking:'#d47a2e'};
   document.getElementById('routeSummary').style.display='block';
   document.getElementById('routeSummary').innerHTML=`
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding:0 4px">
+      <span style="font-size:1.3em">${modeIcons[RSTATE.mode]}</span>
+      <span style="font-weight:600;font-size:.95em">${modeName[RSTATE.mode]}路线</span>
+      <span style="font-size:.7em;color:var(--sub);margin-left:auto">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</span>
+    </div>
     <div class="rs-grid">
-      <div class="rs-item"><div class="rsv">${dist} km</div><div class="rsl">总距离</div></div>
-      <div class="rs-item"><div class="rsv">${durStr}</div><div class="rsl">预计用时 (${modeName[RSTATE.mode]})</div></div>
-      <div class="rs-item"><div class="rsv">${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
-      <div class="rs-item"><div class="rsv">~${gain}m</div><div class="rsl">估算爬升</div></div>
+      <div class="rs-item"><div class="rsv">📏 ${dist} km</div><div class="rsl">总距离</div></div>
+      <div class="rs-item"><div class="rsv">⏱ ${durStr}</div><div class="rsl">预计用时</div></div>
+      <div class="rs-item"><div class="rsv">🏃 ${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
+      <div class="rs-item"><div class="rsv">⛰ ~${gain}m</div><div class="rsl">估算爬升</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px">
+      <div class="rs-item" style="border-left:3px solid ${modeColors[RSTATE.mode]}">
+        <div class="rsv" style="font-size:.9em">${RSTATE.fromGeo.name}</div>
+        <div class="rsl">起点 · ${(RSTATE.fromW.current.temperature_2m||0).toFixed(1)}° ${w(RSTATE.fromW.current.weather_code).i}</div>
+      </div>
+      <div class="rs-item" style="border-left:3px solid var(--warm)">
+        <div class="rsv" style="font-size:.9em">${RSTATE.toGeo.name}</div>
+        <div class="rsl">终点 · ${(RSTATE.toW.current.temperature_2m||0).toFixed(1)}° ${w(RSTATE.toW.current.weather_code).i}</div>
+      </div>
     </div>
   `;
 
@@ -376,12 +393,12 @@ function renderRouteWP(side,geo,data,container){
       <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>体感 ${now.apparent_temperature.toFixed(1)}°</span>
     </div>
     <div class="wpg">
-      <div class="wgi"><span class="wgiv">${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
-      <div class="wgi"><span class="wgiv">${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
-      <div class="wgi"><span class="wgiv">${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
-      <div class="wgi"><span class="wgiv">${today.uv_index_max[0]}</span><span class="wgil">UV 指数</span></div>
-      <div class="wgi"><span class="wgiv">${today.temperature_2m_max[0]}° / ${today.temperature_2m_min[0]}°</span><span class="wgil">今最高/低</span></div>
-      <div class="wgi"><span class="wgiv">${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照时长</span></div>
+      <div class="wgi"><span class="wgiv">🌬 ${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
+      <div class="wgi"><span class="wgiv">💧 ${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
+      <div class="wgi"><span class="wgiv">🌧 ${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
+      <div class="wgi"><span class="wgiv">☀️ ${today.uv_index_max[0]}</span><span class="wgil">UV 指数</span></div>
+      <div class="wgi"><span class="wgiv">🌡 ${today.temperature_2m_max[0]}° / ${today.temperature_2m_min[0]}°</span><span class="wgil">今日高/低</span></div>
+      <div class="wgi"><span class="wgiv">☀ ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照时长</span></div>
     </div>
   `;
   if(side==='from')container.prepend(panel);
@@ -406,23 +423,26 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
 <div class="tab-panel show" id="tab-weather">
 <div class="search-bar">
   <div class="search-box">
-    <input type="text" id="q" placeholder="输入地名搜索…&#10;例：六盘水 / 贵阳 / 北京 / Tokyo / Paris" autocomplete="off">
+    <input type="text" id="q" placeholder="输入地名搜索…&#10;例：上海 / 乌镇 / 大理 / Tokyo / Paris" autocomplete="off">
     <button onclick="doSearch()">搜索</button>
   </div>
   <div class="search-hint">支持中文/英文/拼音 · 全球地理编码 · 乡镇村庄均可搜</div>
   <div class="suggestions">
-    <span class="sug-chip" onclick="quickSearch('六盘水')">六盘水</span>
-    <span class="sug-chip" onclick="quickSearch('贵阳')">贵阳</span>
     <span class="sug-chip" onclick="quickSearch('北京')">北京</span>
+    <span class="sug-chip" onclick="quickSearch('上海')">上海</span>
+    <span class="sug-chip" onclick="quickSearch('贵阳')">贵阳</span>
     <span class="sug-chip" onclick="quickSearch('成都')">成都</span>
     <span class="sug-chip" onclick="quickSearch('昆明')">昆明</span>
+    <span class="sug-chip" onclick="quickSearch('大理')">大理</span>
+    <span class="sug-chip" onclick="quickSearch('乌镇')">乌镇</span>
+    <span class="sug-chip" onclick="quickSearch('凤凰')">凤凰</span>
     <span class="sug-chip" onclick="quickSearch('Tokyo')">东京</span>
     <span class="sug-chip" onclick="quickSearch('Paris')">巴黎</span>
   </div>
 </div>
 
 <div id="main">
-  <div class="status"><div class="spinner"></div><br><br>加载六盘水气象数据…</div>
+  <div class="status"><div class="spinner"></div><br><br>加载北京气象数据…</div>
 </div>
 
 
@@ -432,12 +452,12 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
 <div class="route-search">
   <div class="route-row">
     <span class="rdot from"></span>
-    <input type="text" id="fromInput" placeholder="起点… 例：六盘水" autocomplete="off">
+    <input type="text" id="fromInput" placeholder="起点… 例：北京" autocomplete="off">
     <button class="swap-btn" onclick="swap()" title="交换起终点">⇅</button>
   </div>
   <div class="route-row">
     <span class="rdot to"></span>
-    <input type="text" id="toInput" placeholder="终点… 例：贵阳" autocomplete="off">
+    <input type="text" id="toInput" placeholder="终点… 例：上海" autocomplete="off">
   </div>
   <div class="modes">
     <div class="mode-chip sel drive" data-mode="driving" onclick="setMode('driving')">
@@ -452,11 +472,14 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
   </div>
   <button class="go-btn" id="goBtn" onclick="plan()">开始规划</button>
   <div class="route-sug">
-    <span class="rsug" onclick="preset('六盘水','贵阳','driving')">六盘水→贵阳</span>
-    <span class="rsug" onclick="preset('贵阳','遵义','cycling')">贵阳→遵义(骑行)</span>
-    <span class="rsug" onclick="preset('成都','重庆','driving')">成都→重庆</span>
-    <span class="rsug" onclick="preset('昆明','大理','driving')">昆明→大理</span>
-    <span class="rsug" onclick="preset('北京','天津','cycling')">北京→天津(骑行)</span>
+    <span class="rsug" onclick="preset('北京','上海','driving')">🚗 北京→上海</span>
+    <span class="rsug" onclick="preset('北京','天津','cycling')">🚴 北京→天津</span>
+    <span class="rsug" onclick="preset('成都','重庆','driving')">🚗 成都→重庆</span>
+    <span class="rsug" onclick="preset('贵阳','遵义','cycling')">🚴 贵阳→遵义</span>
+    <span class="rsug" onclick="preset('昆明','大理','driving')">🚗 昆明→大理</span>
+    <span class="rsug" onclick="preset('乌镇','杭州','walking')">🥾 乌镇→杭州</span>
+    <span class="rsug" onclick="preset('凤凰','张家界','driving')">🚗 凤凰→张家界</span>
+    <span class="rsug" onclick="preset('黄果树','贵阳','driving')">🚗 黄果树→贵阳</span>
   </div>
 </div>
 
@@ -471,7 +494,7 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
 
 <script>
 // ── State ────────────────────────────────────────────
-let STATE={lat:26.58,lon:104.83,name:'六盘水',country:'中国',elev:1884,admin:'贵州',data:null};
+let STATE={lat:39.90,lon:116.40,name:'北京',country:'中国',elev:55,admin:'北京',data:null};
 const WMO={0:{i:'☀️',l:'晴'},1:{i:'🌤️',l:'少云'},2:{i:'⛅',l:'多云'},3:{i:'☁️',l:'阴'},45:{i:'🌫️',l:'雾'},48:{i:'🌫️',l:'冻雾'},51:{i:'🌧️',l:'小雨'},53:{i:'🌧️',l:'中雨'},55:{i:'🌧️',l:'大雨'},56:{i:'🌧️',l:'冻雨'},57:{i:'🌧️',l:'冻雨'},61:{i:'🌦️',l:'小阵雨'},63:{i:'🌧️',l:'中阵雨'},65:{i:'🌧️',l:'大阵雨'},66:{i:'🌧️',l:'冻雨'},67:{i:'🌧️',l:'冻雨'},71:{i:'❄️',l:'小雪'},73:{i:'❄️',l:'中雪'},75:{i:'❄️',l:'大雪'},77:{i:'❄️',l:'雪粒'},80:{i:'🌦️',l:'阵雨'},81:{i:'🌦️',l:'中阵雨'},82:{i:'🌧️',l:'大阵雨'},85:{i:'❄️',l:'小阵雪'},86:{i:'❄️',l:'大阵雪'},95:{i:'⛈️',l:'雷暴'},96:{i:'⛈️',l:'雷暴冰雹'},99:{i:'⛈️',l:'强雷暴冰雹'}};
 function w(c){return WMO[c]||{i:'🌥️',l:'未知'}}
 const WK=['周日','周一','周二','周三','周四','周五','周六'];
@@ -855,7 +878,7 @@ async function routeGeocode(q){
 async function getRoute(from,to,mode){
   const profiles={driving:'car',cycling:'bike',walking:'foot'};
   const profile=profiles[mode]||'car';
-  const u=`https://router.project-osrm.org/route/v1/${profile}/${from.lon},${from.lat};${to.lon},${to.lat}?overview=full&geometries=geojson&steps=true&alternatives=false`;
+  const u=`https://router.project-osrm.org/route/v1/${profile}/${from.longitude},${from.latitude};${to.longitude},${to.latitude}?overview=full&geometries=geojson&steps=true&alternatives=false`;
   const r=await fetch(u);
   const d=await r.json();
   if(!d.routes||!d.routes.length)return null;
@@ -894,7 +917,7 @@ async function plan(){
     ]);
 
     if(!route){
-      alert('未找到可行路线，请尝试其他交通方式');
+      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远或太近\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
       goBtn.disabled=false;goBtn.textContent='开始规划';
       return;
     }
@@ -941,13 +964,30 @@ function renderRouteAll(){
   for(let i=1;i<coords.length;i++){const diff=coords[i][0]-coords[i-1][0];if(diff>0)gain+=diff*111000;}
   gain=Math.round(gain);
 
+  const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
+  const modeColors={driving:'#4a7eb5',cycling:'#5a9a6a',walking:'#d47a2e'};
   document.getElementById('routeSummary').style.display='block';
   document.getElementById('routeSummary').innerHTML=`
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding:0 4px">
+      <span style="font-size:1.3em">${modeIcons[RSTATE.mode]}</span>
+      <span style="font-weight:600;font-size:.95em">${modeName[RSTATE.mode]}路线</span>
+      <span style="font-size:.7em;color:var(--sub);margin-left:auto">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</span>
+    </div>
     <div class="rs-grid">
-      <div class="rs-item"><div class="rsv">${dist} km</div><div class="rsl">总距离</div></div>
-      <div class="rs-item"><div class="rsv">${durStr}</div><div class="rsl">预计用时 (${modeName[RSTATE.mode]})</div></div>
-      <div class="rs-item"><div class="rsv">${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
-      <div class="rs-item"><div class="rsv">~${gain}m</div><div class="rsl">估算爬升</div></div>
+      <div class="rs-item"><div class="rsv">📏 ${dist} km</div><div class="rsl">总距离</div></div>
+      <div class="rs-item"><div class="rsv">⏱ ${durStr}</div><div class="rsl">预计用时</div></div>
+      <div class="rs-item"><div class="rsv">🏃 ${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
+      <div class="rs-item"><div class="rsv">⛰ ~${gain}m</div><div class="rsl">估算爬升</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px">
+      <div class="rs-item" style="border-left:3px solid ${modeColors[RSTATE.mode]}">
+        <div class="rsv" style="font-size:.9em">${RSTATE.fromGeo.name}</div>
+        <div class="rsl">起点 · ${(RSTATE.fromW.current.temperature_2m||0).toFixed(1)}° ${w(RSTATE.fromW.current.weather_code).i}</div>
+      </div>
+      <div class="rs-item" style="border-left:3px solid var(--warm)">
+        <div class="rsv" style="font-size:.9em">${RSTATE.toGeo.name}</div>
+        <div class="rsl">终点 · ${(RSTATE.toW.current.temperature_2m||0).toFixed(1)}° ${w(RSTATE.toW.current.weather_code).i}</div>
+      </div>
     </div>
   `;
 
@@ -975,12 +1015,12 @@ function renderRouteWP(side,geo,data,container){
       <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>体感 ${now.apparent_temperature.toFixed(1)}°</span>
     </div>
     <div class="wpg">
-      <div class="wgi"><span class="wgiv">${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
-      <div class="wgi"><span class="wgiv">${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
-      <div class="wgi"><span class="wgiv">${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
-      <div class="wgi"><span class="wgiv">${today.uv_index_max[0]}</span><span class="wgil">UV 指数</span></div>
-      <div class="wgi"><span class="wgiv">${today.temperature_2m_max[0]}° / ${today.temperature_2m_min[0]}°</span><span class="wgil">今最高/低</span></div>
-      <div class="wgi"><span class="wgiv">${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照时长</span></div>
+      <div class="wgi"><span class="wgiv">🌬 ${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
+      <div class="wgi"><span class="wgiv">💧 ${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
+      <div class="wgi"><span class="wgiv">🌧 ${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
+      <div class="wgi"><span class="wgiv">☀️ ${today.uv_index_max[0]}</span><span class="wgil">UV 指数</span></div>
+      <div class="wgi"><span class="wgiv">🌡 ${today.temperature_2m_max[0]}° / ${today.temperature_2m_min[0]}°</span><span class="wgil">今日高/低</span></div>
+      <div class="wgi"><span class="wgiv">☀ ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照时长</span></div>
     </div>
   `;
   if(side==='from')container.prepend(panel);
