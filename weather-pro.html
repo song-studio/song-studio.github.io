@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>气象查询 · 路线规划</title>
@@ -38,7 +40,7 @@
 
 *{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{
-  font-family:'Georgia','Noto Serif SC','Songti SC',serif;
+  font-family:'Playfair Display','Noto Serif SC','Georgia','Songti SC',serif;
   background:var(--bg);
   color:var(--text);
   min-height:100vh;
@@ -294,19 +296,20 @@ body{
 
 /* ── Route search ── */
 .route-search{
-  background:var(--card);padding:20px;margin-bottom:16px;
+  background:var(--card);padding:24px 20px;margin-bottom:20px;
   box-shadow:var(--card-shadow);border:1px solid var(--border);
+  border-top:3px solid var(--ochre);
 }
-.route-row{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.route-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
 .route-row .rdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .route-row .rdot.from{background:var(--forest)}
 .route-row .rdot.to{background:var(--ochre)}
 .route-row input{
   flex:1;border:none;border-bottom:1px solid var(--rule);
-  padding:10px 0;font-size:.86em;outline:none;
+  padding:10px 0;font-size:.88em;outline:none;
   background:none;min-width:0;
   transition:border-color .2s;
-  font-family:'Georgia','Noto Serif SC',serif;
+  font-family:'Playfair Display','Noto Serif SC',serif;
 }
 .route-row input:focus{border-bottom-color:var(--ochre)}
 .swap-btn{
@@ -318,22 +321,21 @@ body{
 .swap-btn:hover{background:var(--bg);transform:rotate(180deg);color:var(--ink)}
 
 /* ── Transport mode chips ── */
-.modes{display:flex;gap:6px;flex-wrap:wrap}
+.modes{display:flex;gap:8px;flex-wrap:wrap}
 .mode-chip{
-  flex:1;min-width:70px;text-align:center;
-  padding:10px 6px;
+  flex:1;min-width:80px;text-align:center;
+  padding:14px 10px;
   border:1px solid var(--rule);background:var(--card);
-  cursor:pointer;font-size:.7em;font-weight:500;
+  cursor:pointer;font-size:.78em;font-weight:600;
   transition:all .2s;
-  font-family:-apple-system,'PingFang SC',sans-serif;
-  text-transform:uppercase;letter-spacing:.04em;
+  font-family:'Playfair Display','Noto Serif SC',serif;
+  letter-spacing:.04em;
 }
-.mode-chip:hover{border-color:var(--ink)}
-.mode-chip.sel{color:#fff;border-color:transparent;font-weight:700}
-.mode-chip.sel.drive{background:var(--drive)}
-.mode-chip.sel.bike{background:var(--bike)}
-.mode-chip.sel.walk{background:var(--walk)}
-.mode-chip .emoji{display:block;font-size:1.4em;margin-bottom:4px}
+.mode-chip:hover{border-color:var(--ink);background:var(--bg)}
+.mode-chip.sel{color:#fff;border-color:transparent;font-weight:700;letter-spacing:.06em}
+.mode-chip.sel.drive{background:var(--forest)}
+.mode-chip.sel.bike{background:var(--ochre)}
+.mode-chip.sel.walk{background:var(--sky)}
 
 /* ── Go button ── */
 .go-btn{
@@ -491,7 +493,19 @@ footer a:hover{color:var(--ink)}
 </div>
 
 <div id="main">
-  <div class="status" style="color:var(--sub);padding:80px 0">☝️ 输入地名，查看实时气象</div>
+  <div style="text-align:center;padding:40px 10px 60px">
+    <div style="font-family:'Playfair Display','Noto Serif SC',serif;font-size:2.2em;color:var(--ink);margin-bottom:10px;line-height:1.3">气象与山野</div>
+    <div style="font-size:.72em;color:var(--sub);margin-bottom:36px;letter-spacing:.06em;font-family:-apple-system,'PingFang SC',sans-serif">WEATHER &amp; TRAILS</div>
+    <div style="max-width:420px;margin:0 auto;text-align:left;font-size:.82em;line-height:2;color:var(--sub);font-family:-apple-system,'PingFang SC',sans-serif">
+      <p style="margin-bottom:18px">一座为<span style="color:var(--ink);font-weight:600">徒步者、露营者、户外爱好者</span>准备的气象工具。</p>
+      <p style="margin-bottom:8px"><span style="color:var(--forest)">▸</span> 精准定位全国乡镇、校区、景点</p>
+      <p style="margin-bottom:8px"><span style="color:var(--ochre)">▸</span> 九项户外指数：徒步·露营·观星·摄影·钓鱼·攀岩</p>
+      <p style="margin-bottom:8px"><span style="color:var(--sky)">▸</span> 6日逐时预报 + 温度曲线</p>
+      <p style="margin-bottom:8px"><span style="color:var(--forest)">▸</span> Windy 风场雷达 + Meteoblue 专业模式</p>
+      <p style="margin-bottom:18px"><span style="color:var(--ochre)">▸</span> 路线规划：驾车·骑行·步行 + 海拔剖面 + 徒步道叠加</p>
+      <p style="color:var(--muted);font-size:.88em;font-style:italic">数据：高德地图 · Open-Meteo · Windy · Meteoblue</p>
+    </div>
+  </div>
 </div>
 
 
@@ -501,34 +515,28 @@ footer a:hover{color:var(--ink)}
 <div class="route-search">
   <div class="route-row">
     <span class="rdot from"></span>
-    <input type="text" id="fromInput" placeholder="起点… 例：北京" autocomplete="off">
-    <button class="swap-btn" onclick="swap()" title="交换起终点">⇅</button>
+    <input type="text" id="fromInput" placeholder="起点… 例：贵阳" autocomplete="off">
+    <button class="swap-btn" onclick="swap()" title="交换起终点">↕</button>
   </div>
   <div class="route-row">
     <span class="rdot to"></span>
-    <input type="text" id="toInput" placeholder="终点… 例：上海" autocomplete="off">
+    <input type="text" id="toInput" placeholder="终点… 例：六盘水" autocomplete="off">
   </div>
   <div class="modes">
-    <div class="mode-chip sel drive" data-mode="driving" onclick="setMode('driving')">
-      <span class="emoji">🚗</span>驾车
-    </div>
-    <div class="mode-chip bike" data-mode="cycling" onclick="setMode('cycling')">
-      <span class="emoji">🚴</span>骑行
-    </div>
-    <div class="mode-chip walk" data-mode="walking" onclick="setMode('walking')">
-      <span class="emoji">🥾</span>步行
-    </div>
+    <div class="mode-chip sel drive" data-mode="driving" onclick="setMode('driving')">驾车</div>
+    <div class="mode-chip bike" data-mode="cycling" onclick="setMode('cycling')">骑行</div>
+    <div class="mode-chip walk" data-mode="walking" onclick="setMode('walking')">步行</div>
   </div>
   <button class="go-btn" id="goBtn" onclick="plan()">开始规划</button>
   <div class="route-sug">
-    <span class="rsug" onclick="preset('北京','上海','driving')">🚗 北京→上海</span>
-    <span class="rsug" onclick="preset('北京','天津','cycling')">🚴 北京→天津</span>
-    <span class="rsug" onclick="preset('成都','重庆','driving')">🚗 成都→重庆</span>
-    <span class="rsug" onclick="preset('贵阳','遵义','cycling')">🚴 贵阳→遵义</span>
-    <span class="rsug" onclick="preset('昆明','大理','driving')">🚗 昆明→大理</span>
-    <span class="rsug" onclick="preset('乌镇','杭州','walking')">🥾 乌镇→杭州</span>
-    <span class="rsug" onclick="preset('凤凰','张家界','driving')">🚗 凤凰→张家界</span>
-    <span class="rsug" onclick="preset('黄果树','贵阳','driving')">🚗 黄果树→贵阳</span>
+    <span class="rsug" onclick="preset('北京','上海','driving')">北京 → 上海</span>
+    <span class="rsug" onclick="preset('北京','天津','cycling')">北京 → 天津</span>
+    <span class="rsug" onclick="preset('成都','重庆','driving')">成都 → 重庆</span>
+    <span class="rsug" onclick="preset('贵阳','遵义','cycling')">贵阳 → 遵义</span>
+    <span class="rsug" onclick="preset('昆明','大理','driving')">昆明 → 大理</span>
+    <span class="rsug" onclick="preset('六盘水','贵阳','driving')">六盘水 → 贵阳</span>
+    <span class="rsug" onclick="preset('凤凰','张家界','driving')">凤凰 → 张家界</span>
+    <span class="rsug" onclick="preset('黄果树','贵阳','driving')">黄果树 → 贵阳</span>
   </div>
 </div>
 
@@ -1147,9 +1155,9 @@ async function renderRouteAll(){
       </div>
     </div>
     <div style="margin-top:10px;display:flex;gap:6px;font-size:.58em;font-family:-apple-system,'PingFang SC',sans-serif">
-      <span style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='amap'?'var(--ink)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">🗺️ 标准</span>
-      <span style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='osm'?'var(--ink)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">🌍 OSM</span>
-      <span style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE._hikingOn?'var(--ink)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">🥾 徒步道</span>
+      <span data-map-btn="amap" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='amap'?'var(--ink)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">标准</span>
+      <span data-map-btn="osm" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='osm'?'var(--ink)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">OSM</span>
+      <span data-map-btn="hiking" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE._hikingOn?'var(--ink)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">徒步道</span>
     </div>
     ${buildRouteSteps()}
   `;
@@ -1165,22 +1173,27 @@ async function renderRouteAll(){
 function switchMapStyle(style){
   const m=RSTATE.rmap;if(!m)return;
   RSTATE.mapStyle=style;
-  m.eachLayer(l=>{if(l instanceof L.TileLayer&&l!==RSTATE.hikingLayer)m.removeLayer(l);});
+  // Remove all tile layers except hiking
+  m.eachLayer(l=>{if(l instanceof L.TileLayer&&l!==RSTATE.hikingLayer&&l._url&&!l._url.includes('waymarkedtrails'))m.removeLayer(l);});
   if(style==='amap'){
-    L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',{subdomains:'1234',attribution:'&copy; 高德',maxZoom:18}).addTo(m);
+    RSTATE.baseLayer=L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',{subdomains:'1234',attribution:'&copy; 高德',maxZoom:18}).addTo(m);
   }else{
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OSM',maxZoom:18}).addTo(m);
+    RSTATE.baseLayer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OSM',maxZoom:18}).addTo(m);
   }
-  document.querySelectorAll('#routeSummary span[onclick^="switchMapStyle"]').forEach(s=>{
-    const isActive=(s.textContent.includes('标准')&&style==='amap')||(s.textContent.includes('OSM')&&style==='osm');
-    s.style.background=isActive?'var(--ink)':'none';s.style.color=isActive?'#fff':'var(--sub)';
+  // Update toggle buttons in DOM
+  const btns=document.querySelectorAll('#routeSummary [data-map-btn]');
+  btns.forEach(b=>{
+    const v=b.getAttribute('data-map-btn');
+    const active=(v==='amap'&&style==='amap')||(v==='osm'&&style==='osm');
+    b.style.background=active?'var(--ink)':'none';b.style.color=active?'#fff':'var(--sub)';
   });
 }
-
 function toggleHiking(){
   const m=RSTATE.rmap;if(!m)return;
   RSTATE._hikingOn=!RSTATE._hikingOn;
   if(RSTATE._hikingOn)m.addLayer(RSTATE.hikingLayer);else m.removeLayer(RSTATE.hikingLayer);
+  const btn=document.querySelector('#routeSummary [data-map-btn="hiking"]');
+  if(btn){btn.style.background=RSTATE._hikingOn?'var(--ink)':'none';btn.style.color=RSTATE._hikingOn?'#fff':'var(--sub)';}
 }
 
 function drawElevProfile(data){
