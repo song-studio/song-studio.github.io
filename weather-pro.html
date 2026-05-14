@@ -8,250 +8,285 @@
 <title>气象查询 · 路线规划</title>
 <style>
 /* ═══════════════════════════════════════════
-   Design: refined weather + route dashboard
-   Palette: cream paper + navy accent + coral warmth
+   Outdoor Magazine · 户外杂志风
+   Earth tones + editorial typography + generous whitespace
    ═══════════════════════════════════════════ */
 :root{
-  --bg:#f9f6f0;
-  --card:#fffefc;
-  --text:#1c1c1c;
-  --sub:#7a756d;
-  --muted:#b5b0a6;
-  --navy:#1a4380;
-  --navy-light:#2b5ea7;
-  --sky:#4a90c4;
-  --coral:#e07642;
-  --green:#3d8250;
-  --rain:#5989b0;
-  --drive:#2b5ea7;
-  --bike:#3d8250;
-  --walk:#e07642;
-  --border:#e8e3da;
-  --card-shadow:0 1px 2px rgba(0,0,0,.04),0 3px 12px rgba(0,0,0,.05);
-  --card-hover:0 2px 4px rgba(0,0,0,.06),0 4px 20px rgba(0,0,0,.08);
-  --radius:16px;
-  --radius-sm:10px;
+  --bg:#f9f4eb;
+  --card:#fffdf8;
+  --text:#2c2416;
+  --sub:#7a7265;
+  --muted:#b5ada0;
+  --ink:#3d3226;
+  --forest:#2d5a3d;
+  --forest-light:#4a7c5c;
+  --ochre:#c4733e;
+  --ochre-light:#d4894f;
+  --sky:#6b99b2;
+  --rain:#7a9eb3;
+  --sun:#d4a43c;
+  --drive:#2d5a3d;
+  --bike:#c4733e;
+  --walk:#6b99b2;
+  --border:#e6dfd2;
+  --rule:#d9d0c0;
+  --card-shadow:0 1px 2px rgba(0,0,0,.03),0 2px 8px rgba(0,0,0,.04);
+  --card-hover:0 2px 4px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.06);
+  --radius:4px;
+  --radius-sm:3px;
 }
 
 *{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{
-  font-family:-apple-system,'PingFang SC','Noto Sans SC','Inter',sans-serif;
+  font-family:'Georgia','Noto Serif SC','Songti SC',serif;
   background:var(--bg);
   color:var(--text);
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
-  line-height:1.5;
-  font-size:16px;
+  line-height:1.6;
+  font-size:17px;
 }
-.wrap{max-width:720px;margin:0 auto;padding:10px 16px 80px}
+.wrap{max-width:700px;margin:0 auto;padding:16px 20px 80px}
 
 /* ── Tab bar ── */
 .tab-bar{
-  display:flex;
-  background:var(--card);
-  border-radius:var(--radius);
-  padding:5px;
-  margin-bottom:14px;
-  box-shadow:var(--card-shadow);
-  gap:4px;
-  position:sticky;
-  top:8px;
-  z-index:20;
-  border:1px solid var(--border);
+  display:flex;gap:0;
+  margin-bottom:24px;
+  border-bottom:2px solid var(--rule);
+  position:sticky;top:0;z-index:20;
+  background:var(--bg);
+  padding:8px 0 0;
 }
 .tab-btn{
   flex:1;text-align:center;
-  padding:12px 8px;border-radius:12px;
-  border:none;background:transparent;
+  padding:12px 8px 14px;
+  border:none;background:none;
   cursor:pointer;
-  font-size:.82em;font-weight:500;
+  font-family:'Georgia','Noto Serif SC',serif;
+  font-size:.88em;font-weight:400;
+  color:var(--muted);
+  letter-spacing:.04em;
   transition:all .2s;
-  color:var(--sub);
-  letter-spacing:.02em;
+  border-bottom:2px solid transparent;
+  margin-bottom:-2px;
+  position:relative;
 }
 .tab-btn.active{
-  background:var(--navy);
-  color:#fff;
-  box-shadow:0 2px 12px rgba(26,67,128,.25);
-  font-weight:600;
+  color:var(--ink);
+  border-bottom-color:var(--ochre);
+  font-weight:700;
 }
+.tab-btn:hover{color:var(--ink)}
 .tab-btn:active{transform:scale(.97)}
 .tab-panel{display:none}
 .tab-panel.show{display:block}
 
 /* ── Search ── */
-.search-bar{padding:4px 0 12px}
+.search-bar{padding:0 0 20px}
 .search-box{
-  display:flex;gap:6px;
-  background:var(--card);
-  border-radius:var(--radius);
-  padding:4px 4px 4px 16px;
-  box-shadow:var(--card-shadow);
+  display:flex;gap:0;
+  border-bottom:1px solid var(--rule);
+  padding:0 0 12px;
   align-items:center;
-  border:1px solid var(--border);
+  transition:border-color .3s;
 }
-.search-box input{flex:1;border:none;outline:none;font-size:.94em;background:none;color:var(--text);padding:10px 0;min-width:0}
-.search-box input::placeholder{color:var(--muted)}
+.search-box:focus-within{border-bottom-color:var(--ochre)}
+.search-box input{
+  flex:1;border:none;outline:none;
+  font-size:1em;background:none;color:var(--text);
+  padding:8px 0;min-width:0;
+  font-family:'Georgia','Noto Serif SC',serif;
+}
+.search-box input::placeholder{color:var(--muted);font-style:italic}
 .search-box button{
   flex-shrink:0;
-  background:var(--navy);
-  color:#fff;border:none;
-  border-radius:var(--radius-sm);
-  padding:10px 20px;
-  font-size:.84em;font-weight:600;
-  cursor:pointer;letter-spacing:.02em;
-  transition:all .15s;
+  background:none;color:var(--ochre);border:1px solid var(--ochre);
+  padding:8px 18px;
+  font-size:.78em;font-weight:700;
+  cursor:pointer;letter-spacing:.06em;
+  text-transform:uppercase;
+  transition:all .2s;
+  font-family:'Georgia',serif;
 }
-.search-box button:hover{background:var(--navy-light)}
+.search-box button:hover{background:var(--ochre);color:#fff}
 .search-box button:active{transform:scale(.97)}
-.search-hint{font-size:.6em;color:var(--muted);margin-top:6px;padding-left:2px;letter-spacing:.02em}
-.suggestions{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.search-hint{font-size:.58em;color:var(--muted);margin-top:8px;font-style:italic;font-family:-apple-system,'PingFang SC',sans-serif}
+.suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .sug-chip{
-  font-size:.66em;padding:5px 12px;
-  background:var(--card);border-radius:20px;
-  cursor:pointer;color:var(--sub);
-  border:1px solid var(--border);
-  transition:all .15s;
+  font-size:.62em;padding:4px 14px;
+  background:none;cursor:pointer;color:var(--sub);
+  border:1px solid var(--rule);
+  transition:all .2s;
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
-.sug-chip:hover{background:#eef3fa;border-color:var(--sky);color:var(--navy)}
-.sug-chip:active{transform:scale(.95)}
+.sug-chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 /* ── Status ── */
-.status{text-align:center;padding:80px 0;color:var(--sub)}
-.status.error{color:var(--coral)}
+.status{text-align:center;padding:100px 0;color:var(--muted);font-style:italic;font-family:'Georgia',serif}
+.status.error{color:var(--ochre)}
 .spinner{
-  display:inline-block;width:22px;height:22px;
-  border:2px solid #e0dcd6;border-top-color:var(--navy);
-  border-radius:50%;animation:spin .6s linear infinite;
+  display:inline-block;width:20px;height:20px;
+  border:2px solid var(--rule);border-top-color:var(--ochre);
+  border-radius:50%;animation:spin .7s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── Site header ── */
-.site-header{text-align:center;padding:6px 0 4px}
-.site-header h1{font-size:1em;font-weight:600;letter-spacing:.01em}
-.site-header .loc{font-size:.76em;color:var(--sub);margin-top:2px}
+/* ── Masthead ── */
+.site-header{text-align:center;padding:20px 0 8px}
+.site-header h1{font-size:1.3em;font-weight:400;letter-spacing:.02em;font-family:'Georgia','Noto Serif SC',serif;color:var(--ink)}
+.site-header .loc{font-size:.7em;color:var(--sub);margin-top:4px;font-family:-apple-system,'PingFang SC',sans-serif}
 .src-bar{
-  display:flex;justify-content:center;gap:16px;
-  padding:2px 0 8px;font-size:.62em;color:var(--muted);flex-wrap:wrap;
+  display:flex;justify-content:center;gap:20px;
+  padding:6px 0 18px;font-size:.56em;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.08em;
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
-.src-bar span{display:flex;align-items:center;gap:4px}
-.src-bar .dot{width:5px;height:5px;border-radius:50%}
-.dot.om{background:var(--navy)}.dot.wy{background:#1e88e5}.dot.mb{background:#f48fb1}
+.src-bar .dot{width:4px;height:4px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:middle}
+.dot.om{background:var(--ochre)}.dot.wy{background:var(--sky)}.dot.mb{background:var(--forest)}
 
-/* ── Now card (gradient weather) ── */
+/* ── Hero temperature ── */
 .now-card{
-  background:linear-gradient(145deg,#1a4380,#2b5ea7);
-  color:#fff;border-radius:20px;
-  padding:26px 22px;margin-bottom:16px;
-  box-shadow:0 6px 28px rgba(26,67,128,.25);
+  text-align:center;padding:30px 20px 20px;margin-bottom:28px;
+  border-bottom:1px solid var(--rule);
 }
-.now-card .now-temp{font-size:3.4em;font-weight:200;line-height:1;letter-spacing:-.02em}
-.now-card .now-label{font-size:.84em;opacity:.85;margin-top:4px}
-.now-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:18px}
+.now-card .now-temp{
+  font-size:5em;font-weight:400;line-height:1;
+  letter-spacing:-.03em;color:var(--ink);
+  font-family:'Georgia','Noto Serif SC',serif;
+}
+.now-card .now-label{
+  font-size:.82em;color:var(--sub);margin-top:8px;
+  font-family:-apple-system,'PingFang SC',sans-serif;
+}
+.now-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+  margin-top:24px;text-align:center;
+  font-family:-apple-system,'PingFang SC',sans-serif;
+}
 @media(max-width:480px){.now-grid{grid-template-columns:repeat(2,1fr)}}
-.now-item{
-  background:rgba(255,255,255,.12);border-radius:12px;
-  padding:12px 8px;text-align:center;backdrop-filter:blur(8px);
-}
-.now-item .nv{font-size:1em;font-weight:600}
-.now-item .nl{font-size:.6em;opacity:.65;margin-top:2px}
+.now-item{padding:14px 6px}
+.now-item .nv{font-size:1.05em;font-weight:600;color:var(--ink)}
+.now-item .nl{font-size:.56em;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
 
 /* ── Section title ── */
 .sec-title{
-  font-size:.68em;color:var(--sub);
-  margin:22px 0 8px;letter-spacing:.05em;
-  font-weight:500;
-  display:flex;align-items:center;gap:6px;
+  font-size:.64em;color:var(--ochre);
+  margin:36px 0 16px;
+  letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;
+  font-family:-apple-system,'PingFang SC',sans-serif;
+  border-top:1px solid var(--rule);
+  padding-top:20px;
 }
 
 /* ── Day cards ── */
-.days{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:16px}
-@media(max-width:680px){.days{grid-template-columns:repeat(3,1fr);gap:5px}}
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:20px}
+@media(max-width:680px){.days{grid-template-columns:repeat(3,1fr);gap:4px}}
 @media(max-width:380px){.days{grid-template-columns:repeat(2,1fr)}}
 .day-card{
-  background:var(--card);border-radius:var(--radius-sm);
-  padding:12px 6px 10px;text-align:center;
-  cursor:pointer;transition:all .18s;
+  background:var(--card);padding:14px 6px 12px;text-align:center;
+  cursor:pointer;transition:all .2s;
   box-shadow:var(--card-shadow);
   border:1px solid var(--border);user-select:none;
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
-.day-card:active{transform:scale(.96)}
+.day-card:hover{box-shadow:var(--card-hover);transform:translateY(-1px)}
+.day-card:active{transform:scale(.97)}
 .day-card.active{
-  border-color:var(--navy);
-  box-shadow:0 0 0 2px var(--navy),0 4px 16px rgba(26,67,128,.12);
-  background:#eef3fa;
+  border-color:var(--ink);
+  box-shadow:0 0 0 1px var(--ink);
+  background:var(--card);
 }
-.day-card .dow{font-size:.74em;font-weight:600}
-.day-card .date{font-size:.6em;color:var(--sub);margin-bottom:3px}
-.day-card .icon{font-size:1.5em;margin:4px 0;display:block}
-.day-card .temps{font-size:.82em;font-weight:500}
-.day-card .temps .lo{color:var(--sub);margin-left:1px}
-.day-card .rain-bar{margin-top:5px;height:3px;background:#eee;border-radius:2px;overflow:hidden}
-.day-card .rain-bar .fill{height:100%;background:var(--rain);border-radius:2px;transition:width .3s}
-.day-card .tag{font-size:.56em;color:var(--sub);margin-top:2px}
+.day-card .dow{font-size:.66em;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.day-card .date{font-size:.56em;color:var(--sub);margin-bottom:6px}
+.day-card .icon{font-size:1.5em;margin:6px 0;display:block}
+.day-card .temps{font-size:.82em;font-weight:600;color:var(--ink)}
+.day-card .temps .lo{color:var(--sub);font-weight:400;margin-left:2px}
+.day-card .rain-bar{margin-top:6px;height:2px;background:var(--rule);overflow:hidden}
+.day-card .rain-bar .fill{height:100%;background:var(--sky);transition:width .3s}
+.day-card .tag{font-size:.52em;color:var(--sub);margin-top:3px}
 
 /* ── Detail panel ── */
 .detail{
-  background:var(--card);border-radius:var(--radius);
-  padding:20px 16px;margin-bottom:12px;
+  background:var(--card);padding:24px 20px;margin-bottom:16px;
   box-shadow:var(--card-shadow);border:1px solid var(--border);
   display:none;
 }
 .detail.show{display:block}
-.detail h3{font-size:.9em;margin-bottom:14px;color:var(--navy);font-weight:600}
+.detail h3{
+  font-size:.88em;margin-bottom:20px;color:var(--ink);
+  font-weight:700;font-family:'Georgia','Noto Serif SC',serif;
+}
 .dg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-@media(max-width:480px){.dg{grid-template-columns:repeat(2,1fr);gap:5px}}
-.di{background:#f7f5f1;border-radius:10px;padding:12px 10px;text-align:center}
-.di .l{font-size:.62em;color:var(--sub)}
-.di .v{font-size:.9em;font-weight:600;margin-top:4px}
+@media(max-width:480px){.dg{grid-template-columns:repeat(2,1fr);gap:4px}}
+.di{background:var(--bg);padding:14px 10px;text-align:center;font-family:-apple-system,'PingFang SC',sans-serif}
+.di .l{font-size:.56em;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.di .v{font-size:.88em;font-weight:600;margin-top:6px;color:var(--ink)}
 
 /* ── Hourly strip ── */
-.hs-wrap{margin-top:16px}
-.hs-label{font-size:.68em;color:var(--sub);margin-bottom:8px}
-.hs{display:flex;overflow-x:auto;gap:3px;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-.hs::-webkit-scrollbar{height:3px}.hs::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px}
-.hc{flex:0 0 auto;min-width:46px;text-align:center;padding:6px 3px;background:#f7f5f1;border-radius:8px;font-size:.58em}
-.hc.nw{background:#eef3fa;border:1px solid #d0dff0}
-.hc .h{font-weight:600;margin-bottom:3px;display:block}
-.hc .t{margin-bottom:1px}
-.hc .r{color:var(--rain)}
+.hs-wrap{margin-top:20px}
+.hs-label{
+  font-size:.6em;color:var(--sub);margin-bottom:10px;
+  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-style:italic;
+}
+.hs{display:flex;overflow-x:auto;gap:2px;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+.hs::-webkit-scrollbar{height:2px}.hs::-webkit-scrollbar-thumb{background:var(--rule)}
+.hc{
+  flex:0 0 auto;min-width:48px;text-align:center;padding:8px 4px;
+  background:var(--card);font-size:.56em;
+  font-family:-apple-system,'PingFang SC',sans-serif;
+  border:1px solid var(--border);
+}
+.hc.nw{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hc.nw .r{color:rgba(255,255,255,.7)}
+.hc .h{font-weight:600;margin-bottom:4px;display:block}
+.hc .t{margin-bottom:2px}
+.hc .r{color:var(--sky)}
 
 /* ── Chart ── */
-.chart-wrap{margin-top:12px;width:100%;overflow-x:auto}
+.chart-wrap{margin-top:16px;width:100%;overflow-x:auto}
 .chart-wrap svg{min-width:500px;width:100%;height:auto}
 
 /* ── Outdoor indices ── */
-.outdoor{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0}
-@media(max-width:480px){.outdoor{grid-template-columns:1fr}}
+.outdoor{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:20px 0}
+@media(max-width:680px){.outdoor{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:400px){.outdoor{grid-template-columns:1fr}}
 .oc{
-  background:var(--card);border-radius:var(--radius);
-  padding:16px;box-shadow:var(--card-shadow);
+  background:var(--card);padding:18px 14px;
+  box-shadow:var(--card-shadow);
   border:1px solid var(--border);
+  border-top:3px solid var(--rule);
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
-.oc .oh{font-size:.76em;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.oc .ov{font-size:1.1em;font-weight:300;margin-bottom:4px}
-.oc .od{font-size:.66em;color:var(--sub);line-height:1.5}
-.oe{display:inline-block;padding:3px 10px;border-radius:14px;font-size:.68em;font-weight:600}
-.oe.good{background:#e4f0e8;color:var(--green)}
-.oe.warn{background:#fef4ea;color:var(--coral)}
-.oe.bad{background:#fce4e4;color:#c44}
+.oc .oh{font-size:.68em;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:6px;color:var(--ink);letter-spacing:.03em}
+.oc .ov{font-size:.95em;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.oc .od{font-size:.58em;color:var(--sub);line-height:1.6}
+.oe{display:inline-block;padding:3px 10px;font-size:.64em;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.oe.good{background:#e8efe4;color:var(--forest)}
+.oe.warn{background:#fdf0e4;color:var(--ochre)}
+.oe.bad{background:#fce8e4;color:#c44}
 
 /* ── Windy ── */
-.extern{margin:18px 0}
-.extern h4{font-size:.72em;color:var(--sub);margin-bottom:10px;font-weight:500}
-.windy-box{border-radius:16px;overflow:hidden;box-shadow:var(--card-hover);height:340px}
+.extern{margin:24px 0}
+.extern h4{
+  font-size:.64em;color:var(--ochre);margin-bottom:14px;
+  font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  font-family:-apple-system,'PingFang SC',sans-serif;
+}
+.windy-box{overflow:hidden;box-shadow:var(--card-hover);height:350px;border:1px solid var(--border)}
 .windy-box iframe{width:100%;height:100%;border:0}
 @media(max-width:480px){.windy-box{height:220px}}
-.ext-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.ext-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .ext-link{
   flex:1;min-width:130px;
-  background:var(--card);border-radius:14px;
-  padding:14px;text-align:center;text-decoration:none;
-  color:var(--text);box-shadow:var(--card-shadow);
-  font-size:.74em;border:1px solid var(--border);
+  background:var(--card);padding:16px;text-align:center;text-decoration:none;
+  color:var(--ink);box-shadow:var(--card-shadow);
+  font-size:.68em;border:1px solid var(--border);
   transition:all .2s;
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
-.ext-link:hover{transform:translateY(-1px);box-shadow:var(--card-hover)}
+.ext-link:hover{transform:translateY(-2px);box-shadow:var(--card-hover);border-color:var(--ink)}
 
 /* ═══════════════════════════════════════════
    ROUTE PLANNER STYLES
@@ -259,157 +294,168 @@ body{
 
 /* ── Route search ── */
 .route-search{
-  background:var(--card);border-radius:var(--radius);
-  padding:16px;margin-bottom:12px;
+  background:var(--card);padding:20px;margin-bottom:16px;
   box-shadow:var(--card-shadow);border:1px solid var(--border);
 }
-.route-row{display:flex;align-items:center;gap:8px;margin-bottom:10px}
-.route-row .rdot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.route-row .rdot.from{background:var(--navy);box-shadow:0 0 0 3px rgba(26,67,128,.15)}
-.route-row .rdot.to{background:var(--coral);box-shadow:0 0 0 3px rgba(224,118,66,.15)}
+.route-row{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.route-row .rdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.route-row .rdot.from{background:var(--forest)}
+.route-row .rdot.to{background:var(--ochre)}
 .route-row input{
-  flex:1;border:1px solid var(--border);border-radius:10px;
-  padding:10px 12px;font-size:.86em;outline:none;
-  background:#fafaf8;min-width:0;
+  flex:1;border:none;border-bottom:1px solid var(--rule);
+  padding:10px 0;font-size:.86em;outline:none;
+  background:none;min-width:0;
   transition:border-color .2s;
+  font-family:'Georgia','Noto Serif SC',serif;
 }
-.route-row input:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(26,67,128,.06)}
+.route-row input:focus{border-bottom-color:var(--ochre)}
 .swap-btn{
-  flex-shrink:0;width:34px;height:34px;border-radius:50%;
-  border:1px solid var(--border);background:var(--card);
+  flex-shrink:0;width:32px;height:32px;border-radius:50%;
+  border:1px solid var(--rule);background:var(--card);
   cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:1.1em;transition:all .3s;color:var(--sub);
+  font-size:1em;transition:all .3s;color:var(--sub);
 }
-.swap-btn:hover{background:#f0ece6;transform:rotate(180deg)}
+.swap-btn:hover{background:var(--bg);transform:rotate(180deg);color:var(--ink)}
 
 /* ── Transport mode chips ── */
 .modes{display:flex;gap:6px;flex-wrap:wrap}
 .mode-chip{
   flex:1;min-width:70px;text-align:center;
-  padding:11px 6px;border-radius:12px;
-  border:1px solid var(--border);background:var(--card);
-  cursor:pointer;font-size:.74em;font-weight:500;
+  padding:10px 6px;
+  border:1px solid var(--rule);background:var(--card);
+  cursor:pointer;font-size:.7em;font-weight:500;
   transition:all .2s;
+  font-family:-apple-system,'PingFang SC',sans-serif;
+  text-transform:uppercase;letter-spacing:.04em;
 }
-.mode-chip:hover{border-color:var(--sky)}
-.mode-chip.sel{color:#fff;border-color:transparent;font-weight:600}
-.mode-chip.sel.drive{background:var(--drive);box-shadow:0 3px 12px rgba(43,94,167,.3)}
-.mode-chip.sel.bike{background:var(--bike);box-shadow:0 3px 12px rgba(61,130,80,.3)}
-.mode-chip.sel.walk{background:var(--walk);box-shadow:0 3px 12px rgba(224,118,66,.3)}
-.mode-chip .emoji{display:block;font-size:1.4em;margin-bottom:3px}
+.mode-chip:hover{border-color:var(--ink)}
+.mode-chip.sel{color:#fff;border-color:transparent;font-weight:700}
+.mode-chip.sel.drive{background:var(--drive)}
+.mode-chip.sel.bike{background:var(--bike)}
+.mode-chip.sel.walk{background:var(--walk)}
+.mode-chip .emoji{display:block;font-size:1.4em;margin-bottom:4px}
 
 /* ── Go button ── */
 .go-btn{
-  width:100%;margin-top:10px;padding:13px;
-  border:none;border-radius:12px;
-  background:var(--navy);color:#fff;
-  font-size:.88em;font-weight:600;
-  cursor:pointer;letter-spacing:.03em;
-  transition:all .15s;
+  width:100%;margin-top:12px;padding:14px;
+  border:1px solid var(--ink);background:var(--ink);color:#fff;
+  font-size:.8em;font-weight:700;
+  cursor:pointer;letter-spacing:.08em;text-transform:uppercase;
+  transition:all .2s;
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
-.go-btn:hover{background:var(--navy-light);box-shadow:0 4px 16px rgba(26,67,128,.2)}
+.go-btn:hover{background:var(--ochre);border-color:var(--ochre)}
 .go-btn:active{transform:scale(.98)}
-.go-btn:disabled{opacity:.45;pointer-events:none}
+.go-btn:disabled{opacity:.4;pointer-events:none}
 
 /* ── Map ── */
 .map-wrap{
-  border-radius:var(--radius);overflow:hidden;
-  box-shadow:var(--card-hover);height:380px;
-  margin-bottom:12px;border:1px solid var(--border);
+  overflow:hidden;
+  box-shadow:var(--card-hover);height:400px;
+  margin-bottom:16px;border:1px solid var(--border);
 }
-@media(max-width:480px){.map-wrap{height:240px}}
+@media(max-width:480px){.map-wrap{height:260px}}
 #rmap{width:100%;height:100%}
 
 /* ── Route summary card ── */
 .route-summary{
-  background:var(--card);border-radius:var(--radius);
-  padding:18px;margin-bottom:12px;
+  background:var(--card);padding:20px;margin-bottom:16px;
   box-shadow:var(--card-shadow);border:1px solid var(--border);
   display:none;
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
 .route-summary .rs-header{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:14px;padding-bottom:14px;
-  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;padding-bottom:16px;
+  border-bottom:1px solid var(--rule);
 }
 .rs-header .rs-mode-icon{
-  width:42px;height:42px;border-radius:12px;
+  width:40px;height:40px;
   display:flex;align-items:center;justify-content:center;
-  font-size:1.3em;flex-shrink:0;
+  font-size:1.2em;flex-shrink:0;
 }
-.rs-header .rs-route-name{font-weight:600;font-size:.88em}
-.rs-header .rs-route-sub{font-size:.64em;color:var(--sub)}
-.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.rs-header .rs-route-name{font-weight:700;font-size:.84em;font-family:'Georgia',serif}
+.rs-header .rs-route-sub{font-size:.6em;color:var(--sub)}
+.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
 @media(max-width:480px){.rs-grid{grid-template-columns:repeat(2,1fr)}}
 .rs-item{
-  text-align:center;background:#f7f5f1;
-  border-radius:10px;padding:13px 6px;
+  text-align:center;background:var(--bg);
+  padding:14px 6px;
 }
-.rs-item .rsv{font-size:1.05em;font-weight:600}
-.rs-item .rsl{font-size:.6em;color:var(--sub);margin-top:1px}
-.rs-mini{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
-.rs-mini .rs-item{padding:10px 8px}
-.rs-mini .rsv{font-size:.85em}
+.rs-item .rsv{font-size:.95em;font-weight:600;color:var(--ink)}
+.rs-item .rsl{font-size:.54em;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.04em}
+.rs-mini{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px}
+.rs-mini .rs-item{padding:12px 8px}
+.rs-mini .rsv{font-size:.8em}
 
 /* ── Route steps ── */
-.route-steps{margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
-.route-steps .steps-title{font-size:.72em;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.route-steps{margin-top:18px;padding-top:18px;border-top:1px solid var(--rule)}
+.route-steps .steps-title{font-size:.68em;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
 .step-list{display:flex;flex-direction:column}
-.step-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f3f0ea;align-items:flex-start}
+.step-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);align-items:flex-start}
 .step-item:last-child{border-bottom:none}
 .step-turn{
-  flex-shrink:0;width:30px;height:30px;border-radius:50%;
+  flex-shrink:0;width:28px;height:28px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:.8em;font-weight:700;
+  font-size:.74em;font-weight:700;
 }
-.step-turn.left{background:#e8f0fa;color:var(--navy)}
-.step-turn.right{background:#e8f0fa;color:var(--navy)}
-.step-turn.straight{background:#f0efea;color:var(--sub)}
-.step-turn.arrive{background:#e4f0e8;color:var(--green)}
-.step-turn.depart{background:#e4f0e8;color:var(--green)}
-.step-turn.rotary{background:#fef4ea;color:var(--coral)}
+.step-turn.left{background:#e8efe4;color:var(--forest)}
+.step-turn.right{background:#e8efe4;color:var(--forest)}
+.step-turn.straight{background:var(--bg);color:var(--sub)}
+.step-turn.arrive{background:#e8efe4;color:var(--forest)}
+.step-turn.depart{background:#e8efe4;color:var(--forest)}
+.step-turn.rotary{background:#fdf0e4;color:var(--ochre)}
 .step-info{flex:1;min-width:0}
-.step-info .step-dir{font-size:.64em;color:var(--sub);margin-bottom:1px}
-.step-info .step-road{font-size:.7em;font-weight:500}
-.step-info .step-dist{font-size:.6em;color:var(--muted);margin-top:1px}
+.step-info .step-dir{font-size:.58em;color:var(--sub);margin-bottom:1px}
+.step-info .step-road{font-size:.66em;font-weight:600;color:var(--ink)}
+.step-info .step-dist{font-size:.56em;color:var(--muted);margin-top:2px}
 
 /* ── Weather panels (route) ── */
-.weather-panels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.weather-panels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
 @media(max-width:500px){.weather-panels{grid-template-columns:1fr}}
 .wp{
-  background:var(--card);border-radius:var(--radius);
-  padding:16px;box-shadow:var(--card-shadow);
+  background:var(--card);padding:18px;box-shadow:var(--card-shadow);
   border:1px solid var(--border);
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
-.wp.from{border-left:4px solid var(--navy)}
-.wp.to{border-left:4px solid var(--coral)}
-.wp .wpn{font-size:.66em;color:var(--sub);margin-bottom:2px;letter-spacing:.04em}
-.wp .wpt{font-size:.82em;font-weight:600;margin-bottom:8px}
-.wp .wph{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.wp .wph .big{font-size:2em;font-weight:200}
-.wp .wph .icon{font-size:1.6em}
-.wpg{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.wp.from{border-top:3px solid var(--forest)}
+.wp.to{border-top:3px solid var(--ochre)}
+.wp .wpn{font-size:.58em;color:var(--ochre);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.wp .wpt{font-size:.78em;font-weight:600;margin-bottom:10px;color:var(--ink)}
+.wp .wph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.wp .wph .big{font-size:2em;font-weight:400;font-family:'Georgia',serif}
+.wp .wph .icon{font-size:1.5em}
+.wpg{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .wgi{
-  background:#f7f5f1;border-radius:8px;
-  padding:8px;text-align:center;font-size:.68em;
+  background:var(--bg);padding:8px;text-align:center;font-size:.64em;
 }
-.wgi .wgiv{font-weight:600;display:block;margin-bottom:1px}
+.wgi .wgiv{font-weight:600;display:block;margin-bottom:2px}
 .wgi .wgil{color:var(--sub);font-size:.85em}
 
+/* ── Elevation profile ── */
+.elev-profile{margin:16px 0;background:var(--card);padding:16px;border:1px solid var(--border)}
+.elev-profile .ep-title{font-size:.64em;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:10px}
+.elev-profile canvas{width:100%;height:120px;display:block}
+
 /* ── Route suggestions ── */
-.route-sug{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.route-sug{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
 .rsug{
-  font-size:.62em;padding:4px 10px;
-  background:#f5f2eb;border-radius:14px;
-  cursor:pointer;color:var(--sub);
-  border:1px solid transparent;transition:all .15s;
+  font-size:.58em;padding:4px 10px;
+  background:none;cursor:pointer;color:var(--sub);
+  border:1px solid var(--rule);
+  transition:all .2s;
+  font-family:-apple-system,'PingFang SC',sans-serif;
 }
-.rsug:hover{background:#eef3fa;border-color:var(--sky);color:var(--navy)}
-.rsug:active{transform:scale(.95)}
+.rsug:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
 /* ── Footer ── */
-footer{text-align:center;padding:40px 0 0;color:var(--muted);font-size:.58em;letter-spacing:.02em}
-footer a{color:#aaa}
+footer{
+  text-align:center;padding:48px 0 0;color:var(--muted);
+  font-size:.54em;letter-spacing:.06em;text-transform:uppercase;
+  font-family:-apple-system,'PingFang SC',sans-serif;
+}
+footer a{color:var(--sub);text-decoration:none}
+footer a:hover{color:var(--ink)}
 .hidden{display:none}
 </style>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -429,7 +475,7 @@ footer a{color:#aaa}
     <input type="text" id="q" placeholder="输入地名搜索…&#10;例：上海 / 乌镇 / 大理 / Tokyo / Paris" autocomplete="off">
     <button onclick="doSearch()">搜索</button>
   </div>
-  <div class="search-hint">支持中文/英文/拼音 · 全球地理编码 · 乡镇村庄均可搜</div>
+  <div class="search-hint">高德地图精准编码 · 支持乡镇/校区/景点/小区</div>
   <div class="suggestions">
     <span class="sug-chip" onclick="quickSearch('北京')">北京</span>
     <span class="sug-chip" onclick="quickSearch('上海')">上海</span>
@@ -492,7 +538,7 @@ footer a{color:#aaa}
 <div class="weather-panels" id="weatherPanels"></div>
 </div><!-- end tab-route -->
 
-<footer><a href="https://song-studio.github.io">song-studio.github.io</a> · Open-Meteo + Windy + Meteoblue</footer>
+<footer><a href="https://song-studio.github.io">song-studio.github.io</a> · 高德地图 + Open-Meteo + Windy + Meteoblue</footer>
 </div>
 
 <script>
@@ -501,30 +547,42 @@ let STATE={lat:39.90,lon:116.40,name:'北京',country:'中国',elev:55,admin:'�
 const WMO={0:{i:'☀️',l:'晴'},1:{i:'🌤️',l:'少云'},2:{i:'⛅',l:'多云'},3:{i:'☁️',l:'阴'},45:{i:'🌫️',l:'雾'},48:{i:'🌫️',l:'冻雾'},51:{i:'🌧️',l:'小雨'},53:{i:'🌧️',l:'中雨'},55:{i:'🌧️',l:'大雨'},56:{i:'🌧️',l:'冻雨'},57:{i:'🌧️',l:'冻雨'},61:{i:'🌦️',l:'小阵雨'},63:{i:'🌧️',l:'中阵雨'},65:{i:'🌧️',l:'大阵雨'},66:{i:'🌧️',l:'冻雨'},67:{i:'🌧️',l:'冻雨'},71:{i:'❄️',l:'小雪'},73:{i:'❄️',l:'中雪'},75:{i:'❄️',l:'大雪'},77:{i:'❄️',l:'雪粒'},80:{i:'🌦️',l:'阵雨'},81:{i:'🌦️',l:'中阵雨'},82:{i:'🌧️',l:'大阵雨'},85:{i:'❄️',l:'小阵雪'},86:{i:'❄️',l:'大阵雪'},95:{i:'⛈️',l:'雷暴'},96:{i:'⛈️',l:'雷暴冰雹'},99:{i:'⛈️',l:'强雷暴冰雹'}};
 function w(c){return WMO[c]||{i:'🌥️',l:'未知'}}
 const WK=['周日','周一','周二','周三','周四','周五','周六'];
+const AMAP_KEY='39a8c2f6ef75e494198f3e3751701ebe';
 
-// ── Geocode & fetch ──────────────────────────────────
+// GCJ-02 → WGS-84 (Amap coords → OSM/Open-Meteo compatibility)
+function gcj2wgs(lng,lat){
+  const PI=Math.PI,a=6378245,ee=0.006693421622965943;
+  function tx(x,y){let r=300+x+2*y+0.1*x*x+0.1*x*y+0.1*Math.sqrt(Math.abs(x));r+=(20*Math.sin(6*x*PI)+20*Math.sin(2*x*PI))*2/3;r+=(20*Math.sin(x*PI)+40*Math.sin(x/3*PI))*2/3;r+=(150*Math.sin(x/12*PI)+300*Math.sin(x/30*PI))*2/3;return r}
+  function ty(x,y){let r=-100+2*x+3*y+0.2*y*y+0.1*x*y+0.2*Math.sqrt(Math.abs(x));r+=(20*Math.sin(6*x*PI)+20*Math.sin(2*x*PI))*2/3;r+=(20*Math.sin(y*PI)+40*Math.sin(y/3*PI))*2/3;r+=(160*Math.sin(y/12*PI)+320*Math.sin(y*PI/30))*2/3;return r}
+  const dlng=tx(lng-105,lat-35),dlat=ty(lng-105,lat-35);
+  const radLat=lat/180*PI,magic=1-ee*Math.sin(radLat)*Math.sin(radLat);
+  return[lng-dlng*180/(a/Math.sqrt(magic)*Math.cos(radLat)*PI),lat-dlat*180/(a*(1-ee)/(magic*Math.sqrt(magic))*PI)];
+}
+
+// ── Geocode (高德 API) ──────────────────────────────────
 async function geocode(q){
-  // Try Nominatim first (better small-place coverage, but blocked in China)
-  try{
-    const c=new AbortController();
-    const t=setTimeout(()=>c.abort(),5000);
-    const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=5&accept-language=zh`,{signal:c.signal});
-    clearTimeout(t);
-    const d=await r.json();
-    if(d&&d.length){
-      const p=d[0].display_name.split(', ');
-      return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:'',elevation:0};
-    }
-  }catch(e){}
-  // Fallback to Open-Meteo (works in China, but fewer small places)
-  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=5&language=zh&format=json`);
+  const r=await fetch(`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}`);
   const d=await r.json();
-  if(!d.results||!d.results.length)return null;
-  return d.results[0];
+  if(!d.geocodes||!d.geocodes.length)return null;
+  const g=d.geocodes[0];
+  const [lng,lat]=g.location.split(',').map(Number);
+  const [wgsLng,wgsLat]=gcj2wgs(lng,lat);
+  // Extract short name: last segment of formatted_address or use the name field
+  let short=g.name||q;
+  if(g.formatted_address&&!g.name){
+    const parts=g.formatted_address.split(/省|市|区|县|自治州/);
+    short=parts[parts.length-1]||g.formatted_address;
+  }
+  return {
+    latitude:wgsLat,longitude:wgsLng,
+    name:short,country:'中国',
+    admin1:g.province||g.city||'',elevation:0,
+    rawLat:lat,rawLng:lng
+  };
 }
 
 async function fetchWeather(lat,lon){
-  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,weather_code,wind_speed_10m_max,wind_direction_10m_dominant,uv_index_max,sunshine_duration,pressure_msl_max,visibility_max&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,relative_humidity_2m,uv_index&timezone=auto&forecast_days=4`;
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,weather_code,wind_speed_10m_max,wind_direction_10m_dominant,uv_index_max,sunshine_duration,sunrise,sunset,pressure_msl_max,visibility_max&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,relative_humidity_2m,uv_index,cloud_cover,dew_point_2m,pressure_msl&timezone=auto&forecast_days=4`;
   const c=new AbortController();
   const t=setTimeout(()=>c.abort(),12000);
   try{const r=await fetch(u,{signal:c.signal});clearTimeout(t);return await r.json();}
@@ -564,13 +622,29 @@ function quickSearch(q){document.getElementById('q').value=q;doSearch();}
 document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch()});
 
 // ── Render ───────────────────────────────────────────
+// ── Moon phase (0=new, 0.25=firstQ, 0.5=full, 0.75=lastQ) ──
+function moonPhase(date){
+  const d=new Date(date+'T12:00');const y=d.getFullYear(),m=d.getMonth()+1,dy=d.getDate();
+  let yy=y;if(m<3){yy--;}
+  const c=Math.floor(yy/100);const e=Math.floor(c/4);const f=2-e+Math.floor((8*c+13)/25);
+  const g=Math.floor(365.25*(yy+4716))+Math.floor(30.6001*((m<3?m+12:m)+1))+dy+f-1524;
+  const jd=g+2451556.1;const n=(jd-2451550.1)/29.53058867;
+  return(n-Math.floor(n));
+}
+function moonEmoji(p){
+  if(p<.03||p>.97)return'🌑';
+  if(p<.22)return'🌒';if(p<.28)return'🌓';if(p<.47)return'🌔';
+  if(p<.53)return'🌕';if(p<.72)return'🌖';if(p<.78)return'🌗';return'🌘';
+}
+
 function render(){
   const d=STATE.data;
   const locName=[STATE.name,STATE.admin,STATE.country].filter(Boolean).join(' · ');
   const now=d.current;
-
-  // Outdoor indices
   const today=d.daily;
+  const hrs=d.hourly;
+
+  // ── Compute all indices ──
   const maxRain=Math.max(...today.precipitation_probability_max);
   const avgWind=Math.round(today.wind_speed_10m_max.reduce((a,b)=>a+b,0)/6);
   const avgVis=Math.round(today.visibility_max.reduce((a,b)=>a+b,0)/6/1000);
@@ -578,139 +652,141 @@ function render(){
   const totalRain=today.precipitation_sum.reduce((a,b)=>a+b,0).toFixed(1);
   const sunshineH=(today.sunshine_duration[0]/3600).toFixed(1);
 
-  // Comfort index: temp + humidity adjustment
+  // 1. Hiking 徒步
+  let hikeS=10,hikeL='极佳',hikeC='good';
+  if(maxRain>80)hikeS-=4;else if(maxRain>50)hikeS-=2;
+  if(avgWind>30)hikeS-=2;else if(avgWind>15)hikeS-=1;
+  if(avgVis<2)hikeS-=2;else if(avgVis<5)hikeS-=1;
+  if(maxUV>10)hikeS-=1;
+  if(hikeS>=8){hikeL='极佳';hikeC='good'}else if(hikeS>=6){hikeL='适宜';hikeC='good'}else if(hikeS>=4){hikeL='可出行';hikeC='warn'}else{hikeL='不建议';hikeC='bad'}
+
+  // 2. Comfort 体感
   const comfortT=now.apparent_temperature;
   let comfortL='舒适',comfortC='good';
-  if(comfortT<5){comfortL='偏冷';comfortC='warn'}
-  else if(comfortT>32){comfortL='炎热';comfortC='bad'}
-  else if(comfortT>28){comfortL='偏热';comfortC='warn'}
+  if(comfortT<5){comfortL='偏冷';comfortC='warn'}else if(comfortT>32){comfortL='炎热';comfortC='bad'}else if(comfortT>28){comfortL='偏热';comfortC='warn'}
 
-  // Hiking index
-  let hikeScore=10,hikeL='极佳',hikeC='good';
-  if(maxRain>80)hikeScore-=4;
-  else if(maxRain>50)hikeScore-=2;
-  if(avgWind>30)hikeScore-=2;
-  else if(avgWind>15)hikeScore-=1;
-  if(avgVis<2)hikeScore-=2;
-  else if(avgVis<5)hikeScore-=1;
-  if(maxUV>10)hikeScore-=1;
-  if(hikeScore>=8){hikeL='极佳';hikeC='good'}
-  else if(hikeScore>=6){hikeL='适宜';hikeC='good'}
-  else if(hikeScore>=4){hikeL='可出行';hikeC='warn'}
-  else{hikeL='不建议';hikeC='bad'}
-
-  // UV risk
+  // 3. UV
   let uvL='安全',uvC='good';
-  if(maxUV>10){uvL='极高风险';uvC='bad'}
-  else if(maxUV>7){uvL='高风险';uvC='warn'}
-  else if(maxUV>5){uvL='中等';uvC='warn'}
-  else if(maxUV>2){uvL='低风险';uvC='good'}
+  if(maxUV>10){uvL='极高风险';uvC='bad'}else if(maxUV>7){uvL='高风险';uvC='warn'}else if(maxUV>5){uvL='中等';uvC='warn'}else if(maxUV>2){uvL='低风险';uvC='good'}
 
-  // Best window: find a time period with low rain probability and comfortable temp
-  const hrs=d.hourly;
+  // 4. Best window
   let bestH=0,bestScore=999;
   for(let i=0;i<Math.min(48,hrs.time.length);i++){
-    const score=hrs.precipitation_probability[i]*2+Math.abs(hrs.temperature_2m[i]-22)*3+(hrs.cloud_cover?hrs.cloud_cover[i]:0)/10;
-    if(score<bestScore){bestScore=score;bestH=i;}
+    const s=hrs.precipitation_probability[i]*2+Math.abs(hrs.temperature_2m[i]-22)*3+(hrs.cloud_cover?hrs.cloud_cover[i]:0)/10;
+    if(s<bestScore){bestScore=s;bestH=i;}
   }
-  const bestTime=hrs.time[bestH].slice(11,16);
-  const bestDate=hrs.time[bestH].slice(5,10);
+
+  // 5. Camping 露营 — night temp + wind + rain
+  const nightT=Math.min(...hrs.temperature_2m.slice(0,24).filter((_,i)=>i%24>=20||i%24<6));
+  let campS=10,campL='极佳',campC='good';
+  if(nightT<5)campS-=4;else if(nightT<10)campS-=2;
+  if(maxRain>60)campS-=3;else if(maxRain>30)campS-=1;
+  if(avgWind>25)campS-=2;else if(avgWind>12)campS-=1;
+  if(campS>=8){campL='极佳';campC='good'}else if(campS>=6){campL='适宜';campC='good'}else if(campS>=4){campL='勉强';campC='warn'}else{campL='不建议';campC='bad'}
+
+  // 6. Stargazing 观星 — cloud + moon + light
+  const nightCloud=hrs.cloud_cover?hrs.cloud_cover.filter((_,i)=>i%24>=20||i%24<6).reduce((a,b)=>a+b,0)/8:50;
+  const mp=moonPhase(today.time[0]);
+  let starS=10,starL='极佳',starC='good';
+  if(nightCloud>80)starS-=5;else if(nightCloud>50)starS-=3;else if(nightCloud>30)starS-=1;
+  if(mp>.3&&mp<.7)starS-=4;else if(mp>.2&&mp<.8)starS-=2;
+  if(starS>=8){starL='极佳';starC='good'}else if(starS>=5){starL='尚可';starC='good'}else if(starS>=3){starL='较差';starC='warn'}else{starL='不宜';starC='bad'}
+
+  // 7. Photography 摄影 — golden/blue hour
+  const sunrise=today.sunrise[0]?today.sunrise[0].slice(11,16):'06:30';
+  const sunset=today.sunset[0]?today.sunset[0].slice(11,16):'18:30';
+  let photoL='良好',photoC='good';
+  const dayCloud=hrs.cloud_cover?hrs.cloud_cover.slice(6,18).reduce((a,b)=>a+b,0)/12:30;
+  if(dayCloud>80){photoL='不佳';photoC='bad'}else if(dayCloud>50){photoL='一般';photoC='warn'}else if(dayCloud<20){photoL='极佳';photoC='good'}
+
+  // 8. Fishing 钓鱼 — pressure trend + wind
+  const pNow=now.pressure_msl||1013;
+  const pLater=hrs.pressure_msl?hrs.pressure_msl[6]:pNow;
+  const pTrend=pLater>pNow+2?'↗上升':pLater<pNow-2?'↘下降':'→平稳';
+  let fishS=10,fishL='极佳',fishC='good';
+  if(pTrend.includes('下降'))fishS-=3;
+  if(avgWind>20)fishS-=2;else if(avgWind>12)fishS-=1;
+  if(maxRain>60)fishS-=2;else if(maxRain>30)fishS-=1;
+  if(fishS>=8){fishL='极佳';fishC='good'}else if(fishS>=6){fishL='适宜';fishC='good'}else if(fishS>=4){fishL='一般';fishC='warn'}else{fishL='不宜';fishC='bad'}
+
+  // 9. Climbing 攀岩 — rain + wind + temp
+  let climbS=10,climbL='极佳',climbC='good';
+  if(maxRain>50)climbS-=4;else if(maxRain>20)climbS-=2;
+  if(avgWind>25)climbS-=3;else if(avgWind>15)climbS-=1;
+  if(now.temperature_2m>35||now.temperature_2m<0)climbS-=3;else if(now.temperature_2m>30||now.temperature_2m<5)climbS-=1;
+  if(climbS>=8){climbL='极佳';climbC='good'}else if(climbS>=6){climbL='适宜';climbC='good'}else if(climbS>=4){climbL='勉强';climbC='warn'}else{climbL='不建议';climbC='bad'}
+
+  // Altitude adjustment
+  const alt=STATE.elev||0;
+  const altNote=alt>2500?'⛰️ 高海拔：UV增强~20%，温度较平原偏低，注意高反':alt>1500?'⛰️ 中高海拔：UV偏强，温差大':'';
 
   const html=`
 <div class="site-header">
-  <h1>${w(dailyW(0)).i} ${locName}</h1>
-  <div class="loc">${STATE.lat.toFixed(4)}°N, ${STATE.lon.toFixed(4)}°E · 海拔 ${STATE.elev||'~'}m</div>
-</div>
-<div class="src-bar">
-  <span><span class="dot om"></span> Open-Meteo</span>
-  <span><span class="dot wy"></span> Windy</span>
-  <span><span class="dot mb"></span> Meteoblue</span>
+  <h1>${locName}</h1>
+  <div class="loc">${STATE.lat.toFixed(2)}°N ${STATE.lon.toFixed(2)}°E · 海拔 ${alt||'~'}m</div>
 </div>
 
-<!-- Current conditions -->
+<!-- Hero temperature -->
 <div class="now-card">
-  <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px">
-    <div>
-      <div class="now-temp">${now.temperature_2m.toFixed(1)}°</div>
-      <div class="now-label">体感 ${now.apparent_temperature.toFixed(1)}° · ${w(now.weather_code).l} ${w(now.weather_code).i}</div>
-    </div>
-    <div style="font-size:.72em;opacity:.8;text-align:right">
-      风向 ${windDir(now.wind_direction_10m)} · 风速 ${now.wind_speed_10m} km/h<br>
-      湿度 ${now.relative_humidity_2m}% · 气压 ~${Math.round(d.hourly.pressure_msl[0])}hPa
-    </div>
-  </div>
+  <div class="now-temp">${now.temperature_2m.toFixed(1)}°</div>
+  <div class="now-label">${w(now.weather_code).i} ${w(now.weather_code).l} · 体感 ${now.apparent_temperature.toFixed(1)}°</div>
   <div class="now-grid">
-    <div class="now-item"><div class="nv">${now.wind_speed_10m} km/h</div><div class="nl">风速 ${windDir(now.wind_direction_10m)}</div></div>
-    <div class="now-item"><div class="nv">${now.relative_humidity_2m}%</div><div class="nl">相对湿度</div></div>
-    <div class="now-item"><div class="nv">${sunshineH}h</div><div class="nl">今日日照</div></div>
-    <div class="now-item"><div class="nv">${today.precipitation_sum[0]}mm</div><div class="nl">今日降水量</div></div>
+    <div class="now-item"><div class="nv">${now.wind_speed_10m}<small>km/h</small></div><div class="nl">风速 ${windDir(now.wind_direction_10m)}</div></div>
+    <div class="now-item"><div class="nv">${now.relative_humidity_2m}<small>%</small></div><div class="nl">相对湿度</div></div>
+    <div class="now-item"><div class="nv">${sunshineH}<small>h</small></div><div class="nl">今日日照</div></div>
+    <div class="now-item"><div class="nv">${today.precipitation_sum[0]}<small>mm</small></div><div class="nl">降水量</div></div>
   </div>
 </div>
 
 <!-- Outdoor indices -->
-<div class="sec-title">🏕️ 户外与出行指数</div>
+<div class="sec-title">户外指数</div>
 <div class="outdoor">
-  <div class="oc">
-    <div class="oh">🥾 徒步适宜度</div>
-    <div class="ov"><span class="oe ${hikeC}">${hikeL}</span> ${hikeScore}/10</div>
-    <div class="od">综合降雨概率${maxRain}%、风速${avgWind}km/h、能见度${avgVis}km、UV${maxUV}评估</div>
-  </div>
-  <div class="oc">
-    <div class="oh">🌡️ 体感舒适度</div>
-    <div class="ov"><span class="oe ${comfortC}">${comfortL}</span> 体感${comfortT.toFixed(1)}°</div>
-    <div class="od">体感温度综合气温、湿度、风速计算。${comfortT<10?'需穿厚外套':comfortT>30?'注意防暑降温':'温度适宜出行'}</div>
-  </div>
-  <div class="oc">
-    <div class="oh">☀️ 紫外线风险</div>
-    <div class="ov"><span class="oe ${uvC}">${uvL}</span> UV峰值${maxUV}</div>
-    <div class="od">${maxUV>7?'需SPF30+防晒霜、遮阳帽、墨镜':maxUV>5?'建议涂防晒霜':'无需特殊防护'}。高海拔地区紫外线偏强</div>
-  </div>
-  <div class="oc">
-    <div class="oh">⏰ 最佳户外窗口</div>
-    <div class="ov">${bestDate} ${bestTime}</div>
-    <div class="od">48小时内综合温湿风雨最优时段。累计降水${totalRain}mm，${maxRain>80?'建议室内活动':maxRain>50?'带伞可出行':'出行无忧'}</div>
-  </div>
+  <div class="oc"><div class="oh">🥾 徒步适宜度</div><div class="ov"><span class="oe ${hikeC}">${hikeL}</span> ${hikeS}/10</div><div class="od">雨${maxRain}% · 风${avgWind}km/h · 能见度${avgVis}km · UV${maxUV}</div></div>
+  <div class="oc"><div class="oh">🏕️ 露营适宜度</div><div class="ov"><span class="oe ${campC}">${campL}</span> ${campS}/10</div><div class="od">夜间低温${nightT.toFixed(0)}° · 雨${maxRain}% · 风${avgWind}km/h</div></div>
+  <div class="oc"><div class="oh">⭐ 观星指数</div><div class="ov"><span class="oe ${starC}">${starL}</span> ${starS}/10</div><div class="od">云量${nightCloud.toFixed(0)}% · 月相${moonEmoji(mp)} · 夜间观测条件</div></div>
+  <div class="oc"><div class="oh">📷 摄影指数</div><div class="ov"><span class="oe ${photoC}">${photoL}</span> 云量${dayCloud.toFixed(0)}%</div><div class="od">日出 ${sunrise} · 日落 ${sunset} · 白天云量影响光线</div></div>
+  <div class="oc"><div class="oh">🎣 钓鱼指数</div><div class="ov"><span class="oe ${fishC}">${fishL}</span> ${fishS}/10</div><div class="od">气压${pTrend} ${Math.round(pNow)}hPa · 风${avgWind}km/h · 雨${maxRain}%</div></div>
+  <div class="oc"><div class="oh">🧗 攀岩指数</div><div class="ov"><span class="oe ${climbC}">${climbL}</span> ${climbS}/10</div><div class="od">雨${maxRain}% · 风${avgWind}km/h · 气温${now.temperature_2m.toFixed(0)}°</div></div>
+  <div class="oc"><div class="oh">☀️ 紫外线风险</div><div class="ov"><span class="oe ${uvC}">${uvL}</span> UV${maxUV}</div><div class="od">${maxUV>7?'SPF30+ · 遮阳帽 · 墨镜':maxUV>5?'建议涂防晒霜':'无需特殊防护'}${altNote?' · '+altNote:''}</div></div>
+  <div class="oc"><div class="oh">🌡️ 体感舒适度</div><div class="ov"><span class="oe ${comfortC}">${comfortL}</span> 体感${comfortT.toFixed(1)}°</div><div class="od">湿度${now.relative_humidity_2m}% · 露点${hrs.dew_point_2m?hrs.dew_point_2m[0].toFixed(1):'~'}° · ${comfortT<10?'厚外套':comfortT>30?'防暑降温':'宜出行'}</div></div>
+  <div class="oc"><div class="oh">⏰ 最佳户外窗口</div><div class="ov">${hrs.time[bestH].slice(5,10)} ${hrs.time[bestH].slice(11,16)}</div><div class="od">48h内温湿风雨最优时段 · 累计降水${totalRain}mm</div></div>
 </div>
 
 <!-- 6-day cards -->
-<div class="sec-title">📅 6日预报 · 点击查看逐时详情</div>
+<div class="sec-title">6日预报</div>
 <div class="days" id="days"></div>
 
 <div class="detail" id="detail">
   <h3 id="detail-title"></h3>
   <div class="dg" id="detail-grid"></div>
-  <div class="sun-row" id="sun-row"></div>
   <div class="hs-wrap">
-    <div class="hs-label">24 小时逐时 (温度·降雨·UV·体感·气压·云量·露点) — 左右滑动</div>
+    <div class="hs-label">24h逐时 — 左右滑动</div>
     <div class="hs" id="hourly-strip"></div>
   </div>
   <div class="chart-wrap"><svg id="chart"></svg></div>
 </div>
 
-<!-- Windy -->
 <div class="extern">
-  <h4>🌍 Windy 实时风场 & 雷达</h4>
+  <h4>Windy 实时风场 & 雷达</h4>
   <div class="windy-box">
     <iframe src="https://embed.windy.com/embed2.html?lat=${STATE.lat}&lon=${STATE.lon}&detailLat=${STATE.lat}&detailLon=${STATE.lon}&zoom=10&level=surface&overlay=wind&product=ecmwf&calendar=now&pressure=true&type=map&location=coordinates&detail=true&metricWind=km%2Fh&metricTemp=%C2%B0C&radarRange=-1" loading="lazy"></iframe>
   </div>
   <div class="ext-links">
-    <a class="ext-link" href="https://www.windy.com/?${STATE.lat},${STATE.lon},10" target="_blank" rel="noopener">
-      🔗 <strong>Windy</strong> 全图层<br><small style="color:var(--sub)">风·雨·雷·温·浪·气压</small>
-    </a>
-    <a class="ext-link" href="https://www.meteoblue.com/en/weather/week/index?lat=${STATE.lat}&lon=${STATE.lon}" target="_blank" rel="noopener">
-      🔗 <strong>Meteoblue</strong> 专业预报<br><small style="color:var(--sub)">瑞士模型·14天·多模式对比</small>
-    </a>
+    <a class="ext-link" href="https://www.windy.com/?${STATE.lat},${STATE.lon},10" target="_blank" rel="noopener">Windy 全图层<small style="display:block;color:var(--sub)">风·雨·雷·温·浪·气压</small></a>
+    <a class="ext-link" href="https://www.meteoblue.com/en/weather/week/index?lat=${STATE.lat}&lon=${STATE.lon}" target="_blank" rel="noopener">Meteoblue 专业预报<small style="display:block;color:var(--sub)">瑞士模型·14天·多模式</small></a>
   </div>
+</div>
+
+<div class="src-bar">
+  <span><span class="dot om"></span>高德编码</span>
+  <span><span class="dot wy"></span>Open-Meteo</span>
+  <span><span class="dot mb"></span>Windy+Meteoblue</span>
 </div>
 `;
 
   document.getElementById('main').innerHTML=html;
-
-  // Build day cards
   buildDays();
-  // Show first day detail
   showDetail(0);
-  // Scroll to top
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -819,7 +895,7 @@ function drawChart(s,e){
 initFromParams();
 
 // ── Route state ─────────────────────────────────────────
-let RSTATE={mode:'driving',fromGeo:null,toGeo:null,route:null,rmap:null,markers:[],routeLine:null};
+let RSTATE={mode:'driving',fromGeo:null,toGeo:null,route:null,rmap:null,markers:[],routeLine:null,_hikingOn:false,mapStyle:'amap'};
 
 function switchTab(tab){
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.textContent.includes(tab==='weather'?'天气':'路线')));
@@ -831,10 +907,16 @@ function switchTab(tab){
 
 function initRMap(){
   RSTATE.rmap=L.map('rmap').setView([27,106],6);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+  // Amap tiles (GCJ-02) — road names in Chinese, perfect route alignment
+  L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',{
+    subdomains:'1234',attribution:'&copy; 高德地图',
     maxZoom:18
   }).addTo(RSTATE.rmap);
+  // OSM hiking trail overlay
+  RSTATE.hikingLayer=L.tileLayer('https://tile.waymarkedtrails.org/hiking/{z}/{x}/{y}.png',{
+    opacity:.5,attribution:'WaymarkedTrails'
+  });
+  RSTATE.mapStyle='amap';
 }
 
 function setMode(m){
@@ -862,36 +944,58 @@ function preset(f,t,m){
   plan();
 }
 
-async function routeGeocode(q){
-  try{
-    const c=new AbortController();
-    const t=setTimeout(()=>c.abort(),5000);
-    const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`,{signal:c.signal});
-    clearTimeout(t);
-    const d=await r.json();
-    if(d&&d.length){
-      const p=d[0].display_name.split(', ');
-      return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
-    }
-  }catch(e){}
-  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=3&language=zh&format=json`);
-  const d=await r.json();
-  if(!d.results||!d.results.length)return null;
-  return d.results[0];
-}
+async function routeGeocode(q){return await geocode(q);}
 
 async function getRoute(from,to,mode){
-  const profiles={driving:'car',cycling:'bike',walking:'foot'};
-  const profile=profiles[mode]||'car';
-  const u=`https://router.project-osrm.org/route/v1/${profile}/${from.longitude},${from.latitude};${to.longitude},${to.latitude}?overview=full&geometries=geojson&steps=true&alternatives=false`;
-  const r=await fetch(u);
+  const [flng,flat]=[from.rawLng,from.rawLat];
+  const [tlng,tlat]=[to.rawLng,to.rawLat];
+  let url;
+  if(mode==='cycling'){
+    url=`https://restapi.amap.com/v4/direction/bicycling?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}`;
+  }else if(mode==='walking'){
+    url=`https://restapi.amap.com/v3/direction/walking?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}`;
+  }else{
+    url=`https://restapi.amap.com/v3/direction/driving?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}&extensions=all`;
+  }
+  const r=await fetch(url);
   const d=await r.json();
-  if(!d.routes||!d.routes.length)return null;
-  return d.routes[0];
+  // Normalize v3 (route.paths) and v4 (data.paths) formats
+  let path;
+  if(d.route&&d.route.paths&&d.route.paths.length)path=d.route.paths[0];
+  else if(d.data&&d.data.paths&&d.data.paths.length)path=d.data.paths[0];
+  if(!path){
+    // Walking v3 failed — try cycling as fallback
+    if(mode==='walking'){
+      const fr=await fetch(`https://restapi.amap.com/v4/direction/bicycling?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}`);
+      const fd=await fr.json();
+      if(fd.data&&fd.data.paths&&fd.data.paths.length){
+        path=fd.data.paths[0];
+        path._walkingFallback=true;
+      }
+    }
+    if(!path)return null;
+  }
+  // Build polyline coords (keep GCJ-02 — display on Amap tiles)
+  const coords=[];
+  if(path.steps){
+    path.steps.forEach(s=>{
+      if(s.polyline){
+        s.polyline.split(';').forEach(p=>{
+          const [lng,lat]=p.split(',').map(Number);
+          coords.push([lng,lat]);
+        });
+      }
+    });
+  }
+  return {
+    distance:parseInt(path.distance),duration:parseInt(path.duration),
+    steps:path.steps||[],geometry:{coordinates:coords},
+    _walkingFallback:!!path._walkingFallback
+  };
 }
 
 async function getRouteWeather(lat,lon){
-  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,relative_humidity_2m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code,wind_speed_10m_max,uv_index_max,sunshine_duration,precipitation_sum&timezone=auto&forecast_days=3`;
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,relative_humidity_2m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code,wind_speed_10m_max,uv_index_max,sunshine_duration,sunrise,sunset,precipitation_sum&hourly=cloud_cover&timezone=auto&forecast_days=3`;
   const r=await fetch(u);
   return await r.json();
 }
@@ -922,7 +1026,7 @@ async function plan(){
     ]);
 
     if(!route){
-      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远或太近\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
+      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
       goBtn.disabled=false;goBtn.textContent='开始规划';
       return;
     }
@@ -941,21 +1045,24 @@ async function renderRouteAll(){
   RSTATE.markers.forEach(mk=>mk.remove());
   if(RSTATE.routeLine)m.removeLayer(RSTATE.routeLine);
 
-  const bounds=L.latLngBounds([
-    [RSTATE.fromGeo.latitude,RSTATE.fromGeo.longitude],
-    [RSTATE.toGeo.latitude,RSTATE.toGeo.longitude]
-  ]);
+  // Use GCJ-02 coords for Amap tile alignment
+  const fLat=RSTATE.fromGeo.rawLat||RSTATE.fromGeo.latitude;
+  const fLng=RSTATE.fromGeo.rawLng||RSTATE.fromGeo.longitude;
+  const tLat=RSTATE.toGeo.rawLat||RSTATE.toGeo.latitude;
+  const tLng=RSTATE.toGeo.rawLng||RSTATE.toGeo.longitude;
 
-  const fromM=L.marker([RSTATE.fromGeo.latitude,RSTATE.fromGeo.longitude],{
-    icon:L.divIcon({html:'<div style="background:#4a7eb5;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">起</div>',iconSize:[28,28],iconAnchor:[14,14]})
+  const bounds=L.latLngBounds([[fLat,fLng],[tLat,tLng]]);
+
+  const fromM=L.marker([fLat,fLng],{
+    icon:L.divIcon({html:'<div style="background:#2d5a3d;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">起</div>',iconSize:[28,28],iconAnchor:[14,14]})
   }).addTo(m).bindPopup(`<b>起点</b><br>${RSTATE.fromGeo.name}`);
-  const toM=L.marker([RSTATE.toGeo.latitude,RSTATE.toGeo.longitude],{
-    icon:L.divIcon({html:'<div style="background:#d47a2e;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">终</div>',iconSize:[28,28],iconAnchor:[14,14]})
+  const toM=L.marker([tLat,tLng],{
+    icon:L.divIcon({html:'<div style="background:#c4733e;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">终</div>',iconSize:[28,28],iconAnchor:[14,14]})
   }).addTo(m).bindPopup(`<b>终点</b><br>${RSTATE.toGeo.name}`);
   RSTATE.markers=[fromM,toM];
 
   const coords=RSTATE.route.geometry.coordinates.map(c=>[c[1],c[0]]);
-  RSTATE.routeLine=L.polyline(coords,{color:'#4a7eb5',weight:4,opacity:.8}).addTo(m);
+  RSTATE.routeLine=L.polyline(coords,{color:'#c4733e',weight:4,opacity:.8}).addTo(m);
   bounds.extend(coords);
   m.fitBounds(bounds,{padding:[40,40]});
 
@@ -966,16 +1073,16 @@ async function renderRouteAll(){
   const modeName={driving:'驾车',cycling:'骑行',walking:'步行'};
   const speed=(RSTATE.route.distance/1000)/(RSTATE.route.duration/3600);
 
-  // Real elevation: fetch from Open-Meteo elevation API using sampled points
-  let elevationGain='...';
+  // Elevation: sample route coords, convert to WGS-84 for Open-Meteo API
+  let elevationGain='...',elevData=null;
   try{
     const geom=RSTATE.route.geometry.coordinates;
-    const step=Math.max(1,Math.floor(geom.length/50));
-    const pts=[];
-    for(let i=0;i<geom.length;i+=step)pts.push(geom[i]);
+    const step=Math.max(1,Math.floor(geom.length/40));
+    const pts=[],wgsPts=[];
+    for(let i=0;i<geom.length;i+=step){pts.push(geom[i]);const [wl,wa]=gcj2wgs(geom[i][0],geom[i][1]);wgsPts.push([wl,wa]);}
     if(pts.length>1){
-      const lats=pts.map(p=>p[1].toFixed(4)).join(',');
-      const lons=pts.map(p=>p[0].toFixed(4)).join(',');
+      const lats=wgsPts.map(p=>p[1].toFixed(4)).join(',');
+      const lons=wgsPts.map(p=>p[0].toFixed(4)).join(',');
       const er=await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lats}&longitude=${lons}`);
       const ed=await er.json();
       if(ed.elevation&&ed.elevation.length>1){
@@ -988,50 +1095,66 @@ async function renderRouteAll(){
         RSTATE._elevLoss=Math.round(d);
         RSTATE._elevStart=Math.round(ed.elevation[0]);
         RSTATE._elevEnd=Math.round(ed.elevation[ed.elevation.length-1]);
+        elevData={elevations:ed.elevation,distances:[]};
+        let cumDist=0;
+        for(let i=1;i<pts.length;i++){
+          const [lng1,lat1]=pts[i-1],[lng2,lat2]=pts[i];
+          cumDist+=Math.sqrt((lng2-lng1)**2+(lat2-lat1)**2)*111000;
+          elevData.distances.push(cumDist/1000);
+        }
       }
     }
   }catch(e){}
 
   const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
-  const modeColors={driving:'#4a7eb5',cycling:'#5a9a6a',walking:'#d47a2e'};
+  const modeColors={driving:'#2d5a3d',cycling:'#c4733e',walking:'#6b99b2'};
   document.getElementById('routeSummary').style.display='block';
   const mc=modeColors[RSTATE.mode];
   const mi=modeIcons[RSTATE.mode];
   const fromT=(RSTATE.fromW.current.temperature_2m||0).toFixed(1);
   const toT=(RSTATE.toW.current.temperature_2m||0).toFixed(1);
-  const fromW=w(RSTATE.fromW.current.weather_code);
-  const toW=w(RSTATE.toW.current.weather_code);
-  const elevInfo=elevationGain!=='...'?`${elevationGain}m / ${RSTATE._elevLoss||0}m`:'计算中…';
+  const fromWC=w(RSTATE.fromW.current.weather_code);
+  const toWC=w(RSTATE.toW.current.weather_code);
+  const elevInfo=elevationGain!=='...'?`↑${elevationGain}m ↓${RSTATE._elevLoss||0}m`:'计算中…';
+
   document.getElementById('routeSummary').innerHTML=`
     <div class="rs-header">
-      <div class="rs-mode-icon" style="background:${mc}20;color:${mc}">${mi}</div>
+      <div class="rs-mode-icon" style="color:${mc}">${mi}</div>
       <div>
-        <div class="rs-route-name">${modeName[RSTATE.mode]}路线</div>
-        <div style="font-size:.66em;color:var(--sub)">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</div>
+        <div class="rs-route-name">${modeName[RSTATE.mode]}路线${RSTATE.route._walkingFallback?' <span style="font-size:.72em;color:var(--ochre);font-weight:400">(步行→骑行)</span>':''}</div>
+        <div style="font-size:.6em;color:var(--sub)">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</div>
       </div>
       <div style="text-align:right">
-        <div style="font-size:.78em;font-weight:600;color:${mc}">${dist} km</div>
-        <div style="font-size:.62em;color:var(--sub)">${durStr}</div>
+        <div style="font-size:.78em;font-weight:700;color:${mc}">${dist} km</div>
+        <div style="font-size:.58em;color:var(--sub)">${durStr}</div>
       </div>
     </div>
     <div class="rs-grid">
-      <div class="rs-item"><div class="rsv">📏 ${dist} km</div><div class="rsl">总距离</div></div>
-      <div class="rs-item"><div class="rsv">⏱ ${durStr}</div><div class="rsl">${modeName[RSTATE.mode]}用时</div></div>
-      <div class="rs-item"><div class="rsv">🏃 ${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
-      <div class="rs-item"><div class="rsv">⛰ ${elevInfo}</div><div class="rsl">爬升/下降 m</div></div>
+      <div class="rs-item"><div class="rsv">${dist} km</div><div class="rsl">总距离</div></div>
+      <div class="rs-item"><div class="rsv">${durStr}</div><div class="rsl">${modeName[RSTATE.mode]}用时</div></div>
+      <div class="rs-item"><div class="rsv">${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
+      <div class="rs-item"><div class="rsv">${elevInfo}</div><div class="rsl">爬升/下降</div></div>
     </div>
+    ${elevData?`<div class="elev-profile"><div class="ep-title">⛰️ 海拔剖面 (${RSTATE._elevStart||0}m → ${RSTATE._elevEnd||0}m)</div><canvas id="elevCanvas"></canvas></div>`:''}
     <div class="rs-mini">
-      <div class="rs-item" style="border-left:3px solid ${mc}">
-        <div class="rsv">${fromT}° ${fromW.i}</div>
+      <div class="rs-item" style="border-top:2px solid var(--forest)">
+        <div class="rsv">${fromT}° ${fromWC.i}</div>
         <div class="rsl">📍 ${RSTATE.fromGeo.name}</div>
       </div>
-      <div class="rs-item" style="border-left:3px solid var(--warm)">
-        <div class="rsv">${toT}° ${toW.i}</div>
+      <div class="rs-item" style="border-top:2px solid var(--ochre)">
+        <div class="rsv">${toT}° ${toWC.i}</div>
         <div class="rsl">📍 ${RSTATE.toGeo.name}</div>
       </div>
     </div>
+    <div style="margin-top:10px;display:flex;gap:6px;font-size:.58em;font-family:-apple-system,'PingFang SC',sans-serif">
+      <span style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='amap'?'var(--ink)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">🗺️ 标准</span>
+      <span style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='osm'?'var(--ink)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">🌍 OSM</span>
+      <span style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE._hikingOn?'var(--ink)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">🥾 徒步道</span>
+    </div>
     ${buildRouteSteps()}
   `;
+
+  if(elevData)setTimeout(()=>drawElevProfile(elevData),100);
 
   const container=document.getElementById('weatherPanels');
   container.innerHTML='';
@@ -1039,44 +1162,92 @@ async function renderRouteAll(){
   renderRouteWP('to',RSTATE.toGeo,RSTATE.toW,container);
 }
 
+function switchMapStyle(style){
+  const m=RSTATE.rmap;if(!m)return;
+  RSTATE.mapStyle=style;
+  m.eachLayer(l=>{if(l instanceof L.TileLayer&&l!==RSTATE.hikingLayer)m.removeLayer(l);});
+  if(style==='amap'){
+    L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',{subdomains:'1234',attribution:'&copy; 高德',maxZoom:18}).addTo(m);
+  }else{
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OSM',maxZoom:18}).addTo(m);
+  }
+  document.querySelectorAll('#routeSummary span[onclick^="switchMapStyle"]').forEach(s=>{
+    const isActive=(s.textContent.includes('标准')&&style==='amap')||(s.textContent.includes('OSM')&&style==='osm');
+    s.style.background=isActive?'var(--ink)':'none';s.style.color=isActive?'#fff':'var(--sub)';
+  });
+}
+
+function toggleHiking(){
+  const m=RSTATE.rmap;if(!m)return;
+  RSTATE._hikingOn=!RSTATE._hikingOn;
+  if(RSTATE._hikingOn)m.addLayer(RSTATE.hikingLayer);else m.removeLayer(RSTATE.hikingLayer);
+}
+
+function drawElevProfile(data){
+  const c=document.getElementById('elevCanvas');if(!c)return;
+  const W=c.parentElement.clientWidth-32;c.width=W;c.height=120;
+  const ctx=c.getContext('2d');
+  const ev=data.elevations,ds=data.distances;
+  const min=Math.min(...ev),max=Math.max(...ev),range=max-min||1;
+  const pad=10,h=c.height-pad*2,w=c.width-pad*2;
+  ctx.clearRect(0,0,c.width,c.height);
+  // Fill
+  ctx.beginPath();
+  ctx.moveTo(pad,c.height-pad);
+  for(let i=0;i<ev.length;i++){
+    const x=pad+(i/(ev.length-1))*w;
+    const y=pad+h-((ev[i]-min)/range)*h;
+    ctx.lineTo(x,y);
+  }
+  ctx.lineTo(pad+(ev.length-1)/(ev.length-1)*w,c.height-pad);
+  ctx.closePath();
+  ctx.fillStyle='rgba(196,115,62,.12)';ctx.fill();
+  // Line
+  ctx.beginPath();
+  ctx.strokeStyle='#c4733e';ctx.lineWidth=2;ctx.lineJoin='round';
+  for(let i=0;i<ev.length;i++){
+    const x=pad+(i/(ev.length-1))*w;
+    const y=pad+h-((ev[i]-min)/range)*h;
+    i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+  }
+  ctx.stroke();
+  // Labels
+  ctx.fillStyle='#7a7265';ctx.font='10px -apple-system,PingFang SC,sans-serif';
+  ctx.fillText(min+'m',4,c.height-4);
+  ctx.fillText(max+'m',4,pad+10);
+  if(ds.length)ctx.fillText(ds[ds.length-1].toFixed(0)+'km',c.width-40,c.height-4);
+}
+
 function buildRouteSteps(){
-  const route=RSTATE.route;
-  if(!route.legs||!route.legs[0]||!route.legs[0].steps||route.legs[0].steps.length===0)return'';
-  const steps=route.legs[0].steps;
+  const steps=RSTATE.route.steps;
+  if(!steps||steps.length===0)return'';
   if(steps.length<2)return'';
-  // Map OSRM maneuver to icon + Chinese direction
-  function stepIcon(s){
-    const m=s.maneuver;
-    if(!m)return{icon:'→',cls:'straight',dir:''};
-    const t=m.type||'';const mod=m.modifier||'';
-    if(t==='depart'||t==='start')return{icon:'▶',cls:'depart',dir:'出发'};
-    if(t==='arrive')return{icon:'🏁',cls:'arrive',dir:'到达'};
-    if(t==='roundabout'||t==='rotary')return{icon:'↻',cls:'rotary',dir:'环岛'};
-    if(t==='turn'||t==='new name'||t==='continue'||t==='merge'||t==='fork'||t==='off ramp'){
-      const map={left:'左转',sharp_left:'急左转',slight_left:'稍左转',right:'右转',sharp_right:'急右转',slight_right:'稍右转',straight:'直行',uturn:'调头'};
-      const dir=map[mod]||mod||'转向';
-      let cls='straight';
-      if(mod.includes('left'))cls='left';
-      else if(mod.includes('right'))cls='right';
-      else if(mod==='uturn')cls='rotary';
-      let icon='↑';if(mod.includes('left'))icon='←';if(mod.includes('right'))icon='→';if(mod==='uturn')icon='↩';
-      return{icon,cls,dir};
-    }
-    return{icon:'→',cls:'straight',dir:mod||'前行'};
+  function parseStep(s){
+    const inst=s.instruction||'';
+    const road=s.road||'';
+    let icon='↑',cls='straight',dir='直行';
+    if(inst.includes('左转')||inst.includes('向左')){icon='←';cls='left';dir='左转'}
+    else if(inst.includes('右转')||inst.includes('向右')){icon='→';cls='right';dir='右转'}
+    else if(inst.includes('调头')||inst.includes('掉头')){icon='↩';cls='rotary';dir='调头'}
+    else if(inst.includes('到达')||inst.includes('终点')||inst.includes('目的地')){icon='🏁';cls='arrive';dir='到达'}
+    else if(inst.includes('出发')||inst.includes('起点')||inst.includes('开始')){icon='▶';cls='depart';dir='出发'}
+    else if(inst.includes('环岛')||inst.includes('转盘')){icon='↻';cls='rotary';dir='环岛'}
+    else if(inst.includes('左前方')||inst.includes('左后方')){icon='←';cls='left';dir='左前方'}
+    else if(inst.includes('右前方')||inst.includes('右后方')){icon='→';cls='right';dir='右前方'}
+    return{icon,cls,dir,road:road||inst.replace(/^沿?/,'').replace(/[，,].*/,'')||'前行'};
   }
   let html='<div class="route-steps"><div class="steps-title">🧭 逐段导航</div><div class="step-list">';
-  const maxSteps=Math.min(steps.length,100);
-  for(let i=0;i<maxSteps;i++){
+  for(let i=0;i<Math.min(steps.length,80);i++){
     const s=steps[i];
-    const si=stepIcon(s);
-    const d=(s.distance/1000).toFixed(1);
-    const name=s.name||'无名路';
+    const si=parseStep(s);
+    const d=(parseInt(s.distance)/1000).toFixed(1);
+    const dur=Math.round(parseInt(s.duration)/60);
     html+=`<div class="step-item">
       <div class="step-turn ${si.cls}">${si.icon}</div>
       <div class="step-info">
         <div class="step-dir">${si.dir}</div>
-        <div class="step-road">${name}${s.ref?' ('+s.ref+')':''}</div>
-        <div class="step-dist">${d} km · ${Math.round(s.duration/60)}分钟</div>
+        <div class="step-road">${si.road}</div>
+        <div class="step-dist">${d} km · ${dur}分钟</div>
       </div>
     </div>`;
   }
