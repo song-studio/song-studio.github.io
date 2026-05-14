@@ -10,370 +10,374 @@
 <title>气象查询 · 路线规划</title>
 <style>
 /* ═══════════════════════════════════════════
-   Weather Terminal · 气象数据终端
-   Brutalist data-forward · single amber accent
-   No shadows · no rounded corners · no emoji
+   Weather Almanac · 气象年鉴
+   Warm editorial · paper + ink + earth tones
    ═══════════════════════════════════════════ */
 :root{
-  --bg:#0a0d0f;
-  --surface:#111519;
-  --text:#dde4ea;
-  --sub:#7a8896;
-  --muted:#4a5564;
-  --ink:#edf2f7;
-  --amber:#e0a44e;
-  --amber-dim:rgba(224,164,78,.12);
-  --green:#5b9b7b;
-  --green-dim:rgba(91,155,123,.12);
-  --blue:#6b9fbd;
-  --red:#d4745e;
-  --rule:rgba(255,255,255,.06);
-  --rule-solid:#1e2429;
-  --border:rgba(255,255,255,.05);
-  --radius:0;
-  --radius-sm:0;
+  --bg:#F7F2EA;
+  --surface:#FCF9F4;
+  --text:#2D2318;
+  --sub:#7A6F60;
+  --muted:#B0A594;
+  --ink:#1A1410;
+  --ochre:#C06E3A;
+  --ochre-dim:rgba(192,110,58,.10);
+  --green:#3D6B4F;
+  --green-dim:rgba(61,107,79,.10);
+  --blue:#6A95AA;
+  --blue-dim:rgba(106,149,170,.10);
+  --red:#C45540;
+  --rule:#E5DDD0;
+  --rule-solid:#EBE3D5;
 }
 *{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{
-  font-family:'Space Mono','Courier New',monospace;
-  background:var(--bg);
-  color:var(--text);
-  min-height:100vh;
-  -webkit-font-smoothing:antialiased;
-  line-height:1.5;
-  font-size:15px;
-  text-wrap:pretty;
+  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+  line-height:1.6;font-size:17px;text-wrap:pretty;
 }
-.wrap{max-width:720px;margin:0 auto;padding:12px 20px 80px}
+/* Grain texture */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{max-width:780px;margin:0 auto;padding:12px 24px 80px}
 
 /* ── Tab bar ── */
 .tab-bar{
-  display:flex;gap:0;margin-bottom:32px;
-  border-bottom:2px solid var(--rule-solid);
-  position:sticky;top:0;z-index:20;
-  background:var(--bg);padding:10px 0 0;
+  display:flex;gap:0;margin-bottom:28px;
+  border-bottom:1px solid var(--rule);
+  position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0 0;
 }
 .tab-btn{
-  flex:1;text-align:center;
-  padding:12px 8px 14px;border:none;background:none;
-  cursor:pointer;
-  font-family:'Space Mono','Courier New',monospace;
-  font-size:.8em;font-weight:400;color:var(--muted);
-  letter-spacing:.12em;text-transform:uppercase;
-  transition:all .2s;
-  border-bottom:2px solid transparent;margin-bottom:-2px;
+  flex:1;text-align:center;padding:12px 8px 14px;
+  border:none;background:none;cursor:pointer;
+  font-family:'Noto Serif SC',Georgia,serif;
+  font-size:.9em;color:var(--muted);letter-spacing:.04em;
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  transition:all .25s;
 }
-.tab-btn.active{color:var(--amber);border-bottom-color:var(--amber);font-weight:700}
+.tab-btn.active{color:var(--ochre);border-bottom-color:var(--ochre);font-weight:600}
 .tab-btn:hover{color:var(--text)}
 
 /* ── Search ── */
-.search-bar{padding:0 0 16px}
+.search-bar{padding:0 0 12px}
 .search-box{
   display:flex;gap:0;align-items:center;
-  border-bottom:2px solid var(--rule-solid);
-  padding:0 0 10px;
+  border-bottom:1px solid var(--rule);padding:0 0 10px;
   transition:border-color .3s;
 }
-.search-box:focus-within{border-bottom-color:var(--amber)}
+.search-box:focus-within{border-bottom-color:var(--ink)}
 .search-box input{
   flex:1;border:none;outline:none;font-size:1em;
   background:none;color:var(--text);padding:8px 0;min-width:0;
-  font-family:'Space Mono','Courier New',monospace;
+  font-family:'Noto Serif SC',Georgia,serif;
 }
 .search-box input::placeholder{color:var(--muted)}
 .search-box button{
-  flex-shrink:0;background:var(--amber);color:var(--bg);
-  border:none;padding:8px 18px;
-  font-size:.72em;font-weight:700;cursor:pointer;
-  letter-spacing:.08em;text-transform:uppercase;
-  font-family:'Space Mono','Courier New',monospace;
+  flex-shrink:0;background:var(--ink);color:var(--bg);
+  border:none;padding:8px 20px;font-size:.72em;cursor:pointer;
+  letter-spacing:.08em;font-family:'Noto Serif SC',Georgia,serif;
+  transition:background .2s;
 }
-.search-box button:hover{opacity:.85}
-.search-hint{font-size:.56em;color:var(--muted);margin-top:8px}
-.suggestions{display:flex;flex-wrap:wrap;gap:4px;margin-top:12px}
+.search-box button:hover{background:var(--ochre)}
+.search-hint{font-size:.58em;color:var(--muted);margin-top:8px;font-family:'Noto Serif SC',Georgia,serif}
+.suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .sug-chip{
-  font-size:.56em;padding:4px 12px;
-  background:none;cursor:pointer;color:var(--sub);
-  border:1px solid var(--rule);font-family:'Space Mono','Courier New',monospace;
+  font-size:.6em;padding:4px 14px;background:none;cursor:pointer;
+  color:var(--sub);border:1px solid var(--rule);
+  font-family:'Noto Serif SC',Georgia,serif;transition:all .2s;
 }
-.sug-chip:hover{background:var(--amber);color:var(--bg);border-color:var(--amber)}
+.sug-chip:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 
 /* ── Status ── */
 .status{text-align:center;padding:100px 0;color:var(--muted)}
 .status.error{color:var(--red)}
-.spinner{
-  display:inline-block;width:20px;height:20px;
-  border:2px solid var(--rule);border-top-color:var(--amber);
-  border-radius:50%;animation:spin .7s linear infinite;
-}
+.spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--rule);border-top-color:var(--ochre);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ── Site header ── */
-.site-header{text-align:center;padding:12px 0 4px}
-.site-header h1{font-size:1.2em;font-weight:400;letter-spacing:.04em;font-family:'Playfair Display','Noto Serif SC',serif;color:var(--ink)}
-.site-header .loc{font-size:.58em;color:var(--muted);margin-top:4px}
-.src-bar{
-  display:flex;justify-content:center;gap:20px;
-  padding:8px 0 24px;font-size:.5em;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.1em;
+/* ═══ HERO · editorial masthead ═══ */
+.hero-block{text-align:center;padding:32px 0 40px}
+.hero-block .hero-loc{
+  font-size:.62em;color:var(--ochre);margin-bottom:8px;
+  letter-spacing:.12em;text-transform:uppercase;
+  font-family:'Noto Serif SC',Georgia,serif;
 }
-.src-bar .dot{width:5px;height:5px;display:inline-block;margin-right:5px;vertical-align:middle}
-.dot.om{background:var(--amber)}.dot.wy{background:var(--blue)}.dot.mb{background:var(--green)}
-
-/* ═══ HERO · MASSIVE TEMPERATURE ═══ */
-.hero-block{text-align:center;padding:20px 0 32px}
 .hero-block .hero-temp{
-  font-size:clamp(5em,14vw,9em);font-weight:400;line-height:.9;
-  letter-spacing:-.04em;color:var(--amber);
+  font-size:clamp(5em,13vw,8.5em);font-weight:400;line-height:.88;
+  letter-spacing:-.03em;color:var(--ink);
   font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
   display:block;
 }
 .hero-block .hero-label{
-  font-size:.64em;color:var(--sub);margin-top:10px;display:block;
-  letter-spacing:.04em;
+  font-size:.76em;color:var(--sub);margin-top:12px;display:block;
+  font-family:'Noto Serif SC',Georgia,serif;line-height:1.8;
 }
-.hero-block .hero-loc{
-  font-size:.6em;color:var(--muted);margin-bottom:8px;
-  text-transform:uppercase;letter-spacing:.1em;
+.hero-block .hero-label em{
+  font-style:italic;color:var(--ochre);
+  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
 }
 
-/* ═══ STAT STRIP · horizontal with dots ═══ */
+/* ═══ STAT STRIP · inline editorial dateline ═══ */
 .stat-strip{
-  display:flex;justify-content:center;gap:0;
-  border-top:2px solid var(--rule-solid);
-  border-bottom:2px solid var(--rule-solid);
-  padding:16px 0;margin-bottom:36px;
-  text-align:center;
+  display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap;
+  padding:20px 0;margin-bottom:40px;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  font-size:.68em;color:var(--sub);
+  font-family:'Noto Serif SC',Georgia,serif;
 }
-.stat-strip .ss-item{flex:1;padding:0 8px}
+.stat-strip .ss-item{padding:4px 12px;white-space:nowrap}
 .stat-strip .ss-item+.ss-item{border-left:1px solid var(--rule)}
-.stat-strip .ssv{font-size:1.1em;font-weight:700;color:var(--ink);display:block}
-.stat-strip .ssv small{font-size:.55em;font-weight:400;color:var(--sub);margin-left:2px}
-.stat-strip .ssl{font-size:.48em;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
-@media(max-width:480px){.stat-strip{flex-wrap:wrap}.stat-strip .ss-item{flex:0 0 50%;padding:8px}.stat-strip .ss-item+.ss-item{border-left:none}}
+.stat-strip .ssv{font-weight:600;color:var(--ink)}
+.stat-strip .ssl{color:var(--muted);margin-left:4px;font-size:.9em}
+@media(max-width:500px){.stat-strip .ss-item{padding:4px 8px;font-size:.92em}}
 
-/* ═══ SECTION TITLE · large minimal ═══ */
+/* ═══ SECTION RULE ═══ */
 .sec-title{
-  font-size:.56em;color:var(--amber);margin:40px 0 20px;
-  letter-spacing:.14em;text-transform:uppercase;font-weight:700;
-  padding-top:20px;border-top:2px solid var(--rule-solid);
+  display:flex;align-items:center;gap:14px;
+  margin:44px 0 24px;
+  font-size:.56em;color:var(--muted);
+  letter-spacing:.14em;text-transform:uppercase;
+  font-family:'Noto Serif SC',Georgia,serif;
 }
+.sec-title::after{content:'';flex:1;height:1px;background:var(--rule)}
 
-/* ═══ OUTDOOR INDICES · 2-col asymmetric ═══ */
+/* ═══ OUTDOOR INDICES · 3-col editorial grid ═══ */
 .outdoor{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1px;
-  background:var(--rule-solid);
-  border:1px solid var(--rule-solid);
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
 }
-@media(max-width:500px){.outdoor{grid-template-columns:1fr}}
+@media(max-width:700px){.outdoor{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.outdoor{grid-template-columns:1fr}}
 .oc{
-  background:var(--bg);padding:20px 16px;
-  display:flex;flex-direction:column;gap:6px;
+  padding:22px 18px;
+  border-right:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  display:flex;flex-direction:column;gap:4px;
+  transition:background .2s;
 }
-.oc.feature{grid-column:1/-1}
-.oc .oh{font-size:.66em;font-weight:700;color:var(--ink);letter-spacing:.04em}
-.oc .ov{font-size:.85em;font-weight:700;color:var(--ink)}
-.oc .od{font-size:.52em;color:var(--sub);line-height:1.7}
-.oe{display:inline-block;padding:2px 8px;font-size:.7em;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.oc:hover{background:var(--surface)}
+.oc.feature{
+  grid-column:1/-1;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:12px 20px;
+}
+@media(max-width:500px){.oc.feature{grid-template-columns:1fr}}
+.oc .oh{font-size:.72em;font-weight:600;color:var(--ink);letter-spacing:.02em}
+.oc .ov{font-size:.9em;font-weight:600;color:var(--ink)}
+.oc .od{font-size:.56em;color:var(--sub);line-height:1.7}
+.oe{display:inline-block;padding:2px 10px;font-size:.7em;font-weight:600;letter-spacing:.04em}
 .oe.good{background:var(--green-dim);color:var(--green)}
-.oe.warn{background:var(--amber-dim);color:var(--amber)}
-.oe.bad{background:rgba(212,116,94,.12);color:var(--red)}
+.oe.warn{background:var(--ochre-dim);color:var(--ochre)}
+.oe.bad{background:rgba(196,85,64,.10);color:var(--red)}
 
-/* ═══ DAY CARDS · horizontal filmstrip ═══ */
+/* ═══ DAY FILMSTRIP · clean horizontal ═══ */
 .days{
-  display:flex;overflow-x:auto;gap:1px;
-  padding-bottom:8px;-webkit-overflow-scrolling:touch;
-  background:var(--rule-solid);
-  border:1px solid var(--rule-solid);
+  display:flex;overflow-x:auto;gap:0;
+  padding-bottom:4px;-webkit-overflow-scrolling:touch;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
 }
-.days::-webkit-scrollbar{height:2px}.days::-webkit-scrollbar-thumb{background:var(--amber)}
+.days::-webkit-scrollbar{height:2px}.days::-webkit-scrollbar-thumb{background:var(--muted)}
 .day-card{
-  flex:0 0 auto;min-width:100px;
-  background:var(--bg);padding:14px 10px;text-align:center;
-  cursor:pointer;transition:all .15s;
-  user-select:none;border:none;
+  flex:0 0 auto;min-width:96px;
+  padding:16px 10px;text-align:center;
+  cursor:pointer;transition:all .2s;user-select:none;
+  border-right:1px solid var(--rule);
+  background:transparent;
 }
 .day-card:hover{background:var(--surface)}
-.day-card.active{background:var(--amber);color:var(--bg)}
+.day-card.active{background:var(--ink);color:var(--bg)}
 .day-card.active .dow,.day-card.active .temps,.day-card.active .tag{color:var(--bg)}
-.day-card.active .lo,.day-card.active .date{color:rgba(0,0,0,.5)}
-.day-card .dow{font-size:.58em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
-.day-card .date{font-size:.5em;color:var(--muted);margin-bottom:4px}
-.day-card .icon{font-size:1.3em;margin:4px 0;display:block}
-.day-card .temps{font-size:.76em;font-weight:700;color:var(--ink)}
-.day-card .temps .lo{color:var(--sub);font-weight:400;margin-left:2px}
+.day-card.active .lo,.day-card.active .date{color:rgba(255,255,255,.45)}
+.day-card .dow{font-size:.6em;font-weight:600;letter-spacing:.04em;color:var(--ink);font-family:'Noto Serif SC',Georgia,serif}
+.day-card .date{font-size:.52em;color:var(--muted);margin-bottom:4px}
+.day-card .icon{font-size:1.2em;margin:4px 0;display:block}
+.day-card .temps{font-size:.78em;font-weight:600;color:var(--ink)}
+.day-card .temps .lo{color:var(--sub);font-weight:400;margin-left:3px}
 .day-card .rain-bar{margin-top:4px;height:2px;background:var(--rule);overflow:hidden}
 .day-card .rain-bar .fill{height:100%;background:var(--blue)}
 .day-card .tag{font-size:.46em;color:var(--sub);margin-top:2px}
 
-/* ═══ DETAIL ═══ */
-.detail{
-  background:var(--surface);padding:24px 20px;margin-top:2px;
-  border:1px solid var(--rule-solid);
-  display:none;
-}
+/* ═══ DETAIL PANEL ═══ */
+.detail{display:none;margin-top:20px}
 .detail.show{display:block}
 .detail h3{
-  font-size:.82em;margin-bottom:20px;color:var(--amber);
-  font-weight:700;letter-spacing:.04em;
-  font-family:'Playfair Display','Noto Serif SC',serif;
+  font-size:.9em;margin-bottom:20px;color:var(--ink);
+  font-weight:600;letter-spacing:.02em;
+  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
+  padding-bottom:14px;border-bottom:1px solid var(--rule);
 }
-.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-solid);border:1px solid var(--rule-solid)}
+.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
 @media(max-width:480px){.dg{grid-template-columns:repeat(2,1fr)}}
-.di{background:var(--bg);padding:14px 10px;text-align:center}
-.di .l{font-size:.5em;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.di .v{font-size:.82em;font-weight:700;margin-top:4px;color:var(--ink)}
+.di{padding:16px 12px;text-align:center;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.di .l{font-size:.52em;color:var(--muted);letter-spacing:.06em}
+.di .v{font-size:.88em;font-weight:600;margin-top:6px;color:var(--ink)}
 
 /* ── Hourly strip ── */
-.hs-wrap{margin-top:20px}
-.hs-label{font-size:.54em;color:var(--muted);margin-bottom:8px}
-.hs{display:flex;overflow-x:auto;gap:1px;padding-bottom:8px;-webkit-overflow-scrolling:touch;background:var(--rule-solid)}
-.hs::-webkit-scrollbar{height:2px}.hs::-webkit-scrollbar-thumb{background:var(--amber)}
+.hs-wrap{margin-top:24px}
+.hs-label{font-size:.58em;color:var(--muted);margin-bottom:8px;letter-spacing:.06em}
+.hs{display:flex;overflow-x:auto;gap:0;padding-bottom:4px;-webkit-overflow-scrolling:touch;border-top:1px solid var(--rule)}
+.hs::-webkit-scrollbar{height:2px}.hs::-webkit-scrollbar-thumb{background:var(--muted)}
 .hc{
-  flex:0 0 auto;min-width:52px;text-align:center;padding:8px 4px;
-  background:var(--bg);font-size:.5em;border:none;
+  flex:0 0 auto;min-width:54px;text-align:center;padding:10px 4px;
+  font-size:.5em;border-right:1px solid var(--rule);
+  background:transparent;
 }
-.hc.nw{background:var(--amber);color:var(--bg)}
-.hc.nw .r{color:rgba(0,0,0,.5)}
-.hc .h{font-weight:700;margin-bottom:2px;display:block}
-.hc .r{color:var(--blue)}
+.hc.nw{background:var(--ink);color:var(--bg)}
+.hc.nw .r{color:rgba(255,255,255,.5)}
+.hc .h{font-weight:600;margin-bottom:3px;display:block;font-size:1.1em}
+.hc .t{font-weight:600;display:block;margin:3px 0}
+.hc .r{color:var(--blue);font-size:.95em}
 
 /* ── Chart ── */
-.chart-wrap{margin-top:16px;width:100%;overflow-x:auto}
+.chart-wrap{margin-top:20px;width:100%;overflow-x:auto}
 .chart-wrap svg{min-width:500px;width:100%;height:auto}
 
 /* ═══ WINDY ═══ */
-.extern{margin:32px 0}
+.extern{margin:36px 0}
 .extern h4{
-  font-size:.56em;color:var(--amber);margin-bottom:12px;
-  font-weight:700;text-transform:uppercase;letter-spacing:.1em;
+  font-size:.6em;color:var(--muted);margin-bottom:12px;
+  letter-spacing:.1em;text-transform:uppercase;
+  font-family:'Noto Serif SC',Georgia,serif;
 }
-.windy-box{overflow:hidden;height:350px;border:1px solid var(--rule-solid)}
+.windy-box{overflow:hidden;height:360px;border:1px solid var(--rule)}
 .windy-box iframe{width:100%;height:100%;border:0}
 @media(max-width:480px){.windy-box{height:220px}}
-.ext-links{display:flex;gap:1px;margin-top:1px;background:var(--rule-solid)}
+.ext-links{display:flex;gap:0;border-top:1px solid var(--rule)}
 .ext-link{
-  flex:1;background:var(--bg);padding:16px;text-align:center;text-decoration:none;
-  color:var(--ink);font-size:.62em;transition:all .2s;border:none;
+  flex:1;padding:18px;text-align:center;text-decoration:none;
+  color:var(--ink);font-size:.64em;transition:all .2s;
+  font-family:'Noto Serif SC',Georgia,serif;
+  border-right:1px solid var(--rule);
 }
-.ext-link:hover{background:var(--surface);color:var(--amber)}
+.ext-link:last-child{border-right:none}
+.ext-link:hover{background:var(--surface);color:var(--ochre)}
+
+/* ═══ SITE HEADER ═══ */
+.site-header{text-align:center;padding:20px 0 0}
+.site-header h1{font-size:1.4em;font-weight:600;letter-spacing:.02em;font-family:'Playfair Display','Noto Serif SC',Georgia,serif;color:var(--ink);line-height:1.3}
+.site-header .loc{font-size:.56em;color:var(--muted);margin-top:6px}
+.src-bar{
+  display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
+  padding:12px 0 32px;font-size:.52em;color:var(--muted);
+  letter-spacing:.08em;
+}
+.src-bar .dot{width:5px;height:5px;display:inline-block;margin-right:5px;vertical-align:middle;border-radius:50%}
+.dot.om{background:var(--ochre)}.dot.wy{background:var(--blue)}.dot.mb{background:var(--green)}
 
 /* ═══════════════════════════════════════════
    ROUTE PLANNER
    ═══════════════════════════════════════════ */
 .route-search{
-  background:var(--surface);padding:24px 20px;margin-bottom:2px;
-  border:1px solid var(--rule-solid);border-top:3px solid var(--amber);
+  padding:20px;margin-bottom:2px;
+  border:1px solid var(--rule);
 }
-.route-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.route-row .rdot{width:8px;height:8px;flex-shrink:0}
+.route-row{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.route-row .rdot{width:8px;height:8px;flex-shrink:0;border-radius:50%}
 .route-row .rdot.from{background:var(--green)}
-.route-row .rdot.to{background:var(--amber)}
+.route-row .rdot.to{background:var(--ochre)}
 .route-row input{
   flex:1;border:none;border-bottom:1px solid var(--rule);color:var(--text);
-  padding:10px 0;font-size:.84em;outline:none;background:none;min-width:0;
-  font-family:'Space Mono','Courier New',monospace;
+  padding:10px 0;font-size:.88em;outline:none;background:none;min-width:0;
+  font-family:'Noto Serif SC',Georgia,serif;
 }
-.route-row input:focus{border-bottom-color:var(--amber)}
+.route-row input:focus{border-bottom-color:var(--ink)}
 .route-row input::placeholder{color:var(--muted)}
 .swap-btn{
-  flex-shrink:0;width:32px;height:32px;
-  border:1px solid var(--rule);background:var(--bg);
+  flex-shrink:0;width:34px;height:34px;
+  border:1px solid var(--rule);background:transparent;
   cursor:pointer;display:flex;align-items:center;justify-content:center;
   font-size:1em;transition:all .3s;color:var(--sub);
 }
-.swap-btn:hover{background:var(--surface);transform:rotate(180deg);color:var(--amber)}
-.modes{display:flex;gap:1px;background:var(--rule-solid)}
+.swap-btn:hover{transform:rotate(180deg);color:var(--ochre);border-color:var(--ochre)}
+.modes{display:flex;gap:0;margin-bottom:2px}
 .mode-chip{
   flex:1;text-align:center;padding:14px 10px;
-  background:var(--bg);cursor:pointer;font-size:.78em;font-weight:600;
-  transition:all .15s;font-family:'Playfair Display','Noto Serif SC',serif;
-  letter-spacing:.06em;
+  background:transparent;cursor:pointer;font-size:.8em;font-weight:400;
+  transition:all .15s;font-family:'Noto Serif SC',Georgia,serif;
+  letter-spacing:.02em;border:1px solid var(--rule);border-right:none;
 }
+.mode-chip:last-child{border-right:1px solid var(--rule)}
 .mode-chip:hover{background:var(--surface)}
-.mode-chip.sel{color:var(--bg);font-weight:700}
-.mode-chip.sel.drive{background:var(--green)}
-.mode-chip.sel.bike{background:var(--amber)}
-.mode-chip.sel.walk{background:var(--blue)}
+.mode-chip.sel{color:var(--bg);font-weight:600;border-color:transparent}
+.mode-chip.sel.drive{background:var(--green);border-color:var(--green)}
+.mode-chip.sel.bike{background:var(--ochre);border-color:var(--ochre)}
+.mode-chip.sel.walk{background:var(--blue);border-color:var(--blue)}
 .go-btn{
-  width:100%;margin-top:2px;padding:16px;
-  border:none;background:var(--amber);color:var(--bg);
-  font-size:.82em;font-weight:700;cursor:pointer;letter-spacing:.1em;
-  font-family:'Space Mono','Courier New',monospace;
+  width:100%;padding:16px;border:none;background:var(--ink);color:var(--bg);
+  font-size:.82em;cursor:pointer;letter-spacing:.06em;
+  font-family:'Noto Serif SC',Georgia,serif;transition:background .2s;
 }
-.go-btn:hover{opacity:.85}
+.go-btn:hover{background:var(--ochre)}
 .go-btn:disabled{opacity:.35;pointer-events:none}
-.map-wrap{overflow:hidden;height:400px;margin-bottom:2px;border:1px solid var(--rule-solid)}
+.map-wrap{overflow:hidden;height:400px;margin-bottom:2px;border:1px solid var(--rule)}
 @media(max-width:480px){.map-wrap{height:260px}}
 #rmap{width:100%;height:100%}
 .route-summary{
-  background:var(--surface);padding:20px;margin-bottom:2px;
-  border:1px solid var(--rule-solid);display:none;
+  padding:20px;margin-bottom:2px;border:1px solid var(--rule);display:none;
 }
 .route-summary .rs-header{
   display:flex;align-items:center;gap:12px;
-  margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--rule);
+  margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--rule);
 }
 .rs-header .rs-mode-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.2em;flex-shrink:0}
-.rs-header .rs-route-name{font-weight:700;font-size:.8em;font-family:'Playfair Display','Noto Serif SC',serif}
+.rs-header .rs-route-name{font-weight:600;font-size:.82em;font-family:'Playfair Display','Noto Serif SC',Georgia,serif}
 .rs-header .rs-route-sub{font-size:.56em;color:var(--sub)}
-.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-solid)}
+.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
 @media(max-width:480px){.rs-grid{grid-template-columns:repeat(2,1fr)}}
-.rs-item{text-align:center;background:var(--bg);padding:14px 6px}
-.rs-item .rsv{font-size:.88em;font-weight:700;color:var(--ink)}
-.rs-item .rsl{font-size:.48em;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.04em}
-.rs-mini{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1px;background:var(--rule-solid)}
+.rs-item{text-align:center;padding:14px 6px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.rs-item .rsv{font-size:.88em;font-weight:600;color:var(--ink)}
+.rs-item .rsl{font-size:.5em;color:var(--muted);margin-top:4px;letter-spacing:.04em}
+.rs-mini{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:2px}
 .route-steps{margin-top:18px;padding-top:18px;border-top:1px solid var(--rule)}
-.route-steps .steps-title{font-size:.6em;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--amber)}
+.route-steps .steps-title{font-size:.6em;font-weight:600;margin-bottom:10px;letter-spacing:.06em;color:var(--ochre)}
 .step-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
 .step-item:last-child{border-bottom:none}
-.step-turn{
-  flex-shrink:0;width:26px;height:26px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.7em;font-weight:700;
-}
+.step-turn{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:.7em;font-weight:600}
 .step-turn.left,.step-turn.right,.step-turn.arrive,.step-turn.depart{background:var(--green-dim);color:var(--green)}
 .step-turn.straight{background:transparent;color:var(--sub)}
-.step-turn.rotary{background:var(--amber-dim);color:var(--amber)}
+.step-turn.rotary{background:var(--ochre-dim);color:var(--ochre)}
 .step-info{flex:1;min-width:0}
-.step-info .step-dir{font-size:.52em;color:var(--sub);margin-bottom:1px}
+.step-info .step-dir{font-size:.54em;color:var(--sub);margin-bottom:1px}
 .step-info .step-road{font-size:.6em;font-weight:600;color:var(--ink)}
-.step-info .step-dist{font-size:.5em;color:var(--muted);margin-top:2px}
-.weather-panels{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule-solid);margin-bottom:2px}
+.step-info .step-dist{font-size:.52em;color:var(--muted);margin-top:2px}
+.weather-panels{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:2px}
 @media(max-width:500px){.weather-panels{grid-template-columns:1fr}}
-.wp{
-  background:var(--bg);padding:18px;
-  font-family:'Space Mono','Courier New',monospace;
-}
-.wp.from{border-top:3px solid var(--green)}
-.wp.to{border-top:3px solid var(--amber)}
-.wp .wpn{font-size:.52em;color:var(--amber);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
-.wp .wpt{font-size:.74em;font-weight:600;margin-bottom:10px;color:var(--ink)}
-.wp .wph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.wp .wph .big{font-size:2em;font-weight:400;font-family:'Playfair Display','Noto Serif SC',serif}
+.wp{padding:20px;font-family:'Noto Serif SC',Georgia,serif;border:1px solid var(--rule)}
+.wp.from{border-left:3px solid var(--green)}
+.wp.to{border-left:3px solid var(--ochre)}
+.wp+.wp{border-left:none}@media(max-width:500px){.wp+.wp{border-left:1px solid var(--rule);border-top:none}}
+.wp .wpn{font-size:.52em;color:var(--ochre);margin-bottom:4px;letter-spacing:.08em;font-weight:600}
+.wp .wpt{font-size:.76em;font-weight:600;margin-bottom:12px;color:var(--ink)}
+.wp .wph{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.wp .wph .big{font-size:2.2em;font-weight:400;font-family:'Playfair Display','Noto Serif SC',Georgia,serif;color:var(--ink)}
 .wp .wph .icon{font-size:1.5em}
-.wpg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule-solid)}
-.wgi{background:var(--surface);padding:8px;text-align:center;font-size:.58em}
+.wpg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.wgi{padding:10px 8px;text-align:center;font-size:.6em;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .wgi .wgiv{font-weight:600;display:block;margin-bottom:2px}
 .wgi .wgil{color:var(--sub);font-size:.85em}
-.elev-profile{margin:16px 0;background:var(--surface);padding:16px;border:1px solid var(--rule-solid)}
-.elev-profile .ep-title{font-size:.56em;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);margin-bottom:10px}
-.route-sug{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.elev-profile{margin:18px 0;padding:18px;border:1px solid var(--rule)}
+.elev-profile .ep-title{font-size:.56em;font-weight:600;letter-spacing:.06em;color:var(--ochre);margin-bottom:12px}
+.route-sug{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .rsug{
-  font-size:.52em;padding:4px 10px;
-  background:none;cursor:pointer;color:var(--sub);
-  border:1px solid var(--rule);
-  font-family:'Space Mono','Courier New',monospace;
+  font-size:.54em;padding:5px 12px;background:none;cursor:pointer;
+  color:var(--sub);border:1px solid var(--rule);
+  font-family:'Noto Serif SC',Georgia,serif;transition:all .2s;
 }
-.rsug:hover{background:var(--amber);color:var(--bg);border-color:var(--amber)}
+.rsug:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
 footer{
   text-align:center;padding:48px 0 0;color:var(--muted);
-  font-size:.5em;letter-spacing:.08em;text-transform:uppercase;
+  font-size:.54em;letter-spacing:.06em;
+  font-family:'Noto Serif SC',Georgia,serif;
 }
 footer a{color:var(--sub);text-decoration:none}
-footer a:hover{color:var(--amber)}
+footer a:hover{color:var(--ink)}
 .hidden{display:none}
 </style>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -409,17 +413,17 @@ footer a:hover{color:var(--amber)}
 </div>
 
 <div id="main">
-  <div style="text-align:center;padding:48px 10px 60px">
-    <div style="font-family:'Playfair Display','Noto Serif SC',serif;font-size:2.4em;color:var(--ink);margin-bottom:8px;line-height:1.2;letter-spacing:.02em">气象与山野</div>
-    <div style="font-size:.6em;color:var(--amber);margin-bottom:40px;letter-spacing:.16em;text-transform:uppercase;font-family:'Space Mono','Courier New',monospace">Weather &amp; Trails</div>
-    <div style="max-width:440px;margin:0 auto;text-align:left;font-size:.8em;line-height:2.2;color:var(--sub);font-family:'Space Mono','Courier New',monospace">
-      <p style="margin-bottom:20px;color:var(--text)">为 <span style="color:var(--ochre);font-weight:700">徒步者 · 露营者 · 户外爱好者</span> 准备的气象工具。</p>
-      <p style="margin-bottom:6px"><span style="color:var(--forest-light)">▸</span> 精准定位全国乡镇、校区、景点</p>
-      <p style="margin-bottom:6px"><span style="color:var(--ochre)">▸</span> 九项户外指数：徒步·露营·观星·摄影·钓鱼·攀岩</p>
-      <p style="margin-bottom:6px"><span style="color:var(--sky)">▸</span> 6日逐时预报 + 温度曲线</p>
-      <p style="margin-bottom:6px"><span style="color:var(--forest-light)">▸</span> Windy 实时风场 + Meteoblue 专业模式</p>
-      <p style="margin-bottom:20px"><span style="color:var(--ochre)">▸</span> 路线规划：驾车·骑行·步行 + 海拔剖面</p>
-      <p style="color:var(--muted);font-size:.85em">数据：高德地图 · Open‑Meteo · Windy · Meteoblue</p>
+  <div style="text-align:center;padding:64px 10px 72px">
+    <div style="font-family:'Playfair Display','Noto Serif SC',Georgia,serif;font-size:2.6em;color:var(--ink);margin-bottom:12px;line-height:1.15;letter-spacing:.01em">气象与山野</div>
+    <div style="font-size:.64em;color:var(--ochre);margin-bottom:48px;letter-spacing:.12em;font-family:'Noto Serif SC',Georgia,serif">Weather &amp; Trails</div>
+    <div style="max-width:420px;margin:0 auto;text-align:center;font-size:.72em;line-height:2.4;color:var(--sub);font-family:'Noto Serif SC',Georgia,serif">
+      <p style="margin-bottom:24px;color:var(--text);font-size:1.05em">为 <span style="color:var(--ochre);font-weight:600">徒步者 · 露营者 · 户外爱好者</span> 准备的气象工具</p>
+      <p style="margin-bottom:4px">精准定位全国乡镇、校区、景点</p>
+      <p style="margin-bottom:4px">九项户外指数：徒步 · 露营 · 观星 · 摄影 · 钓鱼 · 攀岩</p>
+      <p style="margin-bottom:4px">6日逐时预报 + 温度曲线</p>
+      <p style="margin-bottom:4px">Windy 实时风场 + Meteoblue 专业模式</p>
+      <p style="margin-bottom:28px">路线规划：驾车 · 骑行 · 步行 + 海拔剖面</p>
+      <p style="color:var(--muted);font-size:.88em">数据：高德地图 · Open‑Meteo · Windy · Meteoblue</p>
     </div>
   </div>
 </div>
@@ -683,37 +687,40 @@ function render(){
   <div class="loc">${STATE.lat.toFixed(2)}°N ${STATE.lon.toFixed(2)}°E · 海拔 ${alt||'~'}m</div>
 </div>
 
-<!-- Hero: massive temperature -->
+<!-- Hero: editorial temperature -->
 <div class="hero-block">
   <div class="hero-loc">${STATE.admin||''} · ${STATE.country||''}</div>
   <span class="hero-temp">${now.temperature_2m.toFixed(1)}°</span>
-  <span class="hero-label">${w(now.weather_code).i} ${w(now.weather_code).l} · 体感 ${now.apparent_temperature.toFixed(1)}°</span>
+  <span class="hero-label">${w(now.weather_code).i} <em>${w(now.weather_code).l}</em> · 体感 ${now.apparent_temperature.toFixed(1)}°</span>
 </div>
 
-<!-- Stat strip -->
+<!-- Stat strip: editorial dateline -->
 <div class="stat-strip">
-  <div class="ss-item"><span class="ssv">${now.wind_speed_10m}<small>km/h</small></span><span class="ssl">风速 ${windDir(now.wind_direction_10m)}</span></div>
-  <div class="ss-item"><span class="ssv">${now.relative_humidity_2m}<small>%</small></span><span class="ssl">湿度</span></div>
-  <div class="ss-item"><span class="ssv">${sunshineH}<small>h</small></span><span class="ssl">日照</span></div>
-  <div class="ss-item"><span class="ssv">${today.precipitation_sum[0]}<small>mm</small></span><span class="ssl">降水</span></div>
+  <span class="ss-item"><span class="ssv">${now.wind_speed_10m}</span><span class="ssl">km/h ${windDir(now.wind_direction_10m)}</span></span>
+  <span class="ss-item"><span class="ssv">${now.relative_humidity_2m}%</span><span class="ssl">湿度</span></span>
+  <span class="ss-item"><span class="ssv">${sunshineH}h</span><span class="ssl">日照</span></span>
+  <span class="ss-item"><span class="ssv">${today.precipitation_sum[0]}mm</span><span class="ssl">降水</span></span>
 </div>
 
 <!-- Outdoor indices -->
-<div class="sec-title">/ 户外指数</div>
+<div class="sec-title">户外指数</div>
 <div class="outdoor">
-  <div class="oc feature" style="border-bottom:1px solid var(--rule)"><div class="oh">徒步适宜度</div><div class="ov"><span class="oe ${hikeC}">${hikeL}</span> ${hikeS} / 10</div><div class="od">降雨概率 ${maxRain}% · 风速 ${avgWind}km/h · 能见度 ${avgVis}km · UV ${maxUV}</div></div>
-  <div class="oc"><div class="oh">露营适宜度</div><div class="ov"><span class="oe ${campC}">${campL}</span> ${campS} / 10</div><div class="od">夜间低温 ${nightT.toFixed(0)}° · 降雨 ${maxRain}% · 风速 ${avgWind}km/h</div></div>
-  <div class="oc"><div class="oh">观星指数</div><div class="ov"><span class="oe ${starC}">${starL}</span> ${starS} / 10</div><div class="od">云量 ${nightCloud.toFixed(0)}% · 月相 ${moonEmoji(mp)}</div></div>
-  <div class="oc"><div class="oh">摄影指数</div><div class="ov"><span class="oe ${photoC}">${photoL}</span></div><div class="od">日出 ${sunrise} · 日落 ${sunset} · 云量 ${dayCloud.toFixed(0)}%</div></div>
-  <div class="oc"><div class="oh">钓鱼指数</div><div class="ov"><span class="oe ${fishC}">${fishL}</span> ${fishS} / 10</div><div class="od">气压 ${pTrend} ${Math.round(pNow)}hPa · 风 ${avgWind}km/h</div></div>
-  <div class="oc"><div class="oh">攀岩指数</div><div class="ov"><span class="oe ${climbC}">${climbL}</span> ${climbS} / 10</div><div class="od">降雨 ${maxRain}% · 风 ${avgWind}km/h · 气温 ${now.temperature_2m.toFixed(0)}°</div></div>
-  <div class="oc"><div class="oh">紫外线风险</div><div class="ov"><span class="oe ${uvC}">${uvL}</span> UV ${maxUV}</div><div class="od">${maxUV>7?'SPF30+ · 遮阳帽 · 墨镜':maxUV>5?'建议防晒':'无需防护'}${altNote?' · '+altNote:''}</div></div>
-  <div class="oc"><div class="oh">体感舒适度</div><div class="ov"><span class="oe ${comfortC}">${comfortL}</span> 体感 ${comfortT.toFixed(1)}°</div><div class="od">湿度 ${now.relative_humidity_2m}% · ${comfortT<10?'厚外套':comfortT>30?'防暑降温':'宜出行'}</div></div>
-  <div class="oc"><div class="oh">最佳户外窗口</div><div class="ov">${hrs.time[bestH].slice(5,10)} ${hrs.time[bestH].slice(11,16)}</div><div class="od">48h最优时段 · 累计降水 ${totalRain}mm</div></div>
+  <div class="oc feature">
+    <div><div class="oh">徒步适宜度</div><div class="od">降雨概率 ${maxRain}% · 风速 ${avgWind}km/h · 能见度 ${avgVis}km · UV ${maxUV}</div></div>
+    <div class="ov" style="text-align:right"><span class="oe ${hikeC}">${hikeL}</span> ${hikeS} / 10</div>
+  </div>
+  <div class="oc"><div class="oh">露营适宜度</div><div class="ov"><span class="oe ${campC}">${campL}</span> ${campS}/10</div><div class="od">夜间 ${nightT.toFixed(0)}° · 雨${maxRain}% · 风${avgWind}km/h</div></div>
+  <div class="oc"><div class="oh">观星指数</div><div class="ov"><span class="oe ${starC}">${starL}</span> ${starS}/10</div><div class="od">云量${nightCloud.toFixed(0)}% · 月相${moonEmoji(mp)}</div></div>
+  <div class="oc"><div class="oh">摄影指数</div><div class="ov"><span class="oe ${photoC}">${photoL}</span></div><div class="od">日出${sunrise} · 日落${sunset} · 云${dayCloud.toFixed(0)}%</div></div>
+  <div class="oc"><div class="oh">钓鱼指数</div><div class="ov"><span class="oe ${fishC}">${fishL}</span> ${fishS}/10</div><div class="od">气压${pTrend} ${Math.round(pNow)}hPa · 风${avgWind}km/h</div></div>
+  <div class="oc"><div class="oh">攀岩指数</div><div class="ov"><span class="oe ${climbC}">${climbL}</span> ${climbS}/10</div><div class="od">雨${maxRain}% · 风${avgWind}km/h · ${now.temperature_2m.toFixed(0)}°</div></div>
+  <div class="oc"><div class="oh">紫外线风险</div><div class="ov"><span class="oe ${uvC}">${uvL}</span> UV${maxUV}</div><div class="od">${maxUV>7?'SPF30+ · 遮阳帽 · 墨镜':maxUV>5?'建议防晒':'无需防护'}${altNote?' · '+altNote:''}</div></div>
+  <div class="oc"><div class="oh">体感舒适度</div><div class="ov"><span class="oe ${comfortC}">${comfortL}</span> ${comfortT.toFixed(1)}°</div><div class="od">湿度${now.relative_humidity_2m}% · ${comfortT<10?'厚外套':comfortT>30?'防暑降温':'宜出行'}</div></div>
+  <div class="oc"><div class="oh">最佳户外窗口</div><div class="ov">${hrs.time[bestH].slice(5,10)} ${hrs.time[bestH].slice(11,16)}</div><div class="od">48h最优时段 · 累计降水${totalRain}mm</div></div>
 </div>
 
-<!-- 6-day filmstrip -->
-<div class="sec-title">/ 6日预报</div>
+<!-- Daily forecast -->
+<div class="sec-title">${today.time.length}日预报</div>
 <div class="days" id="days"></div>
 
 <div class="detail" id="detail">
@@ -743,6 +750,7 @@ function render(){
   <span><span class="dot mb"></span>Windy+Meteoblue</span>
 </div>
 `;
+
 
   document.getElementById('main').innerHTML=html;  document.getElementById('main').innerHTML=html;
   buildDays();
@@ -793,9 +801,9 @@ function showDetail(i){
   document.getElementById('detail-title').textContent=`${i===0?'今天':WK[dt.getDay()]} ${(dt.getMonth()+1)+'月'+dt.getDate()+'日'} · ${wc.l}`;
   document.getElementById('detail-grid').innerHTML=`
     <div class="di"><div class="l">最高/低温</div><div class="v">${today.temperature_2m_max[i]}° / ${today.temperature_2m_min[i]}°</div></div>
-    <div class="di"><div class="l">降雨概率</div><div class="v" style="color:var(--rain)">${today.precipitation_probability_max[i]}%</div></div>
+    <div class="di"><div class="l">降雨概率</div><div class="v" style="color:var(--blue)">${today.precipitation_probability_max[i]}%</div></div>
     <div class="di"><div class="l">降水量</div><div class="v">${today.precipitation_sum[i]} mm</div></div>
-    <div class="di"><div class="l">UV 峰值</div><div class="v" style="color:var(--uv)">${today.uv_index_max[i]} · ${uvLabel(today.uv_index_max[i])}</div></div>
+    <div class="di"><div class="l">UV 峰值</div><div class="v" style="color:var(--ochre)">${today.uv_index_max[i]} · ${uvLabel(today.uv_index_max[i])}</div></div>
     <div class="di"><div class="l">日照时长</div><div class="v">${(today.sunshine_duration[i]/3600).toFixed(1)} h</div></div>
     <div class="di"><div class="l">风速</div><div class="v">${today.wind_speed_10m_max[i]} km/h</div></div>
     <div class="di"><div class="l">风向</div><div class="v">${windDir(today.wind_direction_10m_dominant[i])}</div></div>
@@ -838,13 +846,13 @@ function drawChart(s,e){
   const pts=toXY(temps),ptsF=toXY(feels);
   const path=pts.map((x,i)=>(i===0?'M':'L')+x.x.toFixed(1)+','+x.y.toFixed(1)).join(' ');
   const pathF=ptsF.map((x,i)=>(i===0?'M':'L')+x.x.toFixed(1)+','+x.y.toFixed(1)).join(' ');
-  let labels='';for(let h=0;h<24;h+=3)labels+=`<text x="${pts[h].x.toFixed(1)}" y="${H-6}" text-anchor="middle" font-size="9" fill="#556880">${h}h</text>`;
-  let dots=pts.filter((_,i)=>i%3===0).map(p=>`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="#e0a44e"/><text x="${p.x.toFixed(1)}" y="${p.y-7}" text-anchor="middle" font-size="9" font-weight="600" fill="#e4ecf4">${p.t.toFixed(1)}°</text>`).join('');
+  let labels='';for(let h=0;h<24;h+=3)labels+=`<text x="${pts[h].x.toFixed(1)}" y="${H-6}" text-anchor="middle" font-size="9" fill="#B0A594">${h}h</text>`;
+  let dots=pts.filter((_,i)=>i%3===0).map(p=>`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="#C06E3A"/><text x="${p.x.toFixed(1)}" y="${p.y-7}" text-anchor="middle" font-size="9" font-weight="600" fill="#2D2318">${p.t.toFixed(1)}°</text>`).join('');
   document.getElementById('chart').innerHTML=`
-    <text x="10" y="14" font-size="10" fill="#e0a44e">━ 实际温度</text>
-    <text x="10" y="28" font-size="10" fill="#6b9fbd">━ 体感温度</text>
-    <path d="${path}" fill="none" stroke="#e0a44e" stroke-width="2" stroke-linejoin="round"/>
-    <path d="${pathF}" fill="none" stroke="#6b9fbd" stroke-width="1.5" stroke-dasharray="5,3" stroke-linejoin="round"/>
+    <text x="10" y="14" font-size="10" fill="#C06E3A">━ 实际温度</text>
+    <text x="10" y="28" font-size="10" fill="#6A95AA">━ 体感温度</text>
+    <path d="${path}" fill="none" stroke="#C06E3A" stroke-width="2" stroke-linejoin="round"/>
+    <path d="${pathF}" fill="none" stroke="#6A95AA" stroke-width="1.5" stroke-dasharray="5,3" stroke-linejoin="round"/>
     ${dots}
     ${labels}
   `;
@@ -1097,7 +1105,7 @@ async function renderRouteAll(){
     </div>
     ${elevData?`<div class="elev-profile"><div class="ep-title">⛰️ 海拔剖面 (${RSTATE._elevStart||0}m → ${RSTATE._elevEnd||0}m)</div><canvas id="elevCanvas"></canvas></div>`:''}
     <div class="rs-mini">
-      <div class="rs-item" style="border-top:2px solid var(--forest)">
+      <div class="rs-item" style="border-top:2px solid var(--green)">
         <div class="rsv">${fromT}° ${fromWC.i}</div>
         <div class="rsl">📍 ${RSTATE.fromGeo.name}</div>
       </div>
