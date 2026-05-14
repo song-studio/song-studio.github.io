@@ -10,32 +10,34 @@
 <title>气象查询 · 路线规划</title>
 <style>
 /* ═══════════════════════════════════════════
-   Outdoor Magazine · 户外杂志风
-   Earth tones + editorial typography + generous whitespace
+   Night Sky Observatory · 深空观测台
+   Dark atmospheric + warm data accents
    ═══════════════════════════════════════════ */
 :root{
-  --bg:#f9f4eb;
-  --card:#fffdf8;
-  --text:#2c2416;
-  --sub:#7a7265;
-  --muted:#b5ada0;
-  --ink:#3d3226;
-  --forest:#2d5a3d;
-  --forest-light:#4a7c5c;
-  --ochre:#c4733e;
-  --ochre-light:#d4894f;
-  --sky:#6b99b2;
-  --rain:#7a9eb3;
-  --sun:#d4a43c;
-  --drive:#2d5a3d;
-  --bike:#c4733e;
-  --walk:#6b99b2;
-  --border:#e6dfd2;
-  --rule:#d9d0c0;
-  --card-shadow:0 1px 2px rgba(0,0,0,.03),0 2px 8px rgba(0,0,0,.04);
-  --card-hover:0 2px 4px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.06);
-  --radius:4px;
-  --radius-sm:3px;
+  --bg:#0d1a26;
+  --card:#152535;
+  --text:#e4ecf4;
+  --sub:#8a9eb5;
+  --muted:#556880;
+  --ink:#f0f4f8;
+  --forest:#5b9b7b;
+  --forest-light:#7dba98;
+  --ochre:#e0a44e;
+  --ochre-light:#eebb66;
+  --sky:#6b9fbd;
+  --rain:#7ba4c0;
+  --sun:#e0a44e;
+  --drive:#5b9b7b;
+  --bike:#e0a44e;
+  --walk:#6b9fbd;
+  --border:rgba(255,255,255,.06);
+  --rule:rgba(255,255,255,.08);
+  --card-shadow:0 1px 3px rgba(0,0,0,.2),0 2px 8px rgba(0,0,0,.3);
+  --card-hover:0 2px 6px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.4);
+  --radius:6px;
+  --radius-sm:4px;
+  --glow-amber:0 0 20px rgba(224,164,78,.12);
+  --glow-sky:0 0 20px rgba(107,159,189,.1);
 }
 
 *{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -54,7 +56,7 @@ body{
 .tab-bar{
   display:flex;gap:0;
   margin-bottom:28px;
-  border-bottom:2px solid var(--rule);
+  border-bottom:1px solid var(--rule);
   position:sticky;top:0;z-index:20;
   background:var(--bg);
   padding:10px 0 0;
@@ -70,7 +72,7 @@ body{
   letter-spacing:.1em;
   transition:all .25s;
   border-bottom:2px solid transparent;
-  margin-bottom:-2px;
+  margin-bottom:-1px;
   position:relative;
 }
 .tab-btn.active{
@@ -79,9 +81,6 @@ body{
   font-weight:700;
 }
 .tab-btn:hover{color:var(--ink)}
-.tab-btn:active{transform:scale(.97)}
-.tab-panel{display:none}
-.tab-panel.show{display:block}
 
 /* ── Search ── */
 .search-bar{padding:0 0 20px}
@@ -110,22 +109,22 @@ body{
   transition:all .2s;
   font-family:'Georgia',serif;
 }
-.search-box button:hover{background:var(--ochre);color:#fff}
+.search-box button:hover{background:var(--ochre);color:var(--bg)}
 .search-box button:active{transform:scale(.97)}
-.search-hint{font-size:.58em;color:var(--muted);margin-top:8px;font-style:italic;font-family:-apple-system,'PingFang SC',sans-serif}
+.search-hint{font-size:.58em;color:var(--muted);margin-top:8px;font-style:italic;font-family:'Space Mono','Courier New',monospace}
 .suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .sug-chip{
   font-size:.62em;padding:4px 14px;
   background:none;cursor:pointer;color:var(--sub);
   border:1px solid var(--rule);
   transition:all .2s;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
-.sug-chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sug-chip:hover{background:var(--ochre);color:var(--bg);border-color:var(--ochre)}
 
 /* ── Status ── */
 .status{text-align:center;padding:100px 0;color:var(--muted);font-style:italic;font-family:'Georgia',serif}
-.status.error{color:var(--ochre)}
+.status.error{color:#d4745e}
 .spinner{
   display:inline-block;width:20px;height:20px;
   border:2px solid var(--rule);border-top-color:var(--ochre);
@@ -136,47 +135,48 @@ body{
 /* ── Masthead ── */
 .site-header{text-align:center;padding:20px 0 8px}
 .site-header h1{font-size:1.3em;font-weight:400;letter-spacing:.02em;font-family:'Georgia','Noto Serif SC',serif;color:var(--ink)}
-.site-header .loc{font-size:.7em;color:var(--sub);margin-top:4px;font-family:-apple-system,'PingFang SC',sans-serif}
+.site-header .loc{font-size:.64em;color:var(--sub);margin-top:4px;font-family:'Space Mono','Courier New',monospace}
 .src-bar{
   display:flex;justify-content:center;gap:20px;
-  padding:6px 0 18px;font-size:.56em;color:var(--muted);
+  padding:6px 0 18px;font-size:.54em;color:var(--muted);
   text-transform:uppercase;letter-spacing:.08em;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
 .src-bar .dot{width:4px;height:4px;border-radius:50%;display:inline-block;margin-right:4px;vertical-align:middle}
 .dot.om{background:var(--ochre)}.dot.wy{background:var(--sky)}.dot.mb{background:var(--forest)}
 
 /* ── Hero temperature ── */
 .now-card{
-  text-align:center;padding:30px 20px 20px;margin-bottom:28px;
+  text-align:center;padding:36px 20px 24px;margin-bottom:28px;
   border-bottom:1px solid var(--rule);
 }
 .now-card .now-temp{
   font-size:5em;font-weight:400;line-height:1;
   letter-spacing:-.03em;color:var(--ink);
   font-family:'Georgia','Noto Serif SC',serif;
+  text-shadow:0 0 40px rgba(224,164,78,.15);
 }
 .now-card .now-label{
-  font-size:.82em;color:var(--sub);margin-top:8px;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-size:.78em;color:var(--sub);margin-top:8px;
+  font-family:'Space Mono','Courier New',monospace;
 }
 .now-grid{
   display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
   margin-top:24px;text-align:center;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
 @media(max-width:480px){.now-grid{grid-template-columns:repeat(2,1fr)}}
 .now-item{padding:14px 6px}
 .now-item .nv{font-size:1.05em;font-weight:600;color:var(--ink)}
-.now-item .nl{font-size:.56em;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+.now-item .nl{font-size:.54em;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
 
 /* ── Section title ── */
 .sec-title{
-  font-size:.64em;color:var(--ochre);
+  font-size:.6em;color:var(--ochre);
   margin:36px 0 16px;
-  letter-spacing:.1em;text-transform:uppercase;
+  letter-spacing:.12em;text-transform:uppercase;
   font-weight:700;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
   border-top:1px solid var(--rule);
   padding-top:20px;
 }
@@ -190,17 +190,17 @@ body{
   cursor:pointer;transition:all .2s;
   box-shadow:var(--card-shadow);
   border:1px solid var(--border);user-select:none;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
-.day-card:hover{box-shadow:var(--card-hover);transform:translateY(-1px)}
+.day-card:hover{box-shadow:var(--card-hover);transform:translateY(-1px);border-color:var(--ochre)}
 .day-card:active{transform:scale(.97)}
 .day-card.active{
-  border-color:var(--ink);
-  box-shadow:0 0 0 1px var(--ink);
+  border-color:var(--ochre);
+  box-shadow:0 0 0 1px var(--ochre),var(--glow-amber);
   background:var(--card);
 }
 .day-card .dow{font-size:.66em;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
-.day-card .date{font-size:.56em;color:var(--sub);margin-bottom:6px}
+.day-card .date{font-size:.54em;color:var(--sub);margin-bottom:6px}
 .day-card .icon{font-size:1.5em;margin:6px 0;display:block}
 .day-card .temps{font-size:.82em;font-weight:600;color:var(--ink)}
 .day-card .temps .lo{color:var(--sub);font-weight:400;margin-left:2px}
@@ -221,27 +221,27 @@ body{
 }
 .dg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 @media(max-width:480px){.dg{grid-template-columns:repeat(2,1fr);gap:4px}}
-.di{background:var(--bg);padding:14px 10px;text-align:center;font-family:-apple-system,'PingFang SC',sans-serif}
-.di .l{font-size:.56em;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.di{background:var(--bg);padding:14px 10px;text-align:center;font-family:'Space Mono','Courier New',monospace}
+.di .l{font-size:.54em;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .di .v{font-size:.88em;font-weight:600;margin-top:6px;color:var(--ink)}
 
 /* ── Hourly strip ── */
 .hs-wrap{margin-top:20px}
 .hs-label{
-  font-size:.6em;color:var(--sub);margin-bottom:10px;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-size:.58em;color:var(--sub);margin-bottom:10px;
+  font-family:'Space Mono','Courier New',monospace;
   font-style:italic;
 }
 .hs{display:flex;overflow-x:auto;gap:2px;padding-bottom:10px;-webkit-overflow-scrolling:touch}
 .hs::-webkit-scrollbar{height:2px}.hs::-webkit-scrollbar-thumb{background:var(--rule)}
 .hc{
   flex:0 0 auto;min-width:48px;text-align:center;padding:8px 4px;
-  background:var(--card);font-size:.56em;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  background:var(--card);font-size:.54em;
+  font-family:'Space Mono','Courier New',monospace;
   border:1px solid var(--border);
 }
-.hc.nw{background:var(--ink);color:#fff;border-color:var(--ink)}
-.hc.nw .r{color:rgba(255,255,255,.7)}
+.hc.nw{background:var(--ochre);color:var(--bg);border-color:var(--ochre)}
+.hc.nw .r{color:rgba(0,0,0,.5)}
 .hc .h{font-weight:600;margin-bottom:4px;display:block}
 .hc .t{margin-bottom:2px}
 .hc .r{color:var(--sky)}
@@ -259,22 +259,22 @@ body{
   box-shadow:var(--card-shadow);
   border:1px solid var(--border);
   border-top:3px solid var(--rule);
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
-.oc .oh{font-size:.68em;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:6px;color:var(--ink);letter-spacing:.03em}
+.oc .oh{font-size:.66em;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:6px;color:var(--ink);letter-spacing:.03em}
 .oc .ov{font-size:.95em;font-weight:600;margin-bottom:6px;color:var(--ink)}
-.oc .od{font-size:.58em;color:var(--sub);line-height:1.6}
-.oe{display:inline-block;padding:3px 10px;font-size:.64em;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
-.oe.good{background:#e8efe4;color:var(--forest)}
-.oe.warn{background:#fdf0e4;color:var(--ochre)}
-.oe.bad{background:#fce8e4;color:#c44}
+.oc .od{font-size:.56em;color:var(--sub);line-height:1.6}
+.oe{display:inline-block;padding:3px 10px;font-size:.62em;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.oe.good{background:rgba(91,155,123,.15);color:var(--forest-light)}
+.oe.warn{background:rgba(224,164,78,.12);color:var(--ochre)}
+.oe.bad{background:rgba(212,116,94,.12);color:#d4745e}
 
 /* ── Windy ── */
 .extern{margin:24px 0}
 .extern h4{
-  font-size:.64em;color:var(--ochre);margin-bottom:14px;
+  font-size:.6em;color:var(--ochre);margin-bottom:14px;
   font-weight:700;text-transform:uppercase;letter-spacing:.1em;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
 .windy-box{overflow:hidden;box-shadow:var(--card-hover);height:350px;border:1px solid var(--border)}
 .windy-box iframe{width:100%;height:100%;border:0}
@@ -284,11 +284,11 @@ body{
   flex:1;min-width:130px;
   background:var(--card);padding:16px;text-align:center;text-decoration:none;
   color:var(--ink);box-shadow:var(--card-shadow);
-  font-size:.68em;border:1px solid var(--border);
+  font-size:.66em;border:1px solid var(--border);
   transition:all .2s;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
-.ext-link:hover{transform:translateY(-2px);box-shadow:var(--card-hover);border-color:var(--ink)}
+.ext-link:hover{transform:translateY(-2px);box-shadow:var(--card-hover);border-color:var(--ochre)}
 
 /* ═══════════════════════════════════════════
    ROUTE PLANNER STYLES
@@ -307,11 +307,12 @@ body{
 .route-row input{
   flex:1;border:none;border-bottom:1px solid var(--rule);
   padding:10px 0;font-size:.88em;outline:none;
-  background:none;min-width:0;
+  background:none;min-width:0;color:var(--text);
   transition:border-color .2s;
   font-family:'Playfair Display','Noto Serif SC',serif;
 }
 .route-row input:focus{border-bottom-color:var(--ochre)}
+.route-row input::placeholder{color:var(--muted)}
 .swap-btn{
   flex-shrink:0;width:32px;height:32px;border-radius:50%;
   border:1px solid var(--rule);background:var(--card);
@@ -340,7 +341,7 @@ body{
 /* ── Go button ── */
 .go-btn{
   width:100%;margin-top:12px;padding:15px;
-  border:1px solid var(--ink);background:var(--ink);color:#fff;
+  border:1px solid var(--ink);background:var(--ink);color:var(--bg);
   font-size:.84em;font-weight:700;
   cursor:pointer;letter-spacing:.1em;
   transition:all .2s;
@@ -364,7 +365,7 @@ body{
   background:var(--card);padding:20px;margin-bottom:16px;
   box-shadow:var(--card-shadow);border:1px solid var(--border);
   display:none;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
 .route-summary .rs-header{
   display:flex;align-items:center;gap:12px;
@@ -385,14 +386,14 @@ body{
   padding:14px 6px;
 }
 .rs-item .rsv{font-size:.95em;font-weight:600;color:var(--ink)}
-.rs-item .rsl{font-size:.54em;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.04em}
+.rs-item .rsl{font-size:.52em;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.04em}
 .rs-mini{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px}
 .rs-mini .rs-item{padding:12px 8px}
 .rs-mini .rsv{font-size:.8em}
 
 /* ── Route steps ── */
 .route-steps{margin-top:18px;padding-top:18px;border-top:1px solid var(--rule)}
-.route-steps .steps-title{font-size:.68em;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
+.route-steps .steps-title{font-size:.64em;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
 .step-list{display:flex;flex-direction:column}
 .step-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);align-items:flex-start}
 .step-item:last-child{border-bottom:none}
@@ -401,16 +402,16 @@ body{
   display:flex;align-items:center;justify-content:center;
   font-size:.74em;font-weight:700;
 }
-.step-turn.left{background:#e8efe4;color:var(--forest)}
-.step-turn.right{background:#e8efe4;color:var(--forest)}
+.step-turn.left{background:rgba(91,155,123,.15);color:var(--forest-light)}
+.step-turn.right{background:rgba(91,155,123,.15);color:var(--forest-light)}
 .step-turn.straight{background:var(--bg);color:var(--sub)}
-.step-turn.arrive{background:#e8efe4;color:var(--forest)}
-.step-turn.depart{background:#e8efe4;color:var(--forest)}
-.step-turn.rotary{background:#fdf0e4;color:var(--ochre)}
+.step-turn.arrive{background:rgba(91,155,123,.15);color:var(--forest-light)}
+.step-turn.depart{background:rgba(91,155,123,.15);color:var(--forest-light)}
+.step-turn.rotary{background:rgba(224,164,78,.12);color:var(--ochre)}
 .step-info{flex:1;min-width:0}
-.step-info .step-dir{font-size:.58em;color:var(--sub);margin-bottom:1px}
-.step-info .step-road{font-size:.66em;font-weight:600;color:var(--ink)}
-.step-info .step-dist{font-size:.56em;color:var(--muted);margin-top:2px}
+.step-info .step-dir{font-size:.56em;color:var(--sub);margin-bottom:1px}
+.step-info .step-road{font-size:.64em;font-weight:600;color:var(--ink)}
+.step-info .step-dist{font-size:.54em;color:var(--muted);margin-top:2px}
 
 /* ── Weather panels (route) ── */
 .weather-panels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
@@ -418,43 +419,42 @@ body{
 .wp{
   background:var(--card);padding:18px;box-shadow:var(--card-shadow);
   border:1px solid var(--border);
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
 .wp.from{border-top:3px solid var(--forest)}
 .wp.to{border-top:3px solid var(--ochre)}
-.wp .wpn{font-size:.58em;color:var(--ochre);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
-.wp .wpt{font-size:.78em;font-weight:600;margin-bottom:10px;color:var(--ink)}
+.wp .wpn{font-size:.56em;color:var(--ochre);margin-bottom:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.wp .wpt{font-size:.76em;font-weight:600;margin-bottom:10px;color:var(--ink)}
 .wp .wph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .wp .wph .big{font-size:2em;font-weight:400;font-family:'Georgia',serif}
 .wp .wph .icon{font-size:1.5em}
 .wpg{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .wgi{
-  background:var(--bg);padding:8px;text-align:center;font-size:.64em;
+  background:var(--bg);padding:8px;text-align:center;font-size:.62em;
 }
 .wgi .wgiv{font-weight:600;display:block;margin-bottom:2px}
 .wgi .wgil{color:var(--sub);font-size:.85em}
 
 /* ── Elevation profile ── */
 .elev-profile{margin:16px 0;background:var(--card);padding:16px;border:1px solid var(--border)}
-.elev-profile .ep-title{font-size:.64em;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:10px}
-.elev-profile canvas{width:100%;height:120px;display:block}
+.elev-profile .ep-title{font-size:.6em;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:10px}
 
 /* ── Route suggestions ── */
 .route-sug{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
 .rsug{
-  font-size:.58em;padding:4px 10px;
+  font-size:.56em;padding:4px 10px;
   background:none;cursor:pointer;color:var(--sub);
   border:1px solid var(--rule);
   transition:all .2s;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-family:'Space Mono','Courier New',monospace;
 }
-.rsug:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rsug:hover{background:var(--ochre);color:var(--bg);border-color:var(--ochre)}
 
 /* ── Footer ── */
 footer{
   text-align:center;padding:48px 0 0;color:var(--muted);
-  font-size:.54em;letter-spacing:.06em;text-transform:uppercase;
-  font-family:-apple-system,'PingFang SC',sans-serif;
+  font-size:.52em;letter-spacing:.06em;text-transform:uppercase;
+  font-family:'Space Mono','Courier New',monospace;
 }
 footer a{color:var(--sub);text-decoration:none}
 footer a:hover{color:var(--ink)}
@@ -493,17 +493,17 @@ footer a:hover{color:var(--ink)}
 </div>
 
 <div id="main">
-  <div style="text-align:center;padding:40px 10px 60px">
-    <div style="font-family:'Playfair Display','Noto Serif SC',serif;font-size:2.2em;color:var(--ink);margin-bottom:10px;line-height:1.3">气象与山野</div>
-    <div style="font-size:.72em;color:var(--sub);margin-bottom:36px;letter-spacing:.06em;font-family:-apple-system,'PingFang SC',sans-serif">WEATHER &amp; TRAILS</div>
-    <div style="max-width:420px;margin:0 auto;text-align:left;font-size:.82em;line-height:2;color:var(--sub);font-family:-apple-system,'PingFang SC',sans-serif">
-      <p style="margin-bottom:18px">一座为<span style="color:var(--ink);font-weight:600">徒步者、露营者、户外爱好者</span>准备的气象工具。</p>
-      <p style="margin-bottom:8px"><span style="color:var(--forest)">▸</span> 精准定位全国乡镇、校区、景点</p>
-      <p style="margin-bottom:8px"><span style="color:var(--ochre)">▸</span> 九项户外指数：徒步·露营·观星·摄影·钓鱼·攀岩</p>
-      <p style="margin-bottom:8px"><span style="color:var(--sky)">▸</span> 6日逐时预报 + 温度曲线</p>
-      <p style="margin-bottom:8px"><span style="color:var(--forest)">▸</span> Windy 风场雷达 + Meteoblue 专业模式</p>
-      <p style="margin-bottom:18px"><span style="color:var(--ochre)">▸</span> 路线规划：驾车·骑行·步行 + 海拔剖面 + 徒步道叠加</p>
-      <p style="color:var(--muted);font-size:.88em;font-style:italic">数据：高德地图 · Open-Meteo · Windy · Meteoblue</p>
+  <div style="text-align:center;padding:48px 10px 60px">
+    <div style="font-family:'Playfair Display','Noto Serif SC',serif;font-size:2.4em;color:var(--ink);margin-bottom:8px;line-height:1.2;letter-spacing:.02em">气象与山野</div>
+    <div style="font-size:.6em;color:var(--ochre);margin-bottom:40px;letter-spacing:.16em;text-transform:uppercase;font-family:'Space Mono','Courier New',monospace">Weather &amp; Trails</div>
+    <div style="max-width:440px;margin:0 auto;text-align:left;font-size:.8em;line-height:2.2;color:var(--sub);font-family:'Space Mono','Courier New',monospace">
+      <p style="margin-bottom:20px;color:var(--text)">为 <span style="color:var(--ochre);font-weight:700">徒步者 · 露营者 · 户外爱好者</span> 准备的气象工具。</p>
+      <p style="margin-bottom:6px"><span style="color:var(--forest-light)">▸</span> 精准定位全国乡镇、校区、景点</p>
+      <p style="margin-bottom:6px"><span style="color:var(--ochre)">▸</span> 九项户外指数：徒步·露营·观星·摄影·钓鱼·攀岩</p>
+      <p style="margin-bottom:6px"><span style="color:var(--sky)">▸</span> 6日逐时预报 + 温度曲线</p>
+      <p style="margin-bottom:6px"><span style="color:var(--forest-light)">▸</span> Windy 实时风场 + Meteoblue 专业模式</p>
+      <p style="margin-bottom:20px"><span style="color:var(--ochre)">▸</span> 路线规划：驾车·骑行·步行 + 海拔剖面</p>
+      <p style="color:var(--muted);font-size:.85em">数据：高德地图 · Open‑Meteo · Windy · Meteoblue</p>
     </div>
   </div>
 </div>
@@ -896,8 +896,8 @@ function showDetail(i){
       <span class="h">${String(hour).padStart(2,'0')}:00</span>
       <span class="t">${hrs.temperature_2m[h].toFixed(1)}°</span>
       <span class="r">${w(hrs.weather_code[h]).i} ${hrs.precipitation_probability[h]}%</span>
-      <span style="font-size:.85em;color:#999;display:block">体感${hrs.apparent_temperature[h].toFixed(1)}° · UV${hrs.uv_index[h].toFixed(1)}</span>
-      <span style="font-size:.8em;color:#bbb;display:block">☁️${(hrs.cloud_cover?hrs.cloud_cover[h]:'?')}% · 💧${(hrs.dew_point_2m?hrs.dew_point_2m[h].toFixed(1):'?')}°</span>
+      <span style="font-size:.85em;color:var(--sub);display:block">体感${hrs.apparent_temperature[h].toFixed(1)}° · UV${hrs.uv_index[h].toFixed(1)}</span>
+      <span style="font-size:.8em;color:var(--muted);display:block">☁️${(hrs.cloud_cover?hrs.cloud_cover[h]:'?')}% · 💧${(hrs.dew_point_2m?hrs.dew_point_2m[h].toFixed(1):'?')}°</span>
     </div>`;
   }
   document.getElementById('hourly-strip').innerHTML=hh;
@@ -919,13 +919,13 @@ function drawChart(s,e){
   const pts=toXY(temps),ptsF=toXY(feels);
   const path=pts.map((x,i)=>(i===0?'M':'L')+x.x.toFixed(1)+','+x.y.toFixed(1)).join(' ');
   const pathF=ptsF.map((x,i)=>(i===0?'M':'L')+x.x.toFixed(1)+','+x.y.toFixed(1)).join(' ');
-  let labels='';for(let h=0;h<24;h+=3)labels+=`<text x="${pts[h].x.toFixed(1)}" y="${H-6}" text-anchor="middle" font-size="9" fill="#aaa">${h}h</text>`;
-  let dots=pts.filter((_,i)=>i%3===0).map(p=>`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="#4a7eb5"/><text x="${p.x.toFixed(1)}" y="${p.y-7}" text-anchor="middle" font-size="9" font-weight="600" fill="#333">${p.t.toFixed(1)}°</text>`).join('');
+  let labels='';for(let h=0;h<24;h+=3)labels+=`<text x="${pts[h].x.toFixed(1)}" y="${H-6}" text-anchor="middle" font-size="9" fill="#556880">${h}h</text>`;
+  let dots=pts.filter((_,i)=>i%3===0).map(p=>`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="#e0a44e"/><text x="${p.x.toFixed(1)}" y="${p.y-7}" text-anchor="middle" font-size="9" font-weight="600" fill="#e4ecf4">${p.t.toFixed(1)}°</text>`).join('');
   document.getElementById('chart').innerHTML=`
-    <text x="10" y="14" font-size="10" fill="#4a7eb5">━ 实际温度</text>
-    <text x="10" y="28" font-size="10" fill="#d47a2e">━ 体感温度</text>
-    <path d="${path}" fill="none" stroke="#4a7eb5" stroke-width="2" stroke-linejoin="round"/>
-    <path d="${pathF}" fill="none" stroke="#d47a2e" stroke-width="1.5" stroke-dasharray="5,3" stroke-linejoin="round"/>
+    <text x="10" y="14" font-size="10" fill="#e0a44e">━ 实际温度</text>
+    <text x="10" y="28" font-size="10" fill="#6b9fbd">━ 体感温度</text>
+    <path d="${path}" fill="none" stroke="#e0a44e" stroke-width="2" stroke-linejoin="round"/>
+    <path d="${pathF}" fill="none" stroke="#6b9fbd" stroke-width="1.5" stroke-dasharray="5,3" stroke-linejoin="round"/>
     ${dots}
     ${labels}
   `;
