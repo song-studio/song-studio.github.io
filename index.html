@@ -2,16 +2,75 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>松的空间</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Song Studio · 松的空间</title>
+<meta name="description" content="Song Studio - 气象查询、路线规划、2026 FIFA 世界杯赛程数据。户外与足球数据工具。">
+<meta name="keywords" content="天气查询,徒步天气,露营天气,2026世界杯,FIFA World Cup,路线规划,Song Studio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: -apple-system, 'Noto Sans SC', sans-serif; max-width: 600px; margin: 80px auto; padding: 0 20px; background: #fafaf8; color: #333; }
-  h1 { font-size: 2em; font-weight: 300; }
-  a { color: #555; }
+:root{
+  --bg:#f9f4eb;--card:#fffdf8;--text:#2c2416;--sub:#7a7265;--muted:#b5ada0;
+  --ink:#3d3226;--forest:#2d5a3d;--ochre:#c4733e;--sky:#6b99b2;
+  --border:#e6dfd2;--rule:#d9d0c0;
+}
+*{margin:0;box-sizing:border-box}
+body{
+  font-family:'Playfair Display','Noto Serif SC','Georgia',serif;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+.wrap{max-width:640px;margin:0 auto;padding:60px 20px 80px}
+header{text-align:center;padding:40px 0 48px}
+header h1{font-size:2em;font-weight:400;letter-spacing:.02em;color:var(--ink);font-family:'Georgia','Noto Serif SC',serif}
+header .sub{font-size:.72em;color:var(--sub);margin-top:8px;letter-spacing:.08em;font-family:-apple-system,'PingFang SC',sans-serif}
+.projects{display:flex;flex-direction:column;gap:16px}
+.card{
+  display:block;text-decoration:none;color:inherit;
+  background:var(--card);padding:28px 24px;
+  box-shadow:0 1px 2px rgba(0,0,0,.03),0 2px 8px rgba(0,0,0,.04);
+  border:1px solid var(--border);
+  transition:all .25s;
+}
+.card:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.08);border-color:var(--ink)}
+.card .icon{font-size:1.8em;margin-bottom:10px;display:block}
+.card h2{font-size:1.1em;font-weight:700;color:var(--ink);margin-bottom:6px;font-family:'Georgia','Noto Serif SC',serif}
+.card p{font-size:.78em;color:var(--sub);line-height:1.7;font-family:-apple-system,'PingFang SC',sans-serif}
+.card .tag{display:inline-block;font-size:.58em;padding:3px 10px;border:1px solid var(--rule);margin-top:12px;color:var(--muted);font-family:-apple-system,'PingFang SC',sans-serif;letter-spacing:.04em}
+.card.weather{border-top:3px solid var(--ochre)}
+.card.worldcup{border-top:3px solid var(--forest)}
+footer{text-align:center;padding:48px 0 0;color:var(--muted);font-size:.58em;letter-spacing:.06em;font-family:-apple-system,'PingFang SC',sans-serif}
+footer a{color:var(--sub);text-decoration:none}
+footer a:hover{color:var(--ink)}
 </style>
 </head>
 <body>
-<h1>松的空间</h1>
-<p>song-studio/share</p>
+<div class="wrap">
+<header>
+  <h1>Song Studio</h1>
+  <div class="sub">松的空间 · 数据工具</div>
+</header>
+
+<div class="projects">
+  <a class="card weather" href="weather-pro.html">
+    <span class="icon">🌤️</span>
+    <h2>气象查询 · 路线规划</h2>
+    <p>户外徒步、露营、观星、摄影、钓鱼、攀岩指数。高德精准定位 + Open-Meteo 全球气象 + Windy 风场雷达。支持驾车·骑行·步行路线规划与海拔剖面。</p>
+    <span class="tag">天气 · 户外 · 路线</span>
+  </a>
+
+  <a class="card worldcup" href="2026-FIFA-World-Cup.html">
+    <span class="icon">⚽</span>
+    <h2>2026 FIFA World Cup</h2>
+    <p>48 支球队完整数据，小组赛赛程与积分榜，淘汰赛对阵图。2026 美加墨世界杯一站式数据查询。</p>
+    <span class="tag">世界杯 · 足球 · 数据</span>
+  </a>
+</div>
+
+<footer>
+  <a href="https://github.com/song-studio/song-studio.github.io">song-studio.github.io</a> · 高德地图 · Open-Meteo · Windy
+</footer>
+</div>
 </body>
 </html>
