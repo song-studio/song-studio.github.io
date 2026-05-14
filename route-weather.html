@@ -96,7 +96,7 @@ footer a{color:#bbb}
 <div class="search-section">
   <div class="search-row">
     <span class="dot from"></span>
-    <input type="text" id="fromInput" placeholder="起点… 例：六盘水" autocomplete="off">
+    <input type="text" id="fromInput" placeholder="起点… 例：北京" autocomplete="off">
     <button class="swap-btn" onclick="swap()" title="交换起终点">⇅</button>
   </div>
   <div class="search-row">
@@ -116,11 +116,11 @@ footer a{color:#bbb}
   </div>
   <button class="go-btn" id="goBtn" onclick="plan()">开始规划</button>
   <div class="suggestions">
-    <span class="sug" onclick="preset('六盘水','贵阳','driving')">六盘水→贵阳</span>
-    <span class="sug" onclick="preset('贵阳','遵义','cycling')">贵阳→遵义(骑行)</span>
-    <span class="sug" onclick="preset('成都','重庆','driving')">成都→重庆</span>
-    <span class="sug" onclick="preset('昆明','大理','driving')">昆明→大理</span>
     <span class="sug" onclick="preset('北京','天津','cycling')">北京→天津(骑行)</span>
+    <span class="sug" onclick="preset('成都','重庆','driving')">成都→重庆</span>
+    <span class="sug" onclick="preset('贵阳','遵义','cycling')">贵阳→遵义(骑行)</span>
+    <span class="sug" onclick="preset('昆明','大理','driving')">昆明→大理</span>
+    <span class="sug" onclick="preset('黄果树','贵阳','driving')">黄果树→贵阳</span>
   </div>
 </div>
 
@@ -177,11 +177,23 @@ function preset(f,t,m){
 
 // Geocode
 async function geocode(q){
-  const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`);
+  // Try Nominatim first (better small-place coverage, but blocked in China)
+  try{
+    const c=new AbortController();
+    const t=setTimeout(()=>c.abort(),5000);
+    const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`,{signal:c.signal});
+    clearTimeout(t);
+    const d=await r.json();
+    if(d&&d.length){
+      const p=d[0].display_name.split(', ');
+      return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
+    }
+  }catch(e){}
+  // Fallback to Open-Meteo (works in China, but fewer small places)
+  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=3&language=zh&format=json`);
   const d=await r.json();
-  if(!d||!d.length)return null;
-  const p=d[0].display_name.split(', ');
-  return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
+  if(!d.results||!d.results.length)return null;
+  return d.results[0];
 }
 
 // Route (OSRM)
