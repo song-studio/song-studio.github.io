@@ -412,308 +412,7 @@ footer{text-align:center;padding:40px 0 0;color:var(--muted);font-size:.58em;let
 footer a{color:#aaa}
 .hidden{display:none}
 </style>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-// ── Route state ─────────────────────────────────────────
-let RSTATE={mode:'driving',fromGeo:null,toGeo:null,route:null,rmap:null,markers:[],routeLine:null};
-
-function switchTab(tab){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.textContent.includes(tab==='weather'?'天气':'路线')));
-  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('show'));
-  document.getElementById('tab-'+tab).classList.add('show');
-  if(tab==='route'&&!RSTATE.rmap)initRMap();
-  if(tab==='route')setTimeout(()=>RSTATE.rmap&&RSTATE.rmap.invalidateSize(),200);
-}
-
-function initRMap(){
-  RSTATE.rmap=L.map('rmap').setView([27,106],6);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
-    maxZoom:18
-  }).addTo(RSTATE.rmap);
-}
-
-function setMode(m){
-  RSTATE.mode=m;
-  document.querySelectorAll('#tab-route .mode-chip').forEach(c=>{
-    c.classList.remove('sel');
-    if(c.dataset.mode===m)c.classList.add('sel');
-  });
-}
-
-function swap(){
-  const t=document.getElementById('fromInput').value;
-  document.getElementById('fromInput').value=document.getElementById('toInput').value;
-  document.getElementById('toInput').value=t;
-  if(RSTATE.fromGeo&&RSTATE.toGeo){
-    const tmp=RSTATE.fromGeo;RSTATE.fromGeo=RSTATE.toGeo;RSTATE.toGeo=tmp;
-    await renderRouteAll();
-  }
-}
-
-function preset(f,t,m){
-  document.getElementById('fromInput').value=f;
-  document.getElementById('toInput').value=t;
-  setMode(m);
-  plan();
-}
-
-async function routeGeocode(q){
-  try{
-    const c=new AbortController();
-    const t=setTimeout(()=>c.abort(),5000);
-    const r=await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=3&accept-language=zh`,{signal:c.signal});
-    clearTimeout(t);
-    const d=await r.json();
-    if(d&&d.length){
-      const p=d[0].display_name.split(', ');
-      return {latitude:parseFloat(d[0].lat),longitude:parseFloat(d[0].lon),name:p[0],country:p[p.length-1]||'',admin1:p.length>2?p[p.length-2]:''};
-    }
-  }catch(e){}
-  const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=3&language=zh&format=json`);
-  const d=await r.json();
-  if(!d.results||!d.results.length)return null;
-  return d.results[0];
-}
-
-async function getRoute(from,to,mode){
-  const profiles={driving:'car',cycling:'bike',walking:'foot'};
-  const profile=profiles[mode]||'car';
-  const u=`https://router.project-osrm.org/route/v1/${profile}/${from.longitude},${from.latitude};${to.longitude},${to.latitude}?overview=full&geometries=geojson&steps=true&alternatives=false`;
-  const r=await fetch(u);
-  const d=await r.json();
-  if(!d.routes||!d.routes.length)return null;
-  return d.routes[0];
-}
-
-async function getRouteWeather(lat,lon){
-  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,relative_humidity_2m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code,wind_speed_10m_max,uv_index_max,sunshine_duration,precipitation_sum&timezone=auto&forecast_days=3`;
-  const r=await fetch(u);
-  return await r.json();
-}
-
-async function plan(){
-  const fromQ=document.getElementById('fromInput').value.trim();
-  const toQ=document.getElementById('toInput').value.trim();
-  if(!fromQ||!toQ)return;
-
-  document.getElementById('routeSummary').style.display='none';
-  document.getElementById('weatherPanels').innerHTML='';
-  const goBtn=document.getElementById('goBtn');
-  goBtn.disabled=true;goBtn.textContent='规划中…';
-
-  try{
-    const[fg,tg]=await Promise.all([routeGeocode(fromQ),routeGeocode(toQ)]);
-    if(!fg||!tg){
-      alert(`未找到：${!fg?fromQ:''} ${!tg?toQ:''}`);
-      goBtn.disabled=false;goBtn.textContent='开始规划';
-      return;
-    }
-    RSTATE.fromGeo=fg;RSTATE.toGeo=tg;
-
-    const[route,fromW,toW]=await Promise.all([
-      getRoute(fg,tg,RSTATE.mode),
-      getRouteWeather(fg.latitude,fg.longitude),
-      getRouteWeather(tg.latitude,tg.longitude)
-    ]);
-
-    if(!route){
-      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远或太近\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
-      goBtn.disabled=false;goBtn.textContent='开始规划';
-      return;
-    }
-    RSTATE.route=route;
-    RSTATE.fromW=fromW;RSTATE.toW=toW;
-    await renderRouteAll();
-  }catch(e){
-    alert('网络错误：'+e.message);
-  }
-  goBtn.disabled=false;goBtn.textContent='开始规划';
-}
-
-async function renderRouteAll(){
-  const m=RSTATE.rmap;
-  if(!m)return;
-  RSTATE.markers.forEach(mk=>mk.remove());
-  if(RSTATE.routeLine)m.removeLayer(RSTATE.routeLine);
-
-  const bounds=L.latLngBounds([
-    [RSTATE.fromGeo.latitude,RSTATE.fromGeo.longitude],
-    [RSTATE.toGeo.latitude,RSTATE.toGeo.longitude]
-  ]);
-
-  const fromM=L.marker([RSTATE.fromGeo.latitude,RSTATE.fromGeo.longitude],{
-    icon:L.divIcon({html:'<div style="background:#4a7eb5;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">起</div>',iconSize:[28,28],iconAnchor:[14,14]})
-  }).addTo(m).bindPopup(`<b>起点</b><br>${RSTATE.fromGeo.name}`);
-  const toM=L.marker([RSTATE.toGeo.latitude,RSTATE.toGeo.longitude],{
-    icon:L.divIcon({html:'<div style="background:#d47a2e;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.3)">终</div>',iconSize:[28,28],iconAnchor:[14,14]})
-  }).addTo(m).bindPopup(`<b>终点</b><br>${RSTATE.toGeo.name}`);
-  RSTATE.markers=[fromM,toM];
-
-  const coords=RSTATE.route.geometry.coordinates.map(c=>[c[1],c[0]]);
-  RSTATE.routeLine=L.polyline(coords,{color:'#4a7eb5',weight:4,opacity:.8}).addTo(m);
-  bounds.extend(coords);
-  m.fitBounds(bounds,{padding:[40,40]});
-
-  const dist=(RSTATE.route.distance/1000).toFixed(1);
-  const dur=Math.round(RSTATE.route.duration/60);
-  const hrs=Math.floor(dur/60),mins=dur%60;
-  const durStr=hrs>0?`${hrs}h${mins}m`:`${mins}分钟`;
-  const modeName={driving:'驾车',cycling:'骑行',walking:'步行'};
-  const speed=(RSTATE.route.distance/1000)/(RSTATE.route.duration/3600);
-
-  // Real elevation: fetch from Open-Meteo elevation API using sampled points
-  let elevationGain='...';
-  try{
-    const geom=RSTATE.route.geometry.coordinates;
-    const step=Math.max(1,Math.floor(geom.length/50));
-    const pts=[];
-    for(let i=0;i<geom.length;i+=step)pts.push(geom[i]);
-    if(pts.length>1){
-      const lats=pts.map(p=>p[1].toFixed(4)).join(',');
-      const lons=pts.map(p=>p[0].toFixed(4)).join(',');
-      const er=await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lats}&longitude=${lons}`);
-      const ed=await er.json();
-      if(ed.elevation&&ed.elevation.length>1){
-        let g=0;let d=0;
-        for(let i=1;i<ed.elevation.length;i++){
-          const diff=ed.elevation[i]-ed.elevation[i-1];
-          if(diff>0)g+=diff;else d+=Math.abs(diff);
-        }
-        elevationGain=Math.round(g);
-        RSTATE._elevLoss=Math.round(d);
-        RSTATE._elevStart=Math.round(ed.elevation[0]);
-        RSTATE._elevEnd=Math.round(ed.elevation[ed.elevation.length-1]);
-      }
-    }
-  }catch(e){}
-
-  const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
-  const modeColors={driving:'#4a7eb5',cycling:'#5a9a6a',walking:'#d47a2e'};
-  document.getElementById('routeSummary').style.display='block';
-  const mc=modeColors[RSTATE.mode];
-  const mi=modeIcons[RSTATE.mode];
-  const fromT=(RSTATE.fromW.current.temperature_2m||0).toFixed(1);
-  const toT=(RSTATE.toW.current.temperature_2m||0).toFixed(1);
-  const fromW=w(RSTATE.fromW.current.weather_code);
-  const toW=w(RSTATE.toW.current.weather_code);
-  const elevInfo=elevationGain!=='...'?`${elevationGain}m / ${RSTATE._elevLoss||0}m`:'计算中…';
-  document.getElementById('routeSummary').innerHTML=`
-    <div class="rs-header">
-      <div class="rs-mode-icon" style="background:${mc}20;color:${mc}">${mi}</div>
-      <div>
-        <div class="rs-route-name">${modeName[RSTATE.mode]}路线</div>
-        <div style="font-size:.66em;color:var(--sub)">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</div>
-      </div>
-      <div style="text-align:right">
-        <div style="font-size:.78em;font-weight:600;color:${mc}">${dist} km</div>
-        <div style="font-size:.62em;color:var(--sub)">${durStr}</div>
-      </div>
-    </div>
-    <div class="rs-grid">
-      <div class="rs-item"><div class="rsv">📏 ${dist} km</div><div class="rsl">总距离</div></div>
-      <div class="rs-item"><div class="rsv">⏱ ${durStr}</div><div class="rsl">${modeName[RSTATE.mode]}用时</div></div>
-      <div class="rs-item"><div class="rsv">🏃 ${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
-      <div class="rs-item"><div class="rsv">⛰ ${elevInfo}</div><div class="rsl">爬升/下降 m</div></div>
-    </div>
-    <div class="rs-mini">
-      <div class="rs-item" style="border-left:3px solid ${mc}">
-        <div class="rsv">${fromT}° ${fromW.i}</div>
-        <div class="rsl">📍 ${RSTATE.fromGeo.name}</div>
-      </div>
-      <div class="rs-item" style="border-left:3px solid var(--warm)">
-        <div class="rsv">${toT}° ${toW.i}</div>
-        <div class="rsl">📍 ${RSTATE.toGeo.name}</div>
-      </div>
-    </div>
-    ${buildRouteSteps()}
-  `;
-
-  const container=document.getElementById('weatherPanels');
-  container.innerHTML='';
-  renderRouteWP('from',RSTATE.fromGeo,RSTATE.fromW,container);
-  renderRouteWP('to',RSTATE.toGeo,RSTATE.toW,container);
-}
-
-function buildRouteSteps(){
-  const route=RSTATE.route;
-  if(!route.legs||!route.legs[0]||!route.legs[0].steps||route.legs[0].steps.length===0)return'';
-  const steps=route.legs[0].steps;
-  if(steps.length<2)return'';
-  // Map OSRM maneuver to icon + Chinese direction
-  function stepIcon(s){
-    const m=s.maneuver;
-    if(!m)return{icon:'→',cls:'straight',dir:''};
-    const t=m.type||'';const mod=m.modifier||'';
-    if(t==='depart'||t==='start')return{icon:'▶',cls:'depart',dir:'出发'};
-    if(t==='arrive')return{icon:'🏁',cls:'arrive',dir:'到达'};
-    if(t==='roundabout'||t==='rotary')return{icon:'↻',cls:'rotary',dir:'环岛'};
-    if(t==='turn'||t==='new name'||t==='continue'||t==='merge'||t==='fork'||t==='off ramp'){
-      const map={left:'左转',sharp_left:'急左转',slight_left:'稍左转',right:'右转',sharp_right:'急右转',slight_right:'稍右转',straight:'直行',uturn:'调头'};
-      const dir=map[mod]||mod||'转向';
-      let cls='straight';
-      if(mod.includes('left'))cls='left';
-      else if(mod.includes('right'))cls='right';
-      else if(mod==='uturn')cls='rotary';
-      let icon='↑';if(mod.includes('left'))icon='←';if(mod.includes('right'))icon='→';if(mod==='uturn')icon='↩';
-      return{icon,cls,dir};
-    }
-    return{icon:'→',cls:'straight',dir:mod||'前行'};
-  }
-  let html='<div class="route-steps"><div class="steps-title">🧭 逐段导航</div><div class="step-list">';
-  const maxSteps=Math.min(steps.length,100);
-  for(let i=0;i<maxSteps;i++){
-    const s=steps[i];
-    const si=stepIcon(s);
-    const d=(s.distance/1000).toFixed(1);
-    const name=s.name||'无名路';
-    html+=`<div class="step-item">
-      <div class="step-turn ${si.cls}">${si.icon}</div>
-      <div class="step-info">
-        <div class="step-dir">${si.dir}</div>
-        <div class="step-road">${name}${s.ref?' ('+s.ref+')':''}</div>
-        <div class="step-dist">${d} km · ${Math.round(s.duration/60)}分钟</div>
-      </div>
-    </div>`;
-  }
-  html+='</div></div>';
-  return html;
-}
-
-function renderRouteWP(side,geo,data,container){
-  const now=data.current;
-  const today=data.daily;
-  const wc=w(now.weather_code);
-  const label=side==='from'?'起点':'终点';
-  const cls=side==='from'?'from':'to';
-
-  const panel=document.createElement('div');
-  panel.className='wp '+cls;
-  panel.innerHTML=`
-    <div class="wpn">${label}</div>
-    <div class="wpt">${geo.name} · ${geo.admin1||''} · ${geo.country||''}</div>
-    <div class="wph">
-      <span class="big">${now.temperature_2m.toFixed(1)}°</span>
-      <span class="icon">${wc.i}</span>
-      <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>体感 ${now.apparent_temperature.toFixed(1)}°</span>
-    </div>
-    <div class="wpg">
-      <div class="wgi"><span class="wgiv">🌬 ${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
-      <div class="wgi"><span class="wgiv">💧 ${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
-      <div class="wgi"><span class="wgiv">🌧 ${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
-      <div class="wgi"><span class="wgiv">☀️ UV${today.uv_index_max[0]}</span><span class="wgil">紫外线</span></div>
-      <div class="wgi"><span class="wgiv">🌡 ${today.temperature_2m_max[0]}°/${today.temperature_2m_min[0]}°</span><span class="wgil">最高/低</span></div>
-      <div class="wgi"><span class="wgiv">☀ ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照</span></div>
-    </div>
-  `;
-  if(side==='from')container.prepend(panel);
-  else container.appendChild(panel);
-}
-
-// Route enter key
-document.getElementById('fromInput').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('toInput').focus()});
-document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='Enter')plan()});
-
-</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 <div class="wrap" id="app">
@@ -746,7 +445,7 @@ document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='En
 </div>
 
 <div id="main">
-  <div class="status"><div class="spinner"></div><br><br>加载中…</div>
+  <div class="status" style="color:var(--sub);padding:80px 0">☝️ 输入地名，查看实时气象</div>
 </div>
 
 
@@ -837,14 +536,14 @@ async function initFromParams(){
   const q=p.get('q');
   if(q){
     document.getElementById('q').value=q;
+    document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>加载中…</div>';
     const geo=await geocode(q);
-    if(geo){
-      STATE.lat=geo.latitude;STATE.lon=geo.longitude;STATE.name=geo.name;STATE.country=geo.country||'';
-      STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
-    }
+    if(!geo){document.getElementById('main').innerHTML='<div class="status error">未找到「'+q+'」，请换个关键词试试</div>';return}
+    STATE.lat=geo.latitude;STATE.lon=geo.longitude;STATE.name=geo.name;STATE.country=geo.country||'';
+    STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
+    STATE.data=await fetchWeather(STATE.lat,STATE.lon);
+    render();
   }
-  STATE.data=await fetchWeather(STATE.lat,STATE.lon);
-  render();
 }
 
 async function doSearch(){
@@ -1146,7 +845,7 @@ function setMode(m){
   });
 }
 
-function swap(){
+async function swap(){
   const t=document.getElementById('fromInput').value;
   document.getElementById('fromInput').value=document.getElementById('toInput').value;
   document.getElementById('toInput').value=t;
