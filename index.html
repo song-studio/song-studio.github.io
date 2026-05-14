@@ -156,8 +156,10 @@ body::after{
 }
 /* Project accent bars */
 .project.weather{border-top:4px solid var(--ochre)}
-.project.worldcup{border-top:4px solid var(--forest)}
 .project.weather .proj-index{color:var(--ochre)}
+.project.route{border-top:4px solid var(--sky)}
+.project.route .proj-index{color:var(--sky)}
+.project.worldcup{border-top:4px solid var(--forest)}
 .project.worldcup .proj-index{color:var(--forest)}
 
 /* ── Coming soon placeholder ── */
@@ -235,19 +237,32 @@ footer a:hover{color:var(--ink)}
   <a class="project weather reveal" href="weather-pro.html">
     <div class="proj-body">
       <span class="proj-index">01</span>
-      <div class="proj-title">气象查询 · 路线规划</div>
-      <p class="proj-desc">高德精准编码覆盖全国乡镇景区，Open‑Meteo 全球气象模型，Windy 实时风场雷达。徒步·露营·观星·摄影·钓鱼·攀岩九项户外指数，驾车·骑行·步行路线规划与海拔剖面。</p>
+      <div class="proj-title">气象查询</div>
+      <p class="proj-desc">高德精准编码覆盖全国乡镇景区，Open‑Meteo 全球气象模型，Windy 实时风场雷达。徒步·露营·观星·摄影·钓鱼·攀岩九项户外指数，48h 逐时与 7 日趋势预报。</p>
       <div class="proj-tags">
         <span class="proj-tag">Weather</span>
-        <span class="proj-tag">Route</span>
         <span class="proj-tag">Outdoor</span>
+        <span class="proj-tag">Forecast</span>
+      </div>
+    </div>
+  </a>
+
+  <a class="project route reveal" href="route-pro.html">
+    <div class="proj-body">
+      <span class="proj-index">02</span>
+      <div class="proj-title">路线规划</div>
+      <p class="proj-desc">驾车·骑行·步行三种出行方式，路线可视化与详细路书，海拔剖面图与累计爬升分析。支持途经点与全国任意起终点精准规划。</p>
+      <div class="proj-tags">
+        <span class="proj-tag">Route</span>
+        <span class="proj-tag">Map</span>
+        <span class="proj-tag">Elevation</span>
       </div>
     </div>
   </a>
 
   <a class="project worldcup reveal" href="2026-FIFA-World-Cup.html">
     <div class="proj-body">
-      <span class="proj-index">02</span>
+      <span class="proj-index">03</span>
       <div class="proj-title">2026 FIFA World Cup</div>
       <p class="proj-desc">48 支球队完整数据档案，小组赛赛程与积分榜，淘汰赛对阵图。美加墨世界杯一站式数据查询，MCP 接口支持 AI 机器人直接调用。</p>
       <div class="proj-tags">
