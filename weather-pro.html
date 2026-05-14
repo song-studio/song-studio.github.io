@@ -331,7 +331,6 @@ function gcj2wgs(lng,lat){
 async function geocode(q){
   const hasLatin=/[a-zA-Z]/.test(q);
 
-  // Open-Meteo geocoding (free, global, WGS-84)
   async function omGeo(){
     try{
       const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=1&language=zh&format=json`);
@@ -341,49 +340,57 @@ async function geocode(q){
     return null;
   }
 
-  // Latin-script queries → Open-Meteo directly (Amap only covers China)
-  if(hasLatin){
-    const om=await omGeo();
-    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
-  }
-
-  // Chinese → Amap; Latin → Open-Meteo. No parallel mixing to avoid wrong matches.
+  // Latin-script → Open-Meteo
   if(hasLatin){
     const om=await omGeo();
     if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
     return null;
   }
 
-  // Chinese query: Amap only (Open-Meteo doesn't understand Chinese地名 well)
+  // Chinese → Amap geocode
   const amapR=await fetch(`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}`).then(r=>r.json());
   if(!amapR.geocodes||!amapR.geocodes.length){
-    // Amap failed → try Open-Meteo as last resort
     const om=await omGeo();
     if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
     return null;
   }
 
-  const g=amapR.geocodes[0];
-  const [lng,lat]=g.location.split(',').map(Number);
-  const [wgsLng,wgsLat]=gcj2wgs(lng,lat);
-
-  let short=g.name||q;
-  // If Amap returned empty name, parse formatted_address
-  if(!g.name&&g.formatted_address){
-    const parts=g.formatted_address.split(/省|市|区|县|自治州/);
-    short=parts[parts.length-1]||g.formatted_address;
+  function fmt(g){
+    const [lng,lat]=g.location.split(',').map(Number);
+    const [wgsLng,wgsLat]=gcj2wgs(lng,lat);
+    let short=g.name||q;
+    if(!g.name&&g.formatted_address){
+      const parts=g.formatted_address.split(/省|市|区|县|自治州/);
+      short=parts[parts.length-1]||g.formatted_address;
+    }
+    let admin=g.province||g.city||'';
+    if(g.city&&g.city!==g.province)admin=g.city;
+    return{
+      latitude:wgsLat,longitude:wgsLng,
+      name:short,country:g.country||'中国',
+      admin1:admin,elevation:0,
+      rawLat:lat,rawLng:lng
+    };
   }
-  // Build admin from province/city/district
-  let admin=g.province||g.city||'';
-  // If province only says e.g. "陕西省" but city has the real info, prefer city for well-known places
-  if(g.city&&g.city!==g.province)admin=g.city;
 
-  return{
-    latitude:wgsLat,longitude:wgsLng,
-    name:short,country:g.country||'中国',
-    admin1:admin,elevation:0,
-    rawLat:lat,rawLng:lng
-  };
+  // Single result → use directly
+  if(amapR.geocodes.length===1)return fmt(amapR.geocodes[0]);
+
+  // Multiple results → use input tips to find the right province
+  try{
+    const tipsR=await fetch(`https://restapi.amap.com/v3/assistant/inputtips?key=${AMAP_KEY}&keywords=${encodeURIComponent(q)}`);
+    const tipsD=await tipsR.json();
+    if(tipsD.tips&&tipsD.tips.length){
+      const tip=tipsD.tips.find(t=>t.district&&t.district.length>0);
+      if(tip){
+        const match=amapR.geocodes.find(g=>g.province&&tip.district.includes(g.province));
+        if(match)return fmt(match);
+      }
+    }
+  }catch(e){}
+
+  // Fallback: first geocode result
+  return fmt(amapR.geocodes[0]);
 }
 
 async function fetchWeather(lat,lon){
