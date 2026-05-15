@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&family=Jost:ital,wght@0,300;0,500;0,700;1,300&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>气象查询 · Song Studio</title>
@@ -193,7 +194,7 @@ body.warm-bg{background:color-mix(in srgb,var(--bg) 92%,#c4733e)}body.cool-bg{ba
 .day-card.active .lo,.day-card.active .date,.day-card.active .tag{color:rgba(255,255,255,.5)}
 .day-card .dow{font-size:.54em;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
 .day-card .date{font-size:.48em;color:var(--text-muted);margin-bottom:3px;font-family:'JetBrains Mono',monospace}
-.day-card .icon{font-size:.85em;margin:3px 0;display:block;font-weight:500;color:var(--ink);letter-spacing:.04em}
+.day-card .icon{font-size:1.15em;margin:3px 0;display:block;color:var(--ink)}
 .day-card .temps{font-size:.74em;font-weight:700;color:var(--ink);font-family:'Jost',sans-serif}
 .day-card .temps .lo{color:var(--text-dim);font-weight:300;margin-left:2px}
 .day-card .rain-bar{margin-top:3px;height:2px;background:var(--rule);overflow:hidden}
@@ -314,8 +315,9 @@ footer a:hover{color:var(--accent)}
 <script>
 // ── State ────────────────────────────────────────────
 let STATE={lat:39.90,lon:116.40,name:'北京',country:'中国',elev:55,admin:'北京',data:null,tempUnit:'C'};
-const WMO={0:{i:'晴',l:'晴'},1:{i:'晴',l:'少云'},2:{i:'多云',l:'多云'},3:{i:'阴',l:'阴'},45:{i:'雾',l:'雾'},48:{i:'雾',l:'冻雾'},51:{i:'雨',l:'小雨'},53:{i:'雨',l:'中雨'},55:{i:'雨',l:'大雨'},56:{i:'雨',l:'冻雨'},57:{i:'雨',l:'冻雨'},61:{i:'雨',l:'小阵雨'},63:{i:'雨',l:'中阵雨'},65:{i:'雨',l:'大阵雨'},66:{i:'雨',l:'冻雨'},67:{i:'雨',l:'冻雨'},71:{i:'雪',l:'小雪'},73:{i:'雪',l:'中雪'},75:{i:'雪',l:'大雪'},77:{i:'雪',l:'雪粒'},80:{i:'雨',l:'阵雨'},81:{i:'雨',l:'中阵雨'},82:{i:'雨',l:'大阵雨'},85:{i:'雪',l:'小阵雪'},86:{i:'雪',l:'大阵雪'},95:{i:'雷',l:'雷暴'},96:{i:'雷',l:'雷暴冰雹'},99:{i:'雷',l:'强雷暴冰雹'}};
-function w(c){return WMO[c]||{i:'云',l:'未知'}}
+const WMO={0:{i:'sun',l:'晴'},1:{i:'sun',l:'少云'},2:{i:'cloud-sun',l:'多云'},3:{i:'cloud',l:'阴'},45:{i:'smog',l:'雾'},48:{i:'smog',l:'冻雾'},51:{i:'cloud-rain',l:'小雨'},53:{i:'cloud-rain',l:'中雨'},55:{i:'cloud-showers-heavy',l:'大雨'},56:{i:'cloud-rain',l:'冻雨'},57:{i:'cloud-rain',l:'冻雨'},61:{i:'cloud-rain',l:'小阵雨'},63:{i:'cloud-showers-heavy',l:'中阵雨'},65:{i:'cloud-showers-heavy',l:'大阵雨'},66:{i:'cloud-rain',l:'冻雨'},67:{i:'cloud-rain',l:'冻雨'},71:{i:'snowflake',l:'小雪'},73:{i:'snowflake',l:'中雪'},75:{i:'snowflake',l:'大雪'},77:{i:'snowflake',l:'雪粒'},80:{i:'cloud-rain',l:'阵雨'},81:{i:'cloud-showers-heavy',l:'中阵雨'},82:{i:'cloud-showers-heavy',l:'大阵雨'},85:{i:'snowflake',l:'小阵雪'},86:{i:'snowflake',l:'大阵雪'},95:{i:'bolt',l:'雷暴'},96:{i:'bolt',l:'雷暴冰雹'},99:{i:'bolt',l:'强雷暴冰雹'}};
+function w(c){return WMO[c]||{i:'cloud',l:'未知'}}
+function wi(c){return'<i class="fa-solid fa-'+w(c).i+'"></i>'}
 function tC(c){return STATE.tempUnit==='F'?Math.round(c*9/5+32)+'°F':c.toFixed(1)+'°'}
 function tC0(c){return STATE.tempUnit==='F'?Math.round(c*9/5+32)+'°':c.toFixed(0)+'°'}
 const WK=['周日','周一','周二','周三','周四','周五','周六'];
@@ -445,10 +447,10 @@ function moonPhase(date){
   const jd=g+2451556.1;const n=(jd-2451550.1)/29.53058867;
   return(n-Math.floor(n));
 }
-function moonLabel(p){
-  if(p<.03||p>.97)return'朔';
-  if(p<.22)return'眉月';if(p<.28)return'上弦';if(p<.47)return'盈凸';
-  if(p<.53)return'望';if(p<.72)return'亏凸';if(p<.78)return'下弦';return'残月';
+function moonIcon(p){
+  if(p<.03||p>.97)return'<i class="fa-solid fa-moon"></i> 朔';
+  if(p<.22)return'<i class="fa-solid fa-moon"></i> 眉月';if(p<.28)return'<i class="fa-solid fa-moon"></i> 上弦';if(p<.47)return'<i class="fa-solid fa-moon"></i> 盈凸';
+  if(p<.53)return'<i class="fa-solid fa-moon"></i> 望';if(p<.72)return'<i class="fa-solid fa-moon"></i> 亏凸';if(p<.78)return'<i class="fa-solid fa-moon"></i> 下弦';return'<i class="fa-solid fa-moon"></i> 残月';
 }
 
 // ── Natural language weather summary ──────────────────
@@ -580,7 +582,7 @@ function render(){
 
 <div class="hero-block">
   <div class="hero-loc">${isChina?STATE.admin||'':''}${isChina?' · ':''}${STATE.country||STATE.admin||''}</div>
-  <span class="hero-temp" onclick="toggleTempUnit()" title="点击切换 °C/°F" style="cursor:pointer">${tC(now.temperature_2m)}</span>
+  <span class="hero-temp" onclick="toggleTempUnit()" title="点击切换 °C/°F" style="cursor:pointer">${tC(now.temperature_2m)}<small style="font-size:.25em;display:block;font-weight:300;color:var(--text-muted);letter-spacing:.06em;margin-top:4px">${STATE.tempUnit==="C"?"°C → °F":"°F → °C"}</small></span>
   <div class="hero-label"><em>${w(now.weather_code).l}</em> · 体感 ${tC(now.apparent_temperature)}°</div>
 	<div class="hero-summary">${weatherSummary()}</div>
 </div>
@@ -599,7 +601,7 @@ function render(){
     <div class="ov" style="text-align:right"><span class="oe ${hikeC}">${hikeL}</span> ${hikeS} / 10</div>
   </div>
   <div class="oc"><div class="oh">露营</div><div class="ov"><span class="oe ${campC}">${campL}</span> ${campS}/10</div><div class="od">夜间 ${tC0(nightT)}° · 雨${maxRain}% · 风${avgWind}km/h</div></div>
-  <div class="oc"><div class="oh">观星</div><div class="ov"><span class="oe ${starC}">${starL}</span> ${starS}/10</div><div class="od">云量${nightCloud.toFixed(0)}% · 月相${moonLabel(mp)}</div></div>
+  <div class="oc"><div class="oh">观星</div><div class="ov"><span class="oe ${starC}">${starL}</span> ${starS}/10</div><div class="od">云量${nightCloud.toFixed(0)}% · 月相${moonIcon(mp)}</div></div>
   <div class="oc"><div class="oh">摄影</div><div class="ov"><span class="oe ${photoC}">${photoL}</span></div><div class="od">日出${sunrise} · 日落${sunset} · 云${dayCloud.toFixed(0)}%</div></div>
   <div class="oc"><div class="oh">钓鱼</div><div class="ov"><span class="oe ${fishC}">${fishL}</span> ${fishS}/10</div><div class="od">气压${pTrend} ${Math.round(pNow)}hPa · 风${avgWind}km/h</div></div>
   <div class="oc"><div class="oh">攀岩</div><div class="ov"><span class="oe ${climbC}">${climbL}</span> ${climbS}/10</div><div class="od">雨${maxRain}% · 风${avgWind}km/h · ${tC0(now.temperature_2m)}°</div></div>
@@ -674,7 +676,7 @@ function buildDays(){
     const c=document.createElement('div');
     c.className='day-card'+(i===0?' active':'');
     c.dataset.idx=i;
-    c.innerHTML=`<div class="dow">${i===0?'今天':WK[dt.getDay()]}</div><div class="date">${(dt.getMonth()+1)+'/'+dt.getDate()}</div><span class="icon">${wc.i}</span><div class="temps"><span>${tC0(today.temperature_2m_max[i])}°</span><span class="lo">${tC0(today.temperature_2m_min[i])}°</span></div><div class="rain-bar"><div class="fill" style="width:${today.precipitation_probability_max[i]}%"></div></div><div class="tag">${wc.l} · 雨${today.precipitation_probability_max[i]}%</div>`;
+    c.innerHTML=`<div class="dow">${i===0?'今天':WK[dt.getDay()]}</div><div class="date">${(dt.getMonth()+1)+'/'+dt.getDate()}</div><span class="icon"><i class="fa-solid fa-${wc.i}"></i></span><div class="temps"><span>${tC0(today.temperature_2m_max[i])}°</span><span class="lo">${tC0(today.temperature_2m_min[i])}°</span></div><div class="rain-bar"><div class="fill" style="width:${today.precipitation_probability_max[i]}%"></div></div><div class="tag">${wc.l} · 雨${today.precipitation_probability_max[i]}%</div>`;
     c.onclick=()=>showDetail(i);
     daysEl.appendChild(c);
   });
@@ -712,7 +714,7 @@ function showDetail(i){
     hh+=`<div class="hc${isNow?' nw':''}">
       <span class="h">${String(hour).padStart(2,'0')}:00</span>
       <span class="t">${tC(hrs.temperature_2m[h])}°</span>
-      <span class="r">${w(hrs.weather_code[h]).i} ${hrs.precipitation_probability[h]}%</span>
+      <span class="r"><i class="fa-solid fa-${w(hrs.weather_code[h]).i}"></i> ${hrs.precipitation_probability[h]}%</span>
       <span style="font-size:.85em;color:var(--text-dim);display:block">体感${tC(hrs.apparent_temperature[h])}° · UV${hrs.uv_index[h].toFixed(1)}</span>
       <span style="font-size:.8em;color:var(--text-muted);display:block">云${(hrs.cloud_cover!=null?hrs.cloud_cover[h]:'?')}% · 露${(hrs.dew_point_2m&&hrs.dew_point_2m[h]!=null?hrs.dew_point_2m[h].toFixed(1):'?')}°</span>
     </div>`;
