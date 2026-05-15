@@ -115,6 +115,7 @@ body{
   font-weight:300;line-height:1.6;
 }
 .hero-block .hero-label em{font-style:italic;font-weight:400;color:var(--accent);font-family:'Playfair Display','Noto Serif SC',Georgia,serif}
+.hero-block .hero-summary{font-size:.58em;color:var(--text-dim);margin-top:14px;line-height:1.7;max-width:500px;margin-left:auto;margin-right:auto;font-weight:300;font-family:'Jost','Noto Serif SC',sans-serif}
 
 /* ═══ STAT STRIP ═══ */
 .stat-strip{
@@ -445,6 +446,33 @@ function moonEmoji(p){
   if(p<.53)return'🌕';if(p<.72)return'🌖';if(p<.78)return'🌗';return'🌘';
 }
 
+// ── Natural language weather summary ──────────────────
+function weatherSummary(){
+  var d=STATE.data;if(!d)return'';
+  var now=d.current,today=d.daily,hrs=d.hourly;
+  var parts=[],t=now.temperature_2m;
+  if(t<5)parts.push('气温偏低');else if(t>32)parts.push('天气炎热');else if(t>28)parts.push('体感偏热');else if(t<10)parts.push('偏凉');
+  var nextRain=hrs.precipitation_probability.slice(0,6);
+  var maxR6=Math.max.apply(null,nextRain);
+  var maxRH=nextRain.indexOf(maxR6);
+  if(maxR6>60)parts.push(maxRH+'时前后降雨概率'+maxR6+'%，建议带伞');
+  else if(maxR6>30)parts.push('可能有短时阵雨('+maxR6+'%)');
+  else if(maxR6<10)parts.push('未来6小时无降雨');
+  if(now.wind_speed_10m>20)parts.push('风力较大');
+  var uv=today.uv_index_max[0];
+  if(uv>7)parts.push('紫外线强，注意防晒');
+  var wc=now.weather_code;
+  var isRain=wc>=51&&wc<=67||wc>=80&&wc<=82||wc>=95;
+  var isCloud=wc==2||wc==3;
+  var isClear=wc==0||wc==1;
+  var verdict;
+  if(isRain)verdict='有雨，不太适合户外出行';
+  else if(maxR6<15&&t>=15&&t<=28&&now.wind_speed_10m<15&&isClear)verdict='适合户外活动';
+  else if(maxR6>70||t>35||t<0)verdict='不建议户外出行';
+  else verdict='出行建议关注天气变化';
+  return verdict+' · '+parts.join('；');
+}
+
 function render(){
   const d=STATE.data;
   if(!d||!d.current){document.getElementById('main').innerHTML='<div class="status error">气象数据不完整，请重试</div>';return}
@@ -541,6 +569,7 @@ function render(){
   <div class="hero-loc">${isChina?STATE.admin||'':''}${isChina?' · ':''}${STATE.country||STATE.admin||''}</div>
   <span class="hero-temp">${now.temperature_2m.toFixed(1)}°</span>
   <div class="hero-label">${w(now.weather_code).i} <em>${w(now.weather_code).l}</em> · 体感 ${now.apparent_temperature.toFixed(1)}°</div>
+	<div class="hero-summary">${weatherSummary()}</div>
 </div>
 
 <div class="stat-strip">
