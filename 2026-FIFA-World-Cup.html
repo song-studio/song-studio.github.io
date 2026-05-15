@@ -574,9 +574,9 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
   <div class="groups-grid stagger" id="gg-home"></div>
   <div class="sec-head" style="margin-top:28px"><div class="sec-title" id="home-more"></div></div>
   <div class="extra-cards stagger" id="extra-home"></div>
-  <!-- AI功能区 (disabled - API expired) -->
-  <div class="sec-head" style="margin-top:32px;display:none" id="ai-sec-wrap"><div class="sec-title" id="ai-sec-t">AI 专区</div><div class="sec-sub" id="ai-sec-s">世界杯专属智能体验</div></div>
-  <div style="display:none;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px;align-items:stretch" id="ai-cards-grid">
+  <!-- AI功能区 -->
+  <div class="sec-head" style="margin-top:32px" id="ai-sec-wrap"><div class="sec-title" id="ai-sec-t">AI 专区</div><div class="sec-sub" id="ai-sec-s">世界杯专属智能体验</div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px;align-items:stretch" id="ai-cards-grid">
 
     <div class="glass ai-fc ai-fc-gold" onclick="openWhichTeam()" style="border-radius:16px;padding:20px 16px;cursor:pointer;border:1px solid rgba(245,197,24,.25);text-align:center;background:linear-gradient(135deg,rgba(245,197,24,.07),rgba(59,130,246,.04));display:flex;flex-direction:column;align-items:center;min-height:190px">
       <div style="display:flex;justify-content:center;margin-bottom:10px">
@@ -616,7 +616,7 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
 
   </div>
 
-  <div id="trivia-el" style="display:none;flex-direction:column;gap:9px;margin-top:28px"></div>
+  <div id="trivia-el" style="display:flex;flex-direction:column;gap:9px;margin-top:28px"></div>
 
 
   <!-- 球迷看台留言板 -->
@@ -718,7 +718,7 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
 /* ══ TRANSLATIONS ══ */
 const TR={
 zh:{
-  nav:['首页','小组赛','我的','淘汰赛','场馆','战绩','热门'],
+  nav:['首页','小组赛','我的','淘汰赛','场馆','战绩','热门','AI预测'],
   eye:'FIFA · 2026 · USA · MEXICO · CANADA',
   title:'世界杯',sub:'美 墨 加',
   date:'2026年 6月12日 — 7月20日 · BJT(UTC+8) / EDT(UTC-4)',
@@ -771,7 +771,7 @@ zh:{
   sp:'搜索球队名称…',sc:'关闭',se:'输入球队名称开始搜索',sn:'未找到',sf:'找到 {n} 场比赛',
   foot:'资料收集：<span class="ft-credit">Leo</span> · 网页制作：<span class="ft-credit">Nova</span><br>数据来源：央视体育 · 网易体育 · 新华社 · FIFA官网<br>所有时间显示北京时间（BJT, UTC+8）及美东时间（EDT, UTC-4）<br>📮 xss3000@outlook.com · 最后更新 2026-05-16 · 附加赛数据已更新',
   ai_t:'AI 胜负预测',ai_s:'FIFA排名·近期状态·历史·概率 四维算法',ai_note:'FIFA排名35%+近期状态25%+历史20%+概率20%。纯JS，仅供参考。',ai_home:'主胜',ai_draw:'平局',ai_away:'客胜',
-  extra:[['淘汰赛','32强→决赛<br>7月4日起'],['场馆','16个场馆<br>容量详情'],['历史战绩','48支球队<br>历届成绩'],['夺冠热门','权威媒体<br>综合预测']],
+  extra:[['淘汰赛','32强→决赛<br>7月4日起'],['场馆','16个场馆<br>容量详情'],['历史战绩','48支球队<br>历届成绩'],['夺冠热门','权威媒体<br>综合预测'],['AI预测','四维算法<br>胜负概率']],
   detail_hint:'← 点击查看',
   ga_predict:'出线预测',
   ga_analysis:'一句话判断',
