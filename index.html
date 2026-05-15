@@ -4,323 +4,291 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Song Studio · 松的工作室</title>
-<meta name="description" content="Song Studio — 气象查询、路线规划、2026 FIFA 世界杯数据。户外与足球数据工具。">
-<meta name="keywords" content="天气查询,徒步天气,2026世界杯,FIFA World Cup,路线规划,Song Studio">
+<meta name="description" content="Song Studio — 工具箱 · 创意空间 · 开发项目 · 新奇玩意儿">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+SC:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
+/* ═══════════════════════════════════════════
+   Song Studio
+   Editorial Mono — Serif + Code
+   Clean · Personal · Crafted
+   ═══════════════════════════════════════════ */
 :root{
-  --bg:#f9f5ec;
-  --surface:#fffcf5;
-  --text:#1e1a14;
-  --text-dim:#6b6358;
-  --text-muted:#a09888;
-  --ink:#2c2416;
-  --ochre:#c4733e;
-  --ochre-deep:#9e5a2c;
-  --ochre-glow:rgba(196,115,62,.18);
-  --forest:#2d5a3d;
-  --forest-glow:rgba(45,90,61,.14);
-  --sky:#5a8fa8;
-  --sky-glow:rgba(90,143,168,.15);
-  --plum:#6b4e5c;
-  --rule:#ddd4c2;
-  --rule-light:#e8e0d0;
-  --border:#e0d8c8;
+  --bg:#fdfdfc;
+  --white:#fff;
+  --fg:#1c1c1c;
+  --muted:#888888;
+  --line:#e8e5e0;
+  --accent:#e65f3b;
+  --accent-dim:rgba(230,95,59,.08);
 }
 *{margin:0;box-sizing:border-box}
+html{background:var(--bg)}
 body{
-  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
-  background:var(--bg);
-  color:var(--text);
-  min-height:100vh;
+  font-family:'JetBrains Mono','Noto Serif SC',monospace;
+  font-weight:400;font-size:15px;line-height:1.6;
+  background:var(--bg);color:var(--fg);
   -webkit-font-smoothing:antialiased;
-  line-height:1.6;
-  font-size:17px;
 }
+
+/* ── Dot grid ── */
 body::before{
-  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.08;
+  background-image:radial-gradient(circle,#a0a0a0 .6px,transparent .6px);
+  background-size:22px 22px;
 }
 
-.wrap{max-width:880px;margin:0 auto;padding:0 28px}
+.page{max-width:840px;margin:0 auto;padding:0 36px;position:relative;z-index:1}
+@media(max-width:640px){.page{padding:0 20px}}
 
-/* Masthead */
+/* ── Masthead ── */
 .masthead{
-  display:flex;justify-content:space-between;align-items:baseline;
-  padding:32px 0 0;
-  border-bottom:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:44px 0 0;
 }
 .masthead .logo{
-  font-size:1.05em;font-weight:700;letter-spacing:.05em;
-  color:var(--ink);text-decoration:none;
-  font-family:'Playfair Display','Noto Serif SC',serif;
-  transition:color .3s;
+  font-family:'Newsreader','Noto Serif SC',serif;
+  font-size:1.3em;font-weight:500;letter-spacing:-.01em;
+  color:var(--fg);text-decoration:none;
 }
-.masthead .logo:hover{color:var(--ochre)}
-.masthead .tagline{
-  font-size:.58em;color:var(--text-muted);
-  font-family:'Space Mono','Courier New',monospace;
-  letter-spacing:.1em;text-transform:uppercase;
+.masthead .logo em{font-style:normal;color:var(--accent)}
+.masthead .nav{display:flex;gap:2px;list-style:none}
+.masthead .nav a{
+  font-size:.5em;font-weight:500;color:var(--muted);text-decoration:none;
+  padding:6px 14px;transition:all .15s;letter-spacing:.02em;
 }
+.masthead .nav a:hover{color:var(--fg)}
 
-/* Hero */
-.hero{
-  padding:72px 0 56px;text-align:center;
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'松';
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  font-size:clamp(14em,28vw,22em);
-  font-family:'Noto Serif SC','STSong','Songti SC',serif;
-  color:var(--ink);opacity:.025;pointer-events:none;line-height:1;z-index:0;
-}
-.hero>*{position:relative;z-index:1}
+/* ── Hero ── */
+.hero{padding:80px 0 48px}
 .hero .overline{
-  font-family:'Space Mono','Courier New',monospace;
-  font-size:.54em;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ochre);margin-bottom:20px;
+  font-size:.48em;font-weight:500;color:var(--muted);
+  letter-spacing:.06em;margin-bottom:24px;
 }
 .hero h1{
-  font-size:clamp(2.4em,5vw,3.8em);font-weight:400;line-height:1.12;
-  letter-spacing:-.01em;color:var(--ink);
-  font-family:'Playfair Display','Noto Serif SC',serif;
-  margin-bottom:16px;
+  font-family:'Newsreader','Noto Serif SC',serif;
+  font-size:clamp(2em,4.5vw,3em);font-weight:400;line-height:1.2;
+  letter-spacing:-.02em;color:var(--fg);max-width:700px;
 }
-.hero h1 i{font-style:italic;color:var(--ochre)}
-.hero .sub{
-  font-size:.84em;color:var(--text-dim);max-width:420px;margin:0 auto 24px;
-  line-height:1.9;font-family:'Noto Serif SC',Georgia,serif;
+.hero h1 .sm{
+  font-size:.65em;
 }
-.hero .status-line{
-  font-family:'Space Mono','Courier New',monospace;
-  font-size:.5em;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;
+.hero h1 .hl{
+  color:var(--accent);font-style:italic;
 }
-.hero .status-line span{color:var(--ochre)}
+.hero .lead{
+  font-size:.55em;color:var(--muted);max-width:480px;
+  margin-top:20px;line-height:1.85;
+}
+.hero .status{
+  display:inline-flex;align-items:center;gap:8px;margin-top:20px;
+  font-size:.46em;color:var(--muted);letter-spacing:.03em;
+}
+.hero .status i{color:var(--accent);font-size:.7em}
 
-/* Section divider */
-.section-rule{
-  display:flex;align-items:center;gap:14px;
-  margin:52px 0 40px;
+/* ── Divider ── */
+.section-head{
+  display:flex;align-items:center;gap:16px;padding:16px 0 24px;
 }
-.section-rule .label{
-  font-family:'Space Mono','Courier New',monospace;
-  font-size:.52em;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--text-muted);white-space:nowrap;
+.section-head span{
+  font-size:.46em;font-weight:500;color:var(--muted);
+  letter-spacing:.06em;white-space:nowrap;
 }
-.section-rule .ornament{
-  width:5px;height:5px;background:var(--ochre);flex-shrink:0;transform:rotate(45deg);
-}
-.section-rule .line{flex:1;height:1px;background:var(--rule)}
+.section-head .rule{flex:1;height:1px;background:var(--line)}
 
-/* Projects grid */
-.projects{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-  perspective:1200px;
-}
-@media(max-width:640px){.projects{grid-template-columns:1fr}}
+/* ── Projects ── */
+.projects{display:flex;flex-direction:column;gap:2px;padding-bottom:40px}
 
 .project{
-  position:relative;
-  display:flex;flex-direction:column;
   text-decoration:none;color:inherit;
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:0;
-  transition:all .5s cubic-bezier(.22,.61,.36,1);
-  min-height:300px;
-  overflow:hidden;
-  transform-style:preserve-3d;
+  display:flex;align-items:baseline;gap:20px;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+  transition:all .2s;
+  position:relative;
 }
-.project::after{
-  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(135deg,rgba(255,255,255,.12) 0%,transparent 50%,rgba(0,0,0,.04) 100%);
-  opacity:0;transition:opacity .5s;
-}
-.project:hover{
-  transform:translateY(-6px);
-  border-color:var(--ink);
-}
-.project:hover::after{opacity:1}
-.project:active{transform:scale(.985);transition-duration:.1s}
+@media(max-width:640px){.project{flex-wrap:wrap;gap:12px}}
 
-.project .proj-body{
-  padding:32px 28px 28px;
-  flex:1;display:flex;flex-direction:column;
-  position:relative;z-index:1;
+.project::before{
+  content:"";position:absolute;inset:-2px -12px;
+  background:var(--accent-dim);
+  opacity:0;transition:opacity .2s;z-index:-1;
 }
-.project .proj-index{
-  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
-  font-size:3.2em;font-weight:600;letter-spacing:-.02em;
-  line-height:.9;margin-bottom:18px;
-  transition:color .3s;
+.project:hover::before{opacity:1}
+
+.project .proj-num{
+  font-size:.5em;font-weight:500;color:var(--muted);
+  flex-shrink:0;width:30px;letter-spacing:.04em;
+  transition:color .2s;
 }
+.project:hover .proj-num{color:var(--accent)}
+
+.project .proj-body{flex:1;min-width:0}
 .project .proj-title{
-  font-size:1.35em;font-weight:600;letter-spacing:.01em;
-  color:var(--ink);margin-bottom:10px;
-  font-family:'Playfair Display','Noto Serif SC',serif;
-  line-height:1.2;
+  font-family:'Newsreader','Noto Serif SC',serif;
+  font-size:1.15em;font-weight:500;letter-spacing:-.01em;line-height:1.2;
 }
 .project .proj-desc{
-  font-size:.7em;color:var(--text-dim);line-height:1.9;
-  font-family:'Noto Serif SC',Georgia,serif;
-  flex:1;
+  font-size:.47em;color:var(--muted);margin-top:4px;line-height:1.7;
 }
-.project .proj-tags{
-  display:flex;gap:7px;flex-wrap:wrap;margin-top:18px;
+.project .proj-meta{
+  display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;
 }
-.project .proj-tag{
-  font-family:'Space Mono','Courier New',monospace;
-  font-size:.5em;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--text-muted);
-  border:1px solid var(--rule);
-  padding:5px 10px;
-  transition:all .25s;
+.project .proj-meta span{
+  font-size:.43em;color:var(--muted);letter-spacing:.03em;
 }
-.project:hover .proj-tag{border-color:var(--border)}
 
-/* Project accent styles */
-.project.weather{border-top:4px solid var(--ochre)}
-.project.weather .proj-index{color:var(--ochre)}
-.project.weather:hover{transform:translateY(-6px) rotateX(2deg) rotateY(3deg);box-shadow:0 16px 40px var(--ochre-glow);border-color:var(--ochre)}
-.project.weather:hover .proj-tag{border-color:rgba(196,115,62,.25);color:var(--ochre-deep)}
-
-.project.route{border-top:4px solid var(--sky)}
-.project.route .proj-index{color:var(--sky)}
-.project.route:hover{transform:translateY(-6px) rotateX(2deg) rotateY(-3deg);box-shadow:0 16px 40px var(--sky-glow);border-color:var(--sky)}
-.project.route:hover .proj-tag{border-color:rgba(90,143,168,.25);color:#4a7d94}
-
-.project.worldcup{border-top:4px solid var(--forest)}
-.project.worldcup .proj-index{color:var(--forest)}
-.project.worldcup:hover{transform:translateY(-6px) rotateX(2deg) rotateY(3deg);box-shadow:0 16px 40px var(--forest-glow);border-color:var(--forest)}
-.project.worldcup:hover .proj-tag{border-color:rgba(45,90,61,.25);color:var(--forest)}
-
-/* Placeholder */
-.project.placeholder{
-  border:1px dashed var(--rule);background:transparent;cursor:default;
+.project .proj-arrow{
+  flex-shrink:0;font-size:.48em;color:var(--line);
+  transition:all .2s;
 }
-.project.placeholder:hover{transform:none;box-shadow:none;border-color:var(--rule)}
-.project.placeholder .proj-body{
-  align-items:center;justify-content:center;text-align:center;
-}
-.project.placeholder .proj-index{color:var(--text-muted);font-size:2em}
-.project.placeholder .proj-title{color:var(--text-muted);font-weight:400}
-.project.placeholder .proj-desc{color:var(--text-muted);flex:none}
+.project:hover .proj-arrow{color:var(--accent);transform:translateX(4px)}
 
-/* Sources */
-.sources{
-  display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
-  padding:48px 0 36px;
-  font-family:'Space Mono','Courier New',monospace;
-  font-size:.5em;color:var(--text-muted);
-  letter-spacing:.08em;text-transform:uppercase;
+/* ── Notice box ── */
+.notice{padding:0 0 8px}
+.notice .notice-inner{
+  display:flex;align-items:center;gap:12px;
+  padding:16px 20px;
+  border:1px dashed var(--line);
+  background:var(--white);
 }
-.sources span{white-space:nowrap}
-.sources .dot{display:inline-block;width:4px;height:4px;border-radius:50%;margin-right:5px;vertical-align:middle}
-.dot.amap{background:var(--ochre)}
-.dot.om{background:var(--sky)}
-.dot.windy{background:var(--forest)}
-.dot.wc{background:var(--plum)}
-
-/* Footer */
-footer{
-  text-align:center;padding:32px 0 64px;border-top:1px solid var(--rule);
-  font-family:'Space Mono','Courier New',monospace;
-  font-size:.5em;color:var(--text-muted);letter-spacing:.08em;
+@media(max-width:640px){.notice .notice-inner{align-items:flex-start}}
+.notice .notice-icon{
+  flex-shrink:0;width:30px;height:30px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.45em;color:var(--accent);
+  background:var(--accent-dim);
 }
-footer a{color:var(--text-dim);text-decoration:none;transition:color .2s}
-footer a:hover{color:var(--ochre)}
+.notice p{
+  font-size:.44em;color:var(--muted);letter-spacing:.02em;line-height:1.6;
+}
 
-/* Reveal animation */
+/* ── Footer CTA ── */
+.cta-block{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:28px 0;margin:0 0 40px;
+  border-top:1px solid var(--line);
+}
+@media(max-width:640px){.cta-block{flex-direction:column;align-items:flex-start;gap:12px}}
+.cta-block p{font-size:.48em;color:var(--muted);letter-spacing:.02em}
+.cta-block a{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.48em;font-weight:600;text-decoration:none;white-space:nowrap;
+  color:var(--white);background:var(--fg);
+  padding:10px 20px;letter-spacing:.02em;transition:all .15s;
+}
+.cta-block a:hover{background:var(--accent)}
+
+/* ── Footer ── */
+.site-footer{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding-bottom:44px;
+  font-size:.43em;color:var(--muted);letter-spacing:.03em;
+}
+.site-footer a{color:var(--fg);text-decoration:none}
+.site-footer a:hover{color:var(--accent)}
+
+/* ── Reveal ── */
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
+  from{opacity:0;transform:translateY(10px)}
   to{opacity:1;transform:translateY(0)}
 }
-.reveal{animation:fadeUp .7s cubic-bezier(.22,.61,.36,1) both}
-.reveal:nth-child(1){animation-delay:.05s}
-.reveal:nth-child(2){animation-delay:.12s}
-.reveal:nth-child(3){animation-delay:.2s}
-.reveal:nth-child(4){animation-delay:.28s}
-.reveal:nth-child(5){animation-delay:.36s}
+.reveal{animation:fadeUp .4s ease both}
+.reveal:nth-child(1){animation-delay:.03s}
+.reveal:nth-child(2){animation-delay:.06s}
+.reveal:nth-child(3){animation-delay:.1s}
+.reveal:nth-child(4){animation-delay:.14s}
+.reveal:nth-child(5){animation-delay:.18s}
+.reveal:nth-child(6){animation-delay:.22s}
 </style>
 </head>
 <body>
-<div class="wrap">
+
+<div class="page">
 
 <header class="masthead reveal">
-  <a href="/" class="logo">Song Studio</a>
-  <span class="tagline">松的空间</span>
+  <a href="/" class="logo">Song<em>.</em>Studio</a>
+  <ul class="nav">
+    <li><a href="weather-pro.html">weather</a></li>
+    <li><a href="route-pro.html">route</a></li>
+    <li><a href="2026-FIFA-World-Cup.html">worldcup</a></li>
+  </ul>
 </header>
 
 <section class="hero reveal">
-  <div class="overline">Data · Tools · Design</div>
-  <h1>山野气象<i>&</i>足球数据</h1>
-  <p class="sub">为户外爱好者与足球迷准备的数据工具。精准、克制、安静地工作。</p>
-  <div class="status-line">当前 · <span>晚春</span> 2026</div>
+  <p class="overline">STUDIO · TOOLS · CRAFT</p>
+  <h1><span class="sm">工具箱</span><span class="hl"> &amp; </span><span class="sm">创意空间</span>。<br>一个什么都装得下的地方。</h1>
+  <p class="lead">气象查询、路线规划、世界杯数据，以及更多正在生长的工具和项目。松的个人工作室，随时有新东西冒出来。</p>
+  <p class="status"><i class="fa-solid fa-circle"></i> 3 个项目活跃 · 2026</p>
 </section>
 
-<div class="section-rule reveal">
-  <span class="label">Projects</span>
-  <span class="ornament"></span>
-  <span class="line"></span>
+<div class="section-head reveal">
+  <span>PROJECTS</span>
+  <div class="rule"></div>
 </div>
 
-<div class="projects">
+<div class="projects reveal">
 
-  <a class="project weather reveal" href="weather-pro.html">
+  <a class="project" href="weather-pro.html">
+    <span class="proj-num">01</span>
     <div class="proj-body">
-      <span class="proj-index">01</span>
       <div class="proj-title">气象查询</div>
-      <p class="proj-desc">高德精准编码覆盖全国乡镇景区，Open‑Meteo 全球气象模型，Windy 实时风场。徒步·露营·观星·摄影·钓鱼·攀岩九项户外指数，48h 逐时与 7 日趋势预报。</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Weather</span>
-        <span class="proj-tag">Outdoor</span>
-        <span class="proj-tag">Forecast</span>
+      <p class="proj-desc">高德精准编码覆盖全国，Open-Meteo 全球气象模型，Windy 实时风场。九项户外指数，48h 逐时与 7 日趋势。</p>
+      <div class="proj-meta">
+        <span>weather</span>
+        <span>outdoor</span>
       </div>
     </div>
+    <span class="proj-arrow">↗</span>
   </a>
 
-  <a class="project route reveal" href="route-pro.html">
+  <a class="project" href="route-pro.html">
+    <span class="proj-num">02</span>
     <div class="proj-body">
-      <span class="proj-index">02</span>
       <div class="proj-title">路线规划</div>
-      <p class="proj-desc">驾车·骑行·步行三种出行方式，路线可视化与逐段路书，海拔剖面图与累计爬升。日落检测·难度评分·风向分析·GPX 导出。</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Route</span>
-        <span class="proj-tag">Map</span>
-        <span class="proj-tag">Elevation</span>
+      <p class="proj-desc">驾车·骑行·步行三种模式，地图可视化与逐段路书，海拔剖面·日落检测·难度评分·GPX 导出。</p>
+      <div class="proj-meta">
+        <span>route</span>
+        <span>map</span>
       </div>
     </div>
+    <span class="proj-arrow">↗</span>
   </a>
 
-  <a class="project worldcup reveal" href="2026-FIFA-World-Cup.html">
+  <a class="project" href="2026-FIFA-World-Cup.html">
+    <span class="proj-num">03</span>
     <div class="proj-body">
-      <span class="proj-index">03</span>
       <div class="proj-title">2026 FIFA World Cup</div>
-      <p class="proj-desc">48 支球队完整数据档案，小组赛赛程与积分榜，淘汰赛对阵图。美加墨世界杯一站式数据查询，MCP 接口支持 AI 机器人直接调用。</p>
-      <div class="proj-tags">
-        <span class="proj-tag">Football</span>
-        <span class="proj-tag">Data</span>
-        <span class="proj-tag">MCP</span>
+      <p class="proj-desc">48 支球队完整档案，小组赛赛程与积分榜，淘汰赛对阵图。美加墨一站查询，MCP 接口支持 AI 调用。</p>
+      <div class="proj-meta">
+        <span>football</span>
+        <span>mcp</span>
       </div>
     </div>
+    <span class="proj-arrow">↗</span>
   </a>
 
 </div>
 
-<div class="sources reveal">
-  <span><span class="dot amap"></span>高德地图</span>
-  <span><span class="dot om"></span>Open‑Meteo</span>
-  <span><span class="dot windy"></span>Windy · Meteoblue</span>
-  <span><span class="dot wc"></span>FIFA Official</span>
+<div class="notice reveal">
+  <div class="notice-inner">
+    <span class="notice-icon"><i class="fa-solid fa-plus"></i></span>
+    <p>更多工具开发中 — 项目、创意、可下载资源，持续添加。</p>
+  </div>
 </div>
 
-<footer class="reveal">
-  <a href="https://github.com/song-studio/song-studio.github.io">song-studio.github.io</a>
+<div class="cta-block reveal">
+  <p>Song Studio · 松的个人工作室</p>
+  <a href="https://github.com/song-studio/song-studio.github.io">
+    <i class="fa-brands fa-github"></i> GitHub
+  </a>
+</div>
+
+<footer class="site-footer reveal">
+  <span>&copy; 2026 Song Studio</span>
+  <span>松</span>
 </footer>
 
 </div>
