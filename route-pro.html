@@ -50,7 +50,7 @@ body{
 }
 .page-header h1{
   font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
-  font-size:1.6em;font-weight:400;color:var(--ink);
+  font-size:2em;font-weight:400;color:var(--ink);
   letter-spacing:.02em;
 }
 .page-header .sub{
@@ -91,20 +91,17 @@ body{
 .modes{display:flex;gap:1px;margin-bottom:2px;background:var(--rule-strong)}
 .mode-chip{
   flex:1;text-align:center;padding:14px 10px;
-  background:var(--bg-elevated);cursor:pointer;font-size:.74em;font-weight:500;
+  background:var(--bg-elevated);cursor:pointer;font-size:.82em;font-weight:500;
   transition:all .15s;letter-spacing:.02em;
 }
 .mode-chip:hover{background:#223625}
-.mode-chip.sel{color:#FFF;font-weight:700}
-.mode-chip.sel.drive{background:var(--green)}
-.mode-chip.sel.bike{background:var(--accent)}
-.mode-chip.sel.walk{background:var(--cool)}
+.mode-chip.sel{color:var(--bg);font-weight:700;background:var(--ink)}
 .go-btn{
-  width:100%;padding:16px;border:none;background:var(--accent);color:#FFF;
-  font-size:.78em;cursor:pointer;letter-spacing:.04em;font-weight:700;
+  width:100%;padding:16px;border:none;background:var(--ink);color:var(--bg);
+  font-size:.88em;cursor:pointer;letter-spacing:.08em;font-weight:600;
   transition:all .2s;font-family:'Jost','Noto Serif SC',sans-serif;
 }
-.go-btn:hover{background:#E06A5E}
+.go-btn:hover{background:var(--text);color:var(--bg)}
 .go-btn:disabled{opacity:.3;pointer-events:none}
 .map-wrap{overflow:hidden;height:420px;margin-bottom:2px;border:1px solid var(--rule-strong)}
 @media(max-width:480px){.map-wrap{height:280px}}
@@ -116,13 +113,13 @@ body{
   display:flex;align-items:center;gap:12px;
   margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--rule-strong);
 }
-.rs-header .rs-mode-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1.2em;flex-shrink:0}
+.rs-header .rs-mode-icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:1.1em;flex-shrink:0;font-weight:700;border:2px solid var(--rule-strong);color:var(--ink)}
 .rs-header .rs-route-name{font-weight:500;font-size:.78em;color:var(--ink)}
 .rs-header .rs-route-sub{font-size:.48em;color:var(--text-dim);font-weight:300}
 .rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-strong)}
 @media(max-width:480px){.rs-grid{grid-template-columns:repeat(2,1fr)}}
 .rs-item{text-align:center;padding:14px 6px;background:var(--bg)}
-.rs-item .rsv{font-size:.84em;font-weight:700;color:var(--ink)}
+.rs-item .rsv{font-size:1em;font-weight:700;color:var(--ink)}
 .rs-item .rsl{font-size:.42em;color:var(--text-muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:500;font-family:'JetBrains Mono',monospace}
 .rs-mini{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1px;background:var(--rule-strong)}
 
@@ -252,8 +249,8 @@ footer a:hover{color:var(--accent)}
 
 <script>
 // ── State ────────────────────────────────────────────
-const WMO={0:{i:'☀️',l:'晴'},1:{i:'🌤️',l:'少云'},2:{i:'⛅',l:'多云'},3:{i:'☁️',l:'阴'},45:{i:'🌫️',l:'雾'},48:{i:'🌫️',l:'冻雾'},51:{i:'🌧️',l:'小雨'},53:{i:'🌧️',l:'中雨'},55:{i:'🌧️',l:'大雨'},56:{i:'🌧️',l:'冻雨'},57:{i:'🌧️',l:'冻雨'},61:{i:'🌦️',l:'小阵雨'},63:{i:'🌧️',l:'中阵雨'},65:{i:'🌧️',l:'大阵雨'},66:{i:'🌧️',l:'冻雨'},67:{i:'🌧️',l:'冻雨'},71:{i:'❄️',l:'小雪'},73:{i:'❄️',l:'中雪'},75:{i:'❄️',l:'大雪'},77:{i:'❄️',l:'雪粒'},80:{i:'🌦️',l:'阵雨'},81:{i:'🌦️',l:'中阵雨'},82:{i:'🌧️',l:'大阵雨'},85:{i:'❄️',l:'小阵雪'},86:{i:'❄️',l:'大阵雪'},95:{i:'⛈️',l:'雷暴'},96:{i:'⛈️',l:'雷暴冰雹'},99:{i:'⛈️',l:'强雷暴冰雹'}};
-function w(c){return WMO[c]||{i:'🌥️',l:'未知'}}
+const WMO={0:{i:'晴',l:'晴'},1:{i:'晴',l:'少云'},2:{i:'多云',l:'多云'},3:{i:'阴',l:'阴'},45:{i:'雾',l:'雾'},48:{i:'雾',l:'冻雾'},51:{i:'雨',l:'小雨'},53:{i:'雨',l:'中雨'},55:{i:'雨',l:'大雨'},56:{i:'雨',l:'冻雨'},57:{i:'雨',l:'冻雨'},61:{i:'雨',l:'小阵雨'},63:{i:'雨',l:'中阵雨'},65:{i:'雨',l:'大阵雨'},66:{i:'雨',l:'冻雨'},67:{i:'雨',l:'冻雨'},71:{i:'雪',l:'小雪'},73:{i:'雪',l:'中雪'},75:{i:'雪',l:'大雪'},77:{i:'雪',l:'雪粒'},80:{i:'雨',l:'阵雨'},81:{i:'雨',l:'中阵雨'},82:{i:'雨',l:'大阵雨'},85:{i:'雪',l:'小阵雪'},86:{i:'雪',l:'大阵雪'},95:{i:'雷',l:'雷暴'},96:{i:'雷',l:'雷暴冰雹'},99:{i:'雷',l:'强雷暴冰雹'}};
+function w(c){return WMO[c]||{i:'云',l:'未知'}}
 const WK=['周日','周一','周二','周三','周四','周五','周六'];
 const AMAP_KEY='39a8c2f6ef75e494198f3e3751701ebe';
 
@@ -529,7 +526,7 @@ async function renderRouteAll(){
   }catch(e){}
 	RSTATE._elevGain = elevationGain !== '...' ? elevationGain : 0;
 
-  const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
+  const modeIcons={driving:'驾',cycling:'骑',walking:'步'};
   const modeColors={driving:'#15803D',cycling:'#E03C31',walking:'#2563EB'};
   document.getElementById('routeSummary').style.display='block';
   const mc=modeColors[RSTATE.mode];
@@ -559,21 +556,21 @@ async function renderRouteAll(){
       <div class="rs-item"><div class="rsv">${speed.toFixed(1)} km/h</div><div class="rsl">平均速度</div></div>
       <div class="rs-item"><div class="rsv">${elevInfo}</div><div class="rsl">爬升/下降</div></div>
     </div>
-    ${elevData?`<div class="elev-profile"><div class="ep-title">⛰️ 海拔剖面 (${RSTATE._elevStart||0}m → ${RSTATE._elevEnd||0}m)</div><canvas id="elevCanvas"></canvas></div>`:''}
+    ${elevData?`<div class="elev-profile"><div class="ep-title">海拔剖面 (${RSTATE._elevStart||0}m → ${RSTATE._elevEnd||0}m)</div><canvas id="elevCanvas"></canvas></div>`:''}
     <div class="rs-mini">
       <div class="rs-item" style="border-top:2px solid var(--green)">
         <div class="rsv">${fromT}° ${fromWC.i}</div>
-        <div class="rsl">📍 ${RSTATE.fromGeo.name}</div>
+        <div class="rsl">${RSTATE.fromGeo.name}</div>
       </div>
       <div class="rs-item" style="border-top:2px solid var(--accent)">
         <div class="rsv">${toT}° ${toWC.i}</div>
-        <div class="rsl">📍 ${RSTATE.toGeo.name}</div>
+        <div class="rsl">${RSTATE.toGeo.name}</div>
       </div>
     </div>
     <div style="margin-top:10px;display:flex;gap:6px;font-size:.58em;font-family:-apple-system,'PingFang SC',sans-serif">
-      <span data-map-btn="amap" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='amap'?'var(--accent)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">标准</span>
-      <span data-map-btn="osm" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='osm'?'var(--cool)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">OSM</span>
-      <span data-map-btn="hiking" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE._hikingOn?'var(--accent)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">徒步道</span>
+      <span data-map-btn="amap" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.62em;background:${RSTATE.mapStyle==='amap'?'var(--accent)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">标准</span>
+      <span data-map-btn="osm" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.62em;background:${RSTATE.mapStyle==='osm'?'var(--cool)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">OSM</span>
+      <span data-map-btn="hiking" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.62em;background:${RSTATE._hikingOn?'var(--accent)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">徒步道</span>
     </div>
     ${buildRouteSteps()}
   `;
@@ -682,14 +679,14 @@ function buildRouteSteps(){
     if(inst.includes('左转')||inst.includes('向左')){icon='←';cls='left';dir='左转'}
     else if(inst.includes('右转')||inst.includes('向右')){icon='→';cls='right';dir='右转'}
     else if(inst.includes('调头')||inst.includes('掉头')){icon='↩';cls='rotary';dir='调头'}
-    else if(inst.includes('到达')||inst.includes('终点')||inst.includes('目的地')){icon='🏁';cls='arrive';dir='到达'}
-    else if(inst.includes('出发')||inst.includes('起点')||inst.includes('开始')){icon='▶';cls='depart';dir='出发'}
+    else if(inst.includes('到达')||inst.includes('终点')||inst.includes('目的地')){icon='●';cls='arrive';dir='到达'}
+    else if(inst.includes('出发')||inst.includes('起点')||inst.includes('开始')){icon='○';cls='depart';dir='出发'}
     else if(inst.includes('环岛')||inst.includes('转盘')){icon='↻';cls='rotary';dir='环岛'}
     else if(inst.includes('左前方')||inst.includes('左后方')){icon='←';cls='left';dir='左前方'}
     else if(inst.includes('右前方')||inst.includes('右后方')){icon='→';cls='right';dir='右前方'}
     return{icon,cls,dir,road:road||inst.replace(/^沿?/,'').replace(/[，,].*/,'')||'前行'};
   }
-  let html='<div class="route-steps"><div class="steps-title">🧭 逐段导航</div><div class="step-list">';
+  let html='<div class="route-steps"><div class="steps-title">逐段导航</div><div class="step-list">';
   for(let i=0;i<Math.min(steps.length,80);i++){
     const s=steps[i];
     const si=parseStep(s);
@@ -729,12 +726,12 @@ function renderRouteWP(side,geo,data,container){
       <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>体感 ${now.apparent_temperature.toFixed(1)}°</span>
     </div>
     <div class="wpg">
-      <div class="wgi"><span class="wgiv">🌬 ${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
-      <div class="wgi"><span class="wgiv">💧 ${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
-      <div class="wgi"><span class="wgiv">🌧 ${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
-      <div class="wgi"><span class="wgiv">☀️ UV${today.uv_index_max[0]}</span><span class="wgil">紫外线</span></div>
-      <div class="wgi"><span class="wgiv">🌡 ${today.temperature_2m_max[0]}°/${today.temperature_2m_min[0]}°</span><span class="wgil">最高/低</span></div>
-      <div class="wgi"><span class="wgiv">☀ ${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照</span></div>
+      <div class="wgi"><span class="wgiv">${now.wind_speed_10m} km/h</span><span class="wgil">风速</span></div>
+      <div class="wgi"><span class="wgiv">${now.relative_humidity_2m}%</span><span class="wgil">湿度</span></div>
+      <div class="wgi"><span class="wgiv">${today.precipitation_probability_max[0]}%</span><span class="wgil">降雨概率</span></div>
+      <div class="wgi"><span class="wgiv">UV${today.uv_index_max[0]}</span><span class="wgil">紫外线</span></div>
+      <div class="wgi"><span class="wgiv">${today.temperature_2m_max[0]}°/${today.temperature_2m_min[0]}°</span><span class="wgil">最高/低</span></div>
+      <div class="wgi"><span class="wgiv">${(today.sunshine_duration[0]/3600).toFixed(1)}h</span><span class="wgil">日照</span></div>
     </div>
   `;
   if(side==='from')container.prepend(panel);
@@ -866,24 +863,24 @@ function renderFeatBar(){
   var wind=analyzeWind();
   var items='';
   if(sunset){
-    items+='<div class="ft-item"><span class="fti">🌅</span><div class="ftt"><span class="ftl">日落前能到吗</span><span class="ftv '+sunset.status+'">'+sunset.label+' · '+sunset.detail+'</span></div></div>';
+    items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">↓</span><div class="ftt"><span class="ftl">日落前能到吗</span><span class="ftv '+sunset.status+'">'+sunset.label+' · '+sunset.detail+'</span></div></div>';
   }
-  items+='<div class="ft-item"><span class="fti">⚡</span><div class="ftt"><span class="ftl">路线难度</span><span class="ftv '+diff.color+'">'+diff.label+' · '+diff.score+'/5</span></div></div>';
+  items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">▲</span><div class="ftt"><span class="ftl">路线难度</span><span class="ftv '+diff.color+'">'+diff.label+' · '+diff.score+'/5</span></div></div>';
   var depart=bestDeparture();
   if(depart){
     var dColor=depart.rainProb<20?'good':depart.rainProb<50?'warn':'bad';
-    items+='<div class="ft-item"><span class="fti">🕐</span><div class="ftt"><span class="ftl">推荐出发</span><span class="ftv '+dColor+'">'+depart.label+depart.time+' · 降雨概率'+depart.rainProb+'%</span></div></div>';
+    items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">⊙</span><div class="ftt"><span class="ftl">推荐出发</span><span class="ftv '+dColor+'">'+depart.label+depart.time+' · 降雨概率'+depart.rainProb+'%</span></div></div>';
   }
   if(wind){
-    items+='<div class="ft-item"><span class="fti">🌬️</span><div class="ftt"><span class="ftl">风向分析</span><span class="ftv '+wind.color+'">'+wind.label+' · '+wind.windSpeed+'km/h '+wind.windDir+'°</span></div></div>';
+    items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">≈</span><div class="ftt"><span class="ftl">风向分析</span><span class="ftv '+wind.color+'">'+wind.label+' · '+wind.windSpeed+'km/h '+wind.windDir+'°</span></div></div>';
   }else{
     var toW=RSTATE.toW;
     if(toW&&toW.current){
       var wc2=w(toW.current.weather_code);
-      items+='<div class="ft-item"><span class="fti">'+wc2.i+'</span><div class="ftt"><span class="ftl">目的地天气</span><span class="ftv">'+wc2.l+' · '+toW.current.temperature_2m.toFixed(0)+'°</span></div></div>';
+      items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">'+wc2.l.charAt(0)+'</span><div class="ftt"><span class="ftl">目的地天气</span><span class="ftv">'+wc2.l+' · '+toW.current.temperature_2m.toFixed(0)+'°</span></div></div>';
     }
   }
-  var html='<div class="feat-bar">'+items+'<div class="ft-actions"><button class="ft-btn" onclick="downloadGPX()">⬇ 导出 GPX</button><button class="ft-btn" onclick="shareRoute()">🔗 分享路线</button></div></div>';
+  var html='<div class="feat-bar">'+items+'<div class="ft-actions"><button class="ft-btn" onclick="downloadGPX()">导出 GPX</button><button class="ft-btn" onclick="shareRoute()">分享路线</button></div></div>';
   var summary=document.getElementById('routeSummary');
   var bar=document.getElementById('featBar');
   if(!bar){
