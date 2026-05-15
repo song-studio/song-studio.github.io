@@ -240,7 +240,7 @@ body{
 }
 .windy-box{overflow:hidden;height:360px;border:1px solid var(--rule-strong)}
 .windy-box iframe{width:100%;height:100%;border:0}
-@media(max-width:480px){.windy-box{height:220px}}
+@media(max-width:640px){.windy-box{height:clamp(200px,38vh,320px)}}
 .ext-links{display:flex;gap:1px;background:var(--rule-strong)}
 .ext-link{
   flex:1;padding:16px;text-align:center;text-decoration:none;
