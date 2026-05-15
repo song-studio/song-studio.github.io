@@ -160,6 +160,28 @@ body{
 .elev-profile{margin:16px 0;padding:16px;background:var(--bg-elevated);border:1px solid var(--rule-strong)}
 .elev-profile .ep-title{font-size:.5em;font-weight:500;letter-spacing:.08em;color:var(--accent);margin-bottom:10px;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
 
+/* ── Feature bar ── */
+.feat-bar{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--rule-strong);margin-top:1px;
+}
+@media(max-width:480px){.feat-bar{grid-template-columns:1fr}}
+.ft-item{padding:14px 16px;background:var(--bg-elevated);display:flex;align-items:center;gap:10px}
+.ft-item .fti{font-size:1.1em;flex-shrink:0}
+.ft-item .ftt{flex:1;min-width:0}
+.ft-item .ftl{font-size:.48em;color:var(--text-muted);display:block;text-transform:uppercase;letter-spacing:.08em;font-family:'JetBrains Mono',monospace}
+.ft-item .ftv{font-size:.68em;font-weight:500;color:var(--ink)}
+.ftv.good{color:var(--green)}.ftv.warn{color:var(--warm)}.ftv.bad{color:var(--accent)}
+.ft-actions{
+  grid-column:1/-1;display:flex;gap:1px;background:var(--rule-strong);
+}
+.ft-btn{
+  flex:1;padding:12px;text-align:center;cursor:pointer;
+  background:var(--bg-elevated);border:none;color:var(--text-dim);
+  font-size:.58em;transition:all .2s;font-family:'Jost','Noto Serif SC',sans-serif;font-weight:300;
+}
+.ft-btn:hover{background:var(--accent-dim);color:var(--accent)}
+
 /* ── Preset routes ── */
 .route-sug{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
 .rsug{
@@ -405,6 +427,7 @@ async function plan(){
 
   document.getElementById('routeSummary').style.display='none';
   document.getElementById('weatherPanels').innerHTML='';
+  const fb=document.getElementById('featBar');if(fb)fb.style.display='none';
   const goBtn=document.getElementById('goBtn');
   goBtn.disabled=true;goBtn.textContent='规划中…';
 
@@ -503,6 +526,7 @@ async function renderRouteAll(){
       }
     }
   }catch(e){}
+	RSTATE._elevGain = elevationGain !== '...' ? elevationGain : 0;
 
   const modeIcons={driving:'🚗',cycling:'🚴',walking:'🥾'};
   const modeColors={driving:'#15803D',cycling:'#E03C31',walking:'#2563EB'};
@@ -559,6 +583,7 @@ async function renderRouteAll(){
   container.innerHTML='';
   renderRouteWP('from',RSTATE.fromGeo,RSTATE.fromW,container);
   renderRouteWP('to',RSTATE.toGeo,RSTATE.toW,container);
+	renderFeatBar();
 }
 
 function switchMapStyle(style){
@@ -692,11 +717,146 @@ function renderRouteWP(side,geo,data,container){
   else container.appendChild(panel);
 }
 
+// ── Feature: Sunset arrival check ──────────────────────
+function checkSunset(){
+  const toW=RSTATE.toW;
+  if(!toW||!toW.daily||!toW.daily.sunset||!toW.daily.sunset[0])return null;
+  const ss=toW.daily.sunset[0];
+  const sH=parseInt(ss.slice(11,13)),sM=parseInt(ss.slice(14,16));
+  const sunsetMin=sH*60+sM;
+  const eta=new Date(Date.now()+RSTATE.route.duration*1000);
+  const etaMin=eta.getHours()*60+eta.getMinutes();
+  const diff=sunsetMin-etaMin;
+  return{
+    sunsetStr:ss.slice(11,16),
+    status:diff>30?'good':diff>-30?'warn':'bad',
+    label:diff>30?'日落前到达':diff>-30?'日落前后到达':'日落后到达',
+    detail:diff>30?`提前${Math.round(diff)}分钟`:diff>-30?'接近日落时分':`日落后${Math.round(-diff)}分钟`
+  };
+}
+
+// ── Feature: Difficulty score ──────────────────────────
+function calcDifficulty(){
+  const dist=RSTATE.route.distance/1000;
+  const elev=RSTATE._elevGain||0;
+  let dS=dist<10?1:dist<30?2:dist<60?3:dist<100?4:5;
+  let eS=elev<100?1:elev<300?2:elev<600?3:elev<1000?4:5;
+  let wS=0;
+  const toW=RSTATE.toW;
+  if(toW&&toW.daily&&toW.daily.precipitation_probability_max){
+    const rain=toW.daily.precipitation_probability_max[0];
+    wS=rain<20?0:rain<50?1:rain<80?2:3;
+  }
+  const mF=RSTATE.mode==='cycling'?1.2:RSTATE.mode==='walking'?1.1:0.9;
+  const raw=(dS+eS+wS)/3*mF;
+  const score=Math.min(5,Math.max(1,Math.round(raw)));
+  return{score,label:['','轻松','中等','较难','困难','极限'][score],color:score<=2?'good':score===3?'warn':'bad'};
+}
+
+// ── Feature: Wind analysis (cycling) ──────────────────
+function analyzeWind(){
+  if(RSTATE.mode!=='cycling')return null;
+  const toW=RSTATE.toW;
+  if(!toW||!toW.current)return null;
+  const wDir=toW.current.wind_direction_10m;
+  const wSpd=toW.current.wind_speed_10m;
+  const fLat=RSTATE.fromGeo.latitude*Math.PI/180;
+  const fLng=RSTATE.fromGeo.longitude*Math.PI/180;
+  const tLat=RSTATE.toGeo.latitude*Math.PI/180;
+  const tLng=RSTATE.toGeo.longitude*Math.PI/180;
+  const dL=tLng-fLng;
+  const y=Math.sin(dL)*Math.cos(tLat);
+  const x=Math.cos(fLat)*Math.sin(tLat)-Math.sin(fLat)*Math.cos(tLat)*Math.cos(dL);
+  let bearing=Math.atan2(y,x)*180/Math.PI;
+  bearing=(bearing+360)%360;
+  const aDiff=Math.min(Math.abs(bearing-wDir),360-Math.abs(bearing-wDir));
+  let type,color;
+  if(aDiff<30){type='逆风';color='bad';}
+  else if(aDiff>150){type='顺风';color='good';}
+  else if(aDiff>60&&aDiff<120){type='侧风';color='warn';}
+  else{type='侧顺风';color='good';}
+  return{type,color,label:type+'骑行',windDir:wDir,windSpeed:wSpd,bearing:Math.round(bearing),angleDiff:Math.round(aDiff)};
+}
+
+// ── Feature: GPX export ────────────────────────────────
+function downloadGPX(){
+  const route=RSTATE.route;
+  if(!route||!route.geometry)return;
+  const coords=route.geometry.coordinates;
+  let gpx='<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="Song Studio Route Planner" xmlns="http://www.topografix.com/GPX/1/1">\n  <trk>\n    <name>'+RSTATE.fromGeo.name+' → '+RSTATE.toGeo.name+'</name>\n    <trkseg>\n';
+  for(let i=0;i<coords.length;i++)gpx+='      <trkpt lat="'+coords[i][1]+'" lon="'+coords[i][0]+'"></trkpt>\n';
+  gpx+='    </trkseg>\n  </trk>\n</gpx>';
+  const blob=new Blob([gpx],{type:'application/gpx+xml'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=RSTATE.fromGeo.name+'-'+RSTATE.toGeo.name+'.gpx';
+  a.click();URL.revokeObjectURL(url);
+}
+
+// ── Feature: Share route URL ───────────────────────────
+function shareRoute(){
+  const from=document.getElementById('fromInput').value.trim();
+  const to=document.getElementById('toInput').value.trim();
+  const url=location.origin+location.pathname+'?from='+encodeURIComponent(from)+'&to='+encodeURIComponent(to)+'&mode='+RSTATE.mode;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(url).then(function(){
+      alert('链接已复制到剪贴板！\n\n'+url);
+    }).catch(function(){
+      prompt('复制此链接分享路线：',url);
+    });
+  }else{
+    prompt('复制此链接分享路线：',url);
+  }
+}
+
+// ── Render feature bar ─────────────────────────────────
+function renderFeatBar(){
+  var sunset=checkSunset();
+  var diff=calcDifficulty();
+  var wind=analyzeWind();
+  var items='';
+  if(sunset){
+    items+='<div class="ft-item"><span class="fti">🌅</span><div class="ftt"><span class="ftl">日落前能到吗</span><span class="ftv '+sunset.status+'">'+sunset.label+' · '+sunset.detail+'</span></div></div>';
+  }
+  items+='<div class="ft-item"><span class="fti">⚡</span><div class="ftt"><span class="ftl">路线难度</span><span class="ftv '+diff.color+'">'+diff.label+' · '+diff.score+'/5</span></div></div>';
+  if(wind){
+    items+='<div class="ft-item"><span class="fti">🌬️</span><div class="ftt"><span class="ftl">风向分析</span><span class="ftv '+wind.color+'">'+wind.label+' · '+wind.windSpeed+'km/h '+wind.windDir+'°</span></div></div>';
+  }else{
+    var toW=RSTATE.toW;
+    if(toW&&toW.current){
+      var wc2=w(toW.current.weather_code);
+      items+='<div class="ft-item"><span class="fti">'+wc2.i+'</span><div class="ftt"><span class="ftl">目的地天气</span><span class="ftv">'+wc2.l+' · '+toW.current.temperature_2m.toFixed(0)+'°</span></div></div>';
+    }
+  }
+  var html='<div class="feat-bar">'+items+'<div class="ft-actions"><button class="ft-btn" onclick="downloadGPX()">⬇ 导出 GPX</button><button class="ft-btn" onclick="shareRoute()">🔗 分享路线</button></div></div>';
+  var summary=document.getElementById('routeSummary');
+  var bar=document.getElementById('featBar');
+  if(!bar){
+    bar=document.createElement('div');
+    bar.id='featBar';
+    summary.after(bar);
+  }
+  bar.innerHTML=html;
+  bar.style.display='block';
+}
+
 // Route enter key
 document.getElementById('fromInput').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('toInput').focus()});
 document.getElementById('toInput').addEventListener('keydown',e=>{if(e.key==='Enter')plan()});
 
 initRMap();
+
+// Load shared route from URL params
+(function(){
+  const p=new URLSearchParams(location.search);
+  const f=p.get('from'),t=p.get('to'),m=p.get('mode');
+  if(f&&t){
+    document.getElementById('fromInput').value=f;
+    document.getElementById('toInput').value=t;
+    if(m&&['driving','cycling','walking'].includes(m))setMode(m);
+    plan();
+  }
+})();
 
 </script>
 </body>
