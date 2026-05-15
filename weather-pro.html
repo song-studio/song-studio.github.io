@@ -2,7 +2,6 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&family=Jost:ital,wght@0,300;0,500;0,700;1,300&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
@@ -257,7 +256,6 @@ footer a{color:var(--text-dim);text-decoration:none}
 footer a:hover{color:var(--accent)}
 .hidden{display:none}
 </style>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 <div class="wrap" id="app">
@@ -394,7 +392,7 @@ async function geocode(q){
 }
 
 async function fetchWeather(lat,lon){
-  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,weather_code,wind_speed_10m_max,wind_direction_10m_dominant,uv_index_max,sunshine_duration,sunrise,sunset,pressure_msl_max,visibility_max&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,relative_humidity_2m,uv_index,cloud_cover,dew_point_2m,pressure_msl&timezone=auto&forecast_days=7`;
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,weather_code,wind_speed_10m_max,wind_direction_10m_dominant,uv_index_max,sunshine_duration,sunrise,sunset,pressure_msl_max&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code,wind_speed_10m,relative_humidity_2m,uv_index,cloud_cover,dew_point_2m,pressure_msl,visibility&timezone=auto&forecast_days=7`;
   const c=new AbortController();
   const t=setTimeout(()=>c.abort(),12000);
   try{const r=await fetch(u,{signal:c.signal});clearTimeout(t);return await r.json();}
@@ -411,8 +409,7 @@ async function initFromParams(){
     if(!geo){document.getElementById('main').innerHTML='<div class="status error">未找到「'+q+'」，请换个关键词试试</div>';return}
     STATE.lat=geo.latitude;STATE.lon=geo.longitude;STATE.name=geo.name;STATE.country=geo.country||'';
     STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
-    STATE.data=await fetchWeather(STATE.lat,STATE.lon);
-    render();
+    try{STATE.data=await fetchWeather(STATE.lat,STATE.lon);render();}catch(e){document.getElementById('main').innerHTML='<div class="status error">气象数据获取失败，请检查网络后重试</div>';}
   }
 }
 
@@ -426,8 +423,7 @@ async function doSearch(){
   STATE.admin=geo.admin1||'';STATE.elev=geo.elevation||0;
   history.pushState(null,'','?q='+encodeURIComponent(q));
   document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>获取气象数据…</div>';
-  STATE.data=await fetchWeather(STATE.lat,STATE.lon);
-  render();
+  try{STATE.data=await fetchWeather(STATE.lat,STATE.lon);render();}catch(e){document.getElementById('main').innerHTML='<div class="status error">气象数据获取失败，请检查网络后重试</div>';}
 }
 
 function quickSearch(q){document.getElementById('q').value=q;doSearch();}
@@ -451,6 +447,7 @@ function moonEmoji(p){
 
 function render(){
   const d=STATE.data;
+  if(!d||!d.current){document.getElementById('main').innerHTML='<div class="status error">气象数据不完整，请重试</div>';return}
   const locName=[STATE.name,STATE.admin,STATE.country].filter(Boolean).join(' · ');
   const now=d.current;
   const today=d.daily;
@@ -459,9 +456,9 @@ function render(){
   // ── Compute all indices ──
   const maxRain=Math.max(...today.precipitation_probability_max);
   const avgWind=Math.round(today.wind_speed_10m_max.reduce((a,b)=>a+b,0)/today.wind_speed_10m_max.length);
-  const avgVis=Math.round(today.visibility_max.reduce((a,b)=>a+b,0)/today.visibility_max.length/1000);
+  const avgVis=hrs.visibility?Math.round(hrs.visibility.reduce((a,b)=>a+b,0)/hrs.visibility.length/1000):10;
   const maxUV=Math.max(...today.uv_index_max);
-  const totalRain=today.precipitation_sum.reduce((a,b)=>a+b,0).toFixed(1);
+  const totalRain=(today.precipitation_sum[0]+today.precipitation_sum[1]).toFixed(1);
   const sunshineH=(today.sunshine_duration[0]/3600).toFixed(1);
 
   // 1. Hiking 徒步
@@ -489,7 +486,8 @@ function render(){
   }
 
   // 5. Camping 露营 — night temp + wind + rain
-  const nightT=Math.min(...hrs.temperature_2m.slice(0,24).filter((_,i)=>i%24>=20||i%24<6));
+  const nightHours=hrs.temperature_2m.slice(0,24).filter((_,i)=>i>=20||i<6);
+  const nightT=nightHours.length?Math.min(...nightHours):10;
   let campS=10,campL='极佳',campC='good';
   if(nightT<5)campS-=4;else if(nightT<10)campS-=2;
   if(maxRain>60)campS-=3;else if(maxRain>30)campS-=1;
@@ -497,7 +495,8 @@ function render(){
   if(campS>=8){campL='极佳';campC='good'}else if(campS>=6){campL='适宜';campC='good'}else if(campS>=4){campL='勉强';campC='warn'}else{campL='不建议';campC='bad'}
 
   // 6. Stargazing 观星 — cloud + moon + light
-  const nightCloud=hrs.cloud_cover?hrs.cloud_cover.filter((_,i)=>i%24>=20||i%24<6).reduce((a,b)=>a+b,0)/8:50;
+  const nightCloudHours=hrs.cloud_cover?hrs.cloud_cover.slice(0,24).filter((_,i)=>i>=20||i<6):[];
+  const nightCloud=nightCloudHours.length?nightCloudHours.reduce((a,b)=>a+b,0)/nightCloudHours.length:50;
   const mp=moonPhase(today.time[0]);
   let starS=10,starL='极佳',starC='good';
   if(nightCloud>80)starS-=5;else if(nightCloud>50)starS-=3;else if(nightCloud>30)starS-=1;
@@ -505,15 +504,15 @@ function render(){
   if(starS>=8){starL='极佳';starC='good'}else if(starS>=5){starL='尚可';starC='good'}else if(starS>=3){starL='较差';starC='warn'}else{starL='不宜';starC='bad'}
 
   // 7. Photography 摄影 — golden/blue hour
-  const sunrise=today.sunrise[0]?today.sunrise[0].slice(11,16):'06:30';
-  const sunset=today.sunset[0]?today.sunset[0].slice(11,16):'18:30';
+  const sunrise=(today.sunrise&&today.sunrise[0])?today.sunrise[0].slice(11,16):'06:30';
+  const sunset=(today.sunset&&today.sunset[0])?today.sunset[0].slice(11,16):'18:30';
   let photoL='良好',photoC='good';
   const dayCloud=hrs.cloud_cover?hrs.cloud_cover.slice(6,18).reduce((a,b)=>a+b,0)/12:30;
   if(dayCloud>80){photoL='不佳';photoC='bad'}else if(dayCloud>50){photoL='一般';photoC='warn'}else if(dayCloud<20){photoL='极佳';photoC='good'}
 
   // 8. Fishing 钓鱼 — pressure trend + wind
   const pNow=now.pressure_msl||1013;
-  const pLater=hrs.pressure_msl?hrs.pressure_msl[6]:pNow;
+  const pLater=hrs.pressure_msl&&hrs.pressure_msl.length>6?hrs.pressure_msl[6]:pNow;
   const pTrend=pLater>pNow+2?'↗上升':pLater<pNow-2?'↘下降':'→平稳';
   let fishS=10,fishL='极佳',fishC='good';
   if(pTrend.includes('下降'))fishS-=3;
@@ -564,7 +563,7 @@ function render(){
   <div class="oc"><div class="oh">攀岩</div><div class="ov"><span class="oe ${climbC}">${climbL}</span> ${climbS}/10</div><div class="od">雨${maxRain}% · 风${avgWind}km/h · ${now.temperature_2m.toFixed(0)}°</div></div>
   <div class="oc"><div class="oh">UV · 紫外线</div><div class="ov"><span class="oe ${uvC}">${uvL}</span> UV${maxUV}</div><div class="od">${maxUV>7?'SPF30+ · 遮阳帽 · 墨镜':maxUV>5?'建议防晒':'无需防护'}${altNote?' · '+altNote:''}</div></div>
   <div class="oc"><div class="oh">Comfort · 体感</div><div class="ov"><span class="oe ${comfortC}">${comfortL}</span> ${comfortT.toFixed(1)}°</div><div class="od">湿度${now.relative_humidity_2m}% · ${comfortT<10?'厚外套':comfortT>30?'防暑降温':'宜出行'}</div></div>
-  <div class="oc"><div class="oh">最佳窗口</div><div class="ov">${hrs.time[bestH].slice(5,10)} ${hrs.time[bestH].slice(11,16)}</div><div class="od">48h最优时段 · 累计降水${totalRain}mm</div></div>
+  <div class="oc"><div class="oh">最佳窗口</div><div class="ov">${hrs.time.length?hrs.time[bestH].slice(5,10)+' '+hrs.time[bestH].slice(11,16):'数据不足'}</div><div class="od">48h最优时段 · 累计降水${totalRain}mm</div></div>
 </div>
 
 <div class="sec-title">${today.time.length}日预报</div>
@@ -633,7 +632,7 @@ function buildDays(){
     const c=document.createElement('div');
     c.className='day-card'+(i===0?' active':'');
     c.dataset.idx=i;
-    c.innerHTML=`<div class="dow">${i===0?'今天':WK[dt.getDay()]}</div><div class="date">${(dt.getMonth()+1)+'/'+dt.getDate()}</div><span class="icon">${wc.i}</span><div class="temps"><span>${today.temperature_2m_max[i]}°</span><span class="lo">${today.temperature_2m_min[i]}°</span></div><div class="rain-bar"><div class="fill" style="width:${today.precipitation_probability_max[i]}%"></div></div><div class="tag">${wc.l} · 雨${today.precipitation_probability_max[i]}%</div>`;
+    c.innerHTML=`<div class="dow">${i===0?'今天':WK[dt.getDay()]}</div><div class="date">${(dt.getMonth()+1)+'/'+dt.getDate()}</div><span class="icon">${wc.i}</span><div class="temps"><span>${today.temperature_2m_max[i].toFixed(0)}°</span><span class="lo">${today.temperature_2m_min[i].toFixed(0)}°</span></div><div class="rain-bar"><div class="fill" style="width:${today.precipitation_probability_max[i]}%"></div></div><div class="tag">${wc.l} · 雨${today.precipitation_probability_max[i]}%</div>`;
     c.onclick=()=>showDetail(i);
     daysEl.appendChild(c);
   });
@@ -649,7 +648,7 @@ function showDetail(i){
   panel.classList.add('show');
   document.getElementById('detail-title').textContent=`${i===0?'今天':WK[dt.getDay()]} ${(dt.getMonth()+1)+'月'+dt.getDate()+'日'} · ${wc.l}`;
   document.getElementById('detail-grid').innerHTML=`
-    <div class="di"><div class="l">最高/低温</div><div class="v">${today.temperature_2m_max[i]}° / ${today.temperature_2m_min[i]}°</div></div>
+    <div class="di"><div class="l">最高/低温</div><div class="v">${today.temperature_2m_max[i].toFixed(0)}° / ${today.temperature_2m_min[i].toFixed(0)}°</div></div>
     <div class="di"><div class="l">降雨概率</div><div class="v" style="color:var(--cool)">${today.precipitation_probability_max[i]}%</div></div>
     <div class="di"><div class="l">降水量</div><div class="v">${today.precipitation_sum[i]} mm</div></div>
     <div class="di"><div class="l">UV 峰值</div><div class="v" style="color:var(--warm)">${today.uv_index_max[i]} · ${uvLabel(today.uv_index_max[i])}</div></div>
@@ -657,13 +656,13 @@ function showDetail(i){
     <div class="di"><div class="l">风速</div><div class="v">${today.wind_speed_10m_max[i]} km/h</div></div>
     <div class="di"><div class="l">风向</div><div class="v">${windDir(today.wind_direction_10m_dominant[i])}</div></div>
     <div class="di"><div class="l">气压</div><div class="v">${today.pressure_msl_max[i]} hPa</div></div>
-    <div class="di"><div class="l">能见度</div><div class="v">${(today.visibility_max[i]/1000).toFixed(1)} km</div></div>
+    <div class="di"><div class="l">能见度</div><div class="v">${hrs.visibility?Math.round(hrs.visibility.slice(i*24,i*24+24).reduce((a,b)=>a+b,0)/24/1000):'--'} km</div></div>
   `;
 
   // Hourly strip
   const hrs=STATE.data.hourly;
   const s=i*24,e=s+24;
-  const nowH=new Date().getHours();
+  const nowH=new Date(hrs.time[s]).getHours();
   let hh='';
   for(let h=s;h<e;h++){
     const hour=h%24;
@@ -672,8 +671,8 @@ function showDetail(i){
       <span class="h">${String(hour).padStart(2,'0')}:00</span>
       <span class="t">${hrs.temperature_2m[h].toFixed(1)}°</span>
       <span class="r">${w(hrs.weather_code[h]).i} ${hrs.precipitation_probability[h]}%</span>
-      <span style="font-size:.85em;color:var(--sub);display:block">体感${hrs.apparent_temperature[h].toFixed(1)}° · UV${hrs.uv_index[h].toFixed(1)}</span>
-      <span style="font-size:.8em;color:var(--muted);display:block">☁️${(hrs.cloud_cover?hrs.cloud_cover[h]:'?')}% · 💧${(hrs.dew_point_2m?hrs.dew_point_2m[h].toFixed(1):'?')}°</span>
+      <span style="font-size:.85em;color:var(--text-dim);display:block">体感${hrs.apparent_temperature[h].toFixed(1)}° · UV${hrs.uv_index[h].toFixed(1)}</span>
+      <span style="font-size:.8em;color:var(--text-muted);display:block">☁️${(hrs.cloud_cover!=null?hrs.cloud_cover[h]:'?')}% · 💧${(hrs.dew_point_2m&&hrs.dew_point_2m[h]!=null?hrs.dew_point_2m[h].toFixed(1):'?')}°</span>
     </div>`;
   }
   document.getElementById('hourly-strip').innerHTML=hh;
