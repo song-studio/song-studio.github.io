@@ -88,7 +88,7 @@ html[lang=en] .hero-sub{letter-spacing:clamp(3px,1.5vw,8px);font-size:clamp(13px
 .hero-cta:active{transform:scale(.94);}
 /* ══ Globe in Hero ══ */
 #hero-globe-wrap{flex-shrink:0;position:relative;margin:0 auto;}
-#hero-globe-wrap canvas{display:block;border-radius:50%;}
+#hero-globe-wrap canvas{display:block;border-radius:50%;width:100%!important;height:100%!important;}
 .globe-title{position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);z-index:6;font-size:10.5px;font-weight:600;color:rgba(245,197,24,.55);letter-spacing:5px;text-transform:uppercase;white-space:nowrap;pointer-events:none;text-shadow:0 0 20px rgba(245,197,24,.12);}
 @media(min-width:769px){
   #hero-content{flex-direction:row;gap:48px;align-items:center;padding:48px 32px 24px;justify-content:center;}
@@ -98,7 +98,9 @@ html[lang=en] .hero-sub{letter-spacing:clamp(3px,1.5vw,8px);font-size:clamp(13px
   .hero-sep{display:block;width:1.5px;height:160px;background:linear-gradient(to bottom,transparent,rgba(245,197,24,.2),rgba(245,197,24,.1),transparent);flex-shrink:0;margin:0 8px;order:2;box-shadow:0 0 8px rgba(245,197,24,.08);}
 }
 @media(max-width:768px){
-  #hero-globe-wrap{width:280px;height:280px;margin:0 auto 10px;}
+  #hero-globe-wrap{width:150px;height:150px;margin:0 auto 2px;order:-1;}
+  #hero-globe-wrap .globe-title{display:none;}
+  .hero-text-col{order:0;}
   .hero-stats{margin-bottom:22px;}
   #hero-content{gap:4px;}
   .hero-sep{display:none;}
