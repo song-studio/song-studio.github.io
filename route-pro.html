@@ -741,6 +741,29 @@ function renderRouteWP(side,geo,data,container){
   else container.appendChild(panel);
 }
 
+// ── Feature: Best departure time ───────────────────────
+function bestDeparture(){
+  var toW=RSTATE.toW;
+  if(!toW||!toW.hourly||!toW.daily)return null;
+  var hrs=toW.hourly;
+  var durH=RSTATE.route.duration/3600;
+  var sunset=toW.daily.sunset&&toW.daily.sunset[0]?toW.daily.sunset[0]:null;
+  var bestScore=999,bestH=8;
+  for(var h=6;h<20&&h<hrs.precipitation_probability.length;h++){
+    var score=hrs.precipitation_probability[h]*1.5;
+    var temp=hrs.temperature_2m[h];
+    if(temp<5||temp>32)score+=20;else if(temp<10||temp>28)score+=10;
+    if(sunset){
+      var sH=parseInt(sunset.slice(11,13)),sM=parseInt(sunset.slice(14,16));
+      var arrH=h+durH;
+      if(arrH>sH-1)score+=15;
+    }
+    if(score<bestScore){bestScore=score;bestH=h;}
+  }
+  var label=bestH<10?'上午':bestH<12?'中午':bestH<18?'下午':'傍晚';
+  return{hour:bestH,time:String(bestH).padStart(2,'0')+':00',rainProb:hrs.precipitation_probability[bestH],label:label};
+}
+
 // ── Feature: Sunset arrival check ──────────────────────
 function checkSunset(){
   const toW=RSTATE.toW;
@@ -843,6 +866,11 @@ function renderFeatBar(){
     items+='<div class="ft-item"><span class="fti">🌅</span><div class="ftt"><span class="ftl">日落前能到吗</span><span class="ftv '+sunset.status+'">'+sunset.label+' · '+sunset.detail+'</span></div></div>';
   }
   items+='<div class="ft-item"><span class="fti">⚡</span><div class="ftt"><span class="ftl">路线难度</span><span class="ftv '+diff.color+'">'+diff.label+' · '+diff.score+'/5</span></div></div>';
+  var depart=bestDeparture();
+  if(depart){
+    var dColor=depart.rainProb<20?'good':depart.rainProb<50?'warn':'bad';
+    items+='<div class="ft-item"><span class="fti">🕐</span><div class="ftt"><span class="ftl">推荐出发</span><span class="ftv '+dColor+'">'+depart.label+depart.time+' · 降雨概率'+depart.rainProb+'%</span></div></div>';
+  }
   if(wind){
     items+='<div class="ft-item"><span class="fti">🌬️</span><div class="ftt"><span class="ftl">风向分析</span><span class="ftv '+wind.color+'">'+wind.label+' · '+wind.windSpeed+'km/h '+wind.windDir+'°</span></div></div>';
   }else{
