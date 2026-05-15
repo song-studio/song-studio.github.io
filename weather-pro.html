@@ -341,7 +341,7 @@ async function geocode(q){
   // Latin-script → Open-Meteo
   if(hasLatin){
     const om=await omGeo();
-    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
+    if(om){const cName=om.country||'';const isCN=cName==='China'||cName==='中国';return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:cName,admin1:isCN?(om.admin1||''):'',elevation:0};}
     return null;
   }
 
@@ -349,20 +349,20 @@ async function geocode(q){
   const amapR=await fetch(`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}`).then(r=>r.json());
   if(!amapR.geocodes||!amapR.geocodes.length){
     const om=await omGeo();
-    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
+    if(om){const cName=om.country||'';const isCN=cName==='China'||cName==='中国';return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:cName,admin1:isCN?(om.admin1||''):'',elevation:0};}
     return null;
   }
 
   function fmt(g){
     const [lng,lat]=g.location.split(',').map(Number);
     const [wgsLng,wgsLat]=gcj2wgs(lng,lat);
-    let short=g.name||q;
+    let short=(g.name||q).replace(/[省市]{1,2}$/,'');
     if(!g.name&&g.formatted_address){
       const parts=g.formatted_address.split(/省|市|区|县|自治州/);
       short=parts[parts.length-1]||g.formatted_address;
     }
-    let admin=g.province||g.city||'';
-    if(g.city&&g.city!==g.province)admin=g.city;
+    let admin=(g.province||g.city||'').replace(/省|市|自治区|自治州|特别行政区$/,'');
+    if(g.city&&g.city!==g.province)admin=g.city.replace(/省|市|自治区|自治州$/,'');
     return{
       latitude:wgsLat,longitude:wgsLng,
       name:short,country:g.country||'中国',
@@ -448,7 +448,7 @@ function moonEmoji(p){
 function render(){
   const d=STATE.data;
   if(!d||!d.current){document.getElementById('main').innerHTML='<div class="status error">气象数据不完整，请重试</div>';return}
-  const locName=[STATE.name,STATE.admin,STATE.country].filter(Boolean).join(' · ');
+  const isChina=STATE.country==='中国'||STATE.country==='China'||!STATE.country;const locName=isChina?[STATE.name,STATE.admin,STATE.country].filter(Boolean).join(' · '):[STATE.name,STATE.country].filter(Boolean).join(' · ');
   const now=d.current;
   const today=d.daily;
   const hrs=d.hourly;
@@ -538,7 +538,7 @@ function render(){
 </div>
 
 <div class="hero-block">
-  <div class="hero-loc">${STATE.admin||''} · ${STATE.country||''}</div>
+  <div class="hero-loc">${isChina?STATE.admin||'':''}${isChina?' · ':''}${STATE.country||STATE.admin||''}</div>
   <span class="hero-temp">${now.temperature_2m.toFixed(1)}°</span>
   <div class="hero-label">${w(now.weather_code).i} <em>${w(now.weather_code).l}</em> · 体感 ${now.apparent_temperature.toFixed(1)}°</div>
 </div>
