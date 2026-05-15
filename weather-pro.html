@@ -647,6 +647,8 @@ function showDetail(i){
   if(!panel)return;
   panel.classList.add('show');
   document.getElementById('detail-title').textContent=`${i===0?'今天':WK[dt.getDay()]} ${(dt.getMonth()+1)+'月'+dt.getDate()+'日'} · ${wc.l}`;
+  const hrs=STATE.data.hourly;
+
   document.getElementById('detail-grid').innerHTML=`
     <div class="di"><div class="l">最高/低温</div><div class="v">${today.temperature_2m_max[i].toFixed(0)}° / ${today.temperature_2m_min[i].toFixed(0)}°</div></div>
     <div class="di"><div class="l">降雨概率</div><div class="v" style="color:var(--cool)">${today.precipitation_probability_max[i]}%</div></div>
@@ -659,10 +661,8 @@ function showDetail(i){
     <div class="di"><div class="l">能见度</div><div class="v">${hrs.visibility?Math.round(hrs.visibility.slice(i*24,i*24+24).reduce((a,b)=>a+b,0)/24/1000):'--'} km</div></div>
   `;
 
-  // Hourly strip
-  const hrs=STATE.data.hourly;
-  const s=i*24,e=s+24;
-  const nowH=new Date(hrs.time[s]).getHours();
+	  const s=i*24,e=s+24;
+	  const nowH=new Date(hrs.time[s]).getHours();
   let hh='';
   for(let h=s;h<e;h++){
     const hour=h%24;
