@@ -120,6 +120,7 @@ body::before{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:22px;
+  perspective:1200px;
 }
 @media(max-width:640px){.projects{grid-template-columns:1fr}}
 
@@ -130,14 +131,21 @@ body::before{
   background:var(--surface);
   border:1px solid var(--border);
   padding:0;
-  transition:all .4s cubic-bezier(.22,.61,.36,1);
+  transition:all .5s cubic-bezier(.22,.61,.36,1);
   min-height:300px;
   overflow:hidden;
+  transform-style:preserve-3d;
+}
+.project::after{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.12) 0%,transparent 50%,rgba(0,0,0,.04) 100%);
+  opacity:0;transition:opacity .5s;
 }
 .project:hover{
-  transform:translateY(-4px);
+  transform:translateY(-6px);
   border-color:var(--ink);
 }
+.project:hover::after{opacity:1}
 .project:active{transform:scale(.985);transition-duration:.1s}
 
 .project .proj-body{
@@ -178,17 +186,17 @@ body::before{
 /* Project accent styles */
 .project.weather{border-top:4px solid var(--ochre)}
 .project.weather .proj-index{color:var(--ochre)}
-.project.weather:hover{box-shadow:0 12px 36px var(--ochre-glow)}
+.project.weather:hover{transform:translateY(-6px) rotateX(2deg) rotateY(3deg);box-shadow:0 16px 40px var(--ochre-glow);border-color:var(--ochre)}
 .project.weather:hover .proj-tag{border-color:rgba(196,115,62,.25);color:var(--ochre-deep)}
 
 .project.route{border-top:4px solid var(--sky)}
 .project.route .proj-index{color:var(--sky)}
-.project.route:hover{box-shadow:0 12px 36px var(--sky-glow)}
+.project.route:hover{transform:translateY(-6px) rotateX(2deg) rotateY(-3deg);box-shadow:0 16px 40px var(--sky-glow);border-color:var(--sky)}
 .project.route:hover .proj-tag{border-color:rgba(90,143,168,.25);color:#4a7d94}
 
 .project.worldcup{border-top:4px solid var(--forest)}
 .project.worldcup .proj-index{color:var(--forest)}
-.project.worldcup:hover{box-shadow:0 12px 36px var(--forest-glow)}
+.project.worldcup:hover{transform:translateY(-6px) rotateX(2deg) rotateY(3deg);box-shadow:0 16px 40px var(--forest-glow);border-color:var(--forest)}
 .project.worldcup:hover .proj-tag{border-color:rgba(45,90,61,.25);color:var(--forest)}
 
 /* Placeholder */
