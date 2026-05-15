@@ -408,9 +408,10 @@ async function getRoute(from,to,mode){
       }
     });
   }
+  var wgsCoords=coords.map(function(c){var w=gcj2wgs(c[0],c[1]);return[w[0],w[1]];});
   return {
     distance:parseInt(path.distance),duration:parseInt(path.duration),
-    steps:path.steps||[],geometry:{coordinates:coords}
+    steps:path.steps||[],geometry:{coordinates:coords,wgsCoordinates:wgsCoords}
   };
 }
 
@@ -571,8 +572,8 @@ async function renderRouteAll(){
     </div>
     <div style="margin-top:10px;display:flex;gap:6px;font-size:.58em;font-family:-apple-system,'PingFang SC',sans-serif">
       <span data-map-btn="amap" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='amap'?'var(--accent)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">标准</span>
-      <span data-map-btn="osm" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='osm'?'var(--ink)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">OSM</span>
-      <span data-map-btn="hiking" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE._hikingOn?'var(--ink)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">徒步道</span>
+      <span data-map-btn="osm" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE.mapStyle==='osm'?'var(--cool)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">OSM</span>
+      <span data-map-btn="hiking" style="cursor:pointer;padding:4px 10px;border:1px solid var(--rule);background:${RSTATE._hikingOn?'var(--accent)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">徒步道</span>
     </div>
     ${buildRouteSteps()}
   `;
@@ -587,29 +588,52 @@ async function renderRouteAll(){
 }
 
 function switchMapStyle(style){
-  const m=RSTATE.rmap;if(!m)return;
+  var m=RSTATE.rmap;if(!m)return;
   RSTATE.mapStyle=style;
   // Remove all tile layers except hiking
   m.eachLayer(l=>{if(l instanceof L.TileLayer&&l!==RSTATE.hikingLayer&&l._url&&!l._url.includes('waymarkedtrails'))m.removeLayer(l);});
   if(style==='amap'){
+    // Hiking trails don't align with GCJ-02 Amap tiles
+    if(RSTATE._hikingOn){m.removeLayer(RSTATE.hikingLayer);RSTATE._hikingOn=false;}
     RSTATE.baseLayer=L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',{subdomains:'1234',attribution:'&copy; 高德',maxZoom:18}).addTo(m);
+    // Switch route line + markers to GCJ-02 coords
+    if(RSTATE.route&&RSTATE.routeLine){
+      var gcj=RSTATE.route.geometry.coordinates.map(function(c){return[c[1],c[0]];});
+      RSTATE.routeLine.setLatLngs(gcj);
+      RSTATE.markers[0].setLatLng([RSTATE.fromGeo.rawLat||RSTATE.fromGeo.latitude,RSTATE.fromGeo.rawLng||RSTATE.fromGeo.longitude]);
+      RSTATE.markers[1].setLatLng([RSTATE.toGeo.rawLat||RSTATE.toGeo.latitude,RSTATE.toGeo.rawLng||RSTATE.toGeo.longitude]);
+    }
   }else{
     RSTATE.baseLayer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OSM',maxZoom:18}).addTo(m);
+    // Switch route line + markers to WGS-84 coords
+    if(RSTATE.route&&RSTATE.route.geometry.wgsCoordinates&&RSTATE.routeLine){
+      var wgs=RSTATE.route.geometry.wgsCoordinates.map(function(c){return[c[1],c[0]];});
+      RSTATE.routeLine.setLatLngs(wgs);
+      RSTATE.markers[0].setLatLng([RSTATE.fromGeo.latitude,RSTATE.fromGeo.longitude]);
+      RSTATE.markers[1].setLatLng([RSTATE.toGeo.latitude,RSTATE.toGeo.longitude]);
+    }
   }
   // Update toggle buttons in DOM
-  const btns=document.querySelectorAll('#routeSummary [data-map-btn]');
-  btns.forEach(b=>{
-    const v=b.getAttribute('data-map-btn');
-    const active=(v==='amap'&&style==='amap')||(v==='osm'&&style==='osm');
-    b.style.background=active?'var(--ink)':'none';b.style.color=active?'#fff':'var(--sub)';
+  var btns=document.querySelectorAll('#routeSummary [data-map-btn]');
+  btns.forEach(function(b){
+    var v=b.getAttribute('data-map-btn');
+    if(v==='amap'){b.style.background=style==='amap'?'var(--accent)':'none';b.style.color=style==='amap'?'#fff':'var(--sub)';}
+    else if(v==='osm'){b.style.background=style==='osm'?'var(--cool)':'none';b.style.color=style==='osm'?'#fff':'var(--sub)';}
+    else if(v==='hiking'){b.style.background=RSTATE._hikingOn?'var(--accent)':'none';b.style.color=RSTATE._hikingOn?'#fff':'var(--sub)';}
   });
 }
 function toggleHiking(){
-  const m=RSTATE.rmap;if(!m)return;
+  var m=RSTATE.rmap;if(!m)return;
   RSTATE._hikingOn=!RSTATE._hikingOn;
-  if(RSTATE._hikingOn)m.addLayer(RSTATE.hikingLayer);else m.removeLayer(RSTATE.hikingLayer);
-  const btn=document.querySelector('#routeSummary [data-map-btn="hiking"]');
-  if(btn){btn.style.background=RSTATE._hikingOn?'var(--ink)':'none';btn.style.color=RSTATE._hikingOn?'#fff':'var(--sub)';}
+  if(RSTATE._hikingOn){
+    // Auto-switch to OSM for proper hiking trail alignment (WGS-84)
+    if(RSTATE.mapStyle!=='osm')switchMapStyle('osm');
+    m.addLayer(RSTATE.hikingLayer);
+  }else{
+    m.removeLayer(RSTATE.hikingLayer);
+  }
+  var btn=document.querySelector('#routeSummary [data-map-btn="hiking"]');
+  if(btn){btn.style.background=RSTATE._hikingOn?'var(--accent)':'none';btn.style.color=RSTATE._hikingOn?'#fff':'var(--sub)';}
 }
 
 function drawElevProfile(data){
