@@ -126,9 +126,15 @@ body::before{
 }
 
 .project .proj-num{
+  display:flex;align-items:center;gap:10px;
   font-size:.5em;font-weight:500;color:var(--muted);
-  flex-shrink:0;width:30px;letter-spacing:.04em;
+  flex-shrink:0;letter-spacing:.04em;
   transition:color .2s;
+}
+.project .proj-num::before{
+  content:"";display:inline-block;
+  width:8px;height:8px;flex-shrink:0;
+  background:var(--accent);
 }
 .project:hover .proj-num{color:var(--accent)}
 
