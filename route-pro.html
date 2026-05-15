@@ -416,7 +416,7 @@ async function getRoute(from,to,mode){
 }
 
 async function getRouteWeather(lat,lon){
-  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,relative_humidity_2m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code,wind_speed_10m_max,uv_index_max,sunshine_duration,sunrise,sunset,precipitation_sum&hourly=cloud_cover&timezone=auto&forecast_days=3`;
+  const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_direction_10m,relative_humidity_2m,pressure_msl&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code,wind_speed_10m_max,uv_index_max,sunshine_duration,sunrise,sunset,precipitation_sum&hourly=cloud_cover,precipitation_probability,temperature_2m&timezone=auto&forecast_days=3`;
   const r=await fetch(u);
   return await r.json();
 }
@@ -744,7 +744,7 @@ function renderRouteWP(side,geo,data,container){
 // ── Feature: Best departure time ───────────────────────
 function bestDeparture(){
   var toW=RSTATE.toW;
-  if(!toW||!toW.hourly||!toW.daily)return null;
+  if(!toW||!toW.hourly||!toW.daily||!toW.hourly.precipitation_probability)return null;
   var hrs=toW.hourly;
   var durH=RSTATE.route.duration/3600;
   var sunset=toW.daily.sunset&&toW.daily.sunset[0]?toW.daily.sunset[0]:null;
@@ -766,6 +766,7 @@ function bestDeparture(){
 
 // ── Feature: Sunset arrival check ──────────────────────
 function checkSunset(){
+  if(!RSTATE.route)return null;
   const toW=RSTATE.toW;
   if(!toW||!toW.daily||!toW.daily.sunset||!toW.daily.sunset[0])return null;
   const ss=toW.daily.sunset[0];
@@ -784,6 +785,7 @@ function checkSunset(){
 
 // ── Feature: Difficulty score ──────────────────────────
 function calcDifficulty(){
+  if(!RSTATE.route)return{score:1,label:'未知',color:'good'};
   const dist=RSTATE.route.distance/1000;
   const elev=RSTATE._elevGain||0;
   let dS=dist<10?1:dist<30?2:dist<60?3:dist<100?4:5;
@@ -803,6 +805,7 @@ function calcDifficulty(){
 // ── Feature: Wind analysis (cycling) ──────────────────
 function analyzeWind(){
   if(RSTATE.mode!=='cycling')return null;
+  if(!RSTATE.route||!RSTATE.fromGeo||!RSTATE.toGeo)return null;
   const toW=RSTATE.toW;
   if(!toW||!toW.current)return null;
   const wDir=toW.current.wind_direction_10m;
@@ -828,7 +831,7 @@ function analyzeWind(){
 // ── Feature: GPX export ────────────────────────────────
 function downloadGPX(){
   const route=RSTATE.route;
-  if(!route||!route.geometry)return;
+  if(!route||!route.geometry||!route.geometry.coordinates)return;
   const coords=route.geometry.coordinates;
   let gpx='<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="Song Studio Route Planner" xmlns="http://www.topografix.com/GPX/1/1">\n  <trk>\n    <name>'+RSTATE.fromGeo.name+' → '+RSTATE.toGeo.name+'</name>\n    <trkseg>\n';
   for(let i=0;i<coords.length;i++)gpx+='      <trkpt lat="'+coords[i][1]+'" lon="'+coords[i][0]+'"></trkpt>\n';
