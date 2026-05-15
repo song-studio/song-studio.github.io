@@ -19,6 +19,7 @@
   --text:#D4CFBF;
   --text-dim:#A8A090;
   --text-muted:#6B6758;
+  --sub:#8A8575;
   --ink:#EDE8DC;
   --accent:#C8524A;
   --accent-dim:rgba(200,82,74,.12);
@@ -260,7 +261,7 @@ async function geocode(q){
   // Latin-script → Open-Meteo
   if(hasLatin){
     const om=await omGeo();
-    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
+    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:om.elevation||0,rawLat:om.latitude,rawLng:om.longitude};
     return null;
   }
 
@@ -268,7 +269,7 @@ async function geocode(q){
   const amapR=await fetch(`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}`).then(r=>r.json());
   if(!amapR.geocodes||!amapR.geocodes.length){
     const om=await omGeo();
-    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:0};
+    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:om.elevation||0,rawLat:om.latitude,rawLng:om.longitude};
     return null;
   }
 
@@ -343,10 +344,7 @@ async function swap(){
   const t=document.getElementById('fromInput').value;
   document.getElementById('fromInput').value=document.getElementById('toInput').value;
   document.getElementById('toInput').value=t;
-  if(RSTATE.fromGeo&&RSTATE.toGeo){
-    const tmp=RSTATE.fromGeo;RSTATE.fromGeo=RSTATE.toGeo;RSTATE.toGeo=tmp;
-    await renderRouteAll();
-  }
+  if(RSTATE.fromGeo&&RSTATE.toGeo)plan();
 }
 
 function preset(f,t,m){
@@ -355,8 +353,6 @@ function preset(f,t,m){
   setMode(m);
   plan();
 }
-
-async function routeGeocode(q){return await geocode(q);}
 
 async function getRoute(from,to,mode){
   const [flng,flat]=[from.rawLng,from.rawLat];
@@ -413,27 +409,27 @@ async function plan(){
   goBtn.disabled=true;goBtn.textContent='规划中…';
 
   try{
-    const[fg,tg]=await Promise.all([routeGeocode(fromQ),routeGeocode(toQ)]);
+    const[fg,tg]=await Promise.all([geocode(fromQ),geocode(toQ)]);
     if(!fg||!tg){
-      alert(`未找到：${!fg?fromQ:''} ${!tg?toQ:''}`);
+      alert('未找到：'+[!fg?fromQ:'',!tg?toQ:''].filter(Boolean).join('、'));
       goBtn.disabled=false;goBtn.textContent='开始规划';
       return;
     }
     RSTATE.fromGeo=fg;RSTATE.toGeo=tg;
 
-    const[route,fromW,toW]=await Promise.all([
-      getRoute(fg,tg,RSTATE.mode),
-      getRouteWeather(fg.latitude,fg.longitude),
-      getRouteWeather(tg.latitude,tg.longitude)
-    ]);
-
+    // Fetch route first (critical path)
+    const route=await getRoute(fg,tg,RSTATE.mode);
     if(!route){
       alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
       goBtn.disabled=false;goBtn.textContent='开始规划';
       return;
     }
     RSTATE.route=route;
-    RSTATE.fromW=fromW;RSTATE.toW=toW;
+
+    // Weather is non-critical — fetch independently
+    try{RSTATE.fromW=await getRouteWeather(fg.latitude,fg.longitude);}catch(e){RSTATE.fromW=null;}
+    try{RSTATE.toW=await getRouteWeather(tg.latitude,tg.longitude);}catch(e){RSTATE.toW=null;}
+
     await renderRouteAll();
   }catch(e){
     alert('网络错误：'+e.message);
@@ -513,11 +509,12 @@ async function renderRouteAll(){
   document.getElementById('routeSummary').style.display='block';
   const mc=modeColors[RSTATE.mode];
   const mi=modeIcons[RSTATE.mode];
-  const fromT=(RSTATE.fromW.current.temperature_2m||0).toFixed(1);
-  const toT=(RSTATE.toW.current.temperature_2m||0).toFixed(1);
-  const fromWC=w(RSTATE.fromW.current.weather_code);
-  const toWC=w(RSTATE.toW.current.weather_code);
-  const elevInfo=elevationGain!=='...'?`↑${elevationGain}m ↓${RSTATE._elevLoss||0}m`:'计算中…';
+  const fromW=RSTATE.fromW,toW=RSTATE.toW;
+  const fromWC=fromW?w(fromW.current.weather_code):{i:'🌥️',l:'无数据'};
+  const toWC=toW?w(toW.current.weather_code):{i:'🌥️',l:'无数据'};
+  const fromT=fromW?fromW.current.temperature_2m.toFixed(1):'--';
+  const toT=toW?toW.current.temperature_2m.toFixed(1):'--';
+  const elevInfo=elevationGain!=='...'?`↑${elevationGain}m ↓${RSTATE._elevLoss||0}m`:'不可用';
 
   document.getElementById('routeSummary').innerHTML=`
     <div class="rs-header">
@@ -647,14 +644,15 @@ function buildRouteSteps(){
   for(let i=0;i<Math.min(steps.length,80);i++){
     const s=steps[i];
     const si=parseStep(s);
-    const d=(parseInt(s.distance)/1000).toFixed(1);
+    const distM=parseInt(s.distance);
+    const d=distM>=1000?(distM/1000).toFixed(1)+' km':distM+' m';
     const dur=Math.round(parseInt(s.duration)/60);
     html+=`<div class="step-item">
       <div class="step-turn ${si.cls}">${si.icon}</div>
       <div class="step-info">
         <div class="step-dir">${si.dir}</div>
         <div class="step-road">${si.road}</div>
-        <div class="step-dist">${d} km · ${dur}分钟</div>
+        <div class="step-dist">${d} · ${dur}分钟</div>
       </div>
     </div>`;
   }
@@ -663,8 +661,10 @@ function buildRouteSteps(){
 }
 
 function renderRouteWP(side,geo,data,container){
+  if(!data||!data.current){return}
   const now=data.current;
   const today=data.daily;
+  if(!today||!today.time){return}
   const wc=w(now.weather_code);
   const label=side==='from'?'起点':'终点';
   const cls=side==='from'?'from':'to';
