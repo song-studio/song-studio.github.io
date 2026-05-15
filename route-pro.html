@@ -376,15 +376,6 @@ async function getRoute(from,to,mode){
   if(d.route&&d.route.paths&&d.route.paths.length)path=d.route.paths[0];
   else if(d.data&&d.data.paths&&d.data.paths.length)path=d.data.paths[0];
   if(!path){
-    // Walking v3 failed — try cycling as fallback
-    if(mode==='walking'){
-      const fr=await fetch(`https://restapi.amap.com/v4/direction/bicycling?key=${AMAP_KEY}&origin=${flng},${flat}&destination=${tlng},${tlat}`);
-      const fd=await fr.json();
-      if(fd.data&&fd.data.paths&&fd.data.paths.length){
-        path=fd.data.paths[0];
-        path._walkingFallback=true;
-      }
-    }
     if(!path)return null;
   }
   // Build polyline coords (keep GCJ-02 — display on Amap tiles)
@@ -401,8 +392,7 @@ async function getRoute(from,to,mode){
   }
   return {
     distance:parseInt(path.distance),duration:parseInt(path.duration),
-    steps:path.steps||[],geometry:{coordinates:coords},
-    _walkingFallback:!!path._walkingFallback
+    steps:path.steps||[],geometry:{coordinates:coords}
   };
 }
 
@@ -533,7 +523,7 @@ async function renderRouteAll(){
     <div class="rs-header">
       <div class="rs-mode-icon" style="color:${mc}">${mi}</div>
       <div>
-        <div class="rs-route-name">${modeName[RSTATE.mode]}路线${RSTATE.route._walkingFallback?' <span style="font-size:.72em;color:var(--accent);font-weight:400">(步行→骑行)</span>':''}</div>
+        <div class="rs-route-name">${modeName[RSTATE.mode]}路线</div>
         <div style="font-size:.6em;color:var(--sub)">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</div>
       </div>
       <div style="text-align:right">
