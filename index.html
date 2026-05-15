@@ -102,24 +102,28 @@ body::before{
 .section-head .rule{flex:1;height:1px;background:var(--line)}
 
 /* ── Projects ── */
-.projects{display:flex;flex-direction:column;gap:2px;padding-bottom:40px}
+.projects{display:flex;flex-direction:column;gap:16px;padding-bottom:40px}
 
 .project{
   text-decoration:none;color:inherit;
   display:flex;align-items:baseline;gap:20px;
-  padding:22px 0;
-  border-bottom:1px solid var(--line);
-  transition:all .2s;
+  padding:22px 28px;
+  background:var(--white);
+  border:1px solid var(--line);
+  transition:all .3s cubic-bezier(.22,.61,.36,1);
   position:relative;
 }
-@media(max-width:640px){.project{flex-wrap:wrap;gap:12px}}
+@media(max-width:640px){.project{flex-wrap:wrap;gap:12px;padding:18px 20px}}
 
-.project::before{
-  content:"";position:absolute;inset:-2px -12px;
-  background:var(--accent-dim);
-  opacity:0;transition:opacity .2s;z-index:-1;
+.project.tilt-l{transform:rotate(-.6deg)}
+.project.tilt-r{transform:rotate(.5deg)}
+.project.tilt-l2{transform:rotate(-.4deg)}
+
+.project:hover{
+  transform:rotate(0deg) translateY(-4px);
+  box-shadow:0 8px 30px rgba(0,0,0,.06);
+  border-color:rgba(230,95,59,.2);
 }
-.project:hover::before{opacity:1}
 
 .project .proj-num{
   font-size:.5em;font-weight:500;color:var(--muted);
@@ -234,7 +238,7 @@ body::before{
 
 <div class="projects reveal">
 
-  <a class="project" href="weather-pro.html">
+  <a class="project tilt-l" href="weather-pro.html">
     <span class="proj-num">01</span>
     <div class="proj-body">
       <div class="proj-title">气象查询</div>
@@ -247,7 +251,7 @@ body::before{
     <span class="proj-arrow">↗</span>
   </a>
 
-  <a class="project" href="route-pro.html">
+  <a class="project tilt-r" href="route-pro.html">
     <span class="proj-num">02</span>
     <div class="proj-body">
       <div class="proj-title">路线规划</div>
@@ -260,7 +264,7 @@ body::before{
     <span class="proj-arrow">↗</span>
   </a>
 
-  <a class="project" href="2026-FIFA-World-Cup.html">
+  <a class="project tilt-l2" href="2026-FIFA-World-Cup.html">
     <span class="proj-num">03</span>
     <div class="proj-body">
       <div class="proj-title">2026 FIFA World Cup</div>
