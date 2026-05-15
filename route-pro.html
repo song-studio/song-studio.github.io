@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&family=Jost:ital,wght@0,300;0,500;0,700;1,300&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>路线规划 · Song Studio</title>
@@ -95,13 +96,13 @@ body{
   transition:all .15s;letter-spacing:.02em;
 }
 .mode-chip:hover{background:#223625}
-.mode-chip.sel{color:var(--bg);font-weight:700;background:var(--ink)}
+.mode-chip.sel{color:#FFF;font-weight:700;background:var(--accent)}
 .go-btn{
-  width:100%;padding:16px;border:none;background:var(--ink);color:var(--bg);
-  font-size:.88em;cursor:pointer;letter-spacing:.08em;font-weight:600;
+  width:100%;padding:16px;border:none;background:var(--accent);color:#FFF;
+  font-size:.88em;cursor:pointer;letter-spacing:.08em;font-weight:700;
   transition:all .2s;font-family:'Jost','Noto Serif SC',sans-serif;
 }
-.go-btn:hover{background:var(--text);color:var(--bg)}
+.go-btn:hover{background:#E06A5E}
 .go-btn:disabled{opacity:.3;pointer-events:none}
 .map-wrap{overflow:hidden;height:420px;margin-bottom:2px;border:1px solid var(--rule-strong)}
 @media(max-width:480px){.map-wrap{height:280px}}
@@ -188,6 +189,8 @@ body{
 }
 .rsug:hover{background:var(--accent);color:#FFF;border-color:var(--accent)}
 
+.mode-chip i,.rs-mode-icon i,.step-turn i{font-size:inherit}
+.ft-item .fti i{font-size:1.05em;color:var(--text-dim)}
 footer{
   text-align:center;padding:48px 0 0;color:var(--text-muted);
   font-size:.5em;letter-spacing:.04em;font-weight:300;
@@ -214,16 +217,16 @@ footer a:hover{color:var(--accent)}
   <div class="route-row">
     <span class="rdot from"></span>
     <input type="text" id="fromInput" placeholder="起点… 例：贵阳" autocomplete="off">
-    <button class="swap-btn" onclick="swap()" title="交换起终点">↕</button>
+    <button class="swap-btn" onclick="swap()" title="交换起终点"><i class="fa-solid fa-arrow-up-arrow-down"></i></button>
   </div>
   <div class="route-row">
     <span class="rdot to"></span>
     <input type="text" id="toInput" placeholder="终点… 例：六盘水" autocomplete="off">
   </div>
   <div class="modes">
-    <div class="mode-chip sel drive" data-mode="driving" onclick="setMode('driving')">驾车</div>
-    <div class="mode-chip bike" data-mode="cycling" onclick="setMode('cycling')">骑行</div>
-    <div class="mode-chip walk" data-mode="walking" onclick="setMode('walking')">步行</div>
+    <div class="mode-chip sel" data-mode="driving" onclick="setMode('driving')"><i class="fa-solid fa-car"></i> 驾车</div>
+    <div class="mode-chip" data-mode="cycling" onclick="setMode('cycling')"><i class="fa-solid fa-bicycle"></i> 骑行</div>
+    <div class="mode-chip" data-mode="walking" onclick="setMode('walking')"><i class="fa-solid fa-person-walking"></i> 步行</div>
   </div>
   <button class="go-btn" id="goBtn" onclick="plan()">开始规划</button>
   <div class="route-sug">
@@ -249,8 +252,8 @@ footer a:hover{color:var(--accent)}
 
 <script>
 // ── State ────────────────────────────────────────────
-const WMO={0:{i:'晴',l:'晴'},1:{i:'晴',l:'少云'},2:{i:'多云',l:'多云'},3:{i:'阴',l:'阴'},45:{i:'雾',l:'雾'},48:{i:'雾',l:'冻雾'},51:{i:'雨',l:'小雨'},53:{i:'雨',l:'中雨'},55:{i:'雨',l:'大雨'},56:{i:'雨',l:'冻雨'},57:{i:'雨',l:'冻雨'},61:{i:'雨',l:'小阵雨'},63:{i:'雨',l:'中阵雨'},65:{i:'雨',l:'大阵雨'},66:{i:'雨',l:'冻雨'},67:{i:'雨',l:'冻雨'},71:{i:'雪',l:'小雪'},73:{i:'雪',l:'中雪'},75:{i:'雪',l:'大雪'},77:{i:'雪',l:'雪粒'},80:{i:'雨',l:'阵雨'},81:{i:'雨',l:'中阵雨'},82:{i:'雨',l:'大阵雨'},85:{i:'雪',l:'小阵雪'},86:{i:'雪',l:'大阵雪'},95:{i:'雷',l:'雷暴'},96:{i:'雷',l:'雷暴冰雹'},99:{i:'雷',l:'强雷暴冰雹'}};
-function w(c){return WMO[c]||{i:'云',l:'未知'}}
+const WMO={0:{i:'sun',l:'晴'},1:{i:'sun',l:'少云'},2:{i:'cloud-sun',l:'多云'},3:{i:'cloud',l:'阴'},45:{i:'smog',l:'雾'},48:{i:'smog',l:'冻雾'},51:{i:'cloud-rain',l:'小雨'},53:{i:'cloud-rain',l:'中雨'},55:{i:'cloud-showers-heavy',l:'大雨'},56:{i:'cloud-rain',l:'冻雨'},57:{i:'cloud-rain',l:'冻雨'},61:{i:'cloud-rain',l:'小阵雨'},63:{i:'cloud-showers-heavy',l:'中阵雨'},65:{i:'cloud-showers-heavy',l:'大阵雨'},66:{i:'cloud-rain',l:'冻雨'},67:{i:'cloud-rain',l:'冻雨'},71:{i:'snowflake',l:'小雪'},73:{i:'snowflake',l:'中雪'},75:{i:'snowflake',l:'大雪'},77:{i:'snowflake',l:'雪粒'},80:{i:'cloud-rain',l:'阵雨'},81:{i:'cloud-showers-heavy',l:'中阵雨'},82:{i:'cloud-showers-heavy',l:'大阵雨'},85:{i:'snowflake',l:'小阵雪'},86:{i:'snowflake',l:'大阵雪'},95:{i:'bolt',l:'雷暴'},96:{i:'bolt',l:'雷暴冰雹'},99:{i:'bolt',l:'强雷暴冰雹'}};
+function w(c){return WMO[c]||{i:'cloud',l:'未知'}}
 const WK=['周日','周一','周二','周三','周四','周五','周六'];
 const AMAP_KEY='39a8c2f6ef75e494198f3e3751701ebe';
 
@@ -526,7 +529,7 @@ async function renderRouteAll(){
   }catch(e){}
 	RSTATE._elevGain = elevationGain !== '...' ? elevationGain : 0;
 
-  const modeIcons={driving:'驾',cycling:'骑',walking:'步'};
+  const modeIcons={driving:'<i class="fa-solid fa-car"></i>',cycling:'<i class="fa-solid fa-bicycle"></i>',walking:'<i class="fa-solid fa-person-walking"></i>'};
   const modeColors={driving:'#15803D',cycling:'#E03C31',walking:'#2563EB'};
   document.getElementById('routeSummary').style.display='block';
   const mc=modeColors[RSTATE.mode];
@@ -559,11 +562,11 @@ async function renderRouteAll(){
     ${elevData?`<div class="elev-profile"><div class="ep-title">海拔剖面 (${RSTATE._elevStart||0}m → ${RSTATE._elevEnd||0}m)</div><canvas id="elevCanvas"></canvas></div>`:''}
     <div class="rs-mini">
       <div class="rs-item" style="border-top:2px solid var(--green)">
-        <div class="rsv">${fromT}° ${fromWC.i}</div>
+        <div class="rsv">${fromT}° <i class="fa-solid fa-${fromWC.i}"></i></div>
         <div class="rsl">${RSTATE.fromGeo.name}</div>
       </div>
       <div class="rs-item" style="border-top:2px solid var(--accent)">
-        <div class="rsv">${toT}° ${toWC.i}</div>
+        <div class="rsv">${toT}° <i class="fa-solid fa-${toWC.i}"></i></div>
         <div class="rsl">${RSTATE.toGeo.name}</div>
       </div>
     </div>
@@ -675,15 +678,15 @@ function buildRouteSteps(){
   function parseStep(s){
     const inst=s.instruction||'';
     const road=s.road||'';
-    let icon='↑',cls='straight',dir='直行';
-    if(inst.includes('左转')||inst.includes('向左')){icon='←';cls='left';dir='左转'}
-    else if(inst.includes('右转')||inst.includes('向右')){icon='→';cls='right';dir='右转'}
-    else if(inst.includes('调头')||inst.includes('掉头')){icon='↩';cls='rotary';dir='调头'}
-    else if(inst.includes('到达')||inst.includes('终点')||inst.includes('目的地')){icon='●';cls='arrive';dir='到达'}
-    else if(inst.includes('出发')||inst.includes('起点')||inst.includes('开始')){icon='○';cls='depart';dir='出发'}
-    else if(inst.includes('环岛')||inst.includes('转盘')){icon='↻';cls='rotary';dir='环岛'}
-    else if(inst.includes('左前方')||inst.includes('左后方')){icon='←';cls='left';dir='左前方'}
-    else if(inst.includes('右前方')||inst.includes('右后方')){icon='→';cls='right';dir='右前方'}
+    let icon='<i class="fa-solid fa-arrow-up"></i>',cls='straight',dir='直行';
+    if(inst.includes('左转')||inst.includes('向左')){icon='<i class="fa-solid fa-arrow-left"></i>';cls='left';dir='左转'}
+    else if(inst.includes('右转')||inst.includes('向右')){icon='<i class="fa-solid fa-arrow-right"></i>';cls='right';dir='右转'}
+    else if(inst.includes('调头')||inst.includes('掉头')){icon='<i class="fa-solid fa-rotate-reverse"></i>';cls='rotary';dir='调头'}
+    else if(inst.includes('到达')||inst.includes('终点')||inst.includes('目的地')){icon='<i class="fa-solid fa-flag-checkered"></i>';cls='arrive';dir='到达'}
+    else if(inst.includes('出发')||inst.includes('起点')||inst.includes('开始')){icon='<i class="fa-solid fa-play"></i>';cls='depart';dir='出发'}
+    else if(inst.includes('环岛')||inst.includes('转盘')){icon='<i class="fa-solid fa-arrow-rotate-right"></i>';cls='rotary';dir='环岛'}
+    else if(inst.includes('左前方')||inst.includes('左后方')){icon='<i class="fa-solid fa-arrow-left"></i>';cls='left';dir='左前方'}
+    else if(inst.includes('右前方')||inst.includes('右后方')){icon='<i class="fa-solid fa-arrow-right"></i>';cls='right';dir='右前方'}
     return{icon,cls,dir,road:road||inst.replace(/^沿?/,'').replace(/[，,].*/,'')||'前行'};
   }
   let html='<div class="route-steps"><div class="steps-title">逐段导航</div><div class="step-list">';
@@ -722,7 +725,7 @@ function renderRouteWP(side,geo,data,container){
     <div class="wpt">${geo.name} · ${geo.admin1||''} · ${geo.country||''}</div>
     <div class="wph">
       <span class="big">${now.temperature_2m.toFixed(1)}°</span>
-      <span class="icon">${wc.i}</span>
+      <span class="icon"><i class="fa-solid fa-${wc.i}"></i></span>
       <span style="font-size:.8em;color:var(--sub)">${wc.l}<br>体感 ${now.apparent_temperature.toFixed(1)}°</span>
     </div>
     <div class="wpg">
@@ -863,24 +866,24 @@ function renderFeatBar(){
   var wind=analyzeWind();
   var items='';
   if(sunset){
-    items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">↓</span><div class="ftt"><span class="ftl">日落前能到吗</span><span class="ftv '+sunset.status+'">'+sunset.label+' · '+sunset.detail+'</span></div></div>';
+    items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-moon"></i></span><div class="ftt"><span class="ftl">日落前能到吗</span><span class="ftv '+sunset.status+'">'+sunset.label+' · '+sunset.detail+'</span></div></div>';
   }
-  items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">▲</span><div class="ftt"><span class="ftl">路线难度</span><span class="ftv '+diff.color+'">'+diff.label+' · '+diff.score+'/5</span></div></div>';
+  items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-gauge-high"></i></span><div class="ftt"><span class="ftl">路线难度</span><span class="ftv '+diff.color+'">'+diff.label+' · '+diff.score+'/5</span></div></div>';
   var depart=bestDeparture();
   if(depart){
     var dColor=depart.rainProb<20?'good':depart.rainProb<50?'warn':'bad';
-    items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">⊙</span><div class="ftt"><span class="ftl">推荐出发</span><span class="ftv '+dColor+'">'+depart.label+depart.time+' · 降雨概率'+depart.rainProb+'%</span></div></div>';
+    items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-clock"></i></span><div class="ftt"><span class="ftl">推荐出发</span><span class="ftv '+dColor+'">'+depart.label+depart.time+' · 降雨概率'+depart.rainProb+'%</span></div></div>';
   }
   if(wind){
-    items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">≈</span><div class="ftt"><span class="ftl">风向分析</span><span class="ftv '+wind.color+'">'+wind.label+' · '+wind.windSpeed+'km/h '+wind.windDir+'°</span></div></div>';
+    items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-wind"></i></span><div class="ftt"><span class="ftl">风向分析</span><span class="ftv '+wind.color+'">'+wind.label+' · '+wind.windSpeed+'km/h '+wind.windDir+'°</span></div></div>';
   }else{
     var toW=RSTATE.toW;
     if(toW&&toW.current){
       var wc2=w(toW.current.weather_code);
-      items+='<div class="ft-item"><span class="fti" style="font-weight:700;font-size:.9em">'+wc2.l.charAt(0)+'</span><div class="ftt"><span class="ftl">目的地天气</span><span class="ftv">'+wc2.l+' · '+toW.current.temperature_2m.toFixed(0)+'°</span></div></div>';
+      items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-'+wc2.i+'"></i></span><div class="ftt"><span class="ftl">目的地天气</span><span class="ftv">'+wc2.l+' · '+toW.current.temperature_2m.toFixed(0)+'°</span></div></div>';
     }
   }
-  var html='<div class="feat-bar">'+items+'<div class="ft-actions"><button class="ft-btn" onclick="downloadGPX()">导出 GPX</button><button class="ft-btn" onclick="shareRoute()">分享路线</button></div></div>';
+  var html='<div class="feat-bar">'+items+'<div class="ft-actions"><button class="ft-btn" onclick="downloadGPX()"><i class="fa-solid fa-download"></i> 导出 GPX</button><button class="ft-btn" onclick="shareRoute()"><i class="fa-solid fa-share-nodes"></i> 分享路线</button></div></div>';
   var summary=document.getElementById('routeSummary');
   var bar=document.getElementById('featBar');
   if(!bar){
