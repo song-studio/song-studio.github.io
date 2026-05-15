@@ -44,17 +44,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--fn);font-size:16px
 .lang-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:var(--text-dim);font-family:var(--fn);font-size:11px;font-weight:700;padding:4px 9px;border-radius:20px;cursor:pointer;transition:all .2s;}
 .lang-btn.active{background:var(--gold-glow);border-color:rgba(245,197,24,.3);color:var(--gold);}
 
-/* ══ 白云 ══ */
-.hero-cloud{position:absolute;pointer-events:none;z-index:2;}
-.cloud-1{bottom:36%;animation:cloudDrift1 55s linear 0s infinite;}
-.cloud-2{bottom:50%;animation:cloudDrift2 42s linear 0s infinite;}
-.cloud-3{bottom:62%;animation:cloudDrift3 68s linear 0s infinite;}
-.cloud-shape{fill:rgba(255,255,255,.15);}
-.cloud-shape-2{fill:rgba(255,255,255,.10);}
-.cloud-shape-3{fill:rgba(255,255,255,.07);}
-@keyframes cloudDrift1{0%{transform:translateX(-280px);}100%{transform:translateX(calc(100vw + 280px));}}
-@keyframes cloudDrift2{0%{transform:translateX(calc(100vw + 200px));}100%{transform:translateX(-200px);}}
-@keyframes cloudDrift3{0%{transform:translateX(-180px);}100%{transform:translateX(calc(100vw + 180px));}}
 /* HERO */
 #hero{position:relative;height:100svh;min-height:620px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 #hero-sky{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 100% 50% at 50% 15%,#0f3a6e 0%,#081e40 40%,#030d20 75%,#020814 100%);}
@@ -99,21 +88,21 @@ html[lang=en] .hero-sub{letter-spacing:clamp(3px,1.5vw,8px);font-size:clamp(13px
 }
 @media(max-width:768px){
   /* Globe → background atmosphere */
-  #hero-globe-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:240px;height:240px;z-index:1;opacity:.5;pointer-events:none;margin:0!important;}
+  #hero-globe-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:260px;height:260px;z-index:1;opacity:.4;pointer-events:none;margin:0!important;}
   #hero-globe-wrap .globe-title{display:none;}
-  /* Typography */
-  #hero-content{gap:0;padding:48px 20px 24px;}
+  /* Typography — generous vertical rhythm */
+  #hero-content{gap:0;padding:68px 24px 40px;}
   .hero-text-col{text-align:center;max-width:100%;}
-  .hero-eye{font-size:10px;letter-spacing:4px;margin-bottom:24px;padding:4px 14px;text-align:center!important;}
-  .hero-title{font-size:clamp(52px,12vw,76px)!important;line-height:1.02!important;letter-spacing:0!important;margin-bottom:10px;}
-  .hero-sub{font-size:clamp(13px,3.2vw,18px)!important;letter-spacing:clamp(5px,1.5vw,9px)!important;margin-bottom:20px;}
-  .hero-date{font-size:clamp(11px,2.2vw,13px);letter-spacing:3px;margin-bottom:22px;}
-  .hero-stats{gap:6px;margin-bottom:26px;}
-  .hstat{padding:10px 12px;min-width:54px;border-radius:12px;}
+  .hero-eye{font-size:10px;letter-spacing:4px;margin-bottom:30px;padding:5px 15px;text-align:center!important;}
+  .hero-title{font-size:clamp(50px,12vw,72px)!important;line-height:1.06!important;letter-spacing:0!important;margin-bottom:14px;}
+  .hero-sub{font-size:clamp(13px,3.2vw,18px)!important;letter-spacing:clamp(6px,1.5vw,10px)!important;margin-bottom:26px;}
+  .hero-date{font-size:clamp(11px,2.2vw,13px);letter-spacing:3px;margin-bottom:32px;}
+  .hero-stats{gap:8px;margin-bottom:36px;}
+  .hstat{padding:13px 14px;min-width:56px;border-radius:12px;}
   .hstat-num{font-size:clamp(22px,4.5vw,28px);}
   .hstat-lbl{font-size:9px;letter-spacing:1px;}
   .hero-sep{display:none;}
-  .hero-cta{font-size:14px;padding:14px 42px;}
+  .hero-cta{font-size:14px;padding:14px 44px;}
 }
 /* Hstat enhancement */
 .hstat:hover{border-color:rgba(245,197,24,.3);box-shadow:0 0 28px rgba(245,197,24,.1);transform:translateY(-2px);}
@@ -519,9 +508,6 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
   <div id="hero-stadium"></div><div id="hero-aurora"></div>
   <div id="hero-light-l"></div><div id="hero-light-r"></div>
   <div id="hero-fade"></div>
-  <div class="hero-cloud cloud-1"><svg width="300" height="80" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg"><path d="M30,65 Q30,45 50,45 Q52,28 70,28 Q80,15 100,18 Q115,8 135,12 Q155,5 170,15 Q190,10 205,22 Q225,18 238,32 Q255,30 262,45 Q275,45 275,60 Q275,70 260,70 L45,70 Q30,70 30,65 Z" fill="rgba(255,255,255,0.20)"/></svg></div>
-  <div class="hero-cloud cloud-2" style="transform:scaleX(-1)"><svg width="220" height="65" viewBox="0 0 220 65" xmlns="http://www.w3.org/2000/svg"><path d="M20,52 Q20,36 38,36 Q40,22 55,22 Q65,12 82,14 Q95,6 112,10 Q128,4 142,14 Q158,12 168,24 Q182,22 188,34 Q198,34 198,48 Q198,56 184,56 L36,56 Q20,56 20,52 Z" fill="rgba(255,255,255,0.15)"/></svg></div>
-  <div class="hero-cloud cloud-3"><svg width="160" height="52" viewBox="0 0 160 52" xmlns="http://www.w3.org/2000/svg"><path d="M15,42 Q15,30 28,30 Q30,20 42,20 Q50,12 64,14 Q74,8 88,11 Q100,6 112,14 Q122,12 130,22 Q140,20 144,30 Q152,30 152,40 Q152,46 140,46 L28,46 Q15,46 15,42 Z" fill="rgba(255,255,255,0.12)"/></svg></div>
   <div id="hero-content">
     <div class="hero-text-col">
       <div class="hero-eye" id="h-eye"></div>
