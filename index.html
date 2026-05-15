@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Song Studio · 松的工作室</title>
-<meta name="description" content="Song Studio — 工具箱 · 创意空间 · 开发项目 · 新奇玩意儿">
+<title>Song Studio</title>
+<meta name="description" content="Song Studio — 工具箱 · 创意空间 · 开发项目">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
@@ -49,11 +49,14 @@ body::before{
   padding:44px 0 0;
 }
 .masthead .logo{
-  font-family:'Newsreader','Noto Serif SC',serif;
-  font-size:1.3em;font-weight:500;letter-spacing:-.01em;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.85em;font-weight:500;letter-spacing:.02em;
   color:var(--fg);text-decoration:none;
 }
-.masthead .logo em{font-style:normal;color:var(--accent)}
+.masthead .logo .logo-dot{
+  display:inline-block;width:8px;height:8px;
+  background:var(--accent);margin:0 2px;
+}
 .masthead .nav{display:flex;gap:2px;list-style:none}
 .masthead .nav a{
   font-size:.5em;font-weight:500;color:var(--muted);text-decoration:none;
@@ -209,7 +212,7 @@ body::before{
 <div class="page">
 
 <header class="masthead reveal">
-  <a href="/" class="logo">Song<em>.</em>Studio</a>
+  <a href="/" class="logo">song<span class="logo-dot"></span>studio</a>
   <ul class="nav">
     <li><a href="weather-pro.html">weather</a></li>
     <li><a href="route-pro.html">route</a></li>
@@ -220,7 +223,7 @@ body::before{
 <section class="hero reveal">
   <p class="overline">STUDIO · TOOLS · CRAFT</p>
   <h1><span class="sm">工具箱</span><span class="hl"> &amp; </span><span class="sm">创意空间</span>。<br>一个什么都装得下的地方。</h1>
-  <p class="lead">气象查询、路线规划、世界杯数据，以及更多正在生长的工具和项目。松的个人工作室，随时有新东西冒出来。</p>
+  <p class="lead">气象查询、路线规划、世界杯数据，以及更多正在生长的工具和项目。随时有新东西冒出来。</p>
   <p class="status"><i class="fa-solid fa-circle"></i> 3 个项目活跃 · 2026</p>
 </section>
 
@@ -280,14 +283,14 @@ body::before{
 </div>
 
 <div class="cta-block reveal">
-  <p>Song Studio · 松的个人工作室</p>
+  <p>Song Studio</p>
   <a href="https://github.com/song-studio/song-studio.github.io">
     <i class="fa-brands fa-github"></i> GitHub
   </a>
 </div>
 
 <footer class="site-footer reveal">
-  <span>&copy; 2026 Song Studio</span>
+  <span>song_studio &copy; 2026</span>
   <span>松</span>
 </footer>
 
