@@ -19,9 +19,11 @@
   --ink:#2c2416;
   --ochre:#c4733e;
   --ochre-deep:#9e5a2c;
+  --ochre-glow:rgba(196,115,62,.18);
   --forest:#2d5a3d;
-  --forest-light:#4a7c5c;
+  --forest-glow:rgba(45,90,61,.14);
   --sky:#5a8fa8;
+  --sky-glow:rgba(90,143,168,.15);
   --plum:#6b4e5c;
   --rule:#ddd4c2;
   --rule-light:#e8e0d0;
@@ -37,72 +39,87 @@ body{
   line-height:1.6;
   font-size:17px;
 }
-/* ── Grain texture overlay ── */
-body::after{
-  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
-  opacity:.03;
+body::before{
+  content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .wrap{max-width:880px;margin:0 auto;padding:0 28px}
 
-/* ── Masthead ── */
+/* Masthead */
 .masthead{
   display:flex;justify-content:space-between;align-items:baseline;
-  padding:28px 0 0;
+  padding:32px 0 0;
   border-bottom:1px solid var(--rule);
-  margin-bottom:0;
 }
 .masthead .logo{
-  font-size:1.1em;font-weight:700;letter-spacing:.04em;
+  font-size:1.05em;font-weight:700;letter-spacing:.05em;
   color:var(--ink);text-decoration:none;
   font-family:'Playfair Display','Noto Serif SC',serif;
+  transition:color .3s;
 }
+.masthead .logo:hover{color:var(--ochre)}
 .masthead .tagline{
-  font-size:.64em;color:var(--text-muted);
+  font-size:.58em;color:var(--text-muted);
   font-family:'Space Mono','Courier New',monospace;
-  letter-spacing:.06em;text-transform:uppercase;
+  letter-spacing:.1em;text-transform:uppercase;
 }
 
-/* ── Hero ── */
+/* Hero */
 .hero{
-  padding:56px 0 48px;
-  text-align:center;
+  padding:72px 0 56px;text-align:center;
+  position:relative;overflow:hidden;
 }
+.hero::before{
+  content:'松';
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-size:clamp(14em,28vw,22em);
+  font-family:'Noto Serif SC','STSong','Songti SC',serif;
+  color:var(--ink);opacity:.025;pointer-events:none;line-height:1;z-index:0;
+}
+.hero>*{position:relative;z-index:1}
 .hero .overline{
   font-family:'Space Mono','Courier New',monospace;
-  font-size:.58em;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ochre);margin-bottom:16px;
+  font-size:.54em;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ochre);margin-bottom:20px;
 }
 .hero h1{
-  font-size:clamp(2.4em,5vw,3.8em);font-weight:400;line-height:1.15;
+  font-size:clamp(2.4em,5vw,3.8em);font-weight:400;line-height:1.12;
   letter-spacing:-.01em;color:var(--ink);
   font-family:'Playfair Display','Noto Serif SC',serif;
-  margin-bottom:12px;
+  margin-bottom:16px;
 }
 .hero h1 i{font-style:italic;color:var(--ochre)}
 .hero .sub{
-  font-size:.88em;color:var(--text-dim);max-width:460px;margin:0 auto;
-  line-height:1.8;font-family:'Noto Serif SC',Georgia,serif;
+  font-size:.84em;color:var(--text-dim);max-width:420px;margin:0 auto 24px;
+  line-height:1.9;font-family:'Noto Serif SC',Georgia,serif;
 }
+.hero .status-line{
+  font-family:'Space Mono','Courier New',monospace;
+  font-size:.5em;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;
+}
+.hero .status-line span{color:var(--ochre)}
 
-/* ── Section divider ── */
+/* Section divider */
 .section-rule{
-  display:flex;align-items:center;gap:12px;
-  margin:48px 0 36px;
+  display:flex;align-items:center;gap:14px;
+  margin:52px 0 40px;
 }
 .section-rule .label{
   font-family:'Space Mono','Courier New',monospace;
-  font-size:.54em;letter-spacing:.12em;text-transform:uppercase;
+  font-size:.52em;letter-spacing:.14em;text-transform:uppercase;
   color:var(--text-muted);white-space:nowrap;
+}
+.section-rule .ornament{
+  width:5px;height:5px;background:var(--ochre);flex-shrink:0;transform:rotate(45deg);
 }
 .section-rule .line{flex:1;height:1px;background:var(--rule)}
 
-/* ── Projects grid ── */
+/* Projects grid */
 .projects{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:22px;
 }
 @media(max-width:640px){.projects{grid-template-columns:1fr}}
 
@@ -113,75 +130,86 @@ body::after{
   background:var(--surface);
   border:1px solid var(--border);
   padding:0;
-  transition:all .3s cubic-bezier(.22,.61,.36,1);
-  min-height:280px;
+  transition:all .4s cubic-bezier(.22,.61,.36,1);
+  min-height:300px;
   overflow:hidden;
 }
 .project:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 30px rgba(0,0,0,.06);
+  transform:translateY(-4px);
   border-color:var(--ink);
 }
-.project:active{transform:scale(.98)}
+.project:active{transform:scale(.985);transition-duration:.1s}
 
 .project .proj-body{
-  padding:28px 24px 24px;
+  padding:32px 28px 28px;
   flex:1;display:flex;flex-direction:column;
+  position:relative;z-index:1;
 }
 .project .proj-index{
-  font-family:'Space Mono','Courier New',monospace;
-  font-size:.6em;color:var(--text-muted);
-  letter-spacing:.08em;margin-bottom:16px;
+  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
+  font-size:3.2em;font-weight:600;letter-spacing:-.02em;
+  line-height:.9;margin-bottom:18px;
+  transition:color .3s;
 }
 .project .proj-title{
-  font-size:1.4em;font-weight:600;letter-spacing:.01em;
-  color:var(--ink);margin-bottom:8px;
+  font-size:1.35em;font-weight:600;letter-spacing:.01em;
+  color:var(--ink);margin-bottom:10px;
   font-family:'Playfair Display','Noto Serif SC',serif;
-  line-height:1.25;
+  line-height:1.2;
 }
 .project .proj-desc{
-  font-size:.72em;color:var(--text-dim);line-height:1.8;
+  font-size:.7em;color:var(--text-dim);line-height:1.9;
   font-family:'Noto Serif SC',Georgia,serif;
   flex:1;
 }
 .project .proj-tags{
-  display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;
+  display:flex;gap:7px;flex-wrap:wrap;margin-top:18px;
 }
 .project .proj-tag{
   font-family:'Space Mono','Courier New',monospace;
-  font-size:.52em;letter-spacing:.06em;text-transform:uppercase;
+  font-size:.5em;letter-spacing:.07em;text-transform:uppercase;
   color:var(--text-muted);
   border:1px solid var(--rule);
-  padding:4px 10px;
+  padding:5px 10px;
+  transition:all .25s;
 }
-/* Project accent bars */
+.project:hover .proj-tag{border-color:var(--border)}
+
+/* Project accent styles */
 .project.weather{border-top:4px solid var(--ochre)}
 .project.weather .proj-index{color:var(--ochre)}
+.project.weather:hover{box-shadow:0 12px 36px var(--ochre-glow)}
+.project.weather:hover .proj-tag{border-color:rgba(196,115,62,.25);color:var(--ochre-deep)}
+
 .project.route{border-top:4px solid var(--sky)}
 .project.route .proj-index{color:var(--sky)}
+.project.route:hover{box-shadow:0 12px 36px var(--sky-glow)}
+.project.route:hover .proj-tag{border-color:rgba(90,143,168,.25);color:#4a7d94}
+
 .project.worldcup{border-top:4px solid var(--forest)}
 .project.worldcup .proj-index{color:var(--forest)}
+.project.worldcup:hover{box-shadow:0 12px 36px var(--forest-glow)}
+.project.worldcup:hover .proj-tag{border-color:rgba(45,90,61,.25);color:var(--forest)}
 
-/* ── Coming soon placeholder ── */
+/* Placeholder */
 .project.placeholder{
-  border:1px dashed var(--rule);
-  background:transparent;
-  cursor:default;
+  border:1px dashed var(--rule);background:transparent;cursor:default;
 }
 .project.placeholder:hover{transform:none;box-shadow:none;border-color:var(--rule)}
 .project.placeholder .proj-body{
   align-items:center;justify-content:center;text-align:center;
 }
+.project.placeholder .proj-index{color:var(--text-muted);font-size:2em}
 .project.placeholder .proj-title{color:var(--text-muted);font-weight:400}
 .project.placeholder .proj-desc{color:var(--text-muted);flex:none}
 
-/* ── Data sources bar ── */
+/* Sources */
 .sources{
-  display:flex;justify-content:center;gap:24px;flex-wrap:wrap;
-  padding:40px 0 32px;
+  display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
+  padding:48px 0 36px;
   font-family:'Space Mono','Courier New',monospace;
-  font-size:.54em;color:var(--text-muted);
-  letter-spacing:.06em;text-transform:uppercase;
+  font-size:.5em;color:var(--text-muted);
+  letter-spacing:.08em;text-transform:uppercase;
 }
 .sources span{white-space:nowrap}
 .sources .dot{display:inline-block;width:4px;height:4px;border-radius:50%;margin-right:5px;vertical-align:middle}
@@ -190,45 +218,46 @@ body::after{
 .dot.windy{background:var(--forest)}
 .dot.wc{background:var(--plum)}
 
-/* ── Footer ── */
+/* Footer */
 footer{
-  text-align:center;padding:28px 0 56px;border-top:1px solid var(--rule);
+  text-align:center;padding:32px 0 64px;border-top:1px solid var(--rule);
   font-family:'Space Mono','Courier New',monospace;
-  font-size:.52em;color:var(--text-muted);letter-spacing:.06em;
+  font-size:.5em;color:var(--text-muted);letter-spacing:.08em;
 }
-footer a{color:var(--text-dim);text-decoration:none}
-footer a:hover{color:var(--ink)}
+footer a{color:var(--text-dim);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--ochre)}
 
-/* ── Reveal animation ── */
+/* Reveal animation */
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(16px)}
+  from{opacity:0;transform:translateY(20px)}
   to{opacity:1;transform:translateY(0)}
 }
-.reveal{animation:fadeUp .6s cubic-bezier(.22,.61,.36,1) both}
+.reveal{animation:fadeUp .7s cubic-bezier(.22,.61,.36,1) both}
 .reveal:nth-child(1){animation-delay:.05s}
-.reveal:nth-child(2){animation-delay:.15s}
-.reveal:nth-child(3){animation-delay:.25s}
+.reveal:nth-child(2){animation-delay:.12s}
+.reveal:nth-child(3){animation-delay:.2s}
+.reveal:nth-child(4){animation-delay:.28s}
+.reveal:nth-child(5){animation-delay:.36s}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<!-- Masthead -->
 <header class="masthead reveal">
   <a href="/" class="logo">Song Studio</a>
   <span class="tagline">松的空间</span>
 </header>
 
-<!-- Hero -->
 <section class="hero reveal">
   <div class="overline">Data · Tools · Design</div>
   <h1>山野气象<i>&</i>足球数据</h1>
-  <p class="sub">为户外爱好者、足球迷准备的数据工具。精准、克制、好用。</p>
+  <p class="sub">为户外爱好者与足球迷准备的数据工具。精准、克制、安静地工作。</p>
+  <div class="status-line">当前 · <span>晚春</span> 2026</div>
 </section>
 
-<!-- Projects -->
 <div class="section-rule reveal">
   <span class="label">Projects</span>
+  <span class="ornament"></span>
   <span class="line"></span>
 </div>
 
@@ -238,7 +267,7 @@ footer a:hover{color:var(--ink)}
     <div class="proj-body">
       <span class="proj-index">01</span>
       <div class="proj-title">气象查询</div>
-      <p class="proj-desc">高德精准编码覆盖全国乡镇景区，Open‑Meteo 全球气象模型，Windy 实时风场雷达。徒步·露营·观星·摄影·钓鱼·攀岩九项户外指数，48h 逐时与 7 日趋势预报。</p>
+      <p class="proj-desc">高德精准编码覆盖全国乡镇景区，Open‑Meteo 全球气象模型，Windy 实时风场。徒步·露营·观星·摄影·钓鱼·攀岩九项户外指数，48h 逐时与 7 日趋势预报。</p>
       <div class="proj-tags">
         <span class="proj-tag">Weather</span>
         <span class="proj-tag">Outdoor</span>
@@ -251,7 +280,7 @@ footer a:hover{color:var(--ink)}
     <div class="proj-body">
       <span class="proj-index">02</span>
       <div class="proj-title">路线规划</div>
-      <p class="proj-desc">驾车·骑行·步行三种出行方式，路线可视化与详细路书，海拔剖面图与累计爬升分析。支持途经点与全国任意起终点精准规划。</p>
+      <p class="proj-desc">驾车·骑行·步行三种出行方式，路线可视化与逐段路书，海拔剖面图与累计爬升。日落检测·难度评分·风向分析·GPX 导出。</p>
       <div class="proj-tags">
         <span class="proj-tag">Route</span>
         <span class="proj-tag">Map</span>
@@ -275,7 +304,6 @@ footer a:hover{color:var(--ink)}
 
 </div>
 
-<!-- Sources -->
 <div class="sources reveal">
   <span><span class="dot amap"></span>高德地图</span>
   <span><span class="dot om"></span>Open‑Meteo</span>
