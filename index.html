@@ -110,8 +110,9 @@ body::before{
   padding:22px 28px;
   background:var(--white);
   border:1px solid var(--line);
+  box-shadow:0 1px 3px rgba(0,0,0,.04),0 3px 12px rgba(0,0,0,.03);
   transition:all .3s cubic-bezier(.22,.61,.36,1);
-  position:relative;
+  position:relative;cursor:pointer;
 }
 @media(max-width:640px){.project{flex-wrap:wrap;gap:12px;padding:18px 20px}}
 
@@ -133,8 +134,9 @@ body::before{
 }
 .project .proj-num::before{
   content:"";display:inline-block;
-  width:8px;height:8px;flex-shrink:0;
+  width:10px;height:10px;flex-shrink:0;border-radius:50%;
   background:var(--accent);
+  box-shadow:0 2px 4px rgba(230,95,59,.35),inset 0 1px 2px rgba(255,255,255,.4);
 }
 .project:hover .proj-num{color:var(--accent)}
 
@@ -190,9 +192,10 @@ body::before{
   display:inline-flex;align-items:center;gap:6px;
   font-size:.48em;font-weight:600;text-decoration:none;white-space:nowrap;
   color:var(--white);background:var(--fg);
-  padding:10px 20px;letter-spacing:.02em;transition:all .15s;
+  padding:12px 32px;letter-spacing:.02em;transition:all .15s;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
-.cta-block a:hover{background:var(--accent)}
+.cta-block a:hover{background:var(--accent);box-shadow:0 4px 16px rgba(230,95,59,.3);transform:translateY(-1px)}
 
 /* ── Footer ── */
 .site-footer{
