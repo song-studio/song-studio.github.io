@@ -111,7 +111,7 @@ const mouseToScreen = (mousePos) =>
 {
     if (rotatedMode)
     {
-        // canvas is CSS rotate(90deg) with left:innerWidth
+        // canvas is CSS rotate(90deg) with left:innerWidth offset
         // screen (sx,sy) maps to canvas (sy, innerWidth-sx)
         const canvasX = mousePos.y;
         const canvasY = innerWidth - mousePos.x;
@@ -305,8 +305,10 @@ function handleTouchGamepad(e)
     let stickCenter, buttonCenter, startCenter;
     if (rotatedMode)
     {
-        // canvas CSS-rotated 90° CW: screen bottom-left → canvas bottom-right
+        // canvas is CSS-rotated 90°: screen bottom → canvas right
+        // left stick at screen bottom-left → canvas (cx near right, cy near bottom)
         stickCenter = vec3(mainCanvasSize.x - padY, mainCanvasSize.y - padX);
+        // right button at screen bottom-right → canvas (cx near right, cy near top)
         buttonCenter = vec3(mainCanvasSize.x - padY, padX);
         startCenter = mainCanvasSize.scale(.5);
     }
@@ -325,11 +327,12 @@ function handleTouchGamepad(e)
         if (touchPos.distance(stickCenter) < gs)
         {
             // virtual analog stick
-            touchGamepadStick = touchPos.subtract(stickCenter).scale(3/gs);
+            touchGamepadStick = touchPos.subtract(stickCenter).scale(3/gs); // 3/gs = full steering at ~67% of circle
             touchGamepadStick.x = clamp(touchGamepadStick.x,-1,1);
             touchGamepadStick.y = clamp(touchGamepadStick.y,-1,1);
             if (rotatedMode)
-                // stick is in rotated canvas space — rotate back to screen space
+                // rotate stick from canvas space to screen space
+                // screen-up→canvas(-X) should be gas(Y-); screen-right→canvas(-Y) should be steer right(X+)
                 touchGamepadStick = vec3(-touchGamepadStick.y, touchGamepadStick.x);
         }
         else if (touchPos.distance(buttonCenter) < gs)
@@ -364,10 +367,9 @@ function touchGamepadUpdate()
     if (!touchGamepadEnable)
         return;
 
-    // adjust size for orientation — prevent button overlap in portrait
     if (rotatedMode)
     {
-        // use physical screen dimensions (canvas is swapped)
+        // physical screen is portrait — size buttons for the narrow screen
         const physW = innerWidth, physH = innerHeight;
         touchGamepadSize = clamp(physH/12, 48, physW/4.5);
         touchGamepadPadXMult = 1.2;
@@ -376,9 +378,11 @@ function touchGamepadUpdate()
     }
     else
     {
+        // adjust size for orientation — prevent button overlap in portrait
         const portrait = mainCanvasSize.x < mainCanvasSize.y;
         const maxSize = portrait ? mainCanvasSize.x / 4.4 : mainCanvasSize.x / 2;
         touchGamepadSize = clamp(mainCanvasSize.y/8, 99, maxSize);
+        // smaller multipliers in portrait so buttons fit side by side
         touchGamepadPadXMult = portrait ? 1.2 : 1.8;
         touchGamepadPadYMult = portrait ? 1.2 : 1.4;
         touchGamepadGSMult = portrait ? 1.3 : 1.8;
