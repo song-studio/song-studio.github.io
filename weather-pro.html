@@ -69,10 +69,10 @@ body.warm-bg{background:color-mix(in srgb,var(--bg) 92%,#c4733e)}body.cool-bg{ba
   transition:all .2s;
 }
 .search-box button:hover{background:#E06A5E}
-.search-hint{font-size:.54em;color:var(--text-muted);margin-top:6px}
+.search-hint{font-size:.62em;color:var(--text-muted);margin-top:6px}
 .suggestions{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
 .sug-chip{
-  font-size:.55em;padding:4px 12px;background:none;cursor:pointer;
+  font-size:.62em;padding:4px 12px;background:none;cursor:pointer;
   color:var(--text-dim);border:1px solid var(--rule-strong);
   font-weight:300;transition:all .2s;
 }
@@ -270,7 +270,7 @@ footer a:hover{color:var(--accent)}
 <div class="tab-panel show" id="tab-weather">
 <div class="search-bar">
   <div class="search-box">
-    <input type="text" id="q" placeholder="输入地名搜索…&#10;例：上海 / 乌镇 / 大理 / Tokyo / Paris" autocomplete="off">
+    <input type="text" id="q" placeholder="搜索地点…" autocomplete="off">
     <button onclick="doSearch()">搜索</button>
   </div>
   <div class="search-hint">高德地图精准编码 · 支持乡镇/校区/景点/小区</div>
@@ -290,17 +290,27 @@ footer a:hover{color:var(--accent)}
 
 <div id="main">
   <div style="text-align:center;padding:80px 16px 100px">
-    <div style="font-family:'JetBrains Mono',monospace;font-size:.5em;color:var(--accent);letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px">气象与户外指数</div>
-    <div style="font-family:'Playfair Display','Noto Serif SC',Georgia,serif;font-size:2.8em;color:var(--ink);margin-bottom:16px;line-height:1.1;font-weight:400">气象与山野</div>
-    <div style="width:40px;height:2px;background:var(--accent);margin:0 auto 36px"></div>
-    <div style="max-width:400px;margin:0 auto;text-align:center;font-size:.64em;line-height:2.4;color:var(--text-dim);font-weight:300">
-      <p style="margin-bottom:20px;color:var(--text)">为 <span style="color:var(--accent);font-weight:500">徒步者 · 露营者 · 户外爱好者</span> 准备的气象工具</p>
-      <p>精准定位全国乡镇、校区、景点</p>
-      <p>九项户外指数：徒步 · 露营 · 观星 · 摄影 · 钓鱼 · 攀岩</p>
-      <p>6日逐时预报 + 温度曲线</p>
-      <p>Windy 实时风场 + Meteoblue 专业模式</p>
-      <p style="color:var(--text-muted);font-size:.85em;margin-top:24px">高德地图 · Open‑Meteo · Windy · Meteoblue</p>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:.5em;color:var(--accent);letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px">
+      <i class="fa-solid fa-cloud-sun" style="margin-right:8px"></i>气象与户外指数
     </div>
+    <div style="font-family:'Playfair Display','Noto Serif SC',Georgia,serif;font-size:2.8em;color:var(--ink);margin-bottom:16px;line-height:1.1;font-weight:400">
+      <i class="fa-solid fa-cloud-rain" style="color:var(--cool);font-size:.55em;vertical-align:middle;margin-right:6px"></i>
+      气象与山野
+      <i class="fa-solid fa-mountain-sun" style="color:var(--warm);font-size:.55em;vertical-align:middle;margin-left:6px"></i>
+    </div>
+    <div style="width:40px;height:2px;background:var(--accent);margin:0 auto 36px"></div>
+    <div style="max-width:440px;margin:0 auto;text-align:center;font-size:.64em;line-height:2.4;color:var(--text-dim);font-weight:300">
+      <p style="margin-bottom:20px;color:var(--text)">为 <span style="color:var(--accent);font-weight:500">徒步者 · 露营者 · 户外爱好者</span> 准备的气象工具</p>
+    </div>
+    <div style="max-width:440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;text-align:left;font-size:.60em;color:var(--text-dim);font-weight:300;line-height:1.5">
+      <div><i class="fa-solid fa-bullseye" style="color:var(--accent);width:22px;text-align:center;margin-right:6px"></i> 精准定位</div>
+      <div><i class="fa-solid fa-person-hiking" style="color:var(--green);width:22px;text-align:center;margin-right:6px"></i> 九项户外指数</div>
+      <div><i class="fa-solid fa-chart-line" style="color:var(--cool);width:22px;text-align:center;margin-right:6px"></i> 6日逐时预报</div>
+      <div><i class="fa-solid fa-wind" style="color:var(--warm);width:22px;text-align:center;margin-right:6px"></i> Windy 实时风场</div>
+      <div><i class="fa-solid fa-globe" style="color:var(--accent);width:22px;text-align:center;margin-right:6px"></i> Meteoblue 专业模式</div>
+      <div><i class="fa-solid fa-droplet" style="color:var(--cool);width:22px;text-align:center;margin-right:6px"></i> 露点·云量·能见度</div>
+    </div>
+    <p style="color:var(--text-muted);font-size:.55em;margin-top:24px">高德地图 · Open‑Meteo · Windy · Meteoblue</p>
   </div>
 </div>
 
