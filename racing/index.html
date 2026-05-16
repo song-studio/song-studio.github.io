@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#000000">
 <link rel=manifest href=manifest.json>
-<link rel=icon type=image/png href=favicon.png?233>
+<link rel=icon type=image/png href=favicon.png?234>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <style>
 html, body {
@@ -27,7 +27,13 @@ html, body {
 <meta name="keywords"            content="赛车,极速狂飙,中国风,游戏">
 <meta name="twitter:card"        content="summary_large_image">
 
-</head><body>
+<style>
+    #touchUI { position:fixed; top:0; left:0; width:100%; height:100%; z-index:10; pointer-events:none; display:none; }
+    #touchUI .ring { position:absolute; border-radius:50%; border:3px solid rgba(255,255,255,.5); background:rgba(0,0,0,.5); }
+    #touchUI .lbl { position:absolute; color:#fff; font-weight:900; font-family:arial; text-align:center; }
+    </style>
+    </head><body>
+    <div id="touchUI"><div id="stickRing" class="ring"></div><div id="gasRing" class="ring"></div></div>
 <script>
 // difficulty system - must be defined before game scripts load
 var gameDifficulty = 0; // 0=easy 1=hard
@@ -41,19 +47,19 @@ onerror=(event, source, lineno, colno, error)=>
         `${event}\n${source}\nLn ${lineno}, Col ${colno}`;
 }
 </script>
-<script src=code/debug.js?233></script>
-<script src=code/utilities.js?233></script>
-<script src=code/webgl.js?233></script>
-<script src=code/draw.js?233></script>
-<script src=code/scene.js?233></script>
-<script src=code/track.js?233></script>
-<script src=code/levels.js?233></script>
-<script src=code/trackGen.js?233></script>
-<script src=code/generative.js?233></script>
-<script src=code/input.js?233></script>
-<script src=code/audio.js?233></script>
-<script src=code/sounds.js?233></script>
-<script src=code/vehicle.js?233></script>
-<script src=code/hud.js?233></script>
-<script src=code/game.js?233></script>
-<script src=code/main.js?233></script>
+<script src=code/debug.js?234></script>
+<script src=code/utilities.js?234></script>
+<script src=code/webgl.js?234></script>
+<script src=code/draw.js?234></script>
+<script src=code/scene.js?234></script>
+<script src=code/track.js?234></script>
+<script src=code/levels.js?234></script>
+<script src=code/trackGen.js?234></script>
+<script src=code/generative.js?234></script>
+<script src=code/input.js?234></script>
+<script src=code/audio.js?234></script>
+<script src=code/sounds.js?234></script>
+<script src=code/vehicle.js?234></script>
+<script src=code/hud.js?234></script>
+<script src=code/game.js?234></script>
+<script src=code/main.js?234></script>

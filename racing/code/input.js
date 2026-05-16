@@ -262,11 +262,10 @@ function touchInputInit()
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// touch gamepad
+// touch gamepad — rendered as HTML overlay (viewport coords, not canvas)
 
 // touch gamepad internal variables
 let touchGamepadTimer = new Timer, touchGamepadButtons, touchGamepadStick, touchGamepadSize;
-let touchGamepadPadXMult = 1.8, touchGamepadPadYMult = 1.4, touchGamepadGSMult = 1.8;
 
 // special handling for virtual gamepad mode
 function handleTouchGamepad(e)
@@ -274,9 +273,7 @@ function handleTouchGamepad(e)
     if (soundEnable)
     {
         if (!audioContext)
-            audioContext = new AudioContext; // create audio context
-            
-        // fix stalled audio
+            audioContext = new AudioContext;
         if (audioContext.state != 'running')
             audioContext.resume();
     }
@@ -285,76 +282,64 @@ function handleTouchGamepad(e)
     touchGamepadStick = vec3();
     touchGamepadButtons = [];
     isUsingGamepad = true;
-        
+
     const touching = e.touches.length;
     if (touching)
     {
         touchGamepadTimer.set();
         if (paused || titleScreenMode || gameOverTimer.isSet())
         {
-            // touch anywhere to press start
             touchGamepadButtons[9] = 1;
             return;
         }
     }
 
-    // get center of left and right sides (match render positions)
-    const padX = touchGamepadSize * touchGamepadPadXMult;
-    const padY = touchGamepadSize * touchGamepadPadYMult;
-    const gs = touchGamepadSize * touchGamepadGSMult; // match btnSize in render
-    let stickCenter, buttonCenter, startCenter;
-    if (rotatedMode)
-    {
-        // canvas CSS-rotated 90° CW: screen bottom-left → canvas bottom-right
-        stickCenter = vec3(mainCanvasSize.x - padY, mainCanvasSize.y - padX);
-        buttonCenter = vec3(mainCanvasSize.x - padY, padX);
-        startCenter = mainCanvasSize.scale(.5);
-    }
-    else
-    {
-        stickCenter = vec3(padX, mainCanvasSize.y-padY);
-        buttonCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
-        startCenter = mainCanvasSize.scale(.5);
-    }
+    // compute button centers in viewport coordinates (css-positioned divs)
+    const r = touchGamepadSize / 2;  // visual radius
+    const hitR = touchGamepadSize * .75; // hit-test radius
+    const margin = touchGamepadSize * .8;
+    const stickCX = margin + r;
+    const stickCY = innerHeight - margin - r;
+    const gasCX = innerWidth - margin - r;
+    const gasCY = innerHeight - margin - r * .7;
 
     // check each touch point
     for (const touch of e.touches)
     {
-        let touchPos = mouseToScreen(vec3(touch.clientX, touch.clientY));
-        touchPos = touchPos.multiply(mainCanvasSize);
-        if (touchPos.distance(stickCenter) < gs)
+        const sx = touch.clientX;
+        const sy = touch.clientY;
+        const sdx = sx - stickCX;
+        const sdy = sy - stickCY;
+        const gdx = sx - gasCX;
+        const gdy = sy - gasCY;
+        const sDist = sdx*sdx + sdy*sdy;
+        const gDist = gdx*gdx + gdy*gdy;
+
+        if (sDist < hitR*hitR)
         {
             // virtual analog stick
-            touchGamepadStick = touchPos.subtract(stickCenter).scale(3/gs);
-            touchGamepadStick.x = clamp(touchGamepadStick.x,-1,1);
-            touchGamepadStick.y = clamp(touchGamepadStick.y,-1,1);
-            if (rotatedMode)
-                // stick is in rotated canvas space — rotate back to screen space
-                touchGamepadStick = vec3(-touchGamepadStick.y, touchGamepadStick.x);
+            touchGamepadStick = vec3(sdx, sdy).scale(3/hitR);
+            touchGamepadStick.x = clamp(touchGamepadStick.x, -1, 1);
+            touchGamepadStick.y = clamp(touchGamepadStick.y, -1, 1);
         }
-        else if (touchPos.distance(buttonCenter) < gs)
+        else if (gDist < hitR*hitR)
         {
-            // virtual face buttons
-            const button = rotatedMode
-                ? (touchPos.x < buttonCenter.x ? 0 : 1)
-                : (touchPos.y > buttonCenter.y ? 1 : 0);
+            // virtual face buttons — upper half = gas (0), lower half = brake (1)
+            const button = sy < gasCY ? 0 : 1;
             touchGamepadButtons[button] = 1;
         }
-        else if (touchPos.distance(startCenter) < gs)
+        else
         {
-            // hidden virtual start button in center
-            touchGamepadButtons[9] = 1;
+            // check center area for start button (paused/title only)
+            const cx = sx - innerWidth/2;
+            const cy = sy - innerHeight/2;
+            if (cx*cx + cy*cy < hitR*hitR)
+                touchGamepadButtons[9] = 1;
         }
     }
 
-    // call default touch handler so normal touch events still work
-    //handleTouchDefault(e);
-
-    // prevent default handling like copy and magnifier lens
-    if (document.hasFocus()) // allow document to get focus
+    if (document.hasFocus())
         e.preventDefault();
-    
-    // must return true so the document will get focus
     return true;
 }
 
@@ -364,30 +349,13 @@ function touchGamepadUpdate()
     if (!touchGamepadEnable)
         return;
 
-    // adjust size for orientation — prevent button overlap in portrait
-    if (rotatedMode)
-    {
-        // use physical screen dimensions (canvas is swapped)
-        const physW = innerWidth, physH = innerHeight;
-        touchGamepadSize = clamp(physH/12, 48, physW/4.5);
-        touchGamepadPadXMult = 1.2;
-        touchGamepadPadYMult = 1.1;
-        touchGamepadGSMult = 1.2;
-    }
-    else
-    {
-        const portrait = mainCanvasSize.x < mainCanvasSize.y;
-        const maxSize = portrait ? mainCanvasSize.x / 4.4 : mainCanvasSize.x / 2;
-        touchGamepadSize = clamp(mainCanvasSize.y/8, 99, maxSize);
-        touchGamepadPadXMult = portrait ? 1.2 : 1.8;
-        touchGamepadPadYMult = portrait ? 1.2 : 1.4;
-        touchGamepadGSMult = portrait ? 1.3 : 1.8;
-    }
+    // size based on viewport — smaller on narrow screens
+    touchGamepadSize = clamp(min(innerWidth, innerHeight)/6, 50, 110);
 
     ASSERT(touchGamepadButtons, 'set touchGamepadEnable before calling init!');
     if (!touchGamepadTimer.isSet())
         return;
-    
+
     // read virtual analog stick
     const sticks = gamepadStickData[0] || (gamepadStickData[0] = []);
     sticks[0] = touchGamepadStick.copy();
@@ -401,66 +369,46 @@ function touchGamepadUpdate()
     }
 }
 
-// render the touch gamepad, called automatically by the engine
+// render the touch gamepad as HTML overlay (bypasses canvas transforms)
 function touchGamepadRender()
 {
     if (!touchGamepadEnable || !touchGamepadTimer.isSet())
         return;
 
-    // fade off when not touching or paused
+    const ui = document.getElementById('touchUI');
+    if (!ui) return;
+
     const alpha = percent(touchGamepadTimer.get(), 4, 3);
     if (!alpha || paused)
+    {
+        ui.style.display = 'none';
         return;
-
-    // setup the canvas
-    const context = mainContext;
-    context.save();
-    context.globalAlpha = alpha*touchGamepadAlpha;
-    context.strokeStyle = '#fff';
-    context.lineWidth = 3;
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
-
-    // move buttons inward from edges (avoid notch, more comfortable reach)
-    const padX = touchGamepadSize * touchGamepadPadXMult;
-    const padY = touchGamepadSize * touchGamepadPadYMult;
-    const btnSize = touchGamepadSize * touchGamepadGSMult;
-
-    // draw left analog stick
-    let leftCenter, rightCenter;
-    if (rotatedMode)
-    {
-        leftCenter = vec3(mainCanvasSize.x - padY, mainCanvasSize.y - padX);
-        rightCenter = vec3(mainCanvasSize.x - padY, padX);
     }
-    else
-    {
-        leftCenter = vec3(padX, mainCanvasSize.y-padY);
-        rightCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
-    }
-    context.fillStyle = touchGamepadStick.lengthSquared() > 0 ? '#fff' : '#000';
-    context.beginPath();
-    context.arc(leftCenter.x, leftCenter.y, btnSize/2, 0, 9);
-    context.fill();
-    context.stroke();
 
-    // draw left/right arrows inside the stick area
-    context.fillStyle = touchGamepadStick.lengthSquared() > 0 ? '#000' : '#fff';
-    context.font = '900 '+(btnSize/3)+'px arial';
-    context.fillText('◀', leftCenter.x-btnSize/4, leftCenter.y);
-    context.fillText('▶', leftCenter.x+btnSize/4, leftCenter.y);
+    ui.style.display = 'block';
+    ui.style.opacity = alpha * touchGamepadAlpha;
 
-    // draw right gas button
-    const gasRadius = btnSize/3;
-    context.fillStyle = touchGamepadButtons[0] ? '#fff' : '#000';
-    context.beginPath();
-    context.arc(rightCenter.x, rightCenter.y-gasRadius, gasRadius, 0, 9);
-    context.fill();
-    context.stroke();
-    context.fillStyle = touchGamepadButtons[0] ? '#000' : '#fff';
-    context.font = '900 '+(btnSize/4)+'px arial';
-    context.fillText('油', rightCenter.x, rightCenter.y-gasRadius);
+    const r = touchGamepadSize / 2;
+    const margin = touchGamepadSize * .8;
+    const sz = touchGamepadSize + 'px';
 
-    // set canvas back to normal
-    context.restore();
+    // position stick ring (bottom-left)
+    const stick = document.getElementById('stickRing');
+    stick.style.width = stick.style.height = sz;
+    stick.style.left = margin + 'px';
+    stick.style.bottom = margin + 'px';
+    stick.style.top = 'auto';
+    stick.style.right = 'auto';
+    stick.style.background = touchGamepadStick.lengthSquared() > 0
+        ? 'rgba(255,255,255,.3)' : 'rgba(0,0,0,.5)';
+
+    // position gas ring (bottom-right)
+    const gas = document.getElementById('gasRing');
+    gas.style.width = gas.style.height = (touchGamepadSize * .7) + 'px';
+    gas.style.right = margin + 'px';
+    gas.style.bottom = (margin + r * .3) + 'px';
+    gas.style.top = 'auto';
+    gas.style.left = 'auto';
+    gas.style.background = touchGamepadButtons[0]
+        ? 'rgba(255,255,255,.3)' : 'rgba(0,0,0,.5)';
 }
