@@ -251,12 +251,16 @@ function gameUpdateInternal()
 
 function gameUpdate(frameTimeMS=0)
 {
+    // always use landscape dimensions (swap if portrait — fixes CSS rotation)
+    const iw = Math.max(innerWidth, innerHeight);
+    const ih = Math.min(innerWidth, innerHeight);
+
     if (!clampAspectRatios)
-        mainCanvasSize = vec3(mainCanvas.width=innerWidth, mainCanvas.height=innerHeight);
+        mainCanvasSize = vec3(mainCanvas.width=iw, mainCanvas.height=ih);
     else
     {
         // more complex aspect ratio handling
-        const innerAspect = innerWidth / innerHeight;
+        const innerAspect = iw / ih;
         if (canvasFixedSize)
         {
             // clear canvas and set fixed size
@@ -266,20 +270,20 @@ function gameUpdate(frameTimeMS=0)
         else
         {
             const minAspect = .45, maxAspect = 3;
-            const correctedWidth = innerAspect > maxAspect ? innerHeight * maxAspect :
-                    innerAspect < minAspect ? innerHeight * minAspect : innerWidth;
+            const correctedWidth = innerAspect > maxAspect ? ih * maxAspect :
+                    innerAspect < minAspect ? ih * minAspect : iw;
             // use device pixel ratio for sharper rendering on mobile
             const dpr = min((devicePixelRatio || 1), 2); // cap for mobile performance
             if (pixelate)
             {
                 const w = correctedWidth / pixelateScale | 0;
-                const h = innerHeight / pixelateScale | 0;
+                const h = ih / pixelateScale | 0;
                 mainCanvasSize = vec3(mainCanvas.width = w, mainCanvas.height = h);
             }
             else
-                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=innerHeight*dpr);
+                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=ih*dpr);
         }
-            
+
         // fit to window by adding space on top or bottom if necessary
         const fixedAspect = mainCanvas.width / mainCanvas.height;
         mainCanvas.style.width  = glCanvas.style.width  = innerAspect < fixedAspect ? '100%' : '';
