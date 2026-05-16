@@ -305,7 +305,7 @@ function handleTouchGamepad(e)
         if (touchPos.distance(stickCenter) < gs)
         {
             // virtual analog stick
-            touchGamepadStick = touchPos.subtract(stickCenter).scale(2/gs);
+            touchGamepadStick = touchPos.subtract(stickCenter).scale(3/gs); // 3/gs = full steering at ~67% of circle
             touchGamepadStick.x = clamp(touchGamepadStick.x,-1,1);
             touchGamepadStick.y = clamp(touchGamepadStick.y,-1,1);
         }
