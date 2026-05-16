@@ -4,7 +4,28 @@
 <meta name=apple-mobile-web-app-capable content=yes>
 <meta name=mobile-web-app-capable content=yes>
 <link rel=icon type=image/png href=favicon.png?231>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<style>
+html, body {
+  margin: 0; padding: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+.rotate-hint {
+  display: none;
+  position: fixed; inset: 0;
+  background: #000;
+  z-index: 9999;
+  color: #fff;
+  font: 900 italic 2em arial;
+  text-align: center;
+  padding-top: 35vh;
+}
+@media (orientation: portrait) {
+  .rotate-hint { display: block; }
+}
+</style>
 
 <meta name="twitter:title"       content="极速狂飙">
 <meta property="og:title"        content="极速狂飙">
@@ -14,8 +35,8 @@
 <meta name="keywords"            content="赛车,极速狂飙,中国风,游戏">
 <meta name="twitter:card"        content="summary_large_image">
 
-</head><body style="background:#000">
-<body>
+</head><body>
+<div class="rotate-hint">📱 请旋转屏幕<br>横屏畅玩</div>
 <script>
 // difficulty system - must be defined before game scripts load
 var gameDifficulty = 0; // 0=easy 1=hard

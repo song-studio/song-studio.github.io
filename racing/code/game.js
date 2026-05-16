@@ -22,7 +22,7 @@ const clampAspectRatios = enhancedMode;
 const optimizedCulling = 1;
 const random = new Random;
 let autoPause = enhancedMode;
-let autoFullscreen = 0;
+let autoFullscreen = isTouchDevice ? 1 : 0;
 
 // setup
 const laneWidth = 1400;            // how wide is track
@@ -140,6 +140,9 @@ function gameUpdateInternal()
             gameDifficulty = keyWasPressed('ArrowLeft') ? 0 : 1;
         if (mouseWasPressed(0) || keyWasPressed('Space') || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)))
         {
+            // lock landscape orientation on mobile
+            if (screen.orientation && screen.orientation.lock)
+                screen.orientation.lock('landscape').catch(()=>{});
             // tap left = easy, right = hard
             if (mouseWasPressed(0))
                 gameDifficulty = mousePos.x < .5 ? 0 : 1;
@@ -288,9 +291,12 @@ function gameUpdate(frameTimeMS=0)
         {
             // hack: special input handling when paused
             inputUpdate();
-            if (keyWasPressed('Space') || keyWasPressed('KeyP') 
+            if (keyWasPressed('Space') || keyWasPressed('KeyP')
                 || mouseWasPressed(0) || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)))
             {
+                // re-lock landscape on mobile
+                if (screen.orientation && screen.orientation.lock)
+                    screen.orientation.lock('landscape').catch(()=>{});
                 paused = 0;
                 sound_checkpoint.play(.5);
             }
