@@ -12,19 +12,6 @@ html, body {
   overflow: hidden;
   background: #000;
 }
-.rotate-hint {
-  display: none;
-  position: fixed; inset: 0;
-  background: #000;
-  z-index: 9999;
-  color: #fff;
-  font: 900 italic 2em arial;
-  text-align: center;
-  padding-top: 35vh;
-}
-@media (orientation: portrait) {
-  .rotate-hint { display: block; }
-}
 </style>
 
 <meta name="twitter:title"       content="极速狂飙">
@@ -36,7 +23,6 @@ html, body {
 <meta name="twitter:card"        content="summary_large_image">
 
 </head><body>
-<div class="rotate-hint">📱 请旋转屏幕<br>横屏畅玩</div>
 <script>
 // difficulty system - must be defined before game scripts load
 var gameDifficulty = 0; // 0=easy 1=hard

@@ -140,9 +140,11 @@ function gameUpdateInternal()
             gameDifficulty = keyWasPressed('ArrowLeft') ? 0 : 1;
         if (mouseWasPressed(0) || keyWasPressed('Space') || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)))
         {
-            // lock landscape orientation on mobile
+            // lock landscape + fullscreen on mobile (must be in user gesture)
             if (screen.orientation && screen.orientation.lock)
                 screen.orientation.lock('landscape').catch(()=>{});
+            if (isTouchDevice && !isFullscreen())
+                toggleFullscreen();
             // tap left = easy, right = hard
             if (mouseWasPressed(0))
                 gameDifficulty = mousePos.x < .5 ? 0 : 1;
@@ -294,9 +296,11 @@ function gameUpdate(frameTimeMS=0)
             if (keyWasPressed('Space') || keyWasPressed('KeyP')
                 || mouseWasPressed(0) || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)))
             {
-                // re-lock landscape on mobile
+                // re-lock landscape + fullscreen
                 if (screen.orientation && screen.orientation.lock)
                     screen.orientation.lock('landscape').catch(()=>{});
+                if (isTouchDevice && !isFullscreen())
+                    toggleFullscreen();
                 paused = 0;
                 sound_checkpoint.play(.5);
             }
