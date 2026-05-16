@@ -10,9 +10,11 @@ function initLevelInfos()
     // 第1关 - 贵阳·花溪 (Guiyang Huaxi) — 河畔竹林，平缓起步
     LI = new LevelInfo(level++, [
         spriteList.grass_plain,
-        spriteList.tree_palm,    // 竹子 (已改造)
+        spriteList.tree_palm,
         spriteList.tree_bush,
         spriteList.grass_flower1,
+        spriteList.rock_huge2,
+        spriteList.rock_big,
     ], spriteList.tree_palm);
     LI.horizonSpriteSize = .7;
     LI.waterSide = -1;
@@ -32,12 +34,14 @@ function initLevelInfos()
     // 第2关 - 赤水·竹海 (Chishui Bamboo Sea) — 茂密竹林，蜿蜒小径
     LI = new LevelInfo(level++, [
         spriteList.tree_oak,
-        spriteList.tree_palm,    // 竹子
+        spriteList.tree_palm,
         spriteList.grass_plain,
         spriteList.tree_bush,
         spriteList.tree_stump,
         spriteList.grass_flower1,
         spriteList.grass_flower3,
+        spriteList.rock_huge,
+        spriteList.rock_big,
     ], spriteList.tree_bush, spriteList.horizon_smallMountains);
     LI.horizonSpriteSize = 10;
     LI.trackSideRate = 10;
@@ -93,6 +97,7 @@ function initLevelInfos()
         spriteList.tree_dead,
         spriteList.tree_snow,
         spriteList.rock_big,
+        spriteList.rock_huge2,
         spriteList.tree_stump,
         spriteList.tree_pink,
     ], spriteList.tree_snow, spriteList.horizon_snow);
@@ -153,6 +158,7 @@ function initLevelInfos()
         spriteList.grass_red,
         spriteList.tree_yellow,
         spriteList.rock_big,
+        spriteList.rock_huge3,
         spriteList.tree_stump,
     ], spriteList.tree_yellow, spriteList.horizon_city);
     LI.trackSideRate = 31;
@@ -189,6 +195,8 @@ function initLevelInfos()
         spriteList.tree_oak,
         spriteList.tree_stump,
         spriteList.rock_big,
+        spriteList.rock_huge,
+        spriteList.rock_tall,
     ], spriteList.tree_oak, spriteList.horizon_graveyard);
     LI.sceneryListBias = 2;
     LI.trackSideRate = 50;
@@ -216,6 +224,7 @@ function initLevelInfos()
         spriteList.rock_tall,
         spriteList.rock_big,
         spriteList.rock_huge2,
+        spriteList.rock_huge,
     ], spriteList.rock_big, spriteList.horizon_redMountains);
     LI.sceneryListBias = 5;
     LI.trackSideRate = 25;

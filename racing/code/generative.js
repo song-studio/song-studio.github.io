@@ -310,24 +310,23 @@ function generateTetures()
             t.draw();
         }*/
 
-        // signs
+        // 中国交通路牌
         random.setSeed(13);
         setupContext(0,2);
-        drawChineseSign1(); // 极速狂飙
+        drawSpeedSign();      // 限速牌
         setupContext(1,2);
-        drawChineseSign2(); // 贵州
+        drawRouteSign();      // 高速编号
         setupContext(2,2);
-        drawChineseSign3(); // 贵阳
+        drawDistanceSign();   // 出口距离
         setupContext(3,2);
-        drawDoubleLineSign('甲秀楼','贵阳·南明',hsl(0,.8,.3),0,.38,.48);
+        drawPicAd1();         // 图片广告牌1
         setupContext(4,2);
-        // 红灯笼
         for(let i=5; i--;)
             drawRedLantern(.3+i*.1, .5, .08);
         setupContext(5,2);
-        drawChineseSign4(); // 黔灵山
+        drawPicAd2();         // 图片广告牌2
         setupContext(7,2);
-        drawChineseSign5(); // 贵州山水
+        drawExitSign();       // 出口指示
 
         // grass,flowers, more trees
         setupContext(0,3);
@@ -1024,57 +1023,114 @@ function generateTetures()
         rect(.5,h/2+yo,w-outline,h-outline);
     }
 
-    // 中国风路牌函数 (Chinese-style billboard functions)
-    function drawChineseSign1()
+    // === 中国交通路牌 ===
+
+    function drawSpeedSign()
     {
-        // 极速狂飙
-        drawSignBackground(1,.7,hsl(0,.8,.15),hsl(0,.9,.5),.05,hsl(0,0,.2));
-        color(hsl(0,.9,.5),1);
-        text('极速',.5,.25,.35,.85,.02);
-        text('狂飙',.5,.55,.3,.85,.02);
-    }
-    function drawChineseSign2()
-    {
-        // 贵州
-        drawSignBackground(1,.6,hsl(.13,.7,.1),hsl(.13,.9,.5),.05);
-        color(hsl(.13,.9,.55),1);
-        text('贵 州',.5,.35,.35,.85,.02);
-        text('GUIZHOU',.5,.6,.13,.85,.01);
-    }
-    function drawChineseSign3()
-    {
-        // 贵阳
-        drawSignBackground(1,.6,hsl(.05,.3,.2),hsl(0,.9,.5),.05,hsl(0,0,.3));
-        color(WHITE,1);
-        text('贵 阳',.5,.35,.4,.85,.02);
-        text('GUIYANG',.5,.6,.13,.85,.01);
-    }
-    function drawChineseSign4()
-    {
-        // 黔灵山
-        drawSignBackground(1,.7,hsl(.3,.5,.1),hsl(.15,.8,.6),.05,hsl(0,0,.2));
-        color(hsl(.15,.8,.6),1);
-        text('黔灵',.5,.25,.35,.85,.02);
-        text('秀甲天下',.5,.55,.22,.85,.01);
-    }
-    function drawChineseSign5()
-    {
-        // 贵州山水
-        const c = hsl(.05,.8,.5);
-        drawSignBackground(.9,.9,hsl(.55,.5,.2),c,.05,hsl(0,0,.2));
-        color(c,1);
-        triangle(.5,.25,.18);
-        triangle(.3,.45,.12);
-        triangle(.65,.42,.1);
-        text('贵 州',.5,.7,.18,1,.01);
+        // 限速牌 — 红圈白底黑字
+        const r = .35, cx = .5, cy = .5;
+        color(WHITE);
+        circle(cx, cy, r);
+        color(hsl(0,.85,.45));
+        circle(cx, cy, r);
+        color(WHITE);
+        circle(cx, cy, r*.85);
+        color(BLACK);
+        text('120', cx, cy-.02, .38, 1, .03, undefined, undefined, 900);
+        // 限速单位小字
+        text('km/h', cx, cy+.13, .1, 1, .01);
+        // 杆子
+        color(hsl(.08,.3,.25));
+        rect(cx, cy+r+.15, .04, .3);
     }
 
-    function drawJS13kSign() { drawChineseSign1(); }
-    function drawDwitterSign() { drawChineseSign2(); }
-    function drawAvalancheSign() { drawChineseSign5(); }
-    function drawGitHubSign() { drawChineseSign3(); }
-    function drawOPSign() { drawChineseSign4(); }
-    function drawZZFXSign() { drawChineseSign2(); }
+    function drawRouteSign()
+    {
+        // 高速编号牌 — 蓝底白字
+        const c = hsl(.58,.85,.35);
+        drawSignBackground(.85, .65, c, WHITE, .03, hsl(.08,.3,.25));
+        color(WHITE);
+        text('G75', .5, .28, .28, 1, .02, undefined, undefined, 900);
+        text('高速', .5, .52, .16, 1, .01);
+    }
+
+    function drawDistanceSign()
+    {
+        // 出口距离牌 — 绿底白字
+        const c = hsl(.33,.8,.25);
+        drawSignBackground(.85, .7, c, WHITE, .03, hsl(.08,.3,.25));
+        color(WHITE);
+        text('出口', .5, .2, .18, 1, .015);
+        text('2 km', .5, .43, .22, 1, .02, undefined, undefined, 900);
+        // 箭头
+        triangle(.7, .6, .06, 0);
+        triangle(.3, .38, .04, PI);
+    }
+
+    function drawExitSign()
+    {
+        // 出口指示牌 — 绿底白箭头
+        const c = hsl(.33,.8,.22);
+        drawSignBackground(.85, .7, c, WHITE, .03, hsl(.08,.3,.25));
+        color(WHITE);
+        text('EXIT', .5, .22, .16, 1, .015);
+        text('出口', .5, .43, .2, 1, .02);
+        // 右上箭头
+        triangle(.65, .55, .07, -PI/3);
+    }
+
+    function drawPicAd1()
+    {
+        // 图片广告牌 — 带简笔山景的车广告
+        drawSignBackground(.9, .8, hsl(.58,.3,.9), hsl(.08,.3,.2), .04, hsl(.08,.3,.25));
+        // 简笔山
+        color(hsl(.5,.5,.6));
+        triangle(.3, .3, .15);
+        triangle(.55, .28, .13);
+        triangle(.45, .35, .12);
+        // 太阳
+        color(hsl(.13,.8,.6));
+        circle(.7, .15, .08);
+        // 简笔车
+        color(hsl(0,.8,.4));
+        rect(.5, .58, .35, .12);
+        rect(.4, .66, .18, .1);
+        color(hsl(0,0,.7));
+        rect(.38, .52, .15, .07);
+        // 车轮
+        color(BLACK);
+        circle(.35, .72, .045);
+        circle(.55, .72, .045);
+    }
+
+    function drawPicAd2()
+    {
+        // 图片广告牌 — 抽象图案牌
+        const bg = hsl(.05,.7,.5);
+        drawSignBackground(.85, .75, bg, hsl(.08,.3,.25), .04, hsl(.08,.3,.25));
+        // 几何装饰
+        color(hsl(.13,.9,.55));
+        circle(.5, .25, .18);
+        color(WHITE);
+        triangle(.5, .25, .12);
+        color(hsl(0,0,.95));
+        rect(.5, .55, .55, .08);
+        color(hsl(0,0,.15));
+        text('DRIVE', .5, .65, .14, 1, .015);
+    }
+
+    // 保留旧函数名兼容
+    function drawJS13kSign() { drawSpeedSign(); }
+    function drawZZFXSign() { drawRouteSign(); }
+    function drawDwitterSign() { drawDistanceSign(); }
+    function drawAvalancheSign() { drawExitSign(); }
+    function drawGitHubSign() { drawPicAd1(); }
+    function drawOPSign() { drawPicAd2(); }
+    function drawChineseSign1() { drawSpeedSign(); }
+    function drawChineseSign2() { drawRouteSign(); }
+    function drawChineseSign3() { drawDistanceSign(); }
+    function drawChineseSign4() { drawPicAd1(); }
+    function drawChineseSign5() { drawExitSign(); }
     function drawGenericSign()
     {
         drawSignBackground(1,size+.1,c2,c1,undefined,c3);
