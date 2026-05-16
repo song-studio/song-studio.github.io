@@ -302,9 +302,22 @@ function handleTouchGamepad(e)
     const padX = touchGamepadSize * touchGamepadPadXMult;
     const padY = touchGamepadSize * touchGamepadPadYMult;
     const gs = touchGamepadSize * touchGamepadGSMult; // match btnSize in render
-    const stickCenter = vec3(padX, mainCanvasSize.y-padY);
-    const buttonCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
-    const startCenter = mainCanvasSize.scale(.5);
+    let stickCenter, buttonCenter, startCenter;
+    if (rotatedMode)
+    {
+        // canvas is CSS-rotated 90°: screen bottom → canvas right
+        // left stick at screen bottom-left → canvas (cx near right, cy near bottom)
+        stickCenter = vec3(mainCanvasSize.x - padY, mainCanvasSize.y - padX);
+        // right button at screen bottom-right → canvas (cx near right, cy near top)
+        buttonCenter = vec3(mainCanvasSize.x - padY, padX);
+        startCenter = mainCanvasSize.scale(.5);
+    }
+    else
+    {
+        stickCenter = vec3(padX, mainCanvasSize.y-padY);
+        buttonCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
+        startCenter = mainCanvasSize.scale(.5);
+    }
 
     // check each touch point
     for (const touch of e.touches)
@@ -317,11 +330,17 @@ function handleTouchGamepad(e)
             touchGamepadStick = touchPos.subtract(stickCenter).scale(3/gs); // 3/gs = full steering at ~67% of circle
             touchGamepadStick.x = clamp(touchGamepadStick.x,-1,1);
             touchGamepadStick.y = clamp(touchGamepadStick.y,-1,1);
+            if (rotatedMode)
+                // rotate stick from canvas space to screen space
+                // screen-up→canvas(-X) should be gas(Y-); screen-right→canvas(-Y) should be steer right(X+)
+                touchGamepadStick = vec3(-touchGamepadStick.y, touchGamepadStick.x);
         }
         else if (touchPos.distance(buttonCenter) < gs)
         {
             // virtual face buttons
-            const button = touchPos.y > buttonCenter.y ? 1 : 0;
+            const button = rotatedMode
+                ? (touchPos.x < buttonCenter.x ? 0 : 1)
+                : (touchPos.y > buttonCenter.y ? 1 : 0);
             touchGamepadButtons[button] = 1;
         }
         else if (touchPos.distance(startCenter) < gs)
@@ -348,14 +367,26 @@ function touchGamepadUpdate()
     if (!touchGamepadEnable)
         return;
 
-    // adjust size for orientation — prevent button overlap in portrait
-    const portrait = mainCanvasSize.x < mainCanvasSize.y;
-    const maxSize = portrait ? mainCanvasSize.x / 4.4 : mainCanvasSize.x / 2;
-    touchGamepadSize = clamp(mainCanvasSize.y/8, 99, maxSize);
-    // smaller multipliers in portrait so buttons fit side by side
-    touchGamepadPadXMult = portrait ? 1.2 : 1.8;
-    touchGamepadPadYMult = portrait ? 1.2 : 1.4;
-    touchGamepadGSMult = portrait ? 1.3 : 1.8;
+    if (rotatedMode)
+    {
+        // physical screen is portrait — size buttons for the narrow screen
+        const physW = innerWidth, physH = innerHeight;
+        touchGamepadSize = clamp(physH/12, 48, physW/4.5);
+        touchGamepadPadXMult = 1.2;
+        touchGamepadPadYMult = 1.1;
+        touchGamepadGSMult = 1.2;
+    }
+    else
+    {
+        // adjust size for orientation — prevent button overlap in portrait
+        const portrait = mainCanvasSize.x < mainCanvasSize.y;
+        const maxSize = portrait ? mainCanvasSize.x / 4.4 : mainCanvasSize.x / 2;
+        touchGamepadSize = clamp(mainCanvasSize.y/8, 99, maxSize);
+        // smaller multipliers in portrait so buttons fit side by side
+        touchGamepadPadXMult = portrait ? 1.2 : 1.8;
+        touchGamepadPadYMult = portrait ? 1.2 : 1.4;
+        touchGamepadGSMult = portrait ? 1.3 : 1.8;
+    }
 
     ASSERT(touchGamepadButtons, 'set touchGamepadEnable before calling init!');
     if (!touchGamepadTimer.isSet())
@@ -400,7 +431,17 @@ function touchGamepadRender()
     const btnSize = touchGamepadSize * touchGamepadGSMult;
 
     // draw left analog stick
-    const leftCenter = vec3(padX, mainCanvasSize.y-padY);
+    let leftCenter, rightCenter;
+    if (rotatedMode)
+    {
+        leftCenter = vec3(mainCanvasSize.x - padY, mainCanvasSize.y - padX);
+        rightCenter = vec3(mainCanvasSize.x - padY, padX);
+    }
+    else
+    {
+        leftCenter = vec3(padX, mainCanvasSize.y-padY);
+        rightCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
+    }
     context.fillStyle = touchGamepadStick.lengthSquared() > 0 ? '#fff' : '#000';
     context.beginPath();
     context.arc(leftCenter.x, leftCenter.y, btnSize/2, 0, 9);
@@ -414,7 +455,6 @@ function touchGamepadRender()
     context.fillText('▶', leftCenter.x+btnSize/4, leftCenter.y);
 
     // draw right gas button
-    const rightCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
     const gasRadius = btnSize/3;
     context.fillStyle = touchGamepadButtons[0] ? '#fff' : '#000';
     context.beginPath();
