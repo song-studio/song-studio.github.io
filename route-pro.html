@@ -91,12 +91,12 @@ body{
 .swap-btn:hover{transform:rotate(180deg);color:var(--accent);border-color:var(--accent)}
 .modes{display:flex;gap:1px;margin-bottom:2px;background:var(--rule-strong)}
 .mode-chip{
-  flex:1;text-align:center;padding:14px 10px;
-  background:var(--bg-elevated);cursor:pointer;font-size:.82em;font-weight:500;
-  transition:all .15s;letter-spacing:.02em;
+  flex:1;text-align:center;padding:12px 10px;border-radius:10px;
+  background:transparent;cursor:pointer;font-size:.82em;font-weight:500;
+  transition:all .2s;letter-spacing:.02em;color:var(--text-dim);
 }
-.mode-chip:hover{background:#223625}
-.mode-chip.sel{color:var(--ink);font-weight:700;background:var(--cool-dim);border-bottom:2px solid var(--cool)}
+.mode-chip:hover{color:var(--ink);background:rgba(255,255,255,.03)}
+.mode-chip.sel{color:var(--ink);font-weight:600;background:rgba(255,255,255,.05);box-shadow:inset 0 -2px 0 var(--cool)}
 .go-btn{
   width:100%;padding:16px;border:none;background:var(--cool);color:#FFF;
   font-size:.88em;cursor:pointer;letter-spacing:.08em;font-weight:700;
@@ -229,6 +229,7 @@ footer a:hover{color:var(--accent)}
     <div class="mode-chip" data-mode="walking" onclick="setMode('walking')"><i class="fa-solid fa-person-walking"></i> 步行</div>
   </div>
   <button class="go-btn" id="goBtn" onclick="plan()">开始规划</button>
+  <div style="text-align:center;font-size:.52em;color:var(--text-muted);margin:4px 0 8px;font-weight:300">支持乡镇·村庄·景区·小区等小地名输入，高德地图精准编码</div>
   <div class="route-sug">
     <span class="rsug" onclick="preset('北京','上海','driving')">北京 → 上海</span>
     <span class="rsug" onclick="preset('北京','天津','cycling')">北京 → 天津</span>
