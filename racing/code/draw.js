@@ -465,16 +465,21 @@ function isFullscreen() { return !!document.fullscreenElement; }
  *  @memberof Draw */
 function toggleFullscreen()
 {
-    const element = document.body;
     if (isFullscreen())
     {
         if (document.exitFullscreen)
             document.exitFullscreen();
+        return;
     }
-    else if (element.requestFullscreen)
-        element.requestFullscreen();
-    else if (element.webkitRequestFullscreen)
-        element.webkitRequestFullscreen();
-    else if (element.mozRequestFullScreen)
-      element.mozRequestFullScreen();
+    // use documentElement — better Android support than body
+    const el = document.documentElement;
+    const fn = el.requestFullscreen || el.webkitRequestFullscreen
+        || document.body.webkitRequestFullscreen;
+    if (fn)
+    {
+        fn.call(el);
+        // lock landscape once fullscreen is granted
+        if (screen.orientation && screen.orientation.lock)
+            document.onfullscreenchange = () => screen.orientation.lock('landscape').catch(()=>{});
+    }
 }
