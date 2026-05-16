@@ -247,12 +247,16 @@ function gameUpdateInternal()
 
 function gameUpdate(frameTimeMS=0)
 {
+    // swap dimensions when CSS rotation is active (phones stuck in portrait)
+    const iW = window._cssRotated ? innerHeight : innerWidth;
+    const iH = window._cssRotated ? innerWidth : innerHeight;
+
     if (!clampAspectRatios)
-        mainCanvasSize = vec3(mainCanvas.width=innerWidth, mainCanvas.height=innerHeight);
+        mainCanvasSize = vec3(mainCanvas.width=iW, mainCanvas.height=iH);
     else
     {
         // more complex aspect ratio handling
-        const innerAspect = innerWidth / innerHeight;
+        const innerAspect = iW / iH;
         if (canvasFixedSize)
         {
             // clear canvas and set fixed size
@@ -262,18 +266,18 @@ function gameUpdate(frameTimeMS=0)
         else
         {
             const minAspect = .45, maxAspect = 3;
-            const correctedWidth = innerAspect > maxAspect ? innerHeight * maxAspect :
-                    innerAspect < minAspect ? innerHeight * minAspect : innerWidth;
+            const correctedWidth = innerAspect > maxAspect ? iH * maxAspect :
+                    innerAspect < minAspect ? iH * minAspect : iW;
             // use device pixel ratio for sharper rendering on mobile
             const dpr = min((devicePixelRatio || 1), 2); // cap for mobile performance
             if (pixelate)
             {
                 const w = correctedWidth / pixelateScale | 0;
-                const h = innerHeight / pixelateScale | 0;
+                const h = iH / pixelateScale | 0;
                 mainCanvasSize = vec3(mainCanvas.width = w, mainCanvas.height = h);
             }
             else
-                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=innerHeight*dpr);
+                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=iH*dpr);
         }
 
         // fit to window by adding space on top or bottom if necessary
