@@ -203,7 +203,7 @@ function generateTetures()
         setupContext(3,0);
         drawLicensePlate();
         setupContext(4,0);
-        text(13,.5,.45,.8,.9,.03,undefined,undefined,900);
+        text(13,.5,.48,.5,.9,.02,undefined,undefined,900);
         setupContext(6,0);
         drawCheckpointSign(1);
         setupContext(7,0);
@@ -1216,18 +1216,14 @@ function generateTetures()
 
     function drawLicensePlate()
     {
-        // 车牌 — 白底蓝牌，更大更清晰
-        color(hsl(0,0,.9))
-        rect();
-        color(hsl(.58,.85,.25));
-        rect(.5,.35,.92,.14);
+        // 车牌 — 纯蓝底白字，像真实车牌
+        color(hsl(.58,.8,.3));
+        rect(.5,.5,1,.9);
         color(WHITE);
-        text('A8888',.5,.37,.6,.88,.02,undefined,undefined,900);
-        // 车牌铆钉
-        color(hsl(0,0,.7));
-        circle(.08,.28,.02);
-        circle(.92,.28,.02);
-        circle(.08,.42,.02);
-        circle(.92,.42,.02);
+        rect(.5,.5,.94,.84);
+        color(hsl(.58,.8,.3));
+        rect(.5,.5,.9,.8);
+        color(WHITE);
+        text('A8888',.5,.49,.7,.85,.015,undefined,undefined,900);
     }
 }
