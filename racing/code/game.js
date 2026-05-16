@@ -135,17 +135,17 @@ function gameUpdateInternal()
 {
     if (titleScreenMode)
     {
-        // difficulty switching on title screen
+        // difficulty switching
         if (keyWasPressed('ArrowLeft') || keyWasPressed('ArrowRight'))
-        {
             gameDifficulty = gameDifficulty ? 0 : 1;
-        }
         if (isUsingGamepad && (gamepadWasPressed(14)||gamepadWasPressed(15)))
-        {
             gameDifficulty = gameDifficulty ? 0 : 1;
-        }
-        // update title screen
-        if (mouseWasPressed(0) || keyWasPressed('Space') || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)))
+        // touch: tap left side to switch difficulty
+        if (isTouchDevice && mouseWasPressed(0) && mousePos.x < .4)
+            gameDifficulty = gameDifficulty ? 0 : 1;
+        // start game: Space, gamepad gas, or tap center/right
+        const touchStart = isTouchDevice && mouseWasPressed(0) && mousePos.x >= .4;
+        if (mouseWasPressed(0) && !isTouchDevice || keyWasPressed('Space') || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)) || touchStart)
         {
             titleScreenMode = 0;
             gameStart();

@@ -289,9 +289,12 @@ function handleTouchGamepad(e)
         }
     }
 
-    // get center of left and right sides
-    const stickCenter = vec3(touchGamepadSize, mainCanvasSize.y-touchGamepadSize);
-    const buttonCenter = mainCanvasSize.subtract(vec3(touchGamepadSize, touchGamepadSize));
+    // get center of left and right sides (match render positions)
+    const padX = touchGamepadSize * 1.7;
+    const padY = touchGamepadSize * 1.3;
+    const gs = touchGamepadSize * 1.15; // match btnSize in render
+    const stickCenter = vec3(padX, mainCanvasSize.y-padY);
+    const buttonCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
     const startCenter = mainCanvasSize.scale(.5);
 
     // check each touch point
@@ -299,21 +302,20 @@ function handleTouchGamepad(e)
     {
         let touchPos = mouseToScreen(vec3(touch.clientX, touch.clientY));
         touchPos = touchPos.multiply(mainCanvasSize);
-        if (touchPos.distance(stickCenter) < touchGamepadSize)
+        if (touchPos.distance(stickCenter) < gs)
         {
             // virtual analog stick
-            touchGamepadStick = touchPos.subtract(stickCenter).scale(2/touchGamepadSize);
-            //touchGamepadStick = touchGamepadStick.clampLength(); // circular clamp
+            touchGamepadStick = touchPos.subtract(stickCenter).scale(2/gs);
             touchGamepadStick.x = clamp(touchGamepadStick.x,-1,1);
             touchGamepadStick.y = clamp(touchGamepadStick.y,-1,1);
         }
-        else if (touchPos.distance(buttonCenter) < touchGamepadSize)
+        else if (touchPos.distance(buttonCenter) < gs)
         {
             // virtual face buttons
             const button = touchPos.y > buttonCenter.y ? 1 : 0;
             touchGamepadButtons[button] = 1;
         }
-        else if (touchPos.distance(startCenter) < touchGamepadSize)
+        else if (touchPos.distance(startCenter) < gs)
         {
             // hidden virtual start button in center
             touchGamepadButtons[9] = 1;
@@ -377,30 +379,36 @@ function touchGamepadRender()
     context.textAlign = 'center';
     context.textBaseline = 'middle';
 
+    // move buttons inward from edges (avoid notch, more comfortable reach)
+    const padX = touchGamepadSize * 1.7;
+    const padY = touchGamepadSize * 1.3;
+    const btnSize = touchGamepadSize * 1.15;
+
     // draw left analog stick
-    const leftCenter = vec3(touchGamepadSize, mainCanvasSize.y-touchGamepadSize);
+    const leftCenter = vec3(padX, mainCanvasSize.y-padY);
     context.fillStyle = touchGamepadStick.lengthSquared() > 0 ? '#fff' : '#000';
     context.beginPath();
-    context.arc(leftCenter.x, leftCenter.y, touchGamepadSize/2, 0, 9);
+    context.arc(leftCenter.x, leftCenter.y, btnSize/2, 0, 9);
     context.fill();
     context.stroke();
 
     // draw left/right arrows inside the stick area
     context.fillStyle = touchGamepadStick.lengthSquared() > 0 ? '#000' : '#fff';
-    context.font = '900 '+(touchGamepadSize/3)+'px arial';
-    context.fillText('◀', leftCenter.x-touchGamepadSize/4, leftCenter.y); // ◀
-    context.fillText('▶', leftCenter.x+touchGamepadSize/4, leftCenter.y); // ▶
+    context.font = '900 '+(btnSize/3)+'px arial';
+    context.fillText('◀', leftCenter.x-btnSize/4, leftCenter.y);
+    context.fillText('▶', leftCenter.x+btnSize/4, leftCenter.y);
 
-    // draw right gas button (upper = button 0 = gas)
-    const rightCenter = vec3(mainCanvasSize.x-touchGamepadSize, mainCanvasSize.y-touchGamepadSize);
+    // draw right gas button
+    const rightCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
+    const gasRadius = btnSize/3;
     context.fillStyle = touchGamepadButtons[0] ? '#fff' : '#000';
     context.beginPath();
-    context.arc(rightCenter.x, rightCenter.y-touchGamepadSize/3, touchGamepadSize/3, 0, 9);
+    context.arc(rightCenter.x, rightCenter.y-gasRadius, gasRadius, 0, 9);
     context.fill();
     context.stroke();
     context.fillStyle = touchGamepadButtons[0] ? '#000' : '#fff';
-    context.font = '900 '+(touchGamepadSize/4)+'px arial';
-    context.fillText('油', rightCenter.x, rightCenter.y-touchGamepadSize/3);
+    context.font = '900 '+(btnSize/4)+'px arial';
+    context.fillText('油', rightCenter.x, rightCenter.y-gasRadius);
 
     // set canvas back to normal
     context.restore();

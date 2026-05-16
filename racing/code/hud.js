@@ -64,8 +64,10 @@ function drawHUD()
         {
             const diffNames = ['简单','困难'];
             const diffName = diffNames[gameDifficulty] || '简单';
-            const diffColor = gameDifficulty==0?hsl(.4,.8,.55):hsl(0,.8,.5);
-            drawHUDText('◀  '+diffName+'  ▶', vec3(.5,.85), .05, diffColor, 'arial',undefined,900,'italic',undefined,undefined,3);
+            const diffColor = gameDifficulty==0?hsl(.35,1,.6):hsl(0,1,.45);
+            drawHUDText('「'+diffName+'」', vec3(.5,.78), .07, diffColor, 'arial',undefined,900,'italic',undefined,.03,3);
+            const hint = isTouchDevice ? '◀ 左侧切换    右侧开始 ▶' : '◀  左右键切换   空格开始  ▶';
+            drawHUDText(hint, vec3(.5,.88), .032, hsl(0,0,.7), 'arial',undefined,400,'italic',undefined,undefined,0);
         }
 
         if (!enhancedMode || time > 5)
