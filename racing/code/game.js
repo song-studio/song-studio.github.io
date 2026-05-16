@@ -265,6 +265,8 @@ function gameUpdate(frameTimeMS=0)
             const minAspect = .45, maxAspect = 3;
             const correctedWidth = innerAspect > maxAspect ? innerHeight * maxAspect :
                     innerAspect < minAspect ? innerHeight * minAspect : innerWidth;
+            // use device pixel ratio for sharper rendering on mobile
+            const dpr = devicePixelRatio || 1;
             if (pixelate)
             {
                 const w = correctedWidth / pixelateScale | 0;
@@ -272,7 +274,7 @@ function gameUpdate(frameTimeMS=0)
                 mainCanvasSize = vec3(mainCanvas.width = w, mainCanvas.height = h);
             }
             else
-                mainCanvasSize = vec3(mainCanvas.width=correctedWidth, mainCanvas.height=innerHeight);
+                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=innerHeight*dpr);
         }
             
         // fit to window by adding space on top or bottom if necessary
