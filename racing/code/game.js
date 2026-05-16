@@ -317,7 +317,7 @@ function gameUpdate(frameTimeMS=0)
         mainCanvas.style.width  = glCanvas.style.width  = innerAspect < fixedAspect ? '100%' : '';
         mainCanvas.style.height = glCanvas.style.height = innerAspect < fixedAspect ? '' : '100%';
     }
-
+    
     if (enhancedMode)
     {
         document.body.style.cursor = // fun cursors!
