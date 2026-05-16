@@ -14,101 +14,12 @@
 <meta name="keywords"            content="赛车,极速狂飙,中国风,游戏">
 <meta name="twitter:card"        content="summary_large_image">
 
-<style>
-#touchControls{display:none;position:fixed;bottom:0;left:0;right:0;z-index:10;pointer-events:none}
-.isTouch #touchControls{display:block}
-.touch-row{display:flex;justify-content:space-between;align-items:flex-end;padding:0 16px 20px;pointer-events:none}
-.touch-group{display:flex;gap:12px;pointer-events:auto}
-.touch-btn{width:72px;height:72px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:rgba(255,255,255,.08);color:#fff;font-size:32px;display:flex;align-items:center;justify-content:center;user-select:none;-webkit-user-select:none;touch-action:manipulation;transition:background .1s}
-.touch-btn:active,.touch-btn.pressed{background:rgba(255,255,255,.35);border-color:#fff}
-.touch-btn.big{width:88px;height:88px;font-size:22px;font-weight:700;letter-spacing:.04em}
-.touch-btn.gas{background:rgba(255,60,30,.2);border-color:rgba(255,80,50,.6)}
-.touch-btn.gas:active,.touch-btn.gas.pressed{background:rgba(255,60,30,.5);border-color:#f44}
-#diffSelect{display:block;position:fixed;top:56%;left:50%;transform:translate(-50%,-50%);z-index:11;text-align:center}
-.diff-btn{display:inline-block;margin:8px;padding:12px 28px;border:2px solid rgba(255,255,255,.5);background:rgba(255,255,255,.08);color:#fff;font-size:20px;border-radius:12px;user-select:none;-webkit-user-select:none;touch-action:manipulation;cursor:pointer}
-.diff-btn:active{background:rgba(255,255,255,.3);border-color:#fff}
-</style>
 </head><body style="background:#000">
 <body>
-<div id="touchControls">
-<div class="touch-row">
-<div class="touch-group">
-<button class="touch-btn" data-key="ArrowLeft" id="btnLeft">&#9664;</button>
-<button class="touch-btn" data-key="ArrowRight" id="btnRight">&#9654;</button>
-</div>
-<div class="touch-group">
-<button class="touch-btn big gas" data-key="ArrowUp" id="btnGas">油门</button>
-</div>
-</div>
-</div>
-<div id="diffSelect">
-<div style="color:#fff;font-size:18px;margin-bottom:12px;">选择难度</div>
-<button class="diff-btn" data-diff="easy">简单</button>
-<button class="diff-btn" data-diff="normal" style="border-color:rgba(255,200,50,.8)">普通</button>
-<button class="diff-btn" data-diff="hard">困难</button>
-</div>
 <script>
 // difficulty system - must be defined before game scripts load
 var gameDifficulty = 1; // 0=easy 1=normal 2=hard
 var difficultyTimeMult = [1.6, 1, .65]; // time multiplier per difficulty
-window._selectedDifficulty = 1;
-
-// touch device detection
-if (window.ontouchstart !== undefined) {
-    document.body.classList.add('isTouch');
-}
-
-// difficulty selection
-function hideDiff(){ document.getElementById('diffSelect').style.display='none'; }
-document.querySelectorAll('.diff-btn').forEach(function(btn){
-    btn.addEventListener('pointerdown', function(e){
-        e.stopPropagation();
-        e.preventDefault();
-        var d = btn.dataset.diff;
-        window._selectedDifficulty = d === 'easy' ? 0 : d === 'hard' ? 2 : 1;
-        gameDifficulty = window._selectedDifficulty;
-        // highlight selected
-        document.querySelectorAll('.diff-btn').forEach(function(b){ b.style.borderColor='rgba(255,255,255,.5)'; });
-        btn.style.borderColor = 'rgba(255,200,50,.9)';
-        hideDiff();
-        // start game
-        document.dispatchEvent(new KeyboardEvent('keydown',{code:'Space',bubbles:true}));
-        document.dispatchEvent(new KeyboardEvent('keyup',{code:'Space',bubbles:true}));
-    });
-    btn.addEventListener('touchstart', function(e){ e.stopPropagation(); e.preventDefault(); });
-});
-
-// hide difficulty selection also on keyboard start
-document.addEventListener('keydown', function(e){
-    if (e.code === 'Space') hideDiff();
-}, {once: true});
-
-// touch button handlers
-(function(){
-    var activeKeys = {};
-    document.querySelectorAll('.touch-btn').forEach(function(btn){
-        var key = btn.dataset.key;
-        btn.addEventListener('pointerdown', function(e){
-            e.preventDefault();
-            activeKeys[key] = 1;
-            btn.classList.add('pressed');
-            document.dispatchEvent(new KeyboardEvent('keydown',{code:key,bubbles:true}));
-        });
-        btn.addEventListener('pointerup', function(e){
-            e.preventDefault();
-            activeKeys[key] = 0;
-            btn.classList.remove('pressed');
-            document.dispatchEvent(new KeyboardEvent('keyup',{code:key,bubbles:true}));
-        });
-        btn.addEventListener('pointerleave', function(e){
-            if (activeKeys[key]){
-                activeKeys[key] = 0;
-                btn.classList.remove('pressed');
-                document.dispatchEvent(new KeyboardEvent('keyup',{code:key,bubbles:true}));
-            }
-        });
-    });
-})();
 </script>
 <script>
 onerror=(event, source, lineno, colno, error)=>

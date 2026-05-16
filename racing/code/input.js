@@ -362,7 +362,7 @@ function touchGamepadRender()
 {
     if (!touchGamepadEnable || !touchGamepadTimer.isSet())
         return;
-    
+
     // fade off when not touching or paused
     const alpha = percent(touchGamepadTimer.get(), 4, 3);
     if (!alpha || paused)
@@ -374,28 +374,33 @@ function touchGamepadRender()
     context.globalAlpha = alpha*touchGamepadAlpha;
     context.strokeStyle = '#fff';
     context.lineWidth = 3;
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
 
     // draw left analog stick
+    const leftCenter = vec3(touchGamepadSize, mainCanvasSize.y-touchGamepadSize);
     context.fillStyle = touchGamepadStick.lengthSquared() > 0 ? '#fff' : '#000';
     context.beginPath();
-
-    // draw circle shaped gamepad
-    const leftCenter = vec3(touchGamepadSize, mainCanvasSize.y-touchGamepadSize);
     context.arc(leftCenter.x, leftCenter.y, touchGamepadSize/2, 0, 9);
     context.fill();
     context.stroke();
 
-    // draw right face buttons
+    // draw left/right arrows inside the stick area
+    context.fillStyle = touchGamepadStick.lengthSquared() > 0 ? '#000' : '#fff';
+    context.font = '900 '+(touchGamepadSize/3)+'px arial';
+    context.fillText('◀', leftCenter.x-touchGamepadSize/4, leftCenter.y); // ◀
+    context.fillText('▶', leftCenter.x+touchGamepadSize/4, leftCenter.y); // ▶
+
+    // draw right gas button (upper = button 0 = gas)
     const rightCenter = vec3(mainCanvasSize.x-touchGamepadSize, mainCanvasSize.y-touchGamepadSize);
-    for (let i=2; i--;)
-    {
-        const pos = rightCenter.add(vec3(0,(i?1:-1)*touchGamepadSize/2));
-        context.fillStyle = touchGamepadButtons[i] ? '#fff' : '#000';
-        context.beginPath();
-        context.arc(pos.x, pos.y, touchGamepadSize/3, 0, 9);
-        context.fill();
-        context.stroke();
-    }
+    context.fillStyle = touchGamepadButtons[0] ? '#fff' : '#000';
+    context.beginPath();
+    context.arc(rightCenter.x, rightCenter.y-touchGamepadSize/3, touchGamepadSize/3, 0, 9);
+    context.fill();
+    context.stroke();
+    context.fillStyle = touchGamepadButtons[0] ? '#000' : '#fff';
+    context.font = '900 '+(touchGamepadSize/4)+'px arial';
+    context.fillText('油', rightCenter.x, rightCenter.y-touchGamepadSize/3);
 
     // set canvas back to normal
     context.restore();

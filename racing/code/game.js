@@ -135,6 +135,17 @@ function gameUpdateInternal()
 {
     if (titleScreenMode)
     {
+        // difficulty switching on title screen
+        if (keyWasPressed('ArrowLeft') || keyWasPressed('ArrowRight'))
+        {
+            const d = keyWasPressed('ArrowRight') ? 1 : -1;
+            gameDifficulty = (gameDifficulty + d + 3) % 3;
+        }
+        if (isUsingGamepad && (gamepadWasPressed(14)||gamepadWasPressed(15)))
+        {
+            const d = gamepadWasPressed(15) ? 1 : -1;
+            gameDifficulty = (gameDifficulty + d + 3) % 3;
+        }
         // update title screen
         if (mouseWasPressed(0) || keyWasPressed('Space') || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)))
         {
