@@ -84,6 +84,10 @@ function gameInit()
     if (!clampAspectRatios)
         document.body.style.margin = '0px';
 
+    // force layout on orientation change (fixes Android rotation)
+    window.addEventListener('orientationchange', () =>
+        setTimeout(() => document.body.offsetHeight, 100));
+
     drawInit();
     inputInit()
     initGenerative();
