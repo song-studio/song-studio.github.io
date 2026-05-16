@@ -255,16 +255,32 @@ function gameUpdate(frameTimeMS=0)
     // set base canvas CSS (before style.width/height overrides below)
     if (rotatedMode)
     {
-        const s = 'position:absolute;top:0;left:' + innerWidth + 'px;transform:rotate(90deg);transform-origin:top left;';
-        mainCanvas.style.cssText = s + (pixelate?' image-rendering: pixelated':'');
-        glCanvas.style.cssText = s;
+        const applyRotate = (c) => {
+            c.style.position = 'absolute';
+            c.style.top = '0';
+            c.style.left = innerWidth + 'px';
+            c.style.transform = 'rotate(90deg)';
+            c.style.transformOrigin = 'top left';
+            c.style.width = '';
+            c.style.height = '';
+            c.style.zIndex = '';
+        };
+        applyRotate(mainCanvas);
+        applyRotate(glCanvas);
+        mainCanvas.style.zIndex = '1'; // 2D UI on top of WebGL
     }
     else
     {
-        const s = 'position:absolute;' +
-            (clampAspectRatios?'top:50%;left:50%;transform:translate(-50%,-50%);':'') +
-            (pixelate?' image-rendering: pixelated':'');
-        glCanvas.style.cssText = mainCanvas.style.cssText = s;
+        const applyNormal = (c) => {
+            c.style.position = 'absolute';
+            c.style.top = clampAspectRatios ? '50%' : '';
+            c.style.left = clampAspectRatios ? '50%' : '';
+            c.style.transform = clampAspectRatios ? 'translate(-50%,-50%)' : '';
+            c.style.transformOrigin = '';
+            c.style.zIndex = '';
+        };
+        applyNormal(mainCanvas);
+        applyNormal(glCanvas);
     }
 
     if (!clampAspectRatios || rotatedMode)
