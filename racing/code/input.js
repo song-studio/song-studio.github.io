@@ -109,6 +109,14 @@ function inputUpdatePost()
 // convert a mouse position to screen space
 const mouseToScreen = (mousePos) =>
 {
+    if (rotatedMode)
+    {
+        // canvas is CSS rotate(90deg) with left:innerWidth offset
+        // screen (sx,sy) maps to canvas (sy, innerWidth-sx)
+        const canvasX = mousePos.y;
+        const canvasY = innerWidth - mousePos.x;
+        return vec3(canvasX / mainCanvasSize.x, canvasY / mainCanvasSize.y);
+    }
     if (!clampAspectRatios)
     {
         // canvas always takes up full screen

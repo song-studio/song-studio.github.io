@@ -54,7 +54,7 @@ let trackSeed = 1331;
 let cameraPos, cameraRot, cameraOffset;
 let worldHeading, mouseControl;
 let track, vehicles, playerVehicle;
-let freeRide;
+let freeRide, rotatedMode;
 
 ///////////////////////////////
 
@@ -247,12 +247,32 @@ function gameUpdateInternal()
 
 function gameUpdate(frameTimeMS=0)
 {
-    if (!clampAspectRatios)
-        mainCanvasSize = vec3(mainCanvas.width=innerWidth, mainCanvas.height=innerHeight);
+    // detect portrait mode for mobile — CSS rotate canvas to force landscape
+    rotatedMode = isTouchDevice && window.matchMedia('(orientation: portrait)').matches;
+    const effW = rotatedMode ? innerHeight : innerWidth;
+    const effH = rotatedMode ? innerWidth  : innerHeight;
+
+    // set base canvas CSS (before style.width/height overrides below)
+    if (rotatedMode)
+    {
+        const s = 'position:absolute;top:0;left:' + innerWidth + 'px;transform:rotate(90deg);transform-origin:top left;';
+        mainCanvas.style.cssText = s + (pixelate?' image-rendering: pixelated':'');
+        glCanvas.style.cssText = s;
+    }
+    else
+    {
+        const s = 'position:absolute;' +
+            (clampAspectRatios?'top:50%;left:50%;transform:translate(-50%,-50%);':'') +
+            (pixelate?' image-rendering: pixelated':'');
+        glCanvas.style.cssText = mainCanvas.style.cssText = s;
+    }
+
+    if (!clampAspectRatios || rotatedMode)
+        mainCanvasSize = vec3(mainCanvas.width=effW, mainCanvas.height=effH);
     else
     {
         // more complex aspect ratio handling
-        const innerAspect = innerWidth / innerHeight;
+        const innerAspect = effW / effH;
         if (canvasFixedSize)
         {
             // clear canvas and set fixed size
@@ -262,18 +282,18 @@ function gameUpdate(frameTimeMS=0)
         else
         {
             const minAspect = .45, maxAspect = 3;
-            const correctedWidth = innerAspect > maxAspect ? innerHeight * maxAspect :
-                    innerAspect < minAspect ? innerHeight * minAspect : innerWidth;
+            const correctedWidth = innerAspect > maxAspect ? effH * maxAspect :
+                    innerAspect < minAspect ? effH * minAspect : effW;
             // use device pixel ratio for sharper rendering on mobile
             const dpr = min((devicePixelRatio || 1), 2); // cap for mobile performance
             if (pixelate)
             {
                 const w = correctedWidth / pixelateScale | 0;
-                const h = innerHeight / pixelateScale | 0;
+                const h = effH / pixelateScale | 0;
                 mainCanvasSize = vec3(mainCanvas.width = w, mainCanvas.height = h);
             }
             else
-                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=innerHeight*dpr);
+                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=effH*dpr);
         }
 
         // fit to window by adding space on top or bottom if necessary
