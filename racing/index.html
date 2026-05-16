@@ -29,36 +29,6 @@ html, body {
 
 </head><body>
 <script>
-// CSS rotation for phones stuck in portrait (Huawei/HarmonyOS WebView)
-// Properly centers the rotated element using correct transform-origin
-(function(){
-  window._cssRotated = false;
-  function fixOrientation() {
-    var w = window.innerWidth, h = window.innerHeight;
-    var portrait = w < h;
-    var html = document.documentElement;
-    if (portrait) {
-      window._cssRotated = true;
-      var left = (w - h) / 2;  // center horizontally (negative)
-      var top = (h - w) / 2;   // center vertically (positive)
-      html.style.cssText =
-        'position:fixed;' +
-        'left:' + left + 'px;top:' + top + 'px;' +
-        'width:' + h + 'px;height:' + w + 'px;' +
-        'transform:rotate(90deg);transform-origin:center center;' +
-        'overflow:hidden;';
-    } else {
-      window._cssRotated = false;
-      html.style.cssText = '';
-    }
-    window.scrollTo(0, 1);
-  }
-  fixOrientation();
-  window.addEventListener('orientationchange', function(){ setTimeout(fixOrientation, 200); });
-  window.addEventListener('resize', fixOrientation);
-})();
-</script>
-<script>
 // difficulty system - must be defined before game scripts load
 var gameDifficulty = 0; // 0=easy 1=hard
 var difficultyTimeMult = [1.6, .65]; // time multiplier per difficulty
