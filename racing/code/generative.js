@@ -1,7 +1,7 @@
 'use strict';
 
 const hardAlpha = 1;
-const generativeTileSize = 512;
+const generativeTileSize = 768;
 const generativeCanvasSize = generativeTileSize*8;
 const fixFirefoxFontBug = 1; // fix firefox not drawing fonts below a min size
 const spriteSize = (generativeTileSize - 2*bleedPixels) / generativeCanvasSize;
@@ -203,7 +203,7 @@ function generateTetures()
         setupContext(3,0);
         drawLicensePlate();
         setupContext(4,0);
-        text(13,.5,.6,1,1,.04,undefined,undefined,900);
+        text(13,.5,.45,.8,.9,.03,undefined,undefined,900);
         setupContext(6,0);
         drawCheckpointSign(1);
         setupContext(7,0);
@@ -570,57 +570,71 @@ function generateTetures()
             drawRock(.5,.2,.7,0.003,.9,1,undefined,undefined,undefined,undefined,vec3(0,0,2));
         }*/
         setupContext(3,6);
-        if (1) // 中国宝塔 (Chinese Pagoda) - 甲秀楼风格
+        if (1) // 中国宝塔 (Chinese Pagoda) - 高品质版
         {
-            // pagoda body - multi-tiered with curved eaves
-            const pagodaWarmRed = hsl(.03,.8,.4);
-            const pagodaGold = hsl(.13,.9,.55);
-            const pagodaDark = hsl(.08,.3,.15);
-            const tiers = js13kBuildLevel2 ? 3 : random.int(4,7);
+            const pagodaWarmRed = hsl(.03,.75,.38);
+            const pagodaGold = hsl(.13,.85,.52);
+            const pagodaDark = hsl(.08,.35,.12);
+            const pagodaMid = hsl(.03,.6,.3);
+            const tiers = random.int(5,8);
 
             for(let t=tiers; t--;)
             {
                 const tp = t/tiers;
-                const y = .1 + tp*.75;
-                const tierW = lerp(tp,.15,.3);
-                const roofOverhang = tierW + .06;
+                const y = .08 + tp*.78;
+                const tierW = lerp(tp,.12,.32);
+                const roofOverhang = tierW + .07;
 
-                // roof - upward curving eaves
-                color(pagodaGold);
-                for(let i=8; i--;)
+                // 多层飞檐 - 向上翘曲
+                for(let layer=3; layer--;)
                 {
-                    const rp = i/8;
-                    const rx = .5 - roofOverhang + rp*roofOverhang*2;
-                    const curve = Math.sin(rp*PI)*.04;
-                    rect(rx, y-curve, roofOverhang/4, .04);
+                    const lo = layer*.015;
+                    color(layer?pagodaGold:pagodaDark);
+                    for(let i=10; i--;)
+                    {
+                        const rp = i/10;
+                        const rx = .5 - roofOverhang + lo + rp*(roofOverhang*2-lo*2);
+                        const curve = Math.sin(rp*PI)*.05;
+                        rect(rx, y-curve+lo, (roofOverhang*2)/10, .03);
+                    }
                 }
-                // roof ridge
+                // 屋脊线
                 color(pagodaDark);
-                rect(.5, y-.03, roofOverhang*2+.02, .015);
+                rect(.5, y-.04, roofOverhang*2+.03, .012);
 
-                // wall section
-                color(pagodaWarmRed);
-                const wallH = .08;
+                // 墙体
+                const wallH = .07;
                 const wallW = tierW*2;
+                color(pagodaWarmRed);
                 rect(.5, y+wallH/2, wallW, wallH);
+                // 墙体竖线装饰
+                color(pagodaMid);
+                for(let i=5; i--;)
+                {
+                    const lx = .5 - wallW/2 + (i+1)*wallW/6;
+                    rect(lx, y+wallH/2, .006, wallH*.8);
+                }
 
-                // pillars
+                // 立柱
                 color(pagodaDark);
-                const pillarW = .012;
+                const pillarW = .014;
                 rect(.5-wallW/2+pillarW, y+wallH/2, pillarW, wallH);
                 rect(.5+wallW/2-pillarW, y+wallH/2, pillarW, wallH);
             }
 
-            // top finial
+            // 塔刹（顶部装饰）
             color(pagodaGold);
-            rect(.5, .08, .03, .06);
-            circle(.5, .05, .025);
+            rect(.5, .05, .025, .05);
+            circle(.5, .025, .03);
+            circle(.5, .015, .015);
 
-            // base
+            // 基座
             color(pagodaDark);
-            rect(.5, .9, .35, .06);
+            rect(.5, .91, .38, .05);
             color(pagodaWarmRed);
-            rect(.5, .87, .32, .04);
+            rect(.5, .88, .34, .04);
+            color(pagodaGold);
+            rect(.5, .86, .3, .012);
         }
         else
         {
@@ -651,27 +665,32 @@ function generateTetures()
         }*/
         setupContext(6,6);
         {
-            // 喀斯特山峰 (Karst mountains)
+            // 喀斯特山峰 (Karst mountains) - 高品质版
             random.setSeed(9);
-            // Jagged karst peaks - steep, dramatic
-            for(let k=6; k--;)
+            for(let k=9; k--;)
             {
-                const kx = .15 + k*.14;
-                const kh = random.float(.2, .4);
-                const kw = random.float(.03, .07);
-                drawRock(kx, kw, kh, .01, .3, .8, .5, -.05, .01, 500, vec3(.15,.2,.55), .5);
+                const kx = .1 + k*.09;
+                const kh = random.float(.25, .5);
+                const kw = random.float(.02, .06);
+                drawRock(kx, kw, kh, .008, .25, .8, .5, -.06, .015, 600, vec3(.15,.18,.52), .5);
+            }
+            // 前景岩石细节
+            for(let k=4; k--;)
+            {
+                const kx = .2 + k*.18;
+                drawRock(kx, .03, .12, .02, .15, 1, .6, -.02, .01, 300, vec3(.1,.15,.4), .4);
             }
         }
         setupContext(7,6);
         {
-            // 远山层叠 (Distant layered mountains)
+            // 远山层叠 (Distant layered mountains) - 高品质版
             const mountainHue = .55;
-            for(let i=3; i--;)
+            for(let i=4; i--;)
             {
-                const py = i*.03;
-                const hue = mountainHue + i*.05;
-                const lit = .6 + i*.15;
-                drawRock(.5, .5+py, .2, .04, .3, .6, .6, -.05-py, .01, 800, vec3(hue,.25,lit), .3);
+                const py = i*.025;
+                const hue = mountainHue + i*.04;
+                const lit = .55 + i*.18;
+                drawRock(.5, .5+py, .22, .03, .25, .6, .6, -.04-py, .008, 1000, vec3(hue,.22,lit), .3);
             }
         }
         /*setupContext(1,6);
@@ -939,36 +958,40 @@ function generateTetures()
 
     function drawPalmTree()
     {
-        // 竹子 (Bamboo) - replaces palm tree
+        // 竹子 (Bamboo) - 高品质版
         const bambooHue = .22;
-        const stalkCount = random.int(3,6);
+        const stalkCount = random.int(5,9);
         for(let s=stalkCount; s--;)
         {
-            const sx = .4 + s*.04;
-            const sway = random.floatSign(.03);
-            // draw bamboo stalk segments
-            for(let seg=7; seg--;)
+            const sx = .35 + s*.035;
+            const sway = random.floatSign(.04);
+            for(let seg=12; seg--;)
             {
-                const sp = seg/7;
-                const y = .25 + sp*.7;
-                const w = lerp(sp,.03,.015);
-                const xo = Math.sin(sp*3)*sway;
-                color(hsl(bambooHue,.5,random.float(.3,.5)));
-                rect(sx+xo, y, w, .14);
-                // bamboo joints
-                color(hsl(bambooHue,.6,random.float(.2,.4)));
-                rect(sx+xo, y+.065, w+.005, .01);
+                const sp = seg/12;
+                const y = .2 + sp*.78;
+                const w = lerp(sp,.04,.012);
+                const xo = Math.sin(sp*3.5)*sway*(1+sp);
+                // 竹节主体
+                color(hsl(bambooHue,.4,random.float(.35,.55)));
+                rect(sx+xo, y, w, .1);
+                // 竹节高光
+                color(hsl(bambooHue,.3,random.float(.5,.7)));
+                rect(sx+xo+w*.15, y, w*.3, .08);
+                // 竹节环
+                color(hsl(bambooHue,.55,random.float(.18,.3)));
+                rect(sx+xo, y+.045, w+.006, .008);
             }
-            // bamboo leaves
-            for(let l=6; l--;)
+            // 竹叶 - 更多更密
+            for(let l=12; l--;)
             {
-                const la = l/6*PI*2 + random.floatSign(.3);
-                const lx = sx + Math.sin(la)*.08;
-                const ly = .22 + Math.cos(la)*.04;
-                const leaf = new Particle(lx, ly, Math.sin(la)*.15, Math.cos(la)*.1-.05, .2, .02, .003);
+                const la = l/12*PI*2 + random.floatSign(.4);
+                const lx = sx + Math.sin(la)*.1;
+                const ly = .18 + Math.cos(la)*.05;
+                const leaf = new Particle(lx, ly, Math.sin(la)*.2, Math.cos(la)*.12-.06, .25, .015, .002);
                 leaf.style = 1;
-                leaf.color = hsl(bambooHue+.05,.5,random.float(.3,.5));
-                leaf.colorRandom = .1;
+                leaf.iterations = 70;
+                leaf.color = hsl(bambooHue+.06,.45,random.float(.28,.48));
+                leaf.colorRandom = .12;
                 leaf.draw();
             }
         }
@@ -1193,9 +1216,18 @@ function generateTetures()
 
     function drawLicensePlate()
     {
-        color(hsl(0,0,.8))
+        // 车牌 — 白底蓝牌，更大更清晰
+        color(hsl(0,0,.9))
         rect();
-        color(hsl(.05,.9,.3),1);
-        text('贵A·13K',.5,.6,.8,.9,.03,'monospace');
+        color(hsl(.58,.85,.25));
+        rect(.5,.35,.92,.14);
+        color(WHITE);
+        text('A8888',.5,.37,.6,.88,.02,undefined,undefined,900);
+        // 车牌铆钉
+        color(hsl(0,0,.7));
+        circle(.08,.28,.02);
+        circle(.92,.28,.02);
+        circle(.08,.42,.02);
+        circle(.92,.42,.02);
     }
 }

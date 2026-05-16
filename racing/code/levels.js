@@ -97,24 +97,21 @@ function initLevelInfos()
         spriteList.tree_dead,
         spriteList.tree_snow,
         spriteList.rock_big,
-        spriteList.rock_huge2,
         spriteList.tree_stump,
-        spriteList.tree_pink,
     ], spriteList.tree_snow, spriteList.horizon_snow);
     LI.sceneryListBias = 9;
     LI.trackSideRate = 21;
-    LI.skyColorTop = hsl(.55,.15,.55);
-    LI.skyColorBottom = hsl(0,0,.85);
-    LI.roadColor = hsl(0,0,.45,.5);
-    LI.groundColor = hsl(.6,.2,.8);
-    LI.lineColor = hsl(0,.8,.4,.5);
-    LI.cloudColor = hsl(0,0,.75,.5);
+    LI.skyColorTop = hsl(.5,.2,.4);
+    LI.skyColorBottom = WHITE;
+    LI.roadColor = hsl(0,0,.5,.5);
+    LI.groundColor = hsl(.6,.3,.9);
+    LI.cloudColor = hsl(0,0,.8,.5);
     LI.horizonSpriteSize = 2;
+    LI.lineColor = hsl(0,0,1,.5);
     LI.sunHeight = .7;
     LI.hazardType = spriteList.hazard_rocks;
     LI.hazardChance = .002;
     LI.trafficDensity = 1.2;
-    LI.billboardChance = .15;
 
     LI.turnMin = .4;
     LI.bumpChance = .8;

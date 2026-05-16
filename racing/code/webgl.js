@@ -64,8 +64,8 @@ function glInit()
         'void main(){'+                  // shader entry point
         'c=v.z>0.?d:texture(s,v.xy)*d;'+ // color or texture
         'float f=gl_FragCoord.z/gl_FragCoord.w;'+ // fog depth
-        'v.w>0.?c:c=vec4(mix(c.xyz,q.xyz,clamp(f*f/1e10,0.,1.)),'+ // fog color
-            'c.a*clamp(4.-f/2e4,0.,1.));'+ // fog alpha
+        'v.w>0.?c:c=vec4(mix(c.xyz,q.xyz,clamp(f*f/1.8e10,0.,1.)),'+ // fog color (farther)
+            'c.a*clamp(4.-f/3.2e4,0.,1.));'+ // fog alpha (farther)
         //'c.w);'+                       // disable fog alpha
         //'if (c.a == 0.) discard;'+     // discard if no alpha
         '}'                              // end of shader

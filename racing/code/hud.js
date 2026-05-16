@@ -129,7 +129,7 @@ function drawHUD()
 
                 // current stage
                 const level = debug&&testLevelInfo ? testLevelInfo.level+1 :playerLevel+1;
-                drawHUDText('第'+level+'关', vec3(.99,.05), .05, undefined, 'monospace','right');
+                drawHUDText('第'+level+'关', vec3(.90,.05), .035, undefined, 'monospace','right');
             }
         }
     }
