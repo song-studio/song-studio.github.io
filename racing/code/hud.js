@@ -60,26 +60,26 @@ function drawHUD()
             }
         }
 
+        // show difficulty on title screen
+        {
+            const diffNames = ['简单','困难'];
+            const diffName = diffNames[gameDifficulty] || '简单';
+            const diffColor = gameDifficulty==0?hsl(.4,.8,.55):hsl(0,.8,.5);
+            drawHUDText('◀  '+diffName+'  ▶', vec3(.5,.85), .05, diffColor, 'arial',undefined,900,'italic',undefined,undefined,3);
+        }
+
         if (!enhancedMode || time > 5)
         {
             if (bestTime && (!enhancedMode || time%20<10))
             {
                 const timeString = formatTimeString(bestTime);
                 if (!js13kBuildLevel2)
-                    drawHUDText('最佳成绩', vec3(.5,.9), .07, undefined, 'monospace',undefined,900,undefined,undefined,undefined,3);
-                drawHUDText(timeString, vec3(.5,.97), .07, undefined, 'monospace',undefined,900,undefined,undefined,undefined,3);
+                    drawHUDText('最佳成绩', vec3(.5,.9), .07, undefined, 'arial',undefined,900,'italic',undefined,undefined,3);
+                drawHUDText(timeString, vec3(.5,.97), .07, undefined, 'arial',undefined,900,'italic',undefined,undefined,3);
             }
             else if (enhancedMode && !isTouchDevice)
             {
-                drawHUDText('点击开始', vec3(.5,.97), .07, undefined, 'monospace',undefined,900,undefined,undefined,undefined,3);
-            }
-            // show difficulty with arrows
-            if (enhancedMode && time < 5)
-            {
-                const diffNames = ['简单','普通','困难'];
-                const diffName = diffNames[gameDifficulty] || '普通';
-                const diffColor = gameDifficulty==0?hsl(.4,.8,.55):gameDifficulty==2?hsl(0,.8,.5):hsl(.13,.8,.7);
-                drawHUDText('◀  '+diffName+'  ▶', vec3(.5,.82), .045, diffColor, 'monospace',undefined,900,undefined,undefined,undefined,3);
+                drawHUDText('点击开始', vec3(.5,.97), .07, undefined, 'arial',undefined,900,'italic',undefined,undefined,3);
             }
         }
     }
