@@ -3075,7 +3075,7 @@ document.addEventListener('DOMContentLoaded',function(){
 function loadComments(append){
   if(_cmtLoading)return;
   _cmtLoading=true;
-  fetch(CMT_API+'?limit=5&offset='+(_cmtPage*5),{headers:{'X-API-Key':CMT_KEY}})
+  fetch(CMT_API+'?limit=50&offset='+(_cmtPage*50),{headers:{'X-API-Key':CMT_KEY}})
   .then(function(r){return r.json();})
   .then(function(d){
     _cmtLoading=false;
@@ -3112,7 +3112,7 @@ function loadComments(append){
       list.appendChild(el);
     });
     var moreWrap=document.getElementById('cmt-more-wrap');
-    if(moreWrap)moreWrap.style.display=comments.length>=5?'block':'none';
+    if(moreWrap)moreWrap.style.display=comments.length>=50?'block':'none';
   })
   .catch(function(){
     _cmtLoading=false;
