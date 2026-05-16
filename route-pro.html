@@ -10,104 +10,237 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>路线规划 · Song Studio</title>
 <style>
+/* ═══════════════════════════════════════════
+   Grove Route · 路线规划
+   Dark forest immersive · warm cream text
+   ═══════════════════════════════════════════ */
 :root{
-  --bg:#0f1512;
-  --panel:#151d19;
-  --panel-2:#1b2520;
-  --panel-3:#212c26;
-  --ink:#f3f0e8;
-  --text:#d6d1c5;
-  --muted:#928c80;
-  --line:rgba(243,240,232,.12);
-  --line-2:rgba(243,240,232,.2);
-  --green:#65c083;
-  --cyan:#62b6c8;
-  --amber:#dca54a;
-  --red:#e06457;
-  --blue:#7aa7ff;
-  --shadow:0 24px 80px rgba(0,0,0,.35);
-  --radius:7px;
+  --bg:#192B1B;
+  --bg-elevated:#1E3320;
+  --text:#D4CFBF;
+  --text-dim:#A8A090;
+  --text-muted:#6B6758;
+  --sub:#8A8575;
+  --ink:#EDE8DC;
+  --accent:#C8524A;
+  --accent-dim:rgba(200,82,74,.12);
+  --cool:#7BA4B8;
+  --cool-dim:rgba(123,164,184,.12);
+  --warm:#D4943A;
+  --warm-dim:rgba(212,148,58,.12);
+  --green:#6B9E6F;
+  --green-dim:rgba(107,158,111,.12);
+  --rule:rgba(212,207,191,.08);
+  --rule-strong:rgba(212,207,191,.15);
+  --surface:#1E3320;
 }
-*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+*{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{background:var(--bg)}
 body{
-  min-height:100vh;background:
-    linear-gradient(180deg,rgba(101,192,131,.08),transparent 280px),
-    radial-gradient(circle at 78% 0,rgba(98,182,200,.11),transparent 360px),
-    var(--bg);
-  color:var(--text);
-  font-family:'Jost','Noto Serif SC',-apple-system,BlinkMacSystemFont,sans-serif;
-  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  font-family:'Jost','Noto Serif SC',-apple-system,sans-serif;
+  font-weight:300;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+  line-height:1.55;font-size:17px;text-wrap:pretty;
 }
-button,input{font:inherit}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1440px,100%);margin:0 auto;padding:18px clamp(14px,2.6vw,34px) 54px}
-.hidden{display:none}
-.status{padding:80px 0;text-align:center;color:var(--muted)}
-.status.error{color:var(--red)}
-.spinner{display:inline-block;width:22px;height:22px;border:2px solid var(--line);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-footer{color:var(--muted);font-size:.82rem;text-align:center;padding-top:34px}
-footer a:hover{color:var(--ink)}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px 80px}
 
-.page-header{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:14px}
-.page-header h1{color:var(--ink);font-family:'Noto Serif SC','Playfair Display',serif;font-size:clamp(2.3rem,5vw,5.2rem);line-height:1;font-weight:700}
-.page-header .sub,.back-link{font-family:'JetBrains Mono',monospace;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}.back-link:hover{color:var(--ink)}
-.route-search{margin:14px 0;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow)}
-.route-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center}.route-row+.route-row{grid-column:1/2}.rdot{width:10px;height:10px;border-radius:50%;display:block}.rdot.from{background:var(--green)}.rdot.to{background:var(--red)}
-.route-row input{min-width:0;background:#101712;border:1px solid var(--line-2);border-radius:var(--radius);color:var(--ink);outline:none;padding:12px 13px}.route-row input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(101,192,131,.15)}
-.swap-btn{width:42px;height:42px;border:1px solid var(--line-2);border-radius:var(--radius);background:var(--panel-2);color:var(--ink);cursor:pointer;font-size:1.2rem}
-.modes{grid-column:2/3;grid-row:1/3;display:grid;grid-template-columns:1fr;gap:8px}.mode-chip{background:#101712;border:1px solid var(--line);border-radius:var(--radius);padding:11px 13px;color:var(--muted);font-weight:900;cursor:pointer}.mode-chip.sel{background:var(--green);border-color:var(--green);color:#07100b}.mode-chip:hover{color:var(--ink)}
-.go-btn{grid-column:1/3;border:0;border-radius:var(--radius);background:var(--cyan);color:#061115;padding:13px;font-weight:900;cursor:pointer}.go-btn:hover{filter:brightness(1.08)}.go-btn:disabled{opacity:.5}
-.route-search>div[style],.route-search>div:not(.route-row):not(.modes):not(.route-sug):not(.route-note){grid-column:1/3;color:var(--muted);font-size:.92rem}.route-note{grid-column:1/3;color:var(--muted);font-size:.86rem;line-height:1.65;border-left:2px solid var(--cyan);padding-left:10px}.route-note strong{color:var(--text);font-weight:900}.route-sug{grid-column:1/3;display:flex;gap:8px;flex-wrap:wrap}.rsug{border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);color:var(--muted);padding:5px 10px;font-size:.82rem;cursor:pointer}.rsug:hover{border-color:var(--green);color:var(--ink)}
-.map-wrap{height:min(68vh,760px);min-height:560px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--panel);margin-bottom:14px}#rmap{width:100%;height:100%}
-.route-summary{display:none;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);margin-bottom:14px}.rs-header{display:grid!important;grid-template-columns:auto 1fr auto;gap:14px!important;align-items:center;border-bottom:1px solid var(--line)!important;padding-bottom:14px!important;margin-bottom:14px!important}.rs-mode-icon{width:52px!important;height:52px!important;border:1px solid var(--line)!important;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:#101712}.rs-route-name{color:var(--ink)!important;font-size:1.25rem!important;font-weight:900!important}.rs-grid,.rs-mini,.weather-panels,.wpg,.feat-bar{display:grid;gap:10px}.rs-grid{grid-template-columns:repeat(4,1fr)}.rs-mini,.weather-panels{grid-template-columns:1fr 1fr}.rs-item,.wp,.ft-item,.wgi,.elev-profile{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px}.rsv{color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:1.2rem!important;font-weight:900}.rsl,.wpn,.ftl,.ep-title{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.72rem!important;letter-spacing:.06em;text-transform:uppercase}.elev-profile{margin:14px 0}
-.weather-panels{margin-bottom:14px}.wpt{color:var(--ink)!important;font-weight:900;font-size:1.1rem!important}.wph{display:flex;gap:12px;align-items:center;margin:12px 0}.big{font-size:2.8rem!important;color:var(--ink)!important;font-family:'JetBrains Mono',monospace}.wpg{grid-template-columns:repeat(3,1fr)}.wgi{box-shadow:none}.wgiv{display:block;color:var(--ink);font-weight:900}.wgil{color:var(--muted)}
-.decision-title{color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:900;margin:4px 0 10px}.feat-bar{grid-template-columns:repeat(4,1fr);margin-bottom:14px}.ft-item{display:flex;gap:10px}.fti{color:var(--cyan)}.ftv{display:block;color:var(--ink);font-weight:900}.good{color:var(--green)!important}.warn{color:var(--amber)!important}.bad{color:var(--red)!important}.ft-actions{grid-column:1/-1;display:flex;gap:10px}.ft-btn{flex:1;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel-2);color:var(--ink);padding:12px;font-weight:900;cursor:pointer}.ft-btn:hover{border-color:var(--green)}
-.route-steps{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}.steps-title{color:var(--cyan)!important;font-family:'JetBrains Mono',monospace;font-size:.8rem!important}.step-item{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.step-turn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(101,192,131,.12)!important;color:var(--green)!important}.step-dir{color:var(--muted)!important;font-size:.78rem!important}.step-road{color:var(--ink)!important;font-weight:900}.step-dist{color:var(--muted)!important;font-size:.82rem!important}
-@media(max-width:980px){.page-header,.route-search,.map-wrap,.route-summary,.weather-panels{margin-bottom:12px}.map-wrap{height:54vh;min-height:380px}.route-search{grid-template-columns:1fr}.route-row+.route-row,.modes,.go-btn,.route-sug,.route-search>div[style],.route-search>div:not(.route-row):not(.modes):not(.route-sug){grid-column:1!important;grid-row:auto}.modes{grid-template-columns:repeat(3,1fr)}.rs-grid,.feat-bar{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){body{font-size:16px}.wrap{padding-inline:12px}.page-header{grid-template-columns:1fr}.modes{grid-template-columns:1fr}.map-wrap{min-height:340px;height:50vh}.rs-header,.rs-grid,.rs-mini,.weather-panels,.feat-bar,.wpg{grid-template-columns:1fr!important}}
+/* ── Header ── */
+.page-header{
+  text-align:center;padding:36px 0 24px;
+}
+.page-header h1{
+  font-family:'Noto Serif SC','Playfair Display',Georgia,serif;
+  font-size:clamp(2em,5vw,2.6em);font-weight:700;color:var(--ink);
+  letter-spacing:.04em;line-height:1.1;
+}
+.page-header .sub{
+  font-size:.66em;color:var(--text-dim);margin-top:4px;
+  font-family:'Cormorant Garamond','Playfair Display',Georgia,serif;
+  font-style:italic;font-weight:300;letter-spacing:.05em;text-transform:none;
+}
+.back-link{
+  display:inline-block;font-size:.54em;color:var(--text-dim);text-decoration:none;
+  font-family:'JetBrains Mono',monospace;letter-spacing:.04em;
+  margin-bottom:8px;transition:color .2s;
+}
+.back-link:hover{color:var(--accent)}
+
+/* ── Route search ── */
+.route-search{
+  padding:20px;margin-bottom:2px;
+  background:var(--bg-elevated);
+  border:1px solid var(--rule-strong);
+}
+.route-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.route-row .rdot{width:8px;height:8px;flex-shrink:0;border-radius:50%}
+.route-row .rdot.from{background:var(--green)}
+.route-row .rdot.to{background:var(--accent)}
+.route-row input{
+  flex:1;border:none;border-bottom:1px solid var(--rule-strong);color:var(--text);
+  padding:10px 0;font-size:.88em;outline:none;background:none;min-width:0;
+  font-family:'Jost','Noto Serif SC',sans-serif;font-weight:300;
+}
+.route-row input:focus{border-bottom-color:var(--accent)}
+.route-row input::placeholder{color:var(--text-muted)}
+.swap-btn{
+  flex-shrink:0;width:34px;height:34px;
+  border:1px solid var(--rule-strong);background:transparent;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:1em;transition:all .3s;color:var(--text-dim);
+}
+.swap-btn:hover{transform:rotate(180deg);color:var(--accent);border-color:var(--accent)}
+.modes{display:flex;gap:1px;margin-bottom:2px;background:var(--rule-strong)}
+.mode-chip{
+  flex:1;text-align:center;padding:12px 10px;border-radius:10px;
+  background:transparent;cursor:pointer;font-size:.82em;font-weight:500;
+  transition:all .2s;letter-spacing:.02em;color:var(--text-dim);
+}
+.mode-chip:hover{color:var(--ink);background:rgba(255,255,255,.03)}
+.mode-chip.sel{color:var(--ink);font-weight:600;background:rgba(255,255,255,.05);box-shadow:inset 0 -2px 0 var(--cool)}
+.go-btn{
+  width:100%;padding:16px;border:none;background:var(--cool);color:#FFF;
+  font-size:.88em;cursor:pointer;letter-spacing:.08em;font-weight:700;
+  transition:all .2s;font-family:'Jost','Noto Serif SC',sans-serif;
+}
+.go-btn:hover{background:#8CB8C8}
+.go-btn:disabled{opacity:.3;pointer-events:none}
+.map-wrap{overflow:hidden;height:420px;margin-bottom:2px;border:1px solid var(--rule-strong)}
+@media(max-width:480px){.map-wrap{height:280px}}
+#rmap{width:100%;height:100%}
+
+/* ── Route summary ── */
+.route-summary{padding:20px;margin-bottom:2px;background:var(--bg-elevated);border:1px solid var(--rule-strong);display:none}
+.route-summary .rs-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--rule-strong);
+}
+.rs-header .rs-mode-icon{width:42px;height:42px;display:flex;align-items:center;justify-content:center;font-size:1.1em;flex-shrink:0;font-weight:700;border:2px solid var(--rule-strong);color:var(--ink)}
+.rs-header .rs-route-name{font-weight:500;font-size:.78em;color:var(--ink)}
+.rs-header .rs-route-sub{font-size:.52em;color:var(--text-dim);font-weight:300}
+.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule-strong)}
+@media(max-width:480px){.rs-grid{grid-template-columns:repeat(2,1fr)}}
+.rs-item{text-align:center;padding:14px 6px;background:var(--bg)}
+.rs-item .rsv{font-size:1em;font-weight:700;color:var(--ink)}
+.rs-item .rsl{font-size:.48em;color:var(--text-muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;font-weight:500;font-family:'JetBrains Mono',monospace}
+.rs-mini{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:1px;background:var(--rule-strong)}
+
+/* ── Route steps ── */
+.route-steps{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule-strong)}
+.route-steps .steps-title{font-size:.62em;font-weight:500;margin-bottom:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-family:'JetBrains Mono',monospace}
+.step-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.step-item:last-child{border-bottom:none}
+.step-turn{flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:.7em;font-weight:700}
+.step-turn.left,.step-turn.right,.step-turn.arrive,.step-turn.depart{background:var(--green-dim);color:var(--green)}
+.step-turn.straight{background:transparent;color:var(--text-dim)}
+.step-turn.rotary{background:var(--warm-dim);color:var(--warm)}
+.step-info{flex:1;min-width:0}
+.step-info .step-dir{font-size:.54em;color:var(--text-dim);margin-bottom:1px}
+.step-info .step-road{font-size:.62em;font-weight:500;color:var(--ink)}
+.step-info .step-dist{font-size:.52em;color:var(--text-muted);margin-top:2px}
+
+/* ── Waypoint weather panels ── */
+.weather-panels{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-bottom:2px;background:var(--rule-strong)}
+@media(max-width:500px){.weather-panels{grid-template-columns:1fr}}
+.wp{padding:18px;background:var(--bg-elevated)}
+.wp.from{border-left:3px solid var(--green)}
+.wp.to{border-left:3px solid var(--accent)}
+.wp .wpn{font-size:.50em;color:var(--accent);margin-bottom:4px;letter-spacing:.12em;font-weight:500;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+.wp .wpt{font-size:.7em;font-weight:500;margin-bottom:10px;color:var(--ink)}
+.wp .wph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.wp .wph .big{font-size:2em;font-weight:400;color:var(--ink);font-family:'Playfair Display','Noto Serif SC',Georgia,serif}
+.wp .wph .icon{font-size:1.4em}
+.wpg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule-strong)}
+.wgi{padding:8px;text-align:center;font-size:.56em;background:var(--bg)}
+.wgi .wgiv{font-weight:700;display:block;margin-bottom:2px}
+.wgi .wgil{color:var(--text-dim);font-size:.85em}
+
+/* ── Elevation profile ── */
+.elev-profile{margin:16px 0;padding:16px;background:var(--bg-elevated);border:1px solid var(--rule-strong)}
+.elev-profile .ep-title{font-size:.54em;font-weight:500;letter-spacing:.08em;color:var(--accent);margin-bottom:10px;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+
+/* ── Feature bar ── */
+.feat-bar{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:var(--rule-strong);margin-top:1px;
+}
+@media(max-width:480px){.feat-bar{grid-template-columns:1fr}}
+.ft-item{padding:14px 16px;background:var(--bg-elevated);display:flex;align-items:center;gap:10px}
+.ft-item .fti{font-size:1.1em;flex-shrink:0}
+.ft-item .ftt{flex:1;min-width:0}
+.ft-item .ftl{font-size:.52em;color:var(--text-muted);display:block;text-transform:uppercase;letter-spacing:.08em;font-family:'JetBrains Mono',monospace}
+.ft-item .ftv{font-size:.68em;font-weight:500;color:var(--ink)}
+.ftv.good{color:var(--green)}.ftv.warn{color:var(--warm)}.ftv.bad{color:var(--accent)}
+.ft-actions{
+  grid-column:1/-1;display:flex;gap:1px;background:var(--rule-strong);
+}
+.ft-btn{
+  flex:1;padding:12px;text-align:center;cursor:pointer;
+  background:var(--bg-elevated);border:none;color:var(--text-dim);
+  font-size:.62em;transition:all .2s;font-family:'Jost','Noto Serif SC',sans-serif;font-weight:300;
+}
+.ft-btn:hover{background:var(--accent-dim);color:var(--accent)}
+
+/* ── Preset routes ── */
+.route-sug{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.rsug{
+  font-size:.55em;padding:4px 10px;background:none;cursor:pointer;
+  color:var(--text-dim);border:1px solid var(--rule-strong);font-weight:300;
+  transition:all .2s;
+}
+.rsug:hover{background:var(--accent);color:#FFF;border-color:var(--accent)}
+
+.mode-chip i,.rs-mode-icon i,.step-turn i{font-size:inherit}
+.ft-item .fti i{font-size:1.05em;color:var(--text-dim)}
+footer{
+  text-align:center;padding:48px 0 0;color:var(--text-muted);
+  font-size:.54em;letter-spacing:.04em;font-weight:300;
+}
+footer a{color:var(--text-dim);text-decoration:none}
+footer a:hover{color:var(--accent)}
+.hidden{display:none}
 </style>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
-
 <body>
 <div class="wrap" id="app">
+
+
+
 <div class="tab-panel" id="tab-route">
 <div class="page-header">
-  <div>
-    <a href="weather-pro.html" class="back-link">← 气象查询</a>
-    <h1>路线规划</h1>
-  </div>
-  <div class="sub">Cycling · Hiking · Outdoor</div>
+  <a href="weather-pro.html" class="back-link">← 气象查询</a>
+  <h1>路线规划</h1>
+  <div class="sub">Route Planner</div>
+  <div style="font-size:.54em;color:var(--text-muted);margin-top:8px;font-family:'JetBrains Mono',monospace;letter-spacing:.08em">驾车 · 骑行 · 步行</div>
 </div>
 
 <div class="route-search">
   <div class="route-row">
     <span class="rdot from"></span>
-    <input type="text" id="fromInput" placeholder="起点，例如 贵阳北站" autocomplete="off">
-    <button class="swap-btn" onclick="swap()" title="交换起终点">⇅</button>
+    <input type="text" id="fromInput" placeholder="起点… 例：贵阳" autocomplete="off">
+    <button class="swap-btn" onclick="swap()" title="交换起终点"><i class="fa-solid fa-arrow-up-arrow-down"></i></button>
   </div>
   <div class="route-row">
     <span class="rdot to"></span>
-    <input type="text" id="toInput" placeholder="终点，例如 黄果树瀑布" autocomplete="off">
+    <input type="text" id="toInput" placeholder="终点… 例：六盘水" autocomplete="off">
   </div>
   <div class="modes">
-    <div class="mode-chip sel" data-mode="cycling" onclick="setMode('cycling')"><i class="fa-solid fa-bicycle"></i> 骑行</div>
-    <div class="mode-chip" data-mode="walking" onclick="setMode('walking')"><i class="fa-solid fa-person-walking"></i> 徒步</div>
-    <div class="mode-chip" data-mode="driving" onclick="setMode('driving')"><i class="fa-solid fa-car"></i> 转场</div>
+    <div class="mode-chip sel" data-mode="driving" onclick="setMode('driving')"><i class="fa-solid fa-car"></i> 驾车</div>
+    <div class="mode-chip" data-mode="cycling" onclick="setMode('cycling')"><i class="fa-solid fa-bicycle"></i> 骑行</div>
+    <div class="mode-chip" data-mode="walking" onclick="setMode('walking')"><i class="fa-solid fa-person-walking"></i> 步行</div>
   </div>
   <button class="go-btn" id="goBtn" onclick="plan()">开始规划</button>
-  <div class="route-note"><strong>天气看风险，路线看强度。</strong> 这里骑行 / 徒步优先：高德路线 + Open-Meteo 海拔与天气，重点判断爬升下降、路线强度、风向、日落到达、起终点天气和 GPX 导出。驾车仅作转场参考。</div>
+  <div style="text-align:center;font-size:.66em;color:var(--text-muted);margin:6px 0 12px;font-weight:300">支持乡镇·村庄·景区·小区等小地名输入，高德地图精准编码</div>
   <div class="route-sug">
-    <span class="rsug" onclick="preset('北京奥林匹克森林公园','颐和园','cycling')">奥森 → 颐和园</span>
-    <span class="rsug" onclick="preset('西湖','九溪烟树','walking')">西湖 → 九溪</span>
-    <span class="rsug" onclick="preset('大理古城','喜洲古镇','cycling')">大理古城 → 喜洲</span>
-    <span class="rsug" onclick="preset('洱海公园','双廊古镇','cycling')">洱海公园 → 双廊</span>
-    <span class="rsug" onclick="preset('阳朔西街','十里画廊','cycling')">阳朔 → 十里画廊</span>
-    <span class="rsug" onclick="preset('武功山游客中心','金顶','walking')">武功山 → 金顶</span>
-    <span class="rsug" onclick="preset('黄果树瀑布','天星桥景区','walking')">黄果树 → 天星桥</span>
-    <span class="rsug" onclick="preset('成都市人民公园','青城山','cycling')">成都 → 青城山</span>
+    <span class="rsug" onclick="preset('北京','上海','driving')">北京 → 上海</span>
+    <span class="rsug" onclick="preset('北京','天津','cycling')">北京 → 天津</span>
+    <span class="rsug" onclick="preset('成都','重庆','driving')">成都 → 重庆</span>
+    <span class="rsug" onclick="preset('贵阳','遵义','cycling')">贵阳 → 遵义</span>
+    <span class="rsug" onclick="preset('昆明','大理','driving')">昆明 → 大理</span>
+    <span class="rsug" onclick="preset('六盘水','贵阳','driving')">六盘水 → 贵阳</span>
+    <span class="rsug" onclick="preset('凤凰','张家界','driving')">凤凰 → 张家界</span>
+    <span class="rsug" onclick="preset('黄果树','贵阳','driving')">黄果树 → 贵阳</span>
   </div>
 </div>
 
@@ -206,7 +339,7 @@ async function geocode(q){
 
 
 // ── Route state ─────────────────────────────────────────
-let RSTATE={mode:'cycling',fromGeo:null,toGeo:null,route:null,rmap:null,markers:[],routeLine:null,_hikingOn:false,mapStyle:'amap'};
+let RSTATE={mode:'driving',fromGeo:null,toGeo:null,route:null,rmap:null,markers:[],routeLine:null,_hikingOn:false,mapStyle:'amap'};
 
 
 
@@ -362,7 +495,7 @@ async function renderRouteAll(){
   const dur=Math.round(RSTATE.route.duration/60);
   const hrs=Math.floor(dur/60),mins=dur%60;
   const durStr=hrs>0?`${hrs}h${mins}m`:`${mins}分钟`;
-  const modeName={driving:'转场驾车',cycling:'骑行',walking:'徒步'};
+  const modeName={driving:'驾车',cycling:'骑行',walking:'步行'};
   const speed=(RSTATE.route.distance/1000)/(RSTATE.route.duration/3600);
 
   // Elevation: sample route coords, convert to WGS-84 for Open-Meteo API
@@ -400,7 +533,7 @@ async function renderRouteAll(){
 	RSTATE._elevGain = elevationGain !== '...' ? elevationGain : 0;
 
   const modeIcons={driving:'<i class="fa-solid fa-car"></i>',cycling:'<i class="fa-solid fa-bicycle"></i>',walking:'<i class="fa-solid fa-person-walking"></i>'};
-  const modeColors={driving:'var(--green)',cycling:'var(--accent)',walking:'var(--cool)'};
+  const modeColors={driving:'#15803D',cycling:'#E03C31',walking:'#2563EB'};
   document.getElementById('routeSummary').style.display='block';
   const mc=modeColors[RSTATE.mode];
   const mi=modeIcons[RSTATE.mode];
@@ -415,8 +548,8 @@ async function renderRouteAll(){
     <div class="rs-header">
       <div class="rs-mode-icon" style="color:${mc}">${mi}</div>
       <div>
-        <div class="rs-route-name">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</div>
-        <div style="font-size:.6em;color:var(--sub)">${modeName[RSTATE.mode]} · ${elevInfo} · 起终点天气已联动</div>
+        <div class="rs-route-name">${modeName[RSTATE.mode]}路线</div>
+        <div style="font-size:.6em;color:var(--sub)">${RSTATE.fromGeo.name} → ${RSTATE.toGeo.name}</div>
       </div>
       <div style="text-align:right">
         <div style="font-size:.78em;font-weight:700;color:${mc}">${dist} km</div>
@@ -441,9 +574,9 @@ async function renderRouteAll(){
       </div>
     </div>
     <div style="margin-top:10px;display:flex;gap:6px;font-size:.58em;font-family:-apple-system,'PingFang SC',sans-serif">
-      <span data-map-btn="amap" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.62em;background:${RSTATE.mapStyle==='amap'?'var(--accent)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">标准</span>
-      <span data-map-btn="osm" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.62em;background:${RSTATE.mapStyle==='osm'?'var(--cool)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">OSM</span>
-      <span data-map-btn="hiking" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.62em;background:${RSTATE._hikingOn?'var(--accent)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">徒步道</span>
+      <span data-map-btn="amap" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.66em;background:${RSTATE.mapStyle==='amap'?'var(--accent)':'none'};color:${RSTATE.mapStyle==='amap'?'#fff':'var(--sub)'}" onclick="switchMapStyle('amap')">标准</span>
+      <span data-map-btn="osm" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.66em;background:${RSTATE.mapStyle==='osm'?'var(--cool)':'none'};color:${RSTATE.mapStyle==='osm'?'#fff':'var(--sub)'}" onclick="switchMapStyle('osm')">OSM</span>
+      <span data-map-btn="hiking" style="cursor:pointer;padding:6px 14px;border:1px solid var(--rule);font-size:.66em;background:${RSTATE._hikingOn?'var(--accent)':'none'};color:${RSTATE._hikingOn?'#fff':'var(--sub)'}" onclick="toggleHiking()">徒步道</span>
     </div>
     ${buildRouteSteps()}
   `;
@@ -674,7 +807,7 @@ function calcDifficulty(){
 
 // ── Feature: Wind analysis (cycling) ──────────────────
 function analyzeWind(){
-  if(RSTATE.mode!=='cycling'&&RSTATE.mode!=='walking')return null;
+  if(RSTATE.mode!=='cycling')return null;
   if(!RSTATE.route||!RSTATE.fromGeo||!RSTATE.toGeo)return null;
   const toW=RSTATE.toW;
   if(!toW||!toW.current)return null;
@@ -695,7 +828,7 @@ function analyzeWind(){
   else if(aDiff>150){type='顺风';color='good';}
   else if(aDiff>60&&aDiff<120){type='侧风';color='warn';}
   else{type='侧顺风';color='good';}
-  return{type,color,label:type+(RSTATE.mode==='walking'?'徒步':'骑行'),windDir:wDir,windSpeed:wSpd,bearing:Math.round(bearing),angleDiff:Math.round(aDiff)};
+  return{type,color,label:type+'骑行',windDir:wDir,windSpeed:wSpd,bearing:Math.round(bearing),angleDiff:Math.round(aDiff)};
 }
 
 // ── Feature: GPX export ────────────────────────────────
@@ -738,7 +871,7 @@ function renderFeatBar(){
   if(sunset){
     items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-moon"></i></span><div class="ftt"><span class="ftl">日落前能到吗</span><span class="ftv '+sunset.status+'">'+sunset.label+' · '+sunset.detail+'</span></div></div>';
   }
-  items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-gauge-high"></i></span><div class="ftt"><span class="ftl">'+(RSTATE.mode==='cycling'?'骑行强度':RSTATE.mode==='walking'?'徒步强度':'路线难度')+'</span><span class="ftv '+diff.color+'">'+diff.label+' · '+diff.score+'/5</span></div></div>';
+  items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-gauge-high"></i></span><div class="ftt"><span class="ftl">路线难度</span><span class="ftv '+diff.color+'">'+diff.label+' · '+diff.score+'/5</span></div></div>';
   var depart=bestDeparture();
   if(depart){
     var dColor=depart.rainProb<20?'good':depart.rainProb<50?'warn':'bad';
@@ -753,7 +886,7 @@ function renderFeatBar(){
       items+='<div class="ft-item"><span class="fti"><i class="fa-solid fa-'+wc2.i+'"></i></span><div class="ftt"><span class="ftl">目的地天气</span><span class="ftv">'+wc2.l+' · '+toW.current.temperature_2m.toFixed(0)+'°</span></div></div>';
     }
   }
-  var html='<div class="decision-title">Route Decision · 路线决策</div><div class="feat-bar">'+items+'<div class="ft-actions"><button class="ft-btn" onclick="downloadGPX()"><i class="fa-solid fa-download"></i> 导出 GPX</button><button class="ft-btn" onclick="shareRoute()"><i class="fa-solid fa-share-nodes"></i> 分享路线</button></div></div>';
+  var html='<div class="feat-bar">'+items+'<div class="ft-actions"><button class="ft-btn" onclick="downloadGPX()"><i class="fa-solid fa-download"></i> 导出 GPX</button><button class="ft-btn" onclick="shareRoute()"><i class="fa-solid fa-share-nodes"></i> 分享路线</button></div></div>';
   var summary=document.getElementById('routeSummary');
   var bar=document.getElementById('featBar');
   if(!bar){
@@ -775,7 +908,6 @@ initRMap();
 (function(){
   const p=new URLSearchParams(location.search);
   const f=p.get('from'),t=p.get('to'),m=p.get('mode');
-  if(!f&&!t){document.getElementById('fromInput').value='北京奥林匹克森林公园';document.getElementById('toInput').value='颐和园';setMode('cycling');}
   if(f&&t){
     document.getElementById('fromInput').value=f;
     document.getElementById('toInput').value=t;
