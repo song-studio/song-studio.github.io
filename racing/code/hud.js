@@ -60,14 +60,14 @@ function drawHUD()
             }
         }
 
-        // show difficulty on title screen
+        // show difficulty on title screen - 两个大字直接点选
         {
-            const diffNames = ['简单','困难'];
-            const diffName = diffNames[gameDifficulty] || '简单';
-            const diffColor = gameDifficulty==0?hsl(.35,1,.6):hsl(0,1,.45);
-            drawHUDText('「'+diffName+'」', vec3(.5,.78), .07, diffColor, 'arial',undefined,900,'italic',undefined,.03,3);
-            const hint = isTouchDevice ? '◀ 左侧切换    右侧开始 ▶' : '◀  左右键切换   空格开始  ▶';
-            drawHUDText(hint, vec3(.5,.88), .032, hsl(0,0,.7), 'arial',undefined,400,'italic',undefined,undefined,0);
+            const easyColor = gameDifficulty==0?hsl(.35,1,.6):hsl(0,0,.4);
+            const hardColor = gameDifficulty==1?hsl(0,1,.5):hsl(0,0,.4);
+            drawHUDText('简单', vec3(.25,.82), .07, easyColor, 'arial',undefined,900,'italic',undefined,.03,3);
+            drawHUDText('困难', vec3(.75,.82), .07, hardColor, 'arial',undefined,900,'italic',undefined,.03,3);
+            const hint = isTouchDevice ? '点击上方选择难度' : '点击选择难度，空格开始';
+            drawHUDText(hint, vec3(.5,.92), .03, hsl(0,0,.6), 'arial',undefined,400,'italic',undefined,undefined,0);
         }
 
         if (!enhancedMode || time > 5)

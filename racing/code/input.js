@@ -290,9 +290,9 @@ function handleTouchGamepad(e)
     }
 
     // get center of left and right sides (match render positions)
-    const padX = touchGamepadSize * 1.7;
-    const padY = touchGamepadSize * 1.3;
-    const gs = touchGamepadSize * 1.15; // match btnSize in render
+    const padX = touchGamepadSize * 1.8;
+    const padY = touchGamepadSize * 1.4;
+    const gs = touchGamepadSize * 1.8; // match btnSize in render
     const stickCenter = vec3(padX, mainCanvasSize.y-padY);
     const buttonCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
     const startCenter = mainCanvasSize.scale(.5);
@@ -380,9 +380,9 @@ function touchGamepadRender()
     context.textBaseline = 'middle';
 
     // move buttons inward from edges (avoid notch, more comfortable reach)
-    const padX = touchGamepadSize * 1.7;
-    const padY = touchGamepadSize * 1.3;
-    const btnSize = touchGamepadSize * 1.15;
+    const padX = touchGamepadSize * 1.8;
+    const padY = touchGamepadSize * 1.4;
+    const btnSize = touchGamepadSize * 1.8;
 
     // draw left analog stick
     const leftCenter = vec3(padX, mainCanvasSize.y-padY);

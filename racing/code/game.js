@@ -135,18 +135,14 @@ function gameUpdateInternal()
 {
     if (titleScreenMode)
     {
-        // difficulty switching
+        // select difficulty & start
         if (keyWasPressed('ArrowLeft') || keyWasPressed('ArrowRight'))
-            gameDifficulty = gameDifficulty ? 0 : 1;
-        if (isUsingGamepad && (gamepadWasPressed(14)||gamepadWasPressed(15)))
-            gameDifficulty = gameDifficulty ? 0 : 1;
-        // touch: tap left side to switch difficulty
-        if (isTouchDevice && mouseWasPressed(0) && mousePos.x < .4)
-            gameDifficulty = gameDifficulty ? 0 : 1;
-        // start game: Space, gamepad gas, or tap center/right
-        const touchStart = isTouchDevice && mouseWasPressed(0) && mousePos.x >= .4;
-        if (mouseWasPressed(0) && !isTouchDevice || keyWasPressed('Space') || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)) || touchStart)
+            gameDifficulty = keyWasPressed('ArrowLeft') ? 0 : 1;
+        if (mouseWasPressed(0) || keyWasPressed('Space') || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)))
         {
+            // tap left = easy, right = hard
+            if (mouseWasPressed(0))
+                gameDifficulty = mousePos.x < .5 ? 0 : 1;
             titleScreenMode = 0;
             gameStart();
         }
@@ -266,7 +262,7 @@ function gameUpdate(frameTimeMS=0)
             const correctedWidth = innerAspect > maxAspect ? innerHeight * maxAspect :
                     innerAspect < minAspect ? innerHeight * minAspect : innerWidth;
             // use device pixel ratio for sharper rendering on mobile
-            const dpr = devicePixelRatio || 1;
+            const dpr = min((devicePixelRatio || 1), 2); // cap for mobile performance
             if (pixelate)
             {
                 const w = correctedWidth / pixelateScale | 0;
