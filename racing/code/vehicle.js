@@ -340,9 +340,9 @@ class PlayerVehicle extends Vehicle
             // checkpoint
             ++playerLevel;
             nextCheckpointDistance += checkpointDistance;
-            checkpointTimeLeft += extraCheckpointTime;
+            checkpointTimeLeft += extraCheckpointTime * difficultyTimeMult[gameDifficulty];
             if (enhancedMode)
-                checkpointTimeLeft = min(60,checkpointTimeLeft);
+                checkpointTimeLeft = min(90,checkpointTimeLeft);
                 
             if (playerLevel >= levelGoal && !gameOverTimer.isSet())
             {

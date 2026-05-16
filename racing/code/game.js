@@ -95,11 +95,15 @@ function gameInit()
 
 function gameStart()
 {
-    time = frame = frameTimeLastMS = averageFPS = frameTimeBufferMS = 
+    // apply selected difficulty
+    if (window._selectedDifficulty !== undefined)
+        gameDifficulty = window._selectedDifficulty;
+
+    time = frame = frameTimeLastMS = averageFPS = frameTimeBufferMS =
         cameraOffset = checkpointTimeLeft = raceTime = playerLevel = playerWin = playerNewDistanceRecord = playerNewRecord = freeRide = checkpointSoundCount = 0;
     startCountdown = quickStart || testLevel ? 0 : 4;
     worldHeading = titleScreenMode ? rand(7) : .8;
-    checkpointTimeLeft = startCheckpointTime;
+    checkpointTimeLeft = startCheckpointTime * difficultyTimeMult[gameDifficulty];
     nextCheckpointDistance = checkpointDistance;
     startCountdownTimer = new Timer;
     gameOverTimer = new Timer;

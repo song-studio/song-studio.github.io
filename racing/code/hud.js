@@ -73,6 +73,13 @@ function drawHUD()
             {
                 drawHUDText('点击开始', vec3(.5,.97), .07, undefined, 'monospace',undefined,900,undefined,undefined,undefined,3);
             }
+            // show difficulty
+            if (enhancedMode && time < 5)
+            {
+                const diffNames = ['简单','普通','困难'];
+                const diffName = diffNames[gameDifficulty] || '普通';
+                drawHUDText('难度：'+diffName, vec3(.5,.82), .045, hsl(.13,.8,.7), 'monospace',undefined,900,undefined,undefined,undefined,3);
+            }
         }
     }
     else if (startCountdownTimer.active() || startCountdown)
