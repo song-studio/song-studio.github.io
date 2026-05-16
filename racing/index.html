@@ -29,34 +29,6 @@ html, body {
 
 </head><body>
 <script>
-// CSS transform rotation for phones that can't rotate natively (Huawei/HarmonyOS)
-(function() {
-  function applyRotation() {
-    var html = document.documentElement;
-    var isPortrait = window.innerWidth < window.innerHeight;
-    if (isPortrait) {
-      // rotate around center — simplest and most reliable approach
-      html.style.cssText =
-        'position:absolute;top:0;left:0;' +
-        'width:' + window.innerHeight + 'px;' +
-        'height:' + window.innerWidth + 'px;' +
-        'transform:rotate(90deg);' +
-        'transform-origin:' + (window.innerWidth/2) + 'px ' + (window.innerWidth/2) + 'px;' +
-        'overflow:hidden;';
-    } else {
-      html.style.cssText = '';
-    }
-    // scroll trick for iOS Safari toolbar collapse
-    window.scrollTo(0, 1);
-  }
-  applyRotation();
-  window.addEventListener('orientationchange', function() {
-    setTimeout(applyRotation, 150);
-  });
-  window.addEventListener('resize', applyRotation);
-})();
-</script>
-<script>
 // difficulty system - must be defined before game scripts load
 var gameDifficulty = 0; // 0=easy 1=hard
 var difficultyTimeMult = [1.6, .65]; // time multiplier per difficulty
