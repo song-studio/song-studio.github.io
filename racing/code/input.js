@@ -258,6 +258,7 @@ function touchInputInit()
 
 // touch gamepad internal variables
 let touchGamepadTimer = new Timer, touchGamepadButtons, touchGamepadStick, touchGamepadSize;
+let touchGamepadPadXMult = 1.8, touchGamepadPadYMult = 1.4, touchGamepadGSMult = 1.8;
 
 // special handling for virtual gamepad mode
 function handleTouchGamepad(e)
@@ -290,9 +291,9 @@ function handleTouchGamepad(e)
     }
 
     // get center of left and right sides (match render positions)
-    const padX = touchGamepadSize * 1.8;
-    const padY = touchGamepadSize * 1.4;
-    const gs = touchGamepadSize * 1.8; // match btnSize in render
+    const padX = touchGamepadSize * touchGamepadPadXMult;
+    const padY = touchGamepadSize * touchGamepadPadYMult;
+    const gs = touchGamepadSize * touchGamepadGSMult; // match btnSize in render
     const stickCenter = vec3(padX, mainCanvasSize.y-padY);
     const buttonCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
     const startCenter = mainCanvasSize.scale(.5);
@@ -339,8 +340,14 @@ function touchGamepadUpdate()
     if (!touchGamepadEnable)
         return;
 
-    // adjust for thin canvas
-    touchGamepadSize = clamp(mainCanvasSize.y/8, 99, mainCanvasSize.x/2);
+    // adjust size for orientation — prevent button overlap in portrait
+    const portrait = mainCanvasSize.x < mainCanvasSize.y;
+    const maxSize = portrait ? mainCanvasSize.x / 4.4 : mainCanvasSize.x / 2;
+    touchGamepadSize = clamp(mainCanvasSize.y/8, 99, maxSize);
+    // smaller multipliers in portrait so buttons fit side by side
+    touchGamepadPadXMult = portrait ? 1.2 : 1.8;
+    touchGamepadPadYMult = portrait ? 1.2 : 1.4;
+    touchGamepadGSMult = portrait ? 1.3 : 1.8;
 
     ASSERT(touchGamepadButtons, 'set touchGamepadEnable before calling init!');
     if (!touchGamepadTimer.isSet())
@@ -380,9 +387,9 @@ function touchGamepadRender()
     context.textBaseline = 'middle';
 
     // move buttons inward from edges (avoid notch, more comfortable reach)
-    const padX = touchGamepadSize * 1.8;
-    const padY = touchGamepadSize * 1.4;
-    const btnSize = touchGamepadSize * 1.8;
+    const padX = touchGamepadSize * touchGamepadPadXMult;
+    const padY = touchGamepadSize * touchGamepadPadYMult;
+    const btnSize = touchGamepadSize * touchGamepadGSMult;
 
     // draw left analog stick
     const leftCenter = vec3(padX, mainCanvasSize.y-padY);
