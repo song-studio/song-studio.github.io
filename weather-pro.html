@@ -9,139 +9,257 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>气象查询 · Song Studio</title>
 <style>
+/* ═══════════════════════════════════════════
+   Grove Weather · 山野气象
+   Dark forest immersive · warm cream text
+   Inspired by nature, built for outdoors
+   ═══════════════════════════════════════════ */
 :root{
-  --bg:#0f1512;
-  --panel:#151d19;
-  --panel-2:#1b2520;
-  --panel-3:#212c26;
-  --ink:#f3f0e8;
-  --text:#d6d1c5;
-  --muted:#928c80;
-  --line:rgba(243,240,232,.12);
-  --line-2:rgba(243,240,232,.2);
-  --green:#65c083;
-  --cyan:#62b6c8;
-  --amber:#dca54a;
-  --red:#e06457;
-  --blue:#7aa7ff;
-  --shadow:0 24px 80px rgba(0,0,0,.35);
-  --radius:7px;
+  --bg:#192B1B;
+  --bg-elevated:#1E3320;
+  --text:#D4CFBF;
+  --text-dim:#A8A090;
+  --text-muted:#6B6758;
+  --ink:#EDE8DC;
+  --accent:#C8524A;
+  --accent-dim:rgba(200,82,74,.12);
+  --accent-glow:rgba(200,82,74,.25);
+  --cool:#7BA4B8;
+  --cool-dim:rgba(123,164,184,.12);
+  --warm:#D4943A;
+  --warm-dim:rgba(212,148,58,.12);
+  --green:#6B9E6F;
+  --green-dim:rgba(107,158,111,.12);
+  --rule:rgba(212,207,191,.08);
+  --rule-strong:rgba(212,207,191,.15);
+  --surface:#1E3320;
 }
-*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+*{margin:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{background:var(--bg)}
 body{
-  min-height:100vh;background:
-    linear-gradient(180deg,rgba(101,192,131,.08),transparent 280px),
-    radial-gradient(circle at 78% 0,rgba(98,182,200,.11),transparent 360px),
-    var(--bg);
-  color:var(--text);
-  font-family:'Jost','Noto Serif SC',-apple-system,BlinkMacSystemFont,sans-serif;
-  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  font-family:'Jost','Noto Serif SC',-apple-system,sans-serif;
+  font-weight:300;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;-webkit-font-smoothing:antialiased;
+  line-height:1.55;font-size:17px;text-wrap:pretty;
+  transition:background .8s;
 }
-button,input{font:inherit}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1440px,100%);margin:0 auto;padding:18px clamp(14px,2.6vw,34px) 54px}
-.hidden{display:none}
-.status{padding:80px 0;text-align:center;color:var(--muted)}
-.status.error{color:var(--red)}
-.spinner{display:inline-block;width:22px;height:22px;border:2px solid var(--line);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-footer{color:var(--muted);font-size:.82rem;text-align:center;padding-top:34px}
-footer a:hover{color:var(--ink)}
+body.warm-bg{background:color-mix(in srgb,var(--bg) 92%,#c4733e)}body.cool-bg{background:color-mix(in srgb,var(--bg) 92%,#7BA4B8)}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px 80px}
 
-.tab-panel{display:block}
-.search-bar{
-  position:sticky;top:0;z-index:30;
-  display:grid;grid-template-columns:1fr;gap:10px;
-  padding:12px 0 16px;margin-bottom:14px;
-  background:linear-gradient(180deg,var(--bg) 70%,rgba(15,21,18,.86));
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(16px);
+/* ── Search ── */
+.search-bar{padding:28px 0 8px}
+.search-box{
+  display:flex;gap:0;align-items:center;
+  border-bottom:1px solid var(--rule-strong);padding:0 0 8px;
+  transition:border-color .3s;
 }
-.search-bar::before{
-  content:'Song Studio / Weather Pro';
-  color:var(--green);font-family:'JetBrains Mono',monospace;font-size:.78rem;
-  letter-spacing:.08em;text-transform:uppercase;font-weight:800;
-}
-.search-box{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;max-width:920px}
+.search-box:focus-within{border-bottom-color:var(--accent)}
 .search-box input{
-  min-width:0;background:var(--panel);border:1px solid var(--line-2);border-radius:var(--radius);
-  color:var(--ink);outline:none;padding:13px 15px;font-size:1.02rem;
+  flex:1;border:none;outline:none;font-size:1em;
+  background:none;color:var(--text);padding:8px 0;min-width:0;
+  font-family:'Jost','Noto Serif SC',sans-serif;font-weight:300;
 }
-.search-box input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(101,192,131,.15)}
-.search-box input::placeholder{color:var(--muted)}
+.search-box input::placeholder{color:var(--text-muted)}
 .search-box button{
-  border:0;border-radius:var(--radius);background:var(--green);color:#07100b;
-  padding:13px 22px;font-weight:900;cursor:pointer;
+  flex-shrink:0;background:var(--accent);color:#FFF;
+  border:none;padding:8px 20px;font-size:.7em;cursor:pointer;
+  letter-spacing:.06em;font-weight:700;
+  font-family:'Jost','Noto Serif SC',sans-serif;
+  transition:all .2s;
 }
-.search-hint{display:none}
-.tool-note{
-  max-width:920px;color:var(--muted);font-size:.82rem;line-height:1.65;
-  border-left:2px solid var(--green);padding-left:10px;
-}
-.tool-note strong{color:var(--text);font-weight:900}
-.suggestions{display:flex;gap:8px;flex-wrap:wrap}
+.search-box button:hover{background:#E06A5E}
+.search-hint{font-size:.66em;color:var(--text-muted);margin-top:6px}
+.suggestions{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
 .sug-chip{
-  border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);
-  color:var(--muted);padding:5px 10px;font-size:.82rem;cursor:pointer;
+  font-size:.66em;padding:4px 12px;background:none;cursor:pointer;
+  color:var(--text-dim);border:1px solid var(--rule-strong);
+  font-weight:300;transition:all .2s;
 }
-.sug-chip:hover{border-color:var(--green);color:var(--ink)}
-#main{min-height:60vh}
-.site-header{
-  display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:22px;
-  padding:18px 0 14px;border-bottom:1px solid var(--line);
+.sug-chip:hover{background:var(--accent);color:#FFF;border-color:var(--accent)}
+
+/* ── Status ── */
+.status{text-align:center;padding:120px 0;color:var(--text-muted)}
+.status.error{color:var(--accent)}
+.spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--rule-strong);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ═══ SITE HEADER ═══ */
+.site-header{padding:8px 0 0}
+.site-header h1{font-size:.9em;font-weight:500;letter-spacing:.06em;color:var(--ink);text-transform:uppercase;font-family:'Jost','Noto Serif SC',sans-serif}
+.site-header .loc{font-size:.54em;color:var(--text-muted);margin-top:4px;font-family:'JetBrains Mono',monospace}
+.src-bar{
+  display:flex;gap:16px;flex-wrap:wrap;
+  padding:6px 0 16px;font-size:.52em;color:var(--text-muted);
+  letter-spacing:.06em;font-family:'JetBrains Mono',monospace;
 }
-.site-header h1{
-  color:var(--ink);font-family:'Noto Serif SC','Playfair Display',serif;
-  font-size:clamp(2.2rem,4.8vw,5.6rem);line-height:1;font-weight:700;letter-spacing:0;
-}
-.site-header .loc{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.78rem;text-align:right;white-space:nowrap}
+.src-bar .dot{width:5px;height:5px;display:inline-block;margin-right:5px;vertical-align:middle;border-radius:50%}
+.dot.om{background:var(--accent)}.dot.wy{background:var(--cool)}.dot.mb{background:var(--green)}
+
+/* ═══ HERO · Massive temperature ═══ */
 .hero-block{
-  display:grid;grid-template-columns:minmax(300px,.9fr) minmax(320px,1.1fr);
-  gap:18px;margin:16px 0;
+  text-align:center;padding:36px 0 44px;
+  position:relative;
 }
-.hero-current,.hero-readout,.ss-item,.oc,.di,.hc,.day-card,.windy-box,.ext-link{
-  background:linear-gradient(180deg,var(--panel-2),var(--panel));
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+.hero-block .hero-loc{
+  font-size:.62em;color:var(--accent);font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  font-family:'Jost','Noto Serif SC',sans-serif;
+  margin-bottom:12px;
 }
-.hero-current{padding:22px}
-.hero-readout{padding:22px;display:flex;flex-direction:column;justify-content:center}
-.hero-loc{font-family:'JetBrains Mono',monospace;color:var(--green);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
-.hero-temp{
-  display:block;color:var(--ink);font-family:'JetBrains Mono',monospace;
-  font-size:clamp(4.8rem,10vw,9rem);font-weight:800;letter-spacing:-.06em;line-height:.9;cursor:pointer;
+.hero-block .hero-temp{
+  font-size:clamp(5.5em,13vw,8em);font-weight:400;line-height:.85;
+  letter-spacing:-.04em;color:var(--ink);
+  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
+  display:block;cursor:pointer;transition:color .3s;
 }
-.hero-temp small{font-size:.12em!important;color:var(--muted)!important;letter-spacing:.08em!important}
-.hero-label{color:var(--ink);font-size:1.45rem;font-weight:900;margin-bottom:14px}
-.hero-label em{font-style:normal;color:var(--red)}
-.hero-summary{max-width:62ch;color:var(--text);font-size:1rem;line-height:1.85;border-left:2px solid var(--green);padding-left:15px}
-.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0 24px}
-.ss-item{padding:16px}.ssv{display:block;color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:900}.ssv small{font-size:.75rem;color:var(--muted);margin-left:4px}.ssl{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.72rem;text-transform:uppercase}
-.sec-title{display:flex;gap:12px;align-items:center;margin:28px 0 12px;color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800}.sec-title::after{content:'';height:1px;background:var(--line);flex:1}
-.risk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:8px}
-.risk-cell{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-.risk-cell span{display:block;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
-.risk-cell strong{display:block;color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:1.55rem;margin:8px 0 3px}
-.risk-cell small{color:var(--muted)}
-.risk-cell .good{color:var(--green)}.risk-cell .warn{color:var(--amber)}.risk-cell .bad{color:var(--red)}
-.outdoor{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.oc{padding:16px;min-height:138px;display:flex;flex-direction:column;justify-content:space-between}
-.oc.feature{grid-column:span 2;border-color:rgba(101,192,131,.38);background:linear-gradient(180deg,rgba(101,192,131,.16),var(--panel))}
-.oh{color:var(--ink);font-weight:900;font-size:1rem}.ov{color:var(--ink);font-weight:900;font-size:1.05rem}.od{color:var(--muted);font-size:.88rem;line-height:1.5}
-.oe{display:inline-flex;border-radius:999px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:900}.oe.good{color:var(--green);background:rgba(101,192,131,.12)}.oe.warn{color:var(--amber);background:rgba(220,165,74,.13)}.oe.bad{color:var(--red);background:rgba(224,100,87,.13)}
-.days,.hs,.ext-links{display:flex;gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.day-card{flex:1 0 128px;padding:14px;cursor:pointer;box-shadow:none}.day-card.active{border-color:var(--green);background:rgba(101,192,131,.12)}
-.dow{color:var(--ink);font-weight:900}.date,.tag{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.72rem}.icon{display:block;color:var(--cyan);font-size:1.35rem;margin:12px 0}.temps{color:var(--ink);font-weight:900}.lo{color:var(--muted);margin-left:4px}.rain-bar{height:4px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;margin:8px 0}.fill{height:100%;background:var(--cyan)}
-.detail{display:none;margin-top:18px}.detail.show{display:block}.detail h3{color:var(--ink);font-size:1.6rem;margin-bottom:12px}
-.dg{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.di{padding:14px;box-shadow:none}.di .l{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.7rem}.di .v{color:var(--ink);font-weight:900}
-.hs-wrap{margin-top:18px}.hs-label{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.78rem;margin-bottom:8px}.hc{flex:0 0 78px;padding:12px 8px;text-align:center;font-size:.78rem;box-shadow:none}.hc.nw{background:var(--green);color:#07100b}.hc .h,.hc .t{display:block;font-weight:900}.hc .r{color:var(--cyan)}
-.chart-wrap{margin-top:14px;overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:10px}.chart-wrap svg{min-width:640px;width:100%}
-.extern{margin-top:28px}.extern h4{color:var(--ink);font-size:1.25rem;margin-bottom:10px}.windy-box{height:420px;overflow:hidden}.windy-box iframe{width:100%;height:100%;border:0}.ext-link{flex:1;text-align:center;padding:13px;font-weight:900;box-shadow:none}.ext-link:hover{border-color:var(--green)}
-.src-bar{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.78rem}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px}.om{background:var(--red)}.wy{background:var(--cyan)}.mb{background:var(--green)}
-@media(max-width:960px){.hero-block{grid-template-columns:1fr}.outdoor,.risk-grid{grid-template-columns:repeat(2,1fr)}.dg{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){body{font-size:16px}.wrap{padding-inline:12px}.search-box{grid-template-columns:1fr}.stat-strip{grid-template-columns:repeat(2,1fr)}.outdoor,.risk-grid{grid-template-columns:1fr}.oc.feature{grid-column:auto}.site-header{grid-template-columns:1fr}.site-header .loc{text-align:left}.windy-box{height:300px}}
+.hero-block .hero-temp:hover{color:var(--accent)}
+.hero-block .hero-label{
+  font-size:.68em;color:var(--text-dim);margin-top:10px;display:block;
+  font-weight:300;line-height:1.6;
+}
+.hero-block .hero-label em{font-style:italic;font-weight:400;color:var(--accent);font-family:'Playfair Display','Noto Serif SC',Georgia,serif}
+.hero-block .hero-summary{font-size:.64em;color:var(--text-dim);margin-top:14px;line-height:1.7;max-width:500px;margin-left:auto;margin-right:auto;font-weight:300;font-family:'Jost','Noto Serif SC',sans-serif}
+
+/* ═══ STAT STRIP ═══ */
+.stat-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--rule-strong);
+  margin-bottom:40px;
+}
+@media(max-width:500px){.stat-strip{grid-template-columns:repeat(2,1fr)}}
+.stat-strip .ss-item{
+  padding:18px 14px;text-align:left;
+  background:var(--bg-elevated);
+}
+.stat-strip .ssv{font-size:1.4em;font-weight:700;color:var(--ink);display:block;letter-spacing:-.02em;font-family:'Jost',sans-serif}
+.stat-strip .ssv small{font-size:.46em;font-weight:300;color:var(--text-dim);margin-left:3px}
+.stat-strip .ssl{font-size:.50em;color:var(--text-muted);margin-top:4px;display:block;text-transform:uppercase;letter-spacing:.1em;font-weight:500;font-family:'JetBrains Mono',monospace}
+
+/* ═══ SECTION TITLE ═══ */
+.sec-title{
+  font-size:.52em;color:var(--accent);margin:44px 0 18px;
+  letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+  font-family:'JetBrains Mono',monospace;
+  display:flex;align-items:center;gap:12px;
+}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--rule-strong)}
+
+/* ═══ OUTDOOR INDICES ═══ */
+.outdoor{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--rule-strong);
+}
+@media(max-width:700px){.outdoor{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.outdoor{grid-template-columns:1fr}}
+.oc{
+  padding:20px 16px;background:var(--bg-elevated);
+  display:flex;flex-direction:column;gap:4px;
+  transition:background .2s;
+}
+.oc:hover{background:#223625}
+.oc.feature{
+  grid-column:1/-1;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:center;gap:12px 24px;
+  background:var(--accent-dim);
+}
+@media(max-width:500px){.oc.feature{grid-template-columns:1fr}}
+.oc .oh{font-size:.66em;font-weight:500;color:var(--ink);letter-spacing:.02em}
+.oc.feature .oh{color:var(--accent);font-size:.70em}
+.oc .ov{font-size:.82em;font-weight:500;color:var(--ink)}
+.oc .od{font-size:.54em;color:var(--text-dim);line-height:1.7;font-weight:300}
+.oe{display:inline-block;padding:2px 8px;font-size:.64em;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+.oe.good{background:var(--green-dim);color:var(--green)}
+.oe.warn{background:var(--warm-dim);color:var(--warm)}
+.oe.bad{background:var(--accent-dim);color:var(--accent)}
+
+/* ═══ DAY FILMSTRIP ═══ */
+.days{
+  display:flex;overflow-x:auto;gap:1px;
+  -webkit-overflow-scrolling:touch;
+  background:var(--rule-strong);
+}
+.days::-webkit-scrollbar{height:2px}.days::-webkit-scrollbar-thumb{background:var(--accent)}
+.day-card{
+  flex:0 0 auto;min-width:96px;
+  padding:16px 8px;text-align:center;
+  cursor:pointer;transition:all .15s;user-select:none;
+  background:var(--bg-elevated);
+}
+.day-card:hover{background:#223625}
+.day-card.active{background:var(--accent);color:#FFF}
+.day-card.active .dow,.day-card.active .temps{color:#FFF}
+.day-card.active .lo,.day-card.active .date,.day-card.active .tag{color:rgba(255,255,255,.5)}
+.day-card .dow{font-size:.58em;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.day-card .date{font-size:.52em;color:var(--text-muted);margin-bottom:3px;font-family:'JetBrains Mono',monospace}
+.day-card .icon{font-size:1.15em;margin:3px 0;display:block;color:var(--ink)}
+.day-card .temps{font-size:.74em;font-weight:700;color:var(--ink);font-family:'Jost',sans-serif}
+.day-card .temps .lo{color:var(--text-dim);font-weight:300;margin-left:2px}
+.day-card .rain-bar{margin-top:3px;height:2px;background:var(--rule);overflow:hidden}
+.day-card .rain-bar .fill{height:100%;background:var(--cool)}
+.day-card .tag{font-size:.48em;color:var(--text-dim);margin-top:2px;font-weight:300}
+
+/* ═══ DETAIL ═══ */
+.detail{display:none;margin-top:24px}
+.detail.show{display:block}
+.detail h3{
+  font-size:.80em;margin-bottom:14px;color:var(--ink);
+  font-weight:500;letter-spacing:.02em;
+  padding-bottom:10px;border-bottom:1px solid var(--rule-strong);
+  font-family:'Playfair Display','Noto Serif SC',Georgia,serif;
+}
+.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule-strong)}
+@media(max-width:480px){.dg{grid-template-columns:repeat(2,1fr)}}
+.di{padding:14px 10px;text-align:center;background:var(--bg-elevated)}
+.di .l{font-size:.50em;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;font-weight:500;font-family:'JetBrains Mono',monospace}
+.di .v{font-size:.82em;font-weight:700;margin-top:4px;color:var(--ink)}
+
+/* ── Hourly strip ── */
+.hs-wrap{margin-top:20px}
+.hs-label{font-size:.52em;color:var(--text-muted);margin-bottom:6px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-family:'JetBrains Mono',monospace}
+.hs{display:flex;overflow-x:auto;gap:1px;-webkit-overflow-scrolling:touch;background:var(--rule-strong)}
+.hs::-webkit-scrollbar{height:2px}.hs::-webkit-scrollbar-thumb{background:var(--accent)}
+.hc{
+  flex:0 0 auto;min-width:50px;text-align:center;padding:10px 3px;
+  font-size:.52em;background:var(--bg-elevated);
+}
+.hc.nw{background:var(--accent);color:#FFF}
+.hc.nw .r{color:rgba(255,255,255,.5)}
+.hc .h{font-weight:700;margin-bottom:2px;display:block;font-size:1.05em;font-family:'JetBrains Mono',monospace}
+.hc .t{font-weight:700;display:block;margin:2px 0;font-family:'Jost',sans-serif}
+.hc .r{color:var(--cool);font-size:.9em}
+
+/* ── Chart ── */
+.chart-wrap{margin-top:16px;width:100%;overflow-x:auto}
+.chart-wrap svg{min-width:500px;width:100%;height:auto}
+
+/* ═══ WINDY ═══ */
+.extern{margin:36px 0}
+.extern h4{
+  font-size:.52em;color:var(--text-muted);margin-bottom:10px;
+  letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+  font-family:'JetBrains Mono',monospace;
+}
+.windy-box{overflow:hidden;height:360px;border:1px solid var(--rule-strong)}
+.windy-box iframe{width:100%;height:100%;border:0}
+@media(max-width:640px){.windy-box{height:clamp(200px,38vh,320px)}}
+.ext-links{display:flex;gap:1px;background:var(--rule-strong)}
+.ext-link{
+  flex:1;padding:16px;text-align:center;text-decoration:none;
+  color:var(--ink);font-size:.60em;transition:all .2s;font-weight:300;
+  background:var(--bg-elevated);
+}
+.ext-link:hover{background:var(--accent-dim);color:var(--accent)}
+
+footer{
+  text-align:center;padding:48px 0 0;color:var(--text-muted);
+  font-size:.54em;letter-spacing:.04em;font-weight:300;
+}
+footer a{color:var(--text-dim);text-decoration:none}
+footer a:hover{color:var(--accent)}
+.hidden{display:none}
 </style>
 </head>
 <body>
@@ -155,7 +273,7 @@ footer a:hover{color:var(--ink)}
     <input type="text" id="q" placeholder="搜索地点…" autocomplete="off">
     <button onclick="doSearch()">搜索</button>
   </div>
-  <div class="tool-note"><strong>天气看风险，路线看强度。</strong> 这里是专业气象台：高德精确定位 + Open-Meteo 逐时预报，重点看降雨、风、UV、能见度、日照、云量、露点、气压和户外活动窗口。</div>
+  <div class="search-hint">高德地图精准编码 · 支持乡镇/校区/景点/小区</div>
   <div class="suggestions">
     <span class="sug-chip" onclick="quickSearch('北京')">北京</span>
     <span class="sug-chip" onclick="quickSearch('上海')">上海</span>
@@ -170,8 +288,26 @@ footer a:hover{color:var(--ink)}
   </div>
 </div>
 
+<div id="main">
+  <div style="text-align:center;padding:80px 16px 100px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:.52em;color:var(--cool);letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px">气象与户外指数</div>
+    <div style="font-family:'Noto Serif SC','Playfair Display',Georgia,serif;font-size:clamp(2.4em,5.5vw,3.2em);color:var(--ink);margin-bottom:6px;line-height:1.1;font-weight:700;letter-spacing:.04em">气象与山野</div>
+    <div style="font-family:'Cormorant Garamond','Playfair Display',Georgia,serif;font-size:1.15em;color:var(--text-dim);margin-bottom:40px;font-weight:300;font-style:italic;letter-spacing:.06em">Weather &amp; Mountains</div>
+    <div style="max-width:440px;margin:0 auto;text-align:center;font-size:.66em;line-height:2.2;color:var(--text-dim);font-weight:300">
+      <p style="margin-bottom:24px;color:var(--text)">为 <span style="color:var(--accent);font-weight:500">徒步者 · 露营者 · 户外爱好者</span> 准备的气象工具</p>
+    </div>
+    <div style="max-width:420px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;text-align:left;font-size:.62em;color:var(--text-dim);font-weight:300;line-height:1.4">
+      <div><i class="fa-solid fa-bullseye" style="color:var(--cool);opacity:.7;width:20px;text-align:center;margin-right:8px"></i>精准定位全国乡镇景点</div>
+      <div><i class="fa-solid fa-person-hiking" style="color:var(--cool);opacity:.7;width:20px;text-align:center;margin-right:8px"></i>九项户外指数</div>
+      <div><i class="fa-solid fa-chart-line" style="color:var(--cool);opacity:.7;width:20px;text-align:center;margin-right:8px"></i>6日逐时预报+温度曲线</div>
+      <div><i class="fa-solid fa-wind" style="color:var(--cool);opacity:.7;width:20px;text-align:center;margin-right:8px"></i>Windy 实时风场</div>
+      <div><i class="fa-solid fa-globe" style="color:var(--cool);opacity:.7;width:20px;text-align:center;margin-right:8px"></i>Meteoblue 专业模式</div>
+      <div><i class="fa-solid fa-droplet" style="color:var(--cool);opacity:.7;width:20px;text-align:center;margin-right:8px"></i>露点·云量·能见度·气压</div>
+    </div>
+    <p style="color:var(--text-muted);font-size:.60em;margin-top:28px">高德地图 · Open‑Meteo · Windy · Meteoblue</p>
+  </div>
+</div>
 
-<div id="main"><div class="status"><div class="spinner"></div><br><br>正在加载北京气象基准...</div></div>
 
 </div><!-- end tab-weather -->
 
@@ -277,7 +413,7 @@ async function fetchWeather(lat,lon){
 
 async function initFromParams(){
   const p=new URLSearchParams(location.search);
-  const q=p.get('q')||'北京';
+  const q=p.get('q');
   if(q){
     document.getElementById('q').value=q;
     document.getElementById('main').innerHTML='<div class="status"><div class="spinner"></div><br><br>加载中…</div>';
@@ -449,14 +585,10 @@ function render(){
 </div>
 
 <div class="hero-block">
-  <div class="hero-current">
-    <div class="hero-loc">${isChina?STATE.admin||'':''}${isChina?' · ':''}${STATE.country||STATE.admin||''}</div>
-    <span class="hero-temp" onclick="toggleTempUnit()" title="点击切换 °C/°F" style="cursor:pointer">${tC(now.temperature_2m)}<small style="font-size:.25em;display:block;font-weight:300;color:var(--text-muted);letter-spacing:.06em;margin-top:4px">${STATE.tempUnit==="C"?"°C → °F":"°F → °C"}</small></span>
-  </div>
-  <div class="hero-readout">
-    <div class="hero-label"><em>${w(now.weather_code).l}</em> · 体感 ${tC(now.apparent_temperature)}</div>
-	  <div class="hero-summary"><strong style="color:var(--ink)">今日判断：</strong>${weatherSummary()}</div>
-  </div>
+  <div class="hero-loc">${isChina?STATE.admin||'':''}${isChina?' · ':''}${STATE.country||STATE.admin||''}</div>
+  <span class="hero-temp" onclick="toggleTempUnit()" title="点击切换 °C/°F" style="cursor:pointer">${tC(now.temperature_2m)}<small style="font-size:.25em;display:block;font-weight:300;color:var(--text-muted);letter-spacing:.06em;margin-top:4px">${STATE.tempUnit==="C"?"°C → °F":"°F → °C"}</small></span>
+  <div class="hero-label"><em>${w(now.weather_code).l}</em> · 体感 ${tC(now.apparent_temperature)}°</div>
+	<div class="hero-summary">${weatherSummary()}</div>
 </div>
 
 <div class="stat-strip">
@@ -466,15 +598,7 @@ function render(){
   <div class="ss-item"><span class="ssv">${today.precipitation_sum[0]}<small>mm</small></span><span class="ssl">降水量</span></div>
 </div>
 
-<div class="sec-title">Decision Matrix · 风险矩阵</div>
-<div class="risk-grid">
-  <div class="risk-cell"><span>降雨风险</span><strong class="${maxRain>60?'bad':maxRain>30?'warn':'good'}">${maxRain}%</strong><small>未来7日峰值</small></div>
-  <div class="risk-cell"><span>风力风险</span><strong class="${avgWind>25?'bad':avgWind>15?'warn':'good'}">${avgWind} km/h</strong><small>日最大风速均值</small></div>
-  <div class="risk-cell"><span>能见度</span><strong class="${avgVis<3?'bad':avgVis<6?'warn':'good'}">${avgVis} km</strong><small>雾、雨、霾影响</small></div>
-  <div class="risk-cell"><span>紫外线</span><strong class="${maxUV>7?'bad':maxUV>5?'warn':'good'}">UV ${maxUV}</strong><small>${maxUV>7?'强防晒':'常规防护'}</small></div>
-</div>
-
-<div class="sec-title">Outdoor Index · 专业户外指数</div>
+<div class="sec-title">Outdoor Index · 户外指数</div>
 <div class="outdoor">
   <div class="oc feature">
     <div><div class="oh">徒步适宜度</div><div class="od">降雨概率 ${maxRain}% · 风速 ${avgWind}km/h · 能见度 ${avgVis}km · UV ${maxUV}</div></div>
