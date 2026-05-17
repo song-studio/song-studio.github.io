@@ -322,6 +322,21 @@ function handleTouchGamepad(e)
     // check each touch point
     for (const touch of e.touches)
     {
+        if (rotatedMode)
+        {
+            // Stable fallback for portrait-rotated mode: split controls by physical screen halves
+            if (touch.clientX < innerWidth * .5)
+            {
+                const steer = clamp((touch.clientX / (innerWidth * .5)) * 2 - 1, -1, 1);
+                touchGamepadStick = vec3(steer, 0);
+            }
+            else
+            {
+                touchGamepadButtons[0] = 1; // gas on right half
+            }
+            continue;
+        }
+
         let touchPos = mouseToScreen(vec3(touch.clientX, touch.clientY));
         touchPos = touchPos.multiply(mainCanvasSize);
         if (touchPos.distance(stickCenter) < gs)
