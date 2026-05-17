@@ -18,10 +18,10 @@ const canvasFixedSize = 0;
 const frameRate = 60;
 const timeDelta = 1/frameRate;
 const pixelateScale = 3;
-const clampAspectRatios = enhancedMode;
+const clampAspectRatios = 1; // force mobile-safe aspect handling on all builds
 const optimizedCulling = 1;
 const random = new Random;
-let autoPause = enhancedMode;
+let autoPause = 1;
 let autoFullscreen = isTouchDevice ? 1 : 0;
 let rotatedMode = 0; // fallback: force landscape rendering on portrait phones
 
