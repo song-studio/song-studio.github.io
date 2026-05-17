@@ -41,6 +41,36 @@ onerror=(event, source, lineno, colno, error)=>
         `${event}\n${source}\nLn ${lineno}, Col ${colno}`;
 }
 </script>
+<script>
+(function(){
+  const ua = navigator.userAgent || '';
+  const isAndroid = /Android/i.test(ua);
+  if (!isAndroid) return;
+
+  async function enterLandscape() {
+    const el = document.documentElement;
+    try {
+      if (!document.fullscreenElement && el.requestFullscreen) {
+        await el.requestFullscreen();
+      }
+    } catch (_) {}
+
+    try {
+      if (screen.orientation && screen.orientation.lock) {
+        await screen.orientation.lock('landscape');
+      }
+    } catch (_) {}
+
+    setTimeout(() => window.scrollTo(0, 1), 50);
+  }
+
+  document.addEventListener('touchstart', enterLandscape, { once: true, passive: true });
+  document.addEventListener('click', enterLandscape, { once: true, passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') enterLandscape();
+  });
+})();
+</script>
 <script src=code/debug.js?238></script>
 <script src=code/utilities.js?238></script>
 <script src=code/webgl.js?238></script>
