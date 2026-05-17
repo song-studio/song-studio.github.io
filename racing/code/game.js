@@ -140,7 +140,9 @@ function gameUpdateInternal()
             gameDifficulty = keyWasPressed('ArrowLeft') ? 0 : 1;
         if (mouseWasPressed(0) || keyWasPressed('Space') || isUsingGamepad && (gamepadWasPressed(0)||gamepadWasPressed(9)))
         {
-            // fullscreen+landscape on mobile (must be in user gesture)
+            // request landscape orientation on supported browsers (no CSS rotation)
+            if (isTouchDevice && screen.orientation && screen.orientation.lock)
+                screen.orientation.lock('landscape').catch(()=>{});
             if (isTouchDevice && !isFullscreen())
                 toggleFullscreen();
             // tap left = easy, right = hard
