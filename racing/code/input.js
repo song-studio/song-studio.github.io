@@ -110,221 +110,8 @@ function inputUpdatePost()
 const mouseToScreen = (mousePos) =>
 {
     if (rotatedMode)
-    {
-        // canvas is CSS rotate(90deg) with left:innerWidth offset
-        // screen (sx,sy) maps to canvas (sy, innerWidth-sx)
-        const canvasX = mousePos.y;
-        const canvasY = innerWidth - mousePos.x;
-        return vec3(canvasX / mainCanvasSize.x, canvasY / mainCanvasSize.y);
-    }
-    if (!clampAspectRatios)
-    {
-        // canvas always takes up full screen
-        return vec3(mousePos.x/mainCanvasSize.x,mousePos.y/mainCanvasSize.y);
-    }
-    else
-    {
-        const rect = mainCanvas.getBoundingClientRect();
-        return vec3(percent(mousePos.x, rect.left, rect.right), percent(mousePos.y, rect.top, rect.bottom));
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////
-// gamepad input
-
-// gamepad internal variables
-let gamepadData, gamepadStickData, gamepadDataValues;
-
-// gamepads are updated by engine every frame automatically
-function gamepadsUpdate()
-{
-    const applyDeadZones = (v)=>
-    {
-        const min=.2, max=.8;
-        const deadZone = (v)=> 
-            v >  min ?  percent( v, min, max) : 
-            v < -min ? -percent(-v, min, max) : 0;
-        return vec3(deadZone(v.x), deadZone(-v.y)).clampLength();
-    }
-
-    // update touch gamepad if enabled
-    isTouchDevice && touchGamepadUpdate();
-
-    // return if gamepads are disabled or not supported
-    if (!navigator || !navigator.getGamepads)
-        return;
-
-    // only poll gamepads when focused or in debug mode (allow playing when not focused in debug)
-    if (!devMode && !document.hasFocus())
-        return;
-
-    // poll gamepads
-    const gamepads = navigator.getGamepads();
-    for (let i = gamepads.length; i--;)
-    {
-        // get or create gamepad data
-        const gamepad = gamepads[i];
-        const data = gamepadData[i] || (gamepadData[i] = []);
-        const dataValue = gamepadDataValues[i] || (gamepadDataValues[i] = []);
-        const sticks = gamepadStickData[i] || (gamepadStickData[i] = []);
-
-        if (gamepad)
         {
-            // read analog sticks
-            for (let j = 0; j < gamepad.axes.length-1; j+=2)
-                sticks[j>>1] = applyDeadZones(vec3(gamepad.axes[j],gamepad.axes[j+1]));
-            
-            // read buttons
-            for (let j = gamepad.buttons.length; j--;)
-            {
-                const button = gamepad.buttons[j];
-                const wasDown = gamepadIsDown(j,i);
-                data[j] = button.pressed ? wasDown ? 1 : 3 : wasDown ? 4 : 0;
-                dataValue[j] = percent(button.value||0,.1,.9); // apply deadzone
-                isUsingGamepad ||= !i && button.pressed;
-            }
-
-            const gamepadDirectionEmulateStick = 1;
-            if (gamepadDirectionEmulateStick)
-            {
-                // copy dpad to left analog stick when pressed
-                const dpad = vec3(
-                    (gamepadIsDown(15,i)&&1) - (gamepadIsDown(14,i)&&1), 
-                    (gamepadIsDown(12,i)&&1) - (gamepadIsDown(13,i)&&1));
-                if (dpad.lengthSquared())
-                    sticks[0] = dpad.clampLength();
-            }
-        }
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////
-// touch input
-
-// try to enable touch mouse
-function touchInputInit()
-{
-    // add non passive touch event listeners
-    let handleTouch = handleTouchDefault;
-    if (touchGamepadEnable)
-    {
-        // touch input internal variables
-        handleTouch = handleTouchGamepad;
-        touchGamepadButtons = [];
-        touchGamepadStick = vec3();
-    }
-    document.addEventListener('touchstart', (e) => handleTouch(e), { passive: false });
-    document.addEventListener('touchmove',  (e) => handleTouch(e), { passive: false });
-    document.addEventListener('touchend',   (e) => handleTouch(e), { passive: false });
-
-    // override mouse events
-    onmousedown = onmouseup = ()=> 0;
-
-    // handle all touch events the same way
-    let wasTouching;
-    function handleTouchDefault(e)
-    {
-        // fix stalled audio requiring user interaction
-        if (soundEnable && !audioContext)
-            audioContext = new AudioContext; // create audio context
-        //if (soundEnable && audioContext && audioContext.state != 'running')
-        //    sound_bump.play(); // play sound to fix audio
-
-        // check if touching and pass to mouse events
-        const touching = e.touches.length;
-        const button = 0; // all touches are left mouse button
-        if (touching)
-        {
-            // average all touch positions
-            const p = vec3();
-            for (let touch of e.touches)
-            {
-                p.x += touch.clientX/e.touches.length;
-                p.y += touch.clientY/e.touches.length;
-            }
-
-            mousePos = mouseToScreen(p);
-            wasTouching ? 0 : inputData[button] = 3;
-        }
-        else if (wasTouching)
-            inputData[button] = inputData[button] & 2 | 4;
-
-        // set was touching
-        wasTouching = touching;
-
-        // prevent default handling like copy and magnifier lens
-        if (document.hasFocus()) // allow document to get focus
-            e.preventDefault();
-        
-        // must return true so the document will get focus
-        return true;
-    }
-}
-
-///////////////////////////////////////////////////////////////////////////////
-// touch gamepad
-
-// touch gamepad internal variables
-let touchGamepadTimer = new Timer, touchGamepadButtons, touchGamepadStick, touchGamepadSize;
-let touchGamepadPadXMult = 1.8, touchGamepadPadYMult = 1.4, touchGamepadGSMult = 1.8;
-
-// special handling for virtual gamepad mode
-function handleTouchGamepad(e)
-{
-    if (soundEnable)
-    {
-        if (!audioContext)
-            audioContext = new AudioContext; // create audio context
-            
-        // fix stalled audio
-        if (audioContext.state != 'running')
-            audioContext.resume();
-    }
-
-    // clear touch gamepad input
-    touchGamepadStick = vec3();
-    touchGamepadButtons = [];
-    isUsingGamepad = true;
-        
-    const touching = e.touches.length;
-    if (touching)
-    {
-        touchGamepadTimer.set();
-        if (paused || titleScreenMode || gameOverTimer.isSet())
-        {
-            // touch anywhere to press start
-            touchGamepadButtons[9] = 1;
-            return;
-        }
-    }
-
-    // get center of left and right sides (match render positions)
-    const padX = touchGamepadSize * touchGamepadPadXMult;
-    const padY = touchGamepadSize * touchGamepadPadYMult;
-    const gs = touchGamepadSize * touchGamepadGSMult; // match btnSize in render
-    let stickCenter, buttonCenter, startCenter;
-    if (rotatedMode)
-    {
-        // canvas is CSS-rotated 90°: screen bottom → canvas right
-        // left stick at screen bottom-left → canvas (cx near right, cy near bottom)
-        stickCenter = vec3(mainCanvasSize.x - padY, mainCanvasSize.y - padX);
-        // right button at screen bottom-right → canvas (cx near right, cy near top)
-        buttonCenter = vec3(mainCanvasSize.x - padY, padX);
-        startCenter = mainCanvasSize.scale(.5);
-    }
-    else
-    {
-        stickCenter = vec3(padX, mainCanvasSize.y-padY);
-        buttonCenter = vec3(mainCanvasSize.x-padX, mainCanvasSize.y-padY);
-        startCenter = mainCanvasSize.scale(.5);
-    }
-
-    // check each touch point
-    for (const touch of e.touches)
-    {
-        if (rotatedMode)
-        {
-            // Stable fallback for portrait-rotated mode: split controls by physical screen halves
+            // universal fallback: left half steers, right half accelerates
             if (touch.clientX < innerWidth * .5)
             {
                 const steer = clamp((touch.clientX / (innerWidth * .5)) * 2 - 1, -1, 1);
@@ -332,7 +119,7 @@ function handleTouchGamepad(e)
             }
             else
             {
-                touchGamepadButtons[0] = 1; // gas on right half
+                touchGamepadButtons[0] = 1;
             }
             continue;
         }
@@ -386,10 +173,10 @@ function touchGamepadUpdate()
     {
         // physical screen is portrait — size buttons for the narrow screen
         const physW = innerWidth, physH = innerHeight;
-        touchGamepadSize = clamp(physH/12, 48, physW/4.5);
-        touchGamepadPadXMult = 1.2;
-        touchGamepadPadYMult = 1.1;
-        touchGamepadGSMult = 1.2;
+        touchGamepadSize = clamp(min(physW, physH)/4.8, 88, 136);
+        touchGamepadPadXMult = 1.0;
+        touchGamepadPadYMult = 1.0;
+        touchGamepadGSMult = 1.35;
     }
     else
     {
