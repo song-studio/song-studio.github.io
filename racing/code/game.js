@@ -263,7 +263,7 @@ function gameUpdate(frameTimeMS=0)
     else
     {
         // portrait mobile fallback: keep gameplay landscape by rotating canvas 90deg
-        rotatedMode = 0; // disable portrait-rotation fallback; use native landscape controls
+        rotatedMode = isTouchDevice && innerHeight > innerWidth;
 
         if (rotatedMode)
         {
