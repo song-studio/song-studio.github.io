@@ -2,8 +2,8 @@
   "name": "极速狂飙",
   "short_name": "极速狂飙",
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "orientation": "landscape"
+  "orientation": "landscape-primary"
 }
