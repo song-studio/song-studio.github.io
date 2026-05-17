@@ -54,7 +54,7 @@ let trackSeed = 1331;
 let cameraPos, cameraRot, cameraOffset;
 let worldHeading, mouseControl;
 let track, vehicles, playerVehicle;
-let freeRide, rotatedMode;
+let freeRide;
 
 ///////////////////////////////
 
@@ -247,48 +247,12 @@ function gameUpdateInternal()
 
 function gameUpdate(frameTimeMS=0)
 {
-    // detect portrait mode for mobile — CSS rotate canvas to force landscape
-    rotatedMode = isTouchDevice && window.matchMedia('(orientation: portrait)').matches;
-    const effW = rotatedMode ? innerHeight : innerWidth;
-    const effH = rotatedMode ? innerWidth  : innerHeight;
-
-    // set base canvas CSS (before style.width/height overrides below)
-    if (rotatedMode)
-    {
-        const applyRotate = (c) => {
-            c.style.position = 'absolute';
-            c.style.top = '0';
-            c.style.left = innerWidth + 'px';
-            c.style.transform = 'rotate(90deg)';
-            c.style.transformOrigin = 'top left';
-            c.style.width = '';
-            c.style.height = '';
-            c.style.zIndex = '';
-        };
-        applyRotate(mainCanvas);
-        applyRotate(glCanvas);
-        mainCanvas.style.zIndex = '1'; // 2D UI on top of WebGL
-    }
-    else
-    {
-        const applyNormal = (c) => {
-            c.style.position = 'absolute';
-            c.style.top = clampAspectRatios ? '50%' : '';
-            c.style.left = clampAspectRatios ? '50%' : '';
-            c.style.transform = clampAspectRatios ? 'translate(-50%,-50%)' : '';
-            c.style.transformOrigin = '';
-            c.style.zIndex = '';
-        };
-        applyNormal(mainCanvas);
-        applyNormal(glCanvas);
-    }
-
-    if (!clampAspectRatios || rotatedMode)
-        mainCanvasSize = vec3(mainCanvas.width=effW, mainCanvas.height=effH);
+    if (!clampAspectRatios)
+        mainCanvasSize = vec3(mainCanvas.width=innerWidth, mainCanvas.height=innerHeight);
     else
     {
         // more complex aspect ratio handling
-        const innerAspect = effW / effH;
+        const innerAspect = innerWidth / innerHeight;
         if (canvasFixedSize)
         {
             // clear canvas and set fixed size
@@ -298,18 +262,18 @@ function gameUpdate(frameTimeMS=0)
         else
         {
             const minAspect = .45, maxAspect = 3;
-            const correctedWidth = innerAspect > maxAspect ? effH * maxAspect :
-                    innerAspect < minAspect ? effH * minAspect : effW;
+            const correctedWidth = innerAspect > maxAspect ? innerHeight * maxAspect :
+                    innerAspect < minAspect ? innerHeight * minAspect : innerWidth;
             // use device pixel ratio for sharper rendering on mobile
             const dpr = min((devicePixelRatio || 1), 2); // cap for mobile performance
             if (pixelate)
             {
                 const w = correctedWidth / pixelateScale | 0;
-                const h = effH / pixelateScale | 0;
+                const h = innerHeight / pixelateScale | 0;
                 mainCanvasSize = vec3(mainCanvas.width = w, mainCanvas.height = h);
             }
             else
-                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=effH*dpr);
+                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=innerHeight*dpr);
         }
 
         // fit to window by adding space on top or bottom if necessary
