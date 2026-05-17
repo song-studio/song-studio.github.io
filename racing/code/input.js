@@ -381,7 +381,7 @@ function touchGamepadUpdate()
         // adjust size for orientation — prevent button overlap in portrait
         const portrait = mainCanvasSize.x < mainCanvasSize.y;
         const maxSize = portrait ? mainCanvasSize.x / 4.4 : mainCanvasSize.x / 2;
-        touchGamepadSize = clamp(mainCanvasSize.y/8, 99, maxSize);
+        touchGamepadSize = clamp(mainCanvasSize.y/7.2, 112, maxSize);
         // smaller multipliers in portrait so buttons fit side by side
         touchGamepadPadXMult = portrait ? 1.2 : 1.8;
         touchGamepadPadYMult = portrait ? 1.2 : 1.4;
