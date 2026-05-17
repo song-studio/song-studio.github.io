@@ -23,6 +23,7 @@ const optimizedCulling = 1;
 const random = new Random;
 let autoPause = enhancedMode;
 let autoFullscreen = isTouchDevice ? 1 : 0;
+let rotatedMode = 0; // fallback: force landscape rendering on portrait phones
 
 // setup
 const laneWidth = 1400;            // how wide is track
@@ -249,39 +250,64 @@ function gameUpdateInternal()
 
 function gameUpdate(frameTimeMS=0)
 {
+    const styleCanvas = 'position:absolute;' +
+        (clampAspectRatios ? 'top:50%;left:50%;transform:translate(-50%,-50%);' : '') +
+        (pixelate ? ' image-rendering: pixelated' : '');
+
     if (!clampAspectRatios)
+    {
+        rotatedMode = 0;
         mainCanvasSize = vec3(mainCanvas.width=innerWidth, mainCanvas.height=innerHeight);
+        glCanvas.style.cssText = mainCanvas.style.cssText = styleCanvas;
+    }
     else
     {
-        // more complex aspect ratio handling
-        const innerAspect = innerWidth / innerHeight;
-        if (canvasFixedSize)
+        // portrait mobile fallback: keep gameplay landscape by rotating canvas 90deg
+        rotatedMode = isTouchDevice && innerHeight > innerWidth;
+
+        if (rotatedMode)
         {
-            // clear canvas and set fixed size
-            mainCanvas.width  = mainCanvasSize.x;
-            mainCanvas.height = mainCanvasSize.y;
+            const dpr = min((devicePixelRatio || 1), 2);
+            mainCanvasSize = vec3(mainCanvas.width=innerHeight*dpr, mainCanvas.height=innerWidth*dpr);
+            const rotatedStyle = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(90deg);transform-origin:center center;' +
+                (pixelate ? ' image-rendering: pixelated' : '');
+            glCanvas.style.cssText = mainCanvas.style.cssText = rotatedStyle;
+            mainCanvas.style.width = glCanvas.style.width = innerHeight + 'px';
+            mainCanvas.style.height = glCanvas.style.height = innerWidth + 'px';
         }
         else
         {
-            const minAspect = .45, maxAspect = 3;
-            const correctedWidth = innerAspect > maxAspect ? innerHeight * maxAspect :
-                    innerAspect < minAspect ? innerHeight * minAspect : innerWidth;
-            // use device pixel ratio for sharper rendering on mobile
-            const dpr = min((devicePixelRatio || 1), 2); // cap for mobile performance
-            if (pixelate)
+            glCanvas.style.cssText = mainCanvas.style.cssText = styleCanvas;
+            // more complex aspect ratio handling
+            const innerAspect = innerWidth / innerHeight;
+            if (canvasFixedSize)
             {
-                const w = correctedWidth / pixelateScale | 0;
-                const h = innerHeight / pixelateScale | 0;
-                mainCanvasSize = vec3(mainCanvas.width = w, mainCanvas.height = h);
+                // clear canvas and set fixed size
+                mainCanvas.width  = mainCanvasSize.x;
+                mainCanvas.height = mainCanvasSize.y;
             }
             else
-                mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=innerHeight*dpr);
-        }
+            {
+                const minAspect = .45, maxAspect = 3;
+                const correctedWidth = innerAspect > maxAspect ? innerHeight * maxAspect :
+                        innerAspect < minAspect ? innerHeight * minAspect : innerWidth;
+                // use device pixel ratio for sharper rendering on mobile
+                const dpr = min((devicePixelRatio || 1), 2); // cap for mobile performance
+                if (pixelate)
+                {
+                    const w = correctedWidth / pixelateScale | 0;
+                    const h = innerHeight / pixelateScale | 0;
+                    mainCanvasSize = vec3(mainCanvas.width = w, mainCanvas.height = h);
+                }
+                else
+                    mainCanvasSize = vec3(mainCanvas.width=correctedWidth*dpr, mainCanvas.height=innerHeight*dpr);
+            }
 
-        // fit to window by adding space on top or bottom if necessary
-        const fixedAspect = mainCanvas.width / mainCanvas.height;
-        mainCanvas.style.width  = glCanvas.style.width  = innerAspect < fixedAspect ? '100%' : '';
-        mainCanvas.style.height = glCanvas.style.height = innerAspect < fixedAspect ? '' : '100%';
+            // fit to window by adding space on top or bottom if necessary
+            const fixedAspect = mainCanvas.width / mainCanvas.height;
+            mainCanvas.style.width  = glCanvas.style.width  = innerAspect < fixedAspect ? '100%' : '';
+            mainCanvas.style.height = glCanvas.style.height = innerAspect < fixedAspect ? '' : '100%';
+        }
     }
     
     if (enhancedMode)
