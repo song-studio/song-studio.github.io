@@ -305,12 +305,13 @@ function handleTouchGamepad(e)
     let stickCenter, buttonCenter, startCenter;
     if (rotatedMode)
     {
-        // canvas is CSS-rotated 90°: screen bottom → canvas right
-        // left stick at screen bottom-left → canvas (cx near right, cy near bottom)
-        stickCenter = vec3(mainCanvasSize.x - padY, mainCanvasSize.y - padX);
-        // right button at screen bottom-right → canvas (cx near right, cy near top)
-        buttonCenter = vec3(mainCanvasSize.x - padY, padX);
-        startCenter = mainCanvasSize.scale(.5);
+        // anchor controls in screen space, then map to rotated canvas space
+        const stickScreen = vec3(innerWidth * .22, innerHeight * .78);
+        const buttonScreen = vec3(innerWidth * .82, innerHeight * .78);
+        const startScreen = vec3(innerWidth * .5, innerHeight * .5);
+        stickCenter = vec3(stickScreen.y, innerWidth - stickScreen.x);
+        buttonCenter = vec3(buttonScreen.y, innerWidth - buttonScreen.x);
+        startCenter = vec3(startScreen.y, innerWidth - startScreen.x);
     }
     else
     {
@@ -339,7 +340,7 @@ function handleTouchGamepad(e)
         {
             // virtual face buttons
             const button = rotatedMode
-                ? (touchPos.x < buttonCenter.x ? 0 : 1)
+                ? (touch.clientY > buttonCenter.x ? 1 : 0)
                 : (touchPos.y > buttonCenter.y ? 1 : 0);
             touchGamepadButtons[button] = 1;
         }
@@ -369,12 +370,12 @@ function touchGamepadUpdate()
 
     if (rotatedMode)
     {
-        // physical screen is portrait — size buttons for the narrow screen
+        // physical screen is portrait — keep controls larger and easier to hit
         const physW = innerWidth, physH = innerHeight;
-        touchGamepadSize = clamp(physH/12, 48, physW/4.5);
-        touchGamepadPadXMult = 1.2;
-        touchGamepadPadYMult = 1.1;
-        touchGamepadGSMult = 1.2;
+        touchGamepadSize = clamp(min(physW, physH)/3.8, 78, 132);
+        touchGamepadPadXMult = 1;
+        touchGamepadPadYMult = 1;
+        touchGamepadGSMult = 1.35;
     }
     else
     {
@@ -434,8 +435,10 @@ function touchGamepadRender()
     let leftCenter, rightCenter;
     if (rotatedMode)
     {
-        leftCenter = vec3(mainCanvasSize.x - padY, mainCanvasSize.y - padX);
-        rightCenter = vec3(mainCanvasSize.x - padY, padX);
+        const leftScreen = vec3(innerWidth * .22, innerHeight * .78);
+        const rightScreen = vec3(innerWidth * .82, innerHeight * .78);
+        leftCenter = vec3(leftScreen.y, innerWidth - leftScreen.x);
+        rightCenter = vec3(rightScreen.y, innerWidth - rightScreen.x);
     }
     else
     {
