@@ -8,33 +8,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>路线规划 · Song Studio</title>
+<title>骑行徒步路线决策台 · Song Studio</title>
 <style>
 :root{
-  --bg:#0f1512;
-  --panel:#151d19;
-  --panel-2:#1b2520;
-  --panel-3:#212c26;
-  --ink:#f3f0e8;
-  --text:#d6d1c5;
-  --muted:#928c80;
-  --line:rgba(243,240,232,.12);
-  --line-2:rgba(243,240,232,.2);
-  --green:#65c083;
-  --cyan:#62b6c8;
-  --amber:#dca54a;
-  --red:#e06457;
+  --bg:#191c22;
+  --panel:rgba(255,255,255,.045);
+  --panel-2:rgba(255,255,255,.065);
+  --panel-3:rgba(255,255,255,.085);
+  --ink:#eef2f7;
+  --text:#d7dde8;
+  --muted:#99a5b9;
+  --line:rgba(203,216,238,.16);
+  --line-2:rgba(203,216,238,.24);
+  --green:#6ec0a6;
+  --cyan:#7ea8df;
+  --amber:#d7b37a;
+  --red:#df7f79;
   --blue:#7aa7ff;
-  --shadow:0 24px 80px rgba(0,0,0,.35);
+  --shadow:0 22px 68px rgba(9,14,24,.28);
   --radius:7px;
 }
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
 html{background:var(--bg)}
 body{
   min-height:100vh;background:
-    linear-gradient(180deg,rgba(101,192,131,.08),transparent 280px),
-    radial-gradient(circle at 78% 0,rgba(98,182,200,.11),transparent 360px),
-    var(--bg);
+    radial-gradient(circle at 12% 0, rgba(126,168,223,.17), transparent 420px),
+    radial-gradient(circle at 88% 0, rgba(110,192,166,.16), transparent 420px),
+    linear-gradient(180deg,#212633,var(--bg));
   color:var(--text);
   font-family:'Jost','Noto Serif SC',-apple-system,BlinkMacSystemFont,sans-serif;
   font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;
@@ -55,13 +55,13 @@ footer a:hover{color:var(--ink)}
 .page-header .sub,.back-link{font-family:'JetBrains Mono',monospace;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}.back-link:hover{color:var(--ink)}
 .route-search{margin:14px 0;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow)}
 .route-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center}.route-row+.route-row{grid-column:1/2}.rdot{width:10px;height:10px;border-radius:50%;display:block}.rdot.from{background:var(--green)}.rdot.to{background:var(--red)}
-.route-row input{min-width:0;background:#101712;border:1px solid var(--line-2);border-radius:var(--radius);color:var(--ink);outline:none;padding:12px 13px}.route-row input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(101,192,131,.15)}
+.route-row input{min-width:0;background:rgba(13,19,29,.46);border:1px solid var(--line-2);border-radius:var(--radius);color:var(--ink);outline:none;padding:12px 13px}.route-row input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(101,192,131,.15)}
 .swap-btn{width:42px;height:42px;border:1px solid var(--line-2);border-radius:var(--radius);background:var(--panel-2);color:var(--ink);cursor:pointer;font-size:1.2rem}
-.modes{grid-column:2/3;grid-row:1/3;display:grid;grid-template-columns:1fr;gap:8px}.mode-chip{background:#101712;border:1px solid var(--line);border-radius:var(--radius);padding:11px 13px;color:var(--muted);font-weight:900;cursor:pointer}.mode-chip.sel{background:var(--green);border-color:var(--green);color:#07100b}.mode-chip:hover{color:var(--ink)}
-.go-btn{grid-column:1/3;border:0;border-radius:var(--radius);background:var(--cyan);color:#061115;padding:13px;font-weight:900;cursor:pointer}.go-btn:hover{filter:brightness(1.08)}.go-btn:disabled{opacity:.5}
+.modes{grid-column:2/3;grid-row:1/3;display:grid;grid-template-columns:1fr;gap:8px}.mode-chip{background:rgba(13,19,29,.46);border:1px solid var(--line);border-radius:var(--radius);padding:11px 13px;color:var(--muted);font-weight:900;cursor:pointer}.mode-chip.sel{background:var(--green);border-color:var(--green);color:#07100b}.mode-chip:hover{color:var(--ink)}
+.go-btn{grid-column:1/3;border:0;border-radius:var(--radius);background:linear-gradient(90deg,#7ea8df,#6ec0a6);color:#0b1320;padding:13px;font-weight:900;cursor:pointer}.go-btn:hover{filter:brightness(1.08)}.go-btn:disabled{opacity:.5}
 .route-search>div[style],.route-search>div:not(.route-row):not(.modes):not(.route-sug):not(.route-note){grid-column:1/3;color:var(--muted);font-size:.92rem}.route-note{grid-column:1/3;color:var(--muted);font-size:.86rem;line-height:1.65;border-left:2px solid var(--cyan);padding-left:10px}.route-note strong{color:var(--text);font-weight:900}.route-sug{grid-column:1/3;display:flex;gap:8px;flex-wrap:wrap}.rsug{border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03);color:var(--muted);padding:5px 10px;font-size:.82rem;cursor:pointer}.rsug:hover{border-color:var(--green);color:var(--ink)}
 .map-wrap{height:min(68vh,760px);min-height:560px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--panel);margin-bottom:14px}#rmap{width:100%;height:100%}
-.route-summary{display:none;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);margin-bottom:14px}.rs-header{display:grid!important;grid-template-columns:auto 1fr auto;gap:14px!important;align-items:center;border-bottom:1px solid var(--line)!important;padding-bottom:14px!important;margin-bottom:14px!important}.rs-mode-icon{width:52px!important;height:52px!important;border:1px solid var(--line)!important;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:#101712}.rs-route-name{color:var(--ink)!important;font-size:1.25rem!important;font-weight:900!important}.rs-grid,.rs-mini,.weather-panels,.wpg,.feat-bar{display:grid;gap:10px}.rs-grid{grid-template-columns:repeat(4,1fr)}.rs-mini,.weather-panels{grid-template-columns:1fr 1fr}.rs-item,.wp,.ft-item,.wgi,.elev-profile{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px}.rsv{color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:1.2rem!important;font-weight:900}.rsl,.wpn,.ftl,.ep-title{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.72rem!important;letter-spacing:.06em;text-transform:uppercase}.elev-profile{margin:14px 0}
+.route-summary{display:none;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);margin-bottom:14px}.rs-header{display:grid!important;grid-template-columns:auto 1fr auto;gap:14px!important;align-items:center;border-bottom:1px solid var(--line)!important;padding-bottom:14px!important;margin-bottom:14px!important}.rs-mode-icon{width:52px!important;height:52px!important;border:1px solid var(--line)!important;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;background:rgba(13,19,29,.46)}.rs-route-name{color:var(--ink)!important;font-size:1.25rem!important;font-weight:900!important}.rs-grid,.rs-mini,.weather-panels,.wpg,.feat-bar{display:grid;gap:10px}.rs-grid{grid-template-columns:repeat(4,1fr)}.rs-mini,.weather-panels{grid-template-columns:1fr 1fr}.rs-item,.wp,.ft-item,.wgi,.elev-profile{background:linear-gradient(180deg,var(--panel-2),var(--panel)); backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--radius);padding:14px}.rsv{color:var(--ink);font-family:'JetBrains Mono',monospace;font-size:1.2rem!important;font-weight:900}.rsl,.wpn,.ftl,.ep-title{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.72rem!important;letter-spacing:.06em;text-transform:uppercase}.elev-profile{margin:14px 0}
 .weather-panels{margin-bottom:14px}.wpt{color:var(--ink)!important;font-weight:900;font-size:1.1rem!important}.wph{display:flex;gap:12px;align-items:center;margin:12px 0}.big{font-size:2.8rem!important;color:var(--ink)!important;font-family:'JetBrains Mono',monospace}.wpg{grid-template-columns:repeat(3,1fr)}.wgi{box-shadow:none}.wgiv{display:block;color:var(--ink);font-weight:900}.wgil{color:var(--muted)}
 .decision-title{color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:900;margin:4px 0 10px}.feat-bar{grid-template-columns:repeat(4,1fr);margin-bottom:14px}.ft-item{display:flex;gap:10px}.fti{color:var(--cyan)}.ftv{display:block;color:var(--ink);font-weight:900}.good{color:var(--green)!important}.warn{color:var(--amber)!important}.bad{color:var(--red)!important}.ft-actions{grid-column:1/-1;display:flex;gap:10px}.ft-btn{flex:1;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel-2);color:var(--ink);padding:12px;font-weight:900;cursor:pointer}.ft-btn:hover{border-color:var(--green)}
 .route-steps{margin-top:14px;border-top:1px solid var(--line);padding-top:14px}.steps-title{color:var(--cyan)!important;font-family:'JetBrains Mono',monospace;font-size:.8rem!important}.step-item{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.step-turn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(101,192,131,.12)!important;color:var(--green)!important}.step-dir{color:var(--muted)!important;font-size:.78rem!important}.step-road{color:var(--ink)!important;font-weight:900}.step-dist{color:var(--muted)!important;font-size:.82rem!important}
@@ -77,9 +77,9 @@ footer a:hover{color:var(--ink)}
 <div class="page-header">
   <div>
     <a href="weather-pro.html" class="back-link">← 气象查询</a>
-    <h1>路线规划</h1>
+    <h1>路线决策台</h1>
   </div>
-  <div class="sub">Cycling · Hiking · Outdoor</div>
+  <div class="sub">Cycling · Hiking Decision Desk</div>
 </div>
 
 <div class="route-search">
@@ -104,10 +104,6 @@ footer a:hover{color:var(--ink)}
     <span class="rsug" onclick="preset('西湖','九溪烟树','walking')">西湖 → 九溪</span>
     <span class="rsug" onclick="preset('大理古城','喜洲古镇','cycling')">大理古城 → 喜洲</span>
     <span class="rsug" onclick="preset('洱海公园','双廊古镇','cycling')">洱海公园 → 双廊</span>
-    <span class="rsug" onclick="preset('阳朔西街','十里画廊','cycling')">阳朔 → 十里画廊</span>
-    <span class="rsug" onclick="preset('武功山游客中心','金顶','walking')">武功山 → 金顶</span>
-    <span class="rsug" onclick="preset('黄果树瀑布','天星桥景区','walking')">黄果树 → 天星桥</span>
-    <span class="rsug" onclick="preset('成都市人民公园','青城山','cycling')">成都 → 青城山</span>
   </div>
 </div>
 
@@ -138,8 +134,49 @@ function gcj2wgs(lng,lat){
 }
 
 // ── Geocode (高德 + Open-Meteo 双源) ──────────────────
-async function geocode(q){
+function distKm(a,b){
+  const R=6371;
+  const dLat=(b.lat-a.lat)*Math.PI/180;
+  const dLon=(b.lng-a.lng)*Math.PI/180;
+  const la1=a.lat*Math.PI/180,la2=b.lat*Math.PI/180;
+  const x=Math.sin(dLat/2)**2+Math.cos(la1)*Math.cos(la2)*Math.sin(dLon/2)**2;
+  return 2*R*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
+}
+
+function pickBestGeocode(geocodes,hint){
+  if(!geocodes||!geocodes.length)return null;
+  if(!hint)return geocodes[0];
+  // First filter by hinted city/province
+  const cityHint=(hint.cityHint||'').replace(/省|市|自治区|自治州|特别行政区/g,'');
+  const provinceHint=(hint.provinceHint||'').replace(/省|市|自治区|自治州|特别行政区/g,'');
+  const filtered=geocodes.filter(g=>{
+    const city=(g.city||'').toString().replace(/省|市|自治区|自治州|特别行政区/g,'');
+    const prov=(g.province||'').toString().replace(/省|市|自治区|自治州|特别行政区/g,'');
+    return (cityHint&&city&&city.includes(cityHint)) || (provinceHint&&prov&&prov.includes(provinceHint));
+  });
+  const pool=filtered.length?filtered:geocodes;
+  // Then choose nearest to hint coordinate if available
+  if(hint.nearLat!=null&&hint.nearLng!=null){
+    let best=pool[0],bestD=Infinity;
+    for(const g of pool){
+      if(!g.location)continue;
+      const p=g.location.split(',');
+      const lng=Number(p[0]),lat=Number(p[1]);
+      const d=distKm({lat:hint.nearLat,lng:hint.nearLng},{lat,lng});
+      if(d<bestD){bestD=d;best=g;}
+    }
+    return best;
+  }
+  return pool[0];
+}
+
+async function geocode(q,hint){
   const hasLatin=/[a-zA-Z]/.test(q);
+  const clean=s=>(s||'').toString().replace(/省|市|自治区|自治州|特别行政区/g,'').trim();
+  const cityHint=clean(hint&&hint.cityHint);
+  const provinceHint=clean(hint&&hint.provinceHint);
+  const nearLat=hint&&hint.nearLat!=null?hint.nearLat:null;
+  const nearLng=hint&&hint.nearLng!=null?hint.nearLng:null;
 
   async function omGeo(){
     try{
@@ -150,57 +187,82 @@ async function geocode(q){
     return null;
   }
 
-  // Latin-script → Open-Meteo
+  function toFmtCandidate(obj,source){
+    if(!obj||!obj.location)return null;
+    const [lng,lat]=obj.location.split(',').map(Number);
+    if(!Number.isFinite(lng)||!Number.isFinite(lat))return null;
+    const [wgsLng,wgsLat]=gcj2wgs(lng,lat);
+    const city=clean(obj.city||obj.cityname);
+    const prov=clean(obj.province||obj.pname);
+    const district=clean(obj.district||obj.adname);
+    return{
+      latitude:wgsLat,longitude:wgsLng,
+      name:(obj.name||q),country:'中国',
+      admin1:city||prov||'',
+      elevation:0,rawLat:lat,rawLng:lng,
+      _city:city,_prov:prov,_district:district,_source:source,_addr:(obj.formatted_address||'')
+    };
+  }
+
+  function scoreCandidate(c){
+    let s=0;
+    if(c._source==='poi-city')s+=18;
+    else if(c._source==='geo-city')s+=14;
+    else if(c._source==='poi')s+=9;
+    else if(c._source==='geo')s+=6;
+    if(cityHint&&(c._city.includes(cityHint)||c._district.includes(cityHint)||c._addr.includes(cityHint)))s+=24;
+    if(provinceHint&&(c._prov.includes(provinceHint)||c._addr.includes(provinceHint)))s+=14;
+    if(nearLat!=null&&nearLng!=null){
+      const d=distKm({lat:nearLat,lng:nearLng},{lat:c.rawLat,lng:c.rawLng});
+      if(d<30)s+=30;
+      else if(d<80)s+=20;
+      else if(d<180)s+=10;
+      else if(d<350)s+=4;
+      else s-=Math.min(24,Math.floor((d-350)/120));
+    }
+    return s;
+  }
+
+  async function geoSearch(withCity){
+    try{
+      const cityParam=withCity&&cityHint?`&city=${encodeURIComponent(cityHint)}`:'';
+      const u=`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}${cityParam}`;
+      const d=await (await fetch(u)).json();
+      if(!d.geocodes||!d.geocodes.length)return [];
+      return d.geocodes.map(g=>toFmtCandidate(g,withCity&&cityHint?'geo-city':'geo')).filter(Boolean);
+    }catch(e){return []}
+  }
+
+  async function poiSearch(withCity){
+    try{
+      const cityParam=withCity&&cityHint?`&city=${encodeURIComponent(cityHint)}`:'';
+      const u=`https://restapi.amap.com/v3/place/text?key=${AMAP_KEY}&keywords=${encodeURIComponent(q)}${cityParam}&offset=15&page=1&extensions=base`;
+      const d=await (await fetch(u)).json();
+      if(!d.pois||!d.pois.length)return [];
+      return d.pois.map(p=>toFmtCandidate(p,withCity&&cityHint?'poi-city':'poi')).filter(Boolean);
+    }catch(e){return []}
+  }
+
   if(hasLatin){
     const om=await omGeo();
     if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:om.elevation||0,rawLat:om.latitude,rawLng:om.longitude};
     return null;
   }
 
-  // Chinese → Amap geocode
-  const amapR=await fetch(`https://restapi.amap.com/v3/geocode/geo?key=${AMAP_KEY}&address=${encodeURIComponent(q)}`).then(r=>r.json());
-  if(!amapR.geocodes||!amapR.geocodes.length){
-    const om=await omGeo();
-    if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:om.elevation||0,rawLat:om.latitude,rawLng:om.longitude};
-    return null;
+  const [geoCity,geoAll,poiCity,poiAll]=await Promise.all([geoSearch(true),geoSearch(false),poiSearch(true),poiSearch(false)]);
+  const all=[...geoCity,...geoAll,...poiCity,...poiAll];
+  if(all.length){
+    let best=all[0],bestScore=-Infinity;
+    for(const c of all){
+      const sc=scoreCandidate(c);
+      if(sc>bestScore){bestScore=sc;best=c;}
+    }
+    if(best)return best;
   }
 
-  function fmt(g){
-    const [lng,lat]=g.location.split(',').map(Number);
-    const [wgsLng,wgsLat]=gcj2wgs(lng,lat);
-    let short=g.name||q;
-    if(!g.name&&g.formatted_address){
-      const parts=g.formatted_address.split(/省|市|区|县|自治州/);
-      short=parts[parts.length-1]||g.formatted_address;
-    }
-    let admin=g.province||g.city||'';
-    if(g.city&&g.city!==g.province)admin=g.city;
-    return{
-      latitude:wgsLat,longitude:wgsLng,
-      name:short,country:g.country||'中国',
-      admin1:admin,elevation:0,
-      rawLat:lat,rawLng:lng
-    };
-  }
-
-  // Single result → use directly
-  if(amapR.geocodes.length===1)return fmt(amapR.geocodes[0]);
-
-  // Multiple results → use input tips to find the right province
-  try{
-    const tipsR=await fetch(`https://restapi.amap.com/v3/assistant/inputtips?key=${AMAP_KEY}&keywords=${encodeURIComponent(q)}`);
-    const tipsD=await tipsR.json();
-    if(tipsD.tips&&tipsD.tips.length){
-      const tip=tipsD.tips.find(t=>t.district&&t.district.length>0);
-      if(tip){
-        const match=amapR.geocodes.find(g=>g.province&&tip.district.includes(g.province));
-        if(match)return fmt(match);
-      }
-    }
-  }catch(e){}
-
-  // Fallback: first geocode result
-  return fmt(amapR.geocodes[0]);
+  const om=await omGeo();
+  if(om)return{latitude:om.latitude,longitude:om.longitude,name:om.name||q,country:om.country||'',admin1:om.admin1||'',elevation:om.elevation||0,rawLat:om.latitude,rawLng:om.longitude};
+  return null;
 }
 
 
@@ -303,7 +365,13 @@ async function plan(){
   goBtn.disabled=true;goBtn.textContent='规划中…';
 
   try{
-    const[fg,tg]=await Promise.all([geocode(fromQ),geocode(toQ)]);
+    const fg=await geocode(fromQ);
+    const tg=await geocode(toQ,{
+      cityHint:fg&&fg.admin1?fg.admin1:'',
+      provinceHint:fg&&fg.country==='中国'?(fg.admin1||''):'',
+      nearLat:fg?fg.rawLat:undefined,
+      nearLng:fg?fg.rawLng:undefined
+    });
     if(!fg||!tg){
       alert('未找到：'+[!fg?fromQ:'',!tg?toQ:''].filter(Boolean).join('、'));
       goBtn.disabled=false;goBtn.textContent='开始规划';
@@ -312,9 +380,19 @@ async function plan(){
     RSTATE.fromGeo=fg;RSTATE.toGeo=tg;
 
     // Fetch route first (critical path)
-    const route=await getRoute(fg,tg,RSTATE.mode);
+    let route=await getRoute(fg,tg,RSTATE.mode);
+    let fallbackMode=null;
+    if(!route&&RSTATE.mode==='cycling'){fallbackMode='walking'}
+    else if(!route&&RSTATE.mode==='walking'){fallbackMode='cycling'}
+    if(!route&&fallbackMode){
+      route=await getRoute(fg,tg,fallbackMode);
+      if(route){
+        setMode(fallbackMode);
+        RSTATE.mode=fallbackMode;
+      }
+    }
     if(!route){
-      alert('未找到可行路线\n\n可能原因：\n1. 两地距离太远\n2. 该区域不支持所选交通方式\n3. 网络问题\n\n请尝试：更换交通方式、调整起终点、或选择预设路线');
+      alert('当前模式未找到可行路线。\n\n可能原因：\n1. 同名地点命中偏差\n2. 该模式在局部路段受限\n3. 接口瞬时不可用\n\n建议：\n- 保留地点名称，先切换骑行/徒步再试\n- 用更精确地名（如“北京颐和园东宫门”）\n- 检查网络后重试');
       goBtn.disabled=false;goBtn.textContent='开始规划';
       return;
     }
