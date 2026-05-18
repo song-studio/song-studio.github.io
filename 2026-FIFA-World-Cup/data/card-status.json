@@ -1,0 +1,394 @@
+{
+  "algeria": {
+    "team": "阿尔及利亚",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "argentina": {
+    "team": "阿根廷",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "egypt": {
+    "team": "埃及",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "austria": {
+    "team": "奥地利",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "australia": {
+    "team": "澳大利亚",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "paraguay": {
+    "team": "巴拉圭",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "panama": {
+    "team": "巴拿马",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "brazil": {
+    "team": "巴西",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "belgium": {
+    "team": "比利时",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "bosnia-herzegovina": {
+    "team": "波黑",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "germany": {
+    "team": "德国",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "ecuador": {
+    "team": "厄瓜多尔",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "france": {
+    "team": "法国",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "cabo-verde": {
+    "team": "佛得角",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "dr-congo": {
+    "team": "刚果（金）",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "colombia": {
+    "team": "哥伦比亚",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "haiti": {
+    "team": "海地",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "korea-republic": {
+    "team": "韩国",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "netherlands": {
+    "team": "荷兰",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "canada": {
+    "team": "加拿大",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "ghana": {
+    "team": "加纳",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "czechia": {
+    "team": "捷克",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "qatar": {
+    "team": "卡塔尔",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "ivory-coast": {
+    "team": "科特迪瓦",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "croatia": {
+    "team": "克罗地亚",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "curacao": {
+    "team": "库拉索",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "united-states": {
+    "team": "美国",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "morocco": {
+    "team": "摩洛哥",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "mexico": {
+    "team": "墨西哥",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "south-africa": {
+    "team": "南非",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "norway": {
+    "team": "挪威",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "portugal": {
+    "team": "葡萄牙",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "japan": {
+    "team": "日本",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "sweden": {
+    "team": "瑞典",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "switzerland": {
+    "team": "瑞士",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "senegal": {
+    "team": "塞内加尔",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "saudi-arabia": {
+    "team": "沙特阿拉伯",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "scotland": {
+    "team": "苏格兰",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "tunisia": {
+    "team": "突尼斯",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "turkey": {
+    "team": "土耳其",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "uruguay": {
+    "team": "乌拉圭",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "uzbekistan": {
+    "team": "乌兹别克斯坦",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "spain": {
+    "team": "西班牙",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "new-zealand": {
+    "team": "新西兰",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "iraq": {
+    "team": "伊拉克",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "iran": {
+    "team": "伊朗",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "england": {
+    "team": "英格兰",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "jordan": {
+    "team": "约旦",
+    "stage": "开幕前",
+    "state": "待出征",
+    "badge": "本命候选",
+    "alive": true,
+    "updatedAt": "2026-05-18"
+  },
+  "china": {
+    "team": "中国",
+    "stage": "开幕前",
+    "state": "场外金卡",
+    "badge": "金卡",
+    "alive": false,
+    "updatedAt": "2026-05-18"
+  }
+}
