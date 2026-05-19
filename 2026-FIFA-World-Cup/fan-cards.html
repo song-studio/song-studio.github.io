@@ -283,10 +283,19 @@ body.theme-dark .story-card:hover{
     padding:6px;
     gap:6px;
     border-radius:16px;
+    z-index:1000;
+    pointer-events:auto;
   }
   .mobile-dock a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-size:11px;
     padding:8px 4px;
+    min-height:40px;
+    border:1px solid var(--line);
+    background:oklch(100% .01 88 / .92);
+    color:var(--ink);
   }
   body.mobile-layered .section[data-mobile-pane]{
     display:none;
@@ -297,6 +306,11 @@ body.theme-dark .story-card:hover{
   body.mobile-layered .section[data-mobile-pane].is-active .shell{
     animation:mobilePaneIn .2s ease-out;
   }
+}
+@media(max-width:920px){
+  .topbar .nav{display:none}
+  .topbar-inner{justify-content:space-between}
+  .brand{font-size:17px}
 }
 @keyframes mobilePaneIn{
   from{opacity:.65;transform:translateY(6px)}
@@ -1077,6 +1091,15 @@ document.addEventListener('click',e=>{
   history.replaceState(null,'',`#${id}`);
   setMobilePane(id);
 });
+document.addEventListener('touchstart',e=>{
+  const a=e.target.closest('a[href^="#"]');
+  if(!a || !isMobileLayerMode()) return;
+  const id=(a.getAttribute('href')||'').replace('#','');
+  if(!MOBILE_PANES.includes(id)) return;
+  e.preventDefault();
+  history.replaceState(null,'',`#${id}`);
+  setMobilePane(id,{scroll:false});
+},{passive:false});
 window.addEventListener('hashchange',syncMobilePaneFromHash);
 window.addEventListener('resize',initMobileLayerMode);
 window.fanCardAdmin={settleMatch,saveNarrativeAnswer,savePrediction,resolveNarrativesAuto,buildFinalReport,loadState,renderAll};
