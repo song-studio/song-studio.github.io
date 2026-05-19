@@ -288,6 +288,19 @@ body.theme-dark .story-card:hover{
     font-size:11px;
     padding:8px 4px;
   }
+  body.mobile-layered .section[data-mobile-pane]{
+    display:none;
+  }
+  body.mobile-layered .section[data-mobile-pane].is-active{
+    display:block;
+  }
+  body.mobile-layered .section[data-mobile-pane].is-active .shell{
+    animation:mobilePaneIn .2s ease-out;
+  }
+}
+@keyframes mobilePaneIn{
+  from{opacity:.65;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
 </style>
@@ -925,6 +938,53 @@ function initMobileCompaction(){
     });
   }
 }
+const MOBILE_PANES=['draw','daily','quests','fate','battle','collection','poster','logic','stories','china','roadmap','engine'];
+let mobilePaneId='draw';
+function isMobileLayerMode(){
+  return window.matchMedia && window.matchMedia('(max-width:560px)').matches;
+}
+function pickInitialMobilePane(){
+  const s=loadState();
+  if(!s.fate) return 'draw';
+  if(!(s.daily?.lastDraw===todayKey())) return 'daily';
+  return 'battle';
+}
+function setMobilePane(id,{scroll=true}={}){
+  if(!isMobileLayerMode()) return;
+  if(!MOBILE_PANES.includes(id)) return;
+  mobilePaneId=id;
+  document.body.classList.add('mobile-layered');
+  MOBILE_PANES.forEach(pid=>{
+    const sec=document.getElementById(pid);
+    if(!sec) return;
+    sec.setAttribute('data-mobile-pane','1');
+    sec.classList.toggle('is-active',pid===id);
+  });
+  if(scroll) window.scrollTo({top:0,behavior:'smooth'});
+}
+function syncMobilePaneFromHash(){
+  if(!isMobileLayerMode()) return;
+  const id=(location.hash||'').replace('#','');
+  if(MOBILE_PANES.includes(id)) setMobilePane(id,{scroll:false});
+}
+function initMobileLayerMode(){
+  if(!isMobileLayerMode()){
+    document.body.classList.remove('mobile-layered');
+    MOBILE_PANES.forEach(pid=>{
+      const sec=document.getElementById(pid);
+      if(!sec) return;
+      sec.classList.remove('is-active');
+      sec.removeAttribute('data-mobile-pane');
+    });
+    return;
+  }
+  MOBILE_PANES.forEach(pid=>{
+    const sec=document.getElementById(pid);
+    if(sec) sec.setAttribute('data-mobile-pane','1');
+  });
+  const first=(location.hash||'').replace('#','');
+  setMobilePane(MOBILE_PANES.includes(first)?first:pickInitialMobilePane(),{scroll:false});
+}
 function renderFilters(){const regions=['全部',...new Set(allTeams.map(t=>t.region))];$('#filters').innerHTML=regions.map(r=>`<button class="chip-btn" data-filter="${r}">${r}</button>`).join('');$$('[data-filter]').forEach(btn=>btn.onclick=()=>{activeFilter=btn.dataset.filter;renderGallery()})}
 function renderGallery(){const s=loadState();const ownedSet=new Set([...(s.owned||[]),s.fate].filter(Boolean));const teams=allTeams.filter(t=>activeFilter==='全部'||t.region===activeFilter);const visibleOwnedCount=allTeams.filter(t=>t.id!=='china'?ownedSet.has(t.id):Boolean(s.goldRevealed)).length;$('#progressText').textContent=`${visibleOwnedCount}/49`;$('#progressFill').style.width=`${Math.round(visibleOwnedCount/49*100)}%`;const gallery=$('#gallery');gallery.innerHTML='';teams.forEach(team=>{const owned=team.id==='china'?Boolean(s.goldRevealed):ownedSet.has(team.id);const st=statusOf(team);const rarity=rarityOf(team);const card=document.createElement('article');card.className=`team-card rarity-${rarity.key} ${owned?'':'locked'}`;const displayName=team.id==='china'?'彩蛋':team.name;card.innerHTML=`<img loading="lazy" src="${team.thumb}" alt="${displayName} 球迷卡"><span class="mini-badge">${owned?rarity.label:st.badge}</span><div class="name"><span>${owned?team.flag:'◇'} ${displayName}</span>${owned?'<i class="owned-dot"></i>':''}</div>`;card.onclick=()=>openTeam(team);gallery.appendChild(card)});$$('[data-filter]').forEach(b=>b.style.color=b.dataset.filter===activeFilter?'var(--gold)':'')}
 function openTeam(team){
@@ -955,7 +1015,7 @@ function renderRewardHud(){const s=ensureDailyOpenLimit(loadState());const open=
 function updateHeroFloats(){const pool=allTeams.filter(t=>t.name!=='中国'&&t.thumb);if(pool.length<3){setFallbackHeroThumbs();return}const hero=sample(pool,3);['#floatOne','#floatTwo','#floatThree'].forEach((sel,i)=>{const el=$(sel);if(el&&hero[i])el.src=resolveAsset(hero[i].thumb)})}
 function exportSave(){const data=JSON.stringify(loadState());const code=btoa(unescape(encodeURIComponent(data)));navigator.clipboard?.writeText(code).then(()=>toast('卡包码已复制。')).catch(()=>prompt('这是你的卡包码，请保存：',code))}
 function importSave(){const code=prompt('粘贴卡包码，导入后会覆盖当前浏览器里的卡包记录。');if(!code)return;try{const data=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));saveState({...defaultState(),...data});renderAll();toast('卡包码已导入。')}catch(e){toast('卡包码无效，请检查是否复制完整。')}}
-function renderAll(){renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState()}
+function renderAll(){renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState();if(isMobileLayerMode())setMobilePane(mobilePaneId||pickInitialMobilePane(),{scroll:false})}
 async function init(){
   setFallbackHeroThumbs();
   const [cards,status,matches]=await Promise.all([
@@ -1008,8 +1068,20 @@ $('#closeModal').onclick=closeModal;
 $('#modal').onclick=e=>{if(e.target.id==='modal')closeModal()};
 $('#chinaBtn').onclick=()=>useChinaGold(false);
 $('#downloadPoster').onclick=downloadPoster;
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]');
+  if(!a || !isMobileLayerMode()) return;
+  const id=(a.getAttribute('href')||'').replace('#','');
+  if(!MOBILE_PANES.includes(id)) return;
+  e.preventDefault();
+  history.replaceState(null,'',`#${id}`);
+  setMobilePane(id);
+});
+window.addEventListener('hashchange',syncMobilePaneFromHash);
+window.addEventListener('resize',initMobileLayerMode);
 window.fanCardAdmin={settleMatch,saveNarrativeAnswer,savePrediction,resolveNarrativesAuto,buildFinalReport,loadState,renderAll};
 initMobileCompaction();
+initMobileLayerMode();
 init();
 </script>
 </body>
