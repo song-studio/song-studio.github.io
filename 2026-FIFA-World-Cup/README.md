@@ -1,6 +1,6 @@
-# 2026 FIFA World Cup Fan Fate Cards
+# 2026 FIFA World Cup Fan Cards
 
-世界杯球迷命运卡。
+世界杯球迷卡牌。
 
 ## Structure
 
