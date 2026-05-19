@@ -297,6 +297,26 @@ body.theme-dark .story-card:hover{
     background:oklch(100% .01 88 / .92);
     color:var(--ink);
   }
+  .mobile-dock a.active{
+    background:linear-gradient(135deg,oklch(91% .13 88),oklch(77% .15 70));
+    color:oklch(16% .05 248);
+    border-color:oklch(83% .145 82 / .58);
+    box-shadow:0 8px 20px oklch(75% .12 78 / .25);
+  }
+  body.mobile-layered .hero-note,
+  body.mobile-layered .design-index,
+  body.mobile-layered .phase-rail{
+    display:none;
+  }
+  body.mobile-layered .hero-actions .secondary-btn.soft-link{
+    display:none;
+  }
+  body.mobile-layered .hero-actions{
+    margin-top:14px;
+  }
+  body.mobile-layered .hero-actions .primary-btn{
+    width:100%;
+  }
   body.mobile-layered .section[data-mobile-pane]{
     display:none;
   }
@@ -954,6 +974,7 @@ function initMobileCompaction(){
 }
 const MOBILE_PANES=['draw','daily','quests','fate','battle','collection','poster','logic','stories','china','roadmap','engine'];
 let mobilePaneId='draw';
+const MOBILE_DOCK_MAP={draw:'主队',daily:'手气',battle:'预测',poster:'档案',fate:'主队',quests:'手气',collection:'档案',logic:'主队',stories:'预测',china:'手气',roadmap:'档案',engine:'档案'};
 function isMobileLayerMode(){
   return window.matchMedia && window.matchMedia('(max-width:560px)').matches;
 }
@@ -975,6 +996,13 @@ function setMobilePane(id,{scroll=true}={}){
     sec.classList.toggle('is-active',pid===id);
   });
   if(scroll) window.scrollTo({top:0,behavior:'smooth'});
+  updateMobileDockActive(id);
+}
+function updateMobileDockActive(id){
+  const key=MOBILE_DOCK_MAP[id]||'主队';
+  document.querySelectorAll('.mobile-dock a').forEach(a=>{
+    a.classList.toggle('active',a.textContent.trim()===key);
+  });
 }
 function syncMobilePaneFromHash(){
   if(!isMobileLayerMode()) return;
@@ -998,6 +1026,7 @@ function initMobileLayerMode(){
   });
   const first=(location.hash||'').replace('#','');
   setMobilePane(MOBILE_PANES.includes(first)?first:pickInitialMobilePane(),{scroll:false});
+  updateMobileDockActive(MOBILE_PANES.includes(first)?first:pickInitialMobilePane());
 }
 function renderFilters(){const regions=['全部',...new Set(allTeams.map(t=>t.region))];$('#filters').innerHTML=regions.map(r=>`<button class="chip-btn" data-filter="${r}">${r}</button>`).join('');$$('[data-filter]').forEach(btn=>btn.onclick=()=>{activeFilter=btn.dataset.filter;renderGallery()})}
 function renderGallery(){const s=loadState();const ownedSet=new Set([...(s.owned||[]),s.fate].filter(Boolean));const teams=allTeams.filter(t=>activeFilter==='全部'||t.region===activeFilter);const visibleOwnedCount=allTeams.filter(t=>t.id!=='china'?ownedSet.has(t.id):Boolean(s.goldRevealed)).length;$('#progressText').textContent=`${visibleOwnedCount}/49`;$('#progressFill').style.width=`${Math.round(visibleOwnedCount/49*100)}%`;const gallery=$('#gallery');gallery.innerHTML='';teams.forEach(team=>{const owned=team.id==='china'?Boolean(s.goldRevealed):ownedSet.has(team.id);const st=statusOf(team);const rarity=rarityOf(team);const card=document.createElement('article');card.className=`team-card rarity-${rarity.key} ${owned?'':'locked'}`;const displayName=team.id==='china'?'彩蛋':team.name;card.innerHTML=`<img loading="lazy" src="${team.thumb}" alt="${displayName} 球迷卡"><span class="mini-badge">${owned?rarity.label:st.badge}</span><div class="name"><span>${owned?team.flag:'◇'} ${displayName}</span>${owned?'<i class="owned-dot"></i>':''}</div>`;card.onclick=()=>openTeam(team);gallery.appendChild(card)});$$('[data-filter]').forEach(b=>b.style.color=b.dataset.filter===activeFilter?'var(--gold)':'')}
