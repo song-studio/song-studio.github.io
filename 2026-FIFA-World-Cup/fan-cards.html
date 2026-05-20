@@ -534,11 +534,140 @@ body.theme-dark .story-card:hover{
   body{padding-bottom:74px}
 }
 
+.mobile-app{display:none}
+@media(max-width:560px){
+  main>.hero,main>.section,.mobile-dock{display:none!important}
+  .mobile-app{display:block;padding:18px 0 76px}
+  .m-shell{width:min(100vw - 24px,420px);margin:0 auto}
+  .m-hero{padding:6px 0 18px}
+  .m-brand-row{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .m-title h1{font-family:var(--fun);font-size:38px;line-height:1.05;letter-spacing:0;color:oklch(96% .014 88)}
+  .m-title p{margin-top:7px;color:oklch(82% .025 86 / .76);font-size:13px;line-height:1.65}
+  .m-card-logo{position:relative;width:78px;height:78px;flex:0 0 78px}
+  .m-logo-card{position:absolute;width:46px;border-radius:9px;box-shadow:0 12px 24px oklch(2% .02 250 / .46);border:1px solid oklch(100% .02 88 / .18)}
+  .m-logo-card.one{left:2px;top:18px;transform:rotate(-11deg)}
+  .m-logo-card.two{left:22px;top:6px;transform:rotate(7deg)}
+  .m-logo-card.three{left:31px;top:25px;transform:rotate(14deg)}
+  .m-playbook{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+  .m-type{border:1px solid oklch(86% .03 86 / .14);border-radius:14px;padding:10px;background:linear-gradient(180deg,oklch(18% .035 252 / .9),oklch(11% .026 252 / .9))}
+  .m-type b{display:block;color:oklch(84% .13 84);font-size:13px}
+  .m-type span{display:block;margin-top:4px;color:oklch(82% .025 86 / .72);font-size:11px;line-height:1.45}
+  .m-panel{margin-top:14px;border:1px solid oklch(86% .03 86 / .14);border-radius:18px;background:linear-gradient(180deg,oklch(18% .035 252 / .94),oklch(11% .026 252 / .94));box-shadow:0 18px 42px oklch(2% .02 250 / .34),inset 0 1px 0 oklch(100% .01 88 / .045);padding:14px}
+  .m-panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .m-kicker{font-size:11px;font-weight:900;letter-spacing:.08em;color:oklch(83% .115 84)}
+  .m-panel h2{font-size:24px;line-height:1.15;letter-spacing:0;color:oklch(96% .014 88)}
+  .m-panel p{color:oklch(82% .025 86 / .74);font-size:13px;line-height:1.62}
+  .m-btn{min-height:46px;border-radius:12px;border:1px solid oklch(86% .03 86 / .16);background:oklch(13% .026 252 / .86);color:oklch(90% .02 86 / .92);display:inline-flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:900;padding:0 14px;width:100%;cursor:pointer}
+  .m-btn.primary{border-color:oklch(86% .11 84 / .54);background:linear-gradient(180deg,oklch(84% .13 84),oklch(67% .11 72));color:oklch(12% .03 248)}
+  .m-btn-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+  .m-status-grid,.m-reward-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .m-stat{border:1px solid oklch(86% .03 86 / .12);border-radius:12px;background:oklch(10% .024 252 / .62);padding:9px 7px;min-height:58px}
+  .m-stat b{display:block;color:oklch(84% .13 84);font-family:var(--title);font-size:22px;line-height:1}
+  .m-stat span{display:block;margin-top:4px;font-size:10px;color:oklch(82% .02 86 / .66)}
+  .m-pick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .m-card-mini{position:relative;border:1px solid oklch(86% .03 86 / .13);border-radius:14px;background:oklch(10% .024 252 / .7);padding:7px;min-width:0;cursor:pointer}
+  .m-card-mini img{display:block;width:100%;border-radius:10px;aspect-ratio:3/4;object-fit:cover}
+  .m-card-mini strong{display:block;margin-top:6px;font-size:11px;line-height:1.25;color:oklch(94% .018 88);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .m-card-mini span{display:block;font-size:10px;color:oklch(84% .13 84)}
+  .m-card-mini.locked img{filter:blur(8px) saturate(.4) brightness(.55)}
+  .m-fate-card{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center}
+  .m-fate-card img{width:96px;border-radius:14px;box-shadow:0 16px 32px oklch(2% .02 250 / .42)}
+  .m-input{width:100%;min-height:44px;border-radius:12px;border:1px solid oklch(86% .03 86 / .14);background:oklch(9% .024 252 / .86);color:oklch(94% .018 88);padding:0 12px}
+  .m-list{display:grid;gap:8px}
+  .m-list-item{border:1px solid oklch(86% .03 86 / .12);border-radius:12px;background:oklch(10% .024 252 / .62);padding:10px}
+  .m-list-item b{display:block;color:oklch(94% .018 88);font-size:13px}
+  .m-list-item span{display:block;margin-top:3px;color:oklch(82% .025 86 / .72);font-size:12px;line-height:1.45}
+  .m-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .m-card-grid:not(.expanded) .m-card-mini:nth-child(n+7){display:none}
+}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./index.html"><span class="brand-mark"></span><span>FAN CARDS</span></a><nav class="nav"><a href="./index.html">世界杯首页</a><a href="#draw">入场</a><a href="#daily">每日手气</a><a href="#quests">补给站</a><a href="#battle">预测局</a><a href="#collection">国家卡牌库</a><a href="#poster">我的档案</a></nav><button class="chip-btn theme-toggle" id="themeToggle" type="button">深色版</button></div></header>
 <main>
+<div class="mobile-app" id="mobileApp">
+  <div class="m-shell">
+    <section class="m-hero">
+      <div class="m-brand-row">
+        <div class="m-title">
+          <h1>世界杯球迷卡牌赛</h1>
+          <p>先选主队，每天点亮国家卡。世界杯开赛后，用手里的卡预测比赛，命中后卡牌获得星级、奖励和赛后档案记录。</p>
+        </div>
+        <div class="m-card-logo" aria-hidden="true">
+          <img class="m-logo-card one" id="mLogoOne" alt="">
+          <img class="m-logo-card two" id="mLogoTwo" alt="">
+          <img class="m-logo-card three" id="mLogoThree" alt="">
+        </div>
+      </div>
+      <div class="m-playbook">
+        <div class="m-type"><b>主队卡</b><span>你的身份卡，记录主队轨迹和赛后档案。</span></div>
+        <div class="m-type"><b>国家卡</b><span>比赛日出战卡，用来预测胜平负。</span></div>
+        <div class="m-type"><b>稀有叙事卡</b><span>解锁冠军、黑马、决赛走势等长期题。</span></div>
+        <div class="m-type"><b>彩蛋卡</b><span>隐藏奖励卡，抽到后每天领取额外能量。</span></div>
+      </div>
+      <div class="m-panel">
+        <div class="m-panel-head">
+          <div><div class="m-kicker">今日任务</div><h2 id="mTodayTitle">先选主队卡</h2></div>
+        </div>
+        <p id="mTodayText">第一步先确定你的世界杯身份。后续预测、奖励和档案都会围绕它展开。</p>
+        <button class="m-btn primary" id="mPrimaryAction" type="button">开始今日任务</button>
+        <div class="m-status-grid" id="mStatusGrid" style="margin-top:10px"></div>
+      </div>
+    </section>
+
+    <section class="m-panel" id="mPickPanel">
+      <div class="m-panel-head"><div><div class="m-kicker">01 主队</div><h2>选择你的主队卡</h2></div></div>
+      <p>首组只发一次。如果三张都不喜欢，可以使用一次主队直选。</p>
+      <div id="mFateBox" style="margin-top:12px"></div>
+      <div class="m-btn-row">
+        <input class="m-input" id="mDirectPickInput" placeholder="输入国家名">
+        <button class="m-btn" id="mDirectPickBtn" type="button">直选主队</button>
+      </div>
+    </section>
+
+    <section class="m-panel" id="mDailyPanel">
+      <div class="m-panel-head"><div><div class="m-kicker">02 每日手气</div><h2>每天只翻一张</h2></div></div>
+      <p>翻到新卡会点亮国家卡；重复卡会转成卡尘和能量。手机端只展示结果，完整卡面点开再看。</p>
+      <div id="mDailyResult" style="margin-top:12px"></div>
+      <button class="m-btn primary" id="mDailyBtn" type="button" style="margin-top:10px">翻今日手气</button>
+    </section>
+
+    <section class="m-panel" id="mRewardPanel">
+      <div class="m-panel-head"><div><div class="m-kicker">03 奖励</div><h2>我的实时奖励</h2></div></div>
+      <div class="m-reward-grid" id="mRewardGrid"></div>
+      <div class="m-btn-row">
+        <button class="m-btn" id="mCheckBtn" type="button">今日签到</button>
+        <button class="m-btn" id="mDustBtn" type="button">卡尘补抽</button>
+      </div>
+      <button class="m-btn" id="mChinaBtn" type="button" style="margin-top:8px">触发彩蛋剧场</button>
+    </section>
+
+    <section class="m-panel" id="mBattlePanel">
+      <div class="m-panel-head"><div><div class="m-kicker">04 比赛日</div><h2>用卡预测胜平负</h2></div></div>
+      <p id="mBattleText">开赛后这里会出现当天比赛。你可以用主队卡或已点亮国家卡出战，命中后给那张卡加星。</p>
+      <div class="m-list" id="mBattleList" style="margin-top:10px"></div>
+    </section>
+
+    <section class="m-panel" id="mStoryPanel">
+      <div class="m-panel-head"><div><div class="m-kicker">05 稀有叙事</div><h2>整届世界杯预测题</h2></div></div>
+      <p>抽到对应稀有卡后，才能提交长期题。答案提交后锁定，结果揭晓时自动判定并写入档案。</p>
+      <div class="m-list" id="mStoryList" style="margin-top:10px"></div>
+    </section>
+
+    <section class="m-panel" id="mCardsPanel">
+      <div class="m-panel-head"><div><div class="m-kicker">06 卡牌库</div><h2>我的国家卡</h2></div></div>
+      <p id="mCardsText">默认只看一部分卡牌，点开单张卡可放大查看。</p>
+      <div class="m-card-grid" id="mCardGrid" style="margin-top:10px"></div>
+      <button class="m-btn" id="mToggleCards" type="button" style="margin-top:10px">查看全部卡牌</button>
+    </section>
+
+    <section class="m-panel" id="mArchivePanel">
+      <div class="m-panel-head"><div><div class="m-kicker">07 档案</div><h2>我的世界杯档案</h2></div></div>
+      <p id="mArchiveText">现在可下载主队卡。世界杯推进后，会汇总主队轨迹、预测记录、稀有叙事命中和收藏进度。</p>
+      <button class="m-btn primary" id="mDownloadBtn" type="button">下载我的主队卡</button>
+    </section>
+  </div>
+</div>
 <section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">2026 FIFA WORLD CUP</div><h1 class="hero-title"><span class="t1">球迷</span><span class="t2">卡牌赛</span></h1><div class="hero-subtitle">不懂球也能玩：先选主队，再用国家卡参与比赛日预测</div><p class="hero-lead">三步入门：① 选主队卡；② 每天翻一张点亮国家卡牌（每天开卡总上限3次，含补抽）；③ 比赛日用主队卡或已点亮国家卡参与胜平负预测。奖励会累计到卡牌记录：命中加星、资源增加、叙事题命中入档。</p><div class="today-brief" id="todayBrief"><div><span>今日行动</span><strong id="todayTitle">先选主队卡</strong><p id="todayText">首组卡只发一次，选一张作为你的世界杯主队。</p></div><button class="today-action" id="todayAction" type="button">开始今日流程</button><div class="today-steps" id="todaySteps"></div></div><div class="reward-hud" id="rewardHud"><div class="reward-hud-title">我的实时奖励</div><div class="reward-hud-grid"><div class="reward-chip"><b id="hudEnergy">0</b><span>预言能量</span></div><div class="reward-chip"><b id="hudDust">0</b><span>卡尘</span></div><div class="reward-chip"><b id="hudOpen">0/3</b><span>今日开卡</span></div><div class="reward-chip"><b id="hudStreak">0</b><span>连续签到</span></div></div></div><div class="today-loot" id="todayLoot">今日收获：<b id="lootEnergy">+0</b> 能量 · <b id="lootDust">+0</b> 卡尘 · <b id="lootStars">+0</b> 预测星 · <b id="lootBadges">无奖励章</b></div><div class="hero-actions"><button class="primary-btn" id="heroDraw">进入世界杯球迷卡牌赛</button><a class="secondary-btn" href="#collection">先看朦胧国家卡牌</a><a class="secondary-btn soft-link" href="#roadmap">查看完整规则</a></div><div class="hero-note"><div class="note"><strong>48+1</strong><span>48支正赛队，加一张彩蛋卡保留神秘剧情</span></div><div class="note"><strong>每天</strong><span>每天只翻一张，重复卡会转成卡尘</span></div><div class="note"><strong>全程</strong><span>预测、淘汰、夺冠都会写入你的卡牌记录</span></div></div><div class="design-index"><div class="index-no">49</div><p><b>49张世界杯球迷卡</b>一套会随赛事留下痕迹的球迷卡：现在选主队和点亮国家卡牌，比赛日用卡预测，淘汰后封存纪念，赛后汇总个人世界杯档案。</p></div><div class="phase-rail" aria-label="玩法阶段"><a href="#draw"><b>01 入场</b><span>三选一</span></a><a href="#daily"><b>02 点亮</b><span>每日一张</span></a><a href="#battle"><b>03 预测</b><span>比赛日出手</span></a><a href="#poster"><b>04 成档</b><span>赛后博物馆</span></a></div></div><div class="pack-stage"><div class="stadium-ring"></div><img class="floating-card one" id="floatOne" alt="卡牌预览"><img class="floating-card two" id="floatTwo" alt="卡牌预览"><img class="floating-card three" id="floatThree" alt="卡牌预览"><div class="pack"><div class="pack-title">FAN<br>CARD<br>PACK</div></div></div></div></section>
 
 
@@ -1196,10 +1325,117 @@ function renderFinalReportSummary(){
 function downloadPoster(){const s=loadState();const team=teamById(s.fate);if(!team){toast('先选一张主队卡。');location.hash='draw';return}const a=document.createElement('a');a.download=`${team.name}-主队卡.webp`;a.href=team.image;a.click();toast('主队卡图片已下载。')}
 function updateHeroState(){const s=loadState();const btn=$('#heroDraw');if(btn){btn.textContent=s.fate?'查看我的主队席':'进入世界杯球迷卡牌赛'}}
 function renderRewardHud(){const s=ensureDailyOpenLimit(loadState());const open=s.daily?.openCount||0;const loot=s.todayLoot||{energy:0,dust:0,stars:0,badges:[]};if($('#hudEnergy'))$('#hudEnergy').textContent=s.energy||0;if($('#hudDust'))$('#hudDust').textContent=s.dust||0;if($('#hudOpen'))$('#hudOpen').textContent=`${open}/3`;if($('#hudStreak'))$('#hudStreak').textContent=s.streak||0;if($('#lootEnergy'))$('#lootEnergy').textContent=`+${loot.energy||0}`;if($('#lootDust'))$('#lootDust').textContent=`+${loot.dust||0}`;if($('#lootStars'))$('#lootStars').textContent=`+${loot.stars||0}`;if($('#lootBadges'))$('#lootBadges').textContent=(loot.badges&&loot.badges.length)?loot.badges.join(' / '):'无奖励章'}
+function mobileOpeningPackIds(){
+  const s=loadState();
+  const current=(s.openingPack||[]).filter(id=>teamById(id));
+  if(current.length===3)return current;
+  const qualified=allTeams.filter(t=>t.qualified&&t.id!=='china');
+  const strongIds=[...rarityPools.legendary,...rarityPools.epic];
+  const strongPool=qualified.filter(t=>strongIds.includes(t.id));
+  const picks=[];
+  if(Math.random()<0.35&&strongPool.length)picks.push(...sampleWeighted(strongPool,1));
+  const need=3-picks.length;
+  const restPool=qualified.filter(t=>!picks.some(x=>x.id===t.id));
+  const normalRest=restPool.filter(t=>!strongIds.includes(t.id));
+  picks.push(...sampleWeighted((normalRest.length>=need?normalRest:restPool),need));
+  s.openingPack=picks.slice(0,3).map(t=>t.id);
+  saveState(s);
+  return s.openingPack;
+}
+function mScroll(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+function renderMobileApp(){
+  if(!$('#mobileApp')||!allTeams.length)return;
+  const s=ensureDailyOpenLimit(loadState());
+  const fate=teamById(s.fate);
+  const dailyTeam=teamById(s.daily?.lastCard);
+  const ownedSet=new Set([...(s.owned||[]),s.fate].filter(Boolean));
+  const ownedCount=allTeams.filter(t=>t.id==='china'?Boolean(s.goldRevealed):ownedSet.has(t.id)).length;
+  const dailyDone=s.daily?.lastDraw===todayKey();
+  const checked=Boolean(s.quests?.checked);
+  const openCount=s.daily?.openCount||0;
+  const loot=s.todayLoot||{energy:0,dust:0,stars:0,badges:[]};
+  const logoPool=allTeams.filter(t=>t.thumb&&t.id!=='china');
+  const logo=sample(logoPool.length>=3?logoPool:allTeams,3);
+  ['#mLogoOne','#mLogoTwo','#mLogoThree'].forEach((sel,i)=>{const el=$(sel);if(el&&logo[i])el.src=resolveAsset(logo[i].thumb)});
+
+  let title='先选主队卡', text='第一步先确定你的世界杯身份。后续预测、奖励和档案都会围绕它展开。', label='选择主队卡', target='mPickPanel';
+  if(fate&&!dailyDone){title='今天翻一张国家卡';text='每天只翻一张。新卡点亮收藏，重复卡会转成卡尘和能量。';label='翻今日手气';target='daily'}
+  else if(fate&&dailyDone&&!checked){title='领取今日补给';text='签到拿能量，能量用于比赛日预测和后续补给动作。';label='今日签到';target='check'}
+  else if(fate&&dailyDone){title='今日任务已完成';text='你已经完成今天的关键动作。可以查看奖励、卡牌库或等待比赛日预测。';label='查看我的奖励';target='mRewardPanel'}
+  $('#mTodayTitle').textContent=title;
+  $('#mTodayText').textContent=text;
+  $('#mPrimaryAction').textContent=label;
+  $('#mPrimaryAction').onclick=()=>{
+    if(target==='daily')dailyDraw();
+    else if(target==='check')checkIn();
+    else mScroll(target);
+  };
+  $('#mStatusGrid').innerHTML=[
+    ['主队',fate?fate.name:'未选'],
+    ['今日开卡',`${openCount}/3`],
+    ['卡牌进度',`${ownedCount}/49`]
+  ].map(([a,b])=>`<div class="m-stat"><b>${b}</b><span>${a}</span></div>`).join('');
+
+  const fateBox=$('#mFateBox');
+  if(fate){
+    const marks=s.imprints?.[fate.id]||{hits:0};
+    fateBox.innerHTML=`<div class="m-fate-card"><img src="${fate.thumb}" alt="${fate.name}"><div><div class="m-kicker">你的主队</div><h2>${fate.name}</h2><p>${fate.feature}</p><div class="m-status-grid" style="margin-top:8px"><div class="m-stat"><b>${marks.hits||0}</b><span>预测星</span></div><div class="m-stat"><b>${rewardTier(marks.hits||0)}</b><span>奖励等级</span></div><div class="m-stat"><b>${s.fateImprint?.fanPoints||0}</b><span>粉丝积分</span></div></div></div></div>`;
+  }else{
+    const ids=mobileOpeningPackIds();
+    fateBox.innerHTML=`<div class="m-pick-grid">${ids.map(id=>{const t=teamById(id);return `<button class="m-card-mini" type="button" data-m-fate="${t.id}"><img src="${t.thumb}" alt="${t.name}"><strong>${t.name}</strong><span>${rarityOf(t).label}</span></button>`}).join('')}</div>`;
+    fateBox.querySelectorAll('[data-m-fate]').forEach(btn=>btn.onclick=()=>chooseFate(btn.dataset.mFate));
+  }
+  const mInput=$('#mDirectPickInput');
+  $('#mDirectPickBtn').onclick=()=>{
+    const team=findTeamByInput(mInput?.value);
+    if(!team){toast('没有匹配到球队，请输入参赛队中文名。');return}
+    chooseFate(team.id,{direct:true});
+  };
+
+  $('#mDailyResult').innerHTML=dailyTeam?`<div class="m-fate-card"><img src="${dailyTeam.thumb}" alt="${dailyTeam.name}"><div><div class="m-kicker">${s.daily?.duplicate?'重复转化':'今日点亮'}</div><h2>${dailyTeam.name}</h2><p>${s.daily?.duplicate?'重复卡已转成卡尘和能量。':'这张卡已进入你的国家卡牌库，比赛日可作为出战卡。'}</p></div></div>`:'<div class="m-list-item"><b>今日手气还没揭晓</b><span>每天只翻一张，保持卡牌稀有感。</span></div>';
+  $('#mDailyBtn').textContent=dailyDone?'今日已翻，明天再来':'翻今日手气';
+  $('#mDailyBtn').onclick=dailyDone?()=>toast('今天已经翻过手气了，明天再来。'):dailyDraw;
+
+  $('#mRewardGrid').innerHTML=[
+    ['能量',s.energy||0],['卡尘',s.dust||0],['签到',s.streak||0],
+    ['今日能量',`+${loot.energy||0}`],['今日卡尘',`+${loot.dust||0}`],['预测星',`+${loot.stars||0}`]
+  ].map(([a,b])=>`<div class="m-stat"><b>${b}</b><span>${a}</span></div>`).join('');
+  $('#mCheckBtn').textContent=checked?'今日已签到':'今日签到';
+  $('#mCheckBtn').onclick=checked?completedQuestToast:checkIn;
+  $('#mDustBtn').onclick=spendDustReroll;
+  $('#mChinaBtn').onclick=()=>useChinaGold(false);
+
+  const battleList=$('#mBattleList');
+  if(matchesData.today?.length){
+    battleList.innerHTML=matchesData.today.slice(0,3).map(m=>`<div class="m-list-item"><b>${m.title||'今日比赛'}</b><span>${m.home||''} ${m.time||''} ${m.away||''}</span></div>`).join('');
+    $('#mBattleText').textContent='今日比赛已开放。进入桌面完整预测区可选择出战卡并提交胜平负。';
+  }else{
+    battleList.innerHTML='<div class="m-list-item"><b>赛前准备中</b><span>开赛后会显示当天比赛列表。每场先选出战卡，再预测主胜、平局或客胜。</span></div>';
+    $('#mBattleText').textContent='开赛后这里会出现当天比赛。命中普通比赛加星，同队出战命中加成更多。';
+  }
+
+  $('#mStoryList').innerHTML=NARRATIVE_QUESTIONS.map(q=>{
+    const t=teamById(q.cardId);
+    const unlocked=hasNarrativeCard(q,s);
+    const rec=s.narrative?.[q.id];
+    return `<div class="m-list-item"><b>${q.title}</b><span>${unlocked?(rec?'已提交，等待揭晓':'已解锁，可提交答案'):`需要先点亮 ${t?.name||q.cardId} 稀有卡`}</span></div>`;
+  }).join('');
+
+  const cardGrid=$('#mCardGrid');
+  cardGrid.innerHTML=allTeams.map(t=>{
+    const owned=t.id==='china'?Boolean(s.goldRevealed):ownedSet.has(t.id);
+    const name=t.id==='china'?'彩蛋':t.name;
+    return `<button class="m-card-mini ${owned?'':'locked'}" type="button" data-m-card="${t.id}"><img src="${t.thumb}" alt="${name}"><strong>${owned?name:'未点亮'}</strong><span>${owned?rarityOf(t).label:'待收集'}</span></button>`;
+  }).join('');
+  cardGrid.querySelectorAll('[data-m-card]').forEach(btn=>btn.onclick=()=>openTeam(teamById(btn.dataset.mCard)));
+  $('#mCardsText').textContent=`已点亮 ${ownedCount}/49。默认只露一部分，点开卡牌可放大查看。`;
+  $('#mToggleCards').onclick=()=>{cardGrid.classList.toggle('expanded');$('#mToggleCards').textContent=cardGrid.classList.contains('expanded')?'收起卡牌':'查看全部卡牌'};
+  $('#mDownloadBtn').onclick=downloadPoster;
+}
 function updateHeroFloats(){const pool=allTeams.filter(t=>t.name!=='中国'&&t.thumb);if(pool.length<3){setFallbackHeroThumbs();return}const hero=sample(pool,3);['#floatOne','#floatTwo','#floatThree'].forEach((sel,i)=>{const el=$(sel);if(el&&hero[i])el.src=resolveAsset(hero[i].thumb)})}
 function exportSave(){const data=JSON.stringify(loadState());const code=btoa(unescape(encodeURIComponent(data)));navigator.clipboard?.writeText(code).then(()=>toast('卡包码已复制。')).catch(()=>prompt('这是你的卡包码，请保存：',code))}
 function importSave(){const code=prompt('粘贴卡包码，导入后会覆盖当前浏览器里的卡包记录。');if(!code)return;try{const data=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));saveState({...defaultState(),...data});renderAll();toast('卡包码已导入。')}catch(e){toast('卡包码无效，请检查是否复制完整。')}}
-function renderAll(){renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState()}
+function renderAll(){renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState();renderMobileApp()}
 async function init(){
   setFallbackHeroThumbs();
   const [cards,status,matches]=await Promise.all([
