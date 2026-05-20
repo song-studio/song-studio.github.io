@@ -297,34 +297,40 @@ body.theme-dark .story-card:hover{
     background:oklch(100% .01 88 / .92);
     color:var(--ink);
   }
-  .mobile-dock a.active{
-    background:linear-gradient(135deg,oklch(91% .13 88),oklch(77% .15 70));
-    color:oklch(16% .05 248);
-    border-color:oklch(83% .145 82 / .58);
-    box-shadow:0 8px 20px oklch(75% .12 78 / .25);
+  .primary-btn,.secondary-btn,.chip-btn,.today-action,.quest-action,.direct-pick button,.pick-row button{
+    min-height:44px;
+    border-radius:12px;
+    padding:0 14px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:.02em;
+    box-shadow:none;
   }
-  body.mobile-layered .hero-note,
-  body.mobile-layered .design-index,
-  body.mobile-layered .phase-rail{
-    display:none;
+  .primary-btn,.today-action{
+    border:1px solid oklch(80% .12 84 / .58);
+    background:linear-gradient(180deg,oklch(82% .13 84),oklch(68% .12 72));
+    color:oklch(14% .035 248);
   }
-  body.mobile-layered .hero-actions .secondary-btn.soft-link{
-    display:none;
+  .secondary-btn,.chip-btn,.quest-action,.direct-pick button,.pick-row button{
+    border:1px solid oklch(86% .03 86 / .20);
+    background:oklch(16% .035 250 / .78);
+    color:oklch(92% .018 86 / .92);
   }
-  body.mobile-layered .hero-actions{
-    margin-top:14px;
-  }
-  body.mobile-layered .hero-actions .primary-btn{
+  .hero-actions .primary-btn,.hero-actions .secondary-btn,.today-action,#dailyBtn,#chinaBtn,#downloadPoster{
     width:100%;
   }
-  body.mobile-layered .section[data-mobile-pane]{
-    display:none;
+  .vault-actions .chip-btn,.quest-action{
+    width:100%;
   }
-  body.mobile-layered .section[data-mobile-pane].is-active{
-    display:block;
-  }
-  body.mobile-layered .section[data-mobile-pane].is-active .shell{
-    animation:mobilePaneIn .2s ease-out;
+  .mobile-dock a{
+    border:1px solid oklch(86% .03 86 / .18);
+    background:oklch(15% .03 250 / .88);
+    color:oklch(92% .018 86 / .9);
+    box-shadow:none;
   }
 }
 @media(max-width:920px){
@@ -332,9 +338,200 @@ body.theme-dark .story-card:hover{
   .topbar-inner{justify-content:space-between}
   .brand{font-size:17px}
 }
-@keyframes mobilePaneIn{
-  from{opacity:.65;transform:translateY(6px)}
-  to{opacity:1;transform:translateY(0)}
+
+/* mobile-premium-v2: one coherent dark mobile interface */
+@media(max-width:560px){
+  body{
+    color:oklch(95% .018 88);
+    background:
+      linear-gradient(180deg,oklch(13% .035 252),oklch(8% .024 252) 58%,oklch(11% .03 230));
+  }
+  body::before{
+    opacity:.30;
+    background-size:56px 56px,56px 56px,160px 160px;
+    mask-image:linear-gradient(to bottom,black,black 38%,transparent 82%);
+  }
+  .shell{width:min(100vw - 24px,420px)}
+  .topbar{
+    background:oklch(9% .026 252 / .92);
+    border-bottom:1px solid oklch(86% .03 86 / .12);
+  }
+  .topbar-inner{height:56px}
+  .theme-toggle{display:none}
+  .brand{font-size:18px;color:oklch(94% .018 88)}
+  .brand-mark{box-shadow:0 10px 24px oklch(80% .13 84 / .24)}
+
+  .hero{padding:22px 0 24px}
+  .hero-grid{display:block}
+  .eyebrow{color:oklch(82% .12 84);font-size:11px;margin-bottom:8px}
+  .hero-title{line-height:1;letter-spacing:0;text-shadow:none}
+  .hero-title .t1{font-size:52px;color:oklch(96% .014 88);letter-spacing:0}
+  .hero-title .t2{font-size:42px;margin:.02em 0 0 18px;color:oklch(84% .13 84);letter-spacing:0}
+  .hero-title .t2::after{display:none}
+  .hero-subtitle{
+    display:block;
+    width:max-content;
+    max-width:100%;
+    margin-top:12px;
+    padding:7px 10px;
+    border-color:oklch(84% .11 84 / .22);
+    background:oklch(18% .035 252 / .72);
+    color:oklch(88% .035 86);
+    border-radius:10px;
+    font-size:12px;
+    letter-spacing:0;
+  }
+  .hero-lead{
+    display:block;
+    margin-top:12px;
+    color:oklch(82% .025 86 / .78);
+    font-size:13px;
+    line-height:1.7;
+    -webkit-line-clamp:initial;
+  }
+  .pack-stage{display:none}
+  .hero-note,.design-index,.phase-rail{display:none}
+
+  .today-brief,.reward-hud,.today-loot,.panel,.logic-brief,.direct-pick,.late-card,.quick-q{
+    border:1px solid oklch(86% .03 86 / .14);
+    background:linear-gradient(180deg,oklch(18% .035 252 / .92),oklch(12% .026 252 / .92));
+    box-shadow:0 18px 42px oklch(2% .02 250 / .34),inset 0 1px 0 oklch(100% .01 88 / .045);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+  }
+  .today-brief{
+    margin-top:16px;
+    border-radius:16px;
+    padding:14px;
+  }
+  .today-brief::after{display:none}
+  .today-brief span,.reward-hud-title,.section-kicker{
+    color:oklch(83% .115 84);
+    letter-spacing:.08em;
+  }
+  .today-brief strong{font-size:24px;color:oklch(96% .014 88)}
+  .today-brief p,.section-sub,.micro,.pack-copy p,.logic-item p,.rule-note p,.quest-item p,.match-card p,.unlock-card p,.engine-step p{
+    color:oklch(82% .025 86 / .74);
+  }
+  .today-steps{gap:7px}
+  .today-step{
+    border-radius:10px;
+    background:oklch(12% .024 252 / .9);
+    border-color:oklch(86% .03 86 / .12);
+    color:oklch(80% .02 86 / .78);
+  }
+  .today-step.done{background:oklch(23% .06 150 / .45);color:oklch(84% .11 148)}
+  .today-step.next{background:oklch(25% .055 84 / .45);color:oklch(92% .08 84)}
+
+  .reward-hud,.today-loot{border-radius:14px}
+  .reward-hud-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .reward-chip{
+    min-height:58px;
+    border-radius:10px;
+    border-color:oklch(86% .03 86 / .12);
+    background:oklch(10% .024 252 / .68);
+    padding:7px 5px;
+  }
+  .reward-chip b{font-size:20px;color:oklch(84% .13 84)}
+  .reward-chip span{font-size:10px;color:oklch(82% .02 86 / .66)}
+  .today-loot{font-size:12px;color:oklch(82% .025 86 / .78)}
+
+  .hero-actions{margin-top:14px;display:grid;gap:9px}
+  .primary-btn,.secondary-btn,.chip-btn,.today-action,.quest-action,.direct-pick button,.pick-row button{
+    width:100%;
+    min-height:46px;
+    border-radius:12px;
+    padding:0 14px;
+    font-size:13px;
+    letter-spacing:0;
+    box-shadow:none;
+  }
+  .primary-btn,.today-action{
+    border:1px solid oklch(86% .11 84 / .54);
+    background:linear-gradient(180deg,oklch(84% .13 84),oklch(67% .11 72));
+    color:oklch(12% .03 248);
+  }
+  .secondary-btn,.chip-btn,.quest-action,.direct-pick button,.pick-row button{
+    border:1px solid oklch(86% .03 86 / .16);
+    background:oklch(13% .026 252 / .86);
+    color:oklch(90% .02 86 / .9);
+  }
+  .hero-actions .secondary-btn.soft-link{display:none}
+
+  .section{padding:28px 0}
+  .section-head{margin-bottom:14px;padding-bottom:6px}
+  .section-head::after{width:54px;background:linear-gradient(90deg,oklch(84% .13 84),transparent)}
+  .section-title{font-size:28px;line-height:1.14;letter-spacing:0;color:oklch(96% .014 88)}
+  .section-sub{font-size:13px;line-height:1.62}
+  .panel{border-radius:16px}
+  .pack-copy,.draw-zone,.quest-board,.vault,.poster-copy,.fate-info{padding:15px}
+  .pack-copy{border-bottom-color:oklch(86% .03 86 / .12)}
+  .pack-copy h2{font-size:32px;letter-spacing:0;color:oklch(96% .014 88)}
+  .mini-rules{display:none}
+  .draw-card{min-height:230px;border-radius:16px;background:oklch(12% .026 252 / .82)}
+  .draw-card img{border-radius:12px}
+  .draw-caption{left:12px;right:12px;bottom:12px;border-radius:10px}
+  .direct-pick-row{display:grid;grid-template-columns:1fr;gap:8px}
+  .direct-pick input{
+    width:100%;
+    min-height:44px;
+    border-radius:10px;
+    border-color:oklch(86% .03 86 / .14);
+    background:oklch(9% .024 252 / .86);
+    color:oklch(94% .018 88);
+  }
+
+  .daily-card,.quest-grid,.fate-desk,.match-lab,.china-stage,.poster-wrap{gap:12px}
+  .daily-meter,.status-strip,.vault-row.vault-wide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .daily-meter div,.status-pill,.vault-cell,.engine-step,.unlock-card,.logic-item,.rule-note{
+    border-radius:12px;
+    border-color:oklch(86% .03 86 / .12);
+    background:oklch(10% .024 252 / .62);
+  }
+  .daily-meter b,.status-pill b,.vault-cell b{font-size:22px;color:oklch(84% .13 84)}
+  .daily-result{min-height:190px;border-radius:14px;background:oklch(10% .024 252 / .5)}
+  .quest-item{
+    grid-template-columns:34px 1fr;
+    border-radius:12px;
+    background:oklch(10% .024 252 / .62);
+  }
+  .quest-action{grid-column:1/-1}
+  .quest-icon{width:34px;height:34px;border-radius:9px;background:oklch(84% .13 84 / .12)}
+  .vault{border-left:0;border-top:1px solid oklch(86% .03 86 / .12)}
+  .vault-number{font-size:54px}
+  .vault-actions{display:grid;grid-template-columns:1fr;gap:8px}
+
+  .fate-card,.china-card{padding:10px}
+  .fate-card img,.china-card img,.poster-preview img{border-radius:16px}
+  .fate-info h3,.china-copy h2,.poster-copy h2{font-size:36px;letter-spacing:0;color:oklch(96% .014 88)}
+  .story-track{display:none}
+  .story-grid,.gallery{gap:10px}
+  .team-card,.story-card{border-radius:14px;background:oklch(11% .024 252 / .78)}
+  .team-card img,.story-card img{border-radius:10px}
+  .gallery-tools{display:flex;gap:7px;overflow:auto;padding-bottom:4px}
+  .gallery-tools .chip-btn{width:auto;min-width:max-content;min-height:38px;padding:0 12px}
+
+  .poster-preview{min-height:300px;border-radius:16px;background:oklch(10% .024 252 / .58)}
+  .mobile-dock{
+    left:12px;
+    right:12px;
+    bottom:10px;
+    width:auto;
+    border-radius:16px;
+    padding:7px;
+    gap:6px;
+    background:oklch(8% .024 252 / .92);
+    border-color:oklch(86% .03 86 / .13);
+    box-shadow:0 14px 34px oklch(2% .02 250 / .52);
+  }
+  .mobile-dock a{
+    min-height:40px;
+    border-radius:11px;
+    background:oklch(15% .03 252 / .88);
+    color:oklch(90% .02 86 / .82);
+    border-color:oklch(86% .03 86 / .12);
+  }
+  body{padding-bottom:74px}
 }
 
 </style>
@@ -428,7 +625,7 @@ const storyEffects={
 };
 function storyEffectFor(id){return storyEffects[id]||'点亮后进入专属剧情，赛事推进时自动获得阶段奖励。'}
 function applyTheme(theme){const dark=theme==='dark';document.body.classList.toggle('theme-dark',dark);const btn=$('#themeToggle');if(btn)btn.textContent=dark?'浅色版':'深色版';localStorage.setItem('worldcupFanCardsTheme',dark?'dark':'light')}
-function initTheme(){const params=new URLSearchParams(location.search);const theme=params.get('theme')||localStorage.getItem('worldcupFanCardsTheme')||'light';applyTheme(theme==='dark'?'dark':'light')}
+function initTheme(){const params=new URLSearchParams(location.search);const mobile=window.matchMedia&&window.matchMedia('(max-width:560px)').matches;const theme=mobile?'dark':(params.get('theme')||localStorage.getItem('worldcupFanCardsTheme')||'dark');applyTheme(theme==='dark'?'dark':'light')}
 function jumpGuideTo(id){
   const el=document.getElementById(id);
   if(!el)return;
@@ -972,62 +1169,6 @@ function initMobileCompaction(){
     });
   }
 }
-const MOBILE_PANES=['draw','daily','quests','fate','battle','collection','poster','logic','stories','china','roadmap','engine'];
-let mobilePaneId='draw';
-const MOBILE_DOCK_MAP={draw:'主队',daily:'手气',battle:'预测',poster:'档案',fate:'主队',quests:'手气',collection:'档案',logic:'主队',stories:'预测',china:'手气',roadmap:'档案',engine:'档案'};
-function isMobileLayerMode(){
-  return window.matchMedia && window.matchMedia('(max-width:560px)').matches;
-}
-function pickInitialMobilePane(){
-  const s=loadState();
-  if(!s.fate) return 'draw';
-  if(!(s.daily?.lastDraw===todayKey())) return 'daily';
-  return 'battle';
-}
-function setMobilePane(id,{scroll=true}={}){
-  if(!isMobileLayerMode()) return;
-  if(!MOBILE_PANES.includes(id)) return;
-  mobilePaneId=id;
-  document.body.classList.add('mobile-layered');
-  MOBILE_PANES.forEach(pid=>{
-    const sec=document.getElementById(pid);
-    if(!sec) return;
-    sec.setAttribute('data-mobile-pane','1');
-    sec.classList.toggle('is-active',pid===id);
-  });
-  if(scroll) window.scrollTo({top:0,behavior:'smooth'});
-  updateMobileDockActive(id);
-}
-function updateMobileDockActive(id){
-  const key=MOBILE_DOCK_MAP[id]||'主队';
-  document.querySelectorAll('.mobile-dock a').forEach(a=>{
-    a.classList.toggle('active',a.textContent.trim()===key);
-  });
-}
-function syncMobilePaneFromHash(){
-  if(!isMobileLayerMode()) return;
-  const id=(location.hash||'').replace('#','');
-  if(MOBILE_PANES.includes(id)) setMobilePane(id,{scroll:false});
-}
-function initMobileLayerMode(){
-  if(!isMobileLayerMode()){
-    document.body.classList.remove('mobile-layered');
-    MOBILE_PANES.forEach(pid=>{
-      const sec=document.getElementById(pid);
-      if(!sec) return;
-      sec.classList.remove('is-active');
-      sec.removeAttribute('data-mobile-pane');
-    });
-    return;
-  }
-  MOBILE_PANES.forEach(pid=>{
-    const sec=document.getElementById(pid);
-    if(sec) sec.setAttribute('data-mobile-pane','1');
-  });
-  const first=(location.hash||'').replace('#','');
-  setMobilePane(MOBILE_PANES.includes(first)?first:pickInitialMobilePane(),{scroll:false});
-  updateMobileDockActive(MOBILE_PANES.includes(first)?first:pickInitialMobilePane());
-}
 function renderFilters(){const regions=['全部',...new Set(allTeams.map(t=>t.region))];$('#filters').innerHTML=regions.map(r=>`<button class="chip-btn" data-filter="${r}">${r}</button>`).join('');$$('[data-filter]').forEach(btn=>btn.onclick=()=>{activeFilter=btn.dataset.filter;renderGallery()})}
 function renderGallery(){const s=loadState();const ownedSet=new Set([...(s.owned||[]),s.fate].filter(Boolean));const teams=allTeams.filter(t=>activeFilter==='全部'||t.region===activeFilter);const visibleOwnedCount=allTeams.filter(t=>t.id!=='china'?ownedSet.has(t.id):Boolean(s.goldRevealed)).length;$('#progressText').textContent=`${visibleOwnedCount}/49`;$('#progressFill').style.width=`${Math.round(visibleOwnedCount/49*100)}%`;const gallery=$('#gallery');gallery.innerHTML='';teams.forEach(team=>{const owned=team.id==='china'?Boolean(s.goldRevealed):ownedSet.has(team.id);const st=statusOf(team);const rarity=rarityOf(team);const card=document.createElement('article');card.className=`team-card rarity-${rarity.key} ${owned?'':'locked'}`;const displayName=team.id==='china'?'彩蛋':team.name;card.innerHTML=`<img loading="lazy" src="${team.thumb}" alt="${displayName} 球迷卡"><span class="mini-badge">${owned?rarity.label:st.badge}</span><div class="name"><span>${owned?team.flag:'◇'} ${displayName}</span>${owned?'<i class="owned-dot"></i>':''}</div>`;card.onclick=()=>openTeam(team);gallery.appendChild(card)});$$('[data-filter]').forEach(b=>b.style.color=b.dataset.filter===activeFilter?'var(--gold)':'')}
 function openTeam(team){
@@ -1058,7 +1199,7 @@ function renderRewardHud(){const s=ensureDailyOpenLimit(loadState());const open=
 function updateHeroFloats(){const pool=allTeams.filter(t=>t.name!=='中国'&&t.thumb);if(pool.length<3){setFallbackHeroThumbs();return}const hero=sample(pool,3);['#floatOne','#floatTwo','#floatThree'].forEach((sel,i)=>{const el=$(sel);if(el&&hero[i])el.src=resolveAsset(hero[i].thumb)})}
 function exportSave(){const data=JSON.stringify(loadState());const code=btoa(unescape(encodeURIComponent(data)));navigator.clipboard?.writeText(code).then(()=>toast('卡包码已复制。')).catch(()=>prompt('这是你的卡包码，请保存：',code))}
 function importSave(){const code=prompt('粘贴卡包码，导入后会覆盖当前浏览器里的卡包记录。');if(!code)return;try{const data=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));saveState({...defaultState(),...data});renderAll();toast('卡包码已导入。')}catch(e){toast('卡包码无效，请检查是否复制完整。')}}
-function renderAll(){renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState();if(isMobileLayerMode())setMobilePane(mobilePaneId||pickInitialMobilePane(),{scroll:false})}
+function renderAll(){renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState()}
 async function init(){
   setFallbackHeroThumbs();
   const [cards,status,matches]=await Promise.all([
@@ -1111,29 +1252,8 @@ $('#closeModal').onclick=closeModal;
 $('#modal').onclick=e=>{if(e.target.id==='modal')closeModal()};
 $('#chinaBtn').onclick=()=>useChinaGold(false);
 $('#downloadPoster').onclick=downloadPoster;
-document.addEventListener('click',e=>{
-  const a=e.target.closest('a[href^="#"]');
-  if(!a || !isMobileLayerMode()) return;
-  const id=(a.getAttribute('href')||'').replace('#','');
-  if(!MOBILE_PANES.includes(id)) return;
-  e.preventDefault();
-  history.replaceState(null,'',`#${id}`);
-  setMobilePane(id);
-});
-document.addEventListener('touchstart',e=>{
-  const a=e.target.closest('a[href^="#"]');
-  if(!a || !isMobileLayerMode()) return;
-  const id=(a.getAttribute('href')||'').replace('#','');
-  if(!MOBILE_PANES.includes(id)) return;
-  e.preventDefault();
-  history.replaceState(null,'',`#${id}`);
-  setMobilePane(id,{scroll:false});
-},{passive:false});
-window.addEventListener('hashchange',syncMobilePaneFromHash);
-window.addEventListener('resize',initMobileLayerMode);
 window.fanCardAdmin={settleMatch,saveNarrativeAnswer,savePrediction,resolveNarrativesAuto,buildFinalReport,loadState,renderAll};
 initMobileCompaction();
-initMobileLayerMode();
 init();
 </script>
 </body>
