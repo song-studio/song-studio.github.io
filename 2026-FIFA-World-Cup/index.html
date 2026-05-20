@@ -592,6 +592,7 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
       <div class="hero-action-row">
         <a class="fan-card-hero-btn" href="fan-cards.html" aria-label="进入2026世界杯球迷卡牌赛"><i></i><span class="fan-card-hero-text">进入世界杯球迷卡牌赛</span></a>
         <button class="hero-cta" id="h-cta" onclick="scrollToMain()"></button>
+        <button class="hero-cta" onclick="shareMainAndCards()" id="h-share">分享首页和卡牌赛</button>
       </div>
     </div>
     <div id="hero-globe-wrap"><div class="globe-title">2026 WORLD CUP</div></div>
@@ -2764,9 +2765,19 @@ function exportFavICS(){
   toast(`✅ ${cnt} ${lang==='en'?'matches exported':'场已导出'}`);
 }
 function shareSchedule(){
-  const text=(lang==='en'?'🏆 2026 FIFA World Cup Schedule\n':'🏆 2026 FIFA 世界杯赛程查询\n')+'https://fifa2026worldcups.netlify.app/';
-  if(navigator.share)navigator.share({title:'FIFA 2026',text,url:'https://fifa2026worldcups.netlify.app/'}).catch(()=>{});
+  const mainUrl='https://song-studio.netlify.app/2026-fifa-world-cup/';
+  const text=(lang==='en'?'🏆 2026 FIFA World Cup Schedule\n':'🏆 2026 FIFA 世界杯赛程查询\n')+mainUrl;
+  if(navigator.share)navigator.share({title:'FIFA 2026',text,url:mainUrl}).catch(()=>{});
   else copyText(text,lang==='en'?'✅ Link copied!':'✅ 链接已复制');
+}
+function shareMainAndCards(){
+  const mainUrl='https://song-studio.netlify.app/2026-fifa-world-cup/';
+  const cardUrl='https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html';
+  const text=(lang==='en'
+    ? `🏆 2026 FIFA World Cup\nMain: ${mainUrl}\nFan Card Game: ${cardUrl}`
+    : `🏆 2026 FIFA 世界杯\n首页：${mainUrl}\n球迷卡牌赛：${cardUrl}`);
+  if(navigator.share)navigator.share({title:'2026 FIFA World Cup',text,url:cardUrl}).catch(()=>{});
+  else copyText(text,lang==='en'?'✅ Links copied!':'✅ 链接已复制');
 }
 function shareFavSchedule(){
   const teams=favs.map(n=>{const td=TEAMS[n];return lang==='en'&&td?td.en:n;}).join(', ');
