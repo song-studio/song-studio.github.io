@@ -1352,11 +1352,12 @@ function openTeam(team){
   const s=loadState();
   const canBeFate=team.qualified&&team.id!=='china';
   const switchAllowed=canBeFate&&(!s.fate||s.fate===team.id||canSwitchFate(s));
-  const ownedAction=!canBeFate
+  const ownedActionBase=!canBeFate
     ? `<button class="secondary-btn" style="opacity:.72;cursor:not-allowed" disabled>${team.id==='china'?'彩蛋卡不设为主队':'非正赛卡不可设为主队'}</button>`
     : (switchAllowed
       ? `<button class="primary-btn" onclick="chooseFate('${team.id}');closeModal()">设为主队卡</button>`
       : `<button class="secondary-btn" style="opacity:.72;cursor:not-allowed" disabled>主队已锁定</button>`);
+  const ownedAction=`<div class="hero-actions" style="margin-top:18px"><button class="primary-btn" onclick="downloadRewardCard('${team.id}')">下载奖励纪念卡</button>${ownedActionBase}</div>`;
   const guestAction=`<button class="primary-btn" onclick="closeModal();location.hash='daily'">去翻今日手气</button>`;
   const displayName=team.id==='china'?'彩蛋卡':team.name;
   const isNarrativeCard=NARRATIVE_CARD_IDS.has(team.id);
@@ -1376,24 +1377,29 @@ function renderFinalReportSummary(){
   box.textContent=`当前报告：已结算 ${r.settled} 场，命中率 ${r.acc}%｜叙事命中 ${r.narrHit}/${r.narrTotal}｜主队更换 ${r.switches} 次。`;
 }
 function loadPosterImage(src){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=reject;img.src=src})}
-function drawPill(ctx,x,y,w,h,text,accent){ctx.save();ctx.beginPath();ctx.roundRect(x,y,w,h,h/2);ctx.fillStyle='rgba(14,20,38,.82)';ctx.fill();ctx.strokeStyle=accent;ctx.lineWidth=3;ctx.stroke();ctx.fillStyle='#f6edd0';ctx.font='700 34px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x+w/2,y+h/2+1);ctx.restore()}
-async function downloadPoster(){
-  const s=loadState();const team=teamById(s.fate);if(!team){toast('先选一张主队卡。');location.hash='draw';return}
+function drawRoundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath()}
+function drawPill(ctx,x,y,w,h,text,accent){ctx.save();drawRoundRect(ctx,x,y,w,h,h/2);ctx.fillStyle='rgba(10,14,30,.82)';ctx.fill();ctx.strokeStyle=accent;ctx.lineWidth=4;ctx.stroke();ctx.fillStyle='#fff0c6';ctx.font='800 34px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x+w/2,y+h/2+1);ctx.restore()}
+function drawGoldSeal(ctx,x,y,r,label,sub){ctx.save();ctx.translate(x,y);const g=ctx.createRadialGradient(-r*.25,-r*.3,r*.12,0,0,r);g.addColorStop(0,'#fff5b8');g.addColorStop(.42,'#e7bd45');g.addColorStop(1,'#a96018');ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='rgba(255,248,200,.9)';ctx.lineWidth=7;ctx.stroke();ctx.strokeStyle='rgba(70,35,8,.35)';ctx.lineWidth=2;for(let i=0;i<28;i++){ctx.rotate(Math.PI*2/28);ctx.beginPath();ctx.moveTo(r*.78,0);ctx.lineTo(r*.94,0);ctx.stroke()}ctx.rotate(0);ctx.fillStyle='#241306';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='900 44px serif';ctx.fillText(label,0,-10);ctx.font='800 24px serif';ctx.fillText(sub,0,34);ctx.restore()}
+function rewardCardLabels(team,s){const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const st=statusOf(team);const rarity=rarityOf(team);const isNarrative=NARRATIVE_CARD_IDS.has(team.id);const fateImp=s.fateImprint||{};let type=team.id==='china'?'彩蛋卡':isNarrative?'稀有叙事卡':'国家出战卡';return{marks,st,rarity,type,tier:team.id==='china'?'彩蛋':rewardTier(marks.hits||0),fanPoints:fateImp.fanPoints||0,memorial:team.id===s.fate&&fateImp.isMemorial}}
+async function downloadRewardCard(teamId){
+  const s=loadState();const team=teamById(teamId||s.fate);if(!team){toast('先点亮一张卡。');return}if(!stateOwns(team.id)){toast('这张卡还没有点亮，暂不能下载奖励纪念卡。');return}
   try{
-    const img=await loadPosterImage(team.image);const st=statusOf(team);const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const fateImp=s.fateImprint||{};const tier=rewardTier(marks.hits||0);
-    const canvas=document.createElement('canvas');canvas.width=1800;canvas.height=2400;const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
-    const g=ctx.createLinearGradient(0,0,1800,2400);g.addColorStop(0,'#171f39');g.addColorStop(.42,'#0b1022');g.addColorStop(1,'#24140f');ctx.fillStyle=g;ctx.fillRect(0,0,1800,2400);
-    ctx.fillStyle='rgba(232,192,92,.14)';ctx.beginPath();ctx.arc(1460,260,520,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(70,166,190,.12)';ctx.beginPath();ctx.arc(260,1960,620,0,Math.PI*2);ctx.fill();
-    ctx.save();ctx.beginPath();ctx.roundRect(210,210,1380,1840,88);ctx.fillStyle='rgba(255,247,220,.08)';ctx.fill();ctx.strokeStyle='rgba(235,200,105,.62)';ctx.lineWidth=5;ctx.stroke();ctx.clip();
-    const scale=Math.min(1260/img.width,1680/img.height);const iw=img.width*scale,ih=img.height*scale;ctx.drawImage(img,900-iw/2,1060-ih/2,iw,ih);ctx.restore();
-    ctx.fillStyle='rgba(6,10,22,.78)';ctx.fillRect(210,1810,1380,240);ctx.fillStyle='#f2e6c1';ctx.font='900 94px serif';ctx.textAlign='left';ctx.fillText(team.name,280,1918);ctx.font='700 34px serif';ctx.fillStyle='#e7c56d';ctx.fillText(`${st.stage} · ${st.state} · ${marks.hits||0}颗预测星`,284,1984);
-    drawPill(ctx,260,110,360,74,'2026 世界杯','#e6c36a');drawPill(ctx,1180,110,330,74,st.badge,'#e6c36a');
-    drawPill(ctx,260,2090,300,82,`${tier}`,'#e6c36a');drawPill(ctx,600,2090,360,82,`${marks.hits||0} 星奖励`,'#e6c36a');drawPill(ctx,1000,2090,430,82,`粉丝积分 ${fateImp.fanPoints||0}`,'#e6c36a');
-    if(fateImp.isMemorial)drawPill(ctx,640,2200,520,82,'纪念万能卡','#dca05c');
-    ctx.font='700 28px serif';ctx.fillStyle='rgba(242,230,193,.72)';ctx.textAlign='center';ctx.fillText('Song Studio · Fan Card Archive',900,2310);
-    const a=document.createElement('a');a.download=`${team.name}-高清主队纪念卡.png`;a.href=canvas.toDataURL('image/png');a.click();toast('高清主队纪念卡已下载。')
-  }catch(e){const a=document.createElement('a');a.download=`${team.name}-主队卡.webp`;a.href=team.image;a.click();toast('高清生成失败，已下载原始主队卡。')}
+    const img=await loadPosterImage(team.image);const meta=rewardCardLabels(team,s);const canvas=document.createElement('canvas');canvas.width=2200;canvas.height=3000;const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+    const bg=ctx.createLinearGradient(0,0,2200,3000);bg.addColorStop(0,'#121a34');bg.addColorStop(.48,'#070b19');bg.addColorStop(1,'#2a1408');ctx.fillStyle=bg;ctx.fillRect(0,0,2200,3000);
+    ctx.fillStyle='rgba(236,190,74,.18)';ctx.beginPath();ctx.arc(1770,310,680,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(68,163,190,.13)';ctx.beginPath();ctx.arc(250,2440,760,0,Math.PI*2);ctx.fill();
+    ctx.save();ctx.translate(1100,1500);ctx.rotate(-Math.PI/18);ctx.fillStyle='rgba(231,189,69,.12)';drawRoundRect(ctx,-1010,-148,2020,296,40);ctx.fill();ctx.strokeStyle='rgba(231,189,69,.30)';ctx.lineWidth=4;ctx.stroke();ctx.fillStyle='rgba(255,238,178,.18)';ctx.font='900 120px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(`${meta.tier} · ${meta.type}`,0,14);ctx.restore();
+    ctx.save();drawRoundRect(ctx,220,220,1760,2340,108);ctx.fillStyle='rgba(255,247,220,.07)';ctx.fill();ctx.strokeStyle='rgba(242,202,99,.74)';ctx.lineWidth=8;ctx.stroke();ctx.shadowColor='rgba(242,202,99,.30)';ctx.shadowBlur=40;ctx.stroke();ctx.clip();
+    const scale=Math.min(1580/img.width,2110/img.height);const iw=img.width*scale,ih=img.height*scale;ctx.drawImage(img,1100-iw/2,1360-ih/2,iw,ih);ctx.restore();
+    ctx.fillStyle='rgba(4,8,18,.82)';drawRoundRect(ctx,260,2100,1680,300,42);ctx.fill();ctx.strokeStyle='rgba(242,202,99,.30)';ctx.lineWidth=3;ctx.stroke();
+    ctx.fillStyle='#fff0c6';ctx.font='900 112px serif';ctx.textAlign='left';ctx.fillText(team.id==='china'?'彩蛋卡':team.name,330,2220);ctx.fillStyle='#e8c56b';ctx.font='800 42px serif';ctx.fillText(`${meta.st.stage} · ${meta.st.state} · ${meta.marks.hits||0}颗预测星`,336,2292);
+    drawPill(ctx,280,105,440,86,'2026 世界杯','#e7bd45');drawPill(ctx,760,105,440,86,meta.type,'#e7bd45');drawPill(ctx,1240,105,420,86,meta.st.badge,'#e7bd45');
+    drawPill(ctx,300,2480,370,92,`${meta.tier}`,'#e7bd45');drawPill(ctx,720,2480,430,92,`${meta.marks.hits||0} 星奖励`,'#e7bd45');drawPill(ctx,1200,2480,460,92,team.id==='china'?'每日能量 +6':`粉丝积分 ${meta.fanPoints}`,'#e7bd45');
+    drawGoldSeal(ctx,1710,2310,150,meta.tier,meta.type);if(meta.memorial)drawGoldSeal(ctx,520,1910,128,'纪念','万能卡');
+    ctx.font='800 34px serif';ctx.fillStyle='rgba(255,240,198,.76)';ctx.textAlign='center';ctx.fillText('Song Studio · World Cup Fan Card Archive',1100,2870);
+    const a=document.createElement('a');a.download=`${team.id==='china'?'彩蛋卡':team.name}-奖励纪念卡.png`;a.href=canvas.toDataURL('image/png');a.click();toast('奖励纪念卡已下载。')
+  }catch(e){const a=document.createElement('a');a.download=`${team.name}-卡牌.webp`;a.href=team.image;a.click();toast('高清生成失败，已下载原始卡牌。')}
 }
+function downloadPoster(){const s=loadState();if(!s.fate){toast('先选一张主队卡。');location.hash='draw';return}downloadRewardCard(s.fate)}
 function updateHeroState(){const s=loadState();const btn=$('#heroDraw');if(btn){btn.textContent=s.fate?'查看我的主队席':'进入世界杯球迷卡牌赛'}}
 function renderRewardHud(){const s=ensureDailyOpenLimit(loadState());const open=s.daily?.openCount||0;const loot=s.todayLoot||{energy:0,dust:0,stars:0,badges:[]};if($('#hudEnergy'))$('#hudEnergy').textContent=s.energy||0;if($('#hudDust'))$('#hudDust').textContent=s.dust||0;if($('#hudOpen'))$('#hudOpen').textContent=`${open}/3`;if($('#hudStreak'))$('#hudStreak').textContent=s.streak||0;if($('#lootEnergy'))$('#lootEnergy').textContent=`+${loot.energy||0}`;if($('#lootDust'))$('#lootDust').textContent=`+${loot.dust||0}`;if($('#lootStars'))$('#lootStars').textContent=`+${loot.stars||0}`;if($('#lootBadges'))$('#lootBadges').textContent=(loot.badges&&loot.badges.length)?loot.badges.join(' / '):'无奖励章'}
 function mobileOpeningPackIds(){
