@@ -81,6 +81,7 @@ html[lang=en] .hero-sub{letter-spacing:clamp(3px,1.5vw,8px);font-size:clamp(13px
 .hstat-num{font-size:clamp(24px,5.5vw,36px);font-weight:900;color:var(--gold);line-height:1;text-shadow:0 0 16px rgba(245,197,24,.2);}
 .hstat-lbl{font-size:10px;color:rgba(160,200,240,.55);letter-spacing:1.2px;margin-top:1px;white-space:nowrap;font-weight:600;}
 .hero-action-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:2px;}
+.hero-intro{max-width:430px;margin:-10px 0 26px;color:rgba(232,244,255,.68);font-size:14px;line-height:1.8;letter-spacing:.4px;}
 .hero-cta,.fan-card-hero-btn{min-height:54px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-family:var(--fn);font-size:14px;font-weight:900;letter-spacing:1.8px;cursor:pointer;text-decoration:none;transition:transform .24s cubic-bezier(.34,1.56,.64,1),box-shadow .24s,border-color .24s,background .24s;}
 .hero-cta{min-width:224px;background:linear-gradient(135deg,#f5c518 0%,#e6a800 100%);color:#1b1205;border:1px solid rgba(255,255,255,.18);padding:0 30px;box-shadow:0 0 46px rgba(245,197,24,.28),0 10px 28px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.45);}
 .hero-cta:hover,.fan-card-hero-btn:hover{transform:translateY(-2px);}
@@ -572,6 +573,7 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
       <div class="hero-eye" id="h-eye"></div>
       <div class="hero-title" id="h-title-wrap"></div>
       <div class="hero-sub" id="h-sub"></div>
+      <p class="hero-intro" id="h-intro">赛程、球队、比分与球迷卡牌赛集中在这里。先看完整赛程，也可以直接进入卡牌赛，选主队、收集国家卡、开赛后用卡预测。</p>
       <div class="hero-date" id="h-date"></div>
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-num">48</div><div class="hstat-lbl" id="hs1"></div></div>
@@ -581,7 +583,7 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
       </div>
       <div class="hero-action-row">
         <button class="hero-cta" id="h-cta" onclick="scrollToMain()"></button>
-        <a class="fan-card-hero-btn" href="fan-cards.html" aria-label="进入2026世界杯球迷卡牌赛"><i></i><span class="fan-card-hero-text">进入卡牌赛</span></a>
+        <a class="fan-card-hero-btn" href="fan-cards.html" aria-label="进入2026世界杯球迷卡牌赛"><i></i><span class="fan-card-hero-text">玩球迷卡牌赛</span></a>
       </div>
     </div>
     <div id="hero-globe-wrap"><div class="globe-title">2026 WORLD CUP</div></div>
@@ -788,8 +790,9 @@ zh:{
   nav:['首页','小组赛','我的','淘汰赛','场馆','战绩','热门'],
   eye:'FIFA · 2026 · USA · MEXICO · CANADA',
   title:'世界杯',sub:'美 墨 加',
+  intro:'赛程、球队、比分与球迷卡牌赛集中在这里。先看完整赛程，也可以直接进入卡牌赛，选主队、收集国家卡、开赛后用卡预测。',
   date:'2026年 6月12日 — 7月20日 · BJT(UTC+8) / EDT(UTC-4)',
-  cta:'查看完整赛程 ↓',
+  cta:'查看赛程与球队',
   stats:['参赛球队','比赛场次','比赛场馆','主办国'],
   cd_label:'⏱ 距揭幕战开球',cd_units:['天','时','分','秒'],
   cd_match:'揭幕战 <b>🇲🇽 墨西哥 VS 🇿🇦 南非</b> · 6月12日 03:00 北京时间 / 15:00 EDT(前日)',
@@ -891,8 +894,9 @@ en:{
   nav:['Home','Groups','Mine','Knockout','Venues','History','Hot'],
   eye:'FIFA · 2026 · USA · MEXICO · CANADA',
   title:'World Cup',sub:'USA · MEX · CAN',
+  intro:'Schedules, teams, scores, and Fan Card Match live here. Check the fixture map, or jump into cards: pick a team, collect nations, and predict matchdays.',
   date:'Jun 12 — Jul 20, 2026 · EDT(UTC-4) / BJT(UTC+8)',
-  cta:'View Full Schedule ↓',
+  cta:'View Schedule & Teams',
   stats:['Teams','Matches','Venues','Hosts'],
   cd_label:'⏱ Countdown to Kickoff',cd_units:['d','h','m','s'],
   cd_match:'Opening Match <b>🇲🇽 Mexico VS 🇿🇦 South Africa</b> · Jun 12, 03:00 BJT / Jun 11, 15:00 EDT',
@@ -1802,6 +1806,7 @@ function applyLang(){
     ?ht.childNodes[0].textContent=T('title')
     :ht.insertBefore(document.createTextNode(T('title')),ht.firstChild);
   document.getElementById('h-sub').textContent=T('sub');
+  var hi=document.getElementById('h-intro');if(hi)hi.textContent=T('intro');
   var hd=document.getElementById('h-date');if(hd)hd.textContent=T('date');
   document.getElementById('h-cta').textContent=T('cta');
   const sl=T('stats');

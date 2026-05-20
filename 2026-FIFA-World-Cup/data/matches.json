@@ -1,18 +1,6 @@
 {
-  "updatedAt": "2026-05-18",
-  "mode": "pre-tournament-scaffold",
-  "note": "开赛后可手动或通过 GitHub Actions 更新今日赛程与赛果。",
-  "today": [],
-  "featuredPredictions": [
-    {
-      "id": "opening-pack",
-      "title": "开幕前冠军预感",
-      "prompt": "先锁一张你最相信的本命卡。开赛后它会跟着球队变亮、变暗或封神。"
-    },
-    {
-      "id": "upset-mouth",
-      "title": "爆冷神嘴挑战",
-      "prompt": "每天挑一场你敢嘴硬的冷门。中国金卡会给你盖章。"
-    }
-  ]
+  "updatedAt": "2026-05-20",
+  "mode": "manual-results-feed",
+  "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡牌奖励。",
+  "today": []
 }
