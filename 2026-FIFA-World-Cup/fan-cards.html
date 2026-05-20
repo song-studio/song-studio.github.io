@@ -543,7 +543,7 @@ body.theme-dark .story-card:hover{
   .m-hero{padding:6px 0 18px}
   .m-brand-row{display:flex;align-items:center;justify-content:space-between;gap:14px}
   .m-home-link{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;color:oklch(84% .13 84);font-size:12px;font-weight:900;text-decoration:none;letter-spacing:.4px}
-  .m-title h1{font-family:var(--fun);font-size:38px;line-height:1.05;letter-spacing:0;color:oklch(96% .014 88)}
+  .m-title h1{font-family:var(--fun);font-size:40px;line-height:1.02;letter-spacing:.02em;font-weight:900;color:oklch(96% .014 88);text-shadow:0 14px 30px oklch(3% .02 250 / .48)}
   .m-title p{margin-top:7px;color:oklch(82% .025 86 / .76);font-size:13px;line-height:1.65}
   .m-card-logo{position:relative;width:78px;height:78px;flex:0 0 78px}
   .m-logo-card{position:absolute;width:46px;border-radius:9px;box-shadow:0 12px 24px oklch(2% .02 250 / .46);border:1px solid oklch(100% .02 88 / .18)}
@@ -855,7 +855,7 @@ function ensureEntryPack(){
   if(stage.key==='pre'||s.entryPackClaimed||current.size>=5)return;
   const todayTeams=(matchesData.today||[]).flatMap(m=>[m.homeId,m.awayId,m.home,m.away]).filter(Boolean);
   const byMatch=todayTeams.map(id=>teamById(id)||allTeams.find(t=>t.name===id)).filter(t=>t&&t.qualified);
-  const seeds=[...byMatch];
+  const seeds=[...new Map(byMatch.map(t=>[t.id,t])).values()];
   const pool=allTeams.filter(t=>t.qualified&&t.id!=='china'&&!current.has(t.id)&&!seeds.some(x=>x.id===t.id));
   const gift=sampleWeighted(pool,Math.max(0,stage.gift-seeds.length));
   [...seeds,...gift].slice(0,stage.gift).forEach(t=>{if(!s.owned.includes(t.id))s.owned.push(t.id)});
