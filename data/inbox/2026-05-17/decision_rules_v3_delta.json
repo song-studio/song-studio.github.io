@@ -1,0 +1,191 @@
+{
+  "version": "3.0.0-delta",
+  "generated_date": "2026-05-17",
+  "description": "第三轮增量：登山红线精确升级 + 中止规则矩阵 + 折返规则v3 + 模式化执行动作",
+  "extends_from": ["decision_rules_v1.json", "decision_rules_v2_delta.json", "mountain_abort_rules_v1.json"],
+  "sources": [
+    "https://www.alpinesavvy.com/blog/decision-making-matrix-for-alpine-climbing",
+    "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+    "https://theuiaa.org/documents/mountainmedicine/English_UIAA_MedCom_Rec_No_2_AMS_HAPE_HACE_2012_V3-2.pdf",
+    "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+    "https://eikenshop.com/blogs/the-traveller-notebook/how-to-plan-a-safe-mountaineering-outing"
+  ],
+  "mountain_abort_v3": {
+    "description": "登山红线 v3 — 基于UIAA医学委员会共识和Lake Louise Score的精确下撤触发规则",
+    "uiaa_consensus_source": "https://theuiaa.org/documents/mountainmedicine/English_UIAA_MedCom_Rec_No_2_AMS_HAPE_HACE_2012_V3-2.pdf",
+    "lake_louise_scoring": {
+      "description": "Lake Louise AMS评分系统(2018更新版)",
+      "components": {
+        "headache": {"0": "无", "1": "轻度", "2": "中度", "3": "重度/无法忍受"},
+        "gastrointestinal": {"0": "食欲好", "1": "食欲差/恶心", "2": "中度恶心/呕吐", "3": "严重恶心/呕吐"},
+        "fatigue_weakness": {"0": "不疲劳", "1": "轻度疲劳", "2": "中度疲劳", "3": "严重疲劳"},
+        "dizziness": {"0": "不晕", "1": "轻度头晕", "2": "中度头晕", "3": "严重头晕"}
+      },
+      "total_score": {
+        "0-2": {"label": "无AMS", "confidence": 0.90},
+        "3-5": {"label": "轻度AMS", "grade": "cautious", "confidence": 0.85},
+        "6-9": {"label": "中度AMS", "grade": "inadvisable", "confidence": 0.85},
+        "10-12": {"label": "重度AMS", "grade": "inadvisable", "confidence": 0.90}
+      },
+      "diagnosis_rule": "IF (total_score >= 3 AND headache >= 1) OR (HACE_suspected = true) THEN AMS_diagnosis = positive"
+    },
+    "uiaa_abort_protocols": {
+      "mild_ams": {
+        "lls_score-range": "3-5",
+        "action": "停止上升，休息+补液+布洛芬/对乙酰氨基酚。6-12h无效则加乙酰唑胺250mg bid。如果24h内无改善/恶化，下撤。",
+        "descend_trigger": "IF symptoms_worsen_in_24h THEN descend",
+        "confidence": 0.85
+      },
+      "severe_ams": {
+        "lls_score-range": "6-9",
+        "action": "立即休息，绝不继续上升！排除HACE(共济失调测试)。地塞米松8mg(可6h后重复)。保护患者防寒。",
+        "descend_trigger": "IF any_doubt_of_HACE THEN treat_as_HACE + immediate_descent",
+        "confidence": 0.90
+      },
+      "hape": {
+        "diagnostics": "静息时呼吸困难+干咳→湿咳粉红泡沫痰+唇色发蓝+静息心率>100/min+同海拔SpO2比健康人低≥10个百分点",
+        "action_sequence": [
+          "1. 立即停步，上半身抬高坐姿",
+          "2. 绝不继续上升！",
+          "3. 补充氧气2-4L/min(如有)",
+          "4. 硝苯地平缓释片20mg(10-15min起效，可重复)",
+          "5. 高海拔增压袋(Gamow bag)(如下撤延迟)",
+          "6. 纯临床判断恢复时间，无固定时间表"
+        ],
+        "descend": "紧急下撤，最小305m(1000ft)",
+        "re-ascent_rule": "完全康复后方可重新攀登",
+        "confidence": 0.90
+      },
+      "hace": {
+        "diagnostics": "AMS症状+共济失调(heel-to-toe直线行走异常)+意识混乱/幻觉+可能无自知力(坚持自己很好)",
+        "critical_note": "HACE可在数小时内死亡。有无自知力下降是早期关键信号",
+        "action_sequence": [
+          "1. 立即休息，绝不继续上升！",
+          "2. 地塞米松8mg静脉/肌肉(口服4-8mg替代)",
+          "3. 氧气2-4L/min",
+          "4. 高海拔增压袋",
+          "5. 紧急下撤(最小500-1000m)"
+        ],
+        "do_not": ["不要等待观察", "不要给镇静剂", "不要浪费时间做鉴别诊断"],
+        "confidence": 0.95
+      }
+    },
+    "mandatory_descent_triggers": [
+      {"id": "ABT-M01", "condition": "静息时呼吸困难+咳嗽+SpO2<同海拔预期值-10%", "action": "怀疑HAPE, 紧急下撤", "grade": "inadvisable"},
+      {"id": "ABT-M02", "condition": "共济失调(heel-to-toe失败)+任何意识改变", "action": "怀疑HACE, 紧急下撤+地塞米松", "grade": "inadvisable"},
+      {"id": "ABT-M03", "condition": "24h内LLS从<3升至≥6", "action": "快速恶化的AMS, 下撤", "grade": "inadvisable"},
+      {"id": "ABT-M04", "condition": "同一海拔停留48h且LLS无改善", "action": "适应失败, 下撤至少500m", "grade": "inadvisable"},
+      {"id": "ABT-M05", "condition": "SpO2<70% at 3500-5000m", "action": "严重低氧血症, 紧急下撤", "grade": "inadvisable"},
+      {"id": "ABT-M06", "condition": "SpO2<60% at >5000m", "action": "危及生命, 紧急下撤+氧气", "grade": "inadvisable"}
+    ]
+  },
+  "abort_matrix_v3": {
+    "description": "中止规则矩阵 v3 — 基于AlpineSavvy/NPS Rainier Go/NoGo决策矩阵的评分系统",
+    "source": "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+    "scoring_components": {
+      "wind": {"<24km/h(15mph)": 1, "24-40km/h(15-25mph)": 2, ">40km/h(25mph)": 3},
+      "precip": {"无": 1, "微量/小雪": 2, "持续降水/雪": 4},
+      "visibility": {"晴/无限": 1, "阴天/散云": 2, "受限(雾/低云)": 4},
+      "summit_temp": {">-1°C(>30°F)": 1, "-1~-7°C(20-30°F)": 2, "<-7°C(<20°F)": 3}
+    },
+    "total_score_range": "4-14分(4项最低分之和为4,最高为3+4+4+3=14)",
+    "experience_evaluator": {
+      "green_highly_experienced": {"score_max": 9, "grade": "feasible", "score_ge_10": "cautious"},
+      "yellow_moderate": {"score_max": 7, "grade": "feasible", "score_8_9": "cautious", "score_ge_10": "inadvisable"},
+      "red_novice": {"score_max": 5, "grade": "feasible", "score_6_7": "cautious", "score_ge_8": "inadvisable"}
+    },
+    "go_nogo_rules": [
+      {"条件": "wind/precip/visibility任意一项评分≥3", "评估": "不应尝试攀登", "grade": "inadvisable"},
+      {"条件": "预报中雷暴", "评估": "取消", "grade": "inadvisable"},
+      {"条件": "雪崩级别≥3 AND 涉及雪坡", "评估": "高危险，不建议", "grade": "cautious"},
+      {"条件": "雪崩级别≥4", "评估": "禁止登山", "grade": "inadvisable"}
+    ]
+  },
+  "turnaround_rule_v3": {
+    "description": "折返规则 v3 — 地形乘数+缓冲+触发器链路",
+    "source": "https://eikenshop.com/blogs/the-traveller-notebook/how-to-plan-a-safe-mountaineering-outing",
+    "timing_formula": {
+      "expression": "total_time_h = (distance_km / pace_kmh) + (elevation_gain_m / vert_rate_mh)",
+      "pace_kmh": "3-5(徒步平坦), 2-4(登山爬坡), 1-3(雪地/冰川)",
+      "vert_rate_mh": "300-600(徒步), 200-400(登山), 100-300(高海拔>4000m)"
+    },
+    "terrain_multipliers": {
+      "dry_trail": 1.0,
+      "snow_travel": 1.3,
+      "roped_glacier": 1.5,
+      "scrambling_exposed": 1.8,
+      "low_visibility_lt_200m": 2.0,
+      "heavy_pack_gt_15kg": 1.2,
+      "altitude_gt_4000m": 1.3,
+      "altitude_gt_5000m": 1.5,
+      "altitude_gt_6000m": 1.8
+    },
+    "buffer_rule": "final_time = computed_time * 1.15_to_1.25(15-25%安全缓冲)",
+    "turnaround_computation": {
+      "expression": "turnaround_time = sunset_hour - (descent_time_h * terrain_multiplier * 1.15) - 0.5h_safety_margin",
+      "note": "下撤时间单独计算，不能用上升时间的50%估算——实际下撤在技术路段可能比上升慢"
+    },
+    "trigger_chain": [
+      {"trigger": "time", "rule": "折返时刻到达——固定、不可协商", "grade": "inadvisable"},
+      {"trigger": "weather_deterioration", "rule": "IF风>40km/h OR visibility降到200m以下 OR 闪电可见/雷声可闻 THEN 立即折返", "grade": "inadvisable"},
+      {"trigger": "health", "rule": "IF任何队员AMS症状加重 OR 出现共济失调 THEN 下撤", "grade": "inadvisable"},
+      {"trigger": "snow_condition", "rule": "IF雪桥不稳定信号(whumpf声+shooting cracks) THEN 立即离开该坡", "grade": "inadvisable"},
+      {"trigger": "fatigue", "rule": "IF任何队员表示已经透支且路程>1/3未完成 THEN 下撤(summit fever误判率高)", "grade": "cautious"}
+    ],
+    "terrain_time_examples": {
+      "dry_trail_10km_800m": {"公式": "10/4 + 800/400 = 4.5h", "倍数": 1.0, "缓冲": 1.2, "total": "5.4h"},
+      "snow_10km_800m": {"公式": "10/4 + 800/400 = 4.5h", "倍数": 1.3, "缓冲": 1.2, "total": "7.0h"},
+      "roped_glacier_10km_800m": {"公式": "10/4 + 800/400 = 4.5h", "倍数": 1.5, "缓冲": 1.2, "total": "8.1h"},
+      "low_vis_10km_800m": {"公式": "10/4 + 800/400 = 4.5h", "倍数": 2.0, "缓冲": 1.2, "total": "10.8h"}
+    }
+  },
+  "execution_actions_v3": {
+    "description": "模式化执行动作 — 四模式在各条件组合下的可计算动作矩阵",
+    "logic": "每个条件组合映射到具体执行动作，避免仅返回'cautious'等抽象等级",
+    "fields": ["mode", "condition_id", "condition", "risk_level", "action", "confidence"],
+    "actions": [
+      {"mode": "hiking", "condition_id": "H-A01", "condition": "temp_c>=35 AND rh_pct>=60", "risk_level": "inadvisable", "action": "取消徒步。热指数>41°C，中暑风险。如已出发：找遮荫+大量补水+物理降温", "confidence": 0.85},
+      {"mode": "hiking", "condition_id": "H-A02", "condition": "storm_lightning_detected", "risk_level": "inadvisable", "action": "立即离开暴露区域，躲进建筑/车辆。避雷姿势：双脚并拢蹲下。勿在树下/水边", "confidence": 0.95},
+      {"mode": "hiking", "condition_id": "H-A03", "condition": "wind_kmh>=62", "risk_level": "inadvisable", "action": "立即中止徒步。寻找岩石掩体/山谷躲避。注意树枝断裂", "confidence": 0.85},
+      {"mode": "hiking", "condition_id": "H-A04", "condition": "precip_mmh>=50", "risk_level": "inadvisable", "action": "取消徒步。山洪风险。溪流水位可能30分钟内暴涨", "confidence": 0.80},
+      {"mode": "hiking", "condition_id": "H-A05", "condition": "temp_c<-10 AND wind_kmh>=15", "risk_level": "inadvisable", "action": "取消。暴露皮肤15分钟冻伤。风寒严重", "confidence": 0.85},
+      {"mode": "hiking", "condition_id": "H-A06", "condition": "visibility_m<100", "risk_level": "inadvisable", "action": "取消或就地等待。导航不可靠。如已迷路：S.T.O.P.程序", "confidence": 0.85},
+      {"mode": "hiking", "condition_id": "H-A07", "condition": "water_crossing_depth_cm>50", "risk_level": "inadvisable", "action": "不可涉水通过。绕行或原路返回。山洪可在数秒内冲走成人", "confidence": 0.85},
+      {"mode": "hiking", "condition_id": "H-A08", "condition": "duration_h*0.5<已用时 AND 未过半程", "risk_level": "cautious", "action": "折返时间到。立即调头。不要为了登顶而忽视下撤时间", "confidence": 0.80},
+      {"mode": "hiking", "condition_id": "H-A09", "condition": "temp_c>=30 AND rh_pct>=65", "risk_level": "cautious", "action": "热指数>32°C。每15min饮水200ml+电解质。降速30%。寻找遮荫路线", "confidence": 0.80},
+      {"mode": "mountaineering", "condition_id": "M-A01", "condition": "LLS>=6 OR HACE/HAPE_suspected", "risk_level": "inadvisable", "action": "立即下撤500-1000m。中度AMS+HACE/HAPE可能性。地塞米松/氧气如有。担架或协助下撤", "confidence": 0.95},
+      {"mode": "mountaineering", "condition_id": "M-A02", "condition": "wind_kmh>=62", "risk_level": "inadvisable", "action": "立即下撤或找岩石掩体。高海拔风>62km/h时站立困难、低温效应严重", "confidence": 0.85},
+      {"mode": "mountaineering", "condition_id": "M-A03", "condition": "snow_accumulation_cmh>=5", "risk_level": "inadvisable", "action": "立即下撤。积雪>5cm/h触发雪崩+失温双重风险", "confidence": 0.80},
+      {"mode": "mountaineering", "condition_id": "M-A04", "condition": "whiteout(vis<30m+snow)", "risk_level": "inadvisable", "action": "挖雪洞就地保护。绝不贸然移动。用GPS记录当前位置", "confidence": 0.90},
+      {"mode": "mountaineering", "condition_id": "M-A05", "condition": "freezing_rain", "risk_level": "inadvisable", "action": "立即下撤。冰面无法安全行走。冻雨可在数分钟内使岩石/冰爪覆冰", "confidence": 0.85},
+      {"mode": "mountaineering", "condition_id": "M-A06", "condition": "avalanche_level>=4", "risk_level": "inadvisable", "action": "禁止登山活动。大量雪崩可能", "confidence": 0.90},
+      {"mode": "mountaineering", "condition_id": "M-A07", "condition": "avalanche_level=3 AND slope_angle>=30", "risk_level": "cautious", "action": "强烈建议不进入该雪坡。3级(Considerable)事故率占全部雪崩死亡的50%", "confidence": 0.85},
+      {"mode": "mountaineering", "condition_id": "M-A08", "condition": "sleep_alt_increase>500m/day AND days>=2", "risk_level": "cautious", "action": "上升速率违规。CDC指南:>3000m后≤500m/天。必须休整或下撤", "confidence": 0.90},
+      {"mode": "cycling", "condition_id": "C-A01", "condition": "wind_gust_kmh>50 OR sustained>=30+crosswind", "risk_level": "inadvisable", "action": "取消骑行。侧风>30km/h使高框轮组(>50mm)无法稳定控制", "confidence": 0.75},
+      {"mode": "cycling", "condition_id": "C-A02", "condition": "temp_c<=0 AND road_wet", "risk_level": "inadvisable", "action": "取消骑行。黑冰风险(尤其>0°C→<0°C的过渡时段)", "confidence": 0.80},
+      {"mode": "cycling", "condition_id": "C-A03", "condition": "precip_mmh>=30", "risk_level": "inadvisable", "action": "取消骑行。积水路面+能见度降+机动车溅水。安全停车等待", "confidence": 0.85},
+      {"mode": "cycling", "condition_id": "C-A04", "condition": "visibility_m<100", "risk_level": "inadvisable", "action": "取消。无法被机动车看到", "confidence": 0.85},
+      {"mode": "cycling", "condition_id": "C-A05", "condition": "temp_c<-5", "risk_level": "inadvisable", "action": "取消。路面结冰+手指冻僵无法有效刹车", "confidence": 0.85},
+      {"mode": "cycling", "condition_id": "C-A06", "condition": "heat_index_c>=41", "risk_level": "inadvisable", "action": "取消。热射病风险。即使骑行有风冷效应，停止时体感猛升", "confidence": 0.80},
+      {"mode": "cycling", "condition_id": "C-A07", "condition": "thunderstorm_forecast", "risk_level": "inadvisable", "action": "取消或改室内骑行。金属框架导电。30/30规则适用", "confidence": 0.90},
+      {"mode": "cycling", "condition_id": "C-A08", "condition": "W/kg<2.5 AND gradient_pct>=8 AND climb_duration>20min", "risk_level": "cautious", "action": "该坡度对休闲级极富挑战。建议提前变挡降低节奏，频繁站骑防止腿部乳酸堆积", "confidence": 0.70},
+      {"mode": "motorcycle", "condition_id": "MOT-A01", "condition": "sustained_wind>=55", "risk_level": "inadvisable", "action": "禁止骑行。寻找遮蔽/室内停车。两轮在>55km/h侧风下无法安全操控", "confidence": 0.75},
+      {"mode": "motorcycle", "condition_id": "MOT-A02", "condition": "temp_c<=0 AND precip_active", "risk_level": "inadvisable", "action": "禁止骑行。黑冰风险。0°C时水膜→冰相变使摩擦系数降至0.1", "confidence": 0.85},
+      {"mode": "motorcycle", "condition_id": "MOT-A03", "condition": "precip_mmh>=15", "risk_level": "inadvisable", "action": "寻找避雨处等待。15mm/h以上强降水使能见度降至<300m+路面滑", "confidence": 0.80},
+      {"mode": "motorcycle", "condition_id": "MOT-A04", "condition": "visibility_m<100", "risk_level": "inadvisable", "action": "停车等待。作为道路使用者中最不易被看见的群体，<100m能见度=自杀", "confidence": 0.85},
+      {"mode": "motorcycle", "condition_id": "MOT-A05", "condition": "fatigue_score>=71", "risk_level": "inadvisable", "action": "必须停。等效酒驾风险。疲劳分>=71时反应延迟>25%", "confidence": 0.75},
+      {"mode": "motorcycle", "condition_id": "MOT-A06", "condition": "temp_c>=40", "risk_level": "inadvisable", "action": "禁止长途骑行。骑行服内温度可达45°C+，热射病风险极高", "confidence": 0.80},
+      {"mode": "motorcycle", "condition_id": "MOT-A07", "condition": "continuous_riding_h>=2.0", "risk_level": "cautious", "action": "必须休息15分钟。NTSB建议每2h强制休息。停下时摇臂活动+补水", "confidence": 0.80},
+      {"mode": "motorcycle", "condition_id": "MOT-A08", "condition": "daily_distance_km>400", "risk_level": "inadvisable", "action": "超日限400km。疲劳累积使第5h后的每h风险线性上升", "confidence": 0.70}
+    ]
+  },
+  "confidence_summary": {
+    "description": "v3增量中各规则的证据强度汇总",
+    "lake_louise_scoring": {"score": 0.90, "evidence": "Roach 2018更新版, 被WMS/UIAA/CDC接纳, 多篇RCT验证"},
+    "uiaa_hape_hace_protocol": {"score": 0.95, "evidence": "UIAA医学委员会共识声明No.2(2012), 全球登山医学标准"},
+    "alpine_savvy_go_nogo_matrix": {"score": 0.75, "evidence": "NPS Rainier向导+巡山员经验汇总, 非RCT但多年实践验证"},
+    "terrain_multipliers": {"score": 0.65, "evidence": "经验法则, 部分有GPS轨迹数据支持但无正式研究"},
+    "pacing_formula": {"score": 0.70, "evidence": "Naismith规则为基础, 被NPS/登山学校采用"},
+    "execution_actions": {"score": 0.70, "evidence": "来自NWS/CDC/WMS/UIAA/骑行/摩旅社区综合"}
+  }
+}

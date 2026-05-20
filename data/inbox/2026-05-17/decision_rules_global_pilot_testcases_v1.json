@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "generated_date": "2026-05-17",
+  "description": "国外试点规则适配包测试集 — 尼泊尔/日本/阿尔卑斯边界场景优先",
+  "total_testcases": 32,
+  "coverage": {
+    "nepal_himalaya": 12,
+    "japan_marine": 10,
+    "alpine_europe": 10
+  },
+  "modes": {
+    "nepal_himalaya": {
+      "count": 12,
+      "cases": [
+        {"id": "NP-T01", "description": "EBC标准日升幅427m(可行)", "inputs": {"altitude_m": 3440, "sleep_altitude_m": 3860, "elevation_gain_m": 420, "days_above_3000m": 3}, "expected_grade": "feasible", "expected_advice": ["升幅420m<500m, 安全"], "test_category": "边界值"},
+        {"id": "NP-T02", "description": "Dingboche→Lobuche 530m(微超但第3天)", "inputs": {"altitude_m": 4410, "sleep_altitude_m": 4940, "elevation_gain_m": 530, "days_above_3000m": 5}, "expected_grade": "feasible", "expected_advice": ["530m微超500m, 但已在>3000m第5天适应较好"], "test_category": "边界值"},
+        {"id": "NP-T03", "description": "直飞Lukla首日到Namche(830m升幅)", "inputs": {"direct_flight_altitude_m": 2840, "sleep_altitude_m": 3440, "elevation_gain_m": 830}, "expected_grade": "cautious", "expected_advice": ["直飞2840m+830m升幅=超500m标准, 建议在Namche休整1天"], "test_category": "AMS风险"},
+        {"id": "NP-T04", "description": "季风期非雨影区徒步", "inputs": {"month": 7, "region": "annapurna", "altitude_m": 2500, "precip_mmh": 20}, "expected_grade": "cautious", "expected_advice": ["季风期低海拔持续降雨, 调整为cautious"], "test_category": "季节"},
+        {"id": "NP-T05", "description": "季风期雨影区徒步(Mustang)", "inputs": {"month": 7, "region": "mustang", "altitude_m": 3800, "precip_mmh": 8}, "expected_grade": "feasible", "expected_advice": ["雨影区季风干燥, 降水降1级"], "test_category": "季节"},
+        {"id": "NP-T06", "description": "冬季高海拔-20°C夜间", "inputs": {"month": 1, "altitude_m": 5000, "temp_c": -20, "solar_load": 0, "hour": 22}, "expected_grade": "inadvisable", "expected_advice": ["夜间-20°C, 禁止活动"], "test_category": "低温"},
+        {"id": "NP-T07", "description": "冬季白天+太阳辐射(实际体感高5°C)", "inputs": {"month": 1, "altitude_m": 4500, "temp_c": -8, "solar_load": 2}, "expected_grade": "feasible", "expected_advice": ["日间-8°C+太阳辐射=体感-3°C, 可徒步"], "test_category": "边界值"},
+        {"id": "NP-T08", "description": "海拔4200m+雪面UV风险", "inputs": {"altitude_m": 4200, "snow_cover": true}, "expected_grade": "cautious", "expected_advice": ["UV极高达平地4倍, 每1h补涂SPF50+", "UV400太阳镜+物理遮挡必需"], "test_category": "UV"},
+        {"id": "NP-T09", "description": "春季(4月)EBC可行性", "inputs": {"month": 4, "route": "ebc", "altitude_m_max": 5545}, "expected_grade": "feasible", "expected_advice": ["春季适合,EBC可行但注意花粉"], "test_category": "季节"},
+        {"id": "NP-T10", "description": "Cho La Pass(5420m)冬季雪封", "inputs": {"month": 12, "route": "cho_la_pass", "altitude_m": 5420}, "expected_grade": "inadvisable", "expected_advice": ["冬季>5000m通道雪封概率高"], "test_category": "季节"},
+        {"id": "NP-T11", "description": "Gokyo Ri一日从Gokyo(4790m)→Gokyo Ri(5357m)升幅567m", "inputs": {"sleep_altitude_m": 4790, "max_altitude_m": 5357, "is_day_hike_return": true}, "expected_grade": "feasible", "expected_advice": ["Climb High Sleep Low原则, 单日爬高再下来是可接受的"], "test_category": "边界值"},
+        {"id": "NP-T12", "description": "低海拔(1400m)季风期暴雨", "inputs": {"month": 7, "altitude_m": 1400, "precip_mmh": 55}, "expected_grade": "inadvisable", "expected_advice": ["季风+低海拔暴雨, 山体滑坡+蚂蟥"], "test_category": "降水"}
+      ]
+    },
+    "japan_marine": {
+      "count": 10,
+      "cases": [
+        {"id": "JP-T01", "description": "夏季80%RH+25°C→低体温风险阈值上移", "inputs": {"temp_c": 15, "rh_pct": 75, "wind_kmh": 20, "precip_active": true}, "expected_grade": "cautious", "expected_advice": ["高湿度使低体温阈值上移5°C, 15°C+湿=风险"], "test_category": "高湿"},
+        {"id": "JP-T02", "description": "日本夏季35°C+90%RH极热", "inputs": {"temp_c": 35, "rh_pct": 90, "distance_km": 5}, "expected_grade": "inadvisable", "expected_advice": ["heat_index极高, 取消任何户外活动"], "test_category": "高温"},
+        {"id": "JP-T03", "description": "日本阿尔卑斯夏季午后雷暴提前折返", "inputs": {"month": 8, "terrain": "mountain", "afternoon_thunderstorm_pct": 50, "current_time": "10:30"}, "expected_grade": "cautious", "expected_advice": ["雷暴概率>40%, 建议11:00前登顶折返"], "test_category": "雷暴"},
+        {"id": "JP-T04", "description": "台风48h内进入影响区", "inputs": {"typhoon_warning_hours": 36, "altitude_m": 500}, "expected_grade": "inadvisable", "expected_advice": ["台风48h内, 取消一切户外活动"], "test_category": "台风"},
+        {"id": "JP-T05", "description": "台风72h前高海拔预警", "inputs": {"typhoon_warning_hours": 60, "altitude_m": 2500}, "expected_grade": "cautious", "expected_advice": ["台风72h内+>2000m=谨慎评估"], "test_category": "台风"},
+        {"id": "JP-T06", "description": "日本海侧冬季大雪", "inputs": {"coast": "japan_sea", "month": 1, "precip_mmh": 15}, "expected_grade": "inadvisable", "expected_advice": ["日本海侧冬季大雪, 有效降水强度翻倍=30mm/h"], "test_category": "大雪"},
+        {"id": "JP-T07", "description": "太平洋侧冬季干燥", "inputs": {"coast": "pacific", "month": 1, "precip_mmh": 5}, "expected_grade": "feasible", "expected_advice": ["太平洋侧冬季干燥, 正常活动"], "test_category": "区域差异"},
+        {"id": "JP-T08", "description": "梅雨季低能见度但有GPS", "inputs": {"month": 6, "tsuyu_season": true, "visibility_m": 180, "route_on_ridge": false, "gps_nav": true}, "expected_grade": "cautious", "expected_advice": ["梅雨季能见度180m, 但路线非暴露+有GPS=cautious非inadvisable"], "test_category": "边界值"},
+        {"id": "JP-T09", "description": "梅雨季低能见度暴露山脊", "inputs": {"month": 6, "tsuyu_season": true, "visibility_m": 150, "route_on_ridge": true, "gps_nav": true}, "expected_grade": "inadvisable", "expected_advice": ["梅雨季+暴露山脊+能见度<200m=inadvisable"], "test_category": "边界值"},
+        {"id": "JP-T10", "description": "春日徒步湿度70%+温度18°C", "inputs": {"month": 4, "temp_c": 18, "rh_pct": 70, "distance_km": 10, "elevation_gain_m": 500}, "expected_grade": "feasible", "expected_advice": ["正常天气, 注意排汗base layer"], "test_category": "正常"}
+      ]
+    },
+    "alpine_europe": {
+      "count": 10,
+      "cases": [
+        {"id": "AL-T01", "description": "快速天气变化触发提前折返", "inputs": {"cumulus_rapid_growth": true, "temp_drop_30min": 3, "wind_increase_30min": 18, "current_time": "12:30"}, "expected_grade": "inadvisable", "expected_advice": ["三项指标触发天气急转, 立即折返"], "test_category": "天气变化"},
+        {"id": "AL-T02", "description": "焚风期间北侧山谷骑行", "inputs": {"foehn_condition": true, "slope_angle": 10, "snow_cover": false, "terrain_exposed": false}, "expected_grade": "feasible", "expected_advice": ["焚风天晴朗温暖, 可活动但不露顶"], "test_category": "焚风"},
+        {"id": "AL-T03", "description": "焚风+积雪>30°坡=雪崩升级", "inputs": {"foehn_condition": true, "slope_angle": 35, "snow_cover": true}, "expected_grade": "cautious", "expected_advice": ["焚风使雪线融化, 湿雪雪崩风险升1级"], "test_category": "雪崩"},
+        {"id": "AL-T04", "description": "Refuge开放可减少携水量", "inputs": {"refuge_distance_km": 3, "refuge_open": true, "duration_h": 6}, "expected_grade": "feasible", "expected_advice": ["refuge补给只需1.5L"], "test_category": "补给"},
+        {"id": "AL-T05", "description": "Refuge关闭需自备3L水", "inputs": {"refuge_distance_km": 4, "refuge_open": false, "duration_h": 6}, "expected_grade": "feasible", "expected_advice": ["refuge关闭, 需携带3.0L水"], "test_category": "补给"},
+        {"id": "AL-T06", "description": "SAC T3级路线无登山经验者", "inputs": {"sac_scale": "T3", "mountaineering_experience": false}, "expected_grade": "cautious", "expected_advice": ["T3级需登山经验, 无经验者需向导"], "test_category": "难度分级"},
+        {"id": "AL-T07", "description": "SAC T5级路线无专业装备", "inputs": {"sac_scale": "T5", "has_ice_axe": false, "has_rope": false}, "expected_grade": "inadvisable", "expected_advice": ["T5级需冰镐+绳+专业经验, 禁止"], "test_category": "难度分级"},
+        {"id": "AL-T08", "description": "冰川路线3年前GPS轨迹", "inputs": {"terrain_contains_glacier": true, "years_since_record": 3}, "expected_grade": "cautious", "expected_advice": ["冰川路线>2年旧轨迹confidence×0.3, 需重新确认"], "test_category": "冰川变化"},
+        {"id": "AL-T09", "description": "零度线波动——海拔3200m+零度线2500m", "inputs": {"altitude_m": 3200, "freezing_level_m": 2500}, "expected_grade": "cautious", "expected_advice": ["alt>freezing line → 降雪"], "test_category": "边界值"},
+        {"id": "AL-T10", "description": "零度线附近混合降水(最危险)", "inputs": {"altitude_m": 2600, "freezing_level_m": 2700}, "expected_grade": "cautious", "expected_advice": ["混合降水=雨夹雪/湿雪, 路面最滑"], "test_category": "边界值"}
+      ]
+    }
+  }
+}

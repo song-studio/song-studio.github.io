@@ -1,0 +1,8017 @@
+[
+  {
+    "route_id": "hk_001",
+    "name_zh": "虎跳峡高路徒步",
+    "aliases": [
+      "虎跳峡徒步",
+      "Tiger Leaping Gorge"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "迪庆藏族自治州",
+      "county": "香格里拉市"
+    },
+    "start_poi": "桥头镇",
+    "end_poi": "中虎跳",
+    "waypoints": [
+      "纳西雅阁",
+      "28道拐",
+      "Halfway客栈",
+      "观音瀑"
+    ],
+    "distance_km": 22,
+    "elevation_gain_m": 1250,
+    "elevation_loss_m": 980,
+    "max_altitude_m": 2670,
+    "min_altitude_m": 1800,
+    "typical_duration_h": 16,
+    "season_window": "3-5,9-11",
+    "water_supply_points": [
+      "Halfway客栈",
+      "纳西雅阁",
+      "中途客栈"
+    ],
+    "resupply_points": [
+      "桥头镇",
+      "纳西雅阁",
+      "Halfway客栈"
+    ],
+    "retreat_points": [
+      "桥头镇",
+      "茶马客栈",
+      "张老师客栈"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "落石",
+      "悬崖路段",
+      "高海拔"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=453875",
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.thepaper.cn/newsDetail_forward_26123762"
+    ]
+  },
+  {
+    "route_id": "hk_002",
+    "name_zh": "雨崩徒步",
+    "aliases": [
+      "雨崩村徒步",
+      "梅里雨崩",
+      "冰湖神瀑"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "迪庆藏族自治州",
+      "county": "德钦县"
+    },
+    "start_poi": "西当村",
+    "end_poi": "尼农村",
+    "waypoints": [
+      "南宗垭口",
+      "雨崩上村",
+      "冰湖",
+      "神瀑"
+    ],
+    "distance_km": 50,
+    "elevation_gain_m": 2200,
+    "elevation_loss_m": 2100,
+    "max_altitude_m": 3900,
+    "min_altitude_m": 3050,
+    "typical_duration_h": 40,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "雨崩上村",
+      "雨崩下村",
+      "神瀑"
+    ],
+    "resupply_points": [
+      "西当村",
+      "雨崩上村",
+      "雨崩下村"
+    ],
+    "retreat_points": [
+      "西当村",
+      "南宗垭口",
+      "雨崩上村"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "落石",
+      "雪崩区",
+      "失温"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=551237",
+    "last_verified_date": "2025-09-15",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.sohu.com/a/535873578_505583"
+    ]
+  },
+  {
+    "route_id": "hk_003",
+    "name_zh": "贡嘎大环线",
+    "aliases": [
+      "贡嘎穿越",
+      "蜀山之王环线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "康定市"
+    },
+    "start_poi": "老榆林",
+    "end_poi": "草科乡",
+    "waypoints": [
+      "格西草原",
+      "日乌且垭口",
+      "莫溪沟",
+      "子梅垭口",
+      "巴望海"
+    ],
+    "distance_km": 100,
+    "elevation_gain_m": 3800,
+    "elevation_loss_m": 3500,
+    "max_altitude_m": 4920,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 60,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "格西草原",
+      "上日乌且",
+      "莫溪沟",
+      "贡嘎寺"
+    ],
+    "resupply_points": [
+      "老榆林",
+      "贡嘎寺",
+      "子梅村",
+      "草科乡"
+    ],
+    "retreat_points": [
+      "老榆林",
+      "两岔河",
+      "贡嘎寺",
+      "子梅村"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "高反",
+      "落石",
+      "失温",
+      "涉水"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=652148",
+    "last_verified_date": "2025-08-20",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm",
+      "https://www.maihuwai.com/jingyan/9461.html"
+    ]
+  },
+  {
+    "route_id": "hk_004",
+    "name_zh": "乌孙古道",
+    "aliases": [
+      "乌孙穿越",
+      "天堂湖古道"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "伊犁哈萨克自治州",
+      "county": "特克斯县"
+    },
+    "start_poi": "琼库什台村",
+    "end_poi": "黑英山乡",
+    "waypoints": [
+      "包扎墩达坂",
+      "科克苏河",
+      "天堂湖(阿克库勒)",
+      "阿克布拉克达坂"
+    ],
+    "distance_km": 120,
+    "elevation_gain_m": 4200,
+    "elevation_loss_m": 4000,
+    "max_altitude_m": 3860,
+    "min_altitude_m": 1900,
+    "typical_duration_h": 72,
+    "season_window": "7-9",
+    "water_supply_points": [
+      "科克苏河",
+      "天堂湖",
+      "阿克布拉克河谷"
+    ],
+    "resupply_points": [
+      "琼库什台村",
+      "黑英山乡"
+    ],
+    "retreat_points": [
+      "琼库什台村",
+      "科克苏河",
+      "黑英山乡"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "涉水(冰河)",
+      "高海拔",
+      "落石",
+      "失温",
+      "无人区"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=523896",
+    "last_verified_date": "2025-07-10",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm"
+    ]
+  },
+  {
+    "route_id": "hk_005",
+    "name_zh": "长穿毕",
+    "aliases": [
+      "长坪沟穿越毕棚沟",
+      "四姑娘山经典穿越"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "小金县"
+    },
+    "start_poi": "长坪沟口",
+    "end_poi": "毕棚沟上海子",
+    "waypoints": [
+      "枯树滩",
+      "木骡子",
+      "叉子沟尾",
+      "叉子沟垭口"
+    ],
+    "distance_km": 40,
+    "elevation_gain_m": 1900,
+    "elevation_loss_m": 1500,
+    "max_altitude_m": 4668,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 24,
+    "season_window": "6-10",
+    "water_supply_points": [
+      "木骡子",
+      "叉子沟尾",
+      "毕棚沟"
+    ],
+    "resupply_points": [
+      "长坪沟口",
+      "木骡子"
+    ],
+    "retreat_points": [
+      "长坪沟口",
+      "木骡子",
+      "毕棚沟"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "垭口积雪",
+      "陡坡",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=485631",
+    "last_verified_date": "2025-09-05",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "http://sh.bendibao.com/tour/2018323/191699.shtm"
+    ]
+  },
+  {
+    "route_id": "hk_006",
+    "name_zh": "洛克线",
+    "aliases": [
+      "木里亚丁穿越",
+      "洛克徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "凉山彝族自治州",
+      "county": "木里藏族自治县"
+    },
+    "start_poi": "嘟噜村",
+    "end_poi": "亚丁村",
+    "waypoints": [
+      "白水河",
+      "满措牛场",
+      "万花池牛场",
+      "杂巴拉垭口",
+      "蛇湖",
+      "牛奶海"
+    ],
+    "distance_km": 70,
+    "elevation_gain_m": 3200,
+    "elevation_loss_m": 2800,
+    "max_altitude_m": 4750,
+    "min_altitude_m": 2400,
+    "typical_duration_h": 50,
+    "season_window": "9-10",
+    "water_supply_points": [
+      "白水河",
+      "满措牛场",
+      "蛇湖",
+      "牛奶海"
+    ],
+    "resupply_points": [
+      "嘟噜村",
+      "亚丁村"
+    ],
+    "retreat_points": [
+      "嘟噜村",
+      "满措牛场",
+      "亚丁村"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "高反",
+      "无人区",
+      "失温",
+      "陡坡"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=701234",
+    "last_verified_date": "2025-09-20",
+    "source_urls": [
+      "https://m.voc.com.cn/xhn/news/201808/15542053.html",
+      "https://www.maihuwai.com/jingyan/9461.html"
+    ]
+  },
+  {
+    "route_id": "hk_007",
+    "name_zh": "亚丁大转山",
+    "aliases": [
+      "稻城亚丁大转",
+      "三神山环线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "稻城县"
+    },
+    "start_poi": "亚丁村",
+    "end_poi": "亚丁村",
+    "waypoints": [
+      "冲古寺",
+      "牛奶海",
+      "五色海",
+      "央迈勇垭口",
+      "蛇湖",
+      "卡斯牛棚"
+    ],
+    "distance_km": 70,
+    "elevation_gain_m": 3400,
+    "elevation_loss_m": 3400,
+    "max_altitude_m": 4900,
+    "min_altitude_m": 3900,
+    "typical_duration_h": 48,
+    "season_window": "5-11",
+    "water_supply_points": [
+      "牛奶海",
+      "蛇湖",
+      "卡斯牛棚",
+      "冲古寺"
+    ],
+    "resupply_points": [
+      "亚丁村",
+      "冲古寺"
+    ],
+    "retreat_points": [
+      "亚丁村",
+      "冲古寺",
+      "洛绒牛场"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "高反",
+      "陡坡",
+      "失温"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=736541",
+    "last_verified_date": "2025-09-25",
+    "source_urls": [
+      "https://www.thepaper.cn/newsDetail_forward_26123762",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "name_zh": "鳌太穿越",
+    "aliases": [
+      "鳌太线",
+      "秦岭龙脊穿越"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "陕西",
+      "city_prefecture": "宝鸡市",
+      "county": "太白县"
+    },
+    "start_poi": "塘口村",
+    "end_poi": "大爷海",
+    "waypoints": [
+      "鳌山导航架",
+      "白起庙",
+      "石海",
+      "药王洞",
+      "荞麦梁",
+      "万仙阵",
+      "拔仙台"
+    ],
+    "distance_km": 81,
+    "elevation_gain_m": 4200,
+    "elevation_loss_m": 3800,
+    "max_altitude_m": 3767,
+    "min_altitude_m": 1300,
+    "typical_duration_h": 60,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "药王洞",
+      "大爷海",
+      "二爷海"
+    ],
+    "resupply_points": [
+      "塘口村",
+      "大爷海"
+    ],
+    "retreat_points": [
+      "塘口村",
+      "药王洞",
+      "大爷海"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "高死亡率",
+      "失温",
+      "迷路",
+      "石海",
+      "恶劣天气"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=398712",
+    "last_verified_date": "2025-07-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.maihuwai.com/jingyan/9461.html"
+    ]
+  },
+  {
+    "route_id": "hk_009",
+    "name_zh": "武功山反穿",
+    "aliases": [
+      "武功山穿越",
+      "华东朝圣之路"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "江西",
+      "city_prefecture": "萍乡市",
+      "county": "芦溪县"
+    },
+    "start_poi": "龙山村",
+    "end_poi": "武功山金顶",
+    "waypoints": [
+      "发云界",
+      "千丈岩",
+      "好汉坡",
+      "绝望坡",
+      "吊马桩"
+    ],
+    "distance_km": 25,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 600,
+    "max_altitude_m": 1918,
+    "min_altitude_m": 600,
+    "typical_duration_h": 16,
+    "season_window": "4-11",
+    "water_supply_points": [
+      "发云界",
+      "武发客栈",
+      "吊马桩"
+    ],
+    "resupply_points": [
+      "龙山村",
+      "发云界",
+      "金顶"
+    ],
+    "retreat_points": [
+      "龙山村",
+      "发云界",
+      "吊马桩"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "陡坡",
+      "雷暴",
+      "失温"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=521478",
+    "last_verified_date": "2025-11-05",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "http://sh.bendibao.com/tour/2018323/191699.shtm"
+    ]
+  },
+  {
+    "route_id": "hk_010",
+    "name_zh": "冈仁波齐转山",
+    "aliases": [
+      "神山转山",
+      "Gangrenboqi Kora",
+      "Kailash Kora"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "阿里地区",
+      "county": "普兰县"
+    },
+    "start_poi": "塔尔钦",
+    "end_poi": "塔尔钦",
+    "waypoints": [
+      "经幡广场",
+      "曲古寺",
+      "止热寺",
+      "卓玛拉山口",
+      "祖楚寺"
+    ],
+    "distance_km": 52,
+    "elevation_gain_m": 2100,
+    "elevation_loss_m": 2100,
+    "max_altitude_m": 5630,
+    "min_altitude_m": 4600,
+    "typical_duration_h": 36,
+    "season_window": "5-9",
+    "water_supply_points": [
+      "曲古寺",
+      "止热寺",
+      "祖楚寺"
+    ],
+    "resupply_points": [
+      "塔尔钦",
+      "止热寺"
+    ],
+    "retreat_points": [
+      "塔尔钦",
+      "经幡广场",
+      "止热寺"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "极高高海拔",
+      "高反",
+      "失温",
+      "陡坡"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=365214",
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.sohu.com/a/535873578_505583"
+    ]
+  },
+  {
+    "route_id": "hk_011",
+    "name_zh": "墨脱徒步",
+    "aliases": [
+      "派墨徒步",
+      "秘境莲花"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "林芝市",
+      "county": "墨脱县"
+    },
+    "start_poi": "派镇",
+    "end_poi": "墨脱县城",
+    "waypoints": [
+      "松林口",
+      "多雄拉山",
+      "拉格",
+      "汗密",
+      "背崩",
+      "雅让"
+    ],
+    "distance_km": 96,
+    "elevation_gain_m": 3200,
+    "elevation_loss_m": 4800,
+    "max_altitude_m": 4200,
+    "min_altitude_m": 800,
+    "typical_duration_h": 56,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "拉格",
+      "汗密",
+      "背崩"
+    ],
+    "resupply_points": [
+      "派镇",
+      "拉格",
+      "汗密",
+      "背崩",
+      "墨脱县城"
+    ],
+    "retreat_points": [
+      "派镇",
+      "拉格",
+      "汗密",
+      "背崩"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "边防证",
+      "蚂蟥",
+      "塌方",
+      "水蛭",
+      "高海拔"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=412365",
+    "last_verified_date": "2025-09-10",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm"
+    ]
+  },
+  {
+    "route_id": "hk_012",
+    "name_zh": "喀拉峻草原穿越",
+    "aliases": [
+      "喀拉峻徒步",
+      "天山立体草原"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "伊犁哈萨克自治州",
+      "county": "特克斯县"
+    },
+    "start_poi": "琼库什台村",
+    "end_poi": "喀拉峻景区",
+    "waypoints": [
+      "西喀拉峻",
+      "东喀拉峻",
+      "鲜花台",
+      "猎鹰台",
+      "塔里木"
+    ],
+    "distance_km": 70,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1400,
+    "max_altitude_m": 2600,
+    "min_altitude_m": 1700,
+    "typical_duration_h": 36,
+    "season_window": "5-8",
+    "water_supply_points": [
+      "琼库什台",
+      "西喀拉峻",
+      "东喀拉峻"
+    ],
+    "resupply_points": [
+      "琼库什台村",
+      "喀拉峻景区"
+    ],
+    "retreat_points": [
+      "琼库什台村",
+      "喀拉峻景区"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "暴雨",
+      "雷电"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=589632",
+    "last_verified_date": "2025-06-15",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://m.voc.com.cn/xhn/news/201808/15542053.html"
+    ]
+  },
+  {
+    "route_id": "hk_013",
+    "name_zh": "狼塔C+V线",
+    "aliases": [
+      "狼塔穿越",
+      "狼塔C加V",
+      "天山大环线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "昌吉回族自治州",
+      "county": "呼图壁县"
+    },
+    "start_poi": "呼图壁河大水罐",
+    "end_poi": "农大林场",
+    "waypoints": [
+      "白杨沟达坂",
+      "台普希克马河",
+      "库勒阿特腾达坂",
+      "蒙克特达坂",
+      "哈尔嘎特达坂",
+      "乌兰达坂"
+    ],
+    "distance_km": 200,
+    "elevation_gain_m": 8500,
+    "elevation_loss_m": 8000,
+    "max_altitude_m": 4010,
+    "min_altitude_m": 1800,
+    "typical_duration_h": 144,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "台普希克马河",
+      "蒙特开曾达坂下",
+      "冰川湖"
+    ],
+    "resupply_points": [
+      "呼图壁",
+      "巴伦台"
+    ],
+    "retreat_points": [
+      "白杨沟达坂下",
+      "台普希克马河",
+      "蒙特开曾达坂"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "极高强度",
+      "无人区",
+      "冰河涉水",
+      "野生动物",
+      "失温",
+      "高危"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=614587",
+    "last_verified_date": "2025-07-05",
+    "source_urls": [
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm",
+      "https://t.studyisland.cn/hiking-in-china/"
+    ]
+  },
+  {
+    "route_id": "hk_014",
+    "name_zh": "夏特古道",
+    "aliases": [
+      "夏塔古道",
+      "天山冰川穿越"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "伊犁哈萨克自治州",
+      "county": "昭苏县"
+    },
+    "start_poi": "夏特温泉",
+    "end_poi": "破城子",
+    "waypoints": [
+      "哈达木孜达坂",
+      "木扎尔特冰川",
+      "木扎尔特河谷"
+    ],
+    "distance_km": 120,
+    "elevation_gain_m": 3600,
+    "elevation_loss_m": 3400,
+    "max_altitude_m": 4850,
+    "min_altitude_m": 1900,
+    "typical_duration_h": 72,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "夏特河谷",
+      "木扎尔特河"
+    ],
+    "resupply_points": [
+      "夏特温泉",
+      "昭苏县城"
+    ],
+    "retreat_points": [
+      "夏特温泉",
+      "哈达木孜达坂"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "冰川徒步",
+      "冰裂缝",
+      "涉水",
+      "落石",
+      "大雪封山"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=445712",
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://www.thepaper.cn/newsDetail_forward_26123762",
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm",
+      "http://sh.bendibao.com/tour/2018323/191699.shtm"
+    ]
+  },
+  {
+    "route_id": "hk_015",
+    "name_zh": "腾格里沙漠五湖连穿",
+    "aliases": [
+      "腾格里穿越",
+      "沙漠五湖"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "内蒙古",
+      "city_prefecture": "阿拉善盟",
+      "county": "阿拉善左旗"
+    },
+    "start_poi": "天鹅湖",
+    "end_poi": "月亮湖",
+    "waypoints": [
+      "乌兰湖",
+      "苏海图湖",
+      "太阳湖"
+    ],
+    "distance_km": 50,
+    "elevation_gain_m": 200,
+    "elevation_loss_m": 200,
+    "max_altitude_m": 1435,
+    "min_altitude_m": 1300,
+    "typical_duration_h": 24,
+    "season_window": "4-5,9-11",
+    "water_supply_points": [
+      "天鹅湖",
+      "乌兰湖",
+      "太阳湖",
+      "月亮湖"
+    ],
+    "resupply_points": [
+      "天鹅湖营地",
+      "太阳湖营地",
+      "月亮湖景区"
+    ],
+    "retreat_points": [
+      "天鹅湖",
+      "太阳湖",
+      "月亮湖"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高温",
+      "脱水",
+      "沙暴",
+      "迷路"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=514236",
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://m.voc.com.cn/xhn/news/201808/15542053.html"
+    ]
+  },
+  {
+    "route_id": "hk_016",
+    "name_zh": "漓江徒步",
+    "aliases": [
+      "漓江精华段",
+      "杨堤至兴坪"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "广西",
+      "city_prefecture": "桂林市",
+      "county": "阳朔县"
+    },
+    "start_poi": "杨堤乡",
+    "end_poi": "兴坪镇",
+    "waypoints": [
+      "浪石",
+      "全家洲",
+      "冷水村",
+      "九马画山",
+      "黄布倒影"
+    ],
+    "distance_km": 20,
+    "elevation_gain_m": 200,
+    "elevation_loss_m": 200,
+    "max_altitude_m": 200,
+    "min_altitude_m": 80,
+    "typical_duration_h": 6,
+    "season_window": "3-5,9-12",
+    "water_supply_points": [
+      "杨堤",
+      "浪石",
+      "全家洲",
+      "兴坪"
+    ],
+    "resupply_points": [
+      "杨堤乡",
+      "兴坪镇"
+    ],
+    "retreat_points": [
+      "杨堤乡",
+      "全家洲",
+      "兴坪镇"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "低",
+      "适合新手"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.sohu.com/a/535873578_505583"
+    ]
+  },
+  {
+    "route_id": "hk_017",
+    "name_zh": "库拉岗日徒步",
+    "aliases": [
+      "库拉岗日环线",
+      "喜马拉雅圣湖之旅"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "山南市",
+      "county": "洛扎县"
+    },
+    "start_poi": "色乡",
+    "end_poi": "色乡",
+    "waypoints": [
+      "白马林措",
+      "介久措",
+      "折公措"
+    ],
+    "distance_km": 50,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 4900,
+    "min_altitude_m": 4000,
+    "typical_duration_h": 32,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "白马林措营地",
+      "介久措"
+    ],
+    "resupply_points": [
+      "色乡",
+      "洛扎县城"
+    ],
+    "retreat_points": [
+      "色乡",
+      "白马林措"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "高反",
+      "涉水"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=665234",
+    "last_verified_date": "2025-08-25",
+    "source_urls": [
+      "https://m.voc.com.cn/xhn/news/201808/15542053.html",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397"
+    ]
+  },
+  {
+    "route_id": "hk_018",
+    "name_zh": "孟克德古道",
+    "aliases": [
+      "孟克德穿越",
+      "独库徒步线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "伊犁哈萨克自治州",
+      "county": "尼勒克县"
+    },
+    "start_poi": "独库公路625公里处",
+    "end_poi": "唐布拉草原",
+    "waypoints": [
+      "天湖(孟克德湖)",
+      "门克廷达坂",
+      "苦杨林"
+    ],
+    "distance_km": 70,
+    "elevation_gain_m": 2200,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 3495,
+    "min_altitude_m": 1800,
+    "typical_duration_h": 40,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "天湖",
+      "门克廷达坂下",
+      "唐布拉"
+    ],
+    "resupply_points": [
+      "独山子",
+      "乔尔玛"
+    ],
+    "retreat_points": [
+      "独库公路625",
+      "唐布拉"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "落石",
+      "涉水",
+      "缓坡"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=589741",
+    "last_verified_date": "2025-07-20",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://zhuanlan.zhihu.com/p/152179162"
+    ]
+  },
+  {
+    "route_id": "hk_019",
+    "name_zh": "南太行徒步",
+    "aliases": [
+      "南太行穿越",
+      "郭亮村徒步",
+      "绝壁长廊徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "河南",
+      "city_prefecture": "新乡市",
+      "county": "辉县市"
+    },
+    "start_poi": "郭亮村",
+    "end_poi": "王莽岭",
+    "waypoints": [
+      "昆山挂壁公路",
+      "锡崖沟",
+      "十字岭"
+    ],
+    "distance_km": 50,
+    "elevation_gain_m": 1500,
+    "elevation_loss_m": 1200,
+    "max_altitude_m": 1700,
+    "min_altitude_m": 600,
+    "typical_duration_h": 32,
+    "season_window": "4-10",
+    "water_supply_points": [
+      "郭亮",
+      "锡崖沟",
+      "王莽岭"
+    ],
+    "resupply_points": [
+      "郭亮村",
+      "锡崖沟",
+      "王莽岭"
+    ],
+    "retreat_points": [
+      "郭亮村",
+      "锡崖沟"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "落石",
+      "悬崖路段"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=487963",
+    "last_verified_date": "2025-10-10",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469"
+    ]
+  },
+  {
+    "route_id": "hk_020",
+    "name_zh": "珠峰东坡徒步",
+    "aliases": [
+      "嘎玛沟徒步",
+      "珠峰东坡大环线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "日喀则市",
+      "county": "定日县"
+    },
+    "start_poi": "曲当乡",
+    "end_poi": "曲当乡",
+    "waypoints": [
+      "晓乌措",
+      "兰花谷",
+      "夏农牧场",
+      "汤湘观景台",
+      "俄嘎",
+      "白当"
+    ],
+    "distance_km": 100,
+    "elevation_gain_m": 4500,
+    "elevation_loss_m": 4500,
+    "max_altitude_m": 5300,
+    "min_altitude_m": 3600,
+    "typical_duration_h": 96,
+    "season_window": "4-5,9-10",
+    "water_supply_points": [
+      "晓乌措",
+      "夏农牧场",
+      "俄嘎",
+      "汤湘"
+    ],
+    "resupply_points": [
+      "曲当乡",
+      "优帕村"
+    ],
+    "retreat_points": [
+      "曲当乡",
+      "晓乌措",
+      "汤湘"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高高海拔",
+      "高反",
+      "失温",
+      "冰川",
+      "边防证"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=612547",
+    "last_verified_date": "2025-09-01",
+    "source_urls": [
+      "https://www.thepaper.cn/newsDetail_forward_26123762",
+      "https://www.maihuwai.com/jingyan/9461.html"
+    ]
+  },
+  {
+    "route_id": "hk_021",
+    "name_zh": "梅里北坡徒步",
+    "aliases": [
+      "坡均徒步",
+      "梅里雪山北坡"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "迪庆藏族自治州",
+      "county": "德钦县"
+    },
+    "start_poi": "亚贡村",
+    "end_poi": "亚贡村",
+    "waypoints": [
+      "坡均营地",
+      "坡将营地",
+      "次丁垭口",
+      "滇藏垭口"
+    ],
+    "distance_km": 65,
+    "elevation_gain_m": 3500,
+    "elevation_loss_m": 3500,
+    "max_altitude_m": 5200,
+    "min_altitude_m": 3000,
+    "typical_duration_h": 56,
+    "season_window": "5-11",
+    "water_supply_points": [
+      "坡均营地",
+      "坡将营地"
+    ],
+    "resupply_points": [
+      "亚贡村",
+      "德钦县城"
+    ],
+    "retreat_points": [
+      "亚贡村",
+      "坡均营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "陡坡",
+      "落石",
+      "冰川"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=758412",
+    "last_verified_date": "2025-09-15",
+    "source_urls": [
+      "https://www.thepaper.cn/newsDetail_forward_26123762",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397"
+    ]
+  },
+  {
+    "route_id": "hk_022",
+    "name_zh": "希夏邦马环线",
+    "aliases": [
+      "希夏邦马徒步",
+      "8027米环线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "日喀则市",
+      "county": "聂拉木县"
+    },
+    "start_poi": "聂拉木县城",
+    "end_poi": "聂拉木县城",
+    "waypoints": [
+      "欣德营地",
+      "南坡大本营",
+      "贡措",
+      "野博康加勒冰川"
+    ],
+    "distance_km": 85,
+    "elevation_gain_m": 4000,
+    "elevation_loss_m": 4000,
+    "max_altitude_m": 5600,
+    "min_altitude_m": 3800,
+    "typical_duration_h": 96,
+    "season_window": "4-5,9-10",
+    "water_supply_points": [
+      "欣德营地",
+      "贡措"
+    ],
+    "resupply_points": [
+      "聂拉木县城"
+    ],
+    "retreat_points": [
+      "聂拉木",
+      "欣德营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高高海拔",
+      "冰川",
+      "失温",
+      "边防证"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=698523",
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm",
+      "https://t.studyisland.cn/hiking-in-china/"
+    ]
+  },
+  {
+    "route_id": "hk_023",
+    "name_zh": "七藏沟徒步",
+    "aliases": [
+      "七藏沟穿越",
+      "九寨平替徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "松潘县"
+    },
+    "start_poi": "卡卡沟口",
+    "end_poi": "长海子",
+    "waypoints": [
+      "鱼海子",
+      "红星海子",
+      "草海"
+    ],
+    "distance_km": 45,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1600,
+    "max_altitude_m": 4200,
+    "min_altitude_m": 3300,
+    "typical_duration_h": 36,
+    "season_window": "6-10",
+    "water_supply_points": [
+      "鱼海子",
+      "红星海子"
+    ],
+    "resupply_points": [
+      "卡卡沟口",
+      "川主寺镇"
+    ],
+    "retreat_points": [
+      "卡卡沟口",
+      "红星海子"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "泥泞",
+      "蚂蟥"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=541236",
+    "last_verified_date": "2025-08-05",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://m.voc.com.cn/xhn/news/201808/15542053.html"
+    ]
+  },
+  {
+    "route_id": "hk_024",
+    "name_zh": "库布齐沙漠穿越",
+    "aliases": [
+      "库布齐东线",
+      "弓弦沙漠"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "内蒙古",
+      "city_prefecture": "鄂尔多斯市",
+      "county": "达拉特旗"
+    },
+    "start_poi": "夜鸣沙",
+    "end_poi": "七星湖",
+    "waypoints": [
+      "沙漠营地",
+      "绿洲"
+    ],
+    "distance_km": 35,
+    "elevation_gain_m": 150,
+    "elevation_loss_m": 150,
+    "max_altitude_m": 1200,
+    "min_altitude_m": 1050,
+    "typical_duration_h": 16,
+    "season_window": "4-6,9-10",
+    "water_supply_points": [
+      "沙漠营地",
+      "七星湖"
+    ],
+    "resupply_points": [
+      "夜鸣沙",
+      "七星湖景区"
+    ],
+    "retreat_points": [
+      "夜鸣沙",
+      "七星湖"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高温",
+      "脱水",
+      "风沙"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=471258",
+    "last_verified_date": "2025-10-05",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469"
+    ]
+  },
+  {
+    "route_id": "hk_025",
+    "name_zh": "神农架老君山穿越",
+    "aliases": [
+      "神农架徒步",
+      "华中屋脊穿越"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "湖北",
+      "city_prefecture": "神农架林区",
+      "county": null
+    },
+    "start_poi": "彩旗村",
+    "end_poi": "老君顶",
+    "waypoints": [
+      "高山草甸",
+      "原始冷杉林"
+    ],
+    "distance_km": 30,
+    "elevation_gain_m": 1400,
+    "elevation_loss_m": 1200,
+    "max_altitude_m": 2900,
+    "min_altitude_m": 1700,
+    "typical_duration_h": 18,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "高山草甸营地"
+    ],
+    "resupply_points": [
+      "彩旗村",
+      "木鱼镇"
+    ],
+    "retreat_points": [
+      "彩旗村"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": true,
+    "risk_tags": [
+      "林区管制",
+      "野兽",
+      "迷路",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=425631",
+    "last_verified_date": "2025-07-30",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469"
+    ]
+  },
+  {
+    "route_id": "hk_026",
+    "name_zh": "格聂大环线",
+    "aliases": [
+      "格聂转山",
+      "格聂神山环线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "理塘县"
+    },
+    "start_poi": "冷谷寺",
+    "end_poi": "冷谷寺",
+    "waypoints": [
+      "热日卡",
+      "格聂之眼",
+      "肖扎湖",
+      "夯达营地"
+    ],
+    "distance_km": 200,
+    "elevation_gain_m": 6000,
+    "elevation_loss_m": 6000,
+    "max_altitude_m": 4900,
+    "min_altitude_m": 3800,
+    "typical_duration_h": 120,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "热日卡",
+      "格聂之眼",
+      "夯达营地"
+    ],
+    "resupply_points": [
+      "冷谷寺",
+      "理塘县城"
+    ],
+    "retreat_points": [
+      "冷谷寺",
+      "热日卡"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "无人区",
+      "失温"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=714526",
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "http://sh.bendibao.com/tour/2018323/191699.shtm",
+      "https://m.voc.com.cn/xhn/news/201808/15542053.html"
+    ]
+  },
+  {
+    "route_id": "hk_027",
+    "name_zh": "念青东徒步",
+    "aliases": [
+      "念青唐古拉山东段",
+      "藏东冰川秘境"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "林芝市",
+      "county": "波密县"
+    },
+    "start_poi": "通麦",
+    "end_poi": "边坝",
+    "waypoints": [
+      "曲通河谷",
+      "勒布沟"
+    ],
+    "distance_km": 195,
+    "elevation_gain_m": 8000,
+    "elevation_loss_m": 7500,
+    "max_altitude_m": 5300,
+    "min_altitude_m": 2000,
+    "typical_duration_h": 168,
+    "season_window": "9-10",
+    "water_supply_points": [
+      "曲通河谷",
+      "勒布沟"
+    ],
+    "resupply_points": [
+      "通麦",
+      "波密县城",
+      "边坝县城"
+    ],
+    "retreat_points": [
+      "通麦",
+      "波密"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "极高强度",
+      "无人区",
+      "沼泽",
+      "冰河",
+      "高海拔"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=632147",
+    "last_verified_date": "2025-08-20",
+    "source_urls": [
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397"
+    ]
+  },
+  {
+    "route_id": "hk_028",
+    "name_zh": "博格达大环线",
+    "aliases": [
+      "博格达穿越",
+      "天山东段环线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "昌吉回族自治州",
+      "county": "阜康市"
+    },
+    "start_poi": "达坂城",
+    "end_poi": "天池",
+    "waypoints": [
+      "三个岔达坂",
+      "博格达峰登山大本营",
+      "四工河"
+    ],
+    "distance_km": 120,
+    "elevation_gain_m": 4500,
+    "elevation_loss_m": 4200,
+    "max_altitude_m": 4150,
+    "min_altitude_m": 1400,
+    "typical_duration_h": 96,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "博格达大本营",
+      "四工河"
+    ],
+    "resupply_points": [
+      "达坂城",
+      "天池景区"
+    ],
+    "retreat_points": [
+      "达坂城",
+      "三个岔达坂"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "冰川",
+      "落石",
+      "雪崩区"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=596324",
+    "last_verified_date": "2025-07-15",
+    "source_urls": [
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm",
+      "https://www.maihuwai.com/jingyan/9461.html"
+    ]
+  },
+  {
+    "route_id": "hk_029",
+    "name_zh": "年保玉则穿越",
+    "aliases": [
+      "年宝徒步",
+      "天神后花园"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "果洛藏族自治州",
+      "county": "久治县"
+    },
+    "start_poi": "年保玉则景区",
+    "end_poi": "年保玉则景区",
+    "waypoints": [
+      "仙女湖",
+      "妖女湖",
+      "日干措",
+      "上下垭口"
+    ],
+    "distance_km": 60,
+    "elevation_gain_m": 2200,
+    "elevation_loss_m": 2200,
+    "max_altitude_m": 4600,
+    "min_altitude_m": 4000,
+    "typical_duration_h": 40,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "仙女湖",
+      "妖女湖",
+      "日干措"
+    ],
+    "resupply_points": [
+      "久治县城"
+    ],
+    "retreat_points": [
+      "年保玉则景区"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "景区关闭风险",
+      "高海拔",
+      "涉水"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-06-01",
+    "source_urls": [
+      "https://t.studyisland.cn/hiking-in-china/",
+      "http://sh.bendibao.com/tour/2018323/191699.shtm"
+    ]
+  },
+  {
+    "route_id": "hk_030",
+    "name_zh": "徽杭古道",
+    "aliases": [
+      "徽杭古道安徽段"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "安徽",
+      "city_prefecture": "宣城市",
+      "county": "绩溪县"
+    },
+    "start_poi": "伏岭镇",
+    "end_poi": "永来村",
+    "waypoints": [
+      "江南第一关",
+      "黄茅培",
+      "下雪堂",
+      "蓝天凹"
+    ],
+    "distance_km": 20,
+    "elevation_gain_m": 800,
+    "elevation_loss_m": 600,
+    "max_altitude_m": 1050,
+    "min_altitude_m": 350,
+    "typical_duration_h": 8,
+    "season_window": "3-11",
+    "water_supply_points": [
+      "黄茅培",
+      "下雪堂",
+      "蓝天凹"
+    ],
+    "resupply_points": [
+      "伏岭镇",
+      "永来村"
+    ],
+    "retreat_points": [
+      "伏岭镇",
+      "永来村"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "低",
+      "适合新手"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-10",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469",
+      "https://t.studyisland.cn/hiking-in-china/"
+    ]
+  },
+  {
+    "route_id": "hk_031",
+    "name_zh": "韭菜岭穿越",
+    "aliases": [
+      "湖南K2",
+      "都庞岭主峰"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "湖南",
+      "city_prefecture": "永州市",
+      "county": "道县"
+    },
+    "start_poi": "大江源村",
+    "end_poi": "月岩林场",
+    "waypoints": [
+      "四十八步",
+      "千家峒",
+      "韭菜岭顶"
+    ],
+    "distance_km": 20,
+    "elevation_gain_m": 1300,
+    "elevation_loss_m": 1000,
+    "max_altitude_m": 2009,
+    "min_altitude_m": 400,
+    "typical_duration_h": 16,
+    "season_window": "4-11",
+    "water_supply_points": [
+      "四十八步",
+      "千家峒"
+    ],
+    "resupply_points": [
+      "大江源村",
+      "月岩林场"
+    ],
+    "retreat_points": [
+      "大江源村"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "溯溪",
+      "陡坡",
+      "密林"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=523614",
+    "last_verified_date": "2025-10-15",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469",
+      "https://t.studyisland.cn/hiking-in-china/"
+    ]
+  },
+  {
+    "route_id": "hk_032",
+    "name_zh": "船底顶穿越",
+    "aliases": [
+      "广东徒步毕业线"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "广东",
+      "city_prefecture": "韶关市",
+      "county": "曲江区"
+    },
+    "start_poi": "罗坑镇",
+    "end_poi": "罗坑镇",
+    "waypoints": [
+      "平坑",
+      "乱石坡",
+      "断崖",
+      "船底顶",
+      "落日峰"
+    ],
+    "distance_km": 30,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1800,
+    "max_altitude_m": 1586,
+    "min_altitude_m": 400,
+    "typical_duration_h": 20,
+    "season_window": "9-12,3-5",
+    "water_supply_points": [
+      "平坑",
+      "望顶营地"
+    ],
+    "resupply_points": [
+      "罗坑镇"
+    ],
+    "retreat_points": [
+      "罗坑镇",
+      "平坑"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "陡坡",
+      "乱石坡",
+      "悬崖",
+      "暴雨"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.2bulu.com/track/track_detail.htm?track_id=498632",
+    "last_verified_date": "2025-11-20",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469",
+      "https://t.studyisland.cn/hiking-in-china/"
+    ]
+  },
+  {
+    "route_id": "hk_033",
+    "name_zh": "麦理浩径",
+    "aliases": [
+      "MacLehose Trail",
+      "香港100公里"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "香港",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "北潭涌",
+    "end_poi": "屯门",
+    "waypoints": [
+      "万宜水库",
+      "大浪湾",
+      "马鞍山",
+      "狮子山",
+      "大帽山"
+    ],
+    "distance_km": 100,
+    "elevation_gain_m": 4500,
+    "elevation_loss_m": 4500,
+    "max_altitude_m": 957,
+    "min_altitude_m": 0,
+    "typical_duration_h": 60,
+    "season_window": "10-4",
+    "water_supply_points": [
+      "沿途各段士多店"
+    ],
+    "resupply_points": [
+      "西贡",
+      "沙田",
+      "荃湾",
+      "屯门"
+    ],
+    "retreat_points": [
+      "各段出口均有巴士站"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高温",
+      "暴晒",
+      "爬升大"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.trailwatch.hk/maclehose-trail",
+    "last_verified_date": "2025-12-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469",
+      "https://cn.tripadvisor.com/Attractions-g294211-Activities-c61-t87-China.html"
+    ]
+  },
+  {
+    "route_id": "hk_034",
+    "name_zh": "大五台顺穿",
+    "aliases": [
+      "五台山朝台",
+      "大五台徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "山西",
+      "city_prefecture": "忻州市",
+      "county": "五台县"
+    },
+    "start_poi": "鸿门岩",
+    "end_poi": "鸿门岩",
+    "waypoints": [
+      "东台望海峰",
+      "北台叶斗峰",
+      "中台翠岩峰",
+      "西台挂月峰",
+      "南台锦绣峰"
+    ],
+    "distance_km": 70,
+    "elevation_gain_m": 3000,
+    "elevation_loss_m": 3000,
+    "max_altitude_m": 3061,
+    "min_altitude_m": 1700,
+    "typical_duration_h": 30,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "各台寺庙",
+      "狮子窝"
+    ],
+    "resupply_points": [
+      "鸿门岩",
+      "台怀镇"
+    ],
+    "retreat_points": [
+      "各台",
+      "台怀镇"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "雷暴",
+      "大风",
+      "冰雹",
+      "失温"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-10",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469",
+      "https://t.studyisland.cn/hiking-in-china/"
+    ]
+  },
+  {
+    "route_id": "hk_035",
+    "name_zh": "太白南南穿越",
+    "aliases": [
+      "太白山穿越",
+      "秦岭主峰徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "陕西",
+      "city_prefecture": "宝鸡市",
+      "county": "太白县"
+    },
+    "start_poi": "厚畛子镇",
+    "end_poi": "厚畛子镇",
+    "waypoints": [
+      "铁甲树",
+      "三合宫",
+      "老君殿",
+      "南天门",
+      "玉皇池",
+      "拔仙台",
+      "大爷海"
+    ],
+    "distance_km": 40,
+    "elevation_gain_m": 2200,
+    "elevation_loss_m": 2200,
+    "max_altitude_m": 3767,
+    "min_altitude_m": 1300,
+    "typical_duration_h": 30,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "玉皇池",
+      "大爷海"
+    ],
+    "resupply_points": [
+      "厚畛子",
+      "大爷海"
+    ],
+    "retreat_points": [
+      "厚畛子",
+      "南天门"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "石海",
+      "失温",
+      "迷路"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://t.studyisland.cn/hiking-in-china/",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469"
+    ]
+  },
+  {
+    "route_id": "hk_036",
+    "name_zh": "扎尕那穿越",
+    "aliases": [
+      "洛克之路",
+      "甘南扎尕那徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "甘肃",
+      "city_prefecture": "甘南藏族自治州",
+      "county": "迭部县"
+    },
+    "start_poi": "扎尕那",
+    "end_poi": "旗布寺",
+    "waypoints": [
+      "冬才营地",
+      "喀拉克垭口",
+      "安子库"
+    ],
+    "distance_km": 55,
+    "elevation_gain_m": 2800,
+    "elevation_loss_m": 2500,
+    "max_altitude_m": 4140,
+    "min_altitude_m": 2900,
+    "typical_duration_h": 40,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "冬才营地",
+      "喀拉克垭口下"
+    ],
+    "resupply_points": [
+      "扎尕那",
+      "旗布寺"
+    ],
+    "retreat_points": [
+      "扎尕那"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "陡坡",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-05",
+    "source_urls": [
+      "https://t.studyisland.cn/hiking-in-china/",
+      "https://www.maihuwai.com/jingyan/9461.html"
+    ]
+  },
+  {
+    "route_id": "hk_037",
+    "name_zh": "梅里外转",
+    "aliases": [
+      "梅里雪山外转经",
+      "卡瓦格博大转"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "迪庆藏族自治州",
+      "county": "德钦县"
+    },
+    "start_poi": "德钦县城",
+    "end_poi": "德钦县城",
+    "waypoints": [
+      "永久村",
+      "多克拉垭口",
+      "阿丙村",
+      "说拉垭口"
+    ],
+    "distance_km": 145,
+    "elevation_gain_m": 6000,
+    "elevation_loss_m": 6000,
+    "max_altitude_m": 4815,
+    "min_altitude_m": 2100,
+    "typical_duration_h": 72,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "永久",
+      "阿丙村"
+    ],
+    "resupply_points": [
+      "德钦",
+      "永久村",
+      "阿丙村"
+    ],
+    "retreat_points": [
+      "永久村",
+      "阿丙村"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "高强度",
+      "无人区",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-10",
+    "source_urls": [
+      "http://sh.bendibao.com/tour/2018323/191699.shtm",
+      "https://t.studyisland.cn/hiking-in-china/"
+    ]
+  },
+  {
+    "route_id": "hk_038",
+    "name_zh": "长江三峡徒步",
+    "aliases": [
+      "三峡古道",
+      "瞿塘峡徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "重庆",
+      "city_prefecture": "重庆市",
+      "county": "奉节县"
+    },
+    "start_poi": "白帝城",
+    "end_poi": "南津关",
+    "waypoints": [
+      "瞿塘峡",
+      "巫峡",
+      "西陵峡",
+      "神女峰"
+    ],
+    "distance_km": 50,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1600,
+    "max_altitude_m": 1200,
+    "min_altitude_m": 100,
+    "typical_duration_h": 24,
+    "season_window": "3-5,9-11",
+    "water_supply_points": [
+      "沿途村镇"
+    ],
+    "resupply_points": [
+      "奉节",
+      "巫山",
+      "宜昌"
+    ],
+    "retreat_points": [
+      "沿途码头可乘船"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "落石",
+      "塌方"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-05",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469",
+      "https://www.sohu.com/a/535873578_505583"
+    ]
+  },
+  {
+    "route_id": "hk_039",
+    "name_zh": "海螺沟徒步",
+    "aliases": [
+      "海螺沟冰川徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "泸定县"
+    },
+    "start_poi": "一号营地",
+    "end_poi": "冰川观景台",
+    "waypoints": [
+      "二号营地",
+      "三号营地",
+      "大冰瀑布"
+    ],
+    "distance_km": 15,
+    "elevation_gain_m": 800,
+    "elevation_loss_m": 800,
+    "max_altitude_m": 3600,
+    "min_altitude_m": 2850,
+    "typical_duration_h": 8,
+    "season_window": "4-6,9-11",
+    "water_supply_points": [
+      "各营地"
+    ],
+    "resupply_points": [
+      "一号营地",
+      "磨西镇"
+    ],
+    "retreat_points": [
+      "随时可原路返回"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "冰川落石",
+      "高海拔",
+      "冰裂缝"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-10",
+    "source_urls": [
+      "https://www.sohu.com/a/535873578_505583",
+      "https://www.thepaper.cn/newsDetail_forward_26123762"
+    ]
+  },
+  {
+    "route_id": "hk_040",
+    "name_zh": "虎跳峡中虎跳一线天",
+    "aliases": [
+      "中虎跳徒步"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "迪庆藏族自治州",
+      "county": "香格里拉市"
+    },
+    "start_poi": "张老师客栈",
+    "end_poi": "中虎跳石",
+    "waypoints": [
+      "张老师小道",
+      "一线天",
+      "天梯"
+    ],
+    "distance_km": 5,
+    "elevation_gain_m": 350,
+    "elevation_loss_m": 350,
+    "max_altitude_m": 1850,
+    "min_altitude_m": 1600,
+    "typical_duration_h": 4,
+    "season_window": "3-5,9-11",
+    "water_supply_points": [
+      "张老师客栈"
+    ],
+    "resupply_points": [
+      "张老师客栈",
+      "Tina's客栈"
+    ],
+    "retreat_points": [
+      "原路返回"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "陡梯",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "https://www.thepaper.cn/newsDetail_forward_26123762",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397"
+    ]
+  },
+  {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "aliases": [
+      "大峰攀登",
+      "5025米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "小金县"
+    },
+    "start_poi": "四姑娘山镇",
+    "end_poi": "大峰顶(5025m)",
+    "waypoints": [
+      "海子沟",
+      "大峰大本营"
+    ],
+    "distance_km": 12,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1800,
+    "max_altitude_m": 5025,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 16,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "大本营"
+    ],
+    "resupply_points": [
+      "四姑娘山镇"
+    ],
+    "retreat_points": [
+      "大本营",
+      "四姑娘山镇"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "高反"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-05",
+    "source_urls": [
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html",
+      "https://www.2bulu.com/mc/community/detail?id=50406782"
+    ]
+  },
+  {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "aliases": [
+      "二峰攀登",
+      "5276米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "小金县"
+    },
+    "start_poi": "四姑娘山镇",
+    "end_poi": "二峰顶(5276m)",
+    "waypoints": [
+      "海子沟",
+      "二峰大本营",
+      "碎石坡"
+    ],
+    "distance_km": 16,
+    "elevation_gain_m": 2100,
+    "elevation_loss_m": 2100,
+    "max_altitude_m": 5276,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 20,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "大本营"
+    ],
+    "resupply_points": [
+      "四姑娘山镇"
+    ],
+    "retreat_points": [
+      "大本营",
+      "四姑娘山镇"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "高反",
+      "碎石坡"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-05",
+    "source_urls": [
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html",
+      "https://www.sohu.com/a/118058961_446493"
+    ]
+  },
+  {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "aliases": [
+      "三峰攀登",
+      "5355米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "小金县"
+    },
+    "start_poi": "四姑娘山镇",
+    "end_poi": "三峰顶(5355m)",
+    "waypoints": [
+      "长坪沟",
+      "三峰大本营",
+      "碎石技术路段"
+    ],
+    "distance_km": 14,
+    "elevation_gain_m": 2200,
+    "elevation_loss_m": 2200,
+    "max_altitude_m": 5355,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 24,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "大本营"
+    ],
+    "resupply_points": [
+      "四姑娘山镇"
+    ],
+    "retreat_points": [
+      "大本营",
+      "四姑娘山镇"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "技术攀登",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-05",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://sports.sohu.com/20170826/n508515648.shtml"
+    ]
+  },
+  {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "aliases": [
+      "哈巴攀登",
+      "5396米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "迪庆藏族自治州",
+      "county": "香格里拉市"
+    },
+    "start_poi": "哈巴村",
+    "end_poi": "哈巴雪山顶(5396m)",
+    "waypoints": [
+      "大本营",
+      "兰花坪",
+      "绝望坡",
+      "月亮湾",
+      "鲤鱼背"
+    ],
+    "distance_km": 16,
+    "elevation_gain_m": 2100,
+    "elevation_loss_m": 2100,
+    "max_altitude_m": 5396,
+    "min_altitude_m": 2700,
+    "typical_duration_h": 24,
+    "season_window": "3-5,9-11",
+    "water_supply_points": [
+      "大本营",
+      "兰花坪"
+    ],
+    "resupply_points": [
+      "哈巴村"
+    ],
+    "retreat_points": [
+      "大本营",
+      "哈巴村"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "滑坠风险",
+      "雪坡",
+      "大风吹袭"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-10",
+    "source_urls": [
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D",
+      "http://www.eelxs.com/raiders/show_1.html"
+    ]
+  },
+  {
+    "route_id": "ma_005",
+    "name_zh": "那玛峰",
+    "aliases": [
+      "那玛攀登",
+      "5588米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "康定市"
+    },
+    "start_poi": "子梅村",
+    "end_poi": "那玛峰顶(5588m)",
+    "waypoints": [
+      "贡嘎寺",
+      "那玛峰BC",
+      "C1营地"
+    ],
+    "distance_km": 18,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1800,
+    "max_altitude_m": 5588,
+    "min_altitude_m": 3300,
+    "typical_duration_h": 32,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "BC营地",
+      "C1营地"
+    ],
+    "resupply_points": [
+      "子梅村",
+      "康定"
+    ],
+    "retreat_points": [
+      "C1营地",
+      "子梅村"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "冰川",
+      "技术攀登",
+      "高反"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-20",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D"
+    ]
+  },
+  {
+    "route_id": "ma_006",
+    "name_zh": "半脊峰",
+    "aliases": [
+      "半脊攀登",
+      "5430米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "理县"
+    },
+    "start_poi": "毕棚沟上海子",
+    "end_poi": "半脊峰顶(5430m)",
+    "waypoints": [
+      "BC大本营",
+      "C1营地",
+      "C2营地",
+      "R1路线"
+    ],
+    "distance_km": 10,
+    "elevation_gain_m": 1600,
+    "elevation_loss_m": 1600,
+    "max_altitude_m": 5430,
+    "min_altitude_m": 3500,
+    "typical_duration_h": 32,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "C1",
+      "C2"
+    ],
+    "resupply_points": [
+      "毕棚沟景区"
+    ],
+    "retreat_points": [
+      "C2",
+      "C1",
+      "BC"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "技术攀登",
+      "冰川",
+      "冰裂缝",
+      "陡坡45-70度"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html",
+      "https://www.sohu.com/a/118058961_446493"
+    ]
+  },
+  {
+    "route_id": "ma_007",
+    "name_zh": "玉珠峰",
+    "aliases": [
+      "玉珠峰攀登",
+      "6178米",
+      "昆仑之巅"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "海西蒙古族藏族自治州",
+      "county": "格尔木市"
+    },
+    "start_poi": "格尔木",
+    "end_poi": "玉珠峰顶(6178m)",
+    "waypoints": [
+      "BC大本营(5040m)",
+      "C1营地(5600m)"
+    ],
+    "distance_km": 15,
+    "elevation_gain_m": 1700,
+    "elevation_loss_m": 1700,
+    "max_altitude_m": 6178,
+    "min_altitude_m": 4500,
+    "typical_duration_h": 48,
+    "season_window": "5-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "格尔木"
+    ],
+    "retreat_points": [
+      "C1",
+      "BC",
+      "格尔木"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "高反",
+      "大风",
+      "低温"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html",
+      "https://www.2bulu.com/mc/community/detail?id=50406782"
+    ]
+  },
+  {
+    "route_id": "ma_008",
+    "name_zh": "雀儿山",
+    "aliases": [
+      "雀儿攀登",
+      "6168米",
+      "绒麦峨扎"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "德格县"
+    },
+    "start_poi": "甘孜县城",
+    "end_poi": "雀儿山顶(6168m)",
+    "waypoints": [
+      "BC大本营",
+      "C1营地",
+      "C2营地",
+      "C3营地"
+    ],
+    "distance_km": 20,
+    "elevation_gain_m": 2400,
+    "elevation_loss_m": 2400,
+    "max_altitude_m": 6168,
+    "min_altitude_m": 3800,
+    "typical_duration_h": 72,
+    "season_window": "7-9",
+    "water_supply_points": [
+      "BC",
+      "C1",
+      "C2"
+    ],
+    "resupply_points": [
+      "甘孜县城",
+      "德格县城"
+    ],
+    "retreat_points": [
+      "C3",
+      "C2",
+      "C1",
+      "BC"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "冰裂缝",
+      "技术攀登",
+      "结组",
+      "冰川"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-20",
+    "source_urls": [
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html",
+      "https://zhuanlan.zhihu.com/p/43996550",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D"
+    ]
+  },
+  {
+    "route_id": "ma_009",
+    "name_zh": "慕士塔格峰",
+    "aliases": [
+      "慕士塔格攀登",
+      "7546米",
+      "冰川之父"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "克孜勒苏柯尔克孜自治州",
+      "county": "阿克陶县"
+    },
+    "start_poi": "喀什",
+    "end_poi": "慕士塔格顶(7546m)",
+    "waypoints": [
+      "BC大本营(4400m)",
+      "C1(5300m)",
+      "C2(6200m)",
+      "C3(6900m)"
+    ],
+    "distance_km": 30,
+    "elevation_gain_m": 3200,
+    "elevation_loss_m": 3200,
+    "max_altitude_m": 7546,
+    "min_altitude_m": 4400,
+    "typical_duration_h": 144,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "各级营地"
+    ],
+    "resupply_points": [
+      "喀什",
+      "塔县"
+    ],
+    "retreat_points": [
+      "各营地可下撤"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "8000米级预备",
+      "高反",
+      "低温",
+      "大风"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-01",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8"
+    ]
+  },
+  {
+    "route_id": "ma_010",
+    "name_zh": "雪宝顶",
+    "aliases": [
+      "雪宝顶攀登",
+      "5588米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "松潘县"
+    },
+    "start_poi": "纳米村",
+    "end_poi": "雪宝顶(5588m)",
+    "waypoints": [
+      "BC大本营",
+      "C1营地",
+      "骆驼背"
+    ],
+    "distance_km": 12,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1800,
+    "max_altitude_m": 5588,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 36,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "纳米村",
+      "松潘县城"
+    ],
+    "retreat_points": [
+      "BC",
+      "纳米村"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "碎石坡",
+      "陡峭山脊",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8"
+    ]
+  },
+  {
+    "route_id": "ma_011",
+    "name_zh": "岗什卡峰",
+    "aliases": [
+      "岗什卡攀登",
+      "5254米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "海北藏族自治州",
+      "county": "门源回族自治县"
+    },
+    "start_poi": "西宁",
+    "end_poi": "岗什卡顶(5254m)",
+    "waypoints": [
+      "七彩瀑布",
+      "BC大本营",
+      "C1营地"
+    ],
+    "distance_km": 12,
+    "elevation_gain_m": 1400,
+    "elevation_loss_m": 1400,
+    "max_altitude_m": 5254,
+    "min_altitude_m": 3700,
+    "typical_duration_h": 24,
+    "season_window": "5-9",
+    "water_supply_points": [
+      "BC"
+    ],
+    "resupply_points": [
+      "门源",
+      "西宁"
+    ],
+    "retreat_points": [
+      "BC",
+      "门源"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "冰川入门"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-05",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html"
+    ]
+  },
+  {
+    "route_id": "ma_012",
+    "name_zh": "玄武峰",
+    "aliases": [
+      "玄武攀登",
+      "5383米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "小金县"
+    },
+    "start_poi": "四姑娘山镇",
+    "end_poi": "玄武峰顶(5383m)",
+    "waypoints": [
+      "BC大本营",
+      "C1营地",
+      "冰岩混合路段"
+    ],
+    "distance_km": 14,
+    "elevation_gain_m": 2200,
+    "elevation_loss_m": 2200,
+    "max_altitude_m": 5383,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 36,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "四姑娘山镇"
+    ],
+    "retreat_points": [
+      "C1",
+      "BC",
+      "四姑娘山镇"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "冰裂缝",
+      "陡坡50-80度",
+      "冰岩混合",
+      "技术性强"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D"
+    ]
+  },
+  {
+    "route_id": "ma_013",
+    "name_zh": "博格达峰",
+    "aliases": [
+      "博格达攀登",
+      "5445米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "昌吉回族自治州",
+      "county": "阜康市"
+    },
+    "start_poi": "乌市/达坂城",
+    "end_poi": "博格达顶(5445m)",
+    "waypoints": [
+      "BC大本营",
+      "C1营地",
+      "魔鬼5080"
+    ],
+    "distance_km": 20,
+    "elevation_gain_m": 2500,
+    "elevation_loss_m": 2500,
+    "max_altitude_m": 5445,
+    "min_altitude_m": 2100,
+    "typical_duration_h": 72,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "乌鲁木齐"
+    ],
+    "retreat_points": [
+      "C1",
+      "BC"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "技术攀登",
+      "60-80度陡坡",
+      "岩壁",
+      "高死亡率区"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-15",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8"
+    ]
+  },
+  {
+    "route_id": "ma_014",
+    "name_zh": "年保玉则主峰",
+    "aliases": [
+      "年宝玉则攀登",
+      "5369米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "果洛藏族自治州",
+      "county": "久治县"
+    },
+    "start_poi": "久治县城",
+    "end_poi": "年保玉则顶(5369m)",
+    "waypoints": [
+      "仙女湖",
+      "BC大本营",
+      "碎石坡",
+      "山脊"
+    ],
+    "distance_km": 14,
+    "elevation_gain_m": 1700,
+    "elevation_loss_m": 1700,
+    "max_altitude_m": 5369,
+    "min_altitude_m": 3700,
+    "typical_duration_h": 40,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "仙女湖"
+    ],
+    "resupply_points": [
+      "久治县城"
+    ],
+    "retreat_points": [
+      "BC",
+      "久治"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "景区管制",
+      "碎石坡",
+      "陡峭山脊",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-06-01",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html"
+    ]
+  },
+  {
+    "route_id": "ma_015",
+    "name_zh": "奥太娜峰",
+    "aliases": [
+      "三奥雪山之子",
+      "4780米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "黑水县"
+    },
+    "start_poi": "黑水县城",
+    "end_poi": "奥太娜顶(4780m)",
+    "waypoints": [
+      "德石窝村",
+      "BC大本营"
+    ],
+    "distance_km": 10,
+    "elevation_gain_m": 1400,
+    "elevation_loss_m": 1400,
+    "max_altitude_m": 4780,
+    "min_altitude_m": 3400,
+    "typical_duration_h": 16,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "BC"
+    ],
+    "resupply_points": [
+      "黑水县城"
+    ],
+    "retreat_points": [
+      "BC",
+      "黑水"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "碎石坡",
+      "高海拔冰雪",
+      "低危险性"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html",
+      "https://www.sohu.com/a/118058961_446493"
+    ]
+  },
+  {
+    "route_id": "ma_016",
+    "name_zh": "宁金抗沙峰",
+    "aliases": [
+      "宁金抗沙攀登",
+      "7206米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "山南市",
+      "county": "浪卡子县"
+    },
+    "start_poi": "拉萨",
+    "end_poi": "宁金抗沙顶(7206m)",
+    "waypoints": [
+      "羊卓雍措",
+      "BC大本营",
+      "C1",
+      "C2"
+    ],
+    "distance_km": 25,
+    "elevation_gain_m": 2800,
+    "elevation_loss_m": 2800,
+    "max_altitude_m": 7206,
+    "min_altitude_m": 4400,
+    "typical_duration_h": 120,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "各营地"
+    ],
+    "resupply_points": [
+      "拉萨"
+    ],
+    "retreat_points": [
+      "各营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "强风",
+      "气候恶劣",
+      "技术型7000米"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-10",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D"
+    ]
+  },
+  {
+    "route_id": "ma_017",
+    "name_zh": "卓奥友峰",
+    "aliases": [
+      "卓奥友攀登",
+      "8201米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "日喀则市",
+      "county": "聂拉木县"
+    },
+    "start_poi": "日喀则",
+    "end_poi": "卓奥友顶(8201m)",
+    "waypoints": [
+      "BC(5000m)",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "distance_km": 35,
+    "elevation_gain_m": 3200,
+    "elevation_loss_m": 3200,
+    "max_altitude_m": 8201,
+    "min_altitude_m": 5000,
+    "typical_duration_h": 240,
+    "season_window": "4-5,9-10",
+    "water_supply_points": [
+      "各级营地"
+    ],
+    "resupply_points": [
+      "日喀则",
+      "定日"
+    ],
+    "retreat_points": [
+      "各营地可下撤"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔8000m+",
+      "低压缺氧",
+      "冰川",
+      "冰裂缝"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-05-01",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D"
+    ]
+  },
+  {
+    "route_id": "ma_018",
+    "name_zh": "珠穆朗玛峰",
+    "aliases": [
+      "珠峰攀登",
+      "8848.86米",
+      "Everest"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "日喀则市",
+      "county": "定日县"
+    },
+    "start_poi": "拉萨",
+    "end_poi": "珠峰顶(8848.86m)",
+    "waypoints": [
+      "BC(5200m)",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "南坳",
+      "希拉里台阶"
+    ],
+    "distance_km": 40,
+    "elevation_gain_m": 3650,
+    "elevation_loss_m": 3650,
+    "max_altitude_m": 8849,
+    "min_altitude_m": 5200,
+    "typical_duration_h": 480,
+    "season_window": "4-5",
+    "water_supply_points": [
+      "各级营地"
+    ],
+    "resupply_points": [
+      "拉萨",
+      "定日",
+      "BC大本营"
+    ],
+    "retreat_points": [
+      "各营地可下撤"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔8000m+",
+      "死亡区",
+      "雪崩",
+      "冰裂缝",
+      "低压缺氧",
+      "大风-60°C"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-04-20",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%90%84%E7%9C%81%E7%BA%A7%E8%A1%8C%E6%94%BF%E5%8C%BA%E6%9C%80%E9%AB%98%E5%B3%B0%E5%88%97%E8%A1%A8",
+      "https://www.peakwiki.org/peaklist.php?plid=1"
+    ]
+  },
+  {
+    "route_id": "ma_019",
+    "name_zh": "希夏邦马峰",
+    "aliases": [
+      "希夏邦马攀登",
+      "8012米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "日喀则市",
+      "county": "聂拉木县"
+    },
+    "start_poi": "聂拉木县城",
+    "end_poi": "希夏邦马顶(8012m)",
+    "waypoints": [
+      "BC(5000m)",
+      "C1",
+      "C2",
+      "C3"
+    ],
+    "distance_km": 30,
+    "elevation_gain_m": 3000,
+    "elevation_loss_m": 3000,
+    "max_altitude_m": 8012,
+    "min_altitude_m": 3800,
+    "typical_duration_h": 240,
+    "season_window": "4-5,9-10",
+    "water_supply_points": [
+      "各级营地"
+    ],
+    "resupply_points": [
+      "聂拉木",
+      "日喀则"
+    ],
+    "retreat_points": [
+      "各营地可下撤"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "8000米级",
+      "唯一全境内",
+      "强风",
+      "低温",
+      "冰川"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-05-15",
+    "source_urls": [
+      "https://unwtonews.com/gonglue/gonglue/3898.html",
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8"
+    ]
+  },
+  {
+    "route_id": "ma_020",
+    "name_zh": "贡嘎山",
+    "aliases": [
+      "贡嘎攀登",
+      "7556米",
+      "蜀山之王"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "康定市"
+    },
+    "start_poi": "康定",
+    "end_poi": "贡嘎顶(7508.9m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "C2"
+    ],
+    "distance_km": 28,
+    "elevation_gain_m": 3800,
+    "elevation_loss_m": 3800,
+    "max_altitude_m": 7509,
+    "min_altitude_m": 3000,
+    "typical_duration_h": 240,
+    "season_window": "5-6,9-10",
+    "water_supply_points": [
+      "各级营地"
+    ],
+    "resupply_points": [
+      "康定",
+      "贡嘎山乡"
+    ],
+    "retreat_points": [
+      "各营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高难度",
+      "死亡率高于8000米",
+      "陡峭",
+      "冰川",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-06-01",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%90%84%E7%9C%81%E7%BA%A7%E8%A1%8C%E6%94%BF%E5%8C%BA%E6%9C%80%E9%AB%98%E5%B3%B0%E5%88%97%E8%A1%A8"
+    ]
+  },
+  {
+    "route_id": "ma_021",
+    "name_zh": "幺妹峰",
+    "aliases": [
+      "幺妹峰攀登",
+      "6247米",
+      "蜀山之后"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "小金县"
+    },
+    "start_poi": "四姑娘山镇",
+    "end_poi": "幺妹峰顶(6247.8m)",
+    "waypoints": [
+      "南壁",
+      "西南山脊"
+    ],
+    "distance_km": 15,
+    "elevation_gain_m": 3000,
+    "elevation_loss_m": 3000,
+    "max_altitude_m": 6248,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 120,
+    "season_window": "10-11",
+    "water_supply_points": [
+      "各级营地"
+    ],
+    "resupply_points": [
+      "四姑娘山镇"
+    ],
+    "retreat_points": [
+      "各营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高技术难度",
+      "大岩壁",
+      "冰岩混合",
+      "阿式攀登经典"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-01",
+    "source_urls": [
+      "https://caa1993.org.cn/content/86/2915.shtml",
+      "https://www.sohu.com/a/118058961_446493"
+    ]
+  },
+  {
+    "route_id": "ma_022",
+    "name_zh": "雪隆包",
+    "aliases": [
+      "雪隆包攀登",
+      "5527米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "理县"
+    },
+    "start_poi": "上孟乡",
+    "end_poi": "雪隆包顶(5527m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "冰川路段"
+    ],
+    "distance_km": 12,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 5527,
+    "min_altitude_m": 3500,
+    "typical_duration_h": 36,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "上孟乡",
+      "理县"
+    ],
+    "retreat_points": [
+      "C1",
+      "BC",
+      "上孟乡"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "冰川",
+      "陡坡",
+      "技术型"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html"
+    ]
+  },
+  {
+    "route_id": "ma_023",
+    "name_zh": "都日峰",
+    "aliases": [
+      "都日攀登",
+      "5437米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "松潘县"
+    },
+    "start_poi": "松潘县城",
+    "end_poi": "都日峰顶(5437m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "技术路段"
+    ],
+    "distance_km": 10,
+    "elevation_gain_m": 1500,
+    "elevation_loss_m": 1500,
+    "max_altitude_m": 5437,
+    "min_altitude_m": 3000,
+    "typical_duration_h": 32,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC"
+    ],
+    "resupply_points": [
+      "松潘县城"
+    ],
+    "retreat_points": [
+      "BC"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "技术型",
+      "冰川",
+      "陡坡"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://sports.sina.cn/outdoor/2018-01-09/detail-ifyqnici9675913.d.html"
+    ]
+  },
+  {
+    "route_id": "ma_024",
+    "name_zh": "阿尼玛卿",
+    "aliases": [
+      "阿尼玛卿攀登",
+      "6282米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "果洛藏族自治州",
+      "county": "玛沁县"
+    },
+    "start_poi": "玛沁县大武镇",
+    "end_poi": "阿尼玛卿顶(6282m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "C2"
+    ],
+    "distance_km": 22,
+    "elevation_gain_m": 2600,
+    "elevation_loss_m": 2600,
+    "max_altitude_m": 6282,
+    "min_altitude_m": 3700,
+    "typical_duration_h": 96,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "各营地"
+    ],
+    "resupply_points": [
+      "大武镇"
+    ],
+    "retreat_points": [
+      "各营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "冰川",
+      "神山文化敏感"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D",
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8"
+    ]
+  },
+  {
+    "route_id": "ma_025",
+    "name_zh": "格聂峰",
+    "aliases": [
+      "格聂神山攀登",
+      "6174米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "理塘县"
+    },
+    "start_poi": "理塘县城",
+    "end_poi": "格聂峰顶(6174.5m)",
+    "waypoints": [
+      "冷谷寺",
+      "BC",
+      "C1"
+    ],
+    "distance_km": 18,
+    "elevation_gain_m": 2300,
+    "elevation_loss_m": 2300,
+    "max_altitude_m": 6175,
+    "min_altitude_m": 3800,
+    "typical_duration_h": 96,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "理塘县城"
+    ],
+    "retreat_points": [
+      "BC",
+      "冷谷寺"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "技术攀登",
+      "冰川"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8",
+      "https://www.sohu.com/a/118058961_446493"
+    ]
+  },
+  {
+    "route_id": "ma_026",
+    "name_zh": "各拉丹冬峰",
+    "aliases": [
+      "各拉丹冬攀登",
+      "6621米",
+      "长江源"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "海西蒙古族藏族自治州",
+      "county": "格尔木市"
+    },
+    "start_poi": "格尔木",
+    "end_poi": "各拉丹冬顶(6621m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "C2"
+    ],
+    "distance_km": 24,
+    "elevation_gain_m": 2500,
+    "elevation_loss_m": 2500,
+    "max_altitude_m": 6621,
+    "min_altitude_m": 4500,
+    "typical_duration_h": 120,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "各营地"
+    ],
+    "resupply_points": [
+      "格尔木"
+    ],
+    "retreat_points": [
+      "各营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "冰川",
+      "无人区",
+      "极端低温"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-01",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8",
+      "https://www.sohu.com/a/118058961_446493"
+    ]
+  },
+  {
+    "route_id": "ma_027",
+    "name_zh": "布喀达坂峰",
+    "aliases": [
+      "新青峰",
+      "6860米",
+      "昆仑之巅"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "海西蒙古族藏族自治州",
+      "county": "格尔木市"
+    },
+    "start_poi": "格尔木",
+    "end_poi": "布喀达坂顶(6860m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "C2"
+    ],
+    "distance_km": 28,
+    "elevation_gain_m": 2800,
+    "elevation_loss_m": 2800,
+    "max_altitude_m": 6860,
+    "min_altitude_m": 4500,
+    "typical_duration_h": 144,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "各营地"
+    ],
+    "resupply_points": [
+      "格尔木"
+    ],
+    "retreat_points": [
+      "各营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "无人区",
+      "可可西里",
+      "冰川"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-01",
+    "source_urls": [
+      "https://www.peakwiki.org/peaklist.php?plid=1",
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8"
+    ]
+  },
+  {
+    "route_id": "ma_028",
+    "name_zh": "田海子山",
+    "aliases": [
+      "田海子攀登",
+      "6070米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "康定市"
+    },
+    "start_poi": "康定",
+    "end_poi": "田海子顶(6070m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "C2",
+      "冰岩混合"
+    ],
+    "distance_km": 16,
+    "elevation_gain_m": 2600,
+    "elevation_loss_m": 2600,
+    "max_altitude_m": 6070,
+    "min_altitude_m": 3500,
+    "typical_duration_h": 96,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "康定"
+    ],
+    "retreat_points": [
+      "各营地"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "技术攀登",
+      "冰岩混合",
+      "冰川"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D"
+    ]
+  },
+  {
+    "route_id": "ma_029",
+    "name_zh": "素珠链峰",
+    "aliases": [
+      "祁连峰",
+      "5547米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "甘肃",
+      "city_prefecture": "张掖市",
+      "county": "肃南裕固族自治县"
+    },
+    "start_poi": "张掖",
+    "end_poi": "素珠链顶(5547m)",
+    "waypoints": [
+      "BC",
+      "C1"
+    ],
+    "distance_km": 14,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 5547,
+    "min_altitude_m": 2600,
+    "typical_duration_h": 48,
+    "season_window": "7-8",
+    "water_supply_points": [
+      "BC",
+      "冰川融水"
+    ],
+    "resupply_points": [
+      "张掖",
+      "肃南"
+    ],
+    "retreat_points": [
+      "BC"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "冰川",
+      "低温",
+      "祁连山冷门"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-15",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%90%84%E7%9C%81%E7%BA%A7%E8%A1%8C%E6%94%BF%E5%8C%BA%E6%9C%80%E9%AB%98%E5%B3%B0%E5%88%97%E8%A1%A8"
+    ]
+  },
+  {
+    "route_id": "ma_030",
+    "name_zh": "婆缪峰",
+    "aliases": [
+      "婆缪攀登",
+      "5413米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "小金县"
+    },
+    "start_poi": "四姑娘山镇",
+    "end_poi": "婆缪峰顶(5413m)",
+    "waypoints": [
+      "长坪沟",
+      "BC",
+      "大岩壁路线"
+    ],
+    "distance_km": 12,
+    "elevation_gain_m": 2200,
+    "elevation_loss_m": 2200,
+    "max_altitude_m": 5413,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 72,
+    "season_window": "7-9",
+    "water_supply_points": [
+      "BC"
+    ],
+    "resupply_points": [
+      "四姑娘山镇"
+    ],
+    "retreat_points": [
+      "BC"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极难技术攀登",
+      "大岩壁",
+      "陡峭",
+      "阿式攀登"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E5%B1%B1%E5%B3%B0%E5%88%97%E8%A1%A8",
+      "https://www.sohu.com/a/118058961_446493"
+    ]
+  },
+  {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "aliases": [
+      "G318骑行",
+      "成都至拉萨"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "四川/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "雅安",
+      "康定",
+      "折多山",
+      "理塘",
+      "巴塘",
+      "芒康",
+      "左贡",
+      "八宿",
+      "波密",
+      "林芝",
+      "工布江达",
+      "墨竹工卡"
+    ],
+    "distance_km": 2150,
+    "elevation_gain_m": 35000,
+    "elevation_loss_m": 33000,
+    "max_altitude_m": 5130,
+    "min_altitude_m": 500,
+    "typical_duration_h": 240,
+    "season_window": "5-6,9-10",
+    "water_supply_points": [
+      "沿途县城和乡镇"
+    ],
+    "resupply_points": [
+      "沿途县城均有补给"
+    ],
+    "retreat_points": [
+      "每个县城均可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高反",
+      "大车流",
+      "塌方",
+      "泥石流",
+      "长下坡"
+    ],
+    "gpx_available": true,
+    "gpx_url": "http://www.biketo.com/tour/25435.html",
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html"
+    ]
+  },
+  {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "aliases": [
+      "G317骑行",
+      "成都至拉萨北线"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "四川/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "都江堰",
+      "汶川",
+      "马尔康",
+      "炉霍",
+      "甘孜",
+      "德格",
+      "江达",
+      "昌都",
+      "丁青",
+      "那曲",
+      "当雄"
+    ],
+    "distance_km": 2350,
+    "elevation_gain_m": 38000,
+    "elevation_loss_m": 36000,
+    "max_altitude_m": 5200,
+    "min_altitude_m": 500,
+    "typical_duration_h": 280,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿途县城和乡镇"
+    ],
+    "resupply_points": [
+      "沿途县城"
+    ],
+    "retreat_points": [
+      "县城可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高反",
+      "人烟稀少",
+      "路况较318差",
+      "极高海拔"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "http://www.biketo.com/tour/22440.html"
+    ]
+  },
+  {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "aliases": [
+      "青海湖环湖",
+      "环湖赛经典"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "海北藏族自治州",
+      "county": "海晏县"
+    },
+    "start_poi": "西海镇",
+    "end_poi": "西海镇",
+    "waypoints": [
+      "151基地",
+      "黑马河",
+      "鸟岛",
+      "刚察县",
+      "西海镇"
+    ],
+    "distance_km": 360,
+    "elevation_gain_m": 1200,
+    "elevation_loss_m": 1200,
+    "max_altitude_m": 3250,
+    "min_altitude_m": 3190,
+    "typical_duration_h": 30,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿途各乡镇"
+    ],
+    "resupply_points": [
+      "西海镇",
+      "151基地",
+      "黑马河",
+      "鸟岛",
+      "刚察"
+    ],
+    "retreat_points": [
+      "沿途各乡镇可搭车"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "大风",
+      "昼夜温差大",
+      "暴晒"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "http://www.feideng318.com/fd_qinghaihu.html"
+    ]
+  },
+  {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "aliases": [
+      "海南环岛",
+      "东线+西线"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "海南",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "海口",
+    "end_poi": "海口",
+    "waypoints": [
+      "文昌",
+      "博鳌",
+      "兴隆",
+      "三亚",
+      "东方",
+      "儋州"
+    ],
+    "distance_km": 800,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 500,
+    "min_altitude_m": 0,
+    "typical_duration_h": 64,
+    "season_window": "11-5",
+    "water_supply_points": [
+      "密集村镇"
+    ],
+    "resupply_points": [
+      "沿途城镇密集"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高温",
+      "暴晒",
+      "台风"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.bicycling.net.cn/index.php?blog_article_id=788",
+    "last_verified_date": "2025-12-01",
+    "source_urls": [
+      "https://www.bicycling.net.cn/index.php?blog_article_id=788&path=20&route=article%2Farticle",
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html"
+    ]
+  },
+  {
+    "route_id": "cy_005",
+    "name_zh": "滇藏线骑行",
+    "aliases": [
+      "昆明至拉萨",
+      "G214+G318"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "云南/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "昆明",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "大理",
+      "丽江",
+      "香格里拉",
+      "德钦",
+      "盐井",
+      "芒康",
+      "左贡",
+      "八宿",
+      "波密",
+      "林芝"
+    ],
+    "distance_km": 2325,
+    "elevation_gain_m": 35000,
+    "elevation_loss_m": 33000,
+    "max_altitude_m": 5000,
+    "min_altitude_m": 600,
+    "typical_duration_h": 280,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿途城镇"
+    ],
+    "resupply_points": [
+      "县城和乡镇"
+    ],
+    "retreat_points": [
+      "县城可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高反",
+      "长上坡",
+      "落石区",
+      "高海拔"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-15",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html"
+    ]
+  },
+  {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "aliases": [
+      "G109骑行",
+      "西宁至拉萨"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "青海/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "西宁",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "青海湖",
+      "茶卡",
+      "都兰",
+      "格尔木",
+      "昆仑山口",
+      "可可西里",
+      "唐古拉山口",
+      "安多",
+      "那曲",
+      "当雄"
+    ],
+    "distance_km": 1950,
+    "elevation_gain_m": 15000,
+    "elevation_loss_m": 13000,
+    "max_altitude_m": 5231,
+    "min_altitude_m": 2200,
+    "typical_duration_h": 240,
+    "season_window": "5-9",
+    "water_supply_points": [
+      "道班",
+      "兵站",
+      "县城"
+    ],
+    "resupply_points": [
+      "沿途县城和兵站"
+    ],
+    "retreat_points": [
+      "沿线可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "极高海拔",
+      "无人区",
+      "大风",
+      "低温",
+      "大货车多"
+    ],
+    "gpx_available": true,
+    "gpx_url": "http://www.biketo.com/tour/22440.html",
+    "last_verified_date": "2025-09-01",
+    "source_urls": [
+      "http://www.biketo.com/tour/22440.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "aliases": [
+      "G219骑行",
+      "叶城至拉萨"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "新疆/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "叶城",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "库地达坂",
+      "麻扎达坂",
+      "三十里营房",
+      "红柳滩",
+      "甜水海",
+      "界山达坂",
+      "多玛",
+      "日土",
+      "狮泉河",
+      "霍尔",
+      "仲巴",
+      "萨嘎",
+      "拉孜",
+      "日喀则"
+    ],
+    "distance_km": 2850,
+    "elevation_gain_m": 45000,
+    "elevation_loss_m": 42000,
+    "max_altitude_m": 5400,
+    "min_altitude_m": 1300,
+    "typical_duration_h": 360,
+    "season_window": "7-8",
+    "water_supply_points": [
+      "道班",
+      "兵站"
+    ],
+    "resupply_points": [
+      "三十里营房",
+      "狮泉河",
+      "沿途兵站"
+    ],
+    "retreat_points": [
+      "兵站和检查站可求助"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高高海拔",
+      "无人区",
+      "搓板路",
+      "补给困难",
+      "边防证"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_008",
+    "name_zh": "大香格里拉环线骑行",
+    "aliases": [
+      "川滇大环线",
+      "成都至丽江骑游"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "四川/云南",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "成都",
+    "waypoints": [
+      "都江堰",
+      "四姑娘山",
+      "丹巴",
+      "新都桥",
+      "理塘",
+      "稻城",
+      "乡城",
+      "香格里拉",
+      "丽江",
+      "泸沽湖",
+      "西昌",
+      "雅安"
+    ],
+    "distance_km": 1500,
+    "elevation_gain_m": 25000,
+    "elevation_loss_m": 25000,
+    "max_altitude_m": 4700,
+    "min_altitude_m": 500,
+    "typical_duration_h": 200,
+    "season_window": "9-10",
+    "water_supply_points": [
+      "沿途城镇"
+    ],
+    "resupply_points": [
+      "沿途县城"
+    ],
+    "retreat_points": [
+      "县城可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "盘山路",
+      "雨季塌方"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_009",
+    "name_zh": "丝绸之路骑行",
+    "aliases": [
+      "兰州至敦煌",
+      "河西走廊骑行"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "甘肃",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "兰州",
+    "end_poi": "敦煌",
+    "waypoints": [
+      "天祝",
+      "武威",
+      "张掖",
+      "酒泉",
+      "嘉峪关",
+      "瓜州"
+    ],
+    "distance_km": 1100,
+    "elevation_gain_m": 4000,
+    "elevation_loss_m": 4500,
+    "max_altitude_m": 2700,
+    "min_altitude_m": 1100,
+    "typical_duration_h": 100,
+    "season_window": "4-5,9-10",
+    "water_supply_points": [
+      "沿途城镇密集"
+    ],
+    "resupply_points": [
+      "沿途县城"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "戈壁风沙",
+      "暴晒",
+      "干燥",
+      "大货车"
+    ],
+    "gpx_available": true,
+    "gpx_url": "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+    "last_verified_date": "2025-09-20",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_010",
+    "name_zh": "京杭大运河骑行",
+    "aliases": [
+      "北京至杭州",
+      "大运河文化之旅"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "北京/河北/山东/江苏/浙江",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "北京",
+    "end_poi": "杭州",
+    "waypoints": [
+      "天津",
+      "沧州",
+      "德州",
+      "济南",
+      "济宁",
+      "徐州",
+      "淮安",
+      "扬州",
+      "镇江",
+      "苏州",
+      "嘉兴"
+    ],
+    "distance_km": 1800,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 200,
+    "min_altitude_m": 0,
+    "typical_duration_h": 160,
+    "season_window": "4-5,9-11",
+    "water_supply_points": [
+      "城镇密集"
+    ],
+    "resupply_points": [
+      "每个城市"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "城市路段",
+      "雾霾",
+      "交通复杂"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "aliases": [
+      "G217独山子至库车"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "独山子",
+    "end_poi": "库车",
+    "waypoints": [
+      "哈希勒根达坂",
+      "乔尔玛",
+      "那拉提",
+      "巴音布鲁克",
+      "铁力买提达坂",
+      "大小龙池",
+      "天山神秘大峡谷"
+    ],
+    "distance_km": 561,
+    "elevation_gain_m": 8000,
+    "elevation_loss_m": 8500,
+    "max_altitude_m": 3400,
+    "min_altitude_m": 1000,
+    "typical_duration_h": 56,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "乔尔玛",
+      "那拉提",
+      "巴音布鲁克",
+      "大小龙池"
+    ],
+    "resupply_points": [
+      "独山子",
+      "乔尔玛",
+      "那拉提",
+      "巴音布鲁克",
+      "库车"
+    ],
+    "retreat_points": [
+      "沿途乡镇"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "长陡坡",
+      "落石",
+      "冰雪路面"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://zhuanlan.zhihu.com/p/649881809",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_012",
+    "name_zh": "环赛里木湖骑行",
+    "aliases": [
+      "赛湖环湖",
+      "博州环湖"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "博尔塔拉蒙古自治州",
+      "county": "博乐市"
+    },
+    "start_poi": "赛里木湖景区东门",
+    "end_poi": "赛里木湖景区东门",
+    "waypoints": [
+      "点将台",
+      "天鹅乐水",
+      "西海草原",
+      "克勒涌珠",
+      "南门"
+    ],
+    "distance_km": 79,
+    "elevation_gain_m": 300,
+    "elevation_loss_m": 300,
+    "max_altitude_m": 2100,
+    "min_altitude_m": 2070,
+    "typical_duration_h": 6,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "景区各停靠点"
+    ],
+    "resupply_points": [
+      "景区东门",
+      "南门"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "暴晒",
+      "大风",
+      "温差大"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-20",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E8%B5%9B%E9%87%8C%E6%9C%A8%E6%B9%96",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_013",
+    "name_zh": "沿312国道上海至乌鲁木齐",
+    "aliases": [
+      "G312全程骑行"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "上海/江苏/安徽/河南/陕西/甘肃/新疆",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "上海",
+    "end_poi": "乌鲁木齐",
+    "waypoints": [
+      "南京",
+      "合肥",
+      "信阳",
+      "南阳",
+      "西安",
+      "兰州",
+      "武威",
+      "酒泉",
+      "嘉峪关",
+      "哈密",
+      "吐鲁番"
+    ],
+    "distance_km": 3900,
+    "elevation_gain_m": 12000,
+    "elevation_loss_m": 10000,
+    "max_altitude_m": 2200,
+    "min_altitude_m": 0,
+    "typical_duration_h": 400,
+    "season_window": "4-6,9-10",
+    "water_supply_points": [
+      "沿线城镇密集"
+    ],
+    "resupply_points": [
+      "沿线城市"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "长距离",
+      "戈壁",
+      "风沙",
+      "大货车多"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_014",
+    "name_zh": "广西沿边公路骑行",
+    "aliases": [
+      "中越边境骑行",
+      "S325/G219"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "广西",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "东兴",
+    "end_poi": "百色(那坡县)弄合",
+    "waypoints": [
+      "峒中",
+      "爱店",
+      "凭祥",
+      "水口",
+      "硕龙",
+      "德天瀑布",
+      "龙邦",
+      "平孟"
+    ],
+    "distance_km": 725,
+    "elevation_gain_m": 8000,
+    "elevation_loss_m": 8000,
+    "max_altitude_m": 800,
+    "min_altitude_m": 50,
+    "typical_duration_h": 72,
+    "season_window": "9-12,3-4",
+    "water_supply_points": [
+      "沿途乡镇"
+    ],
+    "resupply_points": [
+      "沿途各镇"
+    ],
+    "retreat_points": [
+      "乡镇可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "上坡多",
+      "边境敏感区",
+      "湿热"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-15",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_015",
+    "name_zh": "徽州环线骑行",
+    "aliases": [
+      "千岛湖环湖",
+      "新安江山水画廊"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "安徽/浙江",
+      "city_prefecture": "黄山市",
+      "county": null
+    },
+    "start_poi": "黄山市区",
+    "end_poi": "黄山市区",
+    "waypoints": [
+      "徽州区",
+      "绩溪",
+      "深渡",
+      "威坪",
+      "千岛湖",
+      "淳安"
+    ],
+    "distance_km": 300,
+    "elevation_gain_m": 3000,
+    "elevation_loss_m": 3000,
+    "max_altitude_m": 500,
+    "min_altitude_m": 100,
+    "typical_duration_h": 24,
+    "season_window": "3-5,9-11",
+    "water_supply_points": [
+      "沿途密集"
+    ],
+    "resupply_points": [
+      "沿途乡镇"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "低"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "http://www.youxiake.com/gonglue/view?id=4796"
+    ]
+  },
+  {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "aliases": [
+      "大理洱海环湖"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "大理白族自治州",
+      "county": "大理市"
+    },
+    "start_poi": "大理古城",
+    "end_poi": "大理古城",
+    "waypoints": [
+      "才村",
+      "喜洲",
+      "双廊",
+      "挖色",
+      "海东"
+    ],
+    "distance_km": 120,
+    "elevation_gain_m": 300,
+    "elevation_loss_m": 300,
+    "max_altitude_m": 2000,
+    "min_altitude_m": 1970,
+    "typical_duration_h": 10,
+    "season_window": "3-11",
+    "water_supply_points": [
+      "沿途村镇密集"
+    ],
+    "resupply_points": [
+      "大理古城",
+      "喜洲",
+      "双廊"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "暴晒",
+      "机动车多"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-10",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "aliases": [
+      "四姑娘山丹巴环线"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "四川",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "成都",
+    "waypoints": [
+      "映秀",
+      "四姑娘山",
+      "丹巴",
+      "八美",
+      "塔公",
+      "新都桥",
+      "康定",
+      "泸定",
+      "雅安"
+    ],
+    "distance_km": 900,
+    "elevation_gain_m": 15000,
+    "elevation_loss_m": 15000,
+    "max_altitude_m": 4300,
+    "min_altitude_m": 500,
+    "typical_duration_h": 96,
+    "season_window": "5-6,9-10",
+    "water_supply_points": [
+      "沿途乡镇"
+    ],
+    "resupply_points": [
+      "沿途县城和乡镇"
+    ],
+    "retreat_points": [
+      "县城可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "盘山公路",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-15",
+    "source_urls": [
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_018",
+    "name_zh": "千岛湖环湖骑行",
+    "aliases": [
+      "千汾线+淳杨线"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "浙江",
+      "city_prefecture": "杭州市",
+      "county": "淳安县"
+    },
+    "start_poi": "千岛湖镇",
+    "end_poi": "千岛湖镇",
+    "waypoints": [
+      "千岛湖大桥",
+      "姜家镇",
+      "汾口",
+      "安阳",
+      "上江埠大桥"
+    ],
+    "distance_km": 150,
+    "elevation_gain_m": 1000,
+    "elevation_loss_m": 1000,
+    "max_altitude_m": 300,
+    "min_altitude_m": 100,
+    "typical_duration_h": 12,
+    "season_window": "4-11",
+    "water_supply_points": [
+      "沿途密集"
+    ],
+    "resupply_points": [
+      "千岛湖镇",
+      "姜家",
+      "汾口"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "低",
+      "适合休闲"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "http://www.youxiake.com/gonglue/view?id=4796",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_019",
+    "name_zh": "阿禾公路骑行",
+    "aliases": [
+      "G681阿禾线",
+      "禾木至阿勒泰"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "阿勒泰地区",
+      "county": "布尔津县"
+    },
+    "start_poi": "禾木村",
+    "end_poi": "阿勒泰市",
+    "waypoints": [
+      "贾登峪",
+      "喀纳斯机场"
+    ],
+    "distance_km": 225,
+    "elevation_gain_m": 3770,
+    "elevation_loss_m": 3500,
+    "max_altitude_m": 2400,
+    "min_altitude_m": 900,
+    "typical_duration_h": 24,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "禾木",
+      "贾登峪",
+      "阿勒泰"
+    ],
+    "resupply_points": [
+      "禾木",
+      "贾登峪",
+      "阿勒泰"
+    ],
+    "retreat_points": [
+      "贾登峪",
+      "阿勒泰"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "长爬坡",
+      "天气骤变",
+      "高海拔"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-15",
+    "source_urls": [
+      "https://www.tanqi.cc/2025rides/",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_020",
+    "name_zh": "太行天路骑行",
+    "aliases": [
+      "太行山挂壁公路骑行"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "河南/山西",
+      "city_prefecture": "新乡市",
+      "county": "辉县市"
+    },
+    "start_poi": "辉县",
+    "end_poi": "林州",
+    "waypoints": [
+      "万仙山",
+      "郭亮村",
+      "王莽岭",
+      "锡崖沟",
+      "回龙"
+    ],
+    "distance_km": 150,
+    "elevation_gain_m": 4000,
+    "elevation_loss_m": 3000,
+    "max_altitude_m": 1700,
+    "min_altitude_m": 300,
+    "typical_duration_h": 16,
+    "season_window": "4-6,9-10",
+    "water_supply_points": [
+      "沿途村镇"
+    ],
+    "resupply_points": [
+      "辉县",
+      "万仙山",
+      "林州"
+    ],
+    "retreat_points": [
+      "沿途乡镇"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "陡坡",
+      "挂壁公路",
+      "隧道无灯",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-10",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_021",
+    "name_zh": "翁金线骑行",
+    "aliases": [
+      "百年氧道",
+      "海宁沿江"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "浙江",
+      "city_prefecture": "嘉兴市",
+      "county": "海宁市"
+    },
+    "start_poi": "杭州奥特莱斯",
+    "end_poi": "神仙湖",
+    "waypoints": [
+      "老盐仓",
+      "盐官古城",
+      "大缺口"
+    ],
+    "distance_km": 45,
+    "elevation_gain_m": 50,
+    "elevation_loss_m": 50,
+    "max_altitude_m": 10,
+    "min_altitude_m": 0,
+    "typical_duration_h": 4,
+    "season_window": "3-11",
+    "water_supply_points": [
+      "沿途村镇密集"
+    ],
+    "resupply_points": [
+      "沿途"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "低",
+      "适合新手"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-15",
+    "source_urls": [
+      "https://tidenews.com.cn/news.html?id=3142182",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_022",
+    "name_zh": "闽西山区骑行",
+    "aliases": [
+      "福建土楼骑行",
+      "龙岩南靖穿越"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "福建",
+      "city_prefecture": "龙岩市",
+      "county": null
+    },
+    "start_poi": "龙岩",
+    "end_poi": "厦门",
+    "waypoints": [
+      "永定土楼",
+      "南靖土楼",
+      "书洋镇",
+      "和溪"
+    ],
+    "distance_km": 200,
+    "elevation_gain_m": 3500,
+    "elevation_loss_m": 3200,
+    "max_altitude_m": 900,
+    "min_altitude_m": 0,
+    "typical_duration_h": 20,
+    "season_window": "9-12",
+    "water_supply_points": [
+      "沿途村镇密集"
+    ],
+    "resupply_points": [
+      "沿途各镇"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "盘山公路",
+      "山区弯道多"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-20",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_023",
+    "name_zh": "阿尔山骑行",
+    "aliases": [
+      "大兴安岭穿越",
+      "呼伦贝尔草原骑游"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "内蒙古",
+      "city_prefecture": "兴安盟",
+      "county": "阿尔山市"
+    },
+    "start_poi": "阿尔山",
+    "end_poi": "满洲里",
+    "waypoints": [
+      "伊尔施",
+      "新巴尔虎左旗",
+      "新巴尔虎右旗"
+    ],
+    "distance_km": 450,
+    "elevation_gain_m": 1500,
+    "elevation_loss_m": 1500,
+    "max_altitude_m": 1100,
+    "min_altitude_m": 600,
+    "typical_duration_h": 48,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "沿线城镇"
+    ],
+    "resupply_points": [
+      "阿尔山",
+      "新左旗",
+      "新右旗",
+      "满洲里"
+    ],
+    "retreat_points": [
+      "沿线可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "草原大风",
+      "补给间隔大",
+      "暴晒"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_024",
+    "name_zh": "天山公路(G217南疆段)骑行",
+    "aliases": [
+      "天山穿越",
+      "库车至那拉提"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "库车",
+    "end_poi": "那拉提",
+    "waypoints": [
+      "天山神秘大峡谷",
+      "大小龙池",
+      "铁力买提达坂",
+      "巴音布鲁克"
+    ],
+    "distance_km": 300,
+    "elevation_gain_m": 5000,
+    "elevation_loss_m": 4000,
+    "max_altitude_m": 3200,
+    "min_altitude_m": 1000,
+    "typical_duration_h": 36,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "大龙池",
+      "巴音布鲁克"
+    ],
+    "resupply_points": [
+      "库车",
+      "大龙池",
+      "巴音布鲁克",
+      "那拉提"
+    ],
+    "retreat_points": [
+      "沿途可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "长上坡",
+      "高海拔",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_025",
+    "name_zh": "琼库什台至特克斯骑行",
+    "aliases": [
+      "伊犁草原骑行"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "伊犁哈萨克自治州",
+      "county": "特克斯县"
+    },
+    "start_poi": "琼库什台村",
+    "end_poi": "特克斯县城",
+    "waypoints": [
+      "喀拉峻草原"
+    ],
+    "distance_km": 90,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 2600,
+    "min_altitude_m": 1200,
+    "typical_duration_h": 8,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "琼库什台",
+      "喀拉峻"
+    ],
+    "resupply_points": [
+      "琼库什台",
+      "特克斯"
+    ],
+    "retreat_points": [
+      "喀拉峻景区"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "盘山道",
+      "暴雨"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-01",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "aliases": [
+      "太湖环湖绿道"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "江苏/浙江",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "无锡",
+    "end_poi": "无锡",
+    "waypoints": [
+      "苏州",
+      "吴江",
+      "湖州",
+      "长兴",
+      "宜兴",
+      "常州"
+    ],
+    "distance_km": 240,
+    "elevation_gain_m": 200,
+    "elevation_loss_m": 200,
+    "max_altitude_m": 50,
+    "min_altitude_m": 0,
+    "typical_duration_h": 16,
+    "season_window": "4-6,9-11",
+    "water_supply_points": [
+      "沿途城市密集"
+    ],
+    "resupply_points": [
+      "沿线市镇"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "城市路段",
+      "低"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "http://www.youxiake.com/gonglue/view?id=4796",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_027",
+    "name_zh": "张北草原天路骑行",
+    "aliases": [
+      "草原天路",
+      "中国66号公路"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "河北",
+      "city_prefecture": "张家口市",
+      "county": "张北县"
+    },
+    "start_poi": "野狐岭",
+    "end_poi": "桦皮岭",
+    "waypoints": [
+      "阎片山",
+      "布达拉观景台",
+      "风车阵"
+    ],
+    "distance_km": 132,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1500,
+    "max_altitude_m": 1800,
+    "min_altitude_m": 1400,
+    "typical_duration_h": 10,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "沿途农家乐"
+    ],
+    "resupply_points": [
+      "野狐岭",
+      "桦皮岭"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "旅游旺季车多",
+      "暴晒"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_028",
+    "name_zh": "昆明至大理骑行",
+    "aliases": [
+      "滇西骑行"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "云南",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "昆明",
+    "end_poi": "大理",
+    "waypoints": [
+      "楚雄",
+      "南华",
+      "祥云",
+      "弥渡"
+    ],
+    "distance_km": 320,
+    "elevation_gain_m": 3000,
+    "elevation_loss_m": 2500,
+    "max_altitude_m": 2300,
+    "min_altitude_m": 1700,
+    "typical_duration_h": 32,
+    "season_window": "3-5,9-11",
+    "water_supply_points": [
+      "沿途城镇密集"
+    ],
+    "resupply_points": [
+      "昆明",
+      "楚雄",
+      "大理"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "低",
+      "城市间交通繁忙"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html"
+    ]
+  },
+  {
+    "route_id": "cy_029",
+    "name_zh": "黑龙江小兴安岭骑行",
+    "aliases": [
+      "伊春林区骑行"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "黑龙江",
+      "city_prefecture": "伊春市",
+      "county": null
+    },
+    "start_poi": "伊春",
+    "end_poi": "嘉荫",
+    "waypoints": [
+      "五营",
+      "汤旺河",
+      "新青"
+    ],
+    "distance_km": 230,
+    "elevation_gain_m": 1500,
+    "elevation_loss_m": 1200,
+    "max_altitude_m": 600,
+    "min_altitude_m": 200,
+    "typical_duration_h": 24,
+    "season_window": "5-9",
+    "water_supply_points": [
+      "沿途县镇"
+    ],
+    "resupply_points": [
+      "伊春",
+      "五营",
+      "汤旺河",
+      "嘉荫"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "林区蚊虫",
+      "低温"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html",
+      "http://www.biketo.com/tour/25435.html"
+    ]
+  },
+  {
+    "route_id": "cy_030",
+    "name_zh": "川藏中线骑行",
+    "aliases": [
+      "成都至拉萨第三线"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "四川/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "映秀",
+      "日隆",
+      "丹巴",
+      "道孚",
+      "炉霍",
+      "甘孜",
+      "德格",
+      "江达",
+      "昌都",
+      "洛隆",
+      "边坝",
+      "比如",
+      "那曲",
+      "当雄"
+    ],
+    "distance_km": 2690,
+    "elevation_gain_m": 42000,
+    "elevation_loss_m": 40000,
+    "max_altitude_m": 5200,
+    "min_altitude_m": 500,
+    "typical_duration_h": 320,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "乡县"
+    ],
+    "resupply_points": [
+      "县城"
+    ],
+    "retreat_points": [
+      "县城可搭车"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "极高难度",
+      "无人区",
+      "土路碎石路",
+      "人烟稀少",
+      "极少补给"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "http://www.biketo.com/tour/22440.html"
+    ]
+  },
+  {
+    "route_id": "mc_001",
+    "name_zh": "318川藏南线摩旅",
+    "aliases": [
+      "G318摩旅",
+      "成都至拉萨"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "四川/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "雅安",
+      "康定",
+      "折多山",
+      "理塘",
+      "巴塘",
+      "芒康",
+      "左贡",
+      "八宿",
+      "波密",
+      "林芝",
+      "工布江达"
+    ],
+    "distance_km": 2150,
+    "elevation_gain_m": 35000,
+    "elevation_loss_m": 33000,
+    "max_altitude_m": 5130,
+    "min_altitude_m": 500,
+    "typical_duration_h": 120,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿途加油站和各县城"
+    ],
+    "resupply_points": [
+      "沿途县城",
+      "加油站"
+    ],
+    "retreat_points": [
+      "每个县城"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高反",
+      "大车流",
+      "塌方",
+      "雨季滑坡",
+      "低温"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "https://zhuanlan.zhihu.com/p/655784329",
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm"
+    ]
+  },
+  {
+    "route_id": "mc_002",
+    "name_zh": "独库公路摩旅",
+    "aliases": [
+      "G217独库线",
+      "英雄之路"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "独山子",
+    "end_poi": "库车",
+    "waypoints": [
+      "哈希勒根达坂",
+      "乔尔玛",
+      "那拉提",
+      "巴音布鲁克",
+      "铁力买提达坂",
+      "大小龙池"
+    ],
+    "distance_km": 561,
+    "elevation_gain_m": 8000,
+    "elevation_loss_m": 8500,
+    "max_altitude_m": 3400,
+    "min_altitude_m": 1000,
+    "typical_duration_h": 18,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "独山子",
+      "乔尔玛",
+      "那拉提",
+      "巴音布鲁克",
+      "库车"
+    ],
+    "resupply_points": [
+      "加油站遍布"
+    ],
+    "retreat_points": [
+      "沿途乡镇"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "冰雪路面",
+      "落石",
+      "陡坡弯道",
+      "一日四季"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "http://www.chinanews.com.cn/sh/2024/06-27/10241291.shtml",
+      "https://www.itravellive.com/ztts/3077.html"
+    ]
+  },
+  {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "aliases": [
+      "G219丙察察",
+      "滇藏新通道",
+      "进藏第八线"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "云南/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "丙中洛",
+    "end_poi": "察隅",
+    "waypoints": [
+      "察瓦龙",
+      "目若村",
+      "齐马拉山垭口"
+    ],
+    "distance_km": 305,
+    "elevation_gain_m": 8000,
+    "elevation_loss_m": 7000,
+    "max_altitude_m": 4700,
+    "min_altitude_m": 1700,
+    "typical_duration_h": 15,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "察瓦龙",
+      "目若村"
+    ],
+    "resupply_points": [
+      "丙中洛",
+      "察瓦龙",
+      "察隅"
+    ],
+    "retreat_points": [
+      "丙中洛",
+      "目若村"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "非铺装路面270km",
+      "落石",
+      "塌方150+",
+      "泥石流",
+      "大流沙"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "http://paper.people.com.cn/rmrbhwb/html/2024-10/28/content_26087700.htm",
+      "http://m.cqtrvl.com/info/7754"
+    ]
+  },
+  {
+    "route_id": "mc_004",
+    "name_zh": "317川藏北线摩旅",
+    "aliases": [
+      "G317摩旅",
+      "人文大道"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "四川/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "都江堰",
+      "汶川",
+      "马尔康",
+      "炉霍",
+      "甘孜",
+      "德格",
+      "江达",
+      "昌都",
+      "丁青",
+      "巴青",
+      "那曲",
+      "当雄"
+    ],
+    "distance_km": 2350,
+    "elevation_gain_m": 38000,
+    "elevation_loss_m": 36000,
+    "max_altitude_m": 5200,
+    "min_altitude_m": 500,
+    "typical_duration_h": 120,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿线县城"
+    ],
+    "resupply_points": [
+      "沿途县城和加油站"
+    ],
+    "retreat_points": [
+      "县城"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "塌方",
+      "路况差于318",
+      "人烟稀少"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-01",
+    "source_urls": [
+      "https://www.tibetcn.com/chuanzangxian/15397.html",
+      "https://www.tibetcn.com/chuanzangxian/15394.html"
+    ]
+  },
+  {
+    "route_id": "mc_005",
+    "name_zh": "214滇藏线摩旅",
+    "aliases": [
+      "G214摩旅",
+      "昆明至拉萨"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "云南/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "西双版纳(景洪)",
+    "end_poi": "西宁",
+    "waypoints": [
+      "大理",
+      "丽江",
+      "香格里拉",
+      "德钦",
+      "盐井",
+      "芒康",
+      "左贡",
+      "昌都",
+      "类乌齐",
+      "囊谦",
+      "玉树",
+      "玛多",
+      "共和"
+    ],
+    "distance_km": 3000,
+    "elevation_gain_m": 40000,
+    "elevation_loss_m": 38000,
+    "max_altitude_m": 5000,
+    "min_altitude_m": 500,
+    "typical_duration_h": 144,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿线城镇密集"
+    ],
+    "resupply_points": [
+      "沿途县城"
+    ],
+    "retreat_points": [
+      "县城"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "横断山脉复杂地形",
+      "降雨多"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-15",
+    "source_urls": [
+      "https://www.youtube.com/watch?v=ViWxYHI0gl8",
+      "https://www.itravellive.com/ztts/3077.html"
+    ]
+  },
+  {
+    "route_id": "mc_006",
+    "name_zh": "219新藏线摩旅",
+    "aliases": [
+      "G219摩旅",
+      "世界海拔最高公路"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "新疆/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "叶城",
+    "end_poi": "拉萨",
+    "waypoints": [
+      "库地达坂",
+      "三十里营房",
+      "红柳滩",
+      "界山达坂",
+      "多玛",
+      "日土",
+      "狮泉河",
+      "霍尔",
+      "仲巴",
+      "萨嘎",
+      "拉孜",
+      "日喀则"
+    ],
+    "distance_km": 2100,
+    "elevation_gain_m": 45000,
+    "elevation_loss_m": 42000,
+    "max_altitude_m": 5400,
+    "min_altitude_m": 1300,
+    "typical_duration_h": 96,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "兵站",
+      "道班"
+    ],
+    "resupply_points": [
+      "三十里营房",
+      "狮泉河",
+      "沿途兵站"
+    ],
+    "retreat_points": [
+      "兵站和检查站"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "无人区",
+      "低温",
+      "大风",
+      "边防证",
+      "补给间隔大"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://zhuanlan.zhihu.com/p/655784329",
+      "http://paper.people.com.cn/rmzk/html/2018-05/20/content_1859479.htm"
+    ]
+  },
+  {
+    "route_id": "mc_007",
+    "name_zh": "环青海湖摩旅",
+    "aliases": [
+      "青海湖环湖摩旅"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "海北藏族自治州",
+      "county": "海晏县"
+    },
+    "start_poi": "西海镇",
+    "end_poi": "西海镇",
+    "waypoints": [
+      "151基地",
+      "黑马河",
+      "鸟岛",
+      "刚察"
+    ],
+    "distance_km": 360,
+    "elevation_gain_m": 1200,
+    "elevation_loss_m": 1200,
+    "max_altitude_m": 3250,
+    "min_altitude_m": 3190,
+    "typical_duration_h": 12,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "环湖有加油站"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "大风",
+      "低温"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "https://www.itravellive.com/ztts/3077.html"
+    ]
+  },
+  {
+    "route_id": "mc_008",
+    "name_zh": "黔东南摩旅环线",
+    "aliases": [
+      "贵州苗寨风情线",
+      "骑行苗疆"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "贵州",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "贵阳",
+    "end_poi": "贵阳",
+    "waypoints": [
+      "凯里",
+      "雷山",
+      "西江千户苗寨",
+      "榕江",
+      "从江",
+      "肇兴侗寨",
+      "黎平",
+      "镇远"
+    ],
+    "distance_km": 700,
+    "elevation_gain_m": 8000,
+    "elevation_loss_m": 8000,
+    "max_altitude_m": 1200,
+    "min_altitude_m": 300,
+    "typical_duration_h": 32,
+    "season_window": "4-10",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "沿途县城"
+    ],
+    "retreat_points": [
+      "县城"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "山路弯多",
+      "雨雾",
+      "湿滑"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-10",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "http://www.chinanews.com.cn/sh/2024/06-27/10241291.shtml"
+    ]
+  },
+  {
+    "route_id": "mc_009",
+    "name_zh": "滇缅公路摩旅",
+    "aliases": [
+      "G320保山段",
+      "史迪威公路"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "保山市",
+      "county": null
+    },
+    "start_poi": "大理",
+    "end_poi": "瑞丽",
+    "waypoints": [
+      "保山",
+      "潞江坝",
+      "腾冲",
+      "梁河",
+      "盈江"
+    ],
+    "distance_km": 500,
+    "elevation_gain_m": 4000,
+    "elevation_loss_m": 3500,
+    "max_altitude_m": 2000,
+    "min_altitude_m": 700,
+    "typical_duration_h": 24,
+    "season_window": "10-5",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "沿途县城"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "山路",
+      "雨雾",
+      "湿热"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "https://zhuanlan.zhihu.com/p/655784329"
+    ]
+  },
+  {
+    "route_id": "mc_010",
+    "name_zh": "秦岭深山摩旅",
+    "aliases": [
+      "秦岭南北穿越",
+      "G210秦岭段"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "陕西",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "西安",
+    "end_poi": "安康",
+    "waypoints": [
+      "沣峪口",
+      "分水岭",
+      "广货街",
+      "宁陕",
+      "石泉"
+    ],
+    "distance_km": 280,
+    "elevation_gain_m": 3500,
+    "elevation_loss_m": 4000,
+    "max_altitude_m": 2100,
+    "min_altitude_m": 300,
+    "typical_duration_h": 12,
+    "season_window": "4-10",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "沿途乡镇"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "连续弯道",
+      "雨雾",
+      "暗冰"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-15",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "http://www.chinanews.com.cn/sh/2024/06-27/10241291.shtml"
+    ]
+  },
+  {
+    "route_id": "mc_011",
+    "name_zh": "皖南川藏线摩旅",
+    "aliases": [
+      "江南天路",
+      "宁国至泾县"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "安徽",
+      "city_prefecture": "宣城市",
+      "county": null
+    },
+    "start_poi": "宁国",
+    "end_poi": "泾县",
+    "waypoints": [
+      "青龙湾",
+      "板桥",
+      "桃岭公路",
+      "水墨汀溪"
+    ],
+    "distance_km": 120,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 800,
+    "min_altitude_m": 100,
+    "typical_duration_h": 6,
+    "season_window": "4-11",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "宁国",
+      "泾县"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "连续弯道",
+      "旅游旺季车多"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "http://www.chinanews.com.cn/sh/2024/06-27/10241291.shtml"
+    ]
+  },
+  {
+    "route_id": "mc_012",
+    "name_zh": "甘南摩旅小环线",
+    "aliases": [
+      "甘南秘境摩旅",
+      "兰州至夏河"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "甘肃",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "兰州",
+    "end_poi": "兰州",
+    "waypoints": [
+      "临夏",
+      "夏河",
+      "桑科草原",
+      "郎木寺",
+      "扎尕那",
+      "迭部",
+      "合作"
+    ],
+    "distance_km": 700,
+    "elevation_gain_m": 5000,
+    "elevation_loss_m": 5000,
+    "max_altitude_m": 3500,
+    "min_altitude_m": 1500,
+    "typical_duration_h": 36,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "沿线县城"
+    ],
+    "resupply_points": [
+      "兰州",
+      "夏河",
+      "郎木寺",
+      "迭部",
+      "合作"
+    ],
+    "retreat_points": [
+      "县城可停"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "山路",
+      "多弯"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-20",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "https://zhuanlan.zhihu.com/p/655784329"
+    ]
+  },
+  {
+    "route_id": "mc_013",
+    "name_zh": "伊犁河谷摩旅",
+    "aliases": [
+      "独库+伊犁环线",
+      "天山腹地"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "乌鲁木齐",
+    "end_poi": "乌鲁木齐",
+    "waypoints": [
+      "奎屯",
+      "独山子",
+      "乔尔玛",
+      "那拉提",
+      "巴音布鲁克",
+      "库车",
+      "独库南段",
+      "巴音布鲁克",
+      "那拉提",
+      "伊宁",
+      "赛里木湖",
+      "精河"
+    ],
+    "distance_km": 1600,
+    "elevation_gain_m": 18000,
+    "elevation_loss_m": 18000,
+    "max_altitude_m": 3400,
+    "min_altitude_m": 600,
+    "typical_duration_h": 64,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "沿线城镇"
+    ],
+    "resupply_points": [
+      "加油站密集"
+    ],
+    "retreat_points": [
+      "各县城"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "长距离",
+      "冰雪达坂",
+      "落石"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "http://www.chinanews.com.cn/sh/2024/06-27/10241291.shtml"
+    ]
+  },
+  {
+    "route_id": "mc_014",
+    "name_zh": "川西大环线摩旅",
+    "aliases": [
+      "G317-G318大循环"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "四川",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "成都",
+    "waypoints": [
+      "汶川",
+      "马尔康",
+      "色达",
+      "甘孜",
+      "德格",
+      "白玉",
+      "新龙",
+      "理塘",
+      "稻城",
+      "康定",
+      "泸定"
+    ],
+    "distance_km": 1800,
+    "elevation_gain_m": 30000,
+    "elevation_loss_m": 30000,
+    "max_altitude_m": 4700,
+    "min_altitude_m": 500,
+    "typical_duration_h": 80,
+    "season_window": "6-10",
+    "water_supply_points": [
+      "沿线县城"
+    ],
+    "resupply_points": [
+      "各县城"
+    ],
+    "retreat_points": [
+      "各县城"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "极高海拔",
+      "多垭口",
+      "雨季塌方",
+      "油站间隔大"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-15",
+    "source_urls": [
+      "https://www.tibetcn.com/chuanzangxian/15397.html",
+      "https://www.tibetcn.com/chuanzangxian/15394.html"
+    ]
+  },
+  {
+    "route_id": "mc_015",
+    "name_zh": "海南环岛摩旅",
+    "aliases": [
+      "海南东线+西线摩旅"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "海南",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "海口",
+    "end_poi": "海口",
+    "waypoints": [
+      "文昌",
+      "博鳌",
+      "万宁",
+      "三亚",
+      "东方",
+      "儋州"
+    ],
+    "distance_km": 800,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 500,
+    "min_altitude_m": 0,
+    "typical_duration_h": 24,
+    "season_window": "10-5",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "各市县有加油站"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高温",
+      "暴晒",
+      "台风季"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-12-01",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "https://www.itravellive.com/ztts/3077.html"
+    ]
+  },
+  {
+    "route_id": "mc_016",
+    "name_zh": "川西小环线摩旅",
+    "aliases": [
+      "康定塔公环线"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "四川",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "成都",
+    "end_poi": "成都",
+    "waypoints": [
+      "雅安",
+      "泸定",
+      "康定",
+      "折多山",
+      "新都桥",
+      "塔公",
+      "八美",
+      "丹巴",
+      "四姑娘山",
+      "映秀"
+    ],
+    "distance_km": 700,
+    "elevation_gain_m": 12000,
+    "elevation_loss_m": 12000,
+    "max_altitude_m": 4300,
+    "min_altitude_m": 500,
+    "typical_duration_h": 30,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "各县城有加油站"
+    ],
+    "retreat_points": [
+      "县城"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "折多山大雪",
+      "旅游旺季车多"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-20",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "https://www.tibetcn.com/chuanzangxian/15397.html"
+    ]
+  },
+  {
+    "route_id": "mc_017",
+    "name_zh": "张家界至凤凰摩旅",
+    "aliases": [
+      "湘西摩旅线"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "湖南",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "张家界",
+    "end_poi": "凤凰古城",
+    "waypoints": [
+      "芙蓉镇",
+      "坐龙峡",
+      "古丈",
+      "吉首"
+    ],
+    "distance_km": 200,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 1800,
+    "max_altitude_m": 600,
+    "min_altitude_m": 150,
+    "typical_duration_h": 8,
+    "season_window": "3-11",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "沿途城镇"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "山区雾大",
+      "山路弯多"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-20",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "http://www.chinanews.com.cn/sh/2024/06-27/10241291.shtml"
+    ]
+  },
+  {
+    "route_id": "mc_018",
+    "name_zh": "怒江美丽公路摩旅",
+    "aliases": [
+      "G219怒江段",
+      "六库至丙中洛"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "云南",
+      "city_prefecture": "怒江傈僳族自治州",
+      "county": null
+    },
+    "start_poi": "六库",
+    "end_poi": "丙中洛",
+    "waypoints": [
+      "知子罗",
+      "福贡",
+      "石月亮",
+      "贡山"
+    ],
+    "distance_km": 300,
+    "elevation_gain_m": 3000,
+    "elevation_loss_m": 2500,
+    "max_altitude_m": 1800,
+    "min_altitude_m": 800,
+    "typical_duration_h": 12,
+    "season_window": "10-5",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "六库",
+      "福贡",
+      "贡山",
+      "丙中洛"
+    ],
+    "retreat_points": [
+      "沿线乡镇"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "峡谷落石",
+      "塌方",
+      "雨雾"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-01",
+    "source_urls": [
+      "http://paper.people.com.cn/rmrbhwb/html/2024-10/28/content_26087700.htm",
+      "https://www.itravellive.com/ztts/3077.html"
+    ]
+  },
+  {
+    "route_id": "mc_019",
+    "name_zh": "中俄边境公路摩旅",
+    "aliases": [
+      "G331内蒙段",
+      "室韦至满洲里"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "内蒙古",
+      "city_prefecture": "呼伦贝尔市",
+      "county": null
+    },
+    "start_poi": "室韦",
+    "end_poi": "满洲里",
+    "waypoints": [
+      "恩和",
+      "黑山头",
+      "额尔古纳",
+      "扎赉诺尔"
+    ],
+    "distance_km": 400,
+    "elevation_gain_m": 1000,
+    "elevation_loss_m": 1000,
+    "max_altitude_m": 700,
+    "min_altitude_m": 500,
+    "typical_duration_h": 14,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "沿线城镇"
+    ],
+    "resupply_points": [
+      "室韦",
+      "恩和",
+      "额尔古纳",
+      "满洲里"
+    ],
+    "retreat_points": [
+      "沿线乡镇"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "草原大风",
+      "边境敏感",
+      "温差大",
+      "油站间隔远"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "https://zhuanlan.zhihu.com/p/655784329"
+    ]
+  },
+  {
+    "route_id": "mc_020",
+    "name_zh": "琼中五指山摩旅",
+    "aliases": [
+      "海南中部穿越",
+      "五指山探秘"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "海南",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "海口",
+    "end_poi": "三亚",
+    "waypoints": [
+      "屯昌",
+      "琼中",
+      "五指山",
+      "保亭"
+    ],
+    "distance_km": 300,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2500,
+    "max_altitude_m": 800,
+    "min_altitude_m": 0,
+    "typical_duration_h": 12,
+    "season_window": "11-5",
+    "water_supply_points": [
+      "沿线密集"
+    ],
+    "resupply_points": [
+      "各市县"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "good",
+    "permit_required": false,
+    "risk_tags": [
+      "山路多弯",
+      "雨雾",
+      "湿滑"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-11-15",
+    "source_urls": [
+      "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+      "https://www.itravellive.com/ztts/3077.html"
+    ]
+  },
+  {
+    "route_id": "ma_031",
+    "name_zh": "骆驼峰",
+    "aliases": [
+      "骆驼峰攀登",
+      "5484米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "阿坝藏族羌族自治州",
+      "county": "小金县"
+    },
+    "start_poi": "四姑娘山镇",
+    "end_poi": "骆驼峰顶(5484m)",
+    "waypoints": [
+      "长坪沟",
+      "BC大本营",
+      "C1营地",
+      "冰岩混合路段"
+    ],
+    "distance_km": 14,
+    "elevation_gain_m": 2300,
+    "elevation_loss_m": 2300,
+    "max_altitude_m": 5484,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 48,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC大本营"
+    ],
+    "resupply_points": [
+      "四姑娘山镇"
+    ],
+    "retreat_points": [
+      "BC",
+      "四姑娘山镇"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": true,
+    "risk_tags": [
+      "冰岩混合",
+      "陡坡60度+",
+      "落石",
+      "技术攀登"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D"
+    ]
+  },
+  {
+    "route_id": "ma_032",
+    "name_zh": "雅拉雪山",
+    "aliases": [
+      "雅拉攀登",
+      "5884米",
+      "康巴神山"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "道孚县"
+    },
+    "start_poi": "台站沟",
+    "end_poi": "雅拉雪山顶(5884m)",
+    "waypoints": [
+      "雅拉友措",
+      "BC大本营",
+      "C1营地",
+      "冰川路段"
+    ],
+    "distance_km": 15,
+    "elevation_gain_m": 2200,
+    "elevation_loss_m": 2200,
+    "max_altitude_m": 5884,
+    "min_altitude_m": 3700,
+    "typical_duration_h": 48,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "雅拉友措",
+      "BC"
+    ],
+    "resupply_points": [
+      "台站沟",
+      "八美镇"
+    ],
+    "retreat_points": [
+      "BC",
+      "台站沟"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": true,
+    "risk_tags": [
+      "冰川",
+      "落石",
+      "高海拔",
+      "神山文化"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-20",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://zh.wikipedia.org/wiki/%E9%9B%85%E6%8B%89%E9%9B%AA%E5%B1%B1"
+    ]
+  },
+  {
+    "route_id": "ma_033",
+    "name_zh": "勒多漫因峰",
+    "aliases": [
+      "勒多漫因",
+      "6112米",
+      "贡嘎卫峰"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "康定市"
+    },
+    "start_poi": "老榆林",
+    "end_poi": "勒多漫因顶(6112m)",
+    "waypoints": [
+      "格西草原",
+      "BC",
+      "C1",
+      "冰川",
+      "山脊"
+    ],
+    "distance_km": 20,
+    "elevation_gain_m": 3000,
+    "elevation_loss_m": 3000,
+    "max_altitude_m": 6112,
+    "min_altitude_m": 3200,
+    "typical_duration_h": 72,
+    "season_window": "7-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "老榆林",
+      "康定"
+    ],
+    "retreat_points": [
+      "BC",
+      "老榆林"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "冰川",
+      "冰裂缝",
+      "高海拔",
+      "技术攀登"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://peakvisor.com/peak/lebu-tanggu.html"
+    ]
+  },
+  {
+    "route_id": "ma_034",
+    "name_zh": "中山峰",
+    "aliases": [
+      "中山峰攀登",
+      "6886米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "四川",
+      "city_prefecture": "甘孜藏族自治州",
+      "county": "泸定县"
+    },
+    "start_poi": "磨西镇",
+    "end_poi": "中山峰顶(6886m)",
+    "waypoints": [
+      "燕子沟",
+      "BC",
+      "C1",
+      "C2",
+      "冰川"
+    ],
+    "distance_km": 22,
+    "elevation_gain_m": 3500,
+    "elevation_loss_m": 3500,
+    "max_altitude_m": 6886,
+    "min_altitude_m": 3400,
+    "typical_duration_h": 96,
+    "season_window": "7-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "磨西镇",
+      "康定"
+    ],
+    "retreat_points": [
+      "BC",
+      "磨西镇"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "冰川",
+      "冰裂缝",
+      "极高海拔",
+      "落石",
+      "雪崩"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D",
+      "https://peakbagger.com/peak.aspx?pid=16530"
+    ]
+  },
+  {
+    "route_id": "ma_035",
+    "name_zh": "念青唐古拉峰",
+    "aliases": [
+      "念青唐古拉",
+      "7162米",
+      "藏地神山"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "拉萨市",
+      "county": "当雄县"
+    },
+    "start_poi": "当雄县城",
+    "end_poi": "念青唐古拉顶(7162m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "C2",
+      "冰川",
+      "山脊"
+    ],
+    "distance_km": 24,
+    "elevation_gain_m": 3500,
+    "elevation_loss_m": 3500,
+    "max_altitude_m": 7162,
+    "min_altitude_m": 4300,
+    "typical_duration_h": 120,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "当雄县城",
+      "拉萨"
+    ],
+    "retreat_points": [
+      "BC",
+      "当雄"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "冰川",
+      "技术攀登",
+      "神山",
+      "低温"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-15",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E5%BF%B5%E9%9D%92%E5%94%90%E5%8F%A4%E6%8B%89%E5%B3%B0",
+      "https://peakbagger.com/peak.aspx?pid=16461"
+    ]
+  },
+  {
+    "route_id": "ma_036",
+    "name_zh": "启孜峰",
+    "aliases": [
+      "启孜攀登",
+      "6206米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "拉萨市",
+      "county": "当雄县"
+    },
+    "start_poi": "羊八井",
+    "end_poi": "启孜峰顶(6206m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "冰川"
+    ],
+    "distance_km": 14,
+    "elevation_gain_m": 2000,
+    "elevation_loss_m": 2000,
+    "max_altitude_m": 6206,
+    "min_altitude_m": 4200,
+    "typical_duration_h": 56,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "羊八井",
+      "拉萨"
+    ],
+    "retreat_points": [
+      "BC",
+      "羊八井"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": true,
+    "risk_tags": [
+      "高海拔",
+      "冰川",
+      "技术训练",
+      "入门6000米"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-10",
+    "source_urls": [
+      "https://www.sohu.com/a/118058961_446493",
+      "https://peakbagger.com/peak.aspx?pid=16462"
+    ]
+  },
+  {
+    "route_id": "ma_037",
+    "name_zh": "姜桑拉姆峰",
+    "aliases": [
+      "姜桑拉姆",
+      "6324米",
+      "西藏最温和6000米"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "山南市",
+      "county": "浪卡子县"
+    },
+    "start_poi": "浪卡子县城",
+    "end_poi": "姜桑拉姆顶(6324m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "雪坡"
+    ],
+    "distance_km": 12,
+    "elevation_gain_m": 1800,
+    "elevation_loss_m": 1800,
+    "max_altitude_m": 6324,
+    "min_altitude_m": 4500,
+    "typical_duration_h": 48,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "BC"
+    ],
+    "resupply_points": [
+      "浪卡子",
+      "拉萨"
+    ],
+    "retreat_points": [
+      "BC",
+      "浪卡子"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": true,
+    "risk_tags": [
+      "高海拔",
+      "徒步型雪山"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-10",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=NxMh2%2BELDV6um6ObW09i4A%3D%3D",
+      "https://peakbagger.com/peak.aspx?pid=16466"
+    ]
+  },
+  {
+    "route_id": "ma_038",
+    "name_zh": "桑丹康桑峰",
+    "aliases": [
+      "桑丹康桑",
+      "6590米",
+      "东念青最高"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "那曲市",
+      "county": "那曲县"
+    },
+    "start_poi": "那曲县城",
+    "end_poi": "桑丹康桑顶(6590m)",
+    "waypoints": [
+      "BC",
+      "C1",
+      "C2",
+      "冰川"
+    ],
+    "distance_km": 18,
+    "elevation_gain_m": 2800,
+    "elevation_loss_m": 2800,
+    "max_altitude_m": 6590,
+    "min_altitude_m": 4500,
+    "typical_duration_h": 96,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "那曲县城"
+    ],
+    "retreat_points": [
+      "BC",
+      "那曲"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "冰川",
+      "低温",
+      "偏远"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-01",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E6%A1%91%E4%B8%B9%E5%BA%B7%E6%A1%91",
+      "https://peakbagger.com/peak.aspx?pid=16463"
+    ]
+  },
+  {
+    "route_id": "ma_039",
+    "name_zh": "乔戈里峰(K2)",
+    "aliases": [
+      "K2",
+      "8611米",
+      "世界第二高峰"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "喀什地区",
+      "county": "塔什库尔干塔吉克自治县"
+    },
+    "start_poi": "塔什库尔干县城",
+    "end_poi": "乔戈里峰顶(8611m)",
+    "waypoints": [
+      "喀什",
+      "叶城",
+      "BC(5050m)",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "北脊"
+    ],
+    "distance_km": 35,
+    "elevation_gain_m": 3600,
+    "elevation_loss_m": 3600,
+    "max_altitude_m": 8611,
+    "min_altitude_m": 3600,
+    "typical_duration_h": 480,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "各营地"
+    ],
+    "resupply_points": [
+      "塔县",
+      "喀什"
+    ],
+    "retreat_points": [
+      "各营地可下撤"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔8000米+",
+      "技术登山",
+      "冰裂缝",
+      "雪崩",
+      "极端低温",
+      "死亡率27%"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-06-01",
+    "source_urls": [
+      "https://zh.wikipedia.org/wiki/%E4%B9%94%E6%88%88%E9%87%8C%E5%B3%B0",
+      "https://peakbagger.com/peak.aspx?pid=16465"
+    ]
+  },
+  {
+    "route_id": "ma_040",
+    "name_zh": "库拉岗日主峰",
+    "aliases": [
+      "库拉岗日",
+      "7538米",
+      "喜马拉雅"
+    ],
+    "activity_type": "mountaineering",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "山南市",
+      "county": "洛扎县"
+    },
+    "start_poi": "洛扎县城",
+    "end_poi": "库拉岗日顶(7538m)",
+    "waypoints": [
+      "色乡",
+      "BC",
+      "C1",
+      "C2",
+      "冰川"
+    ],
+    "distance_km": 20,
+    "elevation_gain_m": 3200,
+    "elevation_loss_m": 3200,
+    "max_altitude_m": 7538,
+    "min_altitude_m": 3800,
+    "typical_duration_h": 168,
+    "season_window": "5-6,9-10",
+    "water_supply_points": [
+      "BC",
+      "C1"
+    ],
+    "resupply_points": [
+      "洛扎",
+      "拉萨"
+    ],
+    "retreat_points": [
+      "BC",
+      "色乡"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "技术攀登",
+      "冰川",
+      "边防证",
+      "低温"
+    ],
+    "gpx_available": false,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-15",
+    "source_urls": [
+      "https://m.voc.com.cn/xhn/news/201808/15542053.html",
+      "https://peakbagger.com/peak.aspx?pid=16464"
+    ]
+  },
+  {
+    "route_id": "hk_041",
+    "name_zh": "他念他翁穿越",
+    "aliases": [
+      "他念他翁徒步",
+      "藏东秘境"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "昌都市",
+      "county": "左贡县"
+    },
+    "start_poi": "盐井镇",
+    "end_poi": "左贡县城",
+    "waypoints": [
+      "拉岗村",
+      "大米勇",
+      "揉错",
+      "各灯村"
+    ],
+    "distance_km": 120,
+    "elevation_gain_m": 5000,
+    "elevation_loss_m": 4800,
+    "max_altitude_m": 4900,
+    "min_altitude_m": 2600,
+    "typical_duration_h": 96,
+    "season_window": "6-10",
+    "water_supply_points": [
+      "各海子",
+      "山谷溪流"
+    ],
+    "resupply_points": [
+      "盐井镇",
+      "左贡县城"
+    ],
+    "retreat_points": [
+      "拉岗村",
+      "各灯村"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "无人区",
+      "涉水",
+      "迷路"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "hk_042",
+    "name_zh": "伯舒拉岭徒步",
+    "aliases": [
+      "伯舒拉岭穿越",
+      "藏东南秘境"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": "昌都市",
+      "county": "左贡县"
+    },
+    "start_poi": "碧土乡",
+    "end_poi": "察瓦龙乡",
+    "waypoints": [
+      "龙布村",
+      "高山牧场",
+      "多个垭口",
+      "原始森林"
+    ],
+    "distance_km": 150,
+    "elevation_gain_m": 6500,
+    "elevation_loss_m": 6200,
+    "max_altitude_m": 4800,
+    "min_altitude_m": 2000,
+    "typical_duration_h": 120,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "山谷溪流"
+    ],
+    "resupply_points": [
+      "碧土乡",
+      "察瓦龙"
+    ],
+    "retreat_points": [
+      "碧土乡",
+      "察瓦龙"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "无人区",
+      "高海拔",
+      "涉水",
+      "野兽",
+      "原始森林"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.sohu.com/a/535873578_505583"
+    ]
+  },
+  {
+    "route_id": "hk_043",
+    "name_zh": "克里雅古道穿越",
+    "aliases": [
+      "进藏第九线",
+      "昆仑秘道"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "新疆/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "于田县普鲁村",
+    "end_poi": "日土县",
+    "waypoints": [
+      "阿什库勒火山群",
+      "硫磺达坂",
+      "克里雅山口",
+      "羌塘边缘"
+    ],
+    "distance_km": 500,
+    "elevation_gain_m": 12000,
+    "elevation_loss_m": 11000,
+    "max_altitude_m": 5400,
+    "min_altitude_m": 1800,
+    "typical_duration_h": 360,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "河谷",
+      "冰川融水"
+    ],
+    "resupply_points": [
+      "普鲁村",
+      "日土县城"
+    ],
+    "retreat_points": [
+      "普鲁村",
+      "沿途无人区"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高强度",
+      "无人区600公里",
+      "高海拔",
+      "边防证",
+      "野生动物"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html",
+      "https://www.sohu.com/a/535873578_505583"
+    ]
+  },
+  {
+    "route_id": "hk_044",
+    "name_zh": "羌塘无人区穿越",
+    "aliases": [
+      "羌塘徒步",
+      "藏北无人区"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "改则县",
+    "end_poi": "尼玛县",
+    "waypoints": [
+      "藏色岗日",
+      "野牛沟",
+      "高原湖泊群"
+    ],
+    "distance_km": 400,
+    "elevation_gain_m": 5000,
+    "elevation_loss_m": 4000,
+    "max_altitude_m": 5200,
+    "min_altitude_m": 4600,
+    "typical_duration_h": 360,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "高原湖泊/融水（需处理）"
+    ],
+    "resupply_points": [
+      "改则",
+      "尼玛"
+    ],
+    "retreat_points": [
+      "改则",
+      "尼玛"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "极高海拔",
+      "无人区",
+      "极端气候",
+      "野生动物",
+      "边防证",
+      "高反"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-01",
+    "source_urls": [
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html",
+      "https://www.sohu.com/a/535873578_505583"
+    ]
+  },
+  {
+    "route_id": "hk_045",
+    "name_zh": "大横断徒步",
+    "aliases": [
+      "横断山脉穿越",
+      "他念他翁大环"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "云南/西藏",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "德钦县城",
+    "end_poi": "巴塘县城",
+    "waypoints": [
+      "梅里北坡",
+      "怒江",
+      "碧罗雪山",
+      "澜沧江",
+      "他念他翁",
+      "金沙江"
+    ],
+    "distance_km": 200,
+    "elevation_gain_m": 10000,
+    "elevation_loss_m": 9500,
+    "max_altitude_m": 4900,
+    "min_altitude_m": 2000,
+    "typical_duration_h": 168,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "沿途河流"
+    ],
+    "resupply_points": [
+      "德钦",
+      "巴塘"
+    ],
+    "retreat_points": [
+      "德钦",
+      "巴塘"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "多河流",
+      "无人区",
+      "高强度"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-01",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "hk_046",
+    "name_zh": "长白山南坡穿越",
+    "aliases": [
+      "长白山徒步",
+      "东北最高峰"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "吉林",
+      "city_prefecture": "白山市",
+      "county": "抚松县"
+    },
+    "start_poi": "松江河镇",
+    "end_poi": "长白山天池西坡",
+    "waypoints": [
+      "锦江大峡谷",
+      "高山花园",
+      "梯子河",
+      "天池"
+    ],
+    "distance_km": 50,
+    "elevation_gain_m": 1500,
+    "elevation_loss_m": 800,
+    "max_altitude_m": 2691,
+    "min_altitude_m": 700,
+    "typical_duration_h": 24,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "沿途溪流",
+      "天池"
+    ],
+    "resupply_points": [
+      "松江河镇"
+    ],
+    "retreat_points": [
+      "松江河镇",
+      "天池景区"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": true,
+    "risk_tags": [
+      "自然保护区",
+      "雷暴",
+      "低温",
+      "陡坡"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-10",
+    "source_urls": [
+      "https://t.studyisland.cn/hiking-in-china/",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=125469"
+    ]
+  },
+  {
+    "route_id": "hk_047",
+    "name_zh": "天山雪莲峰徒步",
+    "aliases": [
+      "雪莲峰",
+      "6627米环线",
+      "天山穿越"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "阿克苏地区",
+      "county": "温宿县"
+    },
+    "start_poi": "温宿县城",
+    "end_poi": "温宿县城",
+    "waypoints": [
+      "托木尔峰保护区",
+      "冰川末端",
+      "高山牧场",
+      "雪莲峰大本营"
+    ],
+    "distance_km": 80,
+    "elevation_gain_m": 3000,
+    "elevation_loss_m": 3000,
+    "max_altitude_m": 4200,
+    "min_altitude_m": 2000,
+    "typical_duration_h": 56,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "冰川融水",
+      "河谷"
+    ],
+    "resupply_points": [
+      "温宿县城"
+    ],
+    "retreat_points": [
+      "温宿",
+      "保护区管理站"
+    ],
+    "signal_coverage": "poor",
+    "permit_required": true,
+    "risk_tags": [
+      "高海拔",
+      "保护区",
+      "冰川徒步",
+      "无人区"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-07-20",
+    "source_urls": [
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397"
+    ]
+  },
+  {
+    "route_id": "hk_048",
+    "name_zh": "玉虚峰徒步",
+    "aliases": [
+      "玉虚峰",
+      "5980米环线",
+      "昆仑玉珠姊妹"
+    ],
+    "activity_type": "hiking",
+    "region": {
+      "province": "青海",
+      "city_prefecture": "海西蒙古族藏族自治州",
+      "county": "格尔木市"
+    },
+    "start_poi": "格尔木",
+    "end_poi": "格尔木",
+    "waypoints": [
+      "昆仑山口",
+      "玉虚峰BC",
+      "冰川末端"
+    ],
+    "distance_km": 60,
+    "elevation_gain_m": 1500,
+    "elevation_loss_m": 1500,
+    "max_altitude_m": 4500,
+    "min_altitude_m": 2800,
+    "typical_duration_h": 40,
+    "season_window": "6-8",
+    "water_supply_points": [
+      "冰川融水"
+    ],
+    "resupply_points": [
+      "格尔木"
+    ],
+    "retreat_points": [
+      "格尔木",
+      "昆仑山口"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "高原反应",
+      "风大"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "https://www.sohu.com/a/535873578_505583",
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007397"
+    ]
+  },
+  {
+    "route_id": "cy_031",
+    "name_zh": "青海湖-祁连山骑行",
+    "aliases": [
+      "青海祁连线",
+      "环湖穿祁连"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "青海",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "西海镇",
+    "end_poi": "门源县",
+    "waypoints": [
+      "青海湖",
+      "刚察",
+      "热水",
+      "大通河",
+      "祁连县",
+      "峨堡",
+      "门源"
+    ],
+    "distance_km": 450,
+    "elevation_gain_m": 5000,
+    "elevation_loss_m": 4500,
+    "max_altitude_m": 3800,
+    "min_altitude_m": 2900,
+    "typical_duration_h": 40,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "沿线乡镇"
+    ],
+    "resupply_points": [
+      "西海镇",
+      "刚察",
+      "祁连",
+      "门源"
+    ],
+    "retreat_points": [
+      "沿途乡镇可搭车"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "爬坡多",
+      "大风"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "cy_032",
+    "name_zh": "滇西边境骑行",
+    "aliases": [
+      "G219云南段",
+      "怒江骑行"
+    ],
+    "activity_type": "cycling",
+    "region": {
+      "province": "云南",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "泸水(六库)",
+    "end_poi": "瑞丽",
+    "waypoints": [
+      "福贡",
+      "贡山",
+      "丙中洛",
+      "独龙江",
+      "腾冲",
+      "梁河",
+      "盈江"
+    ],
+    "distance_km": 600,
+    "elevation_gain_m": 8000,
+    "elevation_loss_m": 7500,
+    "max_altitude_m": 2000,
+    "min_altitude_m": 500,
+    "typical_duration_h": 56,
+    "season_window": "10-5",
+    "water_supply_points": [
+      "沿线村镇密集"
+    ],
+    "resupply_points": [
+      "各县城"
+    ],
+    "retreat_points": [
+      "随时可停"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "峡谷落石",
+      "边防",
+      "爬坡",
+      "湿热"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-10-01",
+    "source_urls": [
+      "http://www.biketo.com/tour/25435.html",
+      "https://www.163.com/dy/article/JKTPGSQJ0529AM43.html"
+    ]
+  },
+  {
+    "route_id": "mc_021",
+    "name_zh": "喀喇昆仑公路摩旅",
+    "aliases": [
+      "KKH摩旅",
+      "G314",
+      "中巴友谊公路"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "新疆",
+      "city_prefecture": "喀什地区",
+      "county": null
+    },
+    "start_poi": "喀什",
+    "end_poi": "红其拉甫口岸",
+    "waypoints": [
+      "奥依塔克",
+      "白沙湖",
+      "慕士塔格",
+      "塔什库尔干",
+      "红其拉甫达坂"
+    ],
+    "distance_km": 420,
+    "elevation_gain_m": 5000,
+    "elevation_loss_m": 4500,
+    "max_altitude_m": 4733,
+    "min_altitude_m": 1300,
+    "typical_duration_h": 16,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "喀什",
+      "塔县"
+    ],
+    "resupply_points": [
+      "喀什",
+      "塔县"
+    ],
+    "retreat_points": [
+      "塔县",
+      "喀什"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": true,
+    "risk_tags": [
+      "高海拔",
+      "边防证",
+      "边境敏感",
+      "低温达坂"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-01",
+    "source_urls": [
+      "http://www.chinanews.com.cn/sh/2024/06-27/10241291.shtml",
+      "https://www.itravellive.com/ztts/3077.html"
+    ]
+  },
+  {
+    "route_id": "mc_022",
+    "name_zh": "内蒙草原边境摩旅",
+    "aliases": [
+      "G331东段",
+      "呼伦贝尔边境线"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "内蒙古",
+      "city_prefecture": "呼伦贝尔市",
+      "county": null
+    },
+    "start_poi": "海拉尔",
+    "end_poi": "满洲里",
+    "waypoints": [
+      "额尔古纳",
+      "恩和",
+      "室韦",
+      "黑山头"
+    ],
+    "distance_km": 350,
+    "elevation_gain_m": 1000,
+    "elevation_loss_m": 1000,
+    "max_altitude_m": 700,
+    "min_altitude_m": 500,
+    "typical_duration_h": 12,
+    "season_window": "6-9",
+    "water_supply_points": [
+      "沿线城镇"
+    ],
+    "resupply_points": [
+      "海拉尔",
+      "额尔古纳",
+      "满洲里"
+    ],
+    "retreat_points": [
+      "沿线乡镇"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "草原大风",
+      "边境",
+      "油站间隔大"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-08-15",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "https://zhuanlan.zhihu.com/p/655784329"
+    ]
+  },
+  {
+    "route_id": "mc_023",
+    "name_zh": "香格里拉大环线摩旅",
+    "aliases": [
+      "川滇大环线摩旅",
+      "大香格里拉"
+    ],
+    "activity_type": "motorcycle",
+    "region": {
+      "province": "云南/四川",
+      "city_prefecture": null,
+      "county": null
+    },
+    "start_poi": "丽江",
+    "end_poi": "丽江",
+    "waypoints": [
+      "香格里拉",
+      "德钦",
+      "梅里雪山",
+      "稻城",
+      "亚丁",
+      "理塘",
+      "新都桥",
+      "康定",
+      "泸定",
+      "攀枝花",
+      "大理"
+    ],
+    "distance_km": 1600,
+    "elevation_gain_m": 25000,
+    "elevation_loss_m": 25000,
+    "max_altitude_m": 4700,
+    "min_altitude_m": 1200,
+    "typical_duration_h": 72,
+    "season_window": "5-10",
+    "water_supply_points": [
+      "沿线城镇"
+    ],
+    "resupply_points": [
+      "各县城有加油站"
+    ],
+    "retreat_points": [
+      "县城"
+    ],
+    "signal_coverage": "mixed",
+    "permit_required": false,
+    "risk_tags": [
+      "高海拔",
+      "盘山公路",
+      "雨季滑坡",
+      "长距离"
+    ],
+    "gpx_available": true,
+    "gpx_url": null,
+    "last_verified_date": "2025-09-15",
+    "source_urls": [
+      "https://www.itravellive.com/ztts/3077.html",
+      "http://www.chinanews.com.cn/sh/2024/06-27/10241291.shtml"
+    ]
+  }
+]

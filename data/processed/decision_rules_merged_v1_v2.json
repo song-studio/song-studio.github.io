@@ -1,0 +1,2461 @@
+{
+  "version": "1.0.0",
+  "generated_date": "2026-05-17",
+  "description": "中国户外多模式决策规则库 v1（可计算规则层）",
+  "service": "Song Studio 路线决策台",
+  "grading_system": {
+    "feasible": "可执行 — 条件在安全范围内，可按计划进行",
+    "cautious": "谨慎执行 — 存在一定风险，需调整计划或加强装备",
+    "inadvisable": "不建议执行 — 条件超出安全阈值，建议取消或改期"
+  },
+  "modes": {
+    "hiking": {
+      "name": "徒步",
+      "description": "日间徒步/越野行走（非技术性路线，不含攀岩）",
+      "load_model": {
+        "inputs": {
+          "distance_km": {
+            "type": "number",
+            "unit": "km",
+            "description": "路线总距离"
+          },
+          "elevation_gain_m": {
+            "type": "number",
+            "unit": "m",
+            "description": "累计爬升"
+          },
+          "duration_h": {
+            "type": "number",
+            "unit": "h",
+            "description": "预计用时"
+          },
+          "pack_weight_kg": {
+            "type": "number",
+            "unit": "kg",
+            "description": "背包重量"
+          },
+          "temp_c": {
+            "type": "number",
+            "unit": "°C",
+            "description": "平均气温"
+          },
+          "wind_kmh": {
+            "type": "number",
+            "unit": "km/h",
+            "description": "平均风速"
+          },
+          "altitude_m": {
+            "type": "number",
+            "unit": "m",
+            "description": "最高海拔"
+          }
+        },
+        "formula": {
+          "naismith_base_hours": {
+            "expression": "distance_km / 5.0 + elevation_gain_m / 600.0",
+            "source": "Naismith's Rule, 1892"
+          },
+          "pack_penalty_factor": {
+            "expression": "1.0 + (pack_weight_kg / 20.0) * 0.1",
+            "source": "经验公式，背包每增20kg加10%时间"
+          },
+          "adjusted_duration_h": {
+            "expression": "naismith_base_hours * pack_penalty_factor"
+          },
+          "difficulty_score": {
+            "expression": "MIN(100, (distance_km * 0.6 + elevation_gain_m * 0.015 + adjusted_duration_h * 2.0))"
+          },
+          "score_formula": {
+            "expression": "MAX(0.0, 100.0 - difficulty_score)"
+          }
+        },
+        "score_bands": {
+          "feasible": {
+            "min": 70,
+            "max": 100
+          },
+          "cautious": {
+            "min": 40,
+            "max": 69
+          },
+          "inadvisable": {
+            "min": 0,
+            "max": 39
+          }
+        }
+      },
+      "risk_model": {
+        "heat_risk_thresholds": {
+          "description": "基于NWS热指数的热风险判定",
+          "source": "https://www.weather.gov/ffc/hichart",
+          "heat_index_formula": {
+            "expression": "if temp_c <= 27: return temp_c; else: temp_c + 0.5555 * (6.112 * 10^(7.5*temp_c/(237.7+temp_c)) * rh/100 - 10)",
+            "parameters": {
+              "temp_c": "气温(°C)",
+              "rh": "相对湿度(%)"
+            },
+            "source": "NOAA Heat Index calculation (Rothfusz regression)"
+          },
+          "sun_exposure_adjustment": "晴空阳光下heat_index增加max 8.3°C(15°F)",
+          "thresholds": [
+            {
+              "heat_index_c_min": 0,
+              "heat_index_c_max": 27,
+              "grade": "feasible",
+              "note": "安全，无需特别措施"
+            },
+            {
+              "heat_index_c_min": 27,
+              "heat_index_c_max": 32,
+              "grade": "feasible",
+              "note": "Caution级，疲劳可能，每30分钟饮水"
+            },
+            {
+              "heat_index_c_min": 32,
+              "heat_index_c_max": 41,
+              "grade": "cautious",
+              "note": "Extreme Caution级，中暑/热痉挛可能，每20分钟饮水"
+            },
+            {
+              "heat_index_c_min": 41,
+              "heat_index_c_max": 54,
+              "grade": "inadvisable",
+              "note": "Danger级，热痉挛/热衰竭可能，中暑可能"
+            },
+            {
+              "heat_index_c_min": 54,
+              "heat_index_c_max": null,
+              "grade": "inadvisable",
+              "note": "Extreme Danger级，中暑高度可能"
+            }
+          ]
+        },
+        "cold_risk_thresholds": {
+          "description": "低温与风寒风险判定",
+          "source": "https://www.weather.gov/bou/windchill",
+          "windchill_formula": {
+            "expression": "if temp_c > 15.6: no windchill; else: 35.74 + 0.6215*(temp_c*9/5+32) - 35.75*(wind_kmh*0.6214)^0.16 + 0.4275*(temp_c*9/5+32)*(wind_kmh*0.6214)^0.16",
+            "note": "NWS标准公式，仅T≤60°F(15.6°C)有效。V=风速(mph), T=气温(°F)"
+          },
+          "thresholds": [
+            {
+              "ambient_temp_c_min": 10,
+              "ambient_temp_c_max": null,
+              "grade": "feasible",
+              "note": "舒适，基础保暖即可"
+            },
+            {
+              "ambient_temp_c_min": 5,
+              "ambient_temp_c_max": 10,
+              "grade": "feasible",
+              "note": "凉，需防风外套+中层"
+            },
+            {
+              "ambient_temp_c_min": 0,
+              "ambient_temp_c_max": 5,
+              "grade": "cautious",
+              "note": "冷，需抓绒+防风+帽，注意手脚"
+            },
+            {
+              "ambient_temp_c_min": -5,
+              "ambient_temp_c_max": 0,
+              "grade": "cautious",
+              "note": "寒冷，暴露皮肤30分钟可冻伤"
+            },
+            {
+              "ambient_temp_c_min": -10,
+              "ambient_temp_c_max": -5,
+              "grade": "cautious",
+              "note": "严寒，暴露皮肤15分钟可冻伤"
+            },
+            {
+              "ambient_temp_c_min": null,
+              "ambient_temp_c_max": -10,
+              "grade": "inadvisable",
+              "note": "极寒，冻伤风险在15分钟内"
+            }
+          ],
+          "wet_hypothermia_risk": "气温5-15°C+持续降水=低体温风险，含水条件下阈值左移一个等级"
+        },
+        "wind_risk_thresholds": {
+          "description": "基于Beaufort等级的风力风险",
+          "source": "https://mountain-hiking.com/hike-safe-wind/",
+          "thresholds": [
+            {
+              "beaufort": 0,
+              "wind_kmh_min": 0,
+              "wind_kmh_max": 1,
+              "grade": "feasible",
+              "description": "无风"
+            },
+            {
+              "beaufort": 1,
+              "wind_kmh_min": 1,
+              "wind_kmh_max": 5,
+              "grade": "feasible",
+              "description": "软风"
+            },
+            {
+              "beaufort": 2,
+              "wind_kmh_min": 6,
+              "wind_kmh_max": 11,
+              "grade": "feasible",
+              "description": "轻风，面部有风感"
+            },
+            {
+              "beaufort": 3,
+              "wind_kmh_min": 12,
+              "wind_kmh_max": 19,
+              "grade": "feasible",
+              "description": "微风，树枝微摇"
+            },
+            {
+              "beaufort": 4,
+              "wind_kmh_min": 20,
+              "wind_kmh_max": 28,
+              "grade": "feasible",
+              "description": "和风"
+            },
+            {
+              "beaufort": 5,
+              "wind_kmh_min": 29,
+              "wind_kmh_max": 38,
+              "grade": "feasible",
+              "description": "劲风，小树摇动"
+            },
+            {
+              "beaufort": 6,
+              "wind_kmh_min": 39,
+              "wind_kmh_max": 49,
+              "grade": "cautious",
+              "description": "强风，大树枝摇动，避免暴露山脊"
+            },
+            {
+              "beaufort": 7,
+              "wind_kmh_min": 50,
+              "wind_kmh_max": 61,
+              "grade": "cautious",
+              "description": "疾风，整树摇动，逆风行走困难"
+            },
+            {
+              "beaufort": 8,
+              "wind_kmh_min": 62,
+              "wind_kmh_max": 74,
+              "grade": "inadvisable",
+              "description": "大风，行走困难"
+            },
+            {
+              "beaufort": 9,
+              "wind_kmh_min": 75,
+              "wind_kmh_max": 88,
+              "grade": "inadvisable",
+              "description": "烈风"
+            },
+            {
+              "beaufort": 10,
+              "wind_kmh_min": 89,
+              "wind_kmh_max": null,
+              "grade": "inadvisable",
+              "description": "暴风及以上"
+            }
+          ],
+          "falling_branch_risk_note": "风速>50km/h时树枝断裂风险急剧上升"
+        },
+        "precip_risk_thresholds": {
+          "description": "降水风险评估（雨/雪）",
+          "source": "https://www.weather.gov/ctp/wwacriteria",
+          "thresholds": [
+            {
+              "precip_mmh_min": 0,
+              "precip_mmh_max": 2.5,
+              "grade": "feasible",
+              "description": "无雨或微量"
+            },
+            {
+              "precip_mmh_min": 2.6,
+              "precip_mmh_max": 10,
+              "grade": "feasible",
+              "description": "小雨，防雨装备可应对"
+            },
+            {
+              "precip_mmh_min": 10.1,
+              "precip_mmh_max": 30,
+              "grade": "cautious",
+              "description": "中雨，能见度下降，路滑"
+            },
+            {
+              "precip_mmh_min": 30.1,
+              "precip_mmh_max": 50,
+              "grade": "cautious",
+              "description": "大雨，能见度显著降低，建议中止"
+            },
+            {
+              "precip_mmh_min": 50.1,
+              "precip_mmh_max": null,
+              "grade": "inadvisable",
+              "description": "暴雨及以上，取消活动"
+            }
+          ]
+        },
+        "storm_abort_rules": {
+          "source": "https://www.weather.gov/safety/lightning-sports",
+          "lightning_30_30_rule": {
+            "expression": "IF (flash_to_bang_seconds <= 30) THEN immediate_mandatory_shelter = true",
+            "flash_to_bang_to_distance_km": {
+              "expression": "seconds / 3",
+              "note": "声音3秒≈1公里"
+            },
+            "resume_after_minutes": 30,
+            "safe_distance_km": 9.26,
+            "grade": "inadvisable"
+          },
+          "severe_thunderstorm_rule": {
+            "expression": "IF (hail_diameter_cm >= 2.5) OR (wind_gust_kmh >= 93) THEN abort",
+            "source": "https://www.weather.gov/ctp/wwacriteria",
+            "grade": "inadvisable"
+          }
+        },
+        "visibility_rules": {
+          "source": "https://apps.itd.idaho.gov/apps/dmv-audio/documents/DLChapter6.pdf",
+          "thresholds": [
+            {
+              "visibility_m_min": 500,
+              "visibility_m_max": null,
+              "grade": "feasible",
+              "description": "能见度良好"
+            },
+            {
+              "visibility_m_min": 200,
+              "visibility_m_max": 500,
+              "grade": "cautious",
+              "description": "能见度降低，需头灯"
+            },
+            {
+              "visibility_m_min": 100,
+              "visibility_m_max": 200,
+              "grade": "cautious",
+              "description": "能见度差，强烈建议中止"
+            },
+            {
+              "visibility_m_min": 0,
+              "visibility_m_max": 100,
+              "grade": "inadvisable",
+              "description": "能见度极差，取消活动"
+            }
+          ]
+        }
+      },
+      "altitude_model": {
+        "applicable": false,
+        "note": "一般徒步海拔<3000m时无AMS风险"
+      },
+      "execution_rules": {
+        "recommended_departure_window": {
+          "description": "夏季建议出发时间窗口",
+          "rule": {
+            "summer": "06:00-09:00",
+            "winter": "07:00-10:00"
+          },
+          "note": "避免正午高温，确保日落前至少2小时完成"
+        },
+        "turnaround_time_rule": {
+          "expression": "MAX(start_time + total_duration_h * 0.5, sunset - (remaining_segment_hours + 1.0))",
+          "note": "最晚折返时间取两者较早：总时长50%，或日落-剩余路段-1h缓冲区"
+        },
+        "latest_safe_finish_rule": {
+          "expression": "sunset_hour - 0.5",
+          "note": "最晚安全完成时间=日落前30分钟",
+          "source": "https://www.nps.gov/articles/hike-safely.htm"
+        },
+        "hydration_per_hour_l": {
+          "moderate_conditions": {
+            "expression": "0.5 <= x <= 1.0"
+          },
+          "hot_conditions_temp_gt_30C": {
+            "expression": "0.8 <= x <= 1.5"
+          },
+          "max_safe_hourly_l": 1.5,
+          "max_safe_daily_l": 12.0,
+          "source": "https://www.dhs.gov/sites/default/files/publications/21_0929_cbp_scale-hydration-chart.pdf",
+          "note": "超过1.5L/h有低钠血症(hyponatremia)风险"
+        },
+        "electrolyte_mg_per_hour": {
+          "moderate_conditions": {
+            "expression": "300 <= x <= 1000"
+          },
+          "hot_conditions_temp_gt_30C": {
+            "expression": "800 <= x <= 1500"
+          },
+          "average_sweat_sodium_mg_per_l": 950,
+          "source": "https://www.skratchlabs.com/blogs/blog/sweat-rate-vs-sodium-loss-rate"
+        },
+        "calorie_kcal_per_hour": {
+          "expression": "400 <= x <= 700",
+          "unit": "kcal/h",
+          "for_70kg_adult": true,
+          "source": "https://www.outsideonline.com/outdoor-adventure/hiking-and-backpacking/ultimate-backpacking-calorie-estimator/"
+        }
+      },
+      "gear_rules": {
+        "light_kit": {
+          "trigger": {
+            "temp_c_min": 15,
+            "temp_c_max": 35,
+            "precip_mmh_max": 2.5,
+            "wind_kmh_max": 28,
+            "altitude_m_max": 2000
+          },
+          "kit_list": [
+            "速干T恤",
+            "短裤/薄长裤",
+            "防晒帽",
+            "1L水",
+            "能量棒",
+            "手机"
+          ]
+        },
+        "three_season_kit": {
+          "trigger": {
+            "temp_c_min": 5,
+            "temp_c_max": 25,
+            "precip_mmh_max": 10,
+            "wind_kmh_max": 38,
+            "altitude_m_max": 3000
+          },
+          "kit_list": [
+            "速干内衣",
+            "中层抓绒",
+            "防风外套",
+            "防水冲锋衣",
+            "速干长裤",
+            "登山鞋",
+            "1.5L水",
+            "头灯",
+            "急救包",
+            "雨衣"
+          ]
+        },
+        "cold_high_alt_kit": {
+          "trigger": {
+            "temp_c_min": -10,
+            "temp_c_max": 10,
+            "precip_mmh_max": 30,
+            "wind_kmh_max": 49,
+            "altitude_m_min": 2500,
+            "altitude_m_max": 5000
+          },
+          "kit_list": [
+            "保暖内衣",
+            "羽绒中层",
+            "防风防水冲锋衣",
+            "保暖帽",
+            "防水手套",
+            "登山杖",
+            "2L水+保温壶",
+            "雪镜",
+            "冰爪(如有冰雪路)",
+            "应急毯"
+          ]
+        }
+      },
+      "heat_cold_dual_model": {
+        "description": "体感温度与湿度联动模型，用湿球温度(WBGT近似)判定",
+        "source": "https://www.psu.edu/news/research/story/humans-cant-endure-temperatures-and-humidities-high-previously-thought",
+        "inputs": {
+          "temp_c": "气温",
+          "rh_pct": "相对湿度",
+          "wind_kmh": "风速",
+          "solar_load": "太阳辐射（0=阴天, 1=多云, 2=晴）",
+          "activity_intensity": "运动强度(1=轻, 2=中, 3=高)"
+        },
+        "wet_bulb_approximation": {
+          "expression": "wbgt_approx = 0.567*temp_c + 0.393*rh_pct/100*6.105*exp(17.27*temp_c/(237.7+temp_c)) + 3.94",
+          "note": "修正WBGT估算法：考虑气温+湿度+辐射(晴空+8°C)",
+          "source": "https://www.weather.gov/ict/WBGT"
+        },
+        "effective_temperature": {
+          "expression": "eff_temp = wbgt_approx + (solar_load * 4.0) - (wind_kmh * 0.1)",
+          "note": "太阳辐射每级加4°C，风每km/h降0.1°C"
+        },
+        "thresholds": {
+          "heat_risk_wetbulb": [
+            {
+              "eff_temp_c_min": 0,
+              "eff_temp_c_max": 25,
+              "grade": "feasible",
+              "advice": "低风险，安全"
+            },
+            {
+              "eff_temp_c_min": 25,
+              "eff_temp_c_max": 27,
+              "grade": "feasible",
+              "advice": "中风险(PSU研究：年轻健康人WBGT极限25-28°C)"
+            },
+            {
+              "eff_temp_c_min": 27,
+              "eff_temp_c_max": 29,
+              "grade": "cautious",
+              "advice": "高风险，限制活动，频繁休息"
+            },
+            {
+              "eff_temp_c_min": 29,
+              "eff_temp_c_max": null,
+              "grade": "inadvisable",
+              "advice": "极高风险，取消户外运动"
+            }
+          ],
+          "humidity_compounding": {
+            "expression": "IF rh_pct >= 80 AND temp_c >= 30 THEN heat_risk_upgrade = true (feasible→cautious, cautious→inadvisable)",
+            "note": "PSU 2022研究证实：湿润环境WBGT耐受上限仅30-31°C（比干燥环境低5°C）",
+            "confidence": 0.85
+          },
+          "windchill_cross_rule": {
+            "expression": "IF temp_c < 5 AND wind_kmh >= 30 AND precip_active = true THEN cold_upgrade = true",
+            "note": "风+冷+湿=低体温高风险，阈值上移一级",
+            "confidence": 0.75
+          }
+        },
+        "action_table": {
+          "feasible": "正常活动，基础饮水0.5L/h",
+          "cautious": "降强度50%，每15分钟饮水200ml，找遮荫/遮蔽",
+          "inadvisable": "立即停止，找室内/遮蔽场所，物理降温/保暖"
+        },
+        "psu_study_reference": "Penn State 2022: 年轻健康人WBGT耐受上限25-31°C (wet bulb)，优于理论的35°C"
+      }
+    },
+    "mountaineering": {
+      "name": "登山/高海拔攀登",
+      "description": "海拔>3000m的技术性或非技术性登山，含高海拔徒步与雪山攀登",
+      "load_model": {
+        "inputs": {
+          "distance_km": {
+            "type": "number",
+            "unit": "km",
+            "description": "路线总距离"
+          },
+          "elevation_gain_m": {
+            "type": "number",
+            "unit": "m",
+            "description": "累计爬升"
+          },
+          "max_altitude_m": {
+            "type": "number",
+            "unit": "m",
+            "description": "最高海拔"
+          },
+          "sleep_altitude_m": {
+            "type": "number",
+            "unit": "m",
+            "description": "当晚睡眠海拔"
+          },
+          "days_on_route": {
+            "type": "number",
+            "unit": "days",
+            "description": "行程总天数"
+          },
+          "temp_c": {
+            "type": "number",
+            "unit": "°C",
+            "description": "平均气温"
+          },
+          "wind_kmh": {
+            "type": "number",
+            "unit": "km/h",
+            "description": "平均风速"
+          }
+        },
+        "formula": {
+          "naismith_base_hours": {
+            "expression": "distance_km / 4.0 + elevation_gain_m / 500.0"
+          },
+          "altitude_penalty": {
+            "expression": "IF max_altitude_m > 3000 THEN 1.0 + (max_altitude_m - 3000) / 3000 * 0.3 ELSE 1.0"
+          },
+          "adjusted_duration_h": {
+            "expression": "naismith_base_hours * altitude_penalty"
+          },
+          "difficulty_score": {
+            "expression": "MIN(100, distance_km * 0.5 + elevation_gain_m * 0.02 + max_altitude_m * 0.01)"
+          },
+          "score_formula": {
+            "expression": "MAX(0.0, 100.0 - difficulty_score)"
+          }
+        },
+        "score_bands": {
+          "feasible": {
+            "min": 70,
+            "max": 100
+          },
+          "cautious": {
+            "min": 40,
+            "max": 69
+          },
+          "inadvisable": {
+            "min": 0,
+            "max": 39
+          }
+        }
+      },
+      "risk_model": {
+        "heat_risk_thresholds": {
+          "description": "高海拔热风险 — 太阳辐射更强(UV每升300m增约4%)但气温低",
+          "source": "https://www.weather.gov/ffc/hichart",
+          "note": "高海拔晴空UV可达海平面2-3倍，但气温偏低使热指数不常达危险级",
+          "thresholds": [
+            {
+              "heat_index_c_min": 0,
+              "heat_index_c_max": 27,
+              "grade": "feasible",
+              "note": "安全"
+            },
+            {
+              "heat_index_c_min": 27,
+              "heat_index_c_max": 32,
+              "grade": "feasible",
+              "note": "低海拔段可能出现"
+            },
+            {
+              "heat_index_c_min": 32,
+              "heat_index_c_max": 41,
+              "grade": "cautious",
+              "note": "中海拔(<4000m)可能出现"
+            },
+            {
+              "heat_index_c_min": 41,
+              "heat_index_c_max": null,
+              "grade": "inadvisable",
+              "note": "高海拔极罕见但UV灼伤严重"
+            }
+          ],
+          "uv_protection": "SPF50+每2小时补涂，雪地反射增加灼伤风险"
+        },
+        "cold_risk_thresholds": {
+          "description": "高海拔低温与风寒 — 海拔升1000m气温降约6.5°C(标准大气递减率)",
+          "source": "https://www.weather.gov/bou/windchill",
+          "windchill_formula": "NWS标准: 35.74 + 0.6215*T_F - 35.75*V_mph^0.16 + 0.4275*T_F*V_mph^0.16",
+          "lapse_rate_C_per_1000m": 6.5,
+          "lapse_rate_note": "海拔升1000m气温降6.5°C，可用于推算山顶温度: T_summit = T_base - altitude_delta_km * 6.5",
+          "thresholds": [
+            {
+              "ambient_temp_c_min": 10,
+              "ambient_temp_c_max": null,
+              "grade": "feasible",
+              "note": "舒适，低海拔登山"
+            },
+            {
+              "ambient_temp_c_min": 5,
+              "ambient_temp_c_max": 10,
+              "grade": "feasible",
+              "note": "凉，需抓绒中层"
+            },
+            {
+              "ambient_temp_c_min": 0,
+              "ambient_temp_c_max": 5,
+              "grade": "feasible",
+              "note": "冷，需羽绒/冲锋衣"
+            },
+            {
+              "ambient_temp_c_min": -5,
+              "ambient_temp_c_max": 0,
+              "grade": "cautious",
+              "note": "严寒，暴露皮肤30分钟冻伤风险"
+            },
+            {
+              "ambient_temp_c_min": -15,
+              "ambient_temp_c_max": -5,
+              "grade": "cautious",
+              "note": "深寒，冻伤<30分钟"
+            },
+            {
+              "ambient_temp_c_min": -20,
+              "ambient_temp_c_max": -15,
+              "grade": "cautious",
+              "note": "极寒，冻伤<15分钟"
+            },
+            {
+              "ambient_temp_c_min": null,
+              "ambient_temp_c_max": -20,
+              "grade": "inadvisable",
+              "note": "禁止攀登，冻伤<10分钟"
+            }
+          ],
+          "frostbite_time_at_windchill": {
+            "minus_20C_minutes": 30,
+            "minus_25C_minutes": 15,
+            "minus_35C_minutes": 5
+          }
+        },
+        "wind_risk_thresholds": {
+          "description": "高海拔风力 — 山脊风速通常比山谷高2-3 Beaufort级",
+          "source": "https://mountain-hiking.com/hike-safe-wind/",
+          "ridge_offset": "山脊暴露路线等效加1 Beaufort，海拔>5000m加1.5",
+          "thresholds": [
+            {
+              "beaufort": 0,
+              "wind_kmh_min": 0,
+              "wind_kmh_max": 1,
+              "grade": "feasible"
+            },
+            {
+              "beaufort": 1,
+              "wind_kmh_min": 1,
+              "wind_kmh_max": 5,
+              "grade": "feasible"
+            },
+            {
+              "beaufort": 2,
+              "wind_kmh_min": 6,
+              "wind_kmh_max": 11,
+              "grade": "feasible"
+            },
+            {
+              "beaufort": 3,
+              "wind_kmh_min": 12,
+              "wind_kmh_max": 19,
+              "grade": "feasible"
+            },
+            {
+              "beaufort": 4,
+              "wind_kmh_min": 20,
+              "wind_kmh_max": 28,
+              "grade": "feasible"
+            },
+            {
+              "beaufort": 5,
+              "wind_kmh_min": 29,
+              "wind_kmh_max": 38,
+              "grade": "feasible"
+            },
+            {
+              "beaufort": 6,
+              "wind_kmh_min": 39,
+              "wind_kmh_max": 49,
+              "grade": "cautious",
+              "description": "强风，避免暴露山脊"
+            },
+            {
+              "beaufort": 7,
+              "wind_kmh_min": 50,
+              "wind_kmh_max": 61,
+              "grade": "cautious",
+              "description": "疾风，行走受阻"
+            },
+            {
+              "beaufort": 8,
+              "wind_kmh_min": 62,
+              "wind_kmh_max": 74,
+              "grade": "inadvisable",
+              "description": "大风，立即下撤"
+            },
+            {
+              "beaufort": 9,
+              "wind_kmh_min": 75,
+              "wind_kmh_max": 88,
+              "grade": "inadvisable",
+              "description": "烈风"
+            },
+            {
+              "beaufort": 10,
+              "wind_kmh_min": 89,
+              "wind_kmh_max": null,
+              "grade": "inadvisable",
+              "description": "暴风级以上"
+            }
+          ]
+        },
+        "precip_risk_thresholds": {
+          "description": "高海拔降水/降雪判定",
+          "source": "https://www.weather.gov/ctp/wwacriteria",
+          "thresholds": [
+            {
+              "precip_mmh_min": 0,
+              "precip_mmh_max": 2.5,
+              "grade": "feasible",
+              "description": "无雨或微量"
+            },
+            {
+              "precip_mmh_min": 2.6,
+              "precip_mmh_max": 10,
+              "grade": "feasible",
+              "description": "小雨/小雪"
+            },
+            {
+              "precip_mmh_min": 10.1,
+              "precip_mmh_max": 30,
+              "grade": "cautious",
+              "description": "中雨/中雪"
+            },
+            {
+              "precip_mmh_min": 30.1,
+              "precip_mmh_max": null,
+              "grade": "inadvisable",
+              "description": "大雨/大雪，取消攀登"
+            }
+          ],
+          "snow_abort_rule": "IF snow_accumulation_cmh >= 5 THEN abort",
+          "freezing_rain_alert": "冻雨→立即下撤，冰面无法安全行走",
+          "snow_avalanche_risk": "新雪>10cm触发雪崩风险，需重新评估路线"
+        },
+        "storm_abort_rules": {
+          "source": "https://www.weather.gov/safety/lightning-sports",
+          "lightning_30_30_rule": {
+            "expression": "IF flash_to_bang_seconds <= 30 THEN immediate_shelter; 高海拔无遮蔽区域建议<=45秒预撤离",
+            "safe_distance_km": 9.26,
+            "resume_after_minutes": 30,
+            "grade": "inadvisable"
+          },
+          "snowstorm_whiteout_rule": "IF visibility_m < 30 AND snow_active THEN whiteout → 就地挖雪洞保护",
+          "wind_abort_rule": "IF sustained_wind_kmh >= 62 THEN 立即下撤或找岩石掩体",
+          "hail_abort_rule": "IF hail_diameter_cm >= 2.5 THEN abort"
+        },
+        "visibility_rules": {
+          "source": "https://apps.itd.idaho.gov/apps/dmv-audio/documents/DLChapter6.pdf",
+          "thresholds": [
+            {
+              "visibility_m_min": 500,
+              "visibility_m_max": null,
+              "grade": "feasible"
+            },
+            {
+              "visibility_m_min": 100,
+              "visibility_m_max": 500,
+              "grade": "cautious",
+              "description": "需GPS导航+冰镐探路"
+            },
+            {
+              "visibility_m_min": 30,
+              "visibility_m_max": 100,
+              "grade": "inadvisable",
+              "description": "白化风险"
+            },
+            {
+              "visibility_m_min": 0,
+              "visibility_m_max": 30,
+              "grade": "inadvisable",
+              "description": "完全白化，就地保护"
+            }
+          ],
+          "whiteout_trigger": "IF visibility_m < 30 AND snow_covered = true THEN stop"
+        }
+      },
+      "altitude_model": {
+        "description": "高海拔适应与AMS风险判定模型（WMS/CDC标准）",
+        "sources": [
+          "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+          "https://wms.org/magazine/magazine/1463/2024-Altitude-Summary/default.aspx",
+          "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+        ],
+        "ascent_rate_thresholds": {
+          "max_safe_m_per_day_above_3000m": 500,
+          "rest_day_every_n_days": 3,
+          "extra_acclimatization_day_every_m": 1000,
+          "day1_sleep_altitude_risk_categories": [
+            {
+              "sleep_altitude_m_min": 0,
+              "sleep_altitude_m_max": 2750,
+              "risk": "low",
+              "grade": "feasible"
+            },
+            {
+              "sleep_altitude_m_min": 2750,
+              "sleep_altitude_m_max": 3400,
+              "risk": "moderate",
+              "grade": "cautious"
+            },
+            {
+              "sleep_altitude_m_min": 3400,
+              "sleep_altitude_m_max": null,
+              "risk": "high",
+              "grade": "inadvisable"
+            }
+          ],
+          "ascent_rate_formula": {
+            "expression": "sleep_altitude_change_m = abs(sleep_altitude_day_n - sleep_altitude_day_n_minus_1)",
+            "rule": "IF above_3000m AND sleep_altitude_change_m > 500 THEN grade = inadvisable"
+          }
+        },
+        "sleep_altitude_step_rules": {
+          "rule_expression": "sleep_altitude_day_n - sleep_altitude_day_n_minus_1 <= 500m WHEN above_3000m",
+          "climb_high_sleep_low": "每日最高攀登点与睡眠海拔差300-600m为理想",
+          "rest_day_frequency": "每3-4天在同一海拔住一晚（休整日）",
+          "extra_day_per_1000m": "每上升1000m加一个休整日"
+        },
+        "ams_risk_flags": {
+          "diagnosis_lake_louise": "头痛 + ≥1项(肠胃不适/疲劳/头晕/睡眠障碍)，海拔>2500m，到达后数小时-3天",
+          "risk_progression": {
+            "mild_ams": {
+              "symptoms": "轻微头痛可忍，活动正常",
+              "action": "休息+止痛药，可继续但缓升"
+            },
+            "moderate_ams": {
+              "symptoms": "头剧痛+呕吐+乏力+协调下降",
+              "action": "立即下撤至少500m",
+              "grade": "inadvisable"
+            },
+            "hape": {
+              "symptoms": "静息时呼吸困难+持续性干咳+唇色发蓝+心率加快",
+              "action": "紧急下撤+就医+氧气",
+              "grade": "inadvisable"
+            },
+            "hace": {
+              "symptoms": "意识混乱+共济失调",
+              "action": "紧急下撤+地塞米松+氧气",
+              "grade": "inadvisable"
+            }
+          },
+          "high_risk_triggers": {
+            "direct_flight_above_3500m": true,
+            "ascent_rate_above_500m_per_day": true,
+            "history_of_hape_or_hace": true,
+            "no_rest_day_per_1000m": true
+          },
+          "chemoprophylaxis": "乙酰唑胺(Diamox) 125-250mg bid，出发前1天至峰值海拔后2-4天"
+        }
+      },
+      "execution_rules": {
+        "recommended_departure_window": {
+          "rule": {
+            "summer": "04:00-07:00",
+            "winter": "05:00-08:00"
+          },
+          "note": "高海拔需极早出发，利用上午稳定天气窗口"
+        },
+        "turnaround_time_rule": {
+          "expression": "MAX(start_time + total_duration_h * 0.5, 13:00)",
+          "note": "最晚折返时间为13:00（夏季），高海拔下午雷暴/风变概率急剧上升"
+        },
+        "latest_safe_finish_rule": {
+          "expression": "sunset_hour - 1.0",
+          "note": "比徒步更保守，日落前1小时"
+        },
+        "hydration_per_hour_l": {
+          "expression": "0.6 <= x <= 1.2",
+          "note": "高海拔呼吸失水增加，比低海拔多20-30%",
+          "max_safe_hourly_l": 1.5
+        },
+        "electrolyte_mg_per_hour": {
+          "expression": "500 <= x <= 1500",
+          "note": "高海拔利尿作用增加钠流失"
+        },
+        "calorie_kcal_per_hour": {
+          "expression": "500 <= x <= 800",
+          "unit": "kcal/h",
+          "for_70kg_adult": true,
+          "source": "https://www.bergfreunde.eu/calories-burned-calculator/"
+        }
+      },
+      "gear_rules": {
+        "light_kit": {
+          "trigger": {
+            "temp_c_min": 10,
+            "temp_c_max": 25,
+            "precip_mmh_max": 5,
+            "wind_kmh_max": 20,
+            "altitude_m_min": 3000,
+            "altitude_m_max": 4000
+          },
+          "kit_list": [
+            "速干内衣",
+            "抓绒中层",
+            "冲锋衣",
+            "登山裤",
+            "高山靴",
+            "头盔",
+            "头灯",
+            "1.5L水",
+            "急救包",
+            "防晒SPF50+"
+          ]
+        },
+        "three_season_kit": {
+          "trigger": {
+            "temp_c_min": -5,
+            "temp_c_max": 20,
+            "precip_mmh_max": 10,
+            "wind_kmh_max": 38,
+            "altitude_m_min": 3500,
+            "altitude_m_max": 5000
+          },
+          "kit_list": [
+            "速干内衣",
+            "抓绒中层",
+            "防风软壳",
+            "冲锋衣",
+            "冲锋裤",
+            "高山靴",
+            "冰爪",
+            "冰镐",
+            "头盔",
+            "头灯+备用电池",
+            "2L水",
+            "急救包",
+            "防晒SPF50+"
+          ]
+        },
+        "cold_high_alt_kit": {
+          "trigger": {
+            "temp_c_min": -20,
+            "temp_c_max": 5,
+            "precip_mmh_max": 30,
+            "wind_kmh_max": 61,
+            "altitude_m_min": 5000,
+            "altitude_m_max": 8000
+          },
+          "kit_list": [
+            "保暖内衣(羊毛)",
+            "羽绒中层",
+            "防风防水冲锋衣(厚)",
+            "羽绒裤",
+            "高山靴(双层/雪套)",
+            "雪镜",
+            "冰爪+冰镐",
+            "头盔",
+            "头灯+备用电池",
+            "3L水+保温壶",
+            "急救包+氧气瓶(>5000m)",
+            "卫星通信设备",
+            "应急睡袋",
+            "防晒SPF50+"
+          ]
+        }
+      },
+      "turnaround_rule_v2": {
+        "description": "按海拔-风-降水动态计算最晚折返时刻，替代v1的固定13:00硬规则",
+        "source": "https://www.alpinesavvy.com/blog/decision-making-matrix-for-alpine-climbing",
+        "base_turnaround": {
+          "expression": "IF altitude_m < 3000 THEN 14:00 ELSE IF altitude_m < 4500 THEN 13:00 ELSE IF altitude_m < 5500 THEN 12:00 ELSE 11:00"
+        },
+        "wind_adjustment": {
+          "expression": "IF wind_kmh >= 39 THEN base_turnaround - 1h; IF wind_kmh >= 50 THEN base_turnaround - 2h; IF wind_kmh >= 62 THEN abort_climb",
+          "note": "Beaufort 6/7/8 级风逐级提前1h折返",
+          "confidence": 0.75
+        },
+        "precip_adjustment": {
+          "expression": "IF precip_mmh >= 10 THEN base_turnaround - 1h; IF precip_mmh >= 30 THEN base_turnaround - 2h; IF precip_mmh >= 50 THEN abort_climb",
+          "note": "中雨/大雨/暴雨逐级提前",
+          "confidence": 0.7
+        },
+        "combined_rule": {
+          "expression": "effective_turnaround = MAX(sunset - 2.0, base_turnaround - wind_adjustment_hours - precip_adjustment_hours)",
+          "note": "取调整后时间与日落前2小时的较晚值（即不能超出日落底线）",
+          "confidence": 0.8
+        },
+        "final_grade_rule": "IF effective_turnaround < current_time THEN grade = inadvisable",
+        "examples": [
+          {
+            "altitude_m": 3500,
+            "wind_kmh": 10,
+            "precip_mmh": 0,
+            "base": "13:00",
+            "adjust": "13:00",
+            "grade": "feasible"
+          },
+          {
+            "altitude_m": 4500,
+            "wind_kmh": 45,
+            "precip_mmh": 0,
+            "base": "12:00",
+            "adjust": "11:00",
+            "grade": "cautious"
+          },
+          {
+            "altitude_m": 4800,
+            "wind_kmh": 55,
+            "precip_mmh": 15,
+            "base": "12:00",
+            "adjust": "09:00",
+            "grade": "inadvisable"
+          }
+        ]
+      }
+    },
+    "cycling": {
+      "name": "单车/骑行",
+      "description": "公路骑行与山地骑行",
+      "load_model": {
+        "inputs": {
+          "distance_km": {
+            "type": "number",
+            "unit": "km",
+            "description": "骑行距离"
+          },
+          "elevation_gain_m": {
+            "type": "number",
+            "unit": "m",
+            "description": "累计爬升"
+          },
+          "duration_h": {
+            "type": "number",
+            "unit": "h",
+            "description": "预计用时"
+          },
+          "avg_speed_kmh": {
+            "type": "number",
+            "unit": "km/h",
+            "description": "均速"
+          },
+          "temp_c": {
+            "type": "number",
+            "unit": "°C",
+            "description": "平均气温"
+          },
+          "wind_kmh": {
+            "type": "number",
+            "unit": "km/h",
+            "description": "平均风速"
+          },
+          "wind_gust_kmh": {
+            "type": "number",
+            "unit": "km/h",
+            "description": "最大阵风"
+          },
+          "precip_mmh": {
+            "type": "number",
+            "unit": "mm/h",
+            "description": "降水强度"
+          }
+        },
+        "formula": {
+          "base_duration_h": {
+            "expression": "distance_km / avg_speed_kmh"
+          },
+          "elevation_penalty": {
+            "expression": "1.0 + (elevation_gain_m / distance_km) * 0.05"
+          },
+          "adjusted_duration_h": {
+            "expression": "base_duration_h * elevation_penalty"
+          },
+          "difficulty_score": {
+            "expression": "MIN(100, distance_km * 0.3 + elevation_gain_m * 0.01 + adjusted_duration_h * 3.0)"
+          },
+          "score_formula": {
+            "expression": "MAX(0.0, 100.0 - difficulty_score)"
+          }
+        },
+        "score_bands": {
+          "feasible": {
+            "min": 70,
+            "max": 100
+          },
+          "cautious": {
+            "min": 40,
+            "max": 69
+          },
+          "inadvisable": {
+            "min": 0,
+            "max": 39
+          }
+        }
+      },
+      "risk_model": {
+        "heat_risk_thresholds": {
+          "description": "骑行热风险 — 骑行风产生2-5°C降温但高湿度下有限",
+          "source": "https://www.weather.gov/ffc/hichart",
+          "riding_wind_chill_bonus": "effective_heat_index = heat_index_c - MIN(5.0, riding_speed_kmh * 0.1)",
+          "thresholds": [
+            {
+              "heat_index_c_min": 0,
+              "heat_index_c_max": 27,
+              "grade": "feasible"
+            },
+            {
+              "heat_index_c_min": 27,
+              "heat_index_c_max": 32,
+              "grade": "feasible",
+              "note": "每20分钟饮水"
+            },
+            {
+              "heat_index_c_min": 32,
+              "heat_index_c_max": 38,
+              "grade": "cautious",
+              "note": "骑行风降温有效但高湿仍危险"
+            },
+            {
+              "heat_index_c_min": 38,
+              "heat_index_c_max": 41,
+              "grade": "cautious",
+              "note": "限1小时内骑行"
+            },
+            {
+              "heat_index_c_min": 41,
+              "heat_index_c_max": null,
+              "grade": "inadvisable",
+              "note": "取消骑行"
+            }
+          ]
+        },
+        "cold_risk_thresholds": {
+          "description": "骑行风寒 — 骑行速度大幅增加风寒效应",
+          "source": "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+          "effective_wind_for_chill": {
+            "expression": "riding_speed_kmh + headwind_kmh",
+            "note": "骑行时有效风速=骑行速度+迎风风速"
+          },
+          "thresholds": [
+            {
+              "ambient_temp_c_min": 10,
+              "ambient_temp_c_max": null,
+              "grade": "feasible",
+              "note": "合适骑行温度"
+            },
+            {
+              "ambient_temp_c_min": 5,
+              "ambient_temp_c_max": 10,
+              "grade": "feasible",
+              "note": "偏凉，需长袖+风衣"
+            },
+            {
+              "ambient_temp_c_min": 0,
+              "ambient_temp_c_max": 5,
+              "grade": "cautious",
+              "note": "寒冷+风→显著风寒，全套冬季装备"
+            },
+            {
+              "ambient_temp_c_min": -5,
+              "ambient_temp_c_max": 0,
+              "grade": "cautious",
+              "note": "严寒骑行，手脚冻僵风险高"
+            },
+            {
+              "ambient_temp_c_min": null,
+              "ambient_temp_c_max": -5,
+              "grade": "inadvisable",
+              "note": "路面结冰风险，禁止骑行"
+            }
+          ],
+          "ice_risk_trigger": "IF temp_c <= 0 AND precipitation_active = true THEN ice_risk = true, grade = inadvisable"
+        },
+        "wind_risk_thresholds": {
+          "description": "骑行风力 — 侧风比逆风危险10倍",
+          "source": "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+          "thresholds": [
+            {
+              "wind_kmh_min": 0,
+              "wind_kmh_max": 20,
+              "grade": "feasible",
+              "description": "微风至和风"
+            },
+            {
+              "wind_kmh_min": 20,
+              "wind_kmh_max": 30,
+              "grade": "feasible",
+              "description": "注意侧风"
+            },
+            {
+              "wind_kmh_min": 30,
+              "wind_kmh_max": 40,
+              "grade": "cautious",
+              "description": "持续>30km/h→危险，尤其侧风"
+            },
+            {
+              "wind_kmh_min": 40,
+              "wind_kmh_max": 50,
+              "grade": "cautious",
+              "description": "下坡+侧风极端危险"
+            },
+            {
+              "wind_kmh_min": 50,
+              "wind_kmh_max": null,
+              "grade": "inadvisable",
+              "description": "阵风>50km/h取消"
+            }
+          ],
+          "gust_rule": "IF wind_gust_kmh > 50 THEN grade = inadvisable",
+          "crosswind_hazard_zones": [
+            "开阔平原",
+            "桥梁",
+            "高架路段",
+            "山脊路"
+          ]
+        },
+        "precip_risk_thresholds": {
+          "source": "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+          "thresholds": [
+            {
+              "precip_mmh_min": 0,
+              "precip_mmh_max": 2.5,
+              "grade": "feasible"
+            },
+            {
+              "precip_mmh_min": 2.6,
+              "precip_mmh_max": 10,
+              "grade": "feasible",
+              "description": "小雨，减速+增加刹车距离"
+            },
+            {
+              "precip_mmh_min": 10.1,
+              "precip_mmh_max": 30,
+              "grade": "cautious",
+              "description": "中雨，能见度降，积水滑"
+            },
+            {
+              "precip_mmh_min": 30.1,
+              "precip_mmh_max": null,
+              "grade": "inadvisable",
+              "description": "大雨/暴雨，取消"
+            }
+          ],
+          "wet_braking_distance_multiplier": 2.0,
+          "painted_surface_skid_note": "潮湿路面标线/井盖极为湿滑，需绕行"
+        },
+        "storm_abort_rules": {
+          "source": "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+          "lightning_30_30_rule": {
+            "expression": "IF flash_to_bang_seconds <= 30 THEN immediate_shelter",
+            "note": "金属框架可导电",
+            "grade": "inadvisable"
+          },
+          "thunderstorm_rule": "IF thunderstorm_forecast = true THEN reschedule; IF thunder_audible THEN abandon_ride"
+        },
+        "visibility_rules": {
+          "source": "https://apps.itd.idaho.gov/apps/dmv-audio/documents/DLChapter6.pdf",
+          "thresholds": [
+            {
+              "visibility_m_min": 500,
+              "visibility_m_max": null,
+              "grade": "feasible"
+            },
+            {
+              "visibility_m_min": 200,
+              "visibility_m_max": 500,
+              "grade": "cautious",
+              "description": "必须前后灯+亮色衣物"
+            },
+            {
+              "visibility_m_min": 100,
+              "visibility_m_max": 200,
+              "grade": "cautious",
+              "description": "差，建议中止"
+            },
+            {
+              "visibility_m_min": 0,
+              "visibility_m_max": 100,
+              "grade": "inadvisable",
+              "description": "取消"
+            }
+          ]
+        }
+      },
+      "altitude_model": {
+        "applicable": false,
+        "note": "一般骑行海拔<3000m无需海拔适应"
+      },
+      "execution_rules": {
+        "recommended_departure_window": {
+          "rule": {
+            "summer": "06:00-08:00",
+            "winter": "07:00-09:00"
+          },
+          "note": "夏季用清晨凉爽时段，冬季等天亮+气温回升"
+        },
+        "turnaround_time_rule": {
+          "expression": "MAX(start_time + total_duration_h * 0.5, sunset - 3.0)",
+          "note": "取总时长50%或日落前3小时较早者"
+        },
+        "latest_safe_finish_rule": {
+          "expression": "sunset_hour - 0.5",
+          "note": "日落前30分钟"
+        },
+        "hydration_per_hour_l": {
+          "expression": "0.5 <= x <= 1.2",
+          "note": "骑行出汗率高，每15分钟200-300ml",
+          "source": "https://www.nsca.com/education/articles/kinetic-select/hydration-and-performance/"
+        },
+        "electrolyte_mg_per_hour": {
+          "expression": "300 <= x <= 1200",
+          "note": "长途>2h需运动饮料"
+        },
+        "calorie_kcal_per_hour": {
+          "expression": "IF riding_speed_kmh <= 14 THEN 400 <= x <= 600 ELSE 600 <= x <= 900",
+          "source": "https://gyroorboard.com/blogs/learn-with-gyroor/mountain-biking-vs-road-biking-calories-which-burns-more"
+        }
+      },
+      "gear_rules": {
+        "light_kit": {
+          "trigger": {
+            "temp_c_min": 20,
+            "temp_c_max": 35,
+            "precip_mmh_max": 2.5,
+            "wind_kmh_max": 28,
+            "altitude_m_max": 2000
+          },
+          "kit_list": [
+            "骑行服(短袖短裤)",
+            "头盔",
+            "骑行手套",
+            "1L水",
+            "能量胶",
+            "补胎工具",
+            "手机"
+          ]
+        },
+        "three_season_kit": {
+          "trigger": {
+            "temp_c_min": 5,
+            "temp_c_max": 25,
+            "precip_mmh_max": 10,
+            "wind_kmh_max": 38,
+            "altitude_m_max": 3000
+          },
+          "kit_list": [
+            "长袖骑行服",
+            "防风夹克",
+            "抓绒腿套",
+            "全指手套",
+            "头盔+风镜",
+            "2L水",
+            "补胎工具+气筒",
+            "前后灯",
+            "急救包"
+          ]
+        },
+        "cold_high_alt_kit": {
+          "trigger": {
+            "temp_c_min": -5,
+            "temp_c_max": 10,
+            "precip_mmh_max": 10,
+            "wind_kmh_max": 40,
+            "altitude_m_max": 4000
+          },
+          "kit_list": [
+            "保暖内衣(羊毛)",
+            "防风防水骑行夹克",
+            "骑行保暖长裤",
+            "防水鞋套",
+            "冬季手套",
+            "头套/面罩",
+            "风镜",
+            "2L保温水",
+            "照明灯"
+          ]
+        }
+      },
+      "climb_pacing_model": {
+        "description": "坡度分段配速建议，基于功率体重比(W/kg)和坡度",
+        "source": "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/",
+        "inputs": {
+          "rider_weight_kg": "骑手体重(kg)",
+          "ftp_watts": "功能阈值功率",
+          "gradient_pct": "当前坡度百分比",
+          "climb_duration_min": "预计爬坡耗时(分钟)",
+          "altitude_m": "当前海拔",
+          "temp_c": "当前气温"
+        },
+        "w_per_kg_formula": {
+          "expression": "ftp_watts / rider_weight_kg",
+          "source": "功率体重比标准公式"
+        },
+        "power_output_by_gradient": {
+          "description": "不同坡度建议的功率输出(FTP百分比)",
+          "flat_lt_3pct": {
+            "ftp_pct": "80-90%",
+            "cadence_rpm": "85-95",
+            "note": "气动姿势为主"
+          },
+          "rolling_3_5pct": {
+            "ftp_pct": "85-95%",
+            "cadence_rpm": "80-90",
+            "note": "坐骑为主"
+          },
+          "moderate_5_8pct": {
+            "ftp_pct": "90-100%",
+            "cadence_rpm": "75-85",
+            "note": "坐骑，重心前移"
+          },
+          "steep_8_12pct": {
+            "ftp_pct": "95-105%",
+            "cadence_rpm": "65-78",
+            "note": "坐骑/站骑交替"
+          },
+          "very_steep_gt_12pct": {
+            "ftp_pct": "100-110%",
+            "cadence_rpm": "55-70",
+            "note": "频繁站骑，防止后轮空转"
+          },
+          "confidence": 0.7
+        },
+        "pacing_strategy": {
+          "short_climb_u15min": {
+            "expression": "FTP 100-110%",
+            "advice": "全力输出，站骑陡坡段"
+          },
+          "medium_climb_15_30min": {
+            "expression": "FTP 90-100%",
+            "advice": "稳定输出，前1/3保持85%留力"
+          },
+          "long_climb_30_60min": {
+            "expression": "FTP 85-95%",
+            "advice": "控制节奏，前1/2不超90%"
+          },
+          "alpine_climb_gt60min": {
+            "expression": "FTP 80-85%",
+            "advice": "省力模式，每10分钟评估一次体力"
+          }
+        },
+        "altitude_power_loss": {
+          "expression": "IF altitude_m > 1500 THEN adjusted_ftp = ftp * (1.0 - (altitude_m - 1500) * 0.0001)",
+          "note": "海拔每升1000m，FTP下降约10%",
+          "confidence": 0.8
+        },
+        "heat_power_adjustment": {
+          "expression": "IF temp_c > 30 THEN adjusted_ftp = adjusted_ftp * 0.90 ELSE IF temp_c > 35 THEN adjusted_ftp = adjusted_ftp * 0.80",
+          "note": ">30°C时功率输出下降10-20%",
+          "confidence": 0.7
+        },
+        "cadence_recommendation": {
+          "flat": "85-95 RPM",
+          "climb_lt_5pct": "80-90 RPM",
+          "climb_5_8pct": "75-85 RPM",
+          "climb_8_12pct": "65-78 RPM",
+          "climb_gt_12pct": "55-70 RPM"
+        },
+        "w_per_kg_categories": {
+          "elite": {
+            "min": 5.0,
+            "advice": "可挑战15%+坡度"
+          },
+          "competitive": {
+            "min": 3.5,
+            "max": 5.0,
+            "advice": "10-12%坡度可行"
+          },
+          "sportive": {
+            "min": 2.5,
+            "max": 3.5,
+            "advice": "8-10%坡度建议交替站坐"
+          },
+          "recreational": {
+            "min": 0,
+            "max": 2.5,
+            "advice": "<8%坡度，提前变挡防突然重脚"
+          }
+        },
+        "climbing_speed_formula": {
+          "expression": "speed_kmh = (watts * 3.6) / (rider_weight_kg * 9.8 * (gradient_pct/100 + rolling_resistance + aero_resistance))",
+          "source": "Joe Friel Climbing Power Formula, +10% for rolling+aero resistance",
+          "note": "rolling_resistance≈0.005, aero_resistance 爬坡<5%时约0.01-0.02, >8%时可忽略"
+        }
+      }
+    },
+    "motorcycle": {
+      "name": "摩托车骑行",
+      "description": "摩托车公路骑行与长途摩旅",
+      "load_model": {
+        "inputs": {
+          "distance_km": {
+            "type": "number",
+            "unit": "km",
+            "description": "骑行距离"
+          },
+          "duration_h": {
+            "type": "number",
+            "unit": "h",
+            "description": "预计时间"
+          },
+          "temp_c": {
+            "type": "number",
+            "unit": "°C",
+            "description": "平均气温"
+          },
+          "riding_speed_kmh": {
+            "type": "number",
+            "unit": "km/h",
+            "description": "巡航速度"
+          },
+          "wind_kmh": {
+            "type": "number",
+            "unit": "km/h",
+            "description": "环境风速"
+          },
+          "wind_gust_kmh": {
+            "type": "number",
+            "unit": "km/h",
+            "description": "最大阵风"
+          },
+          "precip_mmh": {
+            "type": "number",
+            "unit": "mm/h",
+            "description": "降水强度"
+          },
+          "visibility_m": {
+            "type": "number",
+            "unit": "m",
+            "description": "能见度"
+          },
+          "altitude_m": {
+            "type": "number",
+            "unit": "m",
+            "description": "最高海拔"
+          }
+        },
+        "formula": {
+          "base_duration_h": {
+            "expression": "distance_km / riding_speed_kmh"
+          },
+          "fatigue_factor": {
+            "expression": "IF base_duration_h > 4 THEN 1.0 + (base_duration_h - 4) * 0.05 ELSE 1.0"
+          },
+          "difficulty_score": {
+            "expression": "MIN(100, distance_km * 0.2 + base_duration_h * 5.0)"
+          },
+          "score_formula": {
+            "expression": "MAX(0.0, 100.0 - difficulty_score)"
+          }
+        },
+        "score_bands": {
+          "feasible": {
+            "min": 70,
+            "max": 100
+          },
+          "cautious": {
+            "min": 40,
+            "max": 69
+          },
+          "inadvisable": {
+            "min": 0,
+            "max": 39
+          }
+        }
+      },
+      "risk_model": {
+        "heat_risk_thresholds": {
+          "description": "摩托车热风险 — 骑行服隔热体感温高，但气流有一定散热效果",
+          "source": "https://www.weather.gov/ffc/hichart",
+          "thresholds": [
+            {
+              "ambient_temp_c_min": 0,
+              "ambient_temp_c_max": 30,
+              "grade": "feasible",
+              "note": "安全"
+            },
+            {
+              "ambient_temp_c_min": 30,
+              "ambient_temp_c_max": 35,
+              "grade": "cautious",
+              "note": "高温，每1小时补水+休息"
+            },
+            {
+              "ambient_temp_c_min": 35,
+              "ambient_temp_c_max": 40,
+              "grade": "cautious",
+              "note": "极端高温，限短途"
+            },
+            {
+              "ambient_temp_c_min": 40,
+              "ambient_temp_c_max": null,
+              "grade": "inadvisable",
+              "note": "热射病风险极高"
+            }
+          ]
+        },
+        "cold_risk_thresholds": {
+          "description": "摩托车风寒 — 骑行速度产生高风寒效应（有效风速=骑行速+自然风速）",
+          "source": "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+          "windchill_formula": "NWS标准: 35.74 + 0.6215*T_F - 35.75*V_mph^0.16 + 0.4275*T_F*V_mph^0.16, V=riding_speed_kmh*0.6214+wind_kmh*0.6214",
+          "effective_wind_for_chill_mph": {
+            "expression": "(riding_speed_kmh + wind_kmh) * 0.6214"
+          },
+          "sample_calculations": [
+            {
+              "ambient_c": 15,
+              "speed_kmh": 80,
+              "windchill_c": -4,
+              "note": "凉爽，需骑行服内胆"
+            },
+            {
+              "ambient_c": 10,
+              "speed_kmh": 80,
+              "windchill_c": -6,
+              "note": "偏冷"
+            },
+            {
+              "ambient_c": 5,
+              "speed_kmh": 80,
+              "windchill_c": -2,
+              "note": "寒冷"
+            },
+            {
+              "ambient_c": 0,
+              "speed_kmh": 80,
+              "windchill_c": -7,
+              "note": "严寒"
+            },
+            {
+              "ambient_c": -5,
+              "speed_kmh": 80,
+              "windchill_c": -13,
+              "note": "冻伤<15分钟"
+            },
+            {
+              "ambient_c": -10,
+              "speed_kmh": 80,
+              "windchill_c": -19,
+              "note": "冻伤<5分钟"
+            }
+          ],
+          "thresholds": [
+            {
+              "ambient_temp_c_min": 10,
+              "ambient_temp_c_max": null,
+              "grade": "feasible"
+            },
+            {
+              "ambient_temp_c_min": 5,
+              "ambient_temp_c_max": 10,
+              "grade": "feasible",
+              "note": "偏冷，需防风内胆"
+            },
+            {
+              "ambient_temp_c_min": 0,
+              "ambient_temp_c_max": 5,
+              "grade": "cautious",
+              "note": "寒冷，加热手套建议"
+            },
+            {
+              "ambient_temp_c_min": -5,
+              "ambient_temp_c_max": 0,
+              "grade": "cautious",
+              "note": "严寒，冻伤风险"
+            },
+            {
+              "ambient_temp_c_min": -10,
+              "ambient_temp_c_max": -5,
+              "grade": "inadvisable",
+              "note": "冻伤<15分钟"
+            },
+            {
+              "ambient_temp_c_min": null,
+              "ambient_temp_c_max": -10,
+              "grade": "inadvisable",
+              "note": "禁止骑行"
+            }
+          ]
+        },
+        "wind_risk_thresholds": {
+          "description": "摩托车风力 — 两轮受侧风影响远大于四轮",
+          "source": "https://ctinjurylawyers.com/when-is-the-weather-too-bad-for-riding-your-motorcycle/",
+          "thresholds": [
+            {
+              "wind_kmh_min": 0,
+              "wind_kmh_max": 20,
+              "grade": "feasible"
+            },
+            {
+              "wind_kmh_min": 20,
+              "wind_kmh_max": 30,
+              "grade": "feasible",
+              "description": "注意侧风"
+            },
+            {
+              "wind_kmh_min": 30,
+              "wind_kmh_max": 40,
+              "grade": "cautious",
+              "description": "侧风影响操控"
+            },
+            {
+              "wind_kmh_min": 40,
+              "wind_kmh_max": 55,
+              "grade": "cautious",
+              "description": "强风，骑行困难"
+            },
+            {
+              "wind_kmh_min": 55,
+              "wind_kmh_max": null,
+              "grade": "inadvisable",
+              "description": "禁止骑行"
+            }
+          ],
+          "gust_rule": "IF wind_gust_kmh > 60 THEN find_shelter = true",
+          "crosswind_hazard_locations": [
+            "桥梁",
+            "高架",
+            "开阔平原",
+            "山脊路",
+            "隧道出口"
+          ]
+        },
+        "precip_risk_thresholds": {
+          "source": "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety",
+          "thresholds": [
+            {
+              "precip_mmh_min": 0,
+              "precip_mmh_max": 2.5,
+              "grade": "feasible"
+            },
+            {
+              "precip_mmh_min": 2.6,
+              "precip_mmh_max": 5,
+              "grade": "feasible",
+              "description": "微湿路面，降速30%"
+            },
+            {
+              "precip_mmh_min": 5.1,
+              "precip_mmh_max": 15,
+              "grade": "cautious",
+              "description": "中雨，降速50%"
+            },
+            {
+              "precip_mmh_min": 15.1,
+              "precip_mmh_max": 30,
+              "grade": "inadvisable",
+              "description": "大雨，避雨等待"
+            },
+            {
+              "precip_mmh_min": 30.1,
+              "precip_mmh_max": null,
+              "grade": "inadvisable",
+              "description": "暴雨，取消"
+            }
+          ],
+          "first_hour_oil_slick": "雨后第一小时油膜最滑，减速60%",
+          "hydroplaning_risk_kmh": 80
+        },
+        "storm_abort_rules": {
+          "source": "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety",
+          "lightning_30_30_rule": {
+            "expression": "IF flash_to_bang_seconds <= 30 THEN find_building_shelter",
+            "note": "摩托无车身法拉第笼保护",
+            "grade": "inadvisable"
+          },
+          "hail_rule": "IF hail_detected THEN immediate_shelter",
+          "thunderstorm_rule": "IF thunderstorm_forecast THEN cancel_ride"
+        },
+        "visibility_rules": {
+          "source": "https://apps.itd.idaho.gov/apps/dmv-audio/documents/DLChapter6.pdf",
+          "thresholds": [
+            {
+              "visibility_m_min": 500,
+              "visibility_m_max": null,
+              "grade": "feasible"
+            },
+            {
+              "visibility_m_min": 200,
+              "visibility_m_max": 500,
+              "grade": "cautious",
+              "description": "降速50%，开前后灯"
+            },
+            {
+              "visibility_m_min": 100,
+              "visibility_m_max": 200,
+              "grade": "cautious",
+              "description": "降速70%，强烈建议中止"
+            },
+            {
+              "visibility_m_min": 0,
+              "visibility_m_max": 100,
+              "grade": "inadvisable",
+              "description": "取消骑行"
+            }
+          ],
+          "helmet_visor_antifog": "防雾喷剂可提升能见度约30%"
+        }
+      },
+      "altitude_model": {
+        "description": "高海拔对摩托车的影响",
+        "engine_power_loss_per_1000m": 0.1,
+        "engine_power_formula": {
+          "expression": "power_at_altitude = sea_level_power * (1.0 - altitude_m / 1000 * 0.10)",
+          "note": "自然吸气发动机"
+        },
+        "temp_drop_per_1000m_C": 6.5,
+        "note": "涡轮增压发动机功率损失约5%/1000m"
+      },
+      "execution_rules": {
+        "recommended_departure_window": {
+          "rule": {
+            "summer": "07:00-09:00",
+            "winter": "08:00-10:00"
+          },
+          "note": "避开晨雾/结冰/早晚高峰"
+        },
+        "turnaround_time_rule": {
+          "expression": "sunset_hour - 2.0",
+          "note": "日落前2小时，摩托需更多缓冲时间"
+        },
+        "latest_safe_finish_rule": {
+          "expression": "sunset_hour - 0.5",
+          "note": "日落前30分钟"
+        },
+        "hydration_per_hour_l": {
+          "expression": "0.3 <= x <= 0.8",
+          "note": "骑行服内侧闷热，容易脱水不自知"
+        },
+        "electrolyte_mg_per_hour": {
+          "expression": "IF temp_c > 30 THEN 200 <= x <= 600 ELSE 0",
+          "note": "热天补充，冷天可不补"
+        },
+        "calorie_kcal_per_hour": {
+          "expression": "100 <= x <= 300",
+          "source": "https://us.saint.cc/blogs/journal/does-riding-a-motorcycle-burn-calories",
+          "note": "远低于人力运动"
+        },
+        "fatigue_management": {
+          "max_continuous_riding_hours": 2.0,
+          "rest_break_minutes": 15,
+          "max_daily_distance_km": 400,
+          "max_daily_hours_inclusive_rest": 8.0,
+          "source": "https://www.roadrunner.travel/articles/riding-in-cold-weather/"
+        }
+      },
+      "gear_rules": {
+        "light_kit": {
+          "trigger": {
+            "temp_c_min": 20,
+            "temp_c_max": 40,
+            "precip_mmh_max": 2.5,
+            "wind_kmh_max": 28,
+            "altitude_m_max": 2000
+          },
+          "kit_list": [
+            "夏季骑行服(网眼)",
+            "头盔",
+            "手套",
+            "骑行靴",
+            "护膝",
+            "防晒"
+          ]
+        },
+        "three_season_kit": {
+          "trigger": {
+            "temp_c_min": 10,
+            "temp_c_max": 30,
+            "precip_mmh_max": 10,
+            "wind_kmh_max": 38,
+            "altitude_m_max": 3000
+          },
+          "kit_list": [
+            "四季骑行服(可拆内胆)",
+            "头盔+风镜",
+            "防水手套",
+            "骑行靴",
+            "雨衣",
+            "CE护具"
+          ]
+        },
+        "cold_high_alt_kit": {
+          "trigger": {
+            "temp_c_min": -10,
+            "temp_c_max": 15,
+            "precip_mmh_max": 15,
+            "wind_kmh_max": 55,
+            "altitude_m_max": 5000
+          },
+          "kit_list": [
+            "电加热骑行服/手套",
+            "防风防水连体骑行服",
+            "冬季头盔(防雾片)",
+            "滑雪级手套",
+            "防水靴+雪套",
+            "CE2级护具"
+          ]
+        }
+      },
+      "fatigue_risk_model": {
+        "description": "摩托车连续骑行疲劳风险模型，综合时长、温度、风速",
+        "source": "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "inputs": {
+          "continuous_riding_h": "连续骑行时长（小时）",
+          "daily_distance_km": "当天总里程",
+          "temp_c": "当前气温",
+          "wind_kmh": "当前风速",
+          "hours_since_last_break": "距离上次休息的小时数"
+        },
+        "base_fatigue_score": {
+          "description": "基础疲劳分 0-100",
+          "formula": {
+            "expression": "MIN(100, continuous_riding_h * 15 + MIN(50, MAX(0, daily_distance_km - 200) * 0.2))"
+          },
+          "confidence": 0.65
+        },
+        "temperature_modifier": {
+          "description": "高温/低温增加疲劳",
+          "formula": {
+            "expression": "IF temp_c > 35 THEN +15 ELSE IF temp_c > 30 THEN +10 ELSE IF temp_c < 0 THEN +10 ELSE IF temp_c < 5 THEN +5 ELSE 0"
+          },
+          "confidence": 0.6
+        },
+        "wind_fatigue_modifier": {
+          "description": "大风增加体力消耗",
+          "formula": {
+            "expression": "IF wind_kmh >= 40 THEN +15 ELSE IF wind_kmh >= 30 THEN +10 ELSE IF wind_kmh >= 20 THEN +5 ELSE 0"
+          },
+          "note": "侧风需持续肌肉对抗，等效额外体力输出约50-100W",
+          "confidence": 0.65
+        },
+        "fatigue_grade": {
+          "expression": "base_fatigue_score + temperature_modifier + wind_fatigue_modifier",
+          "grade_bands": [
+            {
+              "score_min": 0,
+              "score_max": 30,
+              "grade": "feasible",
+              "advice": "状态良好，每2h休息15min"
+            },
+            {
+              "score_min": 31,
+              "score_max": 50,
+              "grade": "cautious",
+              "advice": "轻度疲劳，建议增加休息频率"
+            },
+            {
+              "score_min": 51,
+              "score_max": 70,
+              "grade": "cautious",
+              "advice": "中度疲劳，反应延迟约15%，建议停止骑行"
+            },
+            {
+              "score_min": 71,
+              "score_max": null,
+              "grade": "inadvisable",
+              "advice": "重度疲劳，反应延迟>25%，等效酒驾风险，必须停"
+            }
+          ]
+        },
+        "mandatory_break_rule": {
+          "expression": "IF continuous_riding_h >= 2.0 THEN break_15min = true",
+          "note": "NTSB疲劳研究建议每2h强制休息",
+          "confidence": 0.8
+        },
+        "daily_limit_rule": {
+          "expression": "IF daily_distance_km > 400 THEN grade = inadvisable",
+          "note": "单日400km或8h极限，超出建议休整",
+          "confidence": 0.7
+        },
+        "ntsb_fatigue_finding": "NTSB报告显示睡眠<8h的摩托车事故风险提升40%（OR=1.40, 95%CI: 0.79-2.49）",
+        "fatigue_vs_drunk_comparison": "连续17h不睡约等于BAC 0.05%（接近酒驾临界值），连续24h≈0.10%（法定酒驾）"
+      }
+    }
+  },
+  "v2_delta_meta": {
+    "version": "2.0.0-delta",
+    "generated_date": "2026-05-17",
+    "description": "第二轮V3挖：规则实战化增量包 — 动态折返/疲劳模型/湿热联动/爬坡配速/红线触发器/证据强度",
+    "extends": "decision_rules_v1.json",
+    "abort_triggers": {
+      "description": "红线触发器 — 满足任一条即判定为'inadvisable'（不建议继续），覆盖四模式",
+      "source": "https://www.weather.gov/safety/lightning-sports + NWS criteria + CDC altitude guidelines",
+      "evaluation": "OR逻辑：任一trigger激活时，最终grade无条件=inadvisable",
+      "triggers": [
+        {
+          "id": "ABORT-001",
+          "mode": "all",
+          "name": "雷击红线",
+          "condition": {
+            "expression": "flash_to_bang_seconds <= 30 OR thunder_audible = true"
+          },
+          "action": "立即寻找遮蔽建筑/车辆，30分钟内不可恢复",
+          "confidence": 0.95
+        },
+        {
+          "id": "ABORT-002",
+          "mode": "mountaineering",
+          "name": "白化/暴雪红线",
+          "condition": {
+            "expression": "visibility_m < 30 AND (snow_active = true OR fog_active = true)"
+          },
+          "action": "停止前进，就地保护/挖雪洞，用GPS记录位置等待",
+          "confidence": 0.9
+        },
+        {
+          "id": "ABORT-003",
+          "mode": "all",
+          "name": "极端风寒红线",
+          "condition": {
+            "expression": "windchill_c <= -20"
+          },
+          "action": "暴露皮肤10分钟即冻伤，立即返回或寻找遮蔽",
+          "confidence": 0.85
+        },
+        {
+          "id": "ABORT-004",
+          "mode": "all",
+          "name": "极端炎热红线",
+          "condition": {
+            "expression": "heat_index_c >= 54 OR (temp_c >= 40 AND rh_pct >= 50)"
+          },
+          "action": "热射病高度可能，立即停止活动，进入空调环境",
+          "confidence": 0.9
+        },
+        {
+          "id": "ABORT-005",
+          "mode": "mountaineering",
+          "name": "中度AMS红线",
+          "condition": {
+            "expression": "headache_severe = true AND (vomiting = true OR ataxia = true)"
+          },
+          "action": "立即下撤至少500m（500m是最低有效缓解距离）",
+          "confidence": 0.95
+        },
+        {
+          "id": "ABORT-006",
+          "mode": "mountaineering",
+          "name": "降雪速率红线",
+          "condition": {
+            "expression": "snow_accumulation_cmh >= 5"
+          },
+          "action": "积雪速率>5cm/h时雪崩+失温双重风险，立即下撤",
+          "confidence": 0.8
+        },
+        {
+          "id": "ABORT-007",
+          "mode": "motorcycle",
+          "name": "极端侧风红线",
+          "condition": {
+            "expression": "sustained_wind_kmh >= 55 OR wind_gust_kmh >= 65"
+          },
+          "action": "两轮无法安全操控，立即找遮蔽或停车等待",
+          "confidence": 0.75
+        },
+        {
+          "id": "ABORT-008",
+          "mode": "motorcycle",
+          "name": "冰点降水红线",
+          "condition": {
+            "expression": "temp_c <= 0 AND (precip_active = true OR road_wet = true)"
+          },
+          "action": "黑冰风险不可控，必须停止骑行",
+          "confidence": 0.85
+        },
+        {
+          "id": "ABORT-009",
+          "mode": "all",
+          "name": "能见度极低红线",
+          "condition": {
+            "expression": "visibility_m < 100"
+          },
+          "action": "无法安全导航或避让障碍，停止活动",
+          "confidence": 0.85
+        },
+        {
+          "id": "ABORT-010",
+          "mode": "cycling",
+          "name": "冰面骑行红线",
+          "condition": {
+            "expression": "road_ice_present = true OR (temp_c <= -2 AND road_wet)"
+          },
+          "action": "两轮在冰面无法安全刹车或转弯",
+          "confidence": 0.8
+        },
+        {
+          "id": "ABORT-011",
+          "mode": "all",
+          "name": "灾害预警红线",
+          "condition": {
+            "expression": "official_warning = 'red_flag' OR 'typhoon' OR 'flash_flood' OR 'avalanche'"
+          },
+          "action": "官方灾害预警发布时自动触发",
+          "confidence": 0.95
+        },
+        {
+          "id": "ABORT-012",
+          "mode": "hiking",
+          "name": "洪水/山洪红线",
+          "condition": {
+            "expression": "flash_flood_warning = true OR water_crossing_depth_cm > 50"
+          },
+          "action": "溪流水深>50cm不可通过，上游降水可能引发山洪",
+          "confidence": 0.85
+        }
+      ]
+    },
+    "confidence_scores": {
+      "description": "每条规则/阈值的证据强度评分 0-1，基于来源类型、研究证据等级、共识程度",
+      "method": "adapted from GRADE framework (Grading of Recommendations Assessment, Development and Evaluation)",
+      "scale": {
+        "0.9-1.0": "高置信度 — 多个独立权威来源一致支持，有大规模临床/流行病学数据",
+        "0.7-0.89": "中高置信度 — 单一权威来源或少数研究支持，逻辑链完整",
+        "0.5-0.69": "中等置信度 — 部分研究支持但证据有限，或有间接推断成分",
+        "0.3-0.49": "低置信度 — 经验法则/专家意见/无直接证据支持",
+        "0.0-0.29": "极低置信度 — 初步假设，需进一步验证"
+      },
+      "ratings": {
+        "lightning_30_30_rule": {
+          "score": 0.95,
+          "source": "https://www.weather.gov/safety/lightning-sports",
+          "evidence": "NOAA/NWS官方指南，30/30规则被NATA/NCAA等所有运动组织采纳，无争议",
+          "certainty": "high"
+        },
+        "wbgt_threshold_32_2C": {
+          "score": 0.85,
+          "source": "https://en.wikipedia.org/wiki/Wet-bulb_globe_temperature",
+          "evidence": "美军1950年代至今的WBGT五级旗系统，被ACSM/NATA/NFHS采用。PSU研究认为真实极限更低(25-31°C)",
+          "certainty": "moderate_high",
+          "controversy": "PSU 2022研究指出年轻健康人WBGT生存极限25-31°C(非35°C)，军方阈值可能偏高"
+        },
+        "altitude_ascent_500m_per_day": {
+          "score": 0.9,
+          "source": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+          "evidence": "CDC/WMS 核心指南，多篇RCT支持，用于珠峰商业攀登标准",
+          "certainty": "high"
+        },
+        "cycling_wind_30kmh_threshold": {
+          "score": 0.6,
+          "source": "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+          "evidence": "无大规模流行病学研究支持具体阈值，主要来自骑行社区经验",
+          "certainty": "moderate"
+        },
+        "motorcycle_wind_55kmh_threshold": {
+          "score": 0.5,
+          "source": "https://ctinjurylawyers.com/when-is-the-weather-too-bad-for-riding-your-motorcycle/",
+          "evidence": "事故律师博客/骑行社区共识，非官方标准。FHWA/MCCS有强风与事故相关性数据但未给具体阈值",
+          "certainty": "low_moderate"
+        },
+        "hiking_hydration_1_5L_max": {
+          "score": 0.85,
+          "source": "https://www.dhs.gov/sites/default/files/publications/21_0929_cbp_scale-hydration-chart.pdf",
+          "evidence": "ACSM/NATA指南，低钠血症病例系列支持",
+          "certainty": "high"
+        },
+        "hiking_calorie_400_700_kcal": {
+          "score": 0.55,
+          "source": "https://www.outsideonline.com/outdoor-adventure/hiking-and-backpacking/ultimate-backpacking-calorie-estimator/",
+          "evidence": "Pandolf方程为间接计算，个体差异±30%",
+          "certainty": "moderate"
+        },
+        "motorcycle_fatigue_2h_break": {
+          "score": 0.65,
+          "source": "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+          "evidence": "FHWA MCCS报告+睡眠基金会数据，但2h阈值有争议（部分来源建议1.5h）",
+          "certainty": "moderate"
+        },
+        "wet_bulb_tolerance_25_31C": {
+          "score": 0.8,
+          "source": "https://www.psu.edu/news/research/story/humans-cant-endure-temperatures-and-humidities-high-previously-thought",
+          "evidence": "Penn State 2022人体实验(35名受试者)，Journal of Applied Physiology发表。样本量有限但实验设计严谨",
+          "certainty": "moderate_high"
+        },
+        "cycling_climb_W_per_kg": {
+          "score": 0.85,
+          "source": "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/",
+          "evidence": "骑行生理学基本公式，功率体重比=FTP/体重，被所有训练系统采用",
+          "certainty": "high"
+        },
+        "freezing_ice_abort_0C": {
+          "score": 0.7,
+          "source": "多来源综合",
+          "evidence": "高中物理（冰点水结冰）+ 道路安全数据支持，但出行的实际事故率依赖于微观路面条件",
+          "certainty": "moderate_high"
+        },
+        "ams_mv_grade_diagnostic": {
+          "score": 0.9,
+          "source": "https://wms.org/magazine/magazine/1463/2024-Altitude-Summary/default.aspx",
+          "evidence": "Lake Louise Score经WMS多年验证，下撤作为唯一有效治疗无争议",
+          "certainty": "high"
+        }
+      }
+    }
+  },
+  "abort_triggers_v2": {
+    "description": "红线触发器 — 满足任一条即判定为'inadvisable'（不建议继续），覆盖四模式",
+    "source": "https://www.weather.gov/safety/lightning-sports + NWS criteria + CDC altitude guidelines",
+    "evaluation": "OR逻辑：任一trigger激活时，最终grade无条件=inadvisable",
+    "triggers": [
+      {
+        "id": "ABORT-001",
+        "mode": "all",
+        "name": "雷击红线",
+        "condition": {
+          "expression": "flash_to_bang_seconds <= 30 OR thunder_audible = true"
+        },
+        "action": "立即寻找遮蔽建筑/车辆，30分钟内不可恢复",
+        "confidence": 0.95
+      },
+      {
+        "id": "ABORT-002",
+        "mode": "mountaineering",
+        "name": "白化/暴雪红线",
+        "condition": {
+          "expression": "visibility_m < 30 AND (snow_active = true OR fog_active = true)"
+        },
+        "action": "停止前进，就地保护/挖雪洞，用GPS记录位置等待",
+        "confidence": 0.9
+      },
+      {
+        "id": "ABORT-003",
+        "mode": "all",
+        "name": "极端风寒红线",
+        "condition": {
+          "expression": "windchill_c <= -20"
+        },
+        "action": "暴露皮肤10分钟即冻伤，立即返回或寻找遮蔽",
+        "confidence": 0.85
+      },
+      {
+        "id": "ABORT-004",
+        "mode": "all",
+        "name": "极端炎热红线",
+        "condition": {
+          "expression": "heat_index_c >= 54 OR (temp_c >= 40 AND rh_pct >= 50)"
+        },
+        "action": "热射病高度可能，立即停止活动，进入空调环境",
+        "confidence": 0.9
+      },
+      {
+        "id": "ABORT-005",
+        "mode": "mountaineering",
+        "name": "中度AMS红线",
+        "condition": {
+          "expression": "headache_severe = true AND (vomiting = true OR ataxia = true)"
+        },
+        "action": "立即下撤至少500m（500m是最低有效缓解距离）",
+        "confidence": 0.95
+      },
+      {
+        "id": "ABORT-006",
+        "mode": "mountaineering",
+        "name": "降雪速率红线",
+        "condition": {
+          "expression": "snow_accumulation_cmh >= 5"
+        },
+        "action": "积雪速率>5cm/h时雪崩+失温双重风险，立即下撤",
+        "confidence": 0.8
+      },
+      {
+        "id": "ABORT-007",
+        "mode": "motorcycle",
+        "name": "极端侧风红线",
+        "condition": {
+          "expression": "sustained_wind_kmh >= 55 OR wind_gust_kmh >= 65"
+        },
+        "action": "两轮无法安全操控，立即找遮蔽或停车等待",
+        "confidence": 0.75
+      },
+      {
+        "id": "ABORT-008",
+        "mode": "motorcycle",
+        "name": "冰点降水红线",
+        "condition": {
+          "expression": "temp_c <= 0 AND (precip_active = true OR road_wet = true)"
+        },
+        "action": "黑冰风险不可控，必须停止骑行",
+        "confidence": 0.85
+      },
+      {
+        "id": "ABORT-009",
+        "mode": "all",
+        "name": "能见度极低红线",
+        "condition": {
+          "expression": "visibility_m < 100"
+        },
+        "action": "无法安全导航或避让障碍，停止活动",
+        "confidence": 0.85
+      },
+      {
+        "id": "ABORT-010",
+        "mode": "cycling",
+        "name": "冰面骑行红线",
+        "condition": {
+          "expression": "road_ice_present = true OR (temp_c <= -2 AND road_wet)"
+        },
+        "action": "两轮在冰面无法安全刹车或转弯",
+        "confidence": 0.8
+      },
+      {
+        "id": "ABORT-011",
+        "mode": "all",
+        "name": "灾害预警红线",
+        "condition": {
+          "expression": "official_warning = 'red_flag' OR 'typhoon' OR 'flash_flood' OR 'avalanche'"
+        },
+        "action": "官方灾害预警发布时自动触发",
+        "confidence": 0.95
+      },
+      {
+        "id": "ABORT-012",
+        "mode": "hiking",
+        "name": "洪水/山洪红线",
+        "condition": {
+          "expression": "flash_flood_warning = true OR water_crossing_depth_cm > 50"
+        },
+        "action": "溪流水深>50cm不可通过，上游降水可能引发山洪",
+        "confidence": 0.85
+      }
+    ]
+  },
+  "confidence_scores_v2": {
+    "description": "每条规则/阈值的证据强度评分 0-1，基于来源类型、研究证据等级、共识程度",
+    "method": "adapted from GRADE framework (Grading of Recommendations Assessment, Development and Evaluation)",
+    "scale": {
+      "0.9-1.0": "高置信度 — 多个独立权威来源一致支持，有大规模临床/流行病学数据",
+      "0.7-0.89": "中高置信度 — 单一权威来源或少数研究支持，逻辑链完整",
+      "0.5-0.69": "中等置信度 — 部分研究支持但证据有限，或有间接推断成分",
+      "0.3-0.49": "低置信度 — 经验法则/专家意见/无直接证据支持",
+      "0.0-0.29": "极低置信度 — 初步假设，需进一步验证"
+    },
+    "ratings": {
+      "lightning_30_30_rule": {
+        "score": 0.95,
+        "source": "https://www.weather.gov/safety/lightning-sports",
+        "evidence": "NOAA/NWS官方指南，30/30规则被NATA/NCAA等所有运动组织采纳，无争议",
+        "certainty": "high"
+      },
+      "wbgt_threshold_32_2C": {
+        "score": 0.85,
+        "source": "https://en.wikipedia.org/wiki/Wet-bulb_globe_temperature",
+        "evidence": "美军1950年代至今的WBGT五级旗系统，被ACSM/NATA/NFHS采用。PSU研究认为真实极限更低(25-31°C)",
+        "certainty": "moderate_high",
+        "controversy": "PSU 2022研究指出年轻健康人WBGT生存极限25-31°C(非35°C)，军方阈值可能偏高"
+      },
+      "altitude_ascent_500m_per_day": {
+        "score": 0.9,
+        "source": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "evidence": "CDC/WMS 核心指南，多篇RCT支持，用于珠峰商业攀登标准",
+        "certainty": "high"
+      },
+      "cycling_wind_30kmh_threshold": {
+        "score": 0.6,
+        "source": "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "evidence": "无大规模流行病学研究支持具体阈值，主要来自骑行社区经验",
+        "certainty": "moderate"
+      },
+      "motorcycle_wind_55kmh_threshold": {
+        "score": 0.5,
+        "source": "https://ctinjurylawyers.com/when-is-the-weather-too-bad-for-riding-your-motorcycle/",
+        "evidence": "事故律师博客/骑行社区共识，非官方标准。FHWA/MCCS有强风与事故相关性数据但未给具体阈值",
+        "certainty": "low_moderate"
+      },
+      "hiking_hydration_1_5L_max": {
+        "score": 0.85,
+        "source": "https://www.dhs.gov/sites/default/files/publications/21_0929_cbp_scale-hydration-chart.pdf",
+        "evidence": "ACSM/NATA指南，低钠血症病例系列支持",
+        "certainty": "high"
+      },
+      "hiking_calorie_400_700_kcal": {
+        "score": 0.55,
+        "source": "https://www.outsideonline.com/outdoor-adventure/hiking-and-backpacking/ultimate-backpacking-calorie-estimator/",
+        "evidence": "Pandolf方程为间接计算，个体差异±30%",
+        "certainty": "moderate"
+      },
+      "motorcycle_fatigue_2h_break": {
+        "score": 0.65,
+        "source": "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "evidence": "FHWA MCCS报告+睡眠基金会数据，但2h阈值有争议（部分来源建议1.5h）",
+        "certainty": "moderate"
+      },
+      "wet_bulb_tolerance_25_31C": {
+        "score": 0.8,
+        "source": "https://www.psu.edu/news/research/story/humans-cant-endure-temperatures-and-humidities-high-previously-thought",
+        "evidence": "Penn State 2022人体实验(35名受试者)，Journal of Applied Physiology发表。样本量有限但实验设计严谨",
+        "certainty": "moderate_high"
+      },
+      "cycling_climb_W_per_kg": {
+        "score": 0.85,
+        "source": "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/",
+        "evidence": "骑行生理学基本公式，功率体重比=FTP/体重，被所有训练系统采用",
+        "certainty": "high"
+      },
+      "freezing_ice_abort_0C": {
+        "score": 0.7,
+        "source": "多来源综合",
+        "evidence": "高中物理（冰点水结冰）+ 道路安全数据支持，但出行的实际事故率依赖于微观路面条件",
+        "certainty": "moderate_high"
+      },
+      "ams_mv_grade_diagnostic": {
+        "score": 0.9,
+        "source": "https://wms.org/magazine/magazine/1463/2024-Altitude-Summary/default.aspx",
+        "evidence": "Lake Louise Score经WMS多年验证，下撤作为唯一有效治疗无争议",
+        "certainty": "high"
+      }
+    }
+  }
+}

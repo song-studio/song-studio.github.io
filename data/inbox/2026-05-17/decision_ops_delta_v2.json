@@ -1,0 +1,1556 @@
+{
+  "version": "2.0.0",
+  "generated_date": "2026-05-17",
+  "description": "规则引擎补强 v2",
+  "abort_triggers_refined": [
+    {
+      "rule_id": "ABT-001",
+      "condition_expression": "flash_to_bang_seconds <= 30 OR thunder_audible = true",
+      "grade": "inadvisable",
+      "action_text": "立即停止所有活动进入安全遮蔽建筑。勿在帐篷树下。30分钟后确认无闪电方可恢复",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning-sports"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-002",
+      "condition_expression": "lightning_distance_km <= 9.26",
+      "grade": "inadvisable",
+      "action_text": "闪电距<=9.26kmNATA标准。所有人员必须在安全建筑内",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.nata.org/sites/default/files/2025-08/lightning_safety_for_athletics_and_recreation.pdf"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-003",
+      "condition_expression": "windchill_c <= -25",
+      "grade": "inadvisable",
+      "action_text": "风寒<=-25C暴露皮肤15分钟即可冻伤。立即停止活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/bou/windchill"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-004",
+      "condition_expression": "windchill_c <= -35",
+      "grade": "inadvisable",
+      "action_text": "风寒<=-35C时5分钟即冻伤。绝对禁止户外活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/bou/windchill"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-005",
+      "condition_expression": "heat_index_c >= 54",
+      "grade": "inadvisable",
+      "action_text": "热指数>=54C热射病高度可能。立即停止一切户外活动进入空调环境",
+      "applicable_modes": [
+        "hiking",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/ffc/hichart"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-006",
+      "condition_expression": "wbgt_c >= 32.2",
+      "grade": "inadvisable",
+      "action_text": "WBGT>=32.2C黑旗标准。取消所有户外体育活动",
+      "applicable_modes": [
+        "hiking",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Wet-bulb_globe_temperature"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "ABT-007",
+      "condition_expression": "sustained_wind_kmh >= 62 AND mode IN [hiking,mountaineering,cycling]",
+      "grade": "inadvisable",
+      "action_text": "持续风速>=62km/h。行走困难立即取消活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling"
+      ],
+      "source_urls": [
+        "https://mountain-hiking.com/hike-safe-wind/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "ABT-008",
+      "condition_expression": "sustained_wind_kmh >= 55 AND mode == motorcycling",
+      "grade": "inadvisable",
+      "action_text": "摩托车侧风>=55km/h。两轮无法安全操控立即停车",
+      "applicable_modes": [
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://ctinjurylawyers.com/when-is-the-weather-too-bad-for-riding-your-motorcycle/"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-009",
+      "condition_expression": "wind_gust_kmh >= 65",
+      "grade": "inadvisable",
+      "action_text": "阵风>=65km/h所有模式均无法安全活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://mountain-hiking.com/hike-safe-wind/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "ABT-010",
+      "condition_expression": "temp_c <= 0 AND precip_active AND mode IN [cycling,motorcycling]",
+      "grade": "inadvisable",
+      "action_text": "冰点加降水等于黑冰风险。两轮车辆无法安全行驶",
+      "applicable_modes": [
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-011",
+      "condition_expression": "visibility_m < 100",
+      "grade": "inadvisable",
+      "action_text": "能见度<100m无法安全导航。停止活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://apps.itd.idaho.gov/apps/dmv-audio/documents/DLChapter6.pdf"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-012",
+      "condition_expression": "precip_mmh >= 50 AND mode == hiking",
+      "grade": "inadvisable",
+      "action_text": "暴雨>=50mm/h山洪风险。取消徒步",
+      "applicable_modes": [
+        "hiking"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/ctp/wwacriteria"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-013",
+      "condition_expression": "precip_mmh >= 30 AND mode IN [cycling,motorcycling]",
+      "grade": "inadvisable",
+      "action_text": "大雨>=30mm/h两轮制动距离大幅延长加能见度骤降",
+      "applicable_modes": [
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-014",
+      "condition_expression": "snow_accumulation_cmh >= 5 AND mode == mountaineering",
+      "grade": "inadvisable",
+      "action_text": "积雪速率>=5cm/h雪崩加失温双风险。立即下撤",
+      "applicable_modes": [
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://www.avalanches.org/education/avalanche-danger-scale-2/"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-015",
+      "condition_expression": "avalanche_level >= 4",
+      "grade": "inadvisable",
+      "action_text": "雪崩等级>=4。禁止登山或雪地徒步活动",
+      "applicable_modes": [
+        "mountaineering",
+        "hiking"
+      ],
+      "source_urls": [
+        "https://www.avalanches.org/education/avalanche-danger-scale-2/"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-016",
+      "condition_expression": "lake_louise_score >= 6 AND mode == mountaineering",
+      "grade": "inadvisable",
+      "action_text": "中度AMS。LLS>=6。下撤至少500m",
+      "applicable_modes": [
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-017",
+      "condition_expression": "hape_hace_suspected = true",
+      "grade": "inadvisable",
+      "action_text": "疑似HAPE或HACE。紧急下撤加氧气加药物求救",
+      "applicable_modes": [
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://theuiaa.org/documents/mountainmedicine/English_UIAA_MedCom_Rec_No_2_AMS_HAPE_HACE_2012_V3-2.pdf"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-018",
+      "condition_expression": "typhoon_warning_within_48h",
+      "grade": "inadvisable",
+      "action_text": "台风48h内直接影响。取消一切户外活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning-sports"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    }
+  ],
+  "turnaround_time_refined": {
+    "formulas": {
+      "naismith": "total_h = distance_km/5 + elevation_gain_m/600",
+      "tobler": "6.0*exp(-3.5*abs(slope_pct/100+0.05))",
+      "descent": "IF slope>12 add 10min per 300m descent"
+    },
+    "terrain_multipliers": {
+      "dry": 1.0,
+      "snow": 1.3,
+      "glacier": 1.5,
+      "scramble": 1.8,
+      "low_vis": 2.0,
+      "heavy_pack": 1.2,
+      "alt_4000": 1.3,
+      "alt_5000": 1.5
+    },
+    "rules": [
+      {
+        "rule_id": "TAT-001",
+        "condition_expression": "estimated_round_trip_h >= sunset_hour - start_hour - 0.5",
+        "grade": "inadvisable",
+        "action_text": "预估总时长超过可用日照时间含30min裕度。推迟或取消",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering",
+          "cycling"
+        ],
+        "source_urls": [
+          "https://www.mountaineers.org/blog/the-importance-of-turnaround-times"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-002",
+        "condition_expression": "current_time >= sunset_hour - descent_h * terrain_mult - 0.5",
+        "grade": "inadvisable",
+        "action_text": "最晚折返时间到。日落减下撤时间含地形乘数再减30min。立即调头",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering",
+          "cycling",
+          "motorcycle"
+        ],
+        "source_urls": [
+          "https://eikenshop.com/blogs/the-traveller-notebook/how-to-plan-a-safe-mountaineering-outing"
+        ],
+        "data_confidence": "medium",
+        "source_tier": "research"
+      },
+      {
+        "rule_id": "TAT-003",
+        "condition_expression": "elapsed_h >= total_h * 0.5 AND remaining_km > total_km * 0.4",
+        "grade": "cautious",
+        "action_text": "已过半程时间但还有40%以上距离未走。实际速度低于规划。应该折返",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering"
+        ],
+        "source_urls": [
+          "https://www.mountaineers.org/blog/the-importance-of-turnaround-times"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-004",
+        "condition_expression": "hours_since_noon >= 4 AND altitude_m > 3500 AND ascending",
+        "grade": "cautious",
+        "action_text": "下午4点后仍在>3500m上升。午后雷暴雪桥软化能见度降三重风险",
+        "applicable_modes": [
+          "mountaineering"
+        ],
+        "source_urls": [
+          "https://www.alpinesavvy.com/blog/decision-making-matrix-for-alpine-climbing"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-005",
+        "condition_expression": "cumulus_rapid_growth AND temp_drop_30min > 2 AND wind_inc_30min > 15",
+        "grade": "inadvisable",
+        "action_text": "天气30分钟内急转。立即折返不等原定折返时间",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering",
+          "cycling",
+          "motorcycle"
+        ],
+        "source_urls": [
+          "https://www.alpineinstitute.com/altitude-illness-hape-and-hace/"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-006",
+        "condition_expression": "ascent_complete AND NOT descent_started AND rest_min >= 15",
+        "grade": "cautious",
+        "action_text": "登顶后休息超过15分钟将导致下撤延后。登顶只完成了一半",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering"
+        ],
+        "source_urls": [
+          "https://www.mountaineers.org/blog/the-importance-of-turnaround-times"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-007",
+        "condition_expression": "descending AND current_time >= sunset_hour - 0.5",
+        "grade": "cautious",
+        "action_text": "天黑前30分钟仍在路上。评估是否需要头灯或加速",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering",
+          "cycling"
+        ],
+        "source_urls": [
+          "https://www.nps.gov/articles/hike-safely.htm"
+        ],
+        "data_confidence": "high",
+        "source_tier": "official"
+      }
+    ]
+  },
+  "scenario_simulation_rules": [
+    {
+      "rule_id": "SIM-001",
+      "condition_expression": "forecast_pm_thunderstorm_pct >= 40 AND current_elevation_m > route_max_elevation_m * 0.7",
+      "grade": "cautious",
+      "action_text": "下午雷暴>=40%且已进入路线下半段。建议在较低海拔完成或11:00前登顶",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning-sports"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "SIM-002",
+      "condition_expression": "abs(forecast_temp_change_24h) >= 10",
+      "grade": "cautious",
+      "action_text": "未来24h温差>=10C。着装方案可能失效。评估备选",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "SIM-003",
+      "condition_expression": "wind_forecast_increase_kmh >= 20 AND route_exposed_ridge_m > 0",
+      "grade": "cautious",
+      "action_text": "预报风速增>=20km/h且含暴露山脊段。提前决策是否通过",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://mountain-hiking.com/hike-safe-wind/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "SIM-004",
+      "condition_expression": "distance_km >= 100 AND no_shelter_km >= 30 AND precip_prob_pct >= 60",
+      "grade": "cautious",
+      "action_text": "长途>=100km且30km内无遮蔽且降水概率>=60。建议带全套雨衣",
+      "applicable_modes": [
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "SIM-005",
+      "condition_expression": "continuous_riding_h >= 3 AND fatigue_score > 50 AND (temp_c > 30 OR temp_c < 5)",
+      "grade": "cautious",
+      "action_text": "连续>=3h加疲劳>50加极端温。温度使疲劳加速",
+      "applicable_modes": [
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "SIM-006",
+      "condition_expression": "altitude_m >= 4000 AND duration_days >= 5 AND days_without_rest >= 3",
+      "grade": "cautious",
+      "action_text": "海拔>=4000m加连续5天加>3天无休整。AMS恶化风险上升。强制休整",
+      "applicable_modes": [
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "SIM-007",
+      "condition_expression": "distance_km >= 20 AND elevation_gain_m_per_km >= 80",
+      "grade": "cautious",
+      "action_text": "长途>=20km加高爬升密度>=80m/km。后半程崩溃概率高",
+      "applicable_modes": [
+        "hiking"
+      ],
+      "source_urls": [
+        "https://www.outsideonline.com/outdoor-adventure/hiking-and-backpacking/ultimate-backpacking-calorie-estimator/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "SIM-008",
+      "condition_expression": "snow_ground AND temp_rise_24h >= 8 AND slope >= 30",
+      "grade": "cautious",
+      "action_text": "雪地加24h升>=8C加坡度>=30。湿雪雪崩风险上升",
+      "applicable_modes": [
+        "mountaineering",
+        "hiking"
+      ],
+      "source_urls": [
+        "https://www.avalanches.org/education/avalanche-danger-scale-2/"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "SIM-009",
+      "condition_expression": "rh >= 75 AND temp_c <= 12 AND wind_kmh >= 15 AND mode NOT mountaineering",
+      "grade": "cautious",
+      "action_text": "高湿>=75加低温<=12加风>=15。低体温风险加速。防风防水层必需",
+      "applicable_modes": [
+        "hiking",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://deepdive-mt.com/en/day-hiking-japan-mountain-selection-essential-gear/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "SIM-010",
+      "condition_expression": "daily_km >= 300 AND continuous_h >= 5 AND mode == motorcycling",
+      "grade": "cautious",
+      "action_text": "单日>=300km加连续>=5h。反应延長15-25等效BAC0.05。强制休息30min",
+      "applicable_modes": [
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    }
+  ],
+  "mode_specific_execution_actions": [
+    {
+      "rule_id": "EXE-H01",
+      "condition_expression": "heat_index_c >= 41",
+      "grade": "inadvisable",
+      "action_text": "立即停止徒步找空调或遮荫环境。冷水浸毛巾敷颈腋腹股沟。每15min饮水200ml加电解质",
+      "applicable_mode": "hiking",
+      "source_urls": [
+        "https://www.weather.gov/rnk/outdoorsheat",
+        "https://www.weather.gov/bou/windchill",
+        "https://mountain-hiking.com/hike-safe-wind/",
+        "https://www.weather.gov/ctp/wwacriteria",
+        "https://www.weather.gov/safety/lightning-sports",
+        "https://www.nps.gov/articles/hike-safely.htm"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-H02",
+      "condition_expression": "temp_c <= -10 AND wind_kmh >= 10",
+      "grade": "inadvisable",
+      "action_text": "极寒徒步禁止，暴露皮肤15分钟可冻伤",
+      "applicable_mode": "hiking",
+      "source_urls": [
+        "https://www.weather.gov/rnk/outdoorsheat",
+        "https://www.weather.gov/bou/windchill",
+        "https://mountain-hiking.com/hike-safe-wind/",
+        "https://www.weather.gov/ctp/wwacriteria",
+        "https://www.weather.gov/safety/lightning-sports",
+        "https://www.nps.gov/articles/hike-safely.htm"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-H03",
+      "condition_expression": "wind_kmh >= 50",
+      "grade": "cautious",
+      "action_text": "强风Beaufort7级徒步行走困难林间有树枝断裂风险。选择林间或低洼路线避开山脊暴露段",
+      "applicable_mode": "hiking",
+      "source_urls": [
+        "https://www.weather.gov/rnk/outdoorsheat",
+        "https://www.weather.gov/bou/windchill",
+        "https://mountain-hiking.com/hike-safe-wind/",
+        "https://www.weather.gov/ctp/wwacriteria",
+        "https://www.weather.gov/safety/lightning-sports",
+        "https://www.nps.gov/articles/hike-safely.htm"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-H04",
+      "condition_expression": "precip_mmh >= 30",
+      "grade": "cautious",
+      "action_text": "大雨徒步能见度降加路滑加溪流水位上升。评估是否继续，水深>50cm不可过",
+      "applicable_mode": "hiking",
+      "source_urls": [
+        "https://www.weather.gov/rnk/outdoorsheat",
+        "https://www.weather.gov/bou/windchill",
+        "https://mountain-hiking.com/hike-safe-wind/",
+        "https://www.weather.gov/ctp/wwacriteria",
+        "https://www.weather.gov/safety/lightning-sports",
+        "https://www.nps.gov/articles/hike-safely.htm"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-H05",
+      "condition_expression": "flash_to_bang_seconds > 30 AND flash_to_bang_seconds <= 45",
+      "grade": "cautious",
+      "action_text": "闪电距约10-15km。监测闪电频率如间隔缩短则立即撤往遮蔽",
+      "applicable_mode": "hiking",
+      "source_urls": [
+        "https://www.weather.gov/rnk/outdoorsheat",
+        "https://www.weather.gov/bou/windchill",
+        "https://mountain-hiking.com/hike-safe-wind/",
+        "https://www.weather.gov/ctp/wwacriteria",
+        "https://www.weather.gov/safety/lightning-sports",
+        "https://www.nps.gov/articles/hike-safely.htm"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-H06",
+      "condition_expression": "elevation_gain_m >= 500 AND pack_weight_kg >= 12",
+      "grade": "cautious",
+      "action_text": "负重12kg加爬升500m膝关节负荷增加约30。建议使用双登山杖加调整步伐",
+      "applicable_mode": "hiking",
+      "source_urls": [
+        "https://www.weather.gov/rnk/outdoorsheat",
+        "https://www.weather.gov/bou/windchill",
+        "https://mountain-hiking.com/hike-safe-wind/",
+        "https://www.weather.gov/ctp/wwacriteria",
+        "https://www.weather.gov/safety/lightning-sports",
+        "https://www.nps.gov/articles/hike-safely.htm"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-H07",
+      "condition_expression": "duration_remaining_h >= 2 AND headlamp_carried = false AND sunset_in_h <= 2",
+      "grade": "cautious",
+      "action_text": "日落后2小时内无法完成且无头灯。必须在天黑前返回或请求支援",
+      "applicable_mode": "hiking",
+      "source_urls": [
+        "https://www.weather.gov/rnk/outdoorsheat",
+        "https://www.weather.gov/bou/windchill",
+        "https://mountain-hiking.com/hike-safe-wind/",
+        "https://www.weather.gov/ctp/wwacriteria",
+        "https://www.weather.gov/safety/lightning-sports",
+        "https://www.nps.gov/articles/hike-safely.htm"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-H08",
+      "condition_expression": "distance_km >= 15 AND water_source_km > 5 AND temp_c > 28",
+      "grade": "cautious",
+      "action_text": "长途>=15km加>5km内无水加>28C高温。脱水风险显著增加建议携带>=2L水",
+      "applicable_mode": "hiking",
+      "source_urls": [
+        "https://www.weather.gov/rnk/outdoorsheat",
+        "https://www.weather.gov/bou/windchill",
+        "https://mountain-hiking.com/hike-safe-wind/",
+        "https://www.weather.gov/ctp/wwacriteria",
+        "https://www.weather.gov/safety/lightning-sports",
+        "https://www.nps.gov/articles/hike-safely.htm"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-M01",
+      "condition_expression": "lake_louise_score >= 6",
+      "grade": "inadvisable",
+      "action_text": "中度AMS确诊LLS>=6。停止所有上升立即下撤>=500m。给布洛芬止痛。氧气2L每分",
+      "applicable_mode": "mountaineering",
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+        "https://www.komoot.com/help/hiking-scale",
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-M02",
+      "condition_expression": "sac_scale >= 4 AND ice_axe_carried = false",
+      "grade": "inadvisable",
+      "action_text": "SAC分级>=T4需冰镐加冰爪加头盔加路线辨识能力。无此装备者禁止进入",
+      "applicable_mode": "mountaineering",
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+        "https://www.komoot.com/help/hiking-scale",
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-M03",
+      "condition_expression": "sleep_altitude_increase_m > 500 AND days_above_3000m >= 2",
+      "grade": "cautious",
+      "action_text": "连续大于2天上升超过500m每天标准违反CDC升速指南。必须在下一营地休整一天",
+      "applicable_mode": "mountaineering",
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+        "https://www.komoot.com/help/hiking-scale",
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-M04",
+      "condition_expression": "altitude_m >= 5500 AND spo2 < 75",
+      "grade": "cautious",
+      "action_text": "极端海拔>5500m时SpO2<75为适应不良信号。不继续上升并准备氧气",
+      "applicable_mode": "mountaineering",
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+        "https://www.komoot.com/help/hiking-scale",
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-M05",
+      "condition_expression": "glacier_terrain = true AND roped_party_size < 2",
+      "grade": "inadvisable",
+      "action_text": "冰川地形必须结组>=2人。单人不允许进入冰川冰裂隙坠落无法自救",
+      "applicable_mode": "mountaineering",
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+        "https://www.komoot.com/help/hiking-scale",
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-M06",
+      "condition_expression": "spo2_delta_below_average < -10",
+      "grade": "cautious",
+      "action_text": "SpO2比同海拔平均低10个百分点以上个体适应明显落后。停止上升休整",
+      "applicable_mode": "mountaineering",
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+        "https://www.komoot.com/help/hiking-scale",
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-M07",
+      "condition_expression": "days_above_3000m % 4 == 0 AND slept_at_same_altitude = false",
+      "grade": "cautious",
+      "action_text": "每第4天必须休整日同一海拔住一晚。违规可能导致AMS累积风险",
+      "applicable_mode": "mountaineering",
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+        "https://www.komoot.com/help/hiking-scale",
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-M08",
+      "condition_expression": "direct_flight_to_m >= 2800 AND hours_since_arrival < 24",
+      "grade": "cautious",
+      "action_text": "直飞>=2800m后首24h内绝对不上升不剧烈活动。AMS发病率约50",
+      "applicable_mode": "mountaineering",
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm",
+        "https://www.komoot.com/help/hiking-scale",
+        "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-C01",
+      "condition_expression": "wind_sustained_kmh >= 30 AND crosswind = true",
+      "grade": "cautious",
+      "action_text": "侧风>=30km/h公路车高框轮组受侧风冲击显著。降低速度加采用下把位加靠内车道",
+      "applicable_mode": "cycling",
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+        "https://www.cyclingweekly.com/fitness/training/what-to-wear-cycling-a-temperature-by-temperature-cycling-dress-guide",
+        "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "EXE-C02",
+      "condition_expression": "temp_c <= 0 AND road_wet = true",
+      "grade": "inadvisable",
+      "action_text": "冰点加湿路等于黑冰不可见不可控。取消骑行。0C过渡段早晚桥面尤其危险",
+      "applicable_mode": "cycling",
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+        "https://www.cyclingweekly.com/fitness/training/what-to-wear-cycling-a-temperature-by-temperature-cycling-dress-guide",
+        "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "EXE-C03",
+      "condition_expression": "precip_mmh >= 10 AND mode == cycling",
+      "grade": "cautious",
+      "action_text": "中雨骑行制动距离约增100。避开路面标线金属井盖极度湿滑。降速30加提前刹车",
+      "applicable_mode": "cycling",
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+        "https://www.cyclingweekly.com/fitness/training/what-to-wear-cycling-a-temperature-by-temperature-cycling-dress-guide",
+        "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "EXE-C04",
+      "condition_expression": "temp_c <= 5 AND speed_kmh >= 25",
+      "grade": "cautious",
+      "action_text": "低温骑行加速度>=25km每h风寒效应显著有效体感约降3-5C。全指手套加防风外套加鞋套建议",
+      "applicable_mode": "cycling",
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+        "https://www.cyclingweekly.com/fitness/training/what-to-wear-cycling-a-temperature-by-temperature-cycling-dress-guide",
+        "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "EXE-C05",
+      "condition_expression": "distance_km >= 80 AND elevation_gain_m >= 800",
+      "grade": "cautious",
+      "action_text": "长途爬坡骑行>=80km加>=800m。建议前三分之一段保持FTP80-85每15分钟补200ml水加能量胶每45分钟",
+      "applicable_mode": "cycling",
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+        "https://www.cyclingweekly.com/fitness/training/what-to-wear-cycling-a-temperature-by-temperature-cycling-dress-guide",
+        "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "EXE-C06",
+      "condition_expression": "temp_c >= 35 AND mode == cycling",
+      "grade": "inadvisable",
+      "action_text": ">=35C骑行即使有骑行风流效应停止时体感猛升。取消",
+      "applicable_mode": "cycling",
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+        "https://www.cyclingweekly.com/fitness/training/what-to-wear-cycling-a-temperature-by-temperature-cycling-dress-guide",
+        "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "EXE-C07",
+      "condition_expression": "distance_km >= 150 AND solo = true",
+      "grade": "cautious",
+      "action_text": ">=150km单人骑行。建议携带卫星通信设备加备用补给。每隔50km确认体力状态",
+      "applicable_mode": "cycling",
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+        "https://www.cyclingweekly.com/fitness/training/what-to-wear-cycling-a-temperature-by-temperature-cycling-dress-guide",
+        "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "EXE-C08",
+      "condition_expression": "climb_duration_min >= 20 AND gradient_pct >= 8 AND w_per_kg < 2.5",
+      "grade": "cautious",
+      "action_text": ">=20分钟>=8坡且W每kg<2.5休闲级。建议提前变挡降低节奏频繁站骑防止腿部乳酸堆积",
+      "applicable_mode": "cycling",
+      "source_urls": [
+        "https://weatherontheway.app/blog/weather-safety-thresholds-for-cyclists",
+        "https://velo.outsideonline.com/road/what-is-your-ride-or-hide-cycling-threshold/",
+        "https://www.cyclingweekly.com/fitness/training/what-to-wear-cycling-a-temperature-by-temperature-cycling-dress-guide",
+        "https://www.bicycling.com/training/a71294347/power-to-weight-ratio-cycling-climbing-speed/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "EXE-MT01",
+      "condition_expression": "continuous_riding_h >= 2.0 AND next_break_taken = false",
+      "grade": "cautious",
+      "action_text": "连续骑行>=2h必须休息15分钟。停下时摇臂活动加补水加检查轮胎温度和气压",
+      "applicable_mode": "motorcycle",
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf",
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+        "https://www.riders-share.com/blog/article/summer-hot-weather-motorcycle-gear",
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-MT02",
+      "condition_expression": "daily_distance_km >= 300",
+      "grade": "cautious",
+      "action_text": "单日>=300km长途摩旅。建议每2h休息15min第4h后休息30min。检查疲劳分大于50分就停",
+      "applicable_mode": "motorcycle",
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf",
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+        "https://www.riders-share.com/blog/article/summer-hot-weather-motorcycle-gear",
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-MT03",
+      "condition_expression": "temp_c <= 5 AND speed_kmh >= 60",
+      "grade": "cautious",
+      "action_text": "低温<=5C高速>=60km每h骑行风寒效应显著体感约降8-12C。电加热手套或冬季手套必需",
+      "applicable_mode": "motorcycle",
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf",
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+        "https://www.riders-share.com/blog/article/summer-hot-weather-motorcycle-gear",
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-MT04",
+      "condition_expression": "wind_gust_kmh >= 40 AND mode == motorcycling",
+      "grade": "cautious",
+      "action_text": "阵风>=40km每h摩托操控受影响。过桥/隧道出口减速到60km每h以下",
+      "applicable_mode": "motorcycle",
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf",
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+        "https://www.riders-share.com/blog/article/summer-hot-weather-motorcycle-gear",
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-MT05",
+      "condition_expression": "altitude_m >= 3000 AND engine_naturally_aspirated = true",
+      "grade": "cautious",
+      "action_text": "海拔>=3000m自然吸气发动机功率损失约30。超车需预留更长距离",
+      "applicable_mode": "motorcycle",
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf",
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+        "https://www.riders-share.com/blog/article/summer-hot-weather-motorcycle-gear",
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-MT06",
+      "condition_expression": "temp_c >= 35 AND mode == motorcycling",
+      "grade": "cautious",
+      "action_text": ">=35C摩旅骑行服内温比环境高3-5C脱水加速。每1小时强制补水加寻找阴凉",
+      "applicable_mode": "motorcycle",
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf",
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+        "https://www.riders-share.com/blog/article/summer-hot-weather-motorcycle-gear",
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-MT07",
+      "condition_expression": "rain_last_hour = true AND hours_since_rain_start < 1 AND mode == motorcycling",
+      "grade": "cautious",
+      "action_text": "雨后第一小时路面油膜最滑降速60。避开路面中心线避免急刹和急转弯",
+      "applicable_mode": "motorcycle",
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf",
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+        "https://www.riders-share.com/blog/article/summer-hot-weather-motorcycle-gear",
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "EXE-MT08",
+      "condition_expression": "daily_distance_km >= 400",
+      "grade": "inadvisable",
+      "action_text": "单日>=400km超日限。疲劳累积使第5h后的每h风险线性上升必须停",
+      "applicable_mode": "motorcycle",
+      "source_urls": [
+        "https://www.ntsb.gov/safety/safety-studies/Documents/SR1801.pdf",
+        "https://www.fhwa.dot.gov/publications/research/safety/18064/18064.pdf",
+        "https://www.cyclefish.com/blogs/72/768/motorcycle-wind-chill-chart",
+        "https://www.riders-share.com/blog/article/summer-hot-weather-motorcycle-gear",
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    }
+  ],
+  "confidence_weights": {
+    "scale": [
+      {
+        "range": "0.90-1.00",
+        "meaning": "高置信度，多独立权威来源一致支持"
+      },
+      {
+        "range": "0.70-0.89",
+        "meaning": "中高置信度，单一权威来源或少数研究"
+      },
+      {
+        "range": "0.50-0.69",
+        "meaning": "中等置信度，部分研究支持但有间接推断"
+      },
+      {
+        "range": "0.00-0.49",
+        "meaning": "低置信度，经验法则需进一步验证"
+      }
+    ],
+    "modules": [
+      {
+        "name": "abort_triggers_refined",
+        "weight": 0.87,
+        "note": "NWS/NATA/CDC/WMS标准为主"
+      },
+      {
+        "name": "turnaround_time_refined",
+        "weight": 0.73,
+        "note": "经典公式+地形乘数户外社区广泛接受"
+      },
+      {
+        "name": "scenario_simulation_rules",
+        "weight": 0.62,
+        "note": "合成规则基于推演缺少直接实证"
+      },
+      {
+        "name": "mode_specific_execution_actions",
+        "weight": 0.74,
+        "note": "综合户外社区+NWS指南"
+      },
+      {
+        "name": "overall_system",
+        "weight": 0.74,
+        "note": "决策支持级别"
+      }
+    ],
+    "specific_thresholds": {
+      "ABT_lightning": 0.95,
+      "ABT_windchill": 0.9,
+      "ABT_heat": 0.9,
+      "ABT_wbgt": 0.85,
+      "ABT_wind_hiking": 0.8,
+      "ABT_wind_motor": 0.65,
+      "ABT_ice": 0.75,
+      "ABT_visibility": 0.85,
+      "ABT_rain": 0.8,
+      "ABT_avalanche": 0.9,
+      "ABT_ams": 0.92,
+      "ABT_hape_hace": 0.95,
+      "ABT_typhoon": 0.9
+    }
+  },
+  "abort_triggers": [
+    {
+      "rule_id": "ABT-001",
+      "condition_expression": "flash_to_bang_seconds <= 30 OR thunder_audible = true",
+      "grade": "inadvisable",
+      "action_text": "立即停止所有活动进入安全遮蔽建筑。勿在帐篷树下。30分钟后确认无闪电方可恢复",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning-sports"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-002",
+      "condition_expression": "lightning_distance_km <= 9.26",
+      "grade": "inadvisable",
+      "action_text": "闪电距<=9.26kmNATA标准。所有人员必须在安全建筑内",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.nata.org/sites/default/files/2025-08/lightning_safety_for_athletics_and_recreation.pdf"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-003",
+      "condition_expression": "windchill_c <= -25",
+      "grade": "inadvisable",
+      "action_text": "风寒<=-25C暴露皮肤15分钟即可冻伤。立即停止活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/bou/windchill"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-004",
+      "condition_expression": "windchill_c <= -35",
+      "grade": "inadvisable",
+      "action_text": "风寒<=-35C时5分钟即冻伤。绝对禁止户外活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/bou/windchill"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-005",
+      "condition_expression": "heat_index_c >= 54",
+      "grade": "inadvisable",
+      "action_text": "热指数>=54C热射病高度可能。立即停止一切户外活动进入空调环境",
+      "applicable_modes": [
+        "hiking",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/ffc/hichart"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-006",
+      "condition_expression": "wbgt_c >= 32.2",
+      "grade": "inadvisable",
+      "action_text": "WBGT>=32.2C黑旗标准。取消所有户外体育活动",
+      "applicable_modes": [
+        "hiking",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Wet-bulb_globe_temperature"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "ABT-007",
+      "condition_expression": "sustained_wind_kmh >= 62 AND mode IN [hiking,mountaineering,cycling]",
+      "grade": "inadvisable",
+      "action_text": "持续风速>=62km/h。行走困难立即取消活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling"
+      ],
+      "source_urls": [
+        "https://mountain-hiking.com/hike-safe-wind/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "ABT-008",
+      "condition_expression": "sustained_wind_kmh >= 55 AND mode == motorcycling",
+      "grade": "inadvisable",
+      "action_text": "摩托车侧风>=55km/h。两轮无法安全操控立即停车",
+      "applicable_modes": [
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://ctinjurylawyers.com/when-is-the-weather-too-bad-for-riding-your-motorcycle/"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-009",
+      "condition_expression": "wind_gust_kmh >= 65",
+      "grade": "inadvisable",
+      "action_text": "阵风>=65km/h所有模式均无法安全活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://mountain-hiking.com/hike-safe-wind/"
+      ],
+      "data_confidence": "medium",
+      "source_tier": "research"
+    },
+    {
+      "rule_id": "ABT-010",
+      "condition_expression": "temp_c <= 0 AND precip_active AND mode IN [cycling,motorcycling]",
+      "grade": "inadvisable",
+      "action_text": "冰点加降水等于黑冰风险。两轮车辆无法安全行驶",
+      "applicable_modes": [
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-011",
+      "condition_expression": "visibility_m < 100",
+      "grade": "inadvisable",
+      "action_text": "能见度<100m无法安全导航。停止活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://apps.itd.idaho.gov/apps/dmv-audio/documents/DLChapter6.pdf"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-012",
+      "condition_expression": "precip_mmh >= 50 AND mode == hiking",
+      "grade": "inadvisable",
+      "action_text": "暴雨>=50mm/h山洪风险。取消徒步",
+      "applicable_modes": [
+        "hiking"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/ctp/wwacriteria"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    },
+    {
+      "rule_id": "ABT-013",
+      "condition_expression": "precip_mmh >= 30 AND mode IN [cycling,motorcycling]",
+      "grade": "inadvisable",
+      "action_text": "大雨>=30mm/h两轮制动距离大幅延长加能见度骤降",
+      "applicable_modes": [
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.riderdome.com/post/top-6-reasons-why-weather-conditions-affect-motorcycle-safety"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-014",
+      "condition_expression": "snow_accumulation_cmh >= 5 AND mode == mountaineering",
+      "grade": "inadvisable",
+      "action_text": "积雪速率>=5cm/h雪崩加失温双风险。立即下撤",
+      "applicable_modes": [
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://www.avalanches.org/education/avalanche-danger-scale-2/"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-015",
+      "condition_expression": "avalanche_level >= 4",
+      "grade": "inadvisable",
+      "action_text": "雪崩等级>=4。禁止登山或雪地徒步活动",
+      "applicable_modes": [
+        "mountaineering",
+        "hiking"
+      ],
+      "source_urls": [
+        "https://www.avalanches.org/education/avalanche-danger-scale-2/"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-016",
+      "condition_expression": "lake_louise_score >= 6 AND mode == mountaineering",
+      "grade": "inadvisable",
+      "action_text": "中度AMS。LLS>=6。下撤至少500m",
+      "applicable_modes": [
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-017",
+      "condition_expression": "hape_hace_suspected = true",
+      "grade": "inadvisable",
+      "action_text": "疑似HAPE或HACE。紧急下撤加氧气加药物求救",
+      "applicable_modes": [
+        "mountaineering"
+      ],
+      "source_urls": [
+        "https://theuiaa.org/documents/mountainmedicine/English_UIAA_MedCom_Rec_No_2_AMS_HAPE_HACE_2012_V3-2.pdf"
+      ],
+      "data_confidence": "low",
+      "source_tier": "community"
+    },
+    {
+      "rule_id": "ABT-018",
+      "condition_expression": "typhoon_warning_within_48h",
+      "grade": "inadvisable",
+      "action_text": "台风48h内直接影响。取消一切户外活动",
+      "applicable_modes": [
+        "hiking",
+        "mountaineering",
+        "cycling",
+        "motorcycle"
+      ],
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning-sports"
+      ],
+      "data_confidence": "high",
+      "source_tier": "official"
+    }
+  ],
+  "turnaround_rules": {
+    "formulas": {
+      "naismith": "total_h = distance_km/5 + elevation_gain_m/600",
+      "tobler": "6.0*exp(-3.5*abs(slope_pct/100+0.05))",
+      "descent": "IF slope>12 add 10min per 300m descent"
+    },
+    "terrain_multipliers": {
+      "dry": 1.0,
+      "snow": 1.3,
+      "glacier": 1.5,
+      "scramble": 1.8,
+      "low_vis": 2.0,
+      "heavy_pack": 1.2,
+      "alt_4000": 1.3,
+      "alt_5000": 1.5
+    },
+    "rules": [
+      {
+        "rule_id": "TAT-001",
+        "condition_expression": "estimated_round_trip_h >= sunset_hour - start_hour - 0.5",
+        "grade": "inadvisable",
+        "action_text": "预估总时长超过可用日照时间含30min裕度。推迟或取消",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering",
+          "cycling"
+        ],
+        "source_urls": [
+          "https://www.mountaineers.org/blog/the-importance-of-turnaround-times"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-002",
+        "condition_expression": "current_time >= sunset_hour - descent_h * terrain_mult - 0.5",
+        "grade": "inadvisable",
+        "action_text": "最晚折返时间到。日落减下撤时间含地形乘数再减30min。立即调头",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering",
+          "cycling",
+          "motorcycle"
+        ],
+        "source_urls": [
+          "https://eikenshop.com/blogs/the-traveller-notebook/how-to-plan-a-safe-mountaineering-outing"
+        ],
+        "data_confidence": "medium",
+        "source_tier": "research"
+      },
+      {
+        "rule_id": "TAT-003",
+        "condition_expression": "elapsed_h >= total_h * 0.5 AND remaining_km > total_km * 0.4",
+        "grade": "cautious",
+        "action_text": "已过半程时间但还有40%以上距离未走。实际速度低于规划。应该折返",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering"
+        ],
+        "source_urls": [
+          "https://www.mountaineers.org/blog/the-importance-of-turnaround-times"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-004",
+        "condition_expression": "hours_since_noon >= 4 AND altitude_m > 3500 AND ascending",
+        "grade": "cautious",
+        "action_text": "下午4点后仍在>3500m上升。午后雷暴雪桥软化能见度降三重风险",
+        "applicable_modes": [
+          "mountaineering"
+        ],
+        "source_urls": [
+          "https://www.alpinesavvy.com/blog/decision-making-matrix-for-alpine-climbing"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-005",
+        "condition_expression": "cumulus_rapid_growth AND temp_drop_30min > 2 AND wind_inc_30min > 15",
+        "grade": "inadvisable",
+        "action_text": "天气30分钟内急转。立即折返不等原定折返时间",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering",
+          "cycling",
+          "motorcycle"
+        ],
+        "source_urls": [
+          "https://www.alpineinstitute.com/altitude-illness-hape-and-hace/"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-006",
+        "condition_expression": "ascent_complete AND NOT descent_started AND rest_min >= 15",
+        "grade": "cautious",
+        "action_text": "登顶后休息超过15分钟将导致下撤延后。登顶只完成了一半",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering"
+        ],
+        "source_urls": [
+          "https://www.mountaineers.org/blog/the-importance-of-turnaround-times"
+        ],
+        "data_confidence": "low",
+        "source_tier": "community"
+      },
+      {
+        "rule_id": "TAT-007",
+        "condition_expression": "descending AND current_time >= sunset_hour - 0.5",
+        "grade": "cautious",
+        "action_text": "天黑前30分钟仍在路上。评估是否需要头灯或加速",
+        "applicable_modes": [
+          "hiking",
+          "mountaineering",
+          "cycling"
+        ],
+        "source_urls": [
+          "https://www.nps.gov/articles/hike-safely.htm"
+        ],
+        "data_confidence": "high",
+        "source_tier": "official"
+      }
+    ]
+  }
+}

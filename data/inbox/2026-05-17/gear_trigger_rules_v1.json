@@ -1,0 +1,252 @@
+[
+  {
+    "rule_id": "tr_001",
+    "trigger_type": "elevation",
+    "condition": "max_altitude>=3000m",
+    "action": "gear_add",
+    "affected_gear": "羽绒服",
+    "priority": 5,
+    "applicable": [
+      "hiking",
+      "cycling"
+    ],
+    "rationale": "海拔3000米以上入夜降至零度"
+  },
+  {
+    "rule_id": "tr_002",
+    "trigger_type": "elevation",
+    "condition": "max_altitude>=4000m",
+    "action": "gear_add",
+    "affected_gear": "睡袋温标-10度",
+    "priority": 5,
+    "applicable": [
+      "hiking",
+      "mountaineering"
+    ],
+    "rationale": "海拔4000米夜间-10度以下"
+  },
+  {
+    "rule_id": "tr_003",
+    "trigger_type": "elevation",
+    "condition": "max_altitude>=5000m",
+    "action": "gear_add",
+    "affected_gear": "高山靴",
+    "priority": 5,
+    "applicable": [
+      "mountaineering"
+    ],
+    "rationale": "5000米以上徒步鞋冻伤脚趾"
+  },
+  {
+    "rule_id": "tr_004",
+    "trigger_type": "elevation",
+    "condition": "max_altitude>=5000m",
+    "action": "gear_add",
+    "affected_gear": "四季帐",
+    "priority": 4,
+    "applicable": [
+      "mountaineering"
+    ],
+    "rationale": "5000米以上风力8级三季帐吹垮"
+  },
+  {
+    "rule_id": "tr_005",
+    "trigger_type": "elevation",
+    "condition": "max_altitude>=7000m",
+    "action": "gear_add",
+    "affected_gear": "氧气瓶",
+    "priority": 5,
+    "applicable": [
+      "mountaineering"
+    ],
+    "rationale": "7000米以上无氧登顶率不足30%"
+  },
+  {
+    "rule_id": "tr_006",
+    "trigger_type": "elevation",
+    "condition": "max_altitude>=3000m",
+    "action": "gear_add",
+    "affected_gear": "太阳镜雪镜",
+    "priority": 3,
+    "applicable": [
+      "hiking",
+      "mountaineering"
+    ],
+    "rationale": "紫外线平原3倍雪地反射加剧"
+  },
+  {
+    "rule_id": "tr_010",
+    "trigger_type": "terrain",
+    "condition": "risk_tags含冰川或冰裂缝",
+    "action": "gear_add",
+    "affected_gear": "冰爪+冰镐+头盔+结组绳4件套",
+    "priority": 5,
+    "applicable": [
+      "mountaineering",
+      "hiking"
+    ],
+    "rationale": "冰川四件套缺一不可"
+  },
+  {
+    "rule_id": "tr_011",
+    "trigger_type": "terrain",
+    "condition": "risk_tags含涉水或冰河",
+    "action": "gear_add",
+    "affected_gear": "防水袋+溯溪鞋",
+    "priority": 5,
+    "applicable": [
+      "hiking"
+    ],
+    "rationale": "过水路线不防水装备全湿"
+  },
+  {
+    "rule_id": "tr_012",
+    "trigger_type": "terrain",
+    "condition": "risk_tags含石海",
+    "action": "gear_add",
+    "affected_gear": "护膝+高帮鞋",
+    "priority": 4,
+    "applicable": [
+      "hiking"
+    ],
+    "rationale": "石海路段崴脚概率高"
+  },
+  {
+    "rule_id": "tr_013",
+    "trigger_type": "terrain",
+    "condition": "risk_tags含沙漠",
+    "action": "gear_add",
+    "affected_gear": "防沙套+水袋3-5L",
+    "priority": 5,
+    "applicable": [
+      "hiking"
+    ],
+    "rationale": "沙粒磨泡水最关键"
+  },
+  {
+    "rule_id": "tr_014",
+    "trigger_type": "terrain",
+    "condition": "risk_tags含雪崩",
+    "action": "gear_add",
+    "affected_gear": "雪崩信标+探杆+铲",
+    "priority": 5,
+    "applicable": [
+      "mountaineering"
+    ],
+    "rationale": "雪崩区三人以上必带"
+  },
+  {
+    "rule_id": "tr_015",
+    "trigger_type": "terrain",
+    "condition": "risk_tags含陡坡或悬崖",
+    "action": "gear_add",
+    "affected_gear": "登山杖双杖",
+    "priority": 3,
+    "applicable": [
+      "hiking"
+    ],
+    "rationale": "陡坡双杖分担80%负荷"
+  },
+  {
+    "rule_id": "tr_020",
+    "trigger_type": "season",
+    "condition": "season_window含11-3月或max_alt>4000",
+    "action": "gear_add",
+    "affected_gear": "羽绒服+暖宝宝+保温杯",
+    "priority": 5,
+    "applicable": [
+      "hiking",
+      "mountaineering",
+      "cycling"
+    ],
+    "rationale": "冬季/高海拔三件套"
+  },
+  {
+    "rule_id": "tr_021",
+    "trigger_type": "season",
+    "condition": "season_window为6-9月雨季",
+    "action": "gear_add",
+    "affected_gear": "防水驮包+雨衣+防水袋",
+    "priority": 4,
+    "applicable": [
+      "cycling",
+      "motorcycle"
+    ],
+    "rationale": "雨季几乎每天下雨"
+  },
+  {
+    "rule_id": "tr_022",
+    "trigger_type": "season",
+    "condition": "season_window为6-9月",
+    "action": "gear_replace",
+    "affected_gear": "速干衣代替棉T",
+    "priority": 3,
+    "applicable": [
+      "hiking",
+      "cycling"
+    ],
+    "rationale": "雨季湿度大速干排汗"
+  },
+  {
+    "rule_id": "tr_030",
+    "trigger_type": "activity",
+    "condition": "activity_type=cycling and distance>500km",
+    "action": "gear_add",
+    "affected_gear": "补胎工具+打气筒+备用内胎+截链器",
+    "priority": 5,
+    "applicable": [
+      "cycling"
+    ],
+    "rationale": "长途爆胎断链最常见"
+  },
+  {
+    "rule_id": "tr_031",
+    "trigger_type": "activity",
+    "condition": "activity_type=motorcycle and distance>300km",
+    "action": "gear_add",
+    "affected_gear": "备用链条油+刹车片+补胎胶条",
+    "priority": 4,
+    "applicable": [
+      "motorcycle"
+    ],
+    "rationale": "西部地区配件极难买"
+  },
+  {
+    "rule_id": "tr_032",
+    "trigger_type": "activity",
+    "condition": "activity_type=mountaineering",
+    "action": "gear_add",
+    "affected_gear": "技术装备全套(冰爪冰镐安全带等)",
+    "priority": 5,
+    "applicable": [
+      "mountaineering"
+    ],
+    "rationale": "技术装备无替代方案"
+  },
+  {
+    "rule_id": "tr_033",
+    "trigger_type": "activity",
+    "condition": "signal_coverage=poor",
+    "action": "gear_add",
+    "affected_gear": "离线地图+GPS+卫星电话",
+    "priority": 5,
+    "applicable": [
+      "hiking",
+      "mountaineering"
+    ],
+    "rationale": "无信号路段GPS最低保障"
+  },
+  {
+    "rule_id": "tr_040",
+    "trigger_type": "night",
+    "condition": "night_risk_level>=4",
+    "action": "gear_add",
+    "affected_gear": "头灯+备用电池+帐篷+睡袋",
+    "priority": 5,
+    "applicable": [
+      "hiking",
+      "mountaineering"
+    ],
+    "rationale": "夜行高风险须备露营装备"
+  }
+]

@@ -1,0 +1,248 @@
+{
+  "version": "1.0.0",
+  "generated_date": "2026-05-17",
+  "description": "风险动作矩阵 — 多因素联合判定与推荐动作表",
+  "sources": [
+    "https://www.alpinesavvy.com/blog/decision-making-matrix-for-alpine-climbing",
+    "https://www.avalanches.org/education/avalanche-danger-scale-2/",
+    "https://www.weather.gov/safety/lightning-sports",
+    "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html"
+  ],
+  "extends_from": ["decision_rules_v1.json", "mountain_abort_rules_v1.json", "altitude_acclimatization_rules_v1.json"],
+  "purpose": "当多个风险因素同时存在时，提供跨维度联合判定结果，避免v1独立阈值取最小值低估复合风险",
+  "logic": "取所有激活因素中的最高风险等级。但特别规定了若干致命组合（即使在阈值以下）",
+  "risk_scale": {
+    "L1_negligible": {"grade": "feasible", "color": "#4CAF50", "meaning": "可忽略，正常活动"},
+    "L2_low": {"grade": "feasible", "color": "#8BC34A", "meaning": "低风险，注意监测"},
+    "L3_moderate": {"grade": "cautious", "color": "#FFEB3B", "meaning": "中风险，建议调整计划"},
+    "L4_high": {"grade": "cautious", "color": "#FF9800", "meaning": "高风险，强烈建议中止"},
+    "L5_critical": {"grade": "inadvisable", "color": "#F44336", "meaning": "极危，必须立即中止"}
+  },
+  "combined_weather_matrix": {
+    "description": "气温×风速×降水 三维联合矩阵（登山模式）",
+    "source": "adapted from AlpineSavvy Go/NoGo Matrix — https://www.alpinesavvy.com/blog/decision-making-matrix-for-alpine-climbing",
+    "method": "matrix_score = wind_score + precip_score + temp_score (每项0-3分)",
+    "scoring": {
+      "wind": {"<39km/h": 0, "39-49km/h": 1, "50-61km/h": 2, ">=62km/h": 3},
+      "precip": {"<2.5mm/h": 0, "2.6-10mm/h": 1, "10.1-30mm/h": 2, ">30mm/h": 3},
+      "temp": {">-10°C": 0, "-20~-10°C": 1, "-30~-20°C": 2, "<-30°C": 3}
+    },
+    "result_table": [
+      {"score_min": 0, "score_max": 1, "risk": "L1_negligible", "action": "正常攀登"},
+      {"score_min": 2, "score_max": 3, "risk": "L2_low", "action": "注意午后天气变化"},
+      {"score_min": 4, "score_max": 5, "risk": "L3_moderate", "action": "评估是否调整路线/时间"},
+      {"score_min": 6, "score_max": 7, "risk": "L4_high", "action": "强烈建议取消/推迟"},
+      {"score_min": 8, "score_max": null, "risk": "L5_critical", "action": "立即中止攀登"}
+    ],
+    "death_combinations": {
+      "description": "即使单项在安全阈值内，组合也可能致命的特殊情况",
+      "combos": [
+        {"combo": "wind=39-49(1分)+precip=10-30(2分)+temp=<-20°C(2分)", "total": 5, "risk": "L4_high", "note": "风寒效应=低体温加速4倍"},
+        {"combo": "wind=50-61(2分)+snow_active+temp=<-10°C(1分)", "total": 5, "risk": "L4_high", "note": "暴雪+风=白化+冻伤"},
+        {"combo": "wind>=62km/h(3分)+任意降水>2.5mm/h", "total": ">=4", "risk": "L4_high", "note": "极端风+任何降水=立即取消"},
+        {"combo": "temp=5°C(0分)+wind>=39km/h(1分)+precip=10-30mm/h(2分)", "total": 3, "risk": "L3_moderate", "note": "中等温度+风+湿=低体温风险（PSU:含水条件下阈值左移）"},
+        {"combo": "visibility<100m(2分)+terrain_glacier=true+snow_active", "total": ">=4", "risk": "L5_critical", "note": "冰川上白化=迷路+冰裂隙坠亡"}
+      ]
+    }
+  },
+  "altitude_risk_action_matrix": {
+    "description": "海拔高度 × AMS症状 × 上升速率 三维联合判定",
+    "scenarios": [
+      {
+        "scenario": "高海拔+无症状+慢速上升",
+        "altitude_m": 4000,
+        "ams_level": "none",
+        "ascent_rate_m_day": 400,
+        "risk": "L1_negligible",
+        "action": "继续按计划上升"
+      },
+      {
+        "scenario": "高海拔+轻度AMS+慢速上升",
+        "altitude_m": 4000,
+        "ams_level": "mild",
+        "ascent_rate_m_day": 400,
+        "risk": "L2_low",
+        "action": "不继续上升，休整1天观察"
+      },
+      {
+        "scenario": "高海拔+轻度AMS+快速上升",
+        "altitude_m": 4000,
+        "ams_level": "mild",
+        "ascent_rate_m_day": 700,
+        "risk": "L4_high",
+        "action": "停止上升，考虑下撤500m"
+      },
+      {
+        "scenario": "很高海拔+轻度AMS+慢速上升",
+        "altitude_m": 4500,
+        "ams_level": "mild",
+        "ascent_rate_m_day": 400,
+        "risk": "L3_moderate",
+        "action": "不上升，休整1天，做好下撤准备"
+      },
+      {
+        "scenario": "很高海拔+中度AMS+任意速率",
+        "altitude_m": 4500,
+        "ams_level": "moderate",
+        "ascent_rate_m_day": "any",
+        "risk": "L5_critical",
+        "action": "立即下撤500-1000m"
+      },
+      {
+        "scenario": "极端海拔+轻度AMS+慢速",
+        "altitude_m": 5500,
+        "ams_level": "mild",
+        "ascent_rate_m_day": 400,
+        "risk": "L4_high",
+        "action": "评估下撤，SpO2监测。如果SpO2<70%=立即下撤"
+      },
+      {
+        "scenario": "极端海拔+HAPE/HACE+任意",
+        "altitude_m": 5500,
+        "ams_level": "hape_hace",
+        "ascent_rate_m_day": "any",
+        "risk": "L5_critical",
+        "action": "紧急下撤+氧气+药物协助"
+      },
+      {
+        "scenario": "直飞高风险+无适应+当天活动",
+        "altitude_m": 3650,
+        "ams_level": "n/a",
+        "ascent_rate_m_day": "n/a",
+        "risk": "L4_high",
+        "action": "直飞>2800m后首24h绝对不上升，不活动"
+      },
+      {
+        "scenario": "首晚3400m+无休整+有AMS史",
+        "altitude_m": 3400,
+        "ams_level": "history_ams",
+        "ascent_rate_m_day": "n/a",
+        "risk": "L4_high",
+        "action": "AMS高风险~50%，建议乙酰唑胺+Diamox+备用氧气"
+      },
+      {
+        "scenario": "珠海三日游抬到4200m",
+        "altitude_m": 4200,
+        "ams_level": "n/a",
+        "ascent_rate_m_day": "n/a",
+        "risk": "L5_critical",
+        "action": "从0到4200m<72h=超高风险，不建议"
+      }
+    ]
+  },
+  "avalanche_terrain_action_matrix": {
+    "description": "雪崩等级 × 坡度 × 暴露度 联合判定",
+    "source": "https://www.avalanches.org/education/avalanche-danger-scale-2/",
+    "matrix": [
+      {"avalanche_level": 1, "slope_angle": "<30°", "risk": "L1_negligible", "action": "正常"},
+      {"avalanche_level": 1, "slope_angle": "30-35°", "risk": "L2_low", "action": "注意评估"},
+      {"avalanche_level": 1, "slope_angle": ">35°", "risk": "L2_low", "action": "小心通过"},
+      {"avalanche_level": 2, "slope_angle": "<30°", "risk": "L2_low", "action": "小心通过"},
+      {"avalanche_level": 2, "slope_angle": "30-35°", "risk": "L3_moderate", "action": "评估是否绕行"},
+      {"avalanche_level": 2, "slope_angle": ">35°", "risk": "L3_moderate", "action": "建议绕行"},
+      {"avalanche_level": 3, "slope_angle": "<30°", "risk": "L3_moderate", "action": "评估是否取消"},
+      {"avalanche_level": 3, "slope_angle": "30-35°", "risk": "L4_high", "action": "强烈建议不进入"},
+      {"avalanche_level": 3, "slope_angle": ">35°", "risk": "L4_high", "action": "禁止进入"},
+      {"avalanche_level": 4, "slope_angle": "any", "risk": "L5_critical", "action": "禁止登山活动"},
+      {"avalanche_level": 5, "slope_angle": "any", "risk": "L5_critical", "action": "禁止一切户外活动"}
+    ]
+  },
+  "mode_specific_action_tables": {
+    "hiking": {
+      "name": "徒步风险动作表",
+      "rows": [
+        {"risk_level": "heat_index>=41°C", "action": "取消徒步，寻找空调环境"},
+        {"risk_level": "wind>=62km/h", "action": "取消徒步，躲避坠落树枝"},
+        {"risk_level": "precip>=50mm/h", "action": "取消，防山洪"},
+        {"risk_level": "flash_to_bang<=30s", "action": "立即遮蔽，30分钟后恢复"},
+        {"risk_level": "visibility<100m", "action": "取消，导航不可靠"},
+        {"risk_level": "wind>=39km/h+temp<5°C+precip_active", "action": "评估下撤，低体温风险"},
+        {"risk_level": "temp<-10°C+wind>=20km/h", "action": "冻伤风险短途"},
+        {"risk_level": "water_crossing_depth>50cm", "action": "不可通过，绕行或返回"},
+        {"risk_level": "avalanche_level>=3", "action": "避免雪坡地形"}
+      ]
+    },
+    "mountaineering": {
+      "name": "登山风险动作表",
+      "rows": [
+        {"risk_level": "moderate_ams+any", "action": "下撤500m，不要继续上升"},
+        {"risk_level": "HAPE/HACE signs", "action": "紧急下撤+氧气+药物，呼叫救援"},
+        {"risk_level": "wind>=62km/h+any", "action": "立即下撤或找岩石掩体"},
+        {"risk_level": "snow_accumulation>=5cm/h", "action": "立即下撤，雪崩+失温"},
+        {"risk_level": "whiteout(vis<30m+snow)", "action": "挖雪洞就地保护，不要贸然移动"},
+        {"risk_level": "freezing_rain", "action": "立即下撤，冰面无法安全行走"},
+        {"risk_level": "avalanche_level>=4", "action": "禁止登山"},
+        {"risk_level": "SpO2<70% at 3500-5000m", "action": "紧急下撤"},
+        {"risk_level": "sleep_alt+500m/天违规连续3天", "action": "必须休整1天"},
+        {"risk_level": "首晚>3400m+无药物预防", "action": "AMS高危，建议乙酰唑胺"}
+      ]
+    },
+    "cycling": {
+      "name": "单车风险动作表",
+      "rows": [
+        {"risk_level": "wind_gust>50km/h", "action": "取消骑行"},
+        {"risk_level": "wind_sustained>=30km/h+crosswind", "action": "改道或取消，侧翻风险"},
+        {"risk_level": "temp<=0°C+road_wet", "action": "取消，黑冰"},
+        {"risk_level": "precip>=30mm/h", "action": "取消，积水"},
+        {"risk_level": "visibility<100m", "action": "取消"},
+        {"risk_level": "temp<-5°C+any", "action": "取消，结冰"},
+        {"risk_level": "heat_index>=41°C", "action": "取消"},
+        {"risk_level": "thunderstorm_forecast", "action": "取消或改室内"},
+        {"risk_level": "AQI>150", "action": "减少户外活动，佩戴口罩"}
+      ]
+    },
+    "motorcycle": {
+      "name": "摩托风险动作表",
+      "rows": [
+        {"risk_level": "sustained_wind>=55km/h", "action": "禁止骑行，找遮蔽"},
+        {"risk_level": "wind_gust>=65km/h", "action": "立即停车避难"},
+        {"risk_level": "temp<=0°C+precip_active", "action": "禁止骑行，黑冰"},
+        {"risk_level": "precip>=15mm/h", "action": "建议避雨等待"},
+        {"risk_level": "visibility<200m", "action": "降速50%+前灯"},
+        {"risk_level": "visibility<100m", "action": "停车等待"},
+        {"risk_level": "temp<-5°C+riding_speed>=60km/h", "action": "冻伤<15分钟，不骑"},
+        {"risk_level": "continuous_riding>=2h", "action": "必须休息15分钟"},
+        {"risk_level": "continuous_riding>=4h", "action": "必须休息30分钟+检查状态"},
+        {"risk_level": "temp>=40°C+any", "action": "禁止长途骑行"},
+        {"risk_level": "fatigue_score>=71", "action": "等效酒驾，必须停"}
+      ]
+    }
+  },
+  "decision_trees": {
+    "thunderstorm_decision_tree": {
+      "description": "雷暴决策树",
+      "nodes": [
+        {"step": 1, "question": "雷暴预报?", "if_yes": "取消活动/推迟", "if_no": "继续"},
+        {"step": 2, "question": "听到雷声?", "if_yes": "立即寻找遮蔽(建筑/汽车), 勿用帐篷/树下", "if_no": "go to step 3"},
+        {"step": 3, "question": "看到闪电?", "if_yes": "倒计时flash_to_bang", "if_no": "继续监测"},
+        {"step": 4, "question": "flash_to_bang<=30秒?", "if_yes": "立即遮蔽, 30分钟后才可恢复", "if_no": "继续监测"}
+      ]
+    },
+    "altitude_sickness_decision_tree": {
+      "description": "高海拔病决策树",
+      "nodes": [
+        {"step": 1, "question": "海拔>2500m+头痛?", "if_yes": "评估Lake Louise Score", "if_no": "正常活动"},
+        {"step": 2, "question": "LLS>=3+至少1项(胃肠/疲劳/头晕/失眠)?", "if_yes": "诊断AMS成立", "if_no": "考虑其他原因(脱水/用氧/一氧化碳)"},
+        {"step": 3, "question": "共济失调(ataxia)?", "if_yes": "疑似HACE, 紧急下撤", "if_no": "go to step 4"},
+        {"step": 4, "question": "静息时呼吸困难+咳嗽?", "if_yes": "疑似HAPE, 紧急下撤", "if_no": "go to step 5"},
+        {"step": 5, "question": "镇痛药有效? 能正常活动?", "if_yes": "轻度AMS, 休息+补液, 不上升", "if_no": "中度AMS, 下撤500m+"}
+      ]
+    },
+    "fatigue_decision_tree_motorcycle": {
+      "description": "摩托车疲劳决策树",
+      "nodes": [
+        {"step": 1, "question": "连续骑行>=2h?", "if_yes": "休息15分钟", "if_no": "继续"},
+        {"step": 2, "question": "疲劳分>50?", "if_yes": "停止骑行, 找住宿", "if_no": "go to step 3"},
+        {"step": 3, "question": "疲劳分31-50?", "if_yes": "增加休息频率, 每次20分钟", "if_no": "go to step 4"},
+        {"step": 4, "question": "日里程>400km?", "if_yes": "停在当前城市", "if_no": "可继续但注意监测"}
+      ]
+    }
+  },
+  "escalation_protocol": {
+    "description": "风险升级协议 — 当风险等级为L3+时建议的下步行动",
+    "L1_L2": "自行监测，无需上报",
+    "L3_moderate": "通知同行人员，集体评估是否继续",
+    "L4_high": "通知所有成员，启动下撤方案，联系外界",
+    "L5_critical": "紧急下撤或就地保护，发送求救信号(EPIRB/卫星电话), 启动应急医疗预案"
+  }
+}

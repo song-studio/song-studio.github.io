@@ -1,0 +1,6028 @@
+[
+  {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-6,9-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "11-5"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-12-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-12-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_005",
+    "name_zh": "滇藏线骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-09-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "7-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_008",
+    "name_zh": "大香格里拉环线骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "9-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_009",
+    "name_zh": "丝绸之路骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-5,9-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-09-20",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-20前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_010",
+    "name_zh": "京杭大运河骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-5,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_012",
+    "name_zh": "环赛里木湖骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-20前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_013",
+    "name_zh": "沿312国道上海至乌鲁木齐",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-6,9-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_014",
+    "name_zh": "广西沿边公路骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "9-12,3-4"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_015",
+    "name_zh": "徽州环线骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "C",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-5,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "C",
+        "note": "1个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-6,9-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_018",
+    "name_zh": "千岛湖环湖骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_019",
+    "name_zh": "阿禾公路骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_020",
+    "name_zh": "太行天路骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-6,9-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_021",
+    "name_zh": "翁金线骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_022",
+    "name_zh": "闽西山区骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "9-12"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-20前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_023",
+    "name_zh": "阿尔山骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_024",
+    "name_zh": "天山公路(G217南疆段)骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_025",
+    "name_zh": "琼库什台至特克斯骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-6,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_027",
+    "name_zh": "张北草原天路骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "cy_028",
+    "name_zh": "昆明至大理骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-5,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_029",
+    "name_zh": "黑龙江小兴安岭骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_030",
+    "name_zh": "川藏中线骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_031",
+    "name_zh": "青海湖-祁连山骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "cy_032",
+    "name_zh": "滇西边境骑行",
+    "activity_type": "cycling",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "10-5"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_001",
+    "name_zh": "虎跳峡高路徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-5,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_002",
+    "name_zh": "雨崩徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-09-15",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_003",
+    "name_zh": "贡嘎大环线",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "3来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-20",
+      "source_count": 3,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-20前数据+来源3来源可验证评估"
+  },
+  {
+    "route_id": "hk_004",
+    "name_zh": "乌孙古道",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "7-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-10",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-07-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_005",
+    "name_zh": "长穿毕",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-09-05",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-05前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_006",
+    "name_zh": "洛克线",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "9-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-20",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-20前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_007",
+    "name_zh": "亚丁大转山",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-09-25",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-25前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_008",
+    "name_zh": "鳌太穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-07-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_009",
+    "name_zh": "武功山反穿",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-11-05",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-11-05前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_010",
+    "name_zh": "冈仁波齐转山",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_011",
+    "name_zh": "墨脱徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-10",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_012",
+    "name_zh": "喀拉峻草原穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-8"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-06-15",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-06-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_013",
+    "name_zh": "狼塔C+V线",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "6个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-05",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-07-05前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_014",
+    "name_zh": "夏特古道",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "3一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 3,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-10前数据+来源3一般来源评估"
+  },
+  {
+    "route_id": "hk_015",
+    "name_zh": "腾格里沙漠五湖连穿",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-5,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_016",
+    "name_zh": "漓江徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-5,9-12"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_017",
+    "name_zh": "库拉岗日徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-25",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-25前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_018",
+    "name_zh": "孟克德古道",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-20",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-07-20前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_019",
+    "name_zh": "南太行徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-10-10",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-10-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_020",
+    "name_zh": "珠峰东坡徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-5,9-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_021",
+    "name_zh": "梅里北坡徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-11"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-15",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-09-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_022",
+    "name_zh": "希夏邦马环线",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-5,9-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_023",
+    "name_zh": "七藏沟徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-05",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-05前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_024",
+    "name_zh": "库布齐沙漠穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-6,9-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-10-05",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-10-05前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_025",
+    "name_zh": "神农架老君山穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-07-30",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-07-30前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_026",
+    "name_zh": "格聂大环线",
+    "activity_type": "hiking",
+    "overall_confidence": "C",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_027",
+    "name_zh": "念青东徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "9-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-20",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-08-20前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_028",
+    "name_zh": "博格达大环线",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-07-15",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-07-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_029",
+    "name_zh": "年保玉则穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "C",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-06-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-06-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_030",
+    "name_zh": "徽杭古道",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_031",
+    "name_zh": "韭菜岭穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-10-15",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-10-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_032",
+    "name_zh": "船底顶穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "9-12,3-5"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-20",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-11-20前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_033",
+    "name_zh": "麦理浩径",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "10-4"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-12-01",
+      "source_count": 2,
+      "has_gpx_url": true
+    },
+    "verification_note": "基于2025-12-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_034",
+    "name_zh": "大五台顺穿",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_035",
+    "name_zh": "太白南南穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_036",
+    "name_zh": "扎尕那穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "C",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-05",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-05前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_037",
+    "name_zh": "梅里外转",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_038",
+    "name_zh": "长江三峡徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-5,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-05",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-05前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_039",
+    "name_zh": "海螺沟徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-6,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_040",
+    "name_zh": "虎跳峡中虎跳一线天",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-5,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_041",
+    "name_zh": "他念他翁穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_042",
+    "name_zh": "伯舒拉岭徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_043",
+    "name_zh": "克里雅古道穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_044",
+    "name_zh": "羌塘无人区穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "6个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "hk_045",
+    "name_zh": "大横断徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_046",
+    "name_zh": "长白山南坡穿越",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_047",
+    "name_zh": "天山雪莲峰徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-20前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "hk_048",
+    "name_zh": "玉虚峰徒步",
+    "activity_type": "hiking",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-05",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-05前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-05",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-05前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-05",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-05前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "activity_type": "mountaineering",
+    "overall_confidence": "A",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "3来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-5,9-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-10",
+      "source_count": 3,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-10前数据+来源3来源可验证评估"
+  },
+  {
+    "route_id": "ma_005",
+    "name_zh": "那玛峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-20前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_006",
+    "name_zh": "半脊峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_007",
+    "name_zh": "玉珠峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-15前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_008",
+    "name_zh": "雀儿山",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "3来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "7-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-20",
+      "source_count": 3,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-20前数据+来源3来源可验证评估"
+  },
+  {
+    "route_id": "ma_009",
+    "name_zh": "慕士塔格峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_010",
+    "name_zh": "雪宝顶",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_011",
+    "name_zh": "岗什卡峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-05",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-05前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_012",
+    "name_zh": "玄武峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "A",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_013",
+    "name_zh": "博格达峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_014",
+    "name_zh": "年保玉则主峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-06-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-06-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_015",
+    "name_zh": "奥太娜峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_016",
+    "name_zh": "宁金抗沙峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_017",
+    "name_zh": "卓奥友峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-5,9-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-05-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-05-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_018",
+    "name_zh": "珠穆朗玛峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-5"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "6个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-04-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-04-20前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_019",
+    "name_zh": "希夏邦马峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-5,9-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-05-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-05-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_020",
+    "name_zh": "贡嘎山",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-6,9-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-06-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-06-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_021",
+    "name_zh": "幺妹峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "10-11"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_022",
+    "name_zh": "雪隆包",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_023",
+    "name_zh": "都日峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_024",
+    "name_zh": "阿尼玛卿",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_025",
+    "name_zh": "格聂峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_026",
+    "name_zh": "各拉丹冬峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_027",
+    "name_zh": "布喀达坂峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_028",
+    "name_zh": "田海子山",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_029",
+    "name_zh": "素珠链峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "7-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_030",
+    "name_zh": "婆缪峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "7-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_031",
+    "name_zh": "骆驼峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_032",
+    "name_zh": "雅拉雪山",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-07-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-20前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_033",
+    "name_zh": "勒多漫因峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "7-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_034",
+    "name_zh": "中山峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "7-9"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_035",
+    "name_zh": "念青唐古拉峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_036",
+    "name_zh": "启孜峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-07-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_037",
+    "name_zh": "姜桑拉姆峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "B",
+        "note": "2来源可验证"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [],
+    "data_freshness": {
+      "last_verified": "2025-07-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-10前数据+来源2来源可验证评估"
+  },
+  {
+    "route_id": "ma_038",
+    "name_zh": "桑丹康桑峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_039",
+    "name_zh": "乔戈里峰(K2)",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "6个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-06-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-06-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "ma_040",
+    "name_zh": "库拉岗日主峰",
+    "activity_type": "mountaineering",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "A",
+        "note": "官方海拔"
+      },
+      "distance_accuracy": {
+        "grade": "B",
+        "note": "GPS测距"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-6,9-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-07-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-07-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_001",
+    "name_zh": "318川藏南线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_002",
+    "name_zh": "独库公路摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "5个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_004",
+    "name_zh": "317川藏北线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_005",
+    "name_zh": "214滇藏线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_006",
+    "name_zh": "219新藏线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-8"
+      },
+      "signal_coverage": {
+        "grade": "C",
+        "note": "poor"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "6个"
+      }
+    },
+    "known_limitations": [
+      "2字段C级需关注",
+      "信号差影响导航",
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_007",
+    "name_zh": "环青海湖摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_008",
+    "name_zh": "黔东南摩旅环线",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_009",
+    "name_zh": "滇缅公路摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "10-5"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_010",
+    "name_zh": "秦岭深山摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_011",
+    "name_zh": "皖南川藏线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "4-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_012",
+    "name_zh": "甘南摩旅小环线",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-20前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_013",
+    "name_zh": "伊犁河谷摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-10",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-10前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_014",
+    "name_zh": "川西大环线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_015",
+    "name_zh": "海南环岛摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "10-5"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-12-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-12-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_016",
+    "name_zh": "川西小环线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-20前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_017",
+    "name_zh": "张家界至凤凰摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "3-11"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "2个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-10-20",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-10-20前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_018",
+    "name_zh": "怒江美丽公路摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "10-5"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_019",
+    "name_zh": "中俄边境公路摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_020",
+    "name_zh": "琼中五指山摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "11-5"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "good"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-11-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-11-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_021",
+    "name_zh": "喀喇昆仑公路摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-01",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-01前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_022",
+    "name_zh": "内蒙草原边境摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "6-9"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "B",
+        "note": "3个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-08-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-08-15前数据+来源2一般来源评估"
+  },
+  {
+    "route_id": "mc_023",
+    "name_zh": "香格里拉大环线摩旅",
+    "activity_type": "motorcycle",
+    "overall_confidence": "B",
+    "overall_confidence_scale": "A=高可靠/B=较可靠/C=需验证/D=低可信",
+    "field_confidence": {
+      "source_quality": {
+        "grade": "C",
+        "note": "2一般来源"
+      },
+      "elevation_accuracy": {
+        "grade": "B",
+        "note": "GPS海拔"
+      },
+      "distance_accuracy": {
+        "grade": "A",
+        "note": "GPX轨迹+"
+      },
+      "season_window": {
+        "grade": "B",
+        "note": "5-10"
+      },
+      "signal_coverage": {
+        "grade": "B",
+        "note": "mixed"
+      },
+      "risk_tags": {
+        "grade": "A",
+        "note": "4个"
+      }
+    },
+    "known_limitations": [
+      "轨迹无稳定直链"
+    ],
+    "data_freshness": {
+      "last_verified": "2025-09-15",
+      "source_count": 2,
+      "has_gpx_url": false
+    },
+    "verification_note": "基于2025-09-15前数据+来源2一般来源评估"
+  }
+]

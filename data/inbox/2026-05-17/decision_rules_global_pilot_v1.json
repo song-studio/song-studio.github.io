@@ -1,0 +1,290 @@
+{
+  "version": "1.0.0",
+  "generated_date": "2026-05-17",
+  "description": "国外试点规则适配包 — 尼泊尔高海拔、日本海洋性气候、阿尔卑斯山地天气修正",
+  "global_universal_rules": [
+    {
+      "rule_id": "G-001",
+      "description": "30/30闪电安全规则",
+      "source": "https://www.weather.gov/safety/lightning-sports"
+    },
+    {
+      "rule_id": "G-002",
+      "description": "Lake Louise AMS评分系统(0-12分)",
+      "source": "https://mobile.fpnotebook.com/ER/Exam/LkLsActMntnScknsScr.htm"
+    },
+    {
+      "rule_id": "G-003",
+      "description": ">3000m后升幅<=500m/day + 每3-4天休整",
+      "source": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html"
+    },
+    {
+      "rule_id": "G-004",
+      "description": "夜间睡眠海拔递进<=500m/天(>3000m)",
+      "source": "同上"
+    },
+    {
+      "rule_id": "G-005",
+      "description": "热指数计算(heat_index = temp_c + humidity修正)"
+    },
+    {
+      "rule_id": "G-006",
+      "description": "风寒NWS公式"
+    },
+    {
+      "rule_id": "G-007",
+      "description": "三档判定: feasible / cautious / inadvisable"
+    },
+    {
+      "rule_id": "G-008",
+      "description": "补水<=1.5L/h防低钠血症",
+      "source": "https://www.dhs.gov/sites/default/files/publications/21_0929_cbp_scale-hydration-chart.pdf"
+    }
+  ],
+  "regional_adjustments": {
+    "nepal_himalaya": {
+      "name": "尼泊尔喜马拉雅地区",
+      "description": "极高海拔(>5000m)+快速上升(直飞Lukla 2840m)+季风气候+茶室网络",
+      "key_characteristics": [
+        "海拔全球最高，AMS/HACE/HAPE风险极高",
+        "直飞Lukla(2840m)或Jomsom(2720m)后当天开始徒步",
+        "春季(3-5月)和秋季(9-11月)为最佳徒步季节",
+        "夏季季风(6-8月)：>4000m以上仍可徒步，低海拔湿滑",
+        "冬季(12-2月)：高海拔通道雪封，夜间-20C常见",
+        "茶室网络提供住宿(basic lodge)，海拔递增往往超500m/天",
+        "雨影区(Mustang/Dolpo)：雨季时干旱可行"
+      ],
+      "adjustment_rules": [
+        {
+          "rule_id": "NP-001",
+          "category": "ascent_rate",
+          "base_rule": "global_universal.>3000m升幅<=500m/day",
+          "adjustment": "尼泊尔实操中茶室间隔常导致升幅600-900m/天。安全=500m/天；可接受=500-800m/天(有休整日)；超800m/天=inadvisable。EBC路线前4天平均427m/天尚可。Namche(3440m)到Tengboche(3860m)段420m在边界内。Dingboche(4410m)到Lobuche(4940m)段530m微超阈值。修正：设500m/天为硬上限，但每3天允许一次600m/天。",
+          "formula": "IF days_above_3000m%3==1 THEN max_per_day_allowed=600m ELSE 500m",
+          "confidence": 0.75
+        },
+        {
+          "rule_id": "NP-002",
+          "category": "ams_risk",
+          "base_rule": "LLS评分+下撤500m",
+          "adjustment": "直飞Lukla(2840m)后首晚就在AMS中风险区。EBC路线首日到Phakding(2610m)还行，次日到Namche(3440m)升幅830m远超500m标准。修正：直飞Lukla后的首两日必须增加1个休整日(在Namche休整适应日)。",
+          "formula": "IF direct_flight_to>2800m THEN first_2_days_elevation_penalty=0.5倍活动量+1休整日",
+          "confidence": 0.85,
+          "source": "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html"
+        },
+        {
+          "rule_id": "NP-003",
+          "category": "precip_season",
+          "base_rule": "precip_mmh阈值(小雨10/中雨30/大雨50)",
+          "adjustment": "季风期(6-8月)低海拔持续降雨，但雨影区(Mustang/Dolpo)保持干燥。雨影区季风期降水等级降1级(中雨变小雨)。非雨影区雨季徒步整体调整为cautious。",
+          "formula": "IF region=rain_shadow AND month IN [6,7,8] THEN precip_grade_downshift=1; ELSE IF month IN [6,7,8] AND altitude<4000m THEN grade=cautious_base",
+          "confidence": 0.7
+        },
+        {
+          "rule_id": "NP-004",
+          "category": "temp_cold",
+          "base_rule": "temp_c<-10C=inadvisable(徒步)",
+          "adjustment": "尼泊尔冬季高海拔夜间-20C常见，但白天太阳辐射强烈使体感高10-15C。白天基于ambient_temp+5C(太阳辐射补偿)判定；夜间用实际温度。",
+          "formula": "IF solar_load>=2 THEN effective_temp=ambient_temp+5 ELSE effective_temp=ambient_temp",
+          "confidence": 0.65
+        },
+        {
+          "rule_id": "NP-005",
+          "category": "uva_risk",
+          "base_rule": "SPF50+防晒每2h补涂",
+          "adjustment": "海拔>4000m时UV达平地的3-4倍，雪面反射再翻倍。>4000m时SPF50+加UV400太阳镜加物理遮挡(宽檐帽/头巾)。每1h补涂。",
+          "formula": "IF altitude_m>4000 AND snow_cover THEN uv_risk=4x; reapply_hours=1",
+          "confidence": 0.9
+        },
+        {
+          "rule_id": "NP-006",
+          "category": "season_window",
+          "base_rule": "无",
+          "adjustment": "秋季(9-11月)=feasible, 春季(3-5月)=feasible(花粉注意), 冬季(12-2月)=cautious(高海拔雪封), 夏季(6-8月)=cautious(雨影区可feasible, 非雨影区inadvisable)",
+          "formula": "IF month IN [3,4,5,9,10,11] THEN season_grade=feasible; IF month IN [12,1,2] THEN season_grade=cautious; IF month IN [6,7,8] AND region!=rain_shadow THEN season_grade=inadvisable",
+          "confidence": 0.8
+        }
+      ]
+    },
+    "japan_marine": {
+      "name": "日本海洋性气候区",
+      "description": "高湿度(70-90%)+频繁台风+区域差异大+夏日午后雷暴+冬季日本海侧大雪",
+      "key_characteristics": [
+        "湿度常年70-90%，汗液不蒸发导致低体温风险全年存在(夏季也可能)",
+        "Tsuyu(梅雨季)：6月中-7月中，持续云雾低云",
+        "台风季：8月-9月，年均5-6个",
+        "夏季：35C+90%RH可达，热指数极高",
+        "冬季：日本海侧大雪>2m，太平洋侧晴朗干燥",
+        "日本阿尔卑斯：夏季午后雷暴高频，气温递减率0.6C/100m",
+        "海雾：春秋季太平洋沿岸"
+      ],
+      "adjustment_rules": [
+        {
+          "rule_id": "JP-001",
+          "category": "humidity_hypothermia",
+          "base_rule": "temp<5C+风+雨导致cold_upgrade",
+          "adjustment": "日本高湿度(70-90%)下汗液无法蒸发导致内湿性低体温。修正：湿度>70%时，低体温风险阈值上移5C(即10C+湿=原来5C+湿)。Cotton织物在日本户外圈被称为死亡织物，必须禁止。",
+          "formula": "IF rh_pct>70 THEN hypothermia_risk_temp_threshold+=5",
+          "confidence": 0.85,
+          "source": "https://deepdive-mt.com/en/day-hiking-japan-mountain-selection-essential-gear/"
+        },
+        {
+          "rule_id": "JP-002",
+          "category": "summer_thunderstorm",
+          "base_rule": "flash_to_bang<=30s触发遮蔽",
+          "adjustment": "日本山地夏季午后雷暴发生频率极高。夏季(7-8月)山地徒步时，即使当前晴朗，如果下午预报40%+雷暴概率则建议上午11:00前登顶折返。",
+          "formula": "IF month IN [7,8] AND terrain=mountain AND afternoon_thunderstorm_pct>=40 THEN latest_summit_time=11:00",
+          "confidence": 0.75
+        },
+        {
+          "rule_id": "JP-003",
+          "category": "typhoon_abort",
+          "base_rule": "storm_abort_rules",
+          "adjustment": "日本台风季(8-9月)直接影响山地活动。修正：台风48h内靠近则取消一切登山/徒步/骑行/摩托活动。72h前高海拔区域调整为cautious。",
+          "formula": "IF typhoon_warning_within_48h THEN all_outdoor_grade=inadvisable; IF typhoon_warning_within_72h AND altitude_m>2000 THEN grade=cautious",
+          "confidence": 0.85
+        },
+        {
+          "rule_id": "JP-004",
+          "category": "regional_precip_split",
+          "base_rule": "统一降水阈值",
+          "adjustment": "日本海侧和太平洋侧冬季降水差异极大。日本海侧冬季大雪使有效降水翻倍。太平洋侧冬季干燥甚至低于标准。",
+          "formula": "IF coast=japan_sea AND month IN [12,1,2] THEN effective_precip_mmh=precip_mmh*2",
+          "confidence": 0.8
+        },
+        {
+          "rule_id": "JP-005",
+          "category": "tsuyu_visibility",
+          "base_rule": "visibility_m<100导致取消",
+          "adjustment": "梅雨季(6月中-7月中)低云海雾导致能见度持续<200m常见。但这是可预见的季节性低能见度。赛季内预报有低云时，非暴露路线且有GPS导航时可调整为cautious而非inadvisable。",
+          "formula": "IF tsuyu_season AND visibility_m>=150 AND route_on_ridge=0 THEN grade=MAX(cautious, grade_instead_of_inadvisable)",
+          "confidence": 0.65
+        },
+        {
+          "rule_id": "JP-006",
+          "category": "gear_priority",
+          "base_rule": "gear_strategy分层",
+          "adjustment": "日本高湿度环境=快速干燥装备优先级最高。Base_layer必须为速干合成/羊毛。Cotton禁止。Mid_layer必须含防风层(高湿+风=低体温放大器)。",
+          "confidence": 0.85
+        }
+      ]
+    },
+    "alpine_europe": {
+      "name": "欧洲阿尔卑斯山地",
+      "description": "快速天气变化+复杂微气候+密集refuge网络+SAC分级标准+焚风效应",
+      "key_characteristics": [
+        "天气变化极快——登山者有谚语: if you don't like the weather, wait 5 minutes",
+        "焚风(Foehn)效应：北侧下风时温度骤升10-15C",
+        "冰川快速退缩，路线条件年际变化大",
+        "密集refuge/hut网络(间距通常3-5h)",
+        "SAC徒步分级(T1-T6)广泛使用",
+        "夏季午后雷暴高频",
+        "零度线波动大(400m至2200m间波动)",
+        "气候变化：阿尔卑斯升温速度比周边低地快0.21C/世纪"
+      ],
+      "adjustment_rules": [
+        {
+          "rule_id": "AL-001",
+          "category": "rapid_weather_change",
+          "base_rule": "固定折返时间(13:00)",
+          "adjustment": "阿尔卑斯天气可在30分钟内从晴空变为雷暴。折返规则增加雷暴提前触发——即使折返时间未到，如果(1)积云快速发展且(2)温度骤降且(3)风速突增，则立即折返。",
+          "formula": "IF cumulus_rapid_growth=true AND temp_drop_30min>2C AND wind_increase_30min>15km/h THEN immediate_turnaround=true; grade=inadvisable",
+          "confidence": 0.8
+        },
+        {
+          "rule_id": "AL-002",
+          "category": "foehn_wind",
+          "base_rule": "风>62km/h触发inadvisable",
+          "adjustment": "阿尔卑斯焚风在北侧山谷形成强下沉暖风(30-50km/h常见)。焚风期间不直接等于天气变差——焚风伴随晴朗温暖天气且风速日落前减弱。但焚风使雪线快速融化，增加湿雪雪崩风险。",
+          "formula": "IF foehn_condition AND slope_angle>30 AND snow_cover THEN avalanche_risk_upgrade=1级; wind_grade=feasible_if_not_exposed",
+          "confidence": 0.7
+        },
+        {
+          "rule_id": "AL-003",
+          "category": "refuge_network",
+          "base_rule": "补水/补给点计算",
+          "adjustment": "阿尔卑斯refuge网络密集(相隔3-5h/800-1500m爬升)，使基础规则中的强制携带3L水可调整为1.5L+在refuge补给的方案。",
+          "formula": "IF refuge_distance_km<5 AND refuge_open THEN required_water=1.5L ELSE required_water=3.0L",
+          "confidence": 0.75
+        },
+        {
+          "rule_id": "AL-004",
+          "category": "sac_scale_mapping",
+          "base_rule": "徒步难度分级",
+          "adjustment": "阿尔卑斯使用SAC T1-T6标准。T1-T2=feasible；T3-T4=cautious；T5-T6=inadvisable。SAC T4以上需要冰镐+冰爪+头盔。",
+          "mapping": [
+            {
+              "sac": "T1",
+              "grade": "feasible",
+              "requirements": "徒步鞋, 无需经验"
+            },
+            {
+              "sac": "T2",
+              "grade": "feasible",
+              "requirements": "登山鞋, 稳健步态"
+            },
+            {
+              "sac": "T3",
+              "grade": "cautious",
+              "requirements": "登山经验, 部分路段手扶"
+            },
+            {
+              "sac": "T4",
+              "grade": "cautious",
+              "requirements": "冰镐+冰爪+头盔, 路线辨识"
+            },
+            {
+              "sac": "T5",
+              "grade": "inadvisable",
+              "requirements": "攀岩绳+冰镐, 大量经验"
+            },
+            {
+              "sac": "T6",
+              "grade": "inadvisable",
+              "requirements": "专业装备, UIAA II级攀爬"
+            }
+          ],
+          "source": "https://www.komoot.com/help/hiking-scale",
+          "confidence": 0.9
+        },
+        {
+          "rule_id": "AL-005",
+          "category": "glacier_change",
+          "base_rule": "固定路线的GPS轨迹可信度",
+          "adjustment": "阿尔卑斯冰川每年退缩数十米，3年前的冰川路线GPS轨迹可能已完全不可用。冰川路线轨迹的时效性权重加倍，>2年的冰川路线confidence_score直接乘以0.3。",
+          "formula": "IF terrain_contains_glacier AND years_since_record>2 THEN route_confidence*=0.3",
+          "confidence": 0.8,
+          "source": "https://creamontblanc.org/en/climate-change-and-its-impacts-alps/"
+        },
+        {
+          "rule_id": "AL-006",
+          "category": "freezing_level",
+          "base_rule": "降水类型判定",
+          "adjustment": "阿尔卑斯零度线一日内可从400m波动至2200m，导致雨/雪/冰混合。增加freezing_level_m参数判断降水类型。",
+          "formula": "IF alt_m>freezing_m THEN snow; IF alt_m<freezing_m-200 THEN rain; ELSE mixed",
+          "confidence": 0.75
+        }
+      ]
+    }
+  },
+  "cross_region_comparison": {
+    "nepal_vs_alps": {
+      "key_difference": "尼泊尔海拔主导(AMS风险首要)；阿尔卑斯天气多变主导(快速变化比海拔更危险)",
+      "ams_risk": "尼泊尔>4000m广泛，AMS发病率25-85%；阿尔卑斯大部分路线<4000m，AMS少",
+      "infrastructure": "尼泊尔茶室基础但网络覆盖；阿尔卑斯refuge专业且密集",
+      "season_restriction": "尼泊尔季风强；阿尔卑斯无全季风但天气变化快"
+    },
+    "nepal_vs_japan": {
+      "key_difference": "尼泊尔干冷+高UV；日本湿热+低UV",
+      "hypothermia_risk": "尼泊尔在冰点以下但干冷；日本高湿度使5-15C就有低体温风险",
+      "uv_risk": "尼泊尔>4000m极高；日本中等",
+      "precip": "尼泊尔季风集中；日本全年高降水但形态多样"
+    },
+    "japan_vs_alps": {
+      "key_difference": "日本湿度主导(全年湿)；阿尔卑斯快速变化主导(一日四季)",
+      "visibility": "日本梅雨季持续低能见；阿尔卑斯能见度变化快但总体好",
+      "thunderstorm": "两者夏季午后雷暴均高频",
+      "season_length": "日本全年可户外但需适应区域差异；阿尔卑斯6-9月最佳"
+    }
+  }
+}

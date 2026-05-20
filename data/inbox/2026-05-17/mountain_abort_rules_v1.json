@@ -1,0 +1,207 @@
+{
+  "version": "1.0.0",
+  "generated_date": "2026-05-17",
+  "description": "高海拔与恶劣天气红线规则 — 登山中止判定引擎",
+  "extends_from": "decision_rules_v1.json + v2_delta.json",
+  "sources": [
+    "https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/high-altitude-travel-and-altitude-illness.html",
+    "https://wildsafe.org/resources/ask-the-experts/altitude-safety-101/",
+    "https://www.alpineinstitute.com/altitude-illness-hape-and-hace/",
+    "https://www.nols.edu/blog/how-to-prevent-altitude-sickness-from-acute-mountain-sickness-to-severe-altitude-illness/",
+    "https://www.avalanches.org/education/avalanche-danger-scale-2/",
+    "https://www.weather.gov/safety/lightning-sports",
+    "https://trainright.com/practical-tips-for-cycling-in-lightning-storm/"
+  ],
+  "altitude_zones": {
+    "high": {"min_m": 2500, "max_m": 3500, "label": "高海拔", "spo2_range": "85-92%"},
+    "very_high": {"min_m": 3500, "max_m": 5500, "label": "很高海拔", "spo2_range": "72-85%"},
+    "extreme": {"min_m": 5500, "max_m": 8848, "label": "极端海拔", "spo2_range": "50-72%"}
+  },
+  "risk_levels": {
+    "green": {"label": "低风险", "grade": "feasible"},
+    "yellow": {"label": "中风险/警示", "grade": "cautious"},
+    "orange": {"label": "高风险/严重警示", "grade": "cautious"},
+    "red": {"label": "极度危险/立即中止", "grade": "inadvisable"}
+  },
+  "ams_abort_rules": {
+    "description": "基于Lake Louise Score的AMS判定与下撤规则",
+    "diagnostic_criteria": {
+      "system": "Lake Louise Acute Mountain Sickness Score (2018更新版)",
+      "rule": "头痛 + ≥1项(肠胃不适/疲劳乏力/头晕/睡眠障碍)，海拔>2500m，到达后数小时-3天内",
+      "source": "https://www.ncbi.nlm.nih.gov/books/NBK430716/"
+    },
+    "grades": [
+      {
+        "level": "mild_ams",
+        "lls_score": "3-5",
+        "symptoms": "轻微头痛、食欲下降、轻度疲劳",
+        "functional_impact": "正常活动不受限",
+        "action": "休息+补液+止痛药(布洛芬/对乙酰氨基酚)。不继续上升",
+        "descent_required": false,
+        "monitor_frequency": "每2h评估一次"
+      },
+      {
+        "level": "moderate_ams",
+        "lls_score": "6-9",
+        "symptoms": "头痛剧烈(镇痛药无效)+恶心/呕吐+进行性乏力",
+        "functional_impact": "正常活动困难",
+        "action": "立即停止上升，下撤至少500m",
+        "descent_required": true,
+        "descent_min_m": 500,
+        "descent_guideline": "下撤500m是最低有效缓解距离(WMS指南)",
+        "monitor_frequency": "每1h评估一次直至症状消失"
+      },
+      {
+        "level": "severe_ams_hace",
+        "lls_score": "10-12",
+        "symptoms": "意识混乱+共济失调(无法直线行走)+剧烈头痛+呕吐+进行性意识水平下降",
+        "functional_impact": "无法自理",
+        "action": "紧急下撤+地塞米松8mg静脉推注+补充氧气(2-4L/min)",
+        "descent_required": true,
+        "descent_min_m": 1000,
+        "descent_urgency": "立即，可能在数小时内死亡",
+        "hace_ataxia_test": "heel-to-toe直线行走测试异常 → 高度怀疑HACE",
+        "additional_note": "HACE是AMS进展至脑水肿的终末阶段，可数小时内致死"
+      }
+    ],
+    "hape_separate": {
+      "description": "高海拔肺水肿(HAPE) — 可独立于AMS发生",
+      "symptoms": "静息时呼吸困难+持续性干咳→转为湿咳粉红色泡沫痰+唇色发蓝(cyanosis)+心率加快",
+      "spo2_indicator": "同海拔比健康人低≥10个百分点，常在50-70%",
+      "action": "紧急下撤(最小1,000ft≈305m)+氧气+尽少活动",
+      "descent_required": true,
+      "additional_treatment": "硝苯地平ER 30mg bid 如果下撤延迟"
+    },
+    "max_altitude_triggers": [
+      {"max_altitude_m": 8500, "zone": "死亡区", "max_stay_hours": 48, "action": "必须在48h内下撤，超过则不可逆生理损伤"},
+      {"max_altitude_m": 8000, "zone": "极高", "max_stay_hours": 96, "action": "补充氧气必须持续供应"},
+      {"max_altitude_m": 7000, "zone": "极高", "max_stay_hours": null, "action": "氧饱和度<60%时需立即下撤"}
+    ]
+  },
+  "weather_abort_rules": {
+    "description": "基于NWS/NOAA标准的恶劣天气登山中止规则",
+    "source": "https://www.weather.gov/safety/lightning-sports",
+    "thunderstorm_lightning": {
+      "rule": "30/30规则：flash_to_bang<=30秒→遮蔽，30分钟后恢复",
+      "alpine_extension": "高海拔无遮蔽区域建议<=45秒预撤离",
+      "additional_rule": "IF thunder_audible OR sky_threatening THEN begin_evacuation",
+      "grade": "inadvisable"
+    },
+    "high_wind": {
+      "thresholds": [
+        {"wind_kmh_min": 0, "wind_kmh_max": 38, "risk": "green", "action": "正常攀登"},
+        {"wind_kmh_min": 39, "wind_kmh_max": 49, "risk": "yellow", "action": "避免暴露山脊，降速", "grade": "cautious"},
+        {"wind_kmh_min": 50, "wind_kmh_max": 61, "risk": "orange", "action": "严重警示，考虑下撤", "grade": "cautious"},
+        {"wind_kmh_min": 62, "wind_kmh_max": null, "risk": "red", "action": "立即下撤或找岩石掩体", "grade": "inadvisable"}
+      ],
+      "ridge_exposure_offset": "山脊暴露路线等效加1 Beaufort级",
+      "source": "https://mountain-hiking.com/hike-safe-wind/"
+    },
+    "heavy_precip_snow": {
+      "thresholds": [
+        {"precip_mmh_min": 0, "precip_mmh_max": 2.5, "risk": "green", "action": "正常"},
+        {"precip_mmh_min": 2.6, "precip_mmh_max": 10, "risk": "yellow", "action": "小雨/小雪，加强防水", "grade": "feasible"},
+        {"precip_mmh_min": 10.1, "precip_mmh_max": 30, "risk": "orange", "action": "中雨/中雪，评估下撤", "grade": "cautious"},
+        {"precip_mmh_min": 30.1, "precip_mmh_max": null, "risk": "red", "action": "大雨/大雪，取消攀登", "grade": "inadvisable"}
+      ],
+      "snow_abort_rule": "IF snow_accumulation_cmh >= 5 THEN abort — 积雪>5cm/h",
+      "freezing_rain_rule": "IF freezing_rain THEN abort — 冻雨冰面无法安全行走"
+    },
+    "temperature_windchill": {
+      "thresholds": [
+        {"ambient_temp_c_min": 0, "ambient_temp_c_max": null, "grade": "feasible", "action": "正常但需保暖层"},
+        {"ambient_temp_c_min": -10, "ambient_temp_c_max": 0, "grade": "cautious", "action": "寒冷，暴露皮肤30分钟冻伤风险"},
+        {"ambient_temp_c_min": -20, "ambient_temp_c_max": -10, "grade": "cautious", "action": "严寒，冻伤<15分钟"},
+        {"ambient_temp_c_min": -30, "ambient_temp_c_max": -20, "grade": "cautious", "action": "极寒，冻伤<10分钟"},
+        {"ambient_temp_c_min": null, "ambient_temp_c_max": -30, "grade": "inadvisable", "action": "禁止攀登"}
+      ],
+      "windchill_severity_note": "当windchill<=-25°C时冻伤发生在15分钟内",
+      "hypothermia_risk_temp": "5-15°C+持续降水即可引发低体温(含水条件)"
+    },
+    "visibility_whiteout": {
+      "thresholds": [
+        {"visibility_m_min": 500, "visibility_m_max": null, "risk": "green", "action": "正常"},
+        {"visibility_m_min": 100, "visibility_m_max": 500, "risk": "yellow", "action": "降能见度，需GPS导航", "grade": "cautious"},
+        {"visibility_m_min": 30, "visibility_m_max": 100, "risk": "orange", "action": "白化风险，停止+保护", "grade": "inadvisable"},
+        {"visibility_m_min": 0, "visibility_m_max": 30, "risk": "red", "action": "完全白化，挖雪洞就地保护", "grade": "inadvisable"}
+      ],
+      "whiteout_trigger": "IF visibility_m<30 AND snow_covered=true THEN whiteout_protocol"
+    }
+  },
+  "avalanche_abort_rules": {
+    "description": "基于欧洲/北美五级雪崩危险等级的登山判断",
+    "source": "https://www.avalanches.org/education/avalanche-danger-scale-2/",
+    "scale": [
+      {"level": 1, "label": "Low", "snowpack": "基本稳定", "trigger_probability": "仅极陡坡高附加荷载", "fatality_pct": 5, "action": "正常活动，注意局部陡坡"},
+      {"level": 2, "label": "Moderate", "snowpack": "部分不稳定", "trigger_probability": "陡坡人工触发可能", "fatality_pct": 25, "action": "评估路线，避免>30°坡", "grade": "feasible"},
+      {"level": 3, "label": "Considerable", "snowpack": "许多坡面不稳定", "trigger_probability": "人工触发可能/容易", "fatality_pct": 50, "action": "强烈建议避免>30°雪坡", "grade": "cautious"},
+      {"level": 4, "label": "High", "snowpack": "多数坡面不稳定", "trigger_probability": "人工触发容易/低附加荷载触发", "fatality_pct": 18, "action": "禁止进入雪坡地形", "grade": "inadvisable"},
+      {"level": 5, "label": "Very High", "snowpack": "大范围极不稳定", "trigger_probability": "自然雪崩可能/大量", "fatality_pct": 2, "action": "禁止一切登山活动", "grade": "inadvisable"}
+    ],
+    "additional_indicators": [
+      {"indicator": "新雪>30cm/24h", "action": "雪崩风险急剧上升", "grade": "cautious"},
+      {"indicator": "强风运雪(>30km/h风搬雪)", "action": "风板形成，注意背风坡", "grade": "cautious"},
+      {"indicator": "快速升温(24h内升>10°C)", "action": "湿雪雪崩风险", "grade": "cautious"},
+      {"indicator": "明显whumpf声(塌陷声)+ shooting cracks", "action": "雪板不稳定，立即离开该坡面", "grade": "inadvisable"}
+    ]
+  },
+  "combined_abort_scoring": {
+    "description": "多因素联合中止评分 — 总分>=4时触发inadvisable",
+    "scoring_method": "每个因素评分0-3分，累加",
+    "components": [
+      {"factor": "AMS等级", "score_definition": "无=0, 轻度=1, 中度=2, 重度=3"},
+      {"factor": "风速", "score_definition": "<39km/h=0, 39-49=1, 50-61=2, >=62=3"},
+      {"factor": "降水", "score_definition": "<2.5mm/h=0, 2.6-10=1, 10.1-30=2, >30=3"},
+      {"factor": "能见度", "score_definition": ">=500m=0, 100-500=1, 30-100=2, <30=3"},
+      {"factor": "气温(windchill)", "score_definition": ">0°C=0, -10~0=1, -20~-10=2, <-20=3"},
+      {"factor": "雪崩等级", "score_definition": "1级=0, 2级=1, 3级=2, 4/5级=3"},
+      {"factor": "海拔(相对经验)", "score_definition": "低于个人最高记录=0, 等于=1, 高于=2, 超过>1000m=3"}
+    ],
+    "thresholds": [
+      {"score_min": 0, "score_max": 2, "grade": "feasible", "action": "可继续，注意监测"},
+      {"score_min": 3, "score_max": 4, "grade": "cautious", "action": "加强谨慎，考虑下撤"},
+      {"score_min": 5, "score_max": 6, "grade": "cautious", "action": "强烈建议下撤"},
+      {"score_min": 7, "score_max": null, "grade": "inadvisable", "action": "必须立即中止攀登"}
+    ]
+  },
+  "emergency_action_protocols": {
+    "hape_emergency": {
+      "action_sequence": [
+        "1. 立即停步坐下",
+        "2. 开始下撤(最小305m/1000ft)，患者尽量少活动",
+        "3. 给氧(2-4L/min)如果有",
+        "4. 硝苯地平ER 30mg(如有) + 沙丁胺醇吸入(如有)",
+        "5. 高海拔增压袋(Gamow bag)如果下撤延迟",
+        "6. 呼叫救援(卫星电话/EPIRB)"
+      ],
+      "do_not": ["不要继续上升", "不要等待观察", "不要让患者自己行走(担架或协助)"]
+    },
+    "hace_emergency": {
+      "action_sequence": [
+        "1. 立即下撤(最小500-1000m)",
+        "2. 地塞米松8mg静脉/肌肉(口服4-8mg如果无注射条件)",
+        "3. 补充氧气2-4L/min",
+        "4. 高海拔增压袋",
+        "5. 呼叫救援"
+      ],
+      "do_not": ["不要给镇静剂", "不要浪费时间做鉴别诊断"]
+    },
+    "avalanche_burial": {
+      "action_sequence": [
+        "1. 目视最后位置+标记",
+        "2. 切换信标→搜索",
+        "3. 探针定位",
+        "4. 雪铲挖掘(从下方挖掘，节省体力)",
+        "5. 暴露气道+CPR+低体温处理"
+      ]
+    },
+    "lightning_strike": {
+      "action_sequence": [
+        "1. 立即CPR(心脏停跳是主要死因)",
+        "2. 固定颈椎",
+        "3. 烧伤处理",
+        "4. 呼叫救援"
+      ]
+    }
+  }
+}
