@@ -25,7 +25,7 @@
   },
   {
     "route_id": "cy_001",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "折多山垭口",
     "lng": 101.8,
     "lat": 30.08333,
@@ -82,7 +82,7 @@
   },
   {
     "route_id": "cy_001",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "海子山垭口",
     "lng": 99.5,
     "lat": 30.3,
@@ -115,7 +115,7 @@
   },
   {
     "route_id": "cy_001",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "宗拉山垭口",
     "lng": 98.75,
     "lat": 29.66667,
@@ -137,7 +137,7 @@
   },
   {
     "route_id": "cy_001",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "东达山垭口",
     "lng": 97.8,
     "lat": 29.83333,
@@ -203,7 +203,7 @@
   },
   {
     "route_id": "cy_001",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "色季拉山垭口",
     "lng": 94.65,
     "lat": 29.6,
@@ -264,7 +264,8 @@
     "lat": 31.8,
     "distance_from_start_km": 870,
     "importance": "medium",
-    "mobile_note": ""
+    "mobile_note": "",
+    "source_urls": []
   },
   {
     "route_id": "cy_002",
@@ -279,7 +280,7 @@
   },
   {
     "route_id": "cy_002",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "斜拉山垭口",
     "lng": 93.2,
     "lat": 31.33333,
@@ -356,7 +357,7 @@
   },
   {
     "route_id": "cy_011",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "铁力买提达坂",
     "lng": 84.4,
     "lat": 42.48333,
@@ -565,7 +566,7 @@
   },
   {
     "route_id": "cy_007",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "库地达坂",
     "lng": 77.13333,
     "lat": 37.05,
@@ -598,7 +599,7 @@
   },
   {
     "route_id": "cy_007",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "界山达坂",
     "lng": 80.13333,
     "lat": 35.21667,
@@ -642,7 +643,7 @@
   },
   {
     "route_id": "cy_006",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "昆仑山口",
     "lng": 94.05,
     "lat": 35.65,
@@ -675,7 +676,7 @@
   },
   {
     "route_id": "cy_006",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "唐古拉山口",
     "lng": 91.93333,
     "lat": 32.88333,
@@ -785,7 +786,7 @@
   },
   {
     "route_id": "cy_017",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "巴朗山垭口",
     "lng": 102.73333,
     "lat": 30.85,
@@ -862,7 +863,7 @@
   },
   {
     "route_id": "mc_021",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "红其拉甫口岸",
     "lng": 75.41667,
     "lat": 37.03333,
@@ -950,7 +951,7 @@
   },
   {
     "route_id": "cy_002",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "矮拉山隧道",
     "lng": 98.41667,
     "lat": 31.61667,
@@ -1170,7 +1171,7 @@
   },
   {
     "route_id": "cy_007",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "黑卡达坂",
     "lng": 77.8,
     "lat": 36.08333,
@@ -1203,7 +1204,7 @@
   },
   {
     "route_id": "cy_005",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "白马雪山垭口",
     "lng": 98.98333,
     "lat": 28.45,
@@ -1225,7 +1226,7 @@
   },
   {
     "route_id": "cy_005",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "红拉山口",
     "lng": 98.65,
     "lat": 29.0,
@@ -1258,7 +1259,7 @@
   },
   {
     "route_id": "cy_008",
-    "poi_type": "pass",
+    "poi_type": "viewpoint",
     "name_zh": "大小雪山垭口",
     "lng": 100.08333,
     "lat": 28.51667,

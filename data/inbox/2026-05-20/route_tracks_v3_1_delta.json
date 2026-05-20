@@ -1725,6 +1725,13 @@
         "distance_from_start_km": 0
       },
       {
+        "name_zh": "锅庄坪",
+        "lng": 102.81667,
+        "lat": 31.1,
+        "point_role": "waypoint",
+        "distance_from_start_km": 2
+      },
+      {
         "name_zh": "打尖包",
         "lng": 102.8,
         "lat": 31.08333,
@@ -1746,6 +1753,13 @@
         "distance_from_start_km": 19
       },
       {
+        "name_zh": "石板坡段",
+        "lng": 102.74167,
+        "lat": 31.05,
+        "point_role": "waypoint",
+        "distance_from_start_km": 21
+      },
+      {
         "name_zh": "二峰顶(5276m)",
         "lng": 102.73333,
         "lat": 31.05,
@@ -1754,7 +1768,7 @@
       }
     ],
     "geometry_confidence": "B",
-    "what_changed": "新增二峰5个关键点",
+    "what_changed": "从5个扩充到7个，增加锅庄坪/石板坡段",
     "source_urls": [
       "https://www.2bulu.com/"
     ]
@@ -1773,6 +1787,13 @@
         "distance_from_start_km": 0
       },
       {
+        "name_zh": "锅庄坪",
+        "lng": 102.81667,
+        "lat": 31.1,
+        "point_role": "waypoint",
+        "distance_from_start_km": 2
+      },
+      {
         "name_zh": "三峰大本营(4300m)",
         "lng": 102.75,
         "lat": 31.08333,
@@ -1780,11 +1801,25 @@
         "distance_from_start_km": 14
       },
       {
+        "name_zh": "碎石路段",
+        "lng": 102.74167,
+        "lat": 31.075,
+        "point_role": "waypoint",
+        "distance_from_start_km": 16
+      },
+      {
         "name_zh": "技术岩壁段",
         "lng": 102.73333,
         "lat": 31.06667,
         "point_role": "danger",
         "distance_from_start_km": 17
+      },
+      {
+        "name_zh": "冲顶脊线",
+        "lng": 102.73333,
+        "lat": 31.05833,
+        "point_role": "waypoint",
+        "distance_from_start_km": 17.5
       },
       {
         "name_zh": "三峰顶(5355m)",
@@ -1795,7 +1830,7 @@
       }
     ],
     "geometry_confidence": "B",
-    "what_changed": "新增三峰4个关键点",
+    "what_changed": "从4个扩充到7个，增加锅庄坪/碎石路段/冲顶脊线",
     "source_urls": [
       "https://www.2bulu.com/"
     ]
