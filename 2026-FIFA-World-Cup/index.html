@@ -114,6 +114,8 @@ html[lang=en] .hero-sub{letter-spacing:clamp(3px,1.5vw,8px);font-size:clamp(13px
 .share-preview{border:1px solid rgba(255,255,255,.14);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border-radius:14px;padding:10px 12px;margin:0 0 10px}
 .share-preview b{display:block;color:#fff;font-size:13px}
 .share-preview span{display:block;color:rgba(225,236,250,.78);font-size:12px;margin-top:4px}
+.share-preview-cards{display:flex;gap:8px;margin-top:10px}
+.share-preview-cards img{width:31%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.2);box-shadow:0 10px 24px rgba(0,0,0,.35)}
 .share-main-btn{width:100%;border:1px solid rgba(126,217,87,.52);background:linear-gradient(135deg,rgba(126,217,87,.22),rgba(52,168,83,.18));color:#f4fff2;border-radius:14px;padding:12px 14px;font-size:14px;font-weight:800;cursor:pointer}
 .share-main-btn:hover{filter:brightness(1.06)}
 .share-wechat-btn{width:100%;border:1px solid rgba(126,217,87,.52);background:rgba(126,217,87,.10);color:#d9ffe0;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px}
@@ -809,6 +811,11 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
     <div class="share-preview">
       <b>2026 世界杯赛程 + 球迷卡牌赛</b>
       <span>复制后可直接发微信好友或朋友圈</span>
+      <div class="share-preview-cards">
+        <img src="assets/fan-cards/base/thumb/mexico.webp" alt="卡牌预览1">
+        <img src="assets/fan-cards/base/thumb/turkey.webp" alt="卡牌预览2">
+        <img src="assets/fan-cards/base/thumb/jordan.webp" alt="卡牌预览3">
+      </div>
     </div>
     <button class="share-main-btn" type="button" onclick="copyForWeChat()">一键复制赛程和卡牌赛链接</button>
     <button class="share-wechat-btn" type="button" onclick="openWeChatApp()">尝试打开微信</button>
