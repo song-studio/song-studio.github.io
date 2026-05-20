@@ -1,0 +1,152 @@
+[
+  {
+    "section_id": "search",
+    "section_name_zh": "搜索入口",
+    "mobile_title": "查询地点天气",
+    "short_description": "搜索村镇、景区、山口、营地或直接输入经纬度",
+    "empty_state_text": "在地点框中搜索，或输入经纬度（如 30.996, 102.830）",
+    "loading_text": "正在搜索地点…",
+    "error_text": "未找到该地点。试试输入更完整的名称或使用经纬度坐标。",
+    "data_note": "使用 Open-Meteo Geocoding API + 高德地图地理编码"
+  },
+  {
+    "section_id": "current_conditions",
+    "section_name_zh": "当前实况",
+    "mobile_title": "实况",
+    "short_description": "当前位置当前时刻的气温、体感温度、风速和天气现象",
+    "empty_state_text": "暂无实况数据",
+    "loading_text": "正在获取当前天气…",
+    "error_text": "当前天气数据不可用",
+    "data_note": "Open-Meteo current_weather + hourly 最新数据，数据延迟约30分钟"
+  },
+  {
+    "section_id": "hourly_forecast",
+    "section_name_zh": "小时预报",
+    "mobile_title": "逐小时",
+    "short_description": "未来48小时逐小时温度、降水概率和风的变化曲线",
+    "empty_state_text": "暂无小时预报",
+    "loading_text": "正在加载小时趋势…",
+    "error_text": "小时预报数据加载失败",
+    "data_note": "Open-Meteo 逐小时数据，默认展示未来48小时。前24小时精度较高，后24小时供趋势参考。"
+  },
+  {
+    "section_id": "wind_section",
+    "section_name_zh": "风场",
+    "mobile_title": "风力风向",
+    "short_description": "风速、阵风、风向和风力等级。山口、垭口实际风速可能高于预报值。",
+    "empty_state_text": "暂无风场数据",
+    "loading_text": "获取风场数据…",
+    "error_text": "风场数据不可用",
+    "data_note": "Open-Meteo wind_speed_10m + wind_gusts_10m + wind_direction_10m。山区实际风感可能更强。"
+  },
+  {
+    "section_id": "precipitation",
+    "section_name_zh": "降水",
+    "mobile_title": "降水",
+    "short_description": "降水概率和预计降水量。概率≥60%时建议准备雨具。",
+    "empty_state_text": "暂无降水预测",
+    "loading_text": "获取降水数据…",
+    "error_text": "降水数据不可用",
+    "data_note": "降水概率来自集合预报（ECMWF ENS）统计，降水量为小时累计值。"
+  },
+  {
+    "section_id": "thunderstorm",
+    "section_name_zh": "雷暴",
+    "mobile_title": "雷暴",
+    "short_description": "雷暴发生概率。雷暴是山区最危险的天气现象之一。",
+    "empty_state_text": "暂无雷暴信号",
+    "loading_text": "正在监测雷暴风险…",
+    "error_text": "雷暴数据不可用",
+    "data_note": "基于CAPE指数和集合预报统计的雷暴概率。实际局部雷暴可能不在此预报覆盖范围内。"
+  },
+  {
+    "section_id": "visibility",
+    "section_name_zh": "能见度",
+    "mobile_title": "能见度",
+    "short_description": "水平能见度距离。低能见度是山区迷路的主要原因之一。",
+    "empty_state_text": "暂无能见度数据",
+    "loading_text": "获取能见度数据…",
+    "error_text": "能见度数据不可用",
+    "data_note": "能见度数据来源于全球模型，山区局部雾可能未被精确捕捉。"
+  },
+  {
+    "section_id": "cloud",
+    "section_name_zh": "云量",
+    "mobile_title": "云量",
+    "short_description": "总云量和低/中/高层云分布。云量骤增可能是天气变化的信号。",
+    "empty_state_text": "暂无云量数据",
+    "loading_text": "获取云量数据…",
+    "error_text": "云量数据不可用",
+    "data_note": "Open-Meteo 提供总云量（cloud_cover）和分层云量（low/mid/high）。"
+  },
+  {
+    "section_id": "humidity_dew",
+    "section_name_zh": "湿度/露点",
+    "mobile_title": "湿度",
+    "short_description": "相对湿度和露点温度。露点比湿度更能反映空气的干湿程度。",
+    "empty_state_text": "暂无湿度数据",
+    "loading_text": "获取湿度数据…",
+    "error_text": "湿度数据不可用",
+    "data_note": "相对湿度和露点温度来源于Open-Meteo。露点<0°C可能有霜冻。"
+  },
+  {
+    "section_id": "pressure",
+    "section_name_zh": "气压",
+    "mobile_title": "气压",
+    "short_description": "海平面气压和24小时变化趋势。气压骤降是天气转坏的早期信号。",
+    "empty_state_text": "暂无气压数据",
+    "loading_text": "获取气压数据…",
+    "error_text": "气压数据不可用",
+    "data_note": "Open-Meteo 海平面气压（pressure_msl）。24小时变化≥8hPa需关注天气变化。"
+  },
+  {
+    "section_id": "sunrise_sunset",
+    "section_name_zh": "日出日落",
+    "mobile_title": "日照",
+    "short_description": "今日日出、日落时间和日照时长。规划出行和营地时间的参考。",
+    "empty_state_text": "暂无日照数据",
+    "loading_text": "获取日出日落数据…",
+    "error_text": "日照数据不可用",
+    "data_note": "基于地理位置和日期计算，与天气无关。"
+  },
+  {
+    "section_id": "daily_7d",
+    "section_name_zh": "7日趋势",
+    "mobile_title": "7天",
+    "short_description": "未来7天最高温/最低温/降水趋势概览。中长期路线规划参考。",
+    "empty_state_text": "暂无预报数据",
+    "loading_text": "正在加载7日趋势…",
+    "error_text": "7日趋势数据不可用",
+    "data_note": "前5天预报可靠度较高，后2天为趋势参考。ECMWF/GFS双模型对比降低不确定性。"
+  },
+  {
+    "section_id": "data_sources",
+    "section_name_zh": "专业来源",
+    "mobile_title": "数据源",
+    "short_description": "当前天气数据来源于哪些模型和机构，以及各模型的特点。",
+    "empty_state_text": null,
+    "loading_text": null,
+    "error_text": null,
+    "data_note": "默认使用 Open-Meteo 聚合数据，自动选择最佳模型。数据遵循 CC BY 4.0 许可。"
+  },
+  {
+    "section_id": "data_disclaimer",
+    "section_name_zh": "数据说明",
+    "mobile_title": "说明",
+    "short_description": "天气数据和使用的限制说明",
+    "empty_state_text": null,
+    "loading_text": null,
+    "error_text": null,
+    "data_note": "天气数据来源于开源气象模型聚合，不保证100%准确。山区天气变数大，预报仅供参考。数据来源：Open-Meteo CC BY 4.0"
+  },
+  {
+    "section_id": "uv",
+    "section_name_zh": "紫外线",
+    "mobile_title": "紫外线",
+    "short_description": "当前和每日最大紫外线指数。高海拔+雪地场景UV加倍。",
+    "empty_state_text": "暂无紫外线数据",
+    "loading_text": "获取紫外线数据…",
+    "error_text": "紫外线数据不可用",
+    "data_note": "来自Open-Meteo/CAMS紫外线预报。海拔3000m紫外线比海面高约40%。"
+  }
+]

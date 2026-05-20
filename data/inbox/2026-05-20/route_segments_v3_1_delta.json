@@ -1,0 +1,1697 @@
+[
+  {
+    "route_id": "hk_001",
+    "segment_order": 1,
+    "from_name": "桥头",
+    "from_lng": 100.06667,
+    "from_lat": 27.31667,
+    "to_name": "纳西雅阁",
+    "to_lng": 100.08935,
+    "to_lat": 27.18619,
+    "segment_character": "公路段",
+    "visual_label_mobile": "到纳西雅阁",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/hutiaoxia.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_001",
+    "segment_order": 2,
+    "from_name": "纳西雅阁",
+    "from_lng": 100.08935,
+    "from_lat": 27.18619,
+    "to_name": "28道拐顶",
+    "to_lng": 100.10263,
+    "to_lat": 27.19271,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "28道拐",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/hutiaoxia.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_001",
+    "segment_order": 3,
+    "from_name": "28道拐顶",
+    "from_lng": 100.10263,
+    "from_lat": 27.19271,
+    "to_name": "茶马客栈",
+    "to_lng": 100.11768,
+    "to_lat": 27.21772,
+    "segment_character": "下坡段",
+    "visual_label_mobile": "到茶马",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/hutiaoxia.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_001",
+    "segment_order": 4,
+    "from_name": "茶马客栈",
+    "from_lng": 100.11768,
+    "from_lat": 27.21772,
+    "to_name": "中途客栈(Halfway)",
+    "to_lng": 100.1415,
+    "to_lat": 27.24143,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "精华山脊",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/hutiaoxia.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_001",
+    "segment_order": 5,
+    "from_name": "中途客栈",
+    "from_lng": 100.1415,
+    "from_lat": 27.24143,
+    "to_name": "Tina's",
+    "to_lng": 100.1579,
+    "to_lat": 27.25721,
+    "segment_character": "下坡段",
+    "visual_label_mobile": "到Tina's",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/hutiaoxia.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_001",
+    "segment_order": 6,
+    "from_name": "Tina's",
+    "from_lng": 100.1579,
+    "from_lat": 27.25721,
+    "to_name": "中虎跳谷底",
+    "to_lng": 100.16156,
+    "to_lat": 27.25795,
+    "segment_character": "下降段",
+    "visual_label_mobile": "下深谷",
+    "source_urls": [
+      "https://www.xgllhtx.cn/"
+    ]
+  },
+  {
+    "route_id": "hk_001",
+    "segment_order": 7,
+    "from_name": "中虎跳",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "核桃园",
+    "to_lng": 100.17139,
+    "to_lat": 27.27118,
+    "segment_character": "公路段",
+    "visual_label_mobile": "沿公路",
+    "source_urls": [
+      "https://www.xgllhtx.cn/"
+    ]
+  },
+  {
+    "route_id": "hk_001",
+    "segment_order": 8,
+    "from_name": "核桃园",
+    "from_lng": 100.17139,
+    "from_lat": 27.27118,
+    "to_name": "大具",
+    "to_lng": 100.22786,
+    "to_lat": 27.30674,
+    "segment_character": "公路段",
+    "visual_label_mobile": "过大具",
+    "source_urls": [
+      "https://www.xgllhtx.cn/"
+    ]
+  },
+  {
+    "route_id": "hk_002",
+    "segment_order": 1,
+    "from_name": "西当",
+    "from_lng": 98.82913,
+    "from_lat": 28.36767,
+    "to_name": "南宗垭口",
+    "to_lng": 98.8223,
+    "to_lat": 28.3944,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "翻南宗垭口",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/yubeng.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_002",
+    "segment_order": 2,
+    "from_name": "南宗垭口",
+    "from_lng": 98.8223,
+    "from_lat": 28.3944,
+    "to_name": "上雨崩",
+    "to_lng": 98.79008,
+    "to_lat": 28.40073,
+    "segment_character": "下降段",
+    "visual_label_mobile": "进雨崩",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/yubeng.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_002",
+    "segment_order": 3,
+    "from_name": "上雨崩",
+    "from_lng": 98.79008,
+    "from_lat": 28.40073,
+    "to_name": "笑农大本营",
+    "to_lng": 98.75829,
+    "to_lat": 28.40342,
+    "segment_character": "林道段",
+    "visual_label_mobile": "去大本营",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=SNigJn5Iet1w7i76dm%2Fh3w%3D%3D"
+    ]
+  },
+  {
+    "route_id": "hk_002",
+    "segment_order": 4,
+    "from_name": "大本营",
+    "from_lng": 98.75829,
+    "from_lat": 28.40342,
+    "to_name": "冰湖",
+    "to_lng": 98.74544,
+    "to_lat": 28.40761,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "冲冰湖",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=SNigJn5Iet1w7i76dm%2Fh3w%3D%3D"
+    ]
+  },
+  {
+    "route_id": "hk_002",
+    "segment_order": 5,
+    "from_name": "下雨崩",
+    "from_lng": 98.79357,
+    "from_lat": 28.39245,
+    "to_name": "神瀑",
+    "to_lng": 98.76599,
+    "to_lat": 28.37151,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "去神瀑",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=SNigJn5Iet1w7i76dm%2Fh3w%3D%3D"
+    ]
+  },
+  {
+    "route_id": "hk_002",
+    "segment_order": 6,
+    "from_name": "下雨崩",
+    "from_lng": 98.79357,
+    "from_lat": 28.39245,
+    "to_name": "尼农",
+    "to_lng": 98.86364,
+    "to_lat": 28.36795,
+    "segment_character": "下降段",
+    "visual_label_mobile": "尼农出山",
+    "source_urls": [
+      "https://www.2bulu.com/community/gotohuatinfo.htm?id=SNigJn5Iet1w7i76dm%2Fh3w%3D%3D"
+    ]
+  },
+  {
+    "route_id": "hk_005",
+    "segment_order": 1,
+    "from_name": "长坪沟景区",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "木骡子",
+    "to_lng": 102.85,
+    "to_lat": 31.054,
+    "segment_character": "林道段",
+    "visual_label_mobile": "长坪沟",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/changpinggoubipenggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_005",
+    "segment_order": 2,
+    "from_name": "木骡子",
+    "from_lng": 102.85,
+    "from_lat": 31.054,
+    "to_name": "叉子沟营地",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "草甸段",
+    "visual_label_mobile": "到木骡子",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/changpinggoubipenggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_005",
+    "segment_order": 3,
+    "from_name": "叉子沟",
+    "from_lng": 102.767,
+    "from_lat": 31.083,
+    "to_name": "垭口(4680m)",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "到叉子沟",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/changpinggoubipenggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_005",
+    "segment_order": 4,
+    "from_name": "垭口",
+    "from_lng": 102.75,
+    "from_lat": 31.06667,
+    "to_name": "毕棚沟",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "下降段",
+    "visual_label_mobile": "翻垭口出",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/changpinggoubipenggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "segment_order": 1,
+    "from_name": "塘口",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "2900营地",
+    "to_lng": 107.40134,
+    "to_lat": 33.98181,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "上2900",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "segment_order": 2,
+    "from_name": "2900营地",
+    "from_lng": 107.40134,
+    "from_lat": 33.98181,
+    "to_name": "鳌山导航架",
+    "to_lng": 107.41928,
+    "to_lat": 33.94232,
+    "segment_character": "石海段",
+    "visual_label_mobile": "石海导航架",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "segment_order": 3,
+    "from_name": "导航架",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "药王庙",
+    "to_lng": 107.45633,
+    "to_lat": 33.9457,
+    "segment_character": "石海段",
+    "visual_label_mobile": "到药王庙",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "segment_order": 4,
+    "from_name": "药王庙",
+    "from_lng": 107.45633,
+    "from_lat": 33.9457,
+    "to_name": "水窝子营地",
+    "to_lng": 107.49895,
+    "to_lat": 33.95599,
+    "segment_character": "石海段",
+    "visual_label_mobile": "水窝子",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "segment_order": 5,
+    "from_name": "水窝子",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "2800营地",
+    "to_lng": 107.57116,
+    "to_lat": 33.93022,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "飞机梁",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "segment_order": 6,
+    "from_name": "2800营地",
+    "from_lng": 107.57116,
+    "from_lat": 33.93022,
+    "to_name": "西塬营地",
+    "to_lng": 107.65314,
+    "to_lat": 33.91979,
+    "segment_character": "石海段",
+    "visual_label_mobile": "塔峰",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "segment_order": 7,
+    "from_name": "西塬营地",
+    "from_lng": 107.65314,
+    "from_lat": 33.91979,
+    "to_name": "大爷海",
+    "to_lng": 107.76038,
+    "to_lat": 33.95754,
+    "segment_character": "石海段",
+    "visual_label_mobile": "大爷海",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "segment_order": 8,
+    "from_name": "大爷海",
+    "from_lng": 107.76038,
+    "from_lat": 33.95754,
+    "to_name": "厚畛子",
+    "to_lng": 107.83966,
+    "to_lat": 33.85311,
+    "segment_character": "下降段",
+    "visual_label_mobile": "厚畛子",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_009",
+    "segment_order": 1,
+    "from_name": "龙山村",
+    "from_lng": 114.16667,
+    "from_lat": 27.58333,
+    "to_name": "发云界",
+    "to_lng": 114.2,
+    "to_lat": 27.56667,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "登发云界",
+    "source_urls": [
+      "https://www.go20s.com/qnw/2993.html"
+    ]
+  },
+  {
+    "route_id": "hk_009",
+    "segment_order": 2,
+    "from_name": "发云界",
+    "from_lng": 114.2,
+    "from_lat": 27.56667,
+    "to_name": "好汉坡",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "草甸段",
+    "visual_label_mobile": "草甸行走",
+    "source_urls": [
+      "https://www.go20s.com/qnw/2993.html"
+    ]
+  },
+  {
+    "route_id": "hk_009",
+    "segment_order": 3,
+    "from_name": "好汉坡",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "绝望坡",
+    "to_lng": 114.23333,
+    "to_lat": 27.53333,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "好汉坡-绝望坡",
+    "source_urls": [
+      "https://www.go20s.com/qnw/2993.html"
+    ]
+  },
+  {
+    "route_id": "hk_009",
+    "segment_order": 4,
+    "from_name": "绝望坡",
+    "from_lng": 114.23333,
+    "from_lat": 27.53333,
+    "to_name": "吊马桩",
+    "to_lng": 114.25,
+    "to_lat": 27.51667,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "山脊到吊马桩",
+    "source_urls": [
+      "https://www.go20s.com/qnw/2993.html"
+    ]
+  },
+  {
+    "route_id": "hk_009",
+    "segment_order": 5,
+    "from_name": "吊马桩",
+    "from_lng": 114.25,
+    "from_lat": 27.51667,
+    "to_name": "金顶",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "冲金顶",
+    "source_urls": [
+      "https://www.go20s.com/qnw/2993.html"
+    ]
+  },
+  {
+    "route_id": "hk_011",
+    "segment_order": 1,
+    "from_name": "松林口",
+    "from_lng": 94.92736,
+    "from_lat": 29.49175,
+    "to_name": "多雄拉山口",
+    "to_lng": 94.94743,
+    "to_lat": 29.4876,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "翻多雄拉",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/motuo.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_011",
+    "segment_order": 2,
+    "from_name": "多雄拉山口",
+    "from_lng": 94.94743,
+    "from_lat": 29.4876,
+    "to_name": "拉格",
+    "to_lng": 95.0014,
+    "to_lat": 29.46766,
+    "segment_character": "下降段",
+    "visual_label_mobile": "下到拉格",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/motuo.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_011",
+    "segment_order": 3,
+    "from_name": "拉格",
+    "from_lng": 95.0014,
+    "from_lat": 29.46766,
+    "to_name": "汗密",
+    "to_lng": 95.12764,
+    "to_lat": 29.3667,
+    "segment_character": "林道段",
+    "visual_label_mobile": "穿越蚂蟥区",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/motuo.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_011",
+    "segment_order": 4,
+    "from_name": "汗密",
+    "from_lng": 95.12764,
+    "from_lat": 29.3667,
+    "to_name": "背崩",
+    "to_lng": 95.15893,
+    "to_lat": 29.24605,
+    "segment_character": "峡谷段",
+    "visual_label_mobile": "最险老虎嘴",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/motuo.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_011",
+    "segment_order": 5,
+    "from_name": "背崩",
+    "from_lng": 95.15893,
+    "from_lat": 29.24605,
+    "to_name": "墨脱",
+    "to_lng": 95.33182,
+    "to_lat": 29.32535,
+    "segment_character": "公路段",
+    "visual_label_mobile": "到墨脱",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/motuo.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_010",
+    "segment_order": 1,
+    "from_name": "塔钦",
+    "from_lng": 81.26667,
+    "from_lat": 31.03333,
+    "to_name": "曲古寺",
+    "to_lng": 81.23333,
+    "to_lat": 31.0,
+    "segment_character": "草原段",
+    "visual_label_mobile": "转山起点",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_010",
+    "segment_order": 2,
+    "from_name": "曲古寺",
+    "from_lng": 81.23333,
+    "from_lat": 31.0,
+    "to_name": "止热寺",
+    "to_lng": 81.18333,
+    "to_lat": 31.05,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "到止热寺",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_010",
+    "segment_order": 3,
+    "from_name": "止热寺",
+    "from_lng": 81.18333,
+    "from_lat": 31.05,
+    "to_name": "卓玛拉垭口",
+    "to_lng": 81.16667,
+    "to_lat": 31.06667,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "过卓玛拉",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_010",
+    "segment_order": 4,
+    "from_name": "卓玛拉垭口",
+    "from_lng": 81.16667,
+    "from_lat": 31.06667,
+    "to_name": "尊珠寺",
+    "to_lng": 81.18333,
+    "to_lat": 31.1,
+    "segment_character": "下降段",
+    "visual_label_mobile": "急速下降",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_010",
+    "segment_order": 5,
+    "from_name": "尊珠寺",
+    "from_lng": 81.18333,
+    "from_lat": 31.1,
+    "to_name": "塔钦",
+    "to_lng": 81.26667,
+    "to_lat": 31.03333,
+    "segment_character": "草原段",
+    "visual_label_mobile": "回塔钦",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_004",
+    "segment_order": 1,
+    "from_name": "琼库什台",
+    "from_lng": 82.15,
+    "from_lat": 42.95,
+    "to_name": "包扎墩达坂",
+    "to_lng": 82.1,
+    "to_lat": 42.76667,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "过包扎墩",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_004",
+    "segment_order": 2,
+    "from_name": "包扎墩达坂",
+    "from_lng": 82.1,
+    "from_lat": 42.76667,
+    "to_name": "科克苏河",
+    "to_lng": 82.18333,
+    "to_lat": 42.68333,
+    "segment_character": "下降段",
+    "visual_label_mobile": "到科克苏",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_004",
+    "segment_order": 3,
+    "from_name": "科克苏河",
+    "from_lng": 82.18333,
+    "from_lat": 42.68333,
+    "to_name": "天堂湖",
+    "to_lng": 82.41667,
+    "to_lat": 42.61667,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "上天堂湖",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_004",
+    "segment_order": 4,
+    "from_name": "天堂湖",
+    "from_lng": 82.41667,
+    "from_lat": 42.61667,
+    "to_name": "阿克布拉克达坂",
+    "to_lng": 82.48333,
+    "to_lat": 42.55,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "翻垭口",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_004",
+    "segment_order": 5,
+    "from_name": "阿克布拉克达坂",
+    "from_lng": 82.48333,
+    "from_lat": 42.55,
+    "to_name": "黑英山",
+    "to_lng": 82.7,
+    "to_lat": 42.41667,
+    "segment_character": "下降段",
+    "visual_label_mobile": "出黑英山",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_006",
+    "segment_order": 1,
+    "from_name": "嘟噜村",
+    "from_lng": 100.83333,
+    "from_lat": 28.11667,
+    "to_name": "满措牛场",
+    "to_lng": 100.68333,
+    "to_lat": 28.21667,
+    "segment_character": "林道段",
+    "visual_label_mobile": "白水河上行",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_006",
+    "segment_order": 2,
+    "from_name": "满措牛场",
+    "from_lng": 100.68333,
+    "from_lat": 28.21667,
+    "to_name": "杂巴拉垭口",
+    "to_lng": 100.6,
+    "to_lat": 28.26667,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "杂巴拉垭口",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_006",
+    "segment_order": 3,
+    "from_name": "杂巴拉垭口",
+    "from_lng": 100.6,
+    "from_lat": 28.26667,
+    "to_name": "蛇湖",
+    "to_lng": 100.35,
+    "to_lat": 28.36667,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "越垭口群",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_006",
+    "segment_order": 4,
+    "from_name": "蛇湖",
+    "from_lng": 100.35,
+    "from_lat": 28.36667,
+    "to_name": "牛奶海",
+    "to_lng": 100.325,
+    "to_lat": 28.35833,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "蛇湖到亚丁",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_006",
+    "segment_order": 5,
+    "from_name": "牛奶海",
+    "from_lng": 100.325,
+    "from_lat": 28.35833,
+    "to_name": "亚丁",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "景区段",
+    "visual_label_mobile": "牛奶海",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_020",
+    "segment_order": 1,
+    "from_name": "优帕桥",
+    "from_lng": 87.31164,
+    "from_lat": 28.07928,
+    "to_name": "晓乌错",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "到晓乌错",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/zhufengdongpogamagou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_020",
+    "segment_order": 2,
+    "from_name": "晓乌错",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "晓乌拉垭口",
+    "to_lng": 87.26163,
+    "to_lat": 28.00985,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "翻晓乌拉",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/zhufengdongpogamagou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_020",
+    "segment_order": 3,
+    "from_name": "晓乌拉垭口",
+    "from_lng": 87.26163,
+    "from_lat": 28.00985,
+    "to_name": "卓湘营地",
+    "to_lng": 87.2209,
+    "to_lat": 27.97665,
+    "segment_character": "下降段",
+    "visual_label_mobile": "嘎玛沟",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/zhufengdongpogamagou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_020",
+    "segment_order": 4,
+    "from_name": "卓湘",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "汤湘观景台",
+    "to_lng": 87.16677,
+    "to_lat": 28.00033,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "汤湘观景",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/zhufengdongpogamagou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_020",
+    "segment_order": 5,
+    "from_name": "汤湘",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "俄嘎营地",
+    "to_lng": 87.11338,
+    "to_lat": 27.98896,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "到俄嘎",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/zhufengdongpogamagou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_020",
+    "segment_order": 6,
+    "from_name": "俄嘎",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "珠峰东坡BC",
+    "to_lng": 87.01781,
+    "to_lat": 27.99981,
+    "segment_character": "冰川段",
+    "visual_label_mobile": "冲东坡BC",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/zhufengdongpogamagou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_003",
+    "segment_order": 1,
+    "from_name": "老榆林",
+    "from_lng": 101.93333,
+    "from_lat": 30.0,
+    "to_name": "格西草原",
+    "to_lng": 101.88333,
+    "to_lat": 29.98333,
+    "segment_character": "草原段",
+    "visual_label_mobile": "老榆林出发",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_003",
+    "segment_order": 2,
+    "from_name": "格西草原",
+    "from_lng": 101.88333,
+    "from_lat": 29.98333,
+    "to_name": "日乌且垭口",
+    "to_lng": 101.75,
+    "to_lat": 29.86667,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "日乌且",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_003",
+    "segment_order": 3,
+    "from_name": "日乌且垭口",
+    "from_lng": 101.75,
+    "from_lat": 29.86667,
+    "to_name": "莫溪沟尾",
+    "to_lng": 101.7,
+    "to_lat": 29.8,
+    "segment_character": "下降段",
+    "visual_label_mobile": "过垭口",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_003",
+    "segment_order": 4,
+    "from_name": "莫溪沟尾",
+    "from_lng": 101.7,
+    "from_lat": 29.8,
+    "to_name": "贡嘎寺",
+    "to_lng": 101.61667,
+    "to_lat": 29.63333,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "到贡嘎寺",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_003",
+    "segment_order": 5,
+    "from_name": "贡嘎寺",
+    "from_lng": 101.61667,
+    "from_lat": 29.63333,
+    "to_name": "草科",
+    "to_lng": 102.05,
+    "to_lat": 29.43333,
+    "segment_character": "下降段",
+    "visual_label_mobile": "子梅出山",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_019",
+    "segment_order": 1,
+    "from_name": "王莽岭",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "马武寨",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "到马武寨",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/nantaihang.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_019",
+    "segment_order": 2,
+    "from_name": "马武寨",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "抱犊村",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "峡谷段",
+    "visual_label_mobile": "抱犊村",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/nantaihang.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_019",
+    "segment_order": 3,
+    "from_name": "抱犊村",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "八里沟",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "下降段",
+    "visual_label_mobile": "八里沟出",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/nantaihang.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_036",
+    "segment_order": 1,
+    "from_name": "扎尕那村",
+    "from_lng": 103.21667,
+    "from_lat": 34.27778,
+    "to_name": "石林",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "上石林",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/gannanjizhagana.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_036",
+    "segment_order": 2,
+    "from_name": "石林",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "冬才营地",
+    "to_lng": 103.30621,
+    "to_lat": 34.25463,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "过冬才",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/gannanjizhagana.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_036",
+    "segment_order": 3,
+    "from_name": "冬才营地",
+    "from_lng": 103.30621,
+    "from_lat": 34.25463,
+    "to_name": "三角石",
+    "to_lng": 103.53461,
+    "to_lat": 34.35457,
+    "segment_character": "下降段",
+    "visual_label_mobile": "出三角石",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/gannanjizhagana.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_030",
+    "segment_order": 1,
+    "from_name": "伏岭镇",
+    "from_lng": 118.7,
+    "from_lat": 30.13333,
+    "to_name": "黄茅培",
+    "to_lng": 118.68333,
+    "to_lat": 30.16667,
+    "segment_character": "古道段",
+    "visual_label_mobile": "江南第一关",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_030",
+    "segment_order": 2,
+    "from_name": "黄茅培",
+    "from_lng": 118.68333,
+    "from_lat": 30.16667,
+    "to_name": "下雪堂",
+    "to_lng": 118.65,
+    "to_lat": 30.2,
+    "segment_character": "古道段",
+    "visual_label_mobile": "到下雪堂",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_030",
+    "segment_order": 3,
+    "from_name": "下雪堂",
+    "from_lng": 118.65,
+    "from_lat": 30.2,
+    "to_name": "蓝天凹",
+    "to_lng": 118.61667,
+    "to_lat": 30.21667,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "蓝天凹",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_030",
+    "segment_order": 4,
+    "from_name": "蓝天凹",
+    "from_lng": 118.61667,
+    "from_lat": 30.21667,
+    "to_name": "永来村",
+    "to_lng": 118.6,
+    "to_lat": 30.23333,
+    "segment_character": "下降段",
+    "visual_label_mobile": "入浙江",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_012",
+    "segment_order": 1,
+    "from_name": "琼库什台",
+    "from_lng": 82.15,
+    "from_lat": 42.95,
+    "to_name": "西喀拉峻",
+    "to_lng": 82.25,
+    "to_lat": 42.95,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "上喀拉峻",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_012",
+    "segment_order": 2,
+    "from_name": "西喀拉峻",
+    "from_lng": 82.25,
+    "from_lat": 42.95,
+    "to_name": "东喀拉峻",
+    "to_lng": 82.45,
+    "to_lat": 42.93333,
+    "segment_character": "草甸段",
+    "visual_label_mobile": "穿草原",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_012",
+    "segment_order": 3,
+    "from_name": "东喀拉峻",
+    "from_lng": 82.45,
+    "from_lat": 42.93333,
+    "to_name": "塔里木",
+    "to_lng": 82.55,
+    "to_lat": 42.86667,
+    "segment_character": "下降段",
+    "visual_label_mobile": "塔里木出",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_013",
+    "segment_order": 1,
+    "from_name": "白杨沟",
+    "from_lng": 86.5,
+    "from_lat": 43.6,
+    "to_name": "白杨沟达坂",
+    "to_lng": 86.35,
+    "to_lat": 43.51667,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "白杨沟上",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_013",
+    "segment_order": 2,
+    "from_name": "白杨沟达坂",
+    "from_lng": 86.35,
+    "from_lat": 43.51667,
+    "to_name": "台普希克马河",
+    "to_lng": 86.35,
+    "to_lat": 43.48333,
+    "segment_character": "下降段",
+    "visual_label_mobile": "到河畔",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_013",
+    "segment_order": 3,
+    "from_name": "台普希克马河",
+    "from_lng": 86.35,
+    "from_lat": 43.48333,
+    "to_name": "库拉阿特腾达坂",
+    "to_lng": 86.4,
+    "to_lat": 43.41667,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "翻达坂",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_013",
+    "segment_order": 4,
+    "from_name": "库拉阿特腾达坂",
+    "from_lng": 86.4,
+    "from_lat": 43.41667,
+    "to_name": "蒙特开曾达坂",
+    "to_lng": 86.25,
+    "to_lat": 43.26667,
+    "segment_character": "冰川段",
+    "visual_label_mobile": "冰川段",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_013",
+    "segment_order": 5,
+    "from_name": "蒙特开曾达坂",
+    "from_lng": 86.25,
+    "from_lat": 43.26667,
+    "to_name": "绿湖",
+    "to_lng": 86.23333,
+    "to_lat": 43.21667,
+    "segment_character": "下降段",
+    "visual_label_mobile": "绿湖",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_014",
+    "segment_order": 1,
+    "from_name": "夏特温泉",
+    "from_lng": 80.85,
+    "from_lat": 43.05,
+    "to_name": "木扎尔特冰川",
+    "to_lng": 80.7,
+    "to_lat": 42.85,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "夏特河谷",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_014",
+    "segment_order": 2,
+    "from_name": "木扎尔特冰川",
+    "from_lng": 80.7,
+    "from_lat": 42.85,
+    "to_name": "木扎尔特达坂",
+    "to_lng": 80.65,
+    "to_lat": 42.73333,
+    "segment_character": "冰川段",
+    "visual_label_mobile": "过冰川",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_014",
+    "segment_order": 3,
+    "from_name": "木扎尔特达坂",
+    "from_lng": 80.65,
+    "from_lat": 42.73333,
+    "to_name": "古驿站",
+    "to_lng": 80.61667,
+    "to_lat": 42.63333,
+    "segment_character": "下降段",
+    "visual_label_mobile": "翻达坂",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_014",
+    "segment_order": 4,
+    "from_name": "古驿站",
+    "from_lng": 80.61667,
+    "from_lat": 42.63333,
+    "to_name": "温宿",
+    "to_lng": 80.55,
+    "to_lat": 42.5,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "到温宿",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_015",
+    "segment_order": 1,
+    "from_name": "天鹅湖",
+    "from_lng": 105.05,
+    "from_lat": 38.65,
+    "to_name": "乌兰湖",
+    "to_lng": 105.1,
+    "to_lat": 38.6,
+    "segment_character": "沙漠段",
+    "visual_label_mobile": "第一湖",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_015",
+    "segment_order": 2,
+    "from_name": "乌兰湖",
+    "from_lng": 105.1,
+    "from_lat": 38.6,
+    "to_name": "苏海图",
+    "to_lng": 105.15,
+    "to_lat": 38.55,
+    "segment_character": "沙漠段",
+    "visual_label_mobile": "到苏海图",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_015",
+    "segment_order": 3,
+    "from_name": "苏海图",
+    "from_lng": 105.15,
+    "from_lat": 38.55,
+    "to_name": "太阳湖",
+    "to_lng": 105.0,
+    "to_lat": 38.48333,
+    "segment_character": "沙漠段",
+    "visual_label_mobile": "第三湖",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_015",
+    "segment_order": 4,
+    "from_name": "太阳湖",
+    "from_lng": 105.0,
+    "from_lat": 38.48333,
+    "to_name": "月亮湖",
+    "to_lng": 104.95,
+    "to_lat": 38.45,
+    "segment_character": "沙漠段",
+    "visual_label_mobile": "月亮湖",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_023",
+    "segment_order": 1,
+    "from_name": "卡卡沟口",
+    "from_lng": 103.69574,
+    "from_lat": 32.99184,
+    "to_name": "长海子",
+    "to_lng": 103.82701,
+    "to_lat": 32.92482,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "到长海子",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/qizanggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_023",
+    "segment_order": 2,
+    "from_name": "长海子",
+    "from_lng": 103.82701,
+    "from_lat": 32.92482,
+    "to_name": "草海子",
+    "to_lng": 103.786,
+    "to_lat": 32.9132,
+    "segment_character": "草甸段",
+    "visual_label_mobile": "过草海",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/qizanggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_023",
+    "segment_order": 3,
+    "from_name": "草海子",
+    "from_lng": 103.786,
+    "from_lat": 32.9132,
+    "to_name": "红星海子",
+    "to_lng": 103.81643,
+    "to_lat": 32.85791,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "红星海",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/qizanggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_023",
+    "segment_order": 4,
+    "from_name": "红星海子",
+    "from_lng": 103.81643,
+    "from_lat": 32.85791,
+    "to_name": "S301",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "下降段",
+    "visual_label_mobile": "出S301",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/qizanggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_016",
+    "segment_order": 1,
+    "from_name": "杨堤",
+    "from_lng": 110.43333,
+    "from_lat": 25.08333,
+    "to_name": "浪石",
+    "to_lng": 110.41667,
+    "to_lat": 25.05,
+    "segment_character": "江边段",
+    "visual_label_mobile": "过浪石",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_016",
+    "segment_order": 2,
+    "from_name": "浪石",
+    "from_lng": 110.41667,
+    "from_lat": 25.05,
+    "to_name": "全家洲",
+    "to_lng": 110.4,
+    "to_lat": 25.01667,
+    "segment_character": "江边段",
+    "visual_label_mobile": "全家洲",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_016",
+    "segment_order": 3,
+    "from_name": "全家洲",
+    "from_lng": 110.4,
+    "from_lat": 25.01667,
+    "to_name": "九马画山",
+    "to_lng": 110.38333,
+    "to_lat": 24.98333,
+    "segment_character": "江边段",
+    "visual_label_mobile": "九马画山",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_016",
+    "segment_order": 4,
+    "from_name": "九马画山",
+    "from_lng": 110.38333,
+    "from_lat": 24.98333,
+    "to_name": "兴坪",
+    "to_lng": 110.5,
+    "to_lat": 24.98333,
+    "segment_character": "江边段",
+    "visual_label_mobile": "兴坪",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_017",
+    "segment_order": 1,
+    "from_name": "色乡",
+    "from_lng": 90.83333,
+    "from_lat": 28.2,
+    "to_name": "白马林措",
+    "to_lng": 90.6,
+    "to_lat": 28.16667,
+    "segment_character": "草原段",
+    "visual_label_mobile": "白马林措",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_017",
+    "segment_order": 2,
+    "from_name": "白马林措",
+    "from_lng": 90.6,
+    "from_lat": 28.16667,
+    "to_name": "介久措",
+    "to_lng": 90.58333,
+    "to_lat": 28.18333,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "介久措",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_017",
+    "segment_order": 3,
+    "from_name": "介久措",
+    "from_lng": 90.58333,
+    "from_lat": 28.18333,
+    "to_name": "折公措",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "草甸段",
+    "visual_label_mobile": "折公措",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_026",
+    "segment_order": 1,
+    "from_name": "理塘",
+    "from_lng": 100.26667,
+    "from_lat": 30.0,
+    "to_name": "冷古寺",
+    "to_lng": 99.9,
+    "to_lat": 29.95,
+    "segment_character": "草原段",
+    "visual_label_mobile": "冷古寺",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_026",
+    "segment_order": 2,
+    "from_name": "冷古寺",
+    "from_lng": 99.9,
+    "from_lat": 29.95,
+    "to_name": "格聂神山",
+    "to_lng": 99.68333,
+    "to_lat": 29.81667,
+    "segment_character": "草甸段",
+    "visual_label_mobile": "格聂神山",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_026",
+    "segment_order": 3,
+    "from_name": "格聂神山",
+    "from_lng": 99.68333,
+    "from_lat": 29.81667,
+    "to_name": "波密乡",
+    "to_lng": 99.53333,
+    "to_lat": 29.68333,
+    "segment_character": "河谷段",
+    "visual_label_mobile": "热河谷出",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_034",
+    "segment_order": 1,
+    "from_name": "鸿门岩",
+    "from_lng": 113.63333,
+    "from_lat": 39.06667,
+    "to_name": "东台",
+    "to_lng": 113.68333,
+    "to_lat": 39.06667,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "东台望海",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_034",
+    "segment_order": 2,
+    "from_name": "东台",
+    "from_lng": 113.68333,
+    "from_lat": 39.06667,
+    "to_name": "北台",
+    "to_lng": 113.58333,
+    "to_lat": 39.08333,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "北台3061",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_034",
+    "segment_order": 3,
+    "from_name": "北台",
+    "from_lng": 113.58333,
+    "from_lat": 39.08333,
+    "to_name": "中台",
+    "to_lng": 113.56667,
+    "to_lat": 39.03333,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "中台",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_034",
+    "segment_order": 4,
+    "from_name": "中台",
+    "from_lng": 113.56667,
+    "from_lat": 39.03333,
+    "to_name": "西台",
+    "to_lng": 113.53333,
+    "to_lat": 39.01667,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "西台",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_034",
+    "segment_order": 5,
+    "from_name": "西台",
+    "from_lng": 113.53333,
+    "from_lat": 39.01667,
+    "to_name": "南台",
+    "to_lng": 113.55,
+    "to_lat": 38.93333,
+    "segment_character": "山脊段",
+    "visual_label_mobile": "南台",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_033",
+    "segment_order": 1,
+    "from_name": "北潭涌",
+    "from_lng": 114.32667,
+    "from_lat": 22.39583,
+    "to_name": "北潭凹",
+    "to_lng": 114.36806,
+    "to_lat": 22.42194,
+    "segment_character": "郊野径",
+    "visual_label_mobile": "1-2段",
+    "source_urls": [
+      "https://hiking.gov.hk/"
+    ]
+  },
+  {
+    "route_id": "hk_033",
+    "segment_order": 2,
+    "from_name": "北潭凹",
+    "from_lng": 114.36806,
+    "from_lat": 22.42194,
+    "to_name": "大老山",
+    "to_lng": 114.21889,
+    "to_lat": 22.38,
+    "segment_character": "郊野径",
+    "visual_label_mobile": "3-5段",
+    "source_urls": [
+      "https://hiking.gov.hk/"
+    ]
+  },
+  {
+    "route_id": "hk_033",
+    "segment_order": 3,
+    "from_name": "大老山",
+    "from_lng": 114.21889,
+    "from_lat": 22.38,
+    "to_name": "荃锦坳",
+    "to_lng": 114.10944,
+    "to_lat": 22.37528,
+    "segment_character": "郊野径",
+    "visual_label_mobile": "6-8段",
+    "source_urls": [
+      "https://hiking.gov.hk/"
+    ]
+  },
+  {
+    "route_id": "hk_033",
+    "segment_order": 4,
+    "from_name": "荃锦坳",
+    "from_lng": 114.10944,
+    "from_lat": 22.37528,
+    "to_name": "屯门",
+    "to_lng": 114.00806,
+    "to_lat": 22.38056,
+    "segment_character": "郊野径",
+    "visual_label_mobile": "9-10段",
+    "source_urls": [
+      "https://hiking.gov.hk/"
+    ]
+  },
+  {
+    "route_id": "hk_007",
+    "segment_order": 1,
+    "from_name": "亚丁村",
+    "from_lng": 100.36667,
+    "from_lat": 28.41667,
+    "to_name": "洛绒牛场",
+    "to_lng": 100.35,
+    "to_lat": 28.36667,
+    "segment_character": "景区段",
+    "visual_label_mobile": "洛绒牛场",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_007",
+    "segment_order": 2,
+    "from_name": "洛绒牛场",
+    "from_lng": 100.35,
+    "from_lat": 28.36667,
+    "to_name": "牛奶海",
+    "to_lng": 100.325,
+    "to_lat": 28.35833,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "冲牛奶海",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_007",
+    "segment_order": 3,
+    "from_name": "牛奶海",
+    "from_lng": 100.325,
+    "from_lat": 28.35833,
+    "to_name": "五色海",
+    "to_lng": 100.31667,
+    "to_lat": 28.35,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "五色海",
+    "source_urls": []
+  },
+  {
+    "route_id": "hk_029",
+    "segment_order": 1,
+    "from_name": "景区入口",
+    "from_lng": null,
+    "from_lat": null,
+    "to_name": "妖女湖",
+    "to_lng": 101.05,
+    "to_lat": 33.23333,
+    "segment_character": "草原段",
+    "visual_label_mobile": "妖女湖",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_029",
+    "segment_order": 2,
+    "from_name": "妖女湖",
+    "from_lng": 101.05,
+    "from_lat": 33.23333,
+    "to_name": "垭口",
+    "to_lng": 102.75,
+    "to_lat": 31.06667,
+    "segment_character": "爬升段",
+    "visual_label_mobile": "翻垭口",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_029",
+    "segment_order": 3,
+    "from_name": "垭口",
+    "from_lng": 102.75,
+    "from_lat": 31.06667,
+    "to_name": "日干措",
+    "to_lng": null,
+    "to_lat": null,
+    "segment_character": "下降段",
+    "visual_label_mobile": "日干措",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "layer_id": "temp_feels_like",
+    "name_zh": "温度/体感温度",
+    "metrics": ["temperature_2m", "apparent_temperature"],
+    "chart_type": "line",
+    "color_role": "temperature",
+    "mobile_height_px": 140,
+    "reading_tip": "实线=气温，虚线=体感温度。两条线差距越大，风或湿度对体感的影响越明显。"
+  },
+  {
+    "layer_id": "precipitation_prob",
+    "name_zh": "降水概率/降水量",
+    "metrics": ["precipitation_probability", "precipitation"],
+    "chart_type": "bar",
+    "color_role": "precipitation",
+    "mobile_height_px": 100,
+    "reading_tip": "蓝色柱=降水概率（左侧y轴），≥60%时建议备雨具。点击柱可查看具体毫米数。"
+  },
+  {
+    "layer_id": "wind_speed_gust",
+    "name_zh": "风速/阵风",
+    "metrics": ["wind_speed_10m", "wind_gusts_10m"],
+    "chart_type": "line",
+    "color_role": "wind",
+    "mobile_height_px": 120,
+    "reading_tip": "实线=持续风速，浅色区域=阵风区间。阵风比持续风速高50-100%时山口/垭口风感更强。"
+  },
+  {
+    "layer_id": "wind_direction_barb",
+    "name_zh": "风向",
+    "metrics": ["wind_direction_10m"],
+    "chart_type": "wind_barb",
+    "color_role": "wind",
+    "mobile_height_px": 60,
+    "reading_tip": "箭头指向来风方向（北=箭头向上）。锯齿标记风速等级。"
+  },
+  {
+    "layer_id": "cloud_cover",
+    "name_zh": "云量",
+    "metrics": ["cloud_cover", "cloud_cover_low", "cloud_cover_mid", "cloud_cover_high"],
+    "chart_type": "band",
+    "color_role": "cloud",
+    "mobile_height_px": 80,
+    "reading_tip": "深色=总云量。低/中/高层云分层显示。低云密集且急剧增多可能是降水前兆。"
+  },
+  {
+    "layer_id": "visibility",
+    "name_zh": "能见度",
+    "metrics": ["visibility"],
+    "chart_type": "line",
+    "color_role": "visibility",
+    "mobile_height_px": 80,
+    "reading_tip": "数值越低雾越浓。<1km（红色区域）为浓雾，迷路风险高。<100m为极浓雾，应停止行进。"
+  },
+  {
+    "layer_id": "pressure",
+    "name_zh": "气压",
+    "metrics": ["pressure_msl"],
+    "chart_type": "line",
+    "color_role": "pressure",
+    "mobile_height_px": 80,
+    "reading_tip": "气压骤降（24h≥8hPa）预示天气转坏。骤升（≥10hPa）预示高压到来天气转好但可能有大风。"
+  },
+  {
+    "layer_id": "humidity_dew",
+    "name_zh": "湿度/露点",
+    "metrics": ["relative_humidity_2m", "dew_point_2m"],
+    "chart_type": "line",
+    "color_role": "humidity",
+    "mobile_height_px": 80,
+    "reading_tip": "实线=相对湿度，虚线=露点。露点<0°C可能结霜。温度与露点越接近湿度越大。"
+  }
+]

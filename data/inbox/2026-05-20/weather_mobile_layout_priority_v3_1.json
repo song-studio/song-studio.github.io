@@ -1,0 +1,119 @@
+[
+  {
+    "section_id": "current_conditions",
+    "priority": "P0",
+    "mobile_position": "first_screen",
+    "must_show_metrics": ["temperature_current", "temperature_apparent", "wind_speed", "wind_gust", "precipitation_probability", "precipitation_amount"],
+    "optional_metrics": ["wind_direction", "cloud_cover", "relative_humidity"],
+    "hide_on_first_screen": [],
+    "reason": "第一屏核心。用户打开天气页最关心的就是当前气温、风速和有没有雨。体感温度和阵风对户外场景比实际温/持续风更重要。"
+  },
+  {
+    "section_id": "hourly_forecast",
+    "priority": "P0",
+    "mobile_position": "meteogram",
+    "must_show_metrics": ["temperature_current", "precipitation_probability", "wind_speed"],
+    "optional_metrics": ["precipitation_amount", "wind_gust", "cloud_cover"],
+    "hide_on_first_screen": [],
+    "reason": "小时趋势是第二视觉层次。温度+降水概率+风速三条曲线是用户判断之后几小时天气的核心。"
+  },
+  {
+    "section_id": "daily_7d",
+    "priority": "P1",
+    "mobile_position": "meteogram",
+    "must_show_metrics": ["temperature_max", "temperature_min", "precipitation_probability"],
+    "optional_metrics": ["wind_speed", "precipitation_amount"],
+    "hide_on_first_screen": [],
+    "reason": "7日趋势放在小时趋势之后，折线图展示每日高低温+降水。前5天可信度较高。"
+  },
+  {
+    "section_id": "wind_section",
+    "priority": "P1",
+    "mobile_position": "detail_grid",
+    "must_show_metrics": ["wind_speed", "wind_gust", "wind_direction"],
+    "optional_metrics": [],
+    "hide_on_first_screen": ["wind_gust", "wind_direction"],
+    "reason": "风速已在第一屏显示，阵风和风向放在详情网格。用户需要时可以展开查看完整风场。" 
+  },
+  {
+    "section_id": "precipitation",
+    "priority": "P0",
+    "mobile_position": "first_screen",
+    "must_show_metrics": ["precipitation_probability", "precipitation_amount"],
+    "optional_metrics": ["thunderstorm_probability"],
+    "hide_on_first_screen": [],
+    "reason": "降水和雷暴是户外决策关键。降水概率和降水量放在第一屏，雷暴概率作为边栏展示。"
+  },
+  {
+    "section_id": "thunderstorm",
+    "priority": "P0",
+    "mobile_position": "first_screen",
+    "must_show_metrics": ["thunderstorm_probability"],
+    "optional_metrics": [],
+    "hide_on_first_screen": [],
+    "reason": "雷暴是山区最危险的天气之一。即使概率不高也应在第一屏显示，用颜色编码（绿/黄/红）来降低数字焦虑。"
+  },
+  {
+    "section_id": "visibility",
+    "priority": "P0",
+    "mobile_position": "detail_grid",
+    "must_show_metrics": ["visibility"],
+    "optional_metrics": [],
+    "hide_on_first_screen": ["visibility"],
+    "reason": "能见度对导航重要但只在低值时需要关注。默认不占第一屏空间，低于阈值时自动弹到第一屏。"
+  },
+  {
+    "section_id": "cloud",
+    "priority": "P1",
+    "mobile_position": "detail_grid",
+    "must_show_metrics": ["cloud_cover"],
+    "optional_metrics": [],
+    "hide_on_first_screen": ["cloud_cover"],
+    "reason": "云量信息在判断日出/星空时有用，但非常规必要性。放在详情网格。"
+  },
+  {
+    "section_id": "humidity_dew",
+    "priority": "P1",
+    "mobile_position": "detail_grid",
+    "must_show_metrics": ["relative_humidity", "dew_point"],
+    "optional_metrics": [],
+    "hide_on_first_screen": ["relative_humidity", "dew_point"],
+    "reason": "湿度/露点对舒适度判断有用但不是第一屏必需。结合低温露点数据自动提示霜冻风险。"
+  },
+  {
+    "section_id": "pressure",
+    "priority": "P1",
+    "mobile_position": "detail_grid",
+    "must_show_metrics": ["pressure_msl"],
+    "optional_metrics": [],
+    "hide_on_first_screen": ["pressure_msl"],
+    "reason": "气压专业性强，大多数用户不直接关注。但当24h变化≥8hPa时自动提升显示优先级。"
+  },
+  {
+    "section_id": "sunrise_sunset",
+    "priority": "P1",
+    "mobile_position": "first_screen",
+    "must_show_metrics": ["sunrise_sunset"],
+    "optional_metrics": ["uv_index"],
+    "hide_on_first_screen": [],
+    "reason": "日出日落虽非实时气象数据，但对出行规划极重要，占用空间极小。放在第一屏边缘位置（底部工具条）。"
+  },
+  {
+    "section_id": "uv",
+    "priority": "P1",
+    "mobile_position": "detail_grid",
+    "must_show_metrics": ["uv_index"],
+    "optional_metrics": [],
+    "hide_on_first_screen": ["uv_index"],
+    "reason": "紫外线在高海拔/雪地场景关键但非常规需要。高于6时自动提示。"
+  },
+  {
+    "section_id": "data_sources",
+    "priority": "P2",
+    "mobile_position": "source_drawer",
+    "must_show_metrics": ["model_source", "data_update_time"],
+    "optional_metrics": [],
+    "hide_on_first_screen": ["model_source", "data_update_time"],
+    "reason": "数据来源和更新时间是专业用户需要的信息。放在底部抽屉或页面底部。"
+  }
+]

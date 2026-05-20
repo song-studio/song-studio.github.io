@@ -1,0 +1,2529 @@
+[
+  {
+    "route_id": "hk_001",
+    "name_zh": "虎跳峡高路徒步",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "桥头(虎跳峡镇)",
+        "lng": 100.06667,
+        "lat": 27.31667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "上虎跳观景台",
+        "lng": 100.1,
+        "lat": 27.28333,
+        "point_role": "scenic",
+        "distance_from_start_km": 4
+      },
+      {
+        "name_zh": "纳西雅阁",
+        "lng": 100.08935,
+        "lat": 27.18619,
+        "point_role": "waypoint",
+        "distance_from_start_km": 7
+      },
+      {
+        "name_zh": "28道拐起点",
+        "lng": 100.09467,
+        "lat": 27.18881,
+        "point_role": "waypoint",
+        "distance_from_start_km": 10
+      },
+      {
+        "name_zh": "28道拐顶",
+        "lng": 100.10263,
+        "lat": 27.19271,
+        "point_role": "pass",
+        "distance_from_start_km": 12
+      },
+      {
+        "name_zh": "茶马客栈",
+        "lng": 100.11768,
+        "lat": 27.21772,
+        "point_role": "waypoint",
+        "distance_from_start_km": 14
+      },
+      {
+        "name_zh": "中途客栈",
+        "lng": 100.1415,
+        "lat": 27.24143,
+        "point_role": "overnight",
+        "distance_from_start_km": 18
+      },
+      {
+        "name_zh": "龙洞瀑布",
+        "lng": 100.15,
+        "lat": 27.25,
+        "point_role": "scenic",
+        "distance_from_start_km": 20
+      },
+      {
+        "name_zh": "Tina's客栈",
+        "lng": 100.1579,
+        "lat": 27.25721,
+        "point_role": "waypoint",
+        "distance_from_start_km": 23
+      },
+      {
+        "name_zh": "张老师客栈",
+        "lng": 100.1573,
+        "lat": 27.25371,
+        "point_role": "waypoint",
+        "distance_from_start_km": 24
+      },
+      {
+        "name_zh": "天梯客栈",
+        "lng": 100.1579,
+        "lat": 27.25777,
+        "point_role": "waypoint",
+        "distance_from_start_km": 25
+      },
+      {
+        "name_zh": "中虎跳谷底(听涛渡)",
+        "lng": 100.16156,
+        "lat": 27.25795,
+        "point_role": "scenic",
+        "distance_from_start_km": 27
+      },
+      {
+        "name_zh": "一线天",
+        "lng": 100.16178,
+        "lat": 27.25795,
+        "point_role": "waypoint",
+        "distance_from_start_km": 28
+      },
+      {
+        "name_zh": "核桃园",
+        "lng": 100.17139,
+        "lat": 27.27118,
+        "point_role": "waypoint",
+        "distance_from_start_km": 30
+      },
+      {
+        "name_zh": "滑石板",
+        "lng": 100.2015,
+        "lat": 27.29776,
+        "point_role": "waypoint",
+        "distance_from_start_km": 33
+      },
+      {
+        "name_zh": "老渡口(大具)",
+        "lng": 100.22786,
+        "lat": 27.30674,
+        "point_role": "end",
+        "distance_from_start_km": 36
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从12个关键点扩充到16个，增加桥头/上虎跳/龙洞瀑布/一线天/滑石板等",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/hutiaoxia.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_002",
+    "name_zh": "雨崩徒步",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "西当",
+        "lng": 98.82913,
+        "lat": 28.36767,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "热水塘",
+        "lng": 98.825,
+        "lat": 28.375,
+        "point_role": "waypoint",
+        "distance_from_start_km": 2
+      },
+      {
+        "name_zh": "南宗垭口",
+        "lng": 98.8223,
+        "lat": 28.3944,
+        "point_role": "pass",
+        "distance_from_start_km": 6
+      },
+      {
+        "name_zh": "上雨崩",
+        "lng": 98.79008,
+        "lat": 28.40073,
+        "point_role": "overnight",
+        "distance_from_start_km": 10
+      },
+      {
+        "name_zh": "下雨崩",
+        "lng": 98.79357,
+        "lat": 28.39245,
+        "point_role": "overnight",
+        "distance_from_start_km": 11.5
+      },
+      {
+        "name_zh": "笑农垭口",
+        "lng": 98.76667,
+        "lat": 28.4,
+        "point_role": "pass",
+        "distance_from_start_km": 13
+      },
+      {
+        "name_zh": "笑农大本营",
+        "lng": 98.75829,
+        "lat": 28.40342,
+        "point_role": "waypoint",
+        "distance_from_start_km": 15
+      },
+      {
+        "name_zh": "冰湖",
+        "lng": 98.74544,
+        "lat": 28.40761,
+        "point_role": "scenic",
+        "distance_from_start_km": 18
+      },
+      {
+        "name_zh": "神瀑",
+        "lng": 98.76599,
+        "lat": 28.37151,
+        "point_role": "scenic",
+        "distance_from_start_km": 17
+      },
+      {
+        "name_zh": "尼农峡谷",
+        "lng": 98.83333,
+        "lat": 28.36667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 22
+      },
+      {
+        "name_zh": "尼农吊桥",
+        "lng": 98.86364,
+        "lat": 28.36795,
+        "point_role": "exit",
+        "distance_from_start_km": 25
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从8个扩充到11个，增加热水塘/笑农垭口/尼农峡谷",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/yubeng.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_009",
+    "name_zh": "武功山反穿",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "龙山村",
+        "lng": 114.16667,
+        "lat": 27.58333,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "羊角尖",
+        "lng": 114.18333,
+        "lat": 27.575,
+        "point_role": "waypoint",
+        "distance_from_start_km": 3
+      },
+      {
+        "name_zh": "发云界",
+        "lng": 114.2,
+        "lat": 27.56667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 6
+      },
+      {
+        "name_zh": "风车口",
+        "lng": 114.20833,
+        "lat": 27.55833,
+        "point_role": "waypoint",
+        "distance_from_start_km": 8
+      },
+      {
+        "name_zh": "好汉坡",
+        "lng": 114.21667,
+        "lat": 27.55,
+        "point_role": "waypoint",
+        "distance_from_start_km": 10
+      },
+      {
+        "name_zh": "绝望坡底",
+        "lng": 114.225,
+        "lat": 27.54167,
+        "point_role": "waypoint",
+        "distance_from_start_km": 12
+      },
+      {
+        "name_zh": "绝望坡顶",
+        "lng": 114.23333,
+        "lat": 27.53333,
+        "point_role": "pass",
+        "distance_from_start_km": 13
+      },
+      {
+        "name_zh": "望日山庄",
+        "lng": 114.24167,
+        "lat": 27.525,
+        "point_role": "waypoint",
+        "distance_from_start_km": 14.5
+      },
+      {
+        "name_zh": "吊马桩",
+        "lng": 114.25,
+        "lat": 27.51667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 15.5
+      },
+      {
+        "name_zh": "金顶(白鹤峰1918m)",
+        "lng": 114.17333,
+        "lat": 27.45528,
+        "point_role": "summit",
+        "distance_from_start_km": 20
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从5个扩充到10个，增加羊角尖/风车口/好汉坡/绝望坡底顶/望日山庄",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/武功山",
+      "https://www.go20s.com/qnw/2993.html"
+    ]
+  },
+  {
+    "route_id": "hk_008",
+    "name_zh": "鳌太穿越",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "塘口",
+        "lng": 107.38683,
+        "lat": 34.03431,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "2900营地",
+        "lng": 107.40134,
+        "lat": 33.98181,
+        "point_role": "camp",
+        "distance_from_start_km": 6
+      },
+      {
+        "name_zh": "鳌山导航架",
+        "lng": 107.41928,
+        "lat": 33.94232,
+        "point_role": "waypoint",
+        "distance_from_start_km": 12
+      },
+      {
+        "name_zh": "导航架有信号",
+        "lng": 107.4215,
+        "lat": 33.9407,
+        "point_role": "waypoint",
+        "distance_from_start_km": 13
+      },
+      {
+        "name_zh": "药王庙",
+        "lng": 107.45633,
+        "lat": 33.9457,
+        "point_role": "waypoint",
+        "distance_from_start_km": 16
+      },
+      {
+        "name_zh": "水窝子营地",
+        "lng": 107.49895,
+        "lat": 33.95599,
+        "point_role": "camp",
+        "distance_from_start_km": 22
+      },
+      {
+        "name_zh": "水窝子水源",
+        "lng": 107.4951,
+        "lat": 33.95622,
+        "point_role": "camp",
+        "distance_from_start_km": 22.5
+      },
+      {
+        "name_zh": "飞机梁",
+        "lng": 107.52,
+        "lat": 33.95,
+        "point_role": "waypoint",
+        "distance_from_start_km": 26
+      },
+      {
+        "name_zh": "2800营地",
+        "lng": 107.57116,
+        "lat": 33.93022,
+        "point_role": "camp",
+        "distance_from_start_km": 30
+      },
+      {
+        "name_zh": "西塬营地",
+        "lng": 107.65314,
+        "lat": 33.91979,
+        "point_role": "camp",
+        "distance_from_start_km": 38
+      },
+      {
+        "name_zh": "塔峰",
+        "lng": 107.68,
+        "lat": 33.92,
+        "point_role": "waypoint",
+        "distance_from_start_km": 42
+      },
+      {
+        "name_zh": "大爷海",
+        "lng": 107.76038,
+        "lat": 33.95754,
+        "point_role": "waypoint",
+        "distance_from_start_km": 46
+      },
+      {
+        "name_zh": "拔仙台(3767m)",
+        "lng": 107.76523,
+        "lat": 33.95515,
+        "point_role": "summit",
+        "distance_from_start_km": 48
+      },
+      {
+        "name_zh": "南天门",
+        "lng": 107.78008,
+        "lat": 33.91566,
+        "point_role": "pass",
+        "distance_from_start_km": 52
+      },
+      {
+        "name_zh": "铁甲树",
+        "lng": 107.81667,
+        "lat": 33.88333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 56
+      },
+      {
+        "name_zh": "厚畛子",
+        "lng": 107.83966,
+        "lat": 33.85311,
+        "point_role": "end",
+        "distance_from_start_km": 60
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从10个扩充到16个，增加导航架信号点/水窝子水源/飞机梁/塔峰/南天门/铁甲树",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/aotai.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_011",
+    "name_zh": "墨脱徒步",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "派乡",
+        "lng": 94.87737,
+        "lat": 29.52512,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "松林口",
+        "lng": 94.92736,
+        "lat": 29.49175,
+        "point_role": "waypoint",
+        "distance_from_start_km": 8
+      },
+      {
+        "name_zh": "多雄拉山口(4200m)",
+        "lng": 94.94743,
+        "lat": 29.4876,
+        "point_role": "pass",
+        "distance_from_start_km": 12
+      },
+      {
+        "name_zh": "拉格",
+        "lng": 95.0014,
+        "lat": 29.46766,
+        "point_role": "camp",
+        "distance_from_start_km": 20
+      },
+      {
+        "name_zh": "大岩洞",
+        "lng": 95.04961,
+        "lat": 29.42891,
+        "point_role": "waypoint",
+        "distance_from_start_km": 28
+      },
+      {
+        "name_zh": "汗密",
+        "lng": 95.12764,
+        "lat": 29.3667,
+        "point_role": "camp",
+        "distance_from_start_km": 35
+      },
+      {
+        "name_zh": "老虎嘴",
+        "lng": 95.16667,
+        "lat": 29.32833,
+        "point_role": "danger",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "阿尼桥",
+        "lng": 95.17,
+        "lat": 29.32667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 42
+      },
+      {
+        "name_zh": "二号桥",
+        "lng": 95.18333,
+        "lat": 29.3,
+        "point_role": "waypoint",
+        "distance_from_start_km": 46
+      },
+      {
+        "name_zh": "解放大桥",
+        "lng": 95.16304,
+        "lat": 29.2473,
+        "point_role": "waypoint",
+        "distance_from_start_km": 52
+      },
+      {
+        "name_zh": "背崩",
+        "lng": 95.15893,
+        "lat": 29.24605,
+        "point_role": "camp",
+        "distance_from_start_km": 55
+      },
+      {
+        "name_zh": "德兴桥",
+        "lng": 95.287,
+        "lat": 29.3281,
+        "point_role": "waypoint",
+        "distance_from_start_km": 66
+      },
+      {
+        "name_zh": "墨脱县城",
+        "lng": 95.33182,
+        "lat": 29.32535,
+        "point_role": "end",
+        "distance_from_start_km": 75
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从11个扩充到13个，增加二号桥/德兴桥",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/motuo.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_020",
+    "name_zh": "珠峰东坡徒步",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "优帕桥",
+        "lng": 87.31164,
+        "lat": 28.07928,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "晓乌错",
+        "lng": 87.27118,
+        "lat": 28.0248,
+        "point_role": "camp",
+        "distance_from_start_km": 6
+      },
+      {
+        "name_zh": "晓乌拉垭口(4900m)",
+        "lng": 87.26163,
+        "lat": 28.00985,
+        "point_role": "pass",
+        "distance_from_start_km": 8
+      },
+      {
+        "name_zh": "卓湘营地",
+        "lng": 87.2209,
+        "lat": 27.97665,
+        "point_role": "camp",
+        "distance_from_start_km": 14
+      },
+      {
+        "name_zh": "错朗错",
+        "lng": 87.20393,
+        "lat": 27.98663,
+        "point_role": "scenic",
+        "distance_from_start_km": 16
+      },
+      {
+        "name_zh": "夏农牧场",
+        "lng": 87.1907,
+        "lat": 27.98652,
+        "point_role": "waypoint",
+        "distance_from_start_km": 18
+      },
+      {
+        "name_zh": "汤湘观景台",
+        "lng": 87.16677,
+        "lat": 28.00033,
+        "point_role": "scenic",
+        "distance_from_start_km": 22
+      },
+      {
+        "name_zh": "巴当",
+        "lng": 87.14905,
+        "lat": 27.99232,
+        "point_role": "waypoint",
+        "distance_from_start_km": 26
+      },
+      {
+        "name_zh": "俄嘎营地",
+        "lng": 87.11338,
+        "lat": 27.98896,
+        "point_role": "camp",
+        "distance_from_start_km": 30
+      },
+      {
+        "name_zh": "白当",
+        "lng": 87.09118,
+        "lat": 27.987,
+        "point_role": "camp",
+        "distance_from_start_km": 34
+      },
+      {
+        "name_zh": "珠峰东坡BC",
+        "lng": 87.01781,
+        "lat": 27.99981,
+        "point_role": "camp",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "措学仁玛",
+        "lng": 87.18143,
+        "lat": 28.0326,
+        "point_role": "scenic",
+        "distance_from_start_km": 48
+      },
+      {
+        "name_zh": "郎玛拉垭口(5350m)",
+        "lng": 87.19933,
+        "lat": 28.03972,
+        "point_role": "pass",
+        "distance_from_start_km": 50
+      },
+      {
+        "name_zh": "轮朱林",
+        "lng": 87.26736,
+        "lat": 28.06763,
+        "point_role": "end",
+        "distance_from_start_km": 56
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从12个扩充到14个",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/zhufengdongpogamagou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_005",
+    "name_zh": "长穿毕",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "长坪沟景区大门",
+        "lng": 102.87078,
+        "lat": 31.03194,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "喇嘛寺",
+        "lng": 102.867,
+        "lat": 31.03366,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1
+      },
+      {
+        "name_zh": "枯树滩",
+        "lng": 102.85667,
+        "lat": 31.04,
+        "point_role": "waypoint",
+        "distance_from_start_km": 3.5
+      },
+      {
+        "name_zh": "甘海子",
+        "lng": 102.85,
+        "lat": 31.04833,
+        "point_role": "waypoint",
+        "distance_from_start_km": 6
+      },
+      {
+        "name_zh": "木骡子",
+        "lng": 102.85,
+        "lat": 31.054,
+        "point_role": "camp",
+        "distance_from_start_km": 10
+      },
+      {
+        "name_zh": "红石滩",
+        "lng": 102.83333,
+        "lat": 31.06833,
+        "point_role": "waypoint",
+        "distance_from_start_km": 13
+      },
+      {
+        "name_zh": "叉子沟",
+        "lng": 102.767,
+        "lat": 31.083,
+        "point_role": "camp",
+        "distance_from_start_km": 20
+      },
+      {
+        "name_zh": "垭口(4680m)",
+        "lng": 102.75,
+        "lat": 31.06667,
+        "point_role": "pass",
+        "distance_from_start_km": 25
+      },
+      {
+        "name_zh": "毕棚沟尾",
+        "lng": 102.78333,
+        "lat": 31.2,
+        "point_role": "end",
+        "distance_from_start_km": 35
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从5个扩充到9个",
+    "source_urls": [
+      "http://www.columbiasports.cn/campaign/gonglue/changpinggoubipenggou.pdf"
+    ]
+  },
+  {
+    "route_id": "hk_036",
+    "name_zh": "扎尕那穿越",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "扎尕那村",
+        "lng": 103.21667,
+        "lat": 34.27778,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "纳加石门(鬼门关)",
+        "lng": 103.20667,
+        "lat": 34.27333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 2
+      },
+      {
+        "name_zh": "尼哥达瓦垭口(3840m)",
+        "lng": 103.20073,
+        "lat": 34.27292,
+        "point_role": "pass",
+        "distance_from_start_km": 6
+      },
+      {
+        "name_zh": "扎尕那石林(3900m)",
+        "lng": 103.20522,
+        "lat": 34.27481,
+        "point_role": "waypoint",
+        "distance_from_start_km": 8
+      },
+      {
+        "name_zh": "冬才营地(3640m)",
+        "lng": 103.30621,
+        "lat": 34.25463,
+        "point_role": "camp",
+        "distance_from_start_km": 18
+      },
+      {
+        "name_zh": "喀拉克垭口(4140m)",
+        "lng": 103.3754,
+        "lat": 34.24093,
+        "point_role": "pass",
+        "distance_from_start_km": 25
+      },
+      {
+        "name_zh": "七克拿山脊",
+        "lng": 103.42274,
+        "lat": 34.25654,
+        "point_role": "waypoint",
+        "distance_from_start_km": 30
+      },
+      {
+        "name_zh": "观音石营地",
+        "lng": 103.47,
+        "lat": 34.27833,
+        "point_role": "camp",
+        "distance_from_start_km": 35
+      },
+      {
+        "name_zh": "一线天",
+        "lng": 103.53779,
+        "lat": 34.30945,
+        "point_role": "waypoint",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "三角石",
+        "lng": 103.53461,
+        "lat": 34.35457,
+        "point_role": "end",
+        "distance_from_start_km": 45
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从8个扩充到10个",
+    "source_urls": [
+      "https://www.columbiasports.cn/campaign/gonglue/gannanjizhagana.pdf"
+    ]
+  },
+  {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "成都",
+        "lng": 104.06667,
+        "lat": 30.66667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "雅安",
+        "lng": 103.0,
+        "lat": 29.98333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 147
+      },
+      {
+        "name_zh": "泸定",
+        "lng": 102.23333,
+        "lat": 29.91667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 315
+      },
+      {
+        "name_zh": "折多山垭口(4298m)",
+        "lng": 101.8,
+        "lat": 30.08333,
+        "point_role": "pass",
+        "distance_from_start_km": 420
+      },
+      {
+        "name_zh": "新都桥",
+        "lng": 101.5,
+        "lat": 30.05,
+        "point_role": "waypoint",
+        "distance_from_start_km": 439
+      },
+      {
+        "name_zh": "剪子弯山隧道",
+        "lng": 100.81667,
+        "lat": 29.98333,
+        "point_role": "pass",
+        "distance_from_start_km": 530
+      },
+      {
+        "name_zh": "理塘(4014m)",
+        "lng": 100.26667,
+        "lat": 30.0,
+        "point_role": "waypoint",
+        "distance_from_start_km": 656
+      },
+      {
+        "name_zh": "海子山垭口(4685m)",
+        "lng": 99.5,
+        "lat": 30.3,
+        "point_role": "pass",
+        "distance_from_start_km": 750
+      },
+      {
+        "name_zh": "巴塘",
+        "lng": 99.1,
+        "lat": 30.0,
+        "point_role": "waypoint",
+        "distance_from_start_km": 821
+      },
+      {
+        "name_zh": "芒康",
+        "lng": 98.6,
+        "lat": 29.68333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 928
+      },
+      {
+        "name_zh": "东达山垭口(5130m)",
+        "lng": 97.8,
+        "lat": 29.83333,
+        "point_role": "pass",
+        "distance_from_start_km": 1080
+      },
+      {
+        "name_zh": "左贡",
+        "lng": 97.83333,
+        "lat": 29.66667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1086
+      },
+      {
+        "name_zh": "怒江72拐",
+        "lng": 97.3,
+        "lat": 30.2,
+        "point_role": "danger",
+        "distance_from_start_km": 1170
+      },
+      {
+        "name_zh": "八宿",
+        "lng": 96.91667,
+        "lat": 30.05,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1287
+      },
+      {
+        "name_zh": "然乌湖",
+        "lng": 96.76667,
+        "lat": 29.5,
+        "point_role": "scenic",
+        "distance_from_start_km": 1390
+      },
+      {
+        "name_zh": "波密",
+        "lng": 95.76667,
+        "lat": 29.86667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1506
+      },
+      {
+        "name_zh": "鲁朗",
+        "lng": 95.0,
+        "lat": 29.73333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1620
+      },
+      {
+        "name_zh": "色季拉山垭口(4720m)",
+        "lng": 94.65,
+        "lat": 29.6,
+        "point_role": "pass",
+        "distance_from_start_km": 1680
+      },
+      {
+        "name_zh": "林芝",
+        "lng": 94.36667,
+        "lat": 29.65,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1722
+      },
+      {
+        "name_zh": "拉萨",
+        "lng": 91.13333,
+        "lat": 29.65,
+        "point_role": "end",
+        "distance_from_start_km": 2142
+      }
+    ],
+    "geometry_confidence": "A",
+    "what_changed": "从11个关键点扩充到20个，增加折多山垭口/剪子弯隧道/海子山垭口/东达山垭口/怒江72拐/然乌湖/鲁朗/色季拉山垭口",
+    "source_urls": [
+      "https://www.greattibettour.com/cn/tibet-travel-tips/sichuan-tibet-highway.html",
+      "http://www.biketo.com/tour/27699.html"
+    ]
+  },
+  {
+    "route_id": "hk_003",
+    "name_zh": "贡嘎大环线",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "老榆林",
+        "lng": 101.93333,
+        "lat": 30.0,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "格西草原",
+        "lng": 101.88333,
+        "lat": 29.98333,
+        "point_role": "camp",
+        "distance_from_start_km": 5
+      },
+      {
+        "name_zh": "两岔河",
+        "lng": 101.83333,
+        "lat": 29.93333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 10
+      },
+      {
+        "name_zh": "日乌且垭口(4900m)",
+        "lng": 101.75,
+        "lat": 29.86667,
+        "point_role": "pass",
+        "distance_from_start_km": 20
+      },
+      {
+        "name_zh": "莫溪沟尾",
+        "lng": 101.7,
+        "lat": 29.8,
+        "point_role": "camp",
+        "distance_from_start_km": 35
+      },
+      {
+        "name_zh": "贡嘎寺",
+        "lng": 101.61667,
+        "lat": 29.63333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 55
+      },
+      {
+        "name_zh": "子梅垭口(4500m)",
+        "lng": 101.65,
+        "lat": 29.56667,
+        "point_role": "scenic",
+        "distance_from_start_km": 65
+      },
+      {
+        "name_zh": "巴望海",
+        "lng": 101.75,
+        "lat": 29.51667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 80
+      },
+      {
+        "name_zh": "草科乡",
+        "lng": 102.05,
+        "lat": 29.43333,
+        "point_role": "end",
+        "distance_from_start_km": 100
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增贡嘎大环线9个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_004",
+    "name_zh": "乌孙古道",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "琼库什台村",
+        "lng": 82.15,
+        "lat": 42.95,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "小桥营地",
+        "lng": 82.13333,
+        "lat": 42.9,
+        "point_role": "camp",
+        "distance_from_start_km": 8
+      },
+      {
+        "name_zh": "包扎墩达坂(3660m)",
+        "lng": 82.1,
+        "lat": 42.76667,
+        "point_role": "pass",
+        "distance_from_start_km": 25
+      },
+      {
+        "name_zh": "科克苏河",
+        "lng": 82.18333,
+        "lat": 42.68333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "溜索点",
+        "lng": 82.2,
+        "lat": 42.68333,
+        "point_role": "danger",
+        "distance_from_start_km": 42
+      },
+      {
+        "name_zh": "第一草原营地",
+        "lng": 82.31667,
+        "lat": 42.63333,
+        "point_role": "camp",
+        "distance_from_start_km": 48
+      },
+      {
+        "name_zh": "天堂湖(阿克库勒)",
+        "lng": 82.41667,
+        "lat": 42.61667,
+        "point_role": "scenic",
+        "distance_from_start_km": 55
+      },
+      {
+        "name_zh": "阿克布拉克达坂(3850m)",
+        "lng": 82.48333,
+        "lat": 42.55,
+        "point_role": "pass",
+        "distance_from_start_km": 65
+      },
+      {
+        "name_zh": "博孜克尔格",
+        "lng": 82.58333,
+        "lat": 42.46667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 80
+      },
+      {
+        "name_zh": "黑英山",
+        "lng": 82.7,
+        "lat": 42.41667,
+        "point_role": "end",
+        "distance_from_start_km": 90
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增乌孙10个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_006",
+    "name_zh": "洛克线",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "嘟噜村",
+        "lng": 100.83333,
+        "lat": 28.11667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "白水河",
+        "lng": 100.78333,
+        "lat": 28.15,
+        "point_role": "waypoint",
+        "distance_from_start_km": 8
+      },
+      {
+        "name_zh": "菩萨洞",
+        "lng": 100.73333,
+        "lat": 28.18333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 14
+      },
+      {
+        "name_zh": "满措牛场",
+        "lng": 100.68333,
+        "lat": 28.21667,
+        "point_role": "camp",
+        "distance_from_start_km": 22
+      },
+      {
+        "name_zh": "万花池",
+        "lng": 100.65,
+        "lat": 28.23333,
+        "point_role": "camp",
+        "distance_from_start_km": 28
+      },
+      {
+        "name_zh": "杂巴拉垭口(4700m)",
+        "lng": 100.6,
+        "lat": 28.26667,
+        "point_role": "pass",
+        "distance_from_start_km": 35
+      },
+      {
+        "name_zh": "新果牛场",
+        "lng": 100.5,
+        "lat": 28.31667,
+        "point_role": "camp",
+        "distance_from_start_km": 45
+      },
+      {
+        "name_zh": "黑湖",
+        "lng": 100.41667,
+        "lat": 28.35,
+        "point_role": "scenic",
+        "distance_from_start_km": 52
+      },
+      {
+        "name_zh": "蛇湖",
+        "lng": 100.35,
+        "lat": 28.36667,
+        "point_role": "scenic",
+        "distance_from_start_km": 55
+      },
+      {
+        "name_zh": "央迈勇垭口",
+        "lng": 100.33333,
+        "lat": 28.38333,
+        "point_role": "pass",
+        "distance_from_start_km": 58
+      },
+      {
+        "name_zh": "牛奶海",
+        "lng": 100.325,
+        "lat": 28.35833,
+        "point_role": "scenic",
+        "distance_from_start_km": 62
+      },
+      {
+        "name_zh": "洛绒牛场",
+        "lng": 100.35,
+        "lat": 28.36667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 65
+      },
+      {
+        "name_zh": "亚丁村",
+        "lng": 100.36667,
+        "lat": 28.41667,
+        "point_role": "end",
+        "distance_from_start_km": 70
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增洛克线13个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "成都",
+        "lng": 104.06667,
+        "lat": 30.66667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "汶川",
+        "lng": 103.58333,
+        "lat": 31.48333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 140
+      },
+      {
+        "name_zh": "马尔康",
+        "lng": 102.21667,
+        "lat": 31.9,
+        "point_role": "waypoint",
+        "distance_from_start_km": 320
+      },
+      {
+        "name_zh": "炉霍",
+        "lng": 100.68333,
+        "lat": 31.38333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 567
+      },
+      {
+        "name_zh": "甘孜",
+        "lng": 99.98333,
+        "lat": 31.61667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 664
+      },
+      {
+        "name_zh": "雀儿山隧道",
+        "lng": 99.08333,
+        "lat": 31.85,
+        "point_role": "pass",
+        "distance_from_start_km": 800
+      },
+      {
+        "name_zh": "德格(印经院)",
+        "lng": 98.58333,
+        "lat": 31.8,
+        "point_role": "waypoint",
+        "distance_from_start_km": 870
+      },
+      {
+        "name_zh": "江达",
+        "lng": 98.21667,
+        "lat": 31.5,
+        "point_role": "waypoint",
+        "distance_from_start_km": 950
+      },
+      {
+        "name_zh": "昌都",
+        "lng": 97.16667,
+        "lat": 31.13333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1118
+      },
+      {
+        "name_zh": "类乌齐",
+        "lng": 96.6,
+        "lat": 31.21667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1200
+      },
+      {
+        "name_zh": "丁青",
+        "lng": 95.6,
+        "lat": 31.41667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1300
+      },
+      {
+        "name_zh": "巴青",
+        "lng": 94.03333,
+        "lat": 31.91667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1480
+      },
+      {
+        "name_zh": "那曲",
+        "lng": 92.06667,
+        "lat": 31.46667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1838
+      },
+      {
+        "name_zh": "当雄",
+        "lng": 91.1,
+        "lat": 30.48333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 2000
+      },
+      {
+        "name_zh": "拉萨",
+        "lng": 91.13333,
+        "lat": 29.65,
+        "point_role": "end",
+        "distance_from_start_km": 2412
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增317川藏北线15个关键点",
+    "source_urls": [
+      "https://www.greattibettour.com/cn/tibet-travel-tips/sichuan-tibet-highway.html"
+    ]
+  },
+  {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "独山子",
+        "lng": 84.86667,
+        "lat": 44.33333,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "毛溜沟",
+        "lng": 84.53333,
+        "lat": 44.15,
+        "point_role": "waypoint",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "哈希勒根达坂(3390m)",
+        "lng": 84.38333,
+        "lat": 43.98333,
+        "point_role": "pass",
+        "distance_from_start_km": 70
+      },
+      {
+        "name_zh": "乔尔玛",
+        "lng": 84.25,
+        "lat": 43.86667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 90
+      },
+      {
+        "name_zh": "那拉提",
+        "lng": 83.96667,
+        "lat": 43.43333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 160
+      },
+      {
+        "name_zh": "巴音布鲁克",
+        "lng": 84.13333,
+        "lat": 43.01667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 240
+      },
+      {
+        "name_zh": "铁力买提达坂(3220m)",
+        "lng": 84.4,
+        "lat": 42.48333,
+        "point_role": "pass",
+        "distance_from_start_km": 320
+      },
+      {
+        "name_zh": "大龙池",
+        "lng": 83.8,
+        "lat": 42.15,
+        "point_role": "scenic",
+        "distance_from_start_km": 380
+      },
+      {
+        "name_zh": "天山神秘大峡谷",
+        "lng": 83.06667,
+        "lat": 41.8,
+        "point_role": "scenic",
+        "distance_from_start_km": 510
+      },
+      {
+        "name_zh": "库车",
+        "lng": 82.96667,
+        "lat": 41.71667,
+        "point_role": "end",
+        "distance_from_start_km": 550
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增独库公路10个关键点",
+    "source_urls": []
+  },
+  {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "西海镇",
+        "lng": 100.9,
+        "lat": 36.95,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "青海湖东岸",
+        "lng": 100.88333,
+        "lat": 36.75,
+        "point_role": "scenic",
+        "distance_from_start_km": 35
+      },
+      {
+        "name_zh": "江西沟",
+        "lng": 100.36667,
+        "lat": 36.61667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 100
+      },
+      {
+        "name_zh": "黑马河",
+        "lng": 99.78333,
+        "lat": 36.73333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 150
+      },
+      {
+        "name_zh": "石乃亥",
+        "lng": 99.6,
+        "lat": 36.9,
+        "point_role": "waypoint",
+        "distance_from_start_km": 175
+      },
+      {
+        "name_zh": "鸟岛镇",
+        "lng": 99.5,
+        "lat": 36.98333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 195
+      },
+      {
+        "name_zh": "泉吉乡",
+        "lng": 99.95,
+        "lat": 37.21667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 240
+      },
+      {
+        "name_zh": "刚察",
+        "lng": 100.15,
+        "lat": 37.31667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 270
+      },
+      {
+        "name_zh": "金沙湾",
+        "lng": 100.78333,
+        "lat": 36.85,
+        "point_role": "scenic",
+        "distance_from_start_km": 340
+      },
+      {
+        "name_zh": "西海镇",
+        "lng": 100.9,
+        "lat": 36.95,
+        "point_role": "end",
+        "distance_from_start_km": 360
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增环青海湖10个关键点",
+    "source_urls": []
+  },
+  {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "海口",
+        "lng": 110.33333,
+        "lat": 20.03333,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "文昌",
+        "lng": 110.78333,
+        "lat": 19.61667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 100
+      },
+      {
+        "name_zh": "博鳌",
+        "lng": 110.56667,
+        "lat": 19.16667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 160
+      },
+      {
+        "name_zh": "万宁",
+        "lng": 110.38333,
+        "lat": 18.8,
+        "point_role": "waypoint",
+        "distance_from_start_km": 200
+      },
+      {
+        "name_zh": "三亚",
+        "lng": 109.5,
+        "lat": 18.25,
+        "point_role": "waypoint",
+        "distance_from_start_km": 310
+      },
+      {
+        "name_zh": "崖州",
+        "lng": 109.16667,
+        "lat": 18.36667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 340
+      },
+      {
+        "name_zh": "东方",
+        "lng": 108.63333,
+        "lat": 19.1,
+        "point_role": "waypoint",
+        "distance_from_start_km": 430
+      },
+      {
+        "name_zh": "昌江",
+        "lng": 108.98333,
+        "lat": 19.25,
+        "point_role": "waypoint",
+        "distance_from_start_km": 470
+      },
+      {
+        "name_zh": "儋州",
+        "lng": 109.56667,
+        "lat": 19.51667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 550
+      },
+      {
+        "name_zh": "海口",
+        "lng": 110.33333,
+        "lat": 20.03333,
+        "point_role": "end",
+        "distance_from_start_km": 650
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增环海南岛10个关键点",
+    "source_urls": []
+  },
+  {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "丙中洛",
+        "lng": 98.6,
+        "lat": 28.01667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "秋那桶",
+        "lng": 98.53333,
+        "lat": 28.1,
+        "point_role": "waypoint",
+        "distance_from_start_km": 15
+      },
+      {
+        "name_zh": "老虎嘴",
+        "lng": 98.51667,
+        "lat": 28.16667,
+        "point_role": "danger",
+        "distance_from_start_km": 30
+      },
+      {
+        "name_zh": "V字峡谷",
+        "lng": 98.51667,
+        "lat": 28.2,
+        "point_role": "scenic",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "大流沙",
+        "lng": 98.46667,
+        "lat": 28.55,
+        "point_role": "danger",
+        "distance_from_start_km": 100
+      },
+      {
+        "name_zh": "察瓦龙",
+        "lng": 98.46667,
+        "lat": 28.55,
+        "point_role": "waypoint",
+        "distance_from_start_km": 100
+      },
+      {
+        "name_zh": "锯木场",
+        "lng": 98.38333,
+        "lat": 28.66667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 130
+      },
+      {
+        "name_zh": "目若村",
+        "lng": 98.3,
+        "lat": 28.75,
+        "point_role": "waypoint",
+        "distance_from_start_km": 160
+      },
+      {
+        "name_zh": "嘎达",
+        "lng": 98.13333,
+        "lat": 28.7,
+        "point_role": "waypoint",
+        "distance_from_start_km": 220
+      },
+      {
+        "name_zh": "察隅",
+        "lng": 97.46667,
+        "lat": 28.66667,
+        "point_role": "end",
+        "distance_from_start_km": 300
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增丙察察10个关键点",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "四姑娘山镇",
+        "lng": 102.83333,
+        "lat": 31.11667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "锅庄坪",
+        "lng": 102.81667,
+        "lat": 31.1,
+        "point_role": "waypoint",
+        "distance_from_start_km": 2
+      },
+      {
+        "name_zh": "打尖包",
+        "lng": 102.8,
+        "lat": 31.08333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 9
+      },
+      {
+        "name_zh": "大峰大本营(4300m)",
+        "lng": 102.75,
+        "lat": 31.06667,
+        "point_role": "camp",
+        "distance_from_start_km": 15
+      },
+      {
+        "name_zh": "碎石坡",
+        "lng": 102.74167,
+        "lat": 31.06667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 17
+      },
+      {
+        "name_zh": "大峰顶(5025m)",
+        "lng": 102.73333,
+        "lat": 31.06667,
+        "point_role": "summit",
+        "distance_from_start_km": 20
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增四姑娘山大峰6个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/event/business_event.htm?outingId=94557"
+    ]
+  },
+  {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "四姑娘山镇",
+        "lng": 102.83333,
+        "lat": 31.11667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "打尖包",
+        "lng": 102.8,
+        "lat": 31.08333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 9
+      },
+      {
+        "name_zh": "二峰大本营(4300m)",
+        "lng": 102.76667,
+        "lat": 31.06667,
+        "point_role": "camp",
+        "distance_from_start_km": 16
+      },
+      {
+        "name_zh": "碎石坡",
+        "lng": 102.75,
+        "lat": 31.05833,
+        "point_role": "waypoint",
+        "distance_from_start_km": 19
+      },
+      {
+        "name_zh": "二峰顶(5276m)",
+        "lng": 102.73333,
+        "lat": 31.05,
+        "point_role": "summit",
+        "distance_from_start_km": 22
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增二峰5个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "四姑娘山镇",
+        "lng": 102.83333,
+        "lat": 31.11667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "三峰大本营(4300m)",
+        "lng": 102.75,
+        "lat": 31.08333,
+        "point_role": "camp",
+        "distance_from_start_km": 14
+      },
+      {
+        "name_zh": "技术岩壁段",
+        "lng": 102.73333,
+        "lat": 31.06667,
+        "point_role": "danger",
+        "distance_from_start_km": 17
+      },
+      {
+        "name_zh": "三峰顶(5355m)",
+        "lng": 102.73333,
+        "lat": 31.05,
+        "point_role": "summit",
+        "distance_from_start_km": 18
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增三峰4个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "哈巴村(2700m)",
+        "lng": 100.03333,
+        "lat": 27.35,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "大草地",
+        "lng": 100.05,
+        "lat": 27.31667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 4
+      },
+      {
+        "name_zh": "大本营(4100m)",
+        "lng": 100.06667,
+        "lat": 27.3,
+        "point_role": "camp",
+        "distance_from_start_km": 8
+      },
+      {
+        "name_zh": "石板坡",
+        "lng": 100.06667,
+        "lat": 27.30833,
+        "point_role": "waypoint",
+        "distance_from_start_km": 9
+      },
+      {
+        "name_zh": "月亮湾(4900m)",
+        "lng": 100.08333,
+        "lat": 27.31667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 11
+      },
+      {
+        "name_zh": "哈巴顶(5396m)",
+        "lng": 100.08333,
+        "lat": 27.31667,
+        "point_role": "summit",
+        "distance_from_start_km": 13
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增哈巴6个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_007",
+    "name_zh": "亚丁大转山",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "亚丁村",
+        "lng": 100.36667,
+        "lat": 28.41667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "冲古寺",
+        "lng": 100.38333,
+        "lat": 28.43333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 3
+      },
+      {
+        "name_zh": "洛绒牛场",
+        "lng": 100.35,
+        "lat": 28.36667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 8
+      },
+      {
+        "name_zh": "牛奶海(4600m)",
+        "lng": 100.325,
+        "lat": 28.35833,
+        "point_role": "scenic",
+        "distance_from_start_km": 12
+      },
+      {
+        "name_zh": "五色海(4700m)",
+        "lng": 100.31667,
+        "lat": 28.35,
+        "point_role": "scenic",
+        "distance_from_start_km": 13
+      },
+      {
+        "name_zh": "卡斯地狱谷",
+        "lng": 100.35,
+        "lat": 28.28333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 22
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增亚丁6个关键点",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/稻城亚丁"
+    ]
+  },
+  {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "湖州月亮广场",
+        "lng": 120.05,
+        "lat": 30.9,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "宜兴",
+        "lng": 119.81667,
+        "lat": 31.36667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 60
+      },
+      {
+        "name_zh": "无锡蠡湖",
+        "lng": 120.26667,
+        "lat": 31.53333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 120
+      },
+      {
+        "name_zh": "苏州",
+        "lng": 120.58333,
+        "lat": 31.3,
+        "point_role": "waypoint",
+        "distance_from_start_km": 200
+      },
+      {
+        "name_zh": "吴江",
+        "lng": 120.63333,
+        "lat": 31.16667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 230
+      },
+      {
+        "name_zh": "湖州",
+        "lng": 120.05,
+        "lat": 30.9,
+        "point_role": "end",
+        "distance_from_start_km": 300
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增环太湖6个关键点",
+    "source_urls": []
+  },
+  {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "成都",
+        "lng": 104.06667,
+        "lat": 30.66667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "都江堰",
+        "lng": 103.61667,
+        "lat": 31.0,
+        "point_role": "waypoint",
+        "distance_from_start_km": 60
+      },
+      {
+        "name_zh": "巴朗山垭口(4487m)",
+        "lng": 102.73333,
+        "lat": 30.85,
+        "point_role": "pass",
+        "distance_from_start_km": 180
+      },
+      {
+        "name_zh": "四姑娘山",
+        "lng": 102.83333,
+        "lat": 31.11667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 200
+      },
+      {
+        "name_zh": "丹巴",
+        "lng": 101.88333,
+        "lat": 30.88333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 300
+      },
+      {
+        "name_zh": "塔公草原",
+        "lng": 101.55,
+        "lat": 30.33333,
+        "point_role": "scenic",
+        "distance_from_start_km": 380
+      },
+      {
+        "name_zh": "新都桥",
+        "lng": 101.5,
+        "lat": 30.05,
+        "point_role": "waypoint",
+        "distance_from_start_km": 420
+      },
+      {
+        "name_zh": "折多山垭口(4298m)",
+        "lng": 101.8,
+        "lat": 30.08333,
+        "point_role": "pass",
+        "distance_from_start_km": 460
+      },
+      {
+        "name_zh": "泸定桥",
+        "lng": 102.23333,
+        "lat": 29.91667,
+        "point_role": "scenic",
+        "distance_from_start_km": 500
+      },
+      {
+        "name_zh": "雅安",
+        "lng": 103.0,
+        "lat": 29.98333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 600
+      },
+      {
+        "name_zh": "成都",
+        "lng": 104.06667,
+        "lat": 30.66667,
+        "point_role": "end",
+        "distance_from_start_km": 750
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增川西小环线11个关键点",
+    "source_urls": []
+  },
+  {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "大理古城",
+        "lng": 100.16667,
+        "lat": 25.68333,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "才村",
+        "lng": 100.18333,
+        "lat": 25.7,
+        "point_role": "waypoint",
+        "distance_from_start_km": 3
+      },
+      {
+        "name_zh": "喜洲",
+        "lng": 100.1,
+        "lat": 25.86667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 25
+      },
+      {
+        "name_zh": "上关",
+        "lng": 100.08333,
+        "lat": 25.93333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "双廊",
+        "lng": 100.13333,
+        "lat": 25.95,
+        "point_role": "waypoint",
+        "distance_from_start_km": 60
+      },
+      {
+        "name_zh": "挖色",
+        "lng": 100.18333,
+        "lat": 25.86667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 85
+      },
+      {
+        "name_zh": "小普陀",
+        "lng": 100.18333,
+        "lat": 25.81667,
+        "point_role": "scenic",
+        "distance_from_start_km": 100
+      },
+      {
+        "name_zh": "大理古城",
+        "lng": 100.16667,
+        "lat": 25.68333,
+        "point_role": "end",
+        "distance_from_start_km": 125
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增环洱海8个关键点",
+    "source_urls": []
+  },
+  {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "西宁",
+        "lng": 101.78333,
+        "lat": 36.61667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "青海湖",
+        "lng": 100.7,
+        "lat": 36.56667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 175
+      },
+      {
+        "name_zh": "都兰",
+        "lng": 98.08333,
+        "lat": 36.3,
+        "point_role": "waypoint",
+        "distance_from_start_km": 425
+      },
+      {
+        "name_zh": "格尔木",
+        "lng": 94.88333,
+        "lat": 36.4,
+        "point_role": "waypoint",
+        "distance_from_start_km": 790
+      },
+      {
+        "name_zh": "昆仑山口(4768m)",
+        "lng": 94.05,
+        "lat": 35.65,
+        "point_role": "pass",
+        "distance_from_start_km": 880
+      },
+      {
+        "name_zh": "五道梁",
+        "lng": 93.08333,
+        "lat": 35.21667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1000
+      },
+      {
+        "name_zh": "沱沱河",
+        "lng": 92.43333,
+        "lat": 34.21667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1150
+      },
+      {
+        "name_zh": "唐古拉山口(5231m)",
+        "lng": 91.93333,
+        "lat": 32.88333,
+        "point_role": "pass",
+        "distance_from_start_km": 1350
+      },
+      {
+        "name_zh": "那曲",
+        "lng": 92.06667,
+        "lat": 31.46667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1620
+      },
+      {
+        "name_zh": "当雄",
+        "lng": 91.1,
+        "lat": 30.48333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1800
+      },
+      {
+        "name_zh": "拉萨",
+        "lng": 91.13333,
+        "lat": 29.65,
+        "point_role": "end",
+        "distance_from_start_km": 1950
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增青藏线11个关键点",
+    "source_urls": [
+      "https://www.greattibettour.com/cn/tibet-travel-tips/sichuan-tibet-highway.html"
+    ]
+  },
+  {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "叶城",
+        "lng": 77.41667,
+        "lat": 37.88333,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "库地达坂(3250m)",
+        "lng": 77.13333,
+        "lat": 37.05,
+        "point_role": "pass",
+        "distance_from_start_km": 160
+      },
+      {
+        "name_zh": "麻扎达坂(4969m)",
+        "lng": 77.41667,
+        "lat": 36.56667,
+        "point_role": "pass",
+        "distance_from_start_km": 260
+      },
+      {
+        "name_zh": "三十里营房",
+        "lng": 78.25,
+        "lat": 36.35,
+        "point_role": "waypoint",
+        "distance_from_start_km": 365
+      },
+      {
+        "name_zh": "红柳滩",
+        "lng": 79.1,
+        "lat": 35.8,
+        "point_role": "waypoint",
+        "distance_from_start_km": 480
+      },
+      {
+        "name_zh": "界山达坂(5347m)",
+        "lng": 80.13333,
+        "lat": 35.21667,
+        "point_role": "pass",
+        "distance_from_start_km": 680
+      },
+      {
+        "name_zh": "多玛",
+        "lng": 80.41667,
+        "lat": 34.01667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 840
+      },
+      {
+        "name_zh": "日土",
+        "lng": 79.7,
+        "lat": 33.38333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 960
+      },
+      {
+        "name_zh": "狮泉河",
+        "lng": 80.1,
+        "lat": 32.5,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1060
+      },
+      {
+        "name_zh": "札达",
+        "lng": 79.8,
+        "lat": 31.48333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1200
+      },
+      {
+        "name_zh": "普兰",
+        "lng": 81.16667,
+        "lat": 30.28333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1350
+      },
+      {
+        "name_zh": "萨嘎",
+        "lng": 85.23333,
+        "lat": 29.33333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 1900
+      },
+      {
+        "name_zh": "拉孜",
+        "lng": 87.63333,
+        "lat": 29.08333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 2050
+      },
+      {
+        "name_zh": "日喀则",
+        "lng": 88.88333,
+        "lat": 29.26667,
+        "point_role": "waypoint",
+        "distance_from_start_km": 2150
+      },
+      {
+        "name_zh": "拉萨",
+        "lng": 91.13333,
+        "lat": 29.65,
+        "point_role": "end",
+        "distance_from_start_km": 2550
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增新藏线15个关键点",
+    "source_urls": [
+      "https://www.greattibettour.com/cn/tibet-travel-tips/sichuan-tibet-highway.html"
+    ]
+  },
+  {
+    "route_id": "hk_026",
+    "name_zh": "格聂大环线",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "理塘",
+        "lng": 100.26667,
+        "lat": 30.0,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "铁匠山",
+        "lng": 100.0,
+        "lat": 29.98333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 28
+      },
+      {
+        "name_zh": "冷古寺",
+        "lng": 99.9,
+        "lat": 29.95,
+        "point_role": "waypoint",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "格聂之眼",
+        "lng": 99.75,
+        "lat": 29.86667,
+        "point_role": "scenic",
+        "distance_from_start_km": 52
+      },
+      {
+        "name_zh": "虎皮坝",
+        "lng": 99.71667,
+        "lat": 29.83333,
+        "point_role": "camp",
+        "distance_from_start_km": 56
+      },
+      {
+        "name_zh": "格聂神山",
+        "lng": 99.68333,
+        "lat": 29.81667,
+        "point_role": "scenic",
+        "distance_from_start_km": 60
+      },
+      {
+        "name_zh": "热梯河谷",
+        "lng": 99.63333,
+        "lat": 29.75,
+        "point_role": "waypoint",
+        "distance_from_start_km": 70
+      },
+      {
+        "name_zh": "波密乡",
+        "lng": 99.53333,
+        "lat": 29.68333,
+        "point_role": "end",
+        "distance_from_start_km": 90
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增格聂大环线8个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "hk_034",
+    "name_zh": "大五台顺穿",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "鸿门岩",
+        "lng": 113.63333,
+        "lat": 39.06667,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "东台望海峰(2795m)",
+        "lng": 113.68333,
+        "lat": 39.06667,
+        "point_role": "summit",
+        "distance_from_start_km": 3
+      },
+      {
+        "name_zh": "北台叶斗峰(3058m)",
+        "lng": 113.58333,
+        "lat": 39.08333,
+        "point_role": "summit",
+        "distance_from_start_km": 15
+      },
+      {
+        "name_zh": "澡浴池",
+        "lng": 113.56667,
+        "lat": 39.05,
+        "point_role": "waypoint",
+        "distance_from_start_km": 19
+      },
+      {
+        "name_zh": "中台翠岩峰(2894m)",
+        "lng": 113.56667,
+        "lat": 39.03333,
+        "point_role": "summit",
+        "distance_from_start_km": 22
+      },
+      {
+        "name_zh": "西台挂月峰(2773m)",
+        "lng": 113.53333,
+        "lat": 39.01667,
+        "point_role": "summit",
+        "distance_from_start_km": 28
+      },
+      {
+        "name_zh": "狮子窝",
+        "lng": 113.53333,
+        "lat": 38.98333,
+        "point_role": "waypoint",
+        "distance_from_start_km": 32
+      },
+      {
+        "name_zh": "南台锦绣峰(2474m)",
+        "lng": 113.55,
+        "lat": 38.93333,
+        "point_role": "summit",
+        "distance_from_start_km": 40
+      },
+      {
+        "name_zh": "佛母洞",
+        "lng": 113.58333,
+        "lat": 38.95,
+        "point_role": "end",
+        "distance_from_start_km": 45
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增大五台9个关键点",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/五台山"
+    ]
+  },
+  {
+    "route_id": "hk_012",
+    "name_zh": "喀拉峻草原穿越",
+    "update_type": "key_points_refined",
+    "polyline_coords": [],
+    "key_points_refined": [
+      {
+        "name_zh": "琼库什台",
+        "lng": 82.15,
+        "lat": 42.95,
+        "point_role": "start",
+        "distance_from_start_km": 0
+      },
+      {
+        "name_zh": "西喀拉峻",
+        "lng": 82.25,
+        "lat": 42.95,
+        "point_role": "camp",
+        "distance_from_start_km": 10
+      },
+      {
+        "name_zh": "加撒干",
+        "lng": 82.35,
+        "lat": 42.95,
+        "point_role": "waypoint",
+        "distance_from_start_km": 18
+      },
+      {
+        "name_zh": "东喀拉峻",
+        "lng": 82.45,
+        "lat": 42.93333,
+        "point_role": "camp",
+        "distance_from_start_km": 25
+      },
+      {
+        "name_zh": "克孜勒斯达坂",
+        "lng": 82.51667,
+        "lat": 42.9,
+        "point_role": "pass",
+        "distance_from_start_km": 32
+      },
+      {
+        "name_zh": "塔里木",
+        "lng": 82.55,
+        "lat": 42.86667,
+        "point_role": "end",
+        "distance_from_start_km": 40
+      }
+    ],
+    "geometry_confidence": "B",
+    "what_changed": "新增喀拉峻6个关键点",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  }
+]

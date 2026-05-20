@@ -1,0 +1,114 @@
+[
+  {
+    "source_id": "open_meteo",
+    "badge_label": "Open-Meteo",
+    "badge_color_role": "primary",
+    "trust_note_short": "开源聚合数据，全球覆盖，CC BY 4.0",
+    "use_in_app": "primary",
+    "reason": "主力数据源。免费无Key，30+模型自动选优，所有核心字段均可通过它获取。前端直接调用。"
+  },
+  {
+    "source_id": "ecmwf_ifs",
+    "badge_label": "ECMWF",
+    "badge_color_role": "secondary",
+    "trust_note_short": "全球最准预报模型，14年评分第一",
+    "use_in_app": "primary",
+    "reason": "Open-Meteo默认后端模型。不直接API调用，通过Open-Meteo的model参数指定使用。"
+  },
+  {
+    "source_id": "noaa_gfs",
+    "badge_label": "GFS",
+    "badge_color_role": "secondary",
+    "trust_note_short": "免费开源，更新频率高，长时效参考",
+    "use_in_app": "primary",
+    "reason": "Open-Meteo可选模型。更新频率最高（4次/日），适合ECMWF空窗期使用。"
+  },
+  {
+    "source_id": "dwd_icon",
+    "badge_label": "ICON",
+    "badge_color_role": "secondary",
+    "trust_note_short": "德国气象局，欧洲山地地形最优",
+    "use_in_app": "primary",
+    "reason": "通过Open-Meteo指定。欧洲山地场景的首选模型，ICON-D2 2km分辨率对复杂地形精度最高。"
+  },
+  {
+    "source_id": "windy_api",
+    "badge_label": "Windy",
+    "badge_color_role": "reference",
+    "trust_note_short": "专业天气可视化，Webcam实景参考",
+    "use_in_app": "reference",
+    "reason": "不直接调用API。Windy的交互式天气地图是极好的可视化参考，可以提供外部跳转链接。"
+  },
+  {
+    "source_id": "meteoblue_api",
+    "badge_label": "Meteoblue",
+    "badge_color_role": "reference",
+    "trust_note_short": "专业气象服务，高精度降尺度",
+    "use_in_app": "reference",
+    "reason": "不直接调用API。作为Open-Meteo不可用时的备选方案，但不建议优先接入（比Open-Meteo限制多）。"
+  },
+  {
+    "source_id": "amap_weather",
+    "badge_label": "高德",
+    "badge_color_role": "primary",
+    "trust_note_short": "中国地理编码+天气（字段有限）",
+    "use_in_app": "primary",
+    "reason": "地理编码和地点搜索使用（中国小地名→坐标），天气数据仅辅助验证，手动调用高德API。"
+  },
+  {
+    "source_id": "weather_com_cn",
+    "badge_label": "中国天气网",
+    "badge_color_role": "reference",
+    "trust_note_short": "中国官方气象预警，外部参考",
+    "use_in_app": "reference",
+    "reason": "不API调用。提供外部跳转链接到中国天气网查看官方预警详情。"
+  },
+  {
+    "source_id": "qweather",
+    "badge_label": "和风天气",
+    "badge_color_role": "not_now",
+    "trust_note_short": "中国精细网格，但需付费/API Key",
+    "use_in_app": "not_now",
+    "reason": "暂不接入。如果未来需要中国官方预警数据或分钟级降水，和风是优质选择。"
+  },
+  {
+    "source_id": "seniverse",
+    "badge_label": "心知天气",
+    "badge_color_role": "not_now",
+    "trust_note_short": "CMA授权，但免费额度有限",
+    "use_in_app": "not_now",
+    "reason": "暂不接入。作为中国区域备选数据源。"
+  },
+  {
+    "source_id": "google_weather",
+    "badge_label": "Google",
+    "badge_color_role": "not_now",
+    "trust_note_short": "中国大陆不可用",
+    "use_in_app": "not_now",
+    "reason": "中国大陆不可用，暂不接入。"
+  },
+  {
+    "source_id": "nws_api",
+    "badge_label": "NWS",
+    "badge_color_role": "not_now",
+    "trust_note_short": "美国NWS纯免费，仅覆盖美国",
+    "use_in_app": "not_now",
+    "reason": "暂时不自有接入。Open-Meteo已覆盖NWS数据（通过模型选择）。"
+  },
+  {
+    "source_id": "openweathermap",
+    "badge_label": "OpenWeather",
+    "badge_color_role": "not_now",
+    "trust_note_short": "知名免费API，但需Key",
+    "use_in_app": "not_now",
+    "reason": "暂不接入。Open-Meteo无需Key、字段更全，已完全替代。"
+  },
+  {
+    "source_id": "open_meteo_geocoding",
+    "badge_label": "Open-Meteo地理编码",
+    "badge_color_role": "secondary",
+    "trust_note_short": "免费无Key地名搜索，海外好用",
+    "use_in_app": "primary",
+    "reason": "海外地点搜索用（Open-Meteo配套地理编码API）。中国地点用高德更准。"
+  }
+]

@@ -1,0 +1,614 @@
+[
+  {
+    "rule_id": "WIND_001",
+    "metric_id": "wind_speed",
+    "condition_expression": "wind_speed >= 30 AND wind_speed < 50",
+    "severity": "watch",
+    "plain_language_explanation": "风力较强，迎风行走会明显受阻。山脊或垭口实际风感可能比预报值大1-2级。",
+    "technical_note": "风速30-50 km/h对应蒲氏5-7级（清劲风至疾风）。户外标准中≥30km/h需注意平衡安全。",
+    "source_urls": ["https://en.wikipedia.org/wiki/Beaufort_scale"]
+  },
+  {
+    "rule_id": "WIND_002",
+    "metric_id": "wind_speed",
+    "condition_expression": "wind_speed >= 50",
+    "severity": "danger",
+    "plain_language_explanation": "风速达7级以上，会对站立和行进造成显著困难。建议避免在海拔开放区域活动。",
+    "technical_note": "风速≥50km/h（≥28节）接近8级大风。高山环境实际风速可能更高。",
+    "source_urls": ["https://www.weather.gov/safety/wind"]
+  },
+  {
+    "rule_id": "WIND_003",
+    "metric_id": "wind_speed",
+    "condition_expression": "wind_speed >= 20 AND wind_speed < 30",
+    "severity": "info",
+    "plain_language_explanation": "轻到中风，一般不影响活动。山口和裸岩地段可能会有阵风增强。",
+    "technical_note": "20-30 km/h对应蒲氏4-5级。多数户外活动可正常进行。",
+    "source_urls": ["https://www.mountaineering.ie/"]
+  },
+  {
+    "rule_id": "WIND_004",
+    "metric_id": "wind_gust",
+    "condition_expression": "wind_gusts_10m >= 40 AND wind_gusts_10m < 60",
+    "severity": "watch",
+    "plain_language_explanation": "阵风较强，突然的强风可能影响行走平衡。窄谷、垭口和山脊阵风会显著增强。",
+    "technical_note": "阵风瞬时值≥40km/h时，对徒步行进已构成影响。阵风系数（gust factor）通常为平均风速的1.3-2倍。",
+    "source_urls": ["https://www.metoffice.gov.uk/weather/guides/coast-and-sea/beaufort-scale"]
+  },
+  {
+    "rule_id": "WIND_005",
+    "metric_id": "wind_gust",
+    "condition_expression": "wind_gusts_10m >= 60",
+    "severity": "danger",
+    "plain_language_explanation": "阵风强劲，站立和行进困难。容易把人吹倒，尤其在高海拔裸露地带风险极大。",
+    "technical_note": "阵风≥60km/h达到8级标准。重度户外活动建议取消。",
+    "source_urls": ["https://www.weather.gov/safety/wind"]
+  },
+  {
+    "rule_id": "WIND_006",
+    "metric_id": "wind_gust",
+    "condition_expression": "wind_gusts_10m >= 80",
+    "severity": "danger",
+    "plain_language_explanation": "极端强阵风，人身安全严重受到威胁。必须立即停止任何户外活动。",
+    "technical_note": "阵风≥80km/h（10级烈风），可吹倒人体。高海拔山口实测可达100+km/h。",
+    "source_urls": ["https://www.ncei.noaa.gov/"]
+  },
+  {
+    "rule_id": "WIND_007",
+    "metric_id": "wind_direction",
+    "condition_expression": "wind_direction >= 315 OR wind_direction < 45",
+    "severity": "info",
+    "plain_language_explanation": "北风。通常携带冷空气，气温将下降。中国北方冬季北风会显著降低体感温度。",
+    "technical_note": "北风风向区间315°-45°。冷锋过境后常转为偏北风。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "WIND_008",
+    "metric_id": "wind_direction",
+    "condition_expression": "wind_direction >= 135 AND wind_direction < 225",
+    "severity": "info",
+    "plain_language_explanation": "南风。通常携带暖湿空气，可能带来降水或升温。南方夏季南风通常暖湿。",
+    "technical_note": "南风区间135°-225°。暖湿气流多来自副热带高压边缘。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "WIND_009",
+    "metric_id": "wind_speed",
+    "condition_expression": "wind_speed_10m >= 10 AND elevation > 3000",
+    "severity": "info",
+    "plain_language_explanation": "高海拔地区即使轻风体感也明显更强。海拔3000m以上空气密度低，风寒效应更突出。",
+    "technical_note": "海拔每升高1000m，空气密度下降约10%，相同风速下风压降低但风寒效应因低温加剧。",
+    "source_urls": ["https://www.weather.gov/safety/wind"]
+  },
+  {
+    "rule_id": "PRECIP_001",
+    "metric_id": "precipitation_amount",
+    "condition_expression": "precipitation >= 0.3 AND precipitation < 2.5",
+    "severity": "info",
+    "plain_language_explanation": "小雨。地面微湿，不影响行进，但注意路面湿滑和视线模糊。",
+    "technical_note": "小时降水量<2.5mm为小雨。持续6小时以上累计雨量仍可达中雨标准。",
+    "source_urls": ["https://www.cma.gov.cn/"]
+  },
+  {
+    "rule_id": "PRECIP_002",
+    "metric_id": "precipitation_amount",
+    "condition_expression": "precipitation >= 2.5 AND precipitation < 10",
+    "severity": "watch",
+    "plain_language_explanation": "中雨。路面明显积水，影响行进速度和可见度。持续超过2小时需关注路线上游山洪风险。",
+    "technical_note": "小时降水量2.5-10mm为中雨。中雨持续伴山坡地形可能诱发小型泥石流。",
+    "source_urls": ["https://www.cma.gov.cn/"]
+  },
+  {
+    "rule_id": "PRECIP_003",
+    "metric_id": "precipitation_amount",
+    "condition_expression": "precipitation >= 10 AND precipitation < 30",
+    "severity": "warning",
+    "plain_language_explanation": "大雨。能见度下降明显，溪流可能迅速上涨。峡谷、河道边活动有山洪风险。",
+    "technical_note": "小时降水量10-30mm为大雨。山洪暴发阈值因地形而异，一般小时雨量>20mm时风险显著。",
+    "source_urls": ["https://www.cma.gov.cn/", "https://www.weather.gov/flood/"]
+  },
+  {
+    "rule_id": "PRECIP_004",
+    "metric_id": "precipitation_amount",
+    "condition_expression": "precipitation >= 30",
+    "severity": "danger",
+    "plain_language_explanation": "暴雨或以上。短时间内大量降水可引发山洪、泥石流、滑坡。立即转移到高处安全地带。",
+    "technical_note": "小时降水量≥30mm为暴雨。山洪响应时间在山区可能仅15-30分钟。",
+    "source_urls": ["https://www.cma.gov.cn/", "https://www.weather.gov/flood/"]
+  },
+  {
+    "rule_id": "PRECIP_005",
+    "metric_id": "precipitation_probability",
+    "condition_expression": "precipitation_probability >= 60",
+    "severity": "watch",
+    "plain_language_explanation": "降水的可能性较高。建议准备雨具和防水装备，关注后续小时预报确认降水时段。",
+    "technical_note": "PoP≥60%意味着在预报区域和时段内≥0.3mm降水的概率为60%。集合预报共识较高。",
+    "source_urls": ["https://www.weather.gov/help/"]
+  },
+  {
+    "rule_id": "PRECIP_006",
+    "metric_id": "precipitation_probability",
+    "condition_expression": "precipitation_probability >= 30 AND precipitation_probability < 60",
+    "severity": "info",
+    "plain_language_explanation": "有降雨可能但不是确定的。建议关注云量变化和本地天气信号，带上备用雨具。",
+    "technical_note": "PoP 30-60%为中等概率。天气系统不稳定时此区间变化较快。",
+    "source_urls": ["https://www.weather.gov/help/"]
+  },
+  {
+    "rule_id": "STM_001",
+    "metric_id": "thunderstorm_probability",
+    "condition_expression": "thunderstorm_probability >= 20 AND thunderstorm_probability < 40",
+    "severity": "watch",
+    "plain_language_explanation": "有雷暴发展的可能。山区夏季午后雷暴多发，建议关注云层变化。如天空出现积雨云应提前撤离山脊和山顶。",
+    "technical_note": "雷暴概率≥20%意味着有显著的对流发展可能性。CAPE值>1000 J/kg通常与雷暴相关。",
+    "source_urls": ["https://www.weather.gov/safety/lightning"]
+  },
+  {
+    "rule_id": "STM_002",
+    "metric_id": "thunderstorm_probability",
+    "condition_expression": "thunderstorm_probability >= 40",
+    "severity": "danger",
+    "plain_language_explanation": "雷暴风险高。避免在山顶、山脊、空旷地带、高大孤树下活动。雷击在山区是最致命的天气风险之一。",
+    "technical_note": "雷暴概率≥40%时必须认真对待。闪电可在雷暴前方10-15km的晴空区发生（晴空霹雳）。",
+    "source_urls": ["https://www.weather.gov/safety/lightning"]
+  },
+  {
+    "rule_id": "STM_003",
+    "metric_id": "thunderstorm_probability",
+    "condition_expression": "thunderstorm_probability >= 10 AND thunderstorm_probability < 20",
+    "severity": "info",
+    "plain_language_explanation": "个别雷暴可能发生。夏季活动时注意观察天空，积云快速向上发展可能是雷暴前兆。",
+    "technical_note": "低概率雷暴仍可能发生。山中局部对流难以完全预报。",
+    "source_urls": ["https://www.weather.gov/safety/lightning"]
+  },
+  {
+    "rule_id": "VIS_001",
+    "metric_id": "visibility",
+    "condition_expression": "visibility < 5 AND visibility >= 1",
+    "severity": "watch",
+    "plain_language_explanation": "能见度较差。在陌生地形中容易迷失方向，建议放慢速度、频繁核对导航。山区往往低于预报值。",
+    "technical_note": "能见度1-5km为中到差。雾、雨、雪均可导致。地形越复杂导航风险越大。",
+    "source_urls": ["https://www.weather.gov/fog/"]
+  },
+  {
+    "rule_id": "VIS_002",
+    "metric_id": "visibility",
+    "condition_expression": "visibility < 1 AND visibility >= 0.1",
+    "severity": "warning",
+    "plain_language_explanation": "能见度很差。极易迷路，尤其是在无路标的野山上。强烈建议停止行进，使用GPS导航。",
+    "technical_note": "能见度<1km定义为雾。无路径参考点时会显著增加迷路概率。",
+    "source_urls": ["https://www.weather.gov/fog/"]
+  },
+  {
+    "rule_id": "VIS_003",
+    "metric_id": "visibility",
+    "condition_expression": "visibility < 0.1",
+    "severity": "danger",
+    "plain_language_explanation": "极低能见度。行进极其危险，极易发生失足坠落。必须就地等待能见度改善。",
+    "technical_note": "能见度<100m为浓雾。在悬崖、冰川、碎石坡等地形中极为危险。",
+    "source_urls": ["https://www.weather.gov/fog/"]
+  },
+  {
+    "rule_id": "PRESS_001",
+    "metric_id": "pressure_msl",
+    "condition_expression": "pressure_change_24h <= -8 AND pressure_change_24h > -15",
+    "severity": "watch",
+    "plain_language_explanation": "气压在24小时内明显下降，预示低压系统正在接近。天气可能在12-24小时内转坏，风力增强并可能带来降水。",
+    "technical_note": "24小时下降8-15hPa是显著的信号。强低压中心下降可达20-30hPa/24h。气压下降越陡，天气恶化速度越快。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "PRESS_002",
+    "metric_id": "pressure_msl",
+    "condition_expression": "pressure_change_24h <= -15",
+    "severity": "danger",
+    "plain_language_explanation": "气压急剧下降，强低压系统即将或已经来临。伴随强风、大到暴雨或暴雪。建议立即寻找安全避难场所。",
+    "technical_note": "24小时下降≥15hPa通常与强烈气旋/温带气旋相关。阵风可能达烈风甚至暴风级。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "PRESS_003",
+    "metric_id": "pressure_msl",
+    "condition_expression": "pressure_change_24h >= 10",
+    "severity": "info",
+    "plain_language_explanation": "气压快速上升，说明高压系统正在移入。天气趋于稳定，但高压后部可能带来强风（冷高压南下常见）。",
+    "technical_note": "24小时上升≥10hPa代表强高压移入。冬季冷高压后部常伴有大风降温。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "PRESS_004",
+    "metric_id": "pressure_msl",
+    "condition_expression": "pressure_msl < 995",
+    "severity": "watch",
+    "plain_language_explanation": "气压显著低于标准海平面值，说明受低压系统控制。伴有风雨的可能性大。",
+    "technical_note": "海平面气压<995hPa为显著低压。气旋中心可低至950hPa以下。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "DEW_001",
+    "metric_id": "dew_point",
+    "condition_expression": "dew_point_2m > 20",
+    "severity": "info",
+    "plain_language_explanation": "露点高，空气湿度大，体感闷热。适合减少衣物，注意补充水分。",
+    "technical_note": "露点>20°C时空气接近饱和（相对湿度常>80%），人体排汗效率下降。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "DEW_002",
+    "metric_id": "dew_point",
+    "condition_expression": "dew_point_2m < 0 AND dew_point_2m >= -10",
+    "severity": "info",
+    "plain_language_explanation": "露点在冰点以下，空气干燥。表面温度低于0°C处可能结霜。高海拔装备注意防冻。",
+    "technical_note": "露点<0°C意味着霜冻点可以达到。帐篷外表面和装备在黎明前易结冰。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "DEW_003",
+    "metric_id": "dew_point",
+    "condition_expression": "dew_point_2m < -10",
+    "severity": "watch",
+    "plain_language_explanation": "空气极端干燥。皮肤和呼吸道水分流失加快，需注意保温和保湿。高海拔+低露点下冻伤风险增高。",
+    "technical_note": "露点<-10°C属于极端干燥条件。常见于冬季大陆性气团控制区域。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "UV_001",
+    "metric_id": "uv_index",
+    "condition_expression": "uv_index >= 6 AND uv_index < 8",
+    "severity": "watch",
+    "plain_language_explanation": "紫外线强度较高。暴露30分钟可能晒伤。需使用SPF30+防晒霜、戴帽子和太阳镜。",
+    "technical_note": "UV指数6-7为高。海拔3000m紫外线强度比海平面高40%。雪地反射再增加80%。",
+    "source_urls": ["https://www.who.int/uv/"]
+  },
+  {
+    "rule_id": "UV_002",
+    "metric_id": "uv_index",
+    "condition_expression": "uv_index >= 8 AND uv_index < 11",
+    "severity": "warning",
+    "plain_language_explanation": "紫外线很高。暴露20分钟即可晒伤。高海拔和雪地场景下必须做好全方位防护。",
+    "technical_note": "UV指数8-10为很高。建议SPF50+广谱防晒、UVA/UVB防护镜、遮阳帽。",
+    "source_urls": ["https://www.who.int/uv/"]
+  },
+  {
+    "rule_id": "UV_003",
+    "metric_id": "uv_index",
+    "condition_expression": "uv_index >= 11",
+    "severity": "danger",
+    "plain_language_explanation": "紫外线极端强。15分钟即可造成晒伤。高海拔雪地环境雪盲风险极高，必须佩戴符合UV400标准的雪镜。",
+    "technical_note": "UV指数11+为极端。常见于2000m+高海拔+雪地结合的场景。雪盲可能在几小时内发生。",
+    "source_urls": ["https://www.who.int/uv/"]
+  },
+  {
+    "rule_id": "TEMP_001",
+    "metric_id": "temperature_current",
+    "condition_expression": "temperature_2m >= 35",
+    "severity": "watch",
+    "plain_language_explanation": "高温天气。注意热痉挛和中暑风险。增加饮水、减少日晒时段的剧烈活动。",
+    "technical_note": "≥35°C是国家级高温预警标准。热相关疾病发生风险显著上升。",
+    "source_urls": ["https://www.cma.gov.cn/", "https://www.cdc.gov/"]
+  },
+  {
+    "rule_id": "TEMP_002",
+    "metric_id": "temperature_current",
+    "condition_expression": "temperature_2m >= 40",
+    "severity": "danger",
+    "plain_language_explanation": "极端高温。不建议进行高强度户外活动。热射病风险极高。必须携带充足水源并频繁休息。",
+    "technical_note": "≥40°C为极端高温阈值。核心体温超过40°C即出现热射病症状。",
+    "source_urls": ["https://www.cma.gov.cn/", "https://www.cdc.gov/"]
+  },
+  {
+    "rule_id": "TEMP_003",
+    "metric_id": "temperature_current",
+    "condition_expression": "temperature_2m <= 0 AND temperature_2m > -10",
+    "severity": "watch",
+    "plain_language_explanation": "零度以下低温。需注意防寒保暖。潮湿衣物在此温度下可导致失温。",
+    "technical_note": "0°C到-10°C为轻度严寒。风速增加会显著加剧风寒效应。",
+    "source_urls": ["https://www.weather.gov/safety/cold"]
+  },
+  {
+    "rule_id": "TEMP_004",
+    "metric_id": "temperature_current",
+    "condition_expression": "temperature_2m <= -10 AND temperature_2m > -20",
+    "severity": "warning",
+    "plain_language_explanation": "严寒。暴露在外的皮肤在30分钟内可能冻伤。必须穿戴多层防风防寒衣物、面罩和保暖手套。",
+    "technical_note": "-10°C到-20°C为中度严寒。风寒指数（Wind Chill）可使体感温度再低5-15°C。",
+    "source_urls": ["https://www.weather.gov/safety/cold"]
+  },
+  {
+    "rule_id": "TEMP_005",
+    "metric_id": "temperature_current",
+    "condition_expression": "temperature_2m <= -20",
+    "severity": "danger",
+    "plain_language_explanation": "极寒。暴露的皮肤在10分钟内即可冻伤。强烈建议取消非必要的户外活动。必须使用专业极地装备。",
+    "technical_note": "≤-20°C为严重严寒。中国东北及青藏高原冬季可达此阈值。强风+极寒可致风寒效应降至-40°C以下。",
+    "source_urls": ["https://www.weather.gov/safety/cold"]
+  },
+  {
+    "rule_id": "TEMP_006",
+    "metric_id": "temperature_apparent",
+    "condition_expression": "apparent_temperature <= -25",
+    "severity": "danger",
+    "plain_language_explanation": "体感温度极低。风寒效应严重，暴露皮肤在5-10分钟内可冻伤。建议完全避免户外活动。",
+    "technical_note": "体感温度基于温度、风速和湿度综合计算。≤-25°C已进入极端风寒警告范围。",
+    "source_urls": ["https://www.weather.gov/safety/cold"]
+  },
+  {
+    "rule_id": "CLOUD_001",
+    "metric_id": "cloud_cover",
+    "condition_expression": "cloud_cover >= 80",
+    "severity": "info",
+    "plain_language_explanation": "阴天或接近全阴。日照不足，体感偏冷。注意观察云层类型——低层乌云预示降水，高层薄云（卷层云）可能只是过境。",
+    "technical_note": "云量≥80%通常有高度相关性，建议配合降水和能见度综合判断。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "CLOUD_002",
+    "metric_id": "cloud_cover",
+    "condition_expression": "cloud_cover <= 20",
+    "severity": "info",
+    "plain_language_explanation": "晴天或少云。日照充足，紫外线强。注意防晒和补充水分。",
+    "technical_note": "云量≤20%为晴或少云。太阳辐射强度取决于季节和纬度。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "CLOUD_003",
+    "metric_id": "cloud_cover",
+    "condition_expression": "cloud_cover >= 60 AND cloud_cover < 80",
+    "severity": "info",
+    "plain_language_explanation": "多云。云量较多，阳光时有时无。注意云层变化趋势——对流云增多可能是雷暴前兆。",
+    "technical_note": "云量60-80%为多云到阴。需结合云的类型（积云/层云/卷云）判断。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "HUM_001",
+    "metric_id": "relative_humidity",
+    "condition_expression": "relative_humidity_2m > 85",
+    "severity": "info",
+    "plain_language_explanation": "高湿度环境。体感偏闷热或湿冷（视温度）。露水或霜可能在清晨形成，路面湿滑。衣物不易晾干。",
+    "technical_note": "相对湿度>85%接近饱和。清晨常伴随雾或露水。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "HUM_002",
+    "metric_id": "relative_humidity",
+    "condition_expression": "relative_humidity_2m < 30",
+    "severity": "info",
+    "plain_language_explanation": "环境干燥。呼吸道易感到不适，皮肤水分蒸发快。注意及时补水。高海拔+低湿度+大风=加速脱水。",
+    "technical_note": "相对湿度<30%为干燥。常见于大陆性气团控制区域和高原地区。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "COMB_001",
+    "metric_id": null,
+    "condition_expression": "temperature_2m < 0 AND wind_speed_10m >= 20",
+    "severity": "warning",
+    "plain_language_explanation": "低温+大风组合。风寒效应显著，体感温度可能比气温低10-20°C。冻伤风险大增。",
+    "technical_note": "风寒温度（Wind Chill Temperature）使用NWS公式计算。如-10°C+20km/h风≈-18°C体感。",
+    "source_urls": ["https://www.weather.gov/safety/cold"]
+  },
+  {
+    "rule_id": "COMB_002",
+    "metric_id": null,
+    "condition_expression": "temperature_2m >= 30 AND relative_humidity_2m >= 70",
+    "severity": "watch",
+    "plain_language_explanation": "高温高湿组合，体感比实际温度高3-8°C。中暑和热痉挛风险增大。",
+    "technical_note": "温湿指数（Heat Index）>32°C为警戒水平。35°C+70%RH时体感可达约44°C。",
+    "source_urls": ["https://www.weather.gov/safety/heat"]
+  },
+  {
+    "rule_id": "COMB_003",
+    "metric_id": null,
+    "condition_expression": "temperature_2m >= 35 AND relative_humidity_2m >= 60",
+    "severity": "danger",
+    "plain_language_explanation": "极端高温高湿。热射病风险极高，不建议进行户外活动。",
+    "technical_note": "Heat Index >40°C为危险级别。人体已无法通过排汗有效降温。",
+    "source_urls": ["https://www.weather.gov/safety/heat"]
+  },
+  {
+    "rule_id": "COMB_004",
+    "metric_id": null,
+    "condition_expression": "precipitation_amount >= 5 AND visibility < 3",
+    "severity": "warning",
+    "plain_language_explanation": "降雨导致能见度显著下降。路线识别困难，溪流和沟谷可能迅速积水。",
+    "technical_note": "中雨以上+低能见度组合是典型的天气恶化双因子信号。",
+    "source_urls": []
+  },
+  {
+    "rule_id": "COMB_005",
+    "metric_id": null,
+    "condition_expression": "precipitation_amount >= 2 AND wind_speed_10m >= 30",
+    "severity": "warning",
+    "plain_language_explanation": "风雨交加。雨水被风吹成水平方向，即使有雨衣也难完全防护。体感温度大幅下降。",
+    "technical_note": "雨+风的组合可能导致体温迅速流失，失温风险增加。",
+    "source_urls": []
+  },
+  {
+    "rule_id": "ELEV_001",
+    "metric_id": "temperature_current",
+    "condition_expression": "elevation > 3000 AND elevation <= 4500",
+    "severity": "info",
+    "plain_language_explanation": "海拔3000m以上，日气温变化剧烈，午后常有对流云发展。穿衣需多层级应对快速变化的天气。",
+    "technical_note": "高海拔区域气温垂直递减率约-6.5°C/1000m。日出后地表加热可迅速触发对流。",
+    "source_urls": ["https://www.cma.gov.cn/"]
+  },
+  {
+    "rule_id": "ELEV_002",
+    "metric_id": "temperature_current",
+    "condition_expression": "elevation > 4500",
+    "severity": "warning",
+    "plain_language_explanation": "超高海拔，空气含氧量仅海平面的40-60%。0°C以下温度常见。极端天气可在数分钟内出现。",
+    "technical_note": "海拔4500m+属于极高山。空气密度仅海平面60%左右，风速对体感影响更显著。",
+    "source_urls": ["https://www.cma.gov.cn/"]
+  },
+  {
+    "rule_id": "CLOUD_004",
+    "metric_id": "cloud_cover",
+    "condition_expression": "cloud_cover_low >= 60",
+    "severity": "info",
+    "plain_language_explanation": "低云量多，说明近地面湿度大，可能伴随雾或微弱降水。低云是影响山区能见度的主要因素。",
+    "technical_note": "低云（≤2km高度）云量≥60%时能见度通常较差。低云频繁在高海拔区域形成。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "TEMP_007",
+    "metric_id": "temperature_current",
+    "condition_expression": "temperature_2m >= 30 AND elevation > 2000",
+    "severity": "info",
+    "plain_language_explanation": "高海拔高温。高海拔日照强烈，尽管气温不高，紫外线和太阳辐射对皮肤伤害更大。",
+    "technical_note": "海拔2000m以上，太阳辐射强。30°C体感可能接近35°C级别的UV伤害。",
+    "source_urls": ["https://www.who.int/uv/"]
+  },
+  {
+    "rule_id": "VIS_004",
+    "metric_id": "visibility",
+    "condition_expression": "visibility < 10 AND precipitation_amount > 0",
+    "severity": "info",
+    "plain_language_explanation": "降水使能见度下降，但尚未到危险程度。注意行走时保持间距和速度控制。",
+    "technical_note": "降水本身即降低能见度，雨强越大能见度越低。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "PRECIP_007",
+    "metric_id": "precipitation_amount",
+    "condition_expression": "precipitation_sum_24h >= 50",
+    "severity": "danger",
+    "plain_language_explanation": "24小时累计降水量已达50mm以上。山洪和滑坡风险极高。在山区应远离溪谷和沟道。",
+    "technical_note": "24h降水量≥50mm为暴雨量级。若上游有更强降水，山洪可能在下游区域爆发。",
+    "source_urls": ["https://www.cma.gov.cn/", "https://www.weather.gov/flood/"]
+  },
+  {
+    "rule_id": "PRECIP_008",
+    "metric_id": "precipitation_amount",
+    "condition_expression": "precipitation >= 0 AND snow_fall > 0",
+    "severity": "info",
+    "plain_language_explanation": "降雪而非降雨。需注意雪地行走和防滑，雪盲风险随日照增加。",
+    "technical_note": "气温≤2°C且降水存在时可能为降雪。湿雪重而硬，干雪轻而松。",
+    "source_urls": []
+  },
+  {
+    "rule_id": "PRECIP_009",
+    "metric_id": "precipitation_amount",
+    "condition_expression": "precipitation >= 1 AND temperature_2m > 25 AND elevation < 1000",
+    "severity": "info",
+    "plain_language_explanation": "暖区降水，可能是对流性降雨（骤雨）。特点是来得快去得也快，但雨势可能很大。",
+    "technical_note": "暖季对流降雨往往集中在午后到傍晚。局地性强，预报难度大。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "SUN_001",
+    "metric_id": "sunrise_sunset",
+    "condition_expression": "time >= sunset - 3600 AND time < sunset",
+    "severity": "info",
+    "plain_language_explanation": "距离日落还有不到1小时。日落前30分钟光线快速变暗。建议准备头灯，确认天黑前能到达营地或安全地点。",
+    "technical_note": "日落后约30分钟为航海晨昏蒙影（Civil Twilight）结束，此后无人工光源无法清晰视物。",
+    "source_urls": ["https://www.timeanddate.com/"]
+  },
+  {
+    "rule_id": "SUN_002",
+    "metric_id": "sunrise_sunset",
+    "condition_expression": "time >= sunrise - 1800 AND time < sunrise",
+    "severity": "info",
+    "plain_language_explanation": "距离日出不到30分钟。天光开始变亮，但地面能见度仍有限。",
+    "technical_note": "日出前30分钟天光逐渐增强，但颜色辨识困难。林中可能仍很暗。",
+    "source_urls": ["https://www.timeanddate.com/"]
+  },
+  {
+    "rule_id": "WIND_010",
+    "metric_id": "wind_speed",
+    "condition_expression": "wind_speed_10m >= 20 AND location_type IN ('mountain_pass', 'ridge')",
+    "severity": "watch",
+    "plain_language_explanation": "山口/山脊区域风速通常比周边高1-2倍。预报20km/h的风，实际山口感受可能达40km/h。",
+    "technical_note": "峡谷效应和山脊加速效应可使局部风速显著增强。Venturi效应在窄谷中最明显。",
+    "source_urls": []
+  },
+  {
+    "rule_id": "COMB_006",
+    "metric_id": null,
+    "condition_expression": "precipitation_probability >= 50 AND thunderstorm_probability >= 15",
+    "severity": "warning",
+    "plain_language_explanation": "降水和雷暴概率均偏高。可能伴随短时强降水、大风甚至冰雹。",
+    "technical_note": "雨+雷同时预报时对流系统通常较强烈，可能伴有下击暴流。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "PRESS_005",
+    "metric_id": "pressure_msl",
+    "condition_expression": "elevation > 2500 AND pressure_msl > 0",
+    "severity": "info",
+    "plain_language_explanation": "高海拔区域气压值已非海平面修正值，而是站址气压。海拔3000m处气压仅约700hPa。",
+    "technical_note": "Open-Meteo默认提供海平面气压（pressure_msl）。如需站址气压需用surface_pressure。",
+    "source_urls": ["https://open-meteo.com/en/docs"]
+  },
+  {
+    "rule_id": "MODEL_001",
+    "metric_id": "data_update_time",
+    "condition_expression": "data_age_hours > 12 AND data_age_hours <= 24",
+    "severity": "info",
+    "plain_language_explanation": "当前数据超过12小时未更新。建议参考最近的小时趋势判断天气演变。",
+    "technical_note": "ECMWF每12小时更新一次，GFS每6小时。数据较老时参考价值下降。",
+    "source_urls": ["https://open-meteo.com/en/docs"]
+  },
+  {
+    "rule_id": "MODEL_002",
+    "metric_id": "data_update_time",
+    "condition_expression": "data_age_hours > 24",
+    "severity": "warning",
+    "plain_language_explanation": "数据超过24小时未更新，预报可信度显著降低。建议从其他源交叉验证。",
+    "technical_note": "天气预报中24小时以上的旧数据基本不可靠。",
+    "source_urls": ["https://open-meteo.com/en/docs"]
+  },
+  {
+    "rule_id": "HUM_003",
+    "metric_id": "relative_humidity",
+    "condition_expression": "relative_humidity_2m >= 90 AND temperature_2m < 0",
+    "severity": "warning",
+    "plain_language_explanation": "高湿度+零下温度。雾凇或冰晶极易形成，路面可能暗冰。行走需格外注意防滑。",
+    "technical_note": "高湿低温条件下，空气中水汽直接凝华形成雾凇或冰雾。对能见度和路面都有影响。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "COMB_007",
+    "metric_id": null,
+    "condition_expression": "wind_speed_10m >= 40 AND precipitation_amount >= 2 AND temperature_2m > 25",
+    "severity": "info",
+    "plain_language_explanation": "大风伴随降雨，即使温度不低，雨水被风吹打也会快速带走体表热量。",
+    "technical_note": "即使气温25°C，湿风条件下体感可能降至18-20°C。",
+    "source_urls": ["https://www.weather.gov/"]
+  },
+  {
+    "rule_id": "ELEV_003",
+    "metric_id": null,
+    "condition_expression": "elevation > 2000 AND cloud_cover < 30",
+    "severity": "info",
+    "plain_language_explanation": "高海拔晴天，昼夜温差可达15-20°C。白天日照强烈，入夜后迅速降温。",
+    "technical_note": "高海拔白天强烈的太阳短波辐射和夜间有效长波辐射共同导致大温差。",
+    "source_urls": ["https://www.cma.gov.cn/"]
+  },
+  {
+    "rule_id": "PRECIP_010",
+    "metric_id": "precipitation_probability",
+    "condition_expression": "precipitation_probability >= 40 AND wind_speed_10m >= 20",
+    "severity": "watch",
+    "plain_language_explanation": "有降水可能且风不小。风会把雨吹偏，雨衣/雨伞防护效果打折扣。",
+    "technical_note": "中概率降水+中风的组合在山区可能意味着不稳定天气。",
+    "source_urls": []
+  },
+  {
+    "rule_id": "CLOUD_005",
+    "metric_id": "cloud_cover",
+    "condition_expression": "cloud_cover_low >= 80",
+    "severity": "watch",
+    "plain_language_explanation": "低云密布，山体被云雾笼罩。能见度极差，路线极易迷失。在浓雾中切勿贸然行进。",
+    "technical_note": "低云覆盖≥80%意味着山体处于云层中。实际能见度可能<50m。",
+    "source_urls": []
+  },
+  {
+    "rule_id": "TEMP_008",
+    "metric_id": "temperature_current",
+    "condition_expression": "temperature_2m > 0 AND temperature_2m <= 3 AND precipitation_probability >= 40",
+    "severity": "watch",
+    "plain_language_explanation": "接近冰点且有降水可能。如果降水发生，可能为冻雨或雨夹雪，路面极其湿滑。",
+    "technical_note": "0-3°C是冻雨和冰粒形成的临界温度区间。预报不确定时建议按最坏情况准备。",
+    "source_urls": ["https://www.weather.gov/"]
+  }
+]

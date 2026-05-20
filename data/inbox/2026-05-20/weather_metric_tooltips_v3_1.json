@@ -1,0 +1,190 @@
+[
+  {
+    "metric_id": "temperature_current",
+    "short_label": "气温",
+    "tooltip_zh": "当前2米高度的空气温度，遮阳通风处测量。阳光直射下车内/地表温度远高于此值。",
+    "expert_note": "气象站标准是百叶箱中1.5-2m高度测量。户外体验可偏离±5°C取决于日照和地表类型。",
+    "bad_reading_example": "夏季车仪表盘显示45°C，但气象站数据只有32°C——正常偏差。",
+    "source_urls": [
+      "https://open-meteo.com/en/docs"
+    ]
+  },
+  {
+    "metric_id": "temperature_apparent",
+    "short_label": "体感",
+    "tooltip_zh": "结合气温、风速和湿度计算的人体真实感受温度。冬天风大体感可低10-20°C。",
+    "expert_note": "使用NWS风寒指数（冬季）和Steadman热指数（夏季）计算。不同模型采用的计算公式略有差异。",
+    "bad_reading_example": "气温5°C+风速30km/h→体感约-2°C。只看气温会低估保暖需求。",
+    "source_urls": [
+      "https://www.weather.gov/safety/cold"
+    ]
+  },
+  {
+    "metric_id": "temperature_max",
+    "short_label": "最高温",
+    "tooltip_zh": "当日预测最高气温，一般出现在午后14-15时。",
+    "expert_note": "高海拔最高温出现时间可能偏移。山区午后对流可能压低实际最高温。",
+    "bad_reading_example": null,
+    "source_urls": [
+      "https://open-meteo.com/en/docs"
+    ]
+  },
+  {
+    "metric_id": "temperature_min",
+    "short_label": "最低温",
+    "tooltip_zh": "当日预测最低气温，一般出现在日出前后。",
+    "expert_note": "高海拔/盆地夜间辐射冷却强，最低温可能比预报低3-5°C。",
+    "bad_reading_example": null,
+    "source_urls": [
+      "https://open-meteo.com/en/docs"
+    ]
+  },
+  {
+    "metric_id": "wind_speed",
+    "short_label": "风速",
+    "tooltip_zh": "10米高度处持续风速。山口和垭口实际风力可能比预报大1-2级（峡谷效应）。",
+    "expert_note": "蒲氏风级：5级=清劲风(30-39km/h)行走受阻，7级=疾风(50-61km/h)站立困难。",
+    "bad_reading_example": "谷底预报20km/h→山口实测可达40-50km/h。地形放大系数可达2-3倍。",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Beaufort_scale"
+    ]
+  },
+  {
+    "metric_id": "wind_gust",
+    "short_label": "阵风",
+    "tooltip_zh": "过去一小时内出现的最大瞬间风速。阵风比持续风更能反映实际风险。",
+    "expert_note": "阵风系数=阵风/持续风速，通常1.3-2.0。系数越大风越阵性（不稳定）。",
+    "bad_reading_example": "持续风30km/h→阵风可达60km/h。突然的强风容易把人吹倒。",
+    "source_urls": [
+      "https://open-meteo.com/en/docs"
+    ]
+  },
+  {
+    "metric_id": "wind_direction",
+    "short_label": "风向",
+    "tooltip_zh": "风来的方向（北=吹北风=冷空气南下）。16方位或0-360°表示。",
+    "expert_note": "山区风向受地形影响大，可能与区域风向不一致。山谷风效应：白天谷风上坡，夜间山风下坡。",
+    "bad_reading_example": null,
+    "source_urls": []
+  },
+  {
+    "metric_id": "precipitation_probability",
+    "short_label": "降水概率",
+    "tooltip_zh": "预报区域和时间段内出现≥0.3mm降水的概率。60%=大概率需要备雨具。",
+    "expert_note": "来自集合预报（ECMWF 51成员/GEFS 31成员）统计。山区实际降水变数更大。",
+    "bad_reading_example": "PoP=30%不意味着30%时间下雨，而是有30%的概率下雨。",
+    "source_urls": [
+      "https://www.weather.gov/help/"
+    ]
+  },
+  {
+    "metric_id": "precipitation_amount",
+    "short_label": "降水量",
+    "tooltip_zh": "小时累计降水量。<2.5mm=小雨，2.5-10=中雨，>10=大雨（小时值）。",
+    "expert_note": "中国气象局标准：小时雨量≥30mm=暴雨。注意累计雨量比瞬时雨量更能反映山洪风险。",
+    "bad_reading_example": "2mm/h×持续6h=12mm累计→中到大雨量级，道路可能积水。",
+    "source_urls": [
+      "https://www.cma.gov.cn/"
+    ]
+  },
+  {
+    "metric_id": "thunderstorm_probability",
+    "short_label": "雷暴风险",
+    "tooltip_zh": "发生雷暴（含闪电）的概率。雷击是山区最致命的天气风险之一。",
+    "expert_note": "基于CAPE指数和对流有效位能估算。≥20%需关注，≥40%建议避免山顶/开阔地带。",
+    "bad_reading_example": "晴天也可能被雷击——雷暴可在前方10-15km的晴空区产生闪电（晴空霹雳）。",
+    "source_urls": [
+      "https://www.weather.gov/safety/lightning"
+    ]
+  },
+  {
+    "metric_id": "cloud_cover",
+    "short_label": "云量",
+    "tooltip_zh": "天空被云遮挡的百分比。0%=晴，100%=全阴。低云增多通常预示降水。",
+    "expert_note": "总云量≠降雨概率。高云（卷云）通常无降水，低云（雨层云）才携带降水。",
+    "bad_reading_example": "云量90%但不一定下雨——如果是高层云可能只是阴天无降水。",
+    "source_urls": [
+      "https://open-meteo.com/en/docs"
+    ]
+  },
+  {
+    "metric_id": "visibility",
+    "short_label": "能见度",
+    "tooltip_zh": "水平方向能看清目标物的最远距离。<1km=雾，<100m=浓雾。低能见度是山区迷路主因。",
+    "expert_note": "模型能见度是网格均值，山区局部雾（如山谷雾）可能远低于预报值。",
+    "bad_reading_example": "预报能见度5km，但山凹处可能有局部浓雾<200m。山谷雾在清晨最常见。",
+    "source_urls": [
+      "https://www.weather.gov/fog/"
+    ]
+  },
+  {
+    "metric_id": "relative_humidity",
+    "short_label": "湿度",
+    "tooltip_zh": "空气中水汽含量与饱和量的百分比。>80%潮湿，<30%干燥。高湿+高温=闷热。",
+    "expert_note": "相对湿度随温度变化——气温升高时即使水汽不变，湿度百分比也会下降。",
+    "bad_reading_example": "清晨湿度>90%看似很湿，但10点后可能降到50%（因气温升高）。",
+    "source_urls": [
+      "https://www.weather.gov/"
+    ]
+  },
+  {
+    "metric_id": "dew_point",
+    "short_label": "露点",
+    "tooltip_zh": "空气中水汽开始凝结的温度。露点越高空气越潮湿。>20°C闷热，<0°C可能结霜。",
+    "expert_note": "露点比相对湿度更稳定——不随气温变化。同一气团的露点在一天内变化很小。",
+    "bad_reading_example": "相对湿度从清晨95%降到午后50%，但露点始终保持在12°C→舒适。",
+    "source_urls": [
+      "https://www.weather.gov/"
+    ]
+  },
+  {
+    "metric_id": "pressure_msl",
+    "short_label": "气压",
+    "tooltip_zh": "海平面修正后的气压值。24小时内骤降≥8hPa是天气转坏的典型信号。",
+    "expert_note": "标准海平面气压1013.25hPa。气压变化比绝对值更重要。高原站点显示站址气压。",
+    "bad_reading_example": "24h内从1015hPa降至1000hPa→强低压接近，预计12-24h内有大风降雨。",
+    "source_urls": [
+      "https://www.weather.gov/"
+    ]
+  },
+  {
+    "metric_id": "uv_index",
+    "short_label": "紫外线",
+    "tooltip_zh": "太阳紫外线强度。0-2低，3-5中，6-7高，8-10很高，11+极高。",
+    "expert_note": "海拔每升高1000m UV增强10-12%。雪地反射再增加80%。高海拔+雪地=UV加倍。",
+    "bad_reading_example": "海平面UV=6（高），3000m山顶UV≈8.4（很高）。雪地额外反射后等效UV≈15（极端）。",
+    "source_urls": [
+      "https://www.who.int/uv/"
+    ]
+  },
+  {
+    "metric_id": "sunrise_sunset",
+    "short_label": "日照",
+    "tooltip_zh": "日出和日落时间。日出前30分钟天光渐亮，日落后30分钟内需备头灯。日照时长随季节和纬度变化。",
+    "expert_note": "日出日落时间由地理位置和日期精确计算，不受天气影响。云层遮挡可能使实际天亮推迟。",
+    "bad_reading_example": "预报日出06:32，但阴天可能实际到06:45才足够亮。",
+    "source_urls": [
+      "https://open-meteo.com/en/docs"
+    ]
+  },
+  {
+    "metric_id": "hourly_trend",
+    "short_label": "小时趋势",
+    "tooltip_zh": "未来24-48小时内温/风/降水的逐小时变化曲线。山口和峡谷天气可能在1-2小时内剧烈变化。",
+    "expert_note": "默认展示48小时，前24h精度高，后24h供趋势参考。ECMWF/GFS双模型对比可降低不确定性。",
+    "bad_reading_example": "午后预报有雷暴，但小时趋势显示14时才开始→可以调整上午出发。",
+    "source_urls": [
+      "https://open-meteo.com/en/docs"
+    ]
+  },
+  {
+    "metric_id": "daily_trend_7d",
+    "short_label": "7日趋势",
+    "tooltip_zh": "未来7天每日最高/最低温和降水概览。前5天可靠度较高，后2天做趋势参考。",
+    "expert_note": "ECMWF前5天预报准确率约85-95%，第7天降至约65-80%。GFS第7天后精度显著下降。",
+    "bad_reading_example": "第7天预报有雨不必立刻改计划，但若连续3天趋势一致则可信度较高。",
+    "source_urls": [
+      "https://open-meteo.com/en/docs"
+    ]
+  }
+]

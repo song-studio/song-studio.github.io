@@ -1,0 +1,1186 @@
+[
+  {
+    "query_zh": "四姑娘山镇",
+    "preferred_query": "高德地理编码: 四姑娘山镇",
+    "fallback_queries": [
+      "四川省小金县四姑娘山镇"
+    ],
+    "manual_lat": 30.996,
+    "manual_lng": 102.83,
+    "ambiguity_note": "原名日隆镇，高德和百度均收录。Open-Meteo地名搜索可能失败。",
+    "display_name": "四川省小金县四姑娘山镇",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "雨崩村",
+    "preferred_query": "高德地理编码: 雨崩村",
+    "fallback_queries": [
+      "云南省德钦县云岭乡雨崩村"
+    ],
+    "manual_lat": 28.405,
+    "manual_lng": 98.767,
+    "ambiguity_note": "分上下雨崩（上28.407/98.764，下28.387/98.773），Open-Meteo不一定能查到。",
+    "display_name": "云南省德钦县云岭乡雨崩村",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "哈巴村",
+    "preferred_query": "高德地理编码: 哈巴村",
+    "fallback_queries": [
+      "云南省香格里拉市三坝乡哈巴村"
+    ],
+    "manual_lat": 27.379,
+    "manual_lng": 100.137,
+    "ambiguity_note": "与哈巴雪山关联，可能混淆为哈巴河县（新疆）。已通过高德API验证：100.136819,27.379270。",
+    "display_name": "云南省香格里拉市三坝乡哈巴村",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "武功山",
+    "preferred_query": "高德地理编码: 武功山",
+    "fallback_queries": [
+      "江西武功山金顶"
+    ],
+    "manual_lat": 27.455,
+    "manual_lng": 114.173,
+    "ambiguity_note": "武功山范围大，需明确是金顶（1918m）还是山脚（如萍乡登山口）。",
+    "display_name": "江西武功山金顶",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "虎跳峡",
+    "preferred_query": "高德地理编码: 虎跳峡",
+    "fallback_queries": [
+      "云南省香格里拉市虎跳峡景区"
+    ],
+    "manual_lat": 27.236,
+    "manual_lng": 100.132,
+    "ambiguity_note": "分上/中/下虎跳（跨度约20km）。坐标取自维基百科（27°14′9.37″N 100°7′56.93″E），为虎跳峡峡谷中心点。桥头镇入口约27.18,100.13。",
+    "display_name": "云南省香格里拉市虎跳峡景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "独库公路",
+    "preferred_query": "高德地理编码: 独库公路",
+    "fallback_queries": [
+      "新疆独山子独库公路起点"
+    ],
+    "manual_lat": 43.0,
+    "manual_lng": 84.5,
+    "ambiguity_note": "独库公路全长561km，跨越多个气候区。需根据具体路段查询。默认北端起点独山子。",
+    "display_name": "新疆独山子独库公路起点",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "青海湖",
+    "preferred_query": "高德地理编码: 青海湖",
+    "fallback_queries": [
+      "青海省青海湖景区"
+    ],
+    "manual_lat": 36.873,
+    "manual_lng": 100.232,
+    "ambiguity_note": "坐标取自高德API「青海湖景区」兴趣点（100.232,36.873），即二郎剑景区入口。原估算偏差约23km，已修正。环湖368km东西端天气可能不同。",
+    "display_name": "青海省青海湖景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "冈仁波齐",
+    "preferred_query": "高德地理编码: 冈仁波齐",
+    "fallback_queries": [
+      "西藏阿里地区普兰县冈仁波齐"
+    ],
+    "manual_lat": 31.067,
+    "manual_lng": 81.312,
+    "ambiguity_note": "位置敏感，部分地图可能有偏移。转山路线起点塔尔钦（31.020/81.180）。",
+    "display_name": "西藏阿里地区普兰县冈仁波齐",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "纳木错",
+    "preferred_query": "高德地理编码: 纳木错",
+    "fallback_queries": [
+      "西藏当雄县纳木错扎西半岛"
+    ],
+    "manual_lat": 30.786,
+    "manual_lng": 91.111,
+    "ambiguity_note": "面积1920km²，高德返回纳木错乡坐标（91.111,30.786）。原手工估算坐标偏差约50km，已通过高德API修正。",
+    "display_name": "西藏当雄县纳木错扎西半岛",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "贡嘎山",
+    "preferred_query": "高德地理编码: 贡嘎山",
+    "fallback_queries": [
+      "四川省甘孜州康定市贡嘎山"
+    ],
+    "manual_lat": 29.59,
+    "manual_lng": 101.88,
+    "ambiguity_note": "贡嘎主峰（7556m）和贡嘎山镇（29.600/101.880）坐标不同。子梅垭口是观景点。",
+    "display_name": "四川省甘孜州康定市贡嘎山",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "鳌太线",
+    "preferred_query": "高德地理编码: 鳌太线",
+    "fallback_queries": [
+      "陕西省太白县塘口村鳌太线起点"
+    ],
+    "manual_lat": 34.0,
+    "manual_lng": 107.5,
+    "ambiguity_note": "鳌太线跨越秦岭主脊（塘口村-拔仙台），全长约80km。坐标取线路中点。小地名地图收录。",
+    "display_name": "陕西省太白县塘口村鳌太线起点",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "墨脱",
+    "preferred_query": "高德地理编码: 墨脱",
+    "fallback_queries": [
+      "西藏林芝市墨脱县"
+    ],
+    "manual_lat": 29.325,
+    "manual_lng": 95.333,
+    "ambiguity_note": "墨脱县 vs 墨脱镇。派镇→墨脱徒步路线全长约110km。",
+    "display_name": "西藏林芝市墨脱县",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "喀拉峻草原",
+    "preferred_query": "高德地理编码: 喀拉峻草原",
+    "fallback_queries": [
+      "新疆伊犁州特克斯县喀拉峻草原"
+    ],
+    "manual_lat": 43.0,
+    "manual_lng": 82.5,
+    "ambiguity_note": "喀拉峻草原范围大（约2000km²），核心区在特克斯县南。",
+    "display_name": "新疆伊犁州特克斯县喀拉峻草原",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "黄山光明顶",
+    "preferred_query": "高德地理编码: 黄山光明顶",
+    "fallback_queries": [
+      "安徽省黄山市黄山风景区光明顶"
+    ],
+    "manual_lat": 30.133,
+    "manual_lng": 118.167,
+    "ambiguity_note": "黄山气象站在光明顶（1860m），山上与山下温差显著。",
+    "display_name": "安徽省黄山市黄山风景区光明顶",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "大理古城",
+    "preferred_query": "高德地理编码: 大理古城",
+    "fallback_queries": [
+      "云南省大理古城"
+    ],
+    "manual_lat": 25.678,
+    "manual_lng": 100.23,
+    "ambiguity_note": "大理古城 vs 大理市（下关），坐标不同。",
+    "display_name": "云南省大理古城",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "泸沽湖",
+    "preferred_query": "高德地理编码: 泸沽湖",
+    "fallback_queries": [
+      "云南省宁蒗县泸沽湖"
+    ],
+    "manual_lat": 27.7,
+    "manual_lng": 100.8,
+    "ambiguity_note": "跨云南和四川两省，分属宁蒗县和盐源县。",
+    "display_name": "云南省宁蒗县泸沽湖",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "长白山天池",
+    "preferred_query": "高德地理编码: 长白山天池",
+    "fallback_queries": [
+      "吉林省长白山天池"
+    ],
+    "manual_lat": 42.005,
+    "manual_lng": 128.057,
+    "ambiguity_note": "北坡/西坡/南坡入口不同。天池海拔2189m。",
+    "display_name": "吉林省长白山天池",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "稻城亚丁",
+    "preferred_query": "高德地理编码: 稻城亚丁",
+    "fallback_queries": [
+      "四川省甘孜州稻城亚丁景区"
+    ],
+    "manual_lat": 28.45,
+    "manual_lng": 100.35,
+    "ambiguity_note": "亚丁村 vs 稻城县城（香格里拉镇）。亚丁村海拔4060m。",
+    "display_name": "四川省甘孜州稻城亚丁景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "珠峰大本营",
+    "preferred_query": "高德地理编码: 珠峰大本营",
+    "fallback_queries": [
+      "西藏定日县珠穆朗玛峰大本营"
+    ],
+    "manual_lat": 28.14,
+    "manual_lng": 86.85,
+    "ambiguity_note": "北坡大本营（5200m）vs 南坡（尼泊尔侧）。中国侧在定日县。",
+    "display_name": "西藏定日县珠穆朗玛峰大本营",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "峨眉山金顶",
+    "preferred_query": "高德地理编码: 峨眉山金顶",
+    "fallback_queries": [
+      "四川省峨眉山金顶"
+    ],
+    "manual_lat": 29.52,
+    "manual_lng": 103.34,
+    "ambiguity_note": "金顶（3079m）vs 山脚报国寺。山上常年云雾。",
+    "display_name": "四川省峨眉山金顶",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "梅里雪山飞来寺",
+    "preferred_query": "高德地理编码: 梅里雪山飞来寺",
+    "fallback_queries": [
+      "云南省德钦县飞来寺"
+    ],
+    "manual_lat": 28.33,
+    "manual_lng": 98.87,
+    "ambiguity_note": "飞来寺观景台是最佳雪山观景点。",
+    "display_name": "云南省德钦县飞来寺",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "扎尕那",
+    "preferred_query": "高德地理编码: 扎尕那",
+    "fallback_queries": [
+      "甘肃省迭部县扎尕那"
+    ],
+    "manual_lat": 34.25,
+    "manual_lng": 103.21,
+    "ambiguity_note": "由四个村组成（东哇/业日/达日/代巴）。",
+    "display_name": "甘肃省迭部县扎尕那",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "亚丁村",
+    "preferred_query": "高德地理编码: 亚丁村",
+    "fallback_queries": [
+      "四川省稻城县亚丁村"
+    ],
+    "manual_lat": 28.42,
+    "manual_lng": 100.37,
+    "ambiguity_note": "亚丁村（4060m）在稻城亚丁景区内。",
+    "display_name": "四川省稻城县亚丁村",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "林芝",
+    "preferred_query": "高德地理编码: 林芝",
+    "fallback_queries": [],
+    "manual_lat": 29.65,
+    "manual_lng": 94.36,
+    "ambiguity_note": null,
+    "display_name": "林芝",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "色达五明佛学院",
+    "preferred_query": "高德地理编码: 色达五明佛学院",
+    "fallback_queries": [
+      "四川省色达县五明佛学院"
+    ],
+    "manual_lat": 32.27,
+    "manual_lng": 100.32,
+    "ambiguity_note": "色达县 vs 佛学院。佛学院海拔约4000m。",
+    "display_name": "四川省色达县五明佛学院",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "腾冲",
+    "preferred_query": "高德地理编码: 腾冲",
+    "fallback_queries": [],
+    "manual_lat": 25.03,
+    "manual_lng": 98.49,
+    "ambiguity_note": null,
+    "display_name": "腾冲",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "羊卓雍错",
+    "preferred_query": "高德地理编码: 羊卓雍错",
+    "fallback_queries": [
+      "西藏浪卡子县羊卓雍错"
+    ],
+    "manual_lat": 28.88,
+    "manual_lng": 90.6,
+    "ambiguity_note": "湖面狭长，观景点多在岗巴拉山口（29.000/90.760）。",
+    "display_name": "西藏浪卡子县羊卓雍错",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "张掖丹霞",
+    "preferred_query": "高德地理编码: 张掖丹霞",
+    "fallback_queries": [
+      "甘肃省张掖市临泽县七彩丹霞景区"
+    ],
+    "manual_lat": 38.92,
+    "manual_lng": 100.13,
+    "ambiguity_note": "七彩丹霞 vs 冰沟丹霞。七彩丹霞在临泽县。",
+    "display_name": "甘肃省张掖市临泽县七彩丹霞景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "赛里木湖",
+    "preferred_query": "高德地理编码: 赛里木湖",
+    "fallback_queries": [],
+    "manual_lat": 44.58,
+    "manual_lng": 81.19,
+    "ambiguity_note": null,
+    "display_name": "赛里木湖",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "漠河",
+    "preferred_query": "高德地理编码: 漠河",
+    "fallback_queries": [],
+    "manual_lat": 52.97,
+    "manual_lng": 122.53,
+    "ambiguity_note": null,
+    "display_name": "漠河",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "吐鲁番",
+    "preferred_query": "高德地理编码: 吐鲁番",
+    "fallback_queries": [],
+    "manual_lat": 42.95,
+    "manual_lng": 89.18,
+    "ambiguity_note": null,
+    "display_name": "吐鲁番",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "九寨沟",
+    "preferred_query": "高德地理编码: 九寨沟",
+    "fallback_queries": [
+      "四川省九寨沟景区"
+    ],
+    "manual_lat": 33.25,
+    "manual_lng": 103.92,
+    "ambiguity_note": "沟口（2000m）vs 原始森林（3000m），高差大。",
+    "display_name": "四川省九寨沟景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "喀纳斯湖",
+    "preferred_query": "高德地理编码: 喀纳斯湖",
+    "fallback_queries": [
+      "新疆阿勒泰喀纳斯景区"
+    ],
+    "manual_lat": 48.82,
+    "manual_lng": 87.02,
+    "ambiguity_note": "喀纳斯景区范围大，坐标取观鱼台。",
+    "display_name": "新疆阿勒泰喀纳斯景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "华山",
+    "preferred_query": "高德地理编码: 华山",
+    "fallback_queries": [
+      "陕西省华阴市华山风景区"
+    ],
+    "manual_lat": 34.48,
+    "manual_lng": 110.08,
+    "ambiguity_note": "北峰最低（1614m），南峰最高（2154m）。",
+    "display_name": "陕西省华阴市华山风景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "张家界天子山",
+    "preferred_query": "高德地理编码: 张家界天子山",
+    "fallback_queries": [
+      "湖南省张家界天子山景区"
+    ],
+    "manual_lat": 29.4,
+    "manual_lng": 110.46,
+    "ambiguity_note": "天子山 vs 袁家界/杨家界。",
+    "display_name": "湖南省张家界天子山景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "梅里雪山雨崩上村",
+    "preferred_query": "高德地理编码: 梅里雪山雨崩上村",
+    "fallback_queries": [
+      "云南省德钦县雨崩上村"
+    ],
+    "manual_lat": 28.407,
+    "manual_lng": 98.764,
+    "ambiguity_note": "与下雨崩村（28.387/98.773）相距1.5km",
+    "display_name": "云南省德钦县雨崩上村",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "雨崩下村",
+    "preferred_query": "高德地理编码: 雨崩下村",
+    "fallback_queries": [
+      "云南省德钦县雨崩下村"
+    ],
+    "manual_lat": 28.387,
+    "manual_lng": 98.773,
+    "ambiguity_note": "与上雨崩村相距1.5km，神瀑路线起点。",
+    "display_name": "云南省德钦县雨崩下村",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "库拉岗日",
+    "preferred_query": "手动输入坐标",
+    "fallback_queries": [
+      "西藏洛扎县库拉岗日"
+    ],
+    "manual_lat": 28.23,
+    "manual_lng": 90.58,
+    "ambiguity_note": "山南市洛扎县境内。高德查无结果，非行政区划名。需用洛扎县坐标或手动输入坐标查询。",
+    "display_name": "西藏洛扎县库拉岗日",
+    "source_urls": []
+  },
+  {
+    "query_zh": "他念他翁",
+    "preferred_query": "手动输入坐标",
+    "fallback_queries": [],
+    "manual_lat": 29.0,
+    "manual_lng": 98.5,
+    "ambiguity_note": "横断山脉中等难度徒步路线，起终点坐标不统一。坐标取线路中点。不属于行政区划名，高德/Open-Meteo可能都搜不到。",
+    "display_name": "他念他翁",
+    "source_urls": []
+  },
+  {
+    "query_zh": "乌孙古道",
+    "preferred_query": "手动输入坐标",
+    "fallback_queries": [],
+    "manual_lat": 42.2,
+    "manual_lng": 82.5,
+    "ambiguity_note": "乌孙古道穿越天山，南北入口不同。坐标取路线中点。非行政区划名，需用坐标直查。",
+    "display_name": "乌孙古道",
+    "source_urls": []
+  },
+  {
+    "query_zh": "夏塔古道",
+    "preferred_query": "高德地理编码: 夏塔古道",
+    "fallback_queries": [
+      "新疆昭苏县夏塔古道"
+    ],
+    "manual_lat": 42.4,
+    "manual_lng": 80.7,
+    "ambiguity_note": "昭苏县夏塔乡。夏塔是景区名，高德可搜。坐标取景区大门。",
+    "display_name": "新疆昭苏县夏塔古道",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "太白山拔仙台",
+    "preferred_query": "高德地理编码: 太白山拔仙台",
+    "fallback_queries": [
+      "陕西省眉县太白山拔仙台"
+    ],
+    "manual_lat": 33.95,
+    "manual_lng": 107.77,
+    "ambiguity_note": "拔仙台（3767m）是太白山最高峰，秦岭主峰。",
+    "display_name": "陕西省眉县太白山拔仙台",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "漓江杨堤",
+    "preferred_query": "高德地理编码: 漓江杨堤",
+    "fallback_queries": [
+      "广西桂林阳朔县杨堤码头"
+    ],
+    "manual_lat": 25.1,
+    "manual_lng": 110.43,
+    "ambiguity_note": "杨堤是漓江徒步经典起点。",
+    "display_name": "广西桂林阳朔县杨堤码头",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "小五台山",
+    "preferred_query": "高德地理编码: 小五台山",
+    "fallback_queries": [
+      "河北省蔚县小五台山"
+    ],
+    "manual_lat": 39.92,
+    "manual_lng": 115.02,
+    "ambiguity_note": "东台（2882m）是河北最高峰。自然保护区有时不开放。",
+    "display_name": "河北省蔚县小五台山",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "海螺沟",
+    "preferred_query": "高德地理编码: 海螺沟",
+    "fallback_queries": [
+      "四川省泸定县海螺沟景区"
+    ],
+    "manual_lat": 29.55,
+    "manual_lng": 102.02,
+    "ambiguity_note": "冰川末端 vs 景区大门，海拔高差约2000m。",
+    "display_name": "四川省泸定县海螺沟景区",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "莫干山",
+    "preferred_query": "高德地理编码: 莫干山",
+    "fallback_queries": [],
+    "manual_lat": 30.63,
+    "manual_lng": 119.85,
+    "ambiguity_note": null,
+    "display_name": "莫干山",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "雪乡",
+    "preferred_query": "高德地理编码: 雪乡",
+    "fallback_queries": [
+      "黑龙江省海林市雪乡"
+    ],
+    "manual_lat": 44.35,
+    "manual_lng": 128.95,
+    "ambiguity_note": "双峰林场（海林市），冬季积雪可达2m。",
+    "display_name": "黑龙江省海林市雪乡",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "五台山",
+    "preferred_query": "高德地理编码: 五台山",
+    "fallback_queries": [
+      "山西省五台山北台顶"
+    ],
+    "manual_lat": 39.0,
+    "manual_lng": 113.58,
+    "ambiguity_note": "北台顶（3061m）vs 台怀镇（1700m），温差可达15°C。",
+    "display_name": "山西省五台山北台顶",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "雅鲁藏布大峡谷",
+    "preferred_query": "高德地理编码: 雅鲁藏布大峡谷",
+    "fallback_queries": [
+      "西藏米林县派镇雅鲁藏布大峡谷"
+    ],
+    "manual_lat": 29.5,
+    "manual_lng": 95.0,
+    "ambiguity_note": "大峡谷入口处取派镇坐标。全长约500km。",
+    "display_name": "西藏米林县派镇雅鲁藏布大峡谷",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "念青唐古拉山",
+    "preferred_query": "高德地理编码: 念青唐古拉山",
+    "fallback_queries": [
+      "西藏当雄县念青唐古拉山"
+    ],
+    "manual_lat": 30.4,
+    "manual_lng": 90.6,
+    "ambiguity_note": "山脉长约700km，主峰7111m。坐标取当雄附近观景点。",
+    "display_name": "西藏当雄县念青唐古拉山",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "阿里暗夜公园",
+    "preferred_query": "高德地理编码: 阿里暗夜公园",
+    "fallback_queries": [
+      "西藏阿里地区暗夜公园"
+    ],
+    "manual_lat": 31.47,
+    "manual_lng": 80.14,
+    "ambiguity_note": "阿里地区狮泉河镇附近。海拔4200m。",
+    "display_name": "西藏阿里地区暗夜公园",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "理塘",
+    "preferred_query": "高德地理编码: 理塘",
+    "fallback_queries": [],
+    "manual_lat": 30.0,
+    "manual_lng": 100.27,
+    "ambiguity_note": null,
+    "display_name": "理塘",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "党岭",
+    "preferred_query": "高德地理编码: 党岭",
+    "fallback_queries": [
+      "四川省丹巴县党岭村"
+    ],
+    "manual_lat": 31.072,
+    "manual_lng": 101.407,
+    "ambiguity_note": "丹巴县境内，葫芦海是核心景观。搜「党岭村」（city=丹巴），高德验证：101.407041,31.071557。光搜「党岭」会被匹配到陕西同名村。",
+    "display_name": "四川省丹巴县党岭村",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "年保玉则",
+    "preferred_query": "高德地理编码: 年保玉则",
+    "fallback_queries": [
+      "青海省久治县年保玉则"
+    ],
+    "manual_lat": 33.25,
+    "manual_lng": 101.13,
+    "ambiguity_note": "久治县，又名年宝叶什则。已关闭，但天气查询需求仍在。",
+    "display_name": "青海省久治县年保玉则",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "天山天池",
+    "preferred_query": "高德地理编码: 天山天池",
+    "fallback_queries": [
+      "新疆阜康市天山天池"
+    ],
+    "manual_lat": 43.88,
+    "manual_lng": 88.13,
+    "ambiguity_note": "天池海拔1910m，阜康市境内。",
+    "display_name": "新疆阜康市天山天池",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "喀什古城",
+    "preferred_query": "高德地理编码: 喀什古城",
+    "fallback_queries": [],
+    "manual_lat": 39.47,
+    "manual_lng": 75.98,
+    "ambiguity_note": null,
+    "display_name": "喀什古城",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "西双版纳热带雨林",
+    "preferred_query": "高德地理编码: 西双版纳热带雨林",
+    "fallback_queries": [
+      "云南省景洪市西双版纳热带雨林"
+    ],
+    "manual_lat": 21.85,
+    "manual_lng": 100.8,
+    "ambiguity_note": "范围大，可取景洪市（21.980/100.790）或勐腊县。",
+    "display_name": "云南省景洪市西双版纳热带雨林",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "黄果树瀑布",
+    "preferred_query": "高德地理编码: 黄果树瀑布",
+    "fallback_queries": [],
+    "manual_lat": 25.98,
+    "manual_lng": 105.67,
+    "ambiguity_note": null,
+    "display_name": "黄果树瀑布",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "柴达木盆地翡翠湖",
+    "preferred_query": "高德地理编码: 柴达木盆地翡翠湖",
+    "fallback_queries": [
+      "青海省大柴旦翡翠湖"
+    ],
+    "manual_lat": 37.38,
+    "manual_lng": 95.28,
+    "ambiguity_note": "大柴旦翡翠湖 vs 茫崖翡翠湖。坐标取大柴旦。",
+    "display_name": "青海省大柴旦翡翠湖",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "东极岛",
+    "preferred_query": "高德地理编码: 东极岛",
+    "fallback_queries": [
+      "浙江省舟山市东极岛庙子湖"
+    ],
+    "manual_lat": 30.18,
+    "manual_lng": 122.68,
+    "ambiguity_note": "东极岛含庙子湖/东福山/青浜等岛屿。坐标取庙子湖（主岛）。",
+    "display_name": "浙江省舟山市东极岛庙子湖",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "湄洲岛",
+    "preferred_query": "高德地理编码: 湄洲岛",
+    "fallback_queries": [],
+    "manual_lat": 25.0,
+    "manual_lng": 119.12,
+    "ambiguity_note": null,
+    "display_name": "湄洲岛",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "虎跳峡halfway客栈",
+    "preferred_query": "高德地理编码: 虎跳峡halfway客栈",
+    "fallback_queries": [
+      "云南虎跳峡halfway客栈"
+    ],
+    "manual_lat": 27.241,
+    "manual_lng": 100.141,
+    "ambiguity_note": "Halfway是虎跳峡高路徒步经典中途客栈。坐标来自Columbia官方路书PDF：27°14′29.13″N, 100°08′29.41″E。验证通过。",
+    "display_name": "云南虎跳峡halfway客栈",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "大理苍山洗马潭",
+    "preferred_query": "高德地理编码: 大理苍山洗马潭",
+    "fallback_queries": [
+      "云南省大理苍山洗马潭"
+    ],
+    "manual_lat": 25.688,
+    "manual_lng": 100.1,
+    "ambiguity_note": "苍山洗马潭海拔3920m，苍山最高索道终点。",
+    "display_name": "云南省大理苍山洗马潭",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "玉龙雪山云杉坪",
+    "preferred_query": "高德地理编码: 玉龙雪山云杉坪",
+    "fallback_queries": [
+      "云南省丽江市玉龙雪山云杉坪"
+    ],
+    "manual_lat": 27.02,
+    "manual_lng": 100.23,
+    "ambiguity_note": "云杉坪（3240m）vs 冰川公园（4680m）vs 蓝月谷。",
+    "display_name": "云南省丽江市玉龙雪山云杉坪",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "南迦巴瓦峰",
+    "preferred_query": "高德地理编码: 南迦巴瓦峰",
+    "fallback_queries": [
+      "西藏米林县索松村南迦巴瓦观景台"
+    ],
+    "manual_lat": 29.63,
+    "manual_lng": 95.06,
+    "ambiguity_note": "雅鲁藏布大峡谷内，主峰7782m。观景台在索松村（29.550/95.000）。",
+    "display_name": "西藏米林县索松村南迦巴瓦观景台",
+    "source_urls": [
+      "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    ]
+  },
+  {
+    "query_zh": "Everest Base Camp (Nepal)",
+    "preferred_query": "Open-Meteo Geocoding: Everest Base Camp (Nepal)",
+    "fallback_queries": [
+      "27.988,86.925"
+    ],
+    "manual_lat": 27.988,
+    "manual_lng": 86.925,
+    "ambiguity_note": "南坡大本营（5364m），尼泊尔侧。",
+    "display_name": "27.988,86.925",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Annapurna Base Camp",
+    "preferred_query": "Open-Meteo Geocoding: Annapurna Base Camp",
+    "fallback_queries": [
+      "28.530,83.880"
+    ],
+    "manual_lat": 28.53,
+    "manual_lng": 83.88,
+    "ambiguity_note": "ABC营地海拔4130m，安娜普尔纳区域。",
+    "display_name": "28.530,83.880",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Chamonix-Mont-Blanc",
+    "preferred_query": "Open-Meteo Geocoding: Chamonix-Mont-Blanc",
+    "fallback_queries": [
+      "Chamonix, France"
+    ],
+    "manual_lat": 45.923,
+    "manual_lng": 6.869,
+    "ambiguity_note": null,
+    "display_name": "Chamonix, France",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Zermatt",
+    "preferred_query": "Open-Meteo Geocoding: Zermatt",
+    "fallback_queries": [
+      "Zermatt, Switzerland"
+    ],
+    "manual_lat": 46.02,
+    "manual_lng": 7.749,
+    "ambiguity_note": null,
+    "display_name": "Zermatt, Switzerland",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Kilimanjaro Base Camp",
+    "preferred_query": "Open-Meteo Geocoding: Kilimanjaro Base Camp",
+    "fallback_queries": [
+      "-3.067,37.350"
+    ],
+    "manual_lat": -3.067,
+    "manual_lng": 37.35,
+    "ambiguity_note": "马兰古路线大本营。赤道附近高海拔气候极端。",
+    "display_name": "-3.067,37.350",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Patagonia Torres del Paine",
+    "preferred_query": "Open-Meteo Geocoding: Patagonia Torres del Paine",
+    "fallback_queries": [
+      "Torres del Paine, Chile"
+    ],
+    "manual_lat": -51.0,
+    "manual_lng": -73.0,
+    "ambiguity_note": "巴塔哥尼亚区域天气极不稳定，W路线经典。",
+    "display_name": "Torres del Paine, Chile",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Inca Trail Machu Picchu",
+    "preferred_query": "Open-Meteo Geocoding: Inca Trail Machu Picchu",
+    "fallback_queries": [
+      "Cusco, Inca Trail, Peru"
+    ],
+    "manual_lat": -13.16,
+    "manual_lng": -72.53,
+    "ambiguity_note": "印加古道起点（KM82） vs 马丘比丘本身。",
+    "display_name": "Cusco, Inca Trail, Peru",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Mount Fuji 5th Station",
+    "preferred_query": "Open-Meteo Geocoding: Mount Fuji 5th Station",
+    "fallback_queries": [
+      "Mount Fuji Yoshida Trail 5th Station"
+    ],
+    "manual_lat": 35.36,
+    "manual_lng": 138.73,
+    "ambiguity_note": "富士山五合目（2305m）vs 山顶（3776m）。",
+    "display_name": "Mount Fuji Yoshida Trail 5th Station",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Dolomites Alta Via 1",
+    "preferred_query": "Open-Meteo Geocoding: Dolomites Alta Via 1",
+    "fallback_queries": [
+      "Cortina d'Ampezzo, Italy"
+    ],
+    "manual_lat": 46.55,
+    "manual_lng": 12.2,
+    "ambiguity_note": "Dolomites区域很大，坐标取Cortina d'Ampezzo（Lago di Braies起点）。",
+    "display_name": "Cortina d'Ampezzo, Italy",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Grand Canyon South Rim",
+    "preferred_query": "Open-Meteo Geocoding: Grand Canyon South Rim",
+    "fallback_queries": [
+      "Grand Canyon South Rim, Arizona"
+    ],
+    "manual_lat": 36.06,
+    "manual_lng": -112.14,
+    "ambiguity_note": "South Rim（2100m）vs North Rim（2500m）vs 谷底（800m）。温差巨大。",
+    "display_name": "Grand Canyon South Rim, Arizona",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Yosemite Valley",
+    "preferred_query": "Open-Meteo Geocoding: Yosemite Valley",
+    "fallback_queries": [
+      "Yosemite Valley, California"
+    ],
+    "manual_lat": 37.74,
+    "manual_lng": -119.58,
+    "ambiguity_note": "Yosemite Valley vs Tuolumne Meadows（2600m）。",
+    "display_name": "Yosemite Valley, California",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Banff Lake Louise",
+    "preferred_query": "Open-Meteo Geocoding: Banff Lake Louise",
+    "fallback_queries": [
+      "Lake Louise, Alberta, Canada"
+    ],
+    "manual_lat": 51.41,
+    "manual_lng": -116.22,
+    "ambiguity_note": null,
+    "display_name": "Lake Louise, Alberta, Canada",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Snowdonia National Park",
+    "preferred_query": "Open-Meteo Geocoding: Snowdonia National Park",
+    "fallback_queries": [
+      "Snowdonia, Wales, UK"
+    ],
+    "manual_lat": 53.07,
+    "manual_lng": -4.08,
+    "ambiguity_note": "Snowdon峰（1085m）是威尔士最高点。",
+    "display_name": "Snowdonia, Wales, UK",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Trolltunga, Norway",
+    "preferred_query": "Open-Meteo Geocoding: Trolltunga, Norway",
+    "fallback_queries": [
+      "Trolltunga, Odda, Norway"
+    ],
+    "manual_lat": 60.13,
+    "manual_lng": 6.75,
+    "ambiguity_note": "巨魔之舌徒步起点Skjeggedal。",
+    "display_name": "Trolltunga, Odda, Norway",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Mount Cook Village",
+    "preferred_query": "Open-Meteo Geocoding: Mount Cook Village",
+    "fallback_queries": [
+      "Mount Cook Village, New Zealand"
+    ],
+    "manual_lat": -43.73,
+    "manual_lng": 170.1,
+    "ambiguity_note": null,
+    "display_name": "Mount Cook Village, New Zealand",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Rinjani Crater Rim",
+    "preferred_query": "Open-Meteo Geocoding: Rinjani Crater Rim",
+    "fallback_queries": [
+      "Rinjani, Lombok, Indonesia"
+    ],
+    "manual_lat": -8.4,
+    "manual_lng": 116.45,
+    "ambiguity_note": "龙目岛林贾尼火山，徒步路线起点Sembalun或Senaru。",
+    "display_name": "Rinjani, Lombok, Indonesia",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Mount Kinabalu",
+    "preferred_query": "Open-Meteo Geocoding: Mount Kinabalu",
+    "fallback_queries": [
+      "Kinabalu Park, Sabah, Malaysia"
+    ],
+    "manual_lat": 6.075,
+    "manual_lng": 116.558,
+    "ambiguity_note": "京那巴鲁山（4095m），婆罗洲最高峰。",
+    "display_name": "Kinabalu Park, Sabah, Malaysia",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Salkantay Trek, Peru",
+    "preferred_query": "Open-Meteo Geocoding: Salkantay Trek, Peru",
+    "fallback_queries": [
+      "Mollepata, Cusco, Peru"
+    ],
+    "manual_lat": -13.33,
+    "manual_lng": -72.6,
+    "ambiguity_note": "Salkantay徒步是马丘比丘替代路线。",
+    "display_name": "Mollepata, Cusco, Peru",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Bergen, Norway",
+    "preferred_query": "Open-Meteo Geocoding: Bergen, Norway",
+    "fallback_queries": [],
+    "manual_lat": 60.39,
+    "manual_lng": 5.33,
+    "ambiguity_note": null,
+    "display_name": "Bergen, Norway",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Death Valley Furnace Creek",
+    "preferred_query": "Open-Meteo Geocoding: Death Valley Furnace Creek",
+    "fallback_queries": [
+      "Furnace Creek, Death Valley, California"
+    ],
+    "manual_lat": 36.46,
+    "manual_lng": -116.87,
+    "ambiguity_note": "Furnace Creek是死谷游客中心所在地",
+    "display_name": "Furnace Creek, Death Valley, California",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Sahara Desert Merzouga",
+    "preferred_query": "Open-Meteo Geocoding: Sahara Desert Merzouga",
+    "fallback_queries": [
+      "Merzouga, Morocco"
+    ],
+    "manual_lat": 31.1,
+    "manual_lng": -4.01,
+    "ambiguity_note": "撒哈拉沙漠边缘的Erg Chebbi沙丘区。",
+    "display_name": "Merzouga, Morocco",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  },
+  {
+    "query_zh": "Reykjavik, Iceland",
+    "preferred_query": "Open-Meteo Geocoding: Reykjavik, Iceland",
+    "fallback_queries": [],
+    "manual_lat": 64.146,
+    "manual_lng": -21.94,
+    "ambiguity_note": null,
+    "display_name": "Reykjavik, Iceland",
+    "source_urls": [
+      "https://open-meteo.com/en/docs/geocoding-api"
+    ]
+  }
+]

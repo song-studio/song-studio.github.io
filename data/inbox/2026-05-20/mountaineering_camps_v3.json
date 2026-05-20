@@ -1,0 +1,870 @@
+[
+  {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "mountain_altitude_m": 5025,
+    "basecamp": "四姑娘山镇(3200m)",
+    "camps": [
+      {
+        "name": "大峰大本营",
+        "altitude_m": 4300,
+        "role": "BC",
+        "water": "yes",
+        "notes": "徒步15km到达，石头房子¥200"
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 5025,
+        "role": "summit",
+        "water": "no",
+        "notes": "凌晨3-4点出发，关门9:00"
+      }
+    ],
+    "summit_push_start_time": "03:00-04:00",
+    "turnaround_time": "09:00",
+    "technical_grade": "入门级(F)",
+    "terrain_type": "高山草甸→碎石坡→雪坡",
+    "required_gear": "登山杖、冰爪(11-5月)、雪套、头灯",
+    "guide_or_permit_required": "需报备，建议向导",
+    "objective_hazards": "高原反应、滑坠",
+    "weather_abort_thresholds": "风速>30km/h或降雪建议中止",
+    "source_urls": [
+      "https://www.2bulu.com/event/business_event.htm?outingId=94557"
+    ]
+  },
+  {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "mountain_altitude_m": 5276,
+    "basecamp": "四姑娘山镇",
+    "camps": [
+      {
+        "name": "二峰大本营",
+        "altitude_m": 4300,
+        "role": "BC",
+        "water": "yes",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 5276,
+        "role": "summit",
+        "water": "no",
+        "notes": "比大峰多200m爬升"
+      }
+    ],
+    "summit_push_start_time": "03:00",
+    "turnaround_time": "09:00",
+    "technical_grade": "初级(TD-)",
+    "terrain_type": "草甸→碎石→雪坡",
+    "required_gear": "冰爪(11-5月)、雪套、头灯",
+    "guide_or_permit_required": "需报备，建议向导",
+    "objective_hazards": "高反、滑坠",
+    "weather_abort_thresholds": "风速>30km/h或降雪",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "mountain_altitude_m": 5355,
+    "basecamp": "四姑娘山镇",
+    "camps": [
+      {
+        "name": "三峰大本营",
+        "altitude_m": 4300,
+        "role": "BC",
+        "water": "yes",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 5355,
+        "role": "summit",
+        "water": "no",
+        "notes": "最后200m需技术攀登"
+      }
+    ],
+    "summit_push_start_time": "03:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "初级技术(AD-)",
+    "terrain_type": "草甸→碎石→岩壁→冰雪坡",
+    "required_gear": "冰爪、冰镐、安全带、头盔",
+    "guide_or_permit_required": "必须有向导",
+    "objective_hazards": "落石、滑坠",
+    "weather_abort_thresholds": "风速>25km/h",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "mountain_altitude_m": 5396,
+    "basecamp": "哈巴村(2700m)",
+    "camps": [
+      {
+        "name": "大本营",
+        "altitude_m": 4100,
+        "role": "BC",
+        "water": "yes",
+        "notes": "徒步约6h"
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 5396,
+        "role": "summit",
+        "water": "no",
+        "notes": "经石板坡→月亮湾→绝望坡→顶峰"
+      }
+    ],
+    "summit_push_start_time": "03:00-04:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "初级(PD)",
+    "terrain_type": "森林→石板坡→雪坡",
+    "required_gear": "冰爪、冰镐、安全带、雪镜",
+    "guide_or_permit_required": "必须有向导(登协要求)",
+    "objective_hazards": "雪盲、滑坠、高反",
+    "weather_abort_thresholds": "风速>20km/h、降雪>5cm",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_005",
+    "name_zh": "那玛峰",
+    "mountain_altitude_m": 5588,
+    "basecamp": "贡嘎寺(3750m)",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 3750,
+        "role": "BC",
+        "water": "yes",
+        "notes": "贡嘎寺附近"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 4800,
+        "role": "high camp",
+        "water": "seasonal",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 5588,
+        "role": "summit",
+        "water": "no",
+        "notes": "约800m爬升"
+      }
+    ],
+    "summit_push_start_time": "03:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "初级技术(PD)",
+    "terrain_type": "森林→碎石→冰川→雪坡",
+    "required_gear": "冰爪、冰镐、安全带、高山靴",
+    "guide_or_permit_required": "建议向导",
+    "objective_hazards": "冰裂缝、落石",
+    "weather_abort_thresholds": "风速>25km/h、大雪",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_006",
+    "name_zh": "半脊峰",
+    "mountain_altitude_m": 5430,
+    "basecamp": "毕棚沟景区",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 3500,
+        "role": "BC",
+        "water": "yes",
+        "notes": "上海子"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 4450,
+        "role": "high camp",
+        "water": "seasonal",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 5430,
+        "role": "summit",
+        "water": "no",
+        "notes": "需攀冰"
+      }
+    ],
+    "summit_push_start_time": "02:00-03:00",
+    "turnaround_time": "09:00",
+    "technical_grade": "中级技术(AD)",
+    "terrain_type": "森林→碎石→冰川→冰雪坡",
+    "required_gear": "冰爪、冰镐、安全带、冰锥、路绳",
+    "guide_or_permit_required": "必须向导，需许可证",
+    "objective_hazards": "冰裂缝、雪崩",
+    "weather_abort_thresholds": "风速>25km/h、新雪>10cm",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_007",
+    "name_zh": "玉珠峰",
+    "mountain_altitude_m": 6178,
+    "basecamp": "格尔木(2800m)",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 5050,
+        "role": "BC",
+        "water": "yes",
+        "notes": "汽车直达"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5600,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 6178,
+        "role": "summit",
+        "water": "no",
+        "notes": "约578m"
+      }
+    ],
+    "summit_push_start_time": "03:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "中级(PD+)",
+    "terrain_type": "草甸→碎石→冰川→雪坡",
+    "required_gear": "冰爪、冰镐、高山靴、雪镜",
+    "guide_or_permit_required": "需青海登协许可证",
+    "objective_hazards": "高反6000m+、雪盲",
+    "weather_abort_thresholds": "风速>30km/h、能见度<50m",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "name_zh": "雀儿山",
+    "mountain_altitude_m": 6168,
+    "basecamp": "新路海(玉龙拉措)",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 4020,
+        "role": "BC",
+        "water": "yes",
+        "notes": ""
+      },
+      {
+        "name": "C1",
+        "altitude_m": 4800,
+        "role": "high camp",
+        "water": "seasonal",
+        "notes": ""
+      },
+      {
+        "name": "C2",
+        "altitude_m": 5350,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C3",
+        "altitude_m": 5800,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 6168,
+        "role": "summit",
+        "water": "no",
+        "notes": "约368m"
+      }
+    ],
+    "summit_push_start_time": "02:00-03:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "中级技术(AD+)",
+    "terrain_type": "森林→碎石→冰川→雪坡→冰壁",
+    "required_gear": "冰爪、技术冰镐、安全带、冰锥、雪锥、路绳",
+    "guide_or_permit_required": "必须有向导、需许可证",
+    "objective_hazards": "冰裂缝、雪崩、暗裂缝",
+    "weather_abort_thresholds": "风速>25km/h、新雪>15cm",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_009",
+    "name_zh": "慕士塔格峰",
+    "mountain_altitude_m": 7546,
+    "basecamp": "204营地",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 4400,
+        "role": "BC",
+        "water": "yes",
+        "notes": "204营地汽车直达"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5500,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C2",
+        "altitude_m": 6200,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C3",
+        "altitude_m": 6900,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 7546,
+        "role": "summit",
+        "water": "no",
+        "notes": "约646m"
+      }
+    ],
+    "summit_push_start_time": "00:00-01:00",
+    "turnaround_time": "11:00",
+    "technical_grade": "高级(PD+/AD-)",
+    "terrain_type": "雪坡→冰原→雪脊",
+    "required_gear": "高山靴、双层冰爪、雪镜、踏雪板、氧气(建议)",
+    "guide_or_permit_required": "必须商业队、登协审批",
+    "objective_hazards": "高反7500m+、冻伤、雪盲",
+    "weather_abort_thresholds": "风速>40km/h、能见度<20m",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_010",
+    "name_zh": "雪宝顶",
+    "mountain_altitude_m": 5588,
+    "basecamp": "纳米村(3200m)",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 4200,
+        "role": "BC",
+        "water": "yes",
+        "notes": "纳米牧场"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5100,
+        "role": "high camp",
+        "water": "no",
+        "notes": "骆驼背下方"
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 5588,
+        "role": "summit",
+        "water": "no",
+        "notes": "经骆驼背→冰雪坡"
+      }
+    ],
+    "summit_push_start_time": "03:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "中级技术(AD)",
+    "terrain_type": "草甸→碎石→岩壁→冰坡",
+    "required_gear": "冰爪、冰镐、安全带、动力绳",
+    "guide_or_permit_required": "需四川登协许可证",
+    "objective_hazards": "骆驼背岩壁难、落石",
+    "weather_abort_thresholds": "风速>25km/h、雨雪",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_011",
+    "name_zh": "岗什卡峰",
+    "mountain_altitude_m": 5254,
+    "basecamp": "七彩瀑布",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 3800,
+        "role": "BC",
+        "water": "yes",
+        "notes": ""
+      },
+      {
+        "name": "C1",
+        "altitude_m": 4600,
+        "role": "high camp",
+        "water": "seasonal",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 5254,
+        "role": "summit",
+        "water": "no",
+        "notes": "冰川雪坡"
+      }
+    ],
+    "summit_push_start_time": "04:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "初级(PD)",
+    "terrain_type": "草甸→碎石→冰川→雪坡",
+    "required_gear": "冰爪、冰镐、安全带",
+    "guide_or_permit_required": "建议向导",
+    "objective_hazards": "冰裂缝、高反",
+    "weather_abort_thresholds": "风速>25km/h",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_016",
+    "name_zh": "宁金抗沙峰",
+    "mountain_altitude_m": 7206,
+    "basecamp": "浪卡子县",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 5000,
+        "role": "BC",
+        "water": "yes",
+        "notes": "卡若拉冰川附近"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5800,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C2",
+        "altitude_m": 6400,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 7206,
+        "role": "summit",
+        "water": "no",
+        "notes": "约800m"
+      }
+    ],
+    "summit_push_start_time": "01:00",
+    "turnaround_time": "11:00",
+    "technical_grade": "高级(AD+)",
+    "terrain_type": "冰川→冰裂缝→雪坡→山脊",
+    "required_gear": "冰爪、技术冰镐、安全带、冰锥、高山靴、氧气(建议)",
+    "guide_or_permit_required": "需西藏登协审批",
+    "objective_hazards": "冰裂缝、雪崩、7000m+",
+    "weather_abort_thresholds": "风速>30km/h、大雪",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "name_zh": "珠穆朗玛峰",
+    "mountain_altitude_m": 8848.86,
+    "basecamp": "南坡BC(尼泊尔侧)",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 5364,
+        "role": "BC",
+        "water": "yes",
+        "notes": "昆布冰川下方"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 6000,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C2",
+        "altitude_m": 6500,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C3",
+        "altitude_m": 7300,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C4",
+        "altitude_m": 7950,
+        "role": "high camp",
+        "water": "no",
+        "notes": "南坳"
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 8848.86,
+        "role": "summit",
+        "water": "no",
+        "notes": "希拉里台阶"
+      }
+    ],
+    "summit_push_start_time": "00:00",
+    "turnaround_time": "11:00",
+    "technical_grade": "专业级(TE+)",
+    "terrain_type": "冰川→冰壁→雪坡→岩脊",
+    "required_gear": "全套高海拔装备+氧气+夏尔巴",
+    "guide_or_permit_required": "必须商业队、尼泊尔/西藏政府许可证",
+    "objective_hazards": "昆布冰川崩塌、死亡地带(8000m+)、冻伤",
+    "weather_abort_thresholds": "风速>50km/h、任何降水",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/珠穆朗玛峰"
+    ]
+  },
+  {
+    "route_id": "ma_020",
+    "name_zh": "贡嘎山",
+    "mountain_altitude_m": 7556,
+    "basecamp": "贡嘎寺",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 4550,
+        "role": "BC",
+        "water": "yes",
+        "notes": ""
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5800,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C2",
+        "altitude_m": 6500,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 7556,
+        "role": "summit",
+        "water": "no",
+        "notes": "最后陡壁"
+      }
+    ],
+    "summit_push_start_time": "01:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "专业级(TE)",
+    "terrain_type": "冰川→冰壁→岩脊",
+    "required_gear": "全套高海拔装备、技术冰镐、机械塞",
+    "guide_or_permit_required": "必须商业队",
+    "objective_hazards": "雪崩、冰崩",
+    "weather_abort_thresholds": "任何不稳定天气",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "name_zh": "乔戈里峰(K2)",
+    "mountain_altitude_m": 8611,
+    "basecamp": "斯卡杜(巴基斯坦)",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 5000,
+        "role": "BC",
+        "water": "yes",
+        "notes": "徒步7天到达"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 6100,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C2",
+        "altitude_m": 6700,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C3",
+        "altitude_m": 7400,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C4",
+        "altitude_m": 8000,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 8611,
+        "role": "summit",
+        "water": "no",
+        "notes": "瓶颈段最危险"
+      }
+    ],
+    "summit_push_start_time": "深夜",
+    "turnaround_time": "12:00",
+    "technical_grade": "专业级(TE+)",
+    "terrain_type": "冰川→冰壁→雪脊→岩脊",
+    "required_gear": "全套极高海拔装备+氧气",
+    "guide_or_permit_required": "必须商业队/高资质",
+    "objective_hazards": "冰崩、雪崩、瓶颈段",
+    "weather_abort_thresholds": "任何不稳定天气",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/乔戈里峰"
+    ]
+  },
+  {
+    "route_id": "ma_017",
+    "name_zh": "卓奥友峰",
+    "mountain_altitude_m": 8201,
+    "basecamp": "吉隆县",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 5700,
+        "role": "BC",
+        "water": "yes",
+        "notes": ""
+      },
+      {
+        "name": "C1",
+        "altitude_m": 6400,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C2",
+        "altitude_m": 7100,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C3",
+        "altitude_m": 7700,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 8201,
+        "role": "summit",
+        "water": "no",
+        "notes": "约500m"
+      }
+    ],
+    "summit_push_start_time": "00:00",
+    "turnaround_time": "11:00",
+    "technical_grade": "高级(AD+)",
+    "terrain_type": "冰川→冰壁→雪坡",
+    "required_gear": "全套高海拔装备+氧气",
+    "guide_or_permit_required": "必须商业队",
+    "objective_hazards": "冰裂缝、雪崩、8000m死亡区",
+    "weather_abort_thresholds": "风速>40km/h、任何降水",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/卓奥友峰"
+    ]
+  },
+  {
+    "route_id": "ma_019",
+    "name_zh": "希夏邦马峰",
+    "mountain_altitude_m": 8027,
+    "basecamp": "聂拉木",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 5000,
+        "role": "BC",
+        "water": "yes",
+        "notes": ""
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5800,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C2",
+        "altitude_m": 6600,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "C3",
+        "altitude_m": 7300,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 8027,
+        "role": "summit",
+        "water": "no",
+        "notes": "最后陡壁"
+      }
+    ],
+    "summit_push_start_time": "00:00",
+    "turnaround_time": "11:00",
+    "technical_grade": "高级(AD)",
+    "terrain_type": "冰川→冰壁→雪脊",
+    "required_gear": "全套高海拔装备+氧气",
+    "guide_or_permit_required": "必须商业队，中国唯一全境8000m",
+    "objective_hazards": "冰裂缝、雪崩、冻伤",
+    "weather_abort_thresholds": "风速>40km/h、降雪",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/希夏邦马峰"
+    ]
+  },
+  {
+    "route_id": "ma_036",
+    "name_zh": "启孜峰",
+    "mountain_altitude_m": 6206,
+    "basecamp": "羊八井",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 4800,
+        "role": "BC",
+        "water": "yes",
+        "notes": "羊八井地质公园"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5600,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 6206,
+        "role": "summit",
+        "water": "no",
+        "notes": "约600m雪坡"
+      }
+    ],
+    "summit_push_start_time": "03:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "中级(PD+)",
+    "terrain_type": "草甸→碎石→冰川→雪坡",
+    "required_gear": "冰爪、冰镐、安全带",
+    "guide_or_permit_required": "需登协许可证",
+    "objective_hazards": "冰裂缝、高反",
+    "weather_abort_thresholds": "风速>30km/h",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_040",
+    "name_zh": "库拉岗日主峰",
+    "mountain_altitude_m": 7538,
+    "basecamp": "白马林措",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 4500,
+        "role": "BC",
+        "water": "yes",
+        "notes": "白马林措湖边"
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5400,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 7538,
+        "role": "summit",
+        "water": "no",
+        "notes": "陡雪脊"
+      }
+    ],
+    "summit_push_start_time": "01:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "高级(AD+)",
+    "terrain_type": "冰川→雪坡→雪脊",
+    "required_gear": "全套高海拔装备",
+    "guide_or_permit_required": "需西藏登协审批",
+    "objective_hazards": "冰裂缝、雪崩",
+    "weather_abort_thresholds": "风速>30km/h、降雪",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_037",
+    "name_zh": "姜桑拉姆峰",
+    "mountain_altitude_m": 6324,
+    "basecamp": "浪卡子",
+    "camps": [
+      {
+        "name": "BC",
+        "altitude_m": 4800,
+        "role": "BC",
+        "water": "yes",
+        "notes": ""
+      },
+      {
+        "name": "C1",
+        "altitude_m": 5600,
+        "role": "high camp",
+        "water": "no",
+        "notes": ""
+      },
+      {
+        "name": "冲顶段",
+        "altitude_m": 6324,
+        "role": "summit",
+        "water": "no",
+        "notes": ""
+      }
+    ],
+    "summit_push_start_time": "03:00",
+    "turnaround_time": "10:00",
+    "technical_grade": "中级(AD)",
+    "terrain_type": "冰川→雪坡",
+    "required_gear": "冰爪、冰镐、安全带",
+    "guide_or_permit_required": "需西藏登协审批",
+    "objective_hazards": "冰裂缝",
+    "weather_abort_thresholds": "风速>30km/h",
+    "source_urls": []
+  }
+]

@@ -1,0 +1,1114 @@
+[
+  {
+    "route_id": "ma_001",
+    "point_type": "trailhead",
+    "name_zh": "四姑娘山镇",
+    "lng": 102.83333,
+    "lat": 31.11667,
+    "altitude_m": 3200,
+    "mobile_note": "登山入口",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_001",
+    "point_type": "basecamp",
+    "name_zh": "大峰大本营",
+    "lng": 102.75,
+    "lat": 31.06667,
+    "altitude_m": 4300,
+    "mobile_note": "徒步15km到达",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_001",
+    "point_type": "summit",
+    "name_zh": "大峰顶",
+    "lng": 102.73333,
+    "lat": 31.06667,
+    "altitude_m": 5025,
+    "mobile_note": "入门级5000m",
+    "source_urls": [
+      "https://www.2bulu.com/"
+    ]
+  },
+  {
+    "route_id": "ma_001",
+    "point_type": "turnaround",
+    "name_zh": "大峰关门时间",
+    "lng": 102.74,
+    "lat": 31.06667,
+    "altitude_m": 4700,
+    "mobile_note": "关门时间09:00",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_002",
+    "point_type": "trailhead",
+    "name_zh": "四姑娘山镇",
+    "lng": 102.83333,
+    "lat": 31.11667,
+    "altitude_m": 3200,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_002",
+    "point_type": "basecamp",
+    "name_zh": "二峰大本营",
+    "lng": 102.76667,
+    "lat": 31.06667,
+    "altitude_m": 4300,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_002",
+    "point_type": "summit",
+    "name_zh": "二峰顶",
+    "lng": 102.73333,
+    "lat": 31.05,
+    "altitude_m": 5276,
+    "mobile_note": "比大峰多200m",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_003",
+    "point_type": "basecamp",
+    "name_zh": "三峰大本营",
+    "lng": 102.75,
+    "lat": 31.08333,
+    "altitude_m": 4300,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_003",
+    "point_type": "technical_section",
+    "name_zh": "三峰技术段",
+    "lng": 102.73333,
+    "lat": 31.06667,
+    "altitude_m": 5200,
+    "mobile_note": "最后200m需结组",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_003",
+    "point_type": "summit",
+    "name_zh": "三峰顶",
+    "lng": 102.73333,
+    "lat": 31.05,
+    "altitude_m": 5355,
+    "mobile_note": "初级技术雪山",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_004",
+    "point_type": "trailhead",
+    "name_zh": "哈巴村",
+    "lng": 100.03333,
+    "lat": 27.35,
+    "altitude_m": 2700,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_004",
+    "point_type": "basecamp",
+    "name_zh": "哈巴大本营",
+    "lng": 100.06667,
+    "lat": 27.3,
+    "altitude_m": 4100,
+    "mobile_note": "徒步约6h",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_004",
+    "point_type": "technical_section",
+    "name_zh": "石板坡",
+    "lng": 100.06667,
+    "lat": 27.30833,
+    "altitude_m": 4700,
+    "mobile_note": "碎石坡滑",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_004",
+    "point_type": "summit_push_start",
+    "name_zh": "月亮湾",
+    "lng": 100.08333,
+    "lat": 27.31667,
+    "altitude_m": 5100,
+    "mobile_note": "冲顶最后段",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_004",
+    "point_type": "summit",
+    "name_zh": "哈巴顶",
+    "lng": 100.08333,
+    "lat": 27.31667,
+    "altitude_m": 5396,
+    "mobile_note": "人生第一座5000m",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_005",
+    "point_type": "trailhead",
+    "name_zh": "子梅村",
+    "lng": 101.65,
+    "lat": 29.55,
+    "altitude_m": 3470,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_005",
+    "point_type": "basecamp",
+    "name_zh": "贡嘎寺BC",
+    "lng": 101.61667,
+    "lat": 29.63333,
+    "altitude_m": 3750,
+    "mobile_note": "贡嘎寺附近",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_005",
+    "point_type": "camp",
+    "name_zh": "那玛C1",
+    "lng": 101.58333,
+    "lat": 29.56667,
+    "altitude_m": 4800,
+    "mobile_note": "碎石坡上方",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_005",
+    "point_type": "summit",
+    "name_zh": "那玛顶",
+    "lng": 101.58333,
+    "lat": 29.55,
+    "altitude_m": 5588,
+    "mobile_note": "贡嘎最佳观景台",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_006",
+    "point_type": "basecamp",
+    "name_zh": "半脊BC",
+    "lng": 102.75,
+    "lat": 31.16667,
+    "altitude_m": 3500,
+    "mobile_note": "毕棚沟内",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_006",
+    "point_type": "camp",
+    "name_zh": "半脊C1",
+    "lng": 102.71667,
+    "lat": 31.15,
+    "altitude_m": 4450,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_006",
+    "point_type": "camp",
+    "name_zh": "半脊C2",
+    "lng": 102.7,
+    "lat": 31.13333,
+    "altitude_m": 5000,
+    "mobile_note": "冰川末端",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_006",
+    "point_type": "summit",
+    "name_zh": "半脊顶",
+    "lng": 102.7,
+    "lat": 31.13333,
+    "altitude_m": 5430,
+    "mobile_note": "技术型雪山",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_007",
+    "point_type": "trailhead",
+    "name_zh": "格尔木",
+    "lng": 94.88333,
+    "lat": 36.4,
+    "altitude_m": 2800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_007",
+    "point_type": "basecamp",
+    "name_zh": "玉珠BC",
+    "lng": 94.25,
+    "lat": 35.83333,
+    "altitude_m": 5050,
+    "mobile_note": "汽车直达",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_007",
+    "point_type": "camp",
+    "name_zh": "玉珠C1",
+    "lng": 94.2,
+    "lat": 35.8,
+    "altitude_m": 5600,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_007",
+    "point_type": "summit",
+    "name_zh": "玉珠顶",
+    "lng": 94.18333,
+    "lat": 35.8,
+    "altitude_m": 6178,
+    "mobile_note": "6000m入门",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "point_type": "trailhead",
+    "name_zh": "新路海",
+    "lng": 99.35,
+    "lat": 31.86667,
+    "altitude_m": 4020,
+    "mobile_note": "玉龙拉措",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "point_type": "camp",
+    "name_zh": "雀儿C1",
+    "lng": 99.38333,
+    "lat": 31.85,
+    "altitude_m": 4800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "point_type": "camp",
+    "name_zh": "雀儿C2",
+    "lng": 99.4,
+    "lat": 31.81667,
+    "altitude_m": 5350,
+    "mobile_note": "冰原雪坡",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "point_type": "camp",
+    "name_zh": "雀儿C3",
+    "lng": 99.41667,
+    "lat": 31.81667,
+    "altitude_m": 5800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "point_type": "technical_section",
+    "name_zh": "雀儿冰裂缝区",
+    "lng": 99.41667,
+    "lat": 31.8,
+    "altitude_m": 5900,
+    "mobile_note": "结组通过",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "point_type": "summit",
+    "name_zh": "雀儿顶",
+    "lng": 99.43333,
+    "lat": 31.8,
+    "altitude_m": 6168,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_009",
+    "point_type": "basecamp",
+    "name_zh": "慕士BC(204营地)",
+    "lng": 75.1,
+    "lat": 38.28333,
+    "altitude_m": 4400,
+    "mobile_note": "汽车直达",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_009",
+    "point_type": "camp",
+    "name_zh": "慕士C1",
+    "lng": 75.08333,
+    "lat": 38.26667,
+    "altitude_m": 5500,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_009",
+    "point_type": "camp",
+    "name_zh": "慕士C2",
+    "lng": 75.06667,
+    "lat": 38.25,
+    "altitude_m": 6200,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_009",
+    "point_type": "camp",
+    "name_zh": "慕士C3",
+    "lng": 75.05,
+    "lat": 38.25,
+    "altitude_m": 6900,
+    "mobile_note": "冲顶前夜",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_009",
+    "point_type": "summit",
+    "name_zh": "慕士塔格顶",
+    "lng": 75.03333,
+    "lat": 38.26667,
+    "altitude_m": 7546,
+    "mobile_note": "7000m入门",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "basecamp",
+    "name_zh": "珠峰南坡BC",
+    "lng": 86.93333,
+    "lat": 28.0,
+    "altitude_m": 5364,
+    "mobile_note": "昆布冰川下方",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/珠穆朗玛峰"
+    ]
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "camp",
+    "name_zh": "珠峰C1",
+    "lng": 86.9,
+    "lat": 28.0,
+    "altitude_m": 6000,
+    "mobile_note": "昆布冰川",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "camp",
+    "name_zh": "珠峰C2",
+    "lng": 86.88333,
+    "lat": 27.98333,
+    "altitude_m": 6500,
+    "mobile_note": "西山坳",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "camp",
+    "name_zh": "珠峰C3",
+    "lng": 86.91667,
+    "lat": 27.98333,
+    "altitude_m": 7300,
+    "mobile_note": "洛子壁",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "camp",
+    "name_zh": "珠峰C4(南坳)",
+    "lng": 86.93333,
+    "lat": 27.96667,
+    "altitude_m": 7950,
+    "mobile_note": "死亡地带",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "technical_section",
+    "name_zh": "希拉里台阶",
+    "lng": 86.93333,
+    "lat": 27.98333,
+    "altitude_m": 8790,
+    "mobile_note": "最后瓶颈",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "summit",
+    "name_zh": "珠峰顶",
+    "lng": 86.93333,
+    "lat": 27.98333,
+    "altitude_m": 8848.86,
+    "mobile_note": "世界之巅",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/珠穆朗玛峰"
+    ]
+  },
+  {
+    "route_id": "ma_010",
+    "point_type": "basecamp",
+    "name_zh": "纳米BC",
+    "lng": 103.75,
+    "lat": 32.58333,
+    "altitude_m": 4200,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_010",
+    "point_type": "camp",
+    "name_zh": "雪宝C1",
+    "lng": 103.76667,
+    "lat": 32.55,
+    "altitude_m": 5100,
+    "mobile_note": "骆驼背前",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_010",
+    "point_type": "technical_section",
+    "name_zh": "骆驼背",
+    "lng": 103.76667,
+    "lat": 32.53333,
+    "altitude_m": 5300,
+    "mobile_note": "最险岩壁段",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_010",
+    "point_type": "summit",
+    "name_zh": "雪宝顶",
+    "lng": 103.78333,
+    "lat": 32.53333,
+    "altitude_m": 5588,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_011",
+    "point_type": "basecamp",
+    "name_zh": "七彩瀑布停车场",
+    "lng": 101.8,
+    "lat": 37.68333,
+    "altitude_m": 3800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_011",
+    "point_type": "camp",
+    "name_zh": "岗什C1",
+    "lng": 101.78333,
+    "lat": 37.66667,
+    "altitude_m": 4600,
+    "mobile_note": "冰舌末端",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_011",
+    "point_type": "summit",
+    "name_zh": "岗什卡顶",
+    "lng": 101.73333,
+    "lat": 37.63333,
+    "altitude_m": 5254,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "basecamp",
+    "name_zh": "K2 BC",
+    "lng": 76.51667,
+    "lat": 35.71667,
+    "altitude_m": 5000,
+    "mobile_note": "徒步7天",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/乔戈里峰"
+    ]
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "technical_section",
+    "name_zh": "K2瓶颈段",
+    "lng": 76.51667,
+    "lat": 35.86667,
+    "altitude_m": 8200,
+    "mobile_note": "最危险冰壁",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "summit",
+    "name_zh": "K2顶",
+    "lng": 76.51667,
+    "lat": 35.88333,
+    "altitude_m": 8611,
+    "mobile_note": "全球第二",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/乔戈里峰"
+    ]
+  },
+  {
+    "route_id": "ma_016",
+    "point_type": "basecamp",
+    "name_zh": "宁金BC",
+    "lng": 89.98333,
+    "lat": 28.95,
+    "altitude_m": 5000,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_016",
+    "point_type": "summit",
+    "name_zh": "宁金抗沙顶",
+    "lng": 89.91667,
+    "lat": 28.93333,
+    "altitude_m": 7206,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_036",
+    "point_type": "trailhead",
+    "name_zh": "羊八井",
+    "lng": 90.53333,
+    "lat": 30.08333,
+    "altitude_m": 4300,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_036",
+    "point_type": "basecamp",
+    "name_zh": "启孜BC",
+    "lng": 90.45,
+    "lat": 30.06667,
+    "altitude_m": 4800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_036",
+    "point_type": "summit",
+    "name_zh": "启孜顶",
+    "lng": 90.38333,
+    "lat": 30.03333,
+    "altitude_m": 6206,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_040",
+    "point_type": "trailhead",
+    "name_zh": "色乡",
+    "lng": 90.83333,
+    "lat": 28.2,
+    "altitude_m": 3800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_040",
+    "point_type": "basecamp",
+    "name_zh": "库拉岗日BC",
+    "lng": 90.6,
+    "lat": 28.16667,
+    "altitude_m": 4500,
+    "mobile_note": "白马林措畔",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_040",
+    "point_type": "summit",
+    "name_zh": "库拉岗日顶",
+    "lng": 90.56667,
+    "lat": 28.21667,
+    "altitude_m": 7538,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_017",
+    "point_type": "basecamp",
+    "name_zh": "卓奥友BC",
+    "lng": 85.88333,
+    "lat": 28.15,
+    "altitude_m": 5700,
+    "mobile_note": "",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/卓奥友峰"
+    ]
+  },
+  {
+    "route_id": "ma_017",
+    "point_type": "summit",
+    "name_zh": "卓奥友顶",
+    "lng": 86.66667,
+    "lat": 28.1,
+    "altitude_m": 8201,
+    "mobile_note": "",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/卓奥友峰"
+    ]
+  },
+  {
+    "route_id": "ma_019",
+    "point_type": "basecamp",
+    "name_zh": "希夏BC",
+    "lng": 85.56667,
+    "lat": 28.35,
+    "altitude_m": 5000,
+    "mobile_note": "",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/希夏邦马峰"
+    ]
+  },
+  {
+    "route_id": "ma_019",
+    "point_type": "summit",
+    "name_zh": "希夏邦马顶",
+    "lng": 85.78333,
+    "lat": 28.35,
+    "altitude_m": 8027,
+    "mobile_note": "中国唯一全境8000m",
+    "source_urls": [
+      "https://zh.wikipedia.org/zh-cn/希夏邦马峰"
+    ]
+  },
+  {
+    "route_id": "ma_020",
+    "point_type": "basecamp",
+    "name_zh": "贡嘎BC",
+    "lng": 101.6,
+    "lat": 29.6,
+    "altitude_m": 4550,
+    "mobile_note": "贡嘎寺附近",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_020",
+    "point_type": "summit",
+    "name_zh": "贡嘎顶",
+    "lng": 101.88333,
+    "lat": 29.58333,
+    "altitude_m": 7556,
+    "mobile_note": "登顶率极低",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_005",
+    "point_type": "trailhead",
+    "name_zh": "上木居",
+    "lng": 101.58333,
+    "lat": 29.56667,
+    "altitude_m": 3600,
+    "mobile_note": "进山最后补给",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_005",
+    "point_type": "camp",
+    "name_zh": "那玛C2",
+    "lng": 101.58333,
+    "lat": 29.55,
+    "altitude_m": 5200,
+    "mobile_note": "冲顶前营地",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_007",
+    "point_type": "camp",
+    "name_zh": "玉珠C2",
+    "lng": 94.18333,
+    "lat": 35.8,
+    "altitude_m": 5900,
+    "mobile_note": "最后营地",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_009",
+    "point_type": "trailhead",
+    "name_zh": "喀什",
+    "lng": 75.98333,
+    "lat": 39.46667,
+    "altitude_m": 1300,
+    "mobile_note": "集结出发",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_009",
+    "point_type": "turnaround",
+    "name_zh": "慕士冲顶关门",
+    "lng": 75.04,
+    "lat": 38.26,
+    "altitude_m": 7300,
+    "mobile_note": "11:00前未登顶必须下撤",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "point_type": "summit_push_start",
+    "name_zh": "雀儿冲顶起点",
+    "lng": 99.43333,
+    "lat": 31.8,
+    "altitude_m": 5800,
+    "mobile_note": "C3出发",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_008",
+    "point_type": "retreat",
+    "name_zh": "雀儿下撤点",
+    "lng": 99.38333,
+    "lat": 31.83333,
+    "altitude_m": 5000,
+    "mobile_note": "遇恶劣天气可从此撤",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "summit_push_start",
+    "name_zh": "珠峰南坳冲顶起点",
+    "lng": 86.93333,
+    "lat": 27.96667,
+    "altitude_m": 7950,
+    "mobile_note": "凌晨从C4出发",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_018",
+    "point_type": "turnaround",
+    "name_zh": "珠峰关门时间",
+    "lng": 86.93333,
+    "lat": 27.98333,
+    "altitude_m": 8790,
+    "mobile_note": "11:00强制下撤",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_001",
+    "point_type": "camp",
+    "name_zh": "打尖包",
+    "lng": 102.8,
+    "lat": 31.08333,
+    "altitude_m": 3700,
+    "mobile_note": "途中休息点",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_002",
+    "point_type": "camp",
+    "name_zh": "打尖包",
+    "lng": 102.8,
+    "lat": 31.08333,
+    "altitude_m": 3700,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_005",
+    "point_type": "technical_section",
+    "name_zh": "那玛冰川",
+    "lng": 101.58333,
+    "lat": 29.55,
+    "altitude_m": 5400,
+    "mobile_note": "30°冰雪坡",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_006",
+    "point_type": "technical_section",
+    "name_zh": "半脊冰川",
+    "lng": 102.7,
+    "lat": 31.13333,
+    "altitude_m": 5200,
+    "mobile_note": "60°冰壁",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_004",
+    "point_type": "camp",
+    "name_zh": "哈巴C1(4900m)",
+    "lng": 100.08333,
+    "lat": 31.31667,
+    "altitude_m": 4900,
+    "mobile_note": "可选露营点",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_001",
+    "point_type": "summit_push_start",
+    "name_zh": "大峰冲顶起点",
+    "lng": 102.74,
+    "lat": 31.06667,
+    "altitude_m": 4300,
+    "mobile_note": "凌晨3-4点出发",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_001",
+    "point_type": "turnaround",
+    "name_zh": "大峰关门",
+    "lng": 102.73333,
+    "lat": 31.06667,
+    "altitude_m": 4800,
+    "mobile_note": "9:00未登顶必须撤",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_002",
+    "point_type": "summit_push_start",
+    "name_zh": "二峰冲顶起点",
+    "lng": 102.76667,
+    "lat": 31.06667,
+    "altitude_m": 4300,
+    "mobile_note": "凌晨3点出发",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_002",
+    "point_type": "turnaround",
+    "name_zh": "二峰关门",
+    "lng": 102.73333,
+    "lat": 31.05,
+    "altitude_m": 4900,
+    "mobile_note": "9:00关门",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_003",
+    "point_type": "summit_push_start",
+    "name_zh": "三峰冲顶起点",
+    "lng": 102.75,
+    "lat": 31.08333,
+    "altitude_m": 4300,
+    "mobile_note": "需结组",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_010",
+    "point_type": "trailhead",
+    "name_zh": "松潘",
+    "lng": 103.6,
+    "lat": 32.65,
+    "altitude_m": 2850,
+    "mobile_note": "进山县城",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_010",
+    "point_type": "camp",
+    "name_zh": "纳米牧场",
+    "lng": 103.75,
+    "lat": 32.58333,
+    "altitude_m": 4200,
+    "mobile_note": "BC前最后一站",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_011",
+    "point_type": "trailhead",
+    "name_zh": "门源县",
+    "lng": 101.61667,
+    "lat": 37.38333,
+    "altitude_m": 2850,
+    "mobile_note": "岗什卡入口",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_011",
+    "point_type": "summit_push_start",
+    "name_zh": "岗什冲顶起点",
+    "lng": 101.78333,
+    "lat": 37.66667,
+    "altitude_m": 4600,
+    "mobile_note": "凌晨4点出发",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "camp",
+    "name_zh": "K2 C1",
+    "lng": 76.53333,
+    "lat": 35.73333,
+    "altitude_m": 6100,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "camp",
+    "name_zh": "K2 C2",
+    "lng": 76.51667,
+    "lat": 35.76667,
+    "altitude_m": 6700,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "camp",
+    "name_zh": "K2 C3",
+    "lng": 76.51667,
+    "lat": 35.81667,
+    "altitude_m": 7400,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "camp",
+    "name_zh": "K2 C4",
+    "lng": 76.51667,
+    "lat": 35.85,
+    "altitude_m": 8000,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "trailhead",
+    "name_zh": "斯卡杜",
+    "lng": 75.56667,
+    "lat": 35.3,
+    "altitude_m": 2200,
+    "mobile_note": "K2徒步起点",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_039",
+    "point_type": "turnaround",
+    "name_zh": "K2瓶颈折返点",
+    "lng": 76.51667,
+    "lat": 35.86667,
+    "altitude_m": 8400,
+    "mobile_note": "12:00未过瓶颈必须撤",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_020",
+    "point_type": "technical_section",
+    "name_zh": "贡嘎西北山脊",
+    "lng": 101.83333,
+    "lat": 29.58333,
+    "altitude_m": 7000,
+    "mobile_note": "极难",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_020",
+    "point_type": "camp",
+    "name_zh": "贡嘎C1",
+    "lng": 101.56667,
+    "lat": 29.58333,
+    "altitude_m": 5800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_016",
+    "point_type": "trailhead",
+    "name_zh": "浪卡子",
+    "lng": 90.4,
+    "lat": 28.96667,
+    "altitude_m": 4450,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_016",
+    "point_type": "camp",
+    "name_zh": "宁金C1",
+    "lng": 89.96667,
+    "lat": 28.95,
+    "altitude_m": 5800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_016",
+    "point_type": "camp",
+    "name_zh": "宁金C2",
+    "lng": 89.93333,
+    "lat": 28.93333,
+    "altitude_m": 6400,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_040",
+    "point_type": "camp",
+    "name_zh": "库拉C1",
+    "lng": 90.58333,
+    "lat": 28.2,
+    "altitude_m": 5400,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_040",
+    "point_type": "camp",
+    "name_zh": "库拉C2",
+    "lng": 90.56667,
+    "lat": 28.21667,
+    "altitude_m": 6200,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_040",
+    "point_type": "summit_push_start",
+    "name_zh": "库拉冲顶起点",
+    "lng": 90.56667,
+    "lat": 28.21667,
+    "altitude_m": 6200,
+    "mobile_note": "凌晨1点出发",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_037",
+    "point_type": "trailhead",
+    "name_zh": "浪卡子",
+    "lng": 90.4,
+    "lat": 28.96667,
+    "altitude_m": 4450,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_037",
+    "point_type": "basecamp",
+    "name_zh": "姜桑BC",
+    "lng": 90.38333,
+    "lat": 28.88333,
+    "altitude_m": 4800,
+    "mobile_note": "",
+    "source_urls": []
+  },
+  {
+    "route_id": "ma_037",
+    "point_type": "summit",
+    "name_zh": "姜桑拉姆顶",
+    "lng": 90.35,
+    "lat": 28.86667,
+    "altitude_m": 6324,
+    "mobile_note": "",
+    "source_urls": []
+  }
+]

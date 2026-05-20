@@ -1,0 +1,15 @@
+source_id,badge_label,use_in_app,badge_color_role
+open_meteo,Open-Meteo,primary,primary
+ecmwf_ifs,ECMWF,primary,secondary
+noaa_gfs,GFS,primary,secondary
+dwd_icon,ICON,primary,secondary
+windy_api,Windy,reference,reference
+meteoblue_api,Meteoblue,reference,reference
+amap_weather,高德,primary,primary
+weather_com_cn,中国天气网,reference,reference
+qweather,和风天气,not_now,not_now
+seniverse,心知天气,not_now,not_now
+google_weather,Google,not_now,not_now
+nws_api,NWS,not_now,not_now
+openweathermap,OpenWeather,not_now,not_now
+open_meteo_geocoding,Open-Meteo地理编码,primary,secondary

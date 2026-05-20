@@ -1,0 +1,15 @@
+source_id,name,country_or_org,source_type,free_api,coverage,api_or_url,recommended_use
+open_meteo,Open-Meteo,瑞士,api,true,全球,https://open-meteo.com/en/docs,主力数据源。直接API调用
+ecmwf_ifs,ECMWF IFS HRES/ENS,欧洲,model,false,全球,https://www.ecmwf.int/（通过Open-Meteo免费获取）,Open-Meteo默认后端
+noaa_gfs,GFS/NOAA,美国,model,true,全球,https://www.ncei.noaa.gov/,后备模型。长时效参考
+dwd_icon,ICON/DWD,德国,model,true,全球+欧洲,https://www.dwd.de/（通过Open-Meteo免费获取）,欧洲山地补充参考
+windy_api,Windy (API),捷克/英国,api,true,全球,https://api.windy.com/,外部参考入口。可视化展示
+meteoblue_api,Meteoblue Weather API,瑞士,api,true,全球,https://business.meteoblue.com/,Open-Meteo备选
+amap_weather,高德天气,中国,api,true,中国,https://lbs.amap.com/api/webservice/guide/api/weatherinfo,中国地理编码+辅助验证
+weather_com_cn,中国天气网/CMA,中国,reference,true,中国,https://www.weather.com.cn/（无公开API）,灾害预警外部参考
+qweather,和风天气,中国,api,true,全球（中国为主）,https://dev.qweather.com/,中国场景补充
+seniverse,心知天气,中国,api,true,全球,https://www.seniverse.com/,中国区域备选
+google_weather,Google Weather API,美国,api,true,全球,https://developers.google.com/maps/documentation/weather,海外备选
+open_meteo_geocoding,Open-Meteo Geocoding,瑞士,api,true,全球,https://open-meteo.com/en/docs/geocoding-api,全球地名→经纬度
+nws_api,US National Weather Service,美国,api,true,美国本土,https://www.weather.gov/documentation/services-web-api,美国地点参考验证
+openweathermap,OpenWeatherMap,英国,api,true,全球,https://openweathermap.org/api,全球备选
