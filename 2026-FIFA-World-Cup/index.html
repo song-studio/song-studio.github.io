@@ -2786,8 +2786,7 @@ function exportFavICS(){
 function shareSchedule(){
   const mainUrl='https://song-studio.netlify.app/2026-fifa-world-cup/';
   const text=(lang==='en'?'🏆 2026 FIFA World Cup Schedule\n':'🏆 2026 FIFA 世界杯赛程查询\n')+mainUrl;
-  if(navigator.share)navigator.share({title:'FIFA 2026',text,url:mainUrl}).catch(()=>{});
-  else copyText(text,lang==='en'?'✅ Link copied!':'✅ 链接已复制');
+  copyText(text,lang==='en'?'✅ Link copied!':'✅ 链接已复制');
 }
 function shareMainAndCards(){
   openSharePanel();
@@ -2813,8 +2812,7 @@ function shareFavSchedule(){
   const teams=favs.map(n=>{const td=TEAMS[n];return lang==='en'&&td?td.en:n;}).join(', ');
   const text=`⭐ ${lang==='en'?'My 2026 World Cup picks':'我的2026世界杯收藏'}: ${teams}
 https://fifa2026worldcups.netlify.app/`;
-  if(navigator.share)navigator.share({title:'My FIFA 2026',text}).catch(()=>{});
-  else copyText(text,'✅ Copied');
+  copyText(text,'✅ Copied');
 }
 function reminderICS(l,i){
   const m=G[l].matches[i];
@@ -2837,8 +2835,7 @@ ${teamN(m.h)} VS ${teamN(m.a)}
 📅 ${m.de} · ${m.t==='待确认'?'TBC':'BJT '+m.t}${edt?' / '+edt:''}
 🏟️ ${m.v} · ${m.ce}
 https://fifa2026worldcups.netlify.app/`;
-  if(navigator.share)navigator.share({title:`${teamN(m.h)} VS ${teamN(m.a)}`,text}).catch(()=>{});
-  else copyText(text,'✅ Copied');
+  copyText(text,'✅ Copied');
 }
 function copyMatchText(l,i){
   const m=G[l].matches[i];
