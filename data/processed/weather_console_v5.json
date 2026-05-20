@@ -1,0 +1,3779 @@
+{
+  "version": "v5.0",
+  "metrics": [
+    {
+      "metric_id": "temperature_current",
+      "name_zh": "当前温度",
+      "name_en": "Current Temperature",
+      "unit": "°C",
+      "category": "temperature",
+      "priority": "P0",
+      "why_it_matters": "最基本的气象要素，用户判断冷暖的第一指标。直接影响户外着装决策。",
+      "normal_range_note": "中国大部分地区 -20°C~40°C，极端地区可达 -50°C~50°C",
+      "caution_threshold": "≤-10°C 或 ≥35°C",
+      "danger_threshold": "≤-20°C 或 ≥40°C",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF IFS HRES",
+        "高德天气",
+        "ICON"
+      ],
+      "display_hint_mobile": "大字号居中显示，附体感温度对比，单位°C"
+    },
+    {
+      "metric_id": "temperature_apparent",
+      "name_zh": "体感温度",
+      "name_en": "Apparent Temperature / Feels Like",
+      "unit": "°C",
+      "category": "temperature",
+      "priority": "P0",
+      "why_it_matters": "综合温度、风速、湿度的体感模型。相同气温下，大风天体感可能低5-15°C，高湿夏天体感可能高3-8°C。对户外活动判断更实用。",
+      "normal_range_note": "与当前温度差异通常在 ±10°C 内。极端大风+低温时可能低20°C以上。",
+      "caution_threshold": "体感 ≤-15°C 或 ≥38°C",
+      "danger_threshold": "体感 ≤-25°C 或 ≥42°C（热射病风险）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF"
+      ],
+      "display_hint_mobile": "附在温度下方，小字号灰色显示「体感 XX°C」"
+    },
+    {
+      "metric_id": "temperature_max",
+      "name_zh": "当日最高温",
+      "name_en": "Daily Maximum Temperature",
+      "unit": "°C",
+      "category": "temperature",
+      "priority": "P1",
+      "why_it_matters": "判断白天气温峰值，规划出发时间和避暑需求。午后通常为最高温时段。",
+      "normal_range_note": "春秋日较差 8-15°C，夏季可达 10-20°C，冬季干爽地区可达 15-25°C",
+      "caution_threshold": "≥35°C（高温预警标准）",
+      "danger_threshold": "≥40°C（极端高温）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "高德天气"
+      ],
+      "display_hint_mobile": "与最低温并排显示，趋势箭头标注与昨日对比"
+    },
+    {
+      "metric_id": "temperature_min",
+      "name_zh": "当日最低温",
+      "name_en": "Daily Minimum Temperature",
+      "unit": "°C",
+      "category": "temperature",
+      "priority": "P1",
+      "why_it_matters": "判断夜间寒冷程度，对露营、高山活动极端重要。日出前后通常为最低温时段。",
+      "normal_range_note": "同最高温区间，山区夜间降温更显著",
+      "caution_threshold": "≤0°C（霜冻风险）",
+      "danger_threshold": "≤-15°C（冻伤风险）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "高德天气"
+      ],
+      "display_hint_mobile": "与最高温并排显示，低温区用蓝色标记"
+    },
+    {
+      "metric_id": "wind_speed",
+      "name_zh": "风速",
+      "name_en": "Wind Speed",
+      "unit": "km/h",
+      "category": "wind",
+      "priority": "P0",
+      "why_it_matters": "最影响户外体验的气象要素之一。风影响体感温度、行走稳定性、装备选择。小地点风速可能比城市预报高3-5倍（山口效应）。",
+      "normal_range_note": "0-100 km/h。静风 <5，轻风 5-20，和风 20-30，大风 30-50，狂风 >50",
+      "caution_threshold": "≥30 km/h（影响行走平衡）",
+      "danger_threshold": "≥50 km/h（安全风险，山口可能更高）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "ICON-D2",
+        "HRRR"
+      ],
+      "display_hint_mobile": "风速值+风力等级标注，附风向玫瑰图标。支持m/s和km/h切换"
+    },
+    {
+      "metric_id": "wind_gust",
+      "name_zh": "阵风",
+      "name_en": "Wind Gust",
+      "unit": "km/h",
+      "category": "wind",
+      "priority": "P0",
+      "why_it_matters": "阵风比持续风速更能反映实际风险。山口、垭口、峡谷阵风可达持续风速的1.5-2倍。对徒步者可能造成突然失衡。",
+      "normal_range_note": "通常为风速的1.3-2倍。阵风系数随风速增大而减小。",
+      "caution_threshold": "阵风 ≥40 km/h",
+      "danger_threshold": "阵风 ≥60 km/h（站立困难）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "ICON-D2",
+        "HRRR"
+      ],
+      "display_hint_mobile": "风速旁标注「阵风 XX km/h」，黄色/红色标记阈值"
+    },
+    {
+      "metric_id": "wind_direction",
+      "name_zh": "风向",
+      "name_en": "Wind Direction",
+      "unit": "° / 16方位",
+      "category": "wind",
+      "priority": "P1",
+      "why_it_matters": "判断冷空气来源、天气系统走向。对山区尤为重要——不同坡向受风差异巨大。",
+      "normal_range_note": "0°=北风，90°=东风，180°=南风，270°=西风。16方位标注（N/ NNE/ NE等）",
+      "caution_threshold": null,
+      "danger_threshold": null,
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "ICON"
+      ],
+      "display_hint_mobile": "风向箭头+方位文字，配合风速一起显示"
+    },
+    {
+      "metric_id": "precipitation_probability",
+      "name_zh": "降水概率",
+      "name_en": "Precipitation Probability (PoP)",
+      "unit": "%",
+      "category": "precipitation",
+      "priority": "P0",
+      "why_it_matters": "判断是否可能下雨的核心指标。不同于降水量，它反映的是≥0.3mm降水的可能性。来自集合预报的统计结果。",
+      "normal_range_note": "0-100%。<30% 低概率，30-60% 中等，>60% 高概率",
+      "caution_threshold": "≥40%",
+      "danger_threshold": "≥70%",
+      "data_sources": [
+        "Open-Meteo（集合预报）",
+        "ECMWF ENS",
+        "GEFS"
+      ],
+      "display_hint_mobile": "百分比显示，配合降雨云图标。不要展示纯数字，加「可能有雨」等语义标签"
+    },
+    {
+      "metric_id": "precipitation_amount",
+      "name_zh": "降水量",
+      "name_en": "Precipitation Amount",
+      "unit": "mm",
+      "category": "precipitation",
+      "priority": "P0",
+      "why_it_matters": "判断雨水多少。小雨 (<2.5mm/h) 可继续活动，中雨 (2.5-10mm/h) 影响视线和路况，大雨 (>10mm/h) 建议避险。",
+      "normal_range_note": "0-50mm/h。微雨 <1，小雨 1-2.5，中雨 2.5-10，大雨 10-30，暴雨 >30",
+      "caution_threshold": "≥2.5mm/h（中雨）",
+      "danger_threshold": "≥10mm/h（大雨，山洪/泥石流风险）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "高德天气",
+        "ICON"
+      ],
+      "display_hint_mobile": "毫米数+降雨强度描述，柱状图显示小时趋势"
+    },
+    {
+      "metric_id": "thunderstorm_probability",
+      "name_zh": "雷暴概率",
+      "name_en": "Thunderstorm Probability",
+      "unit": "%",
+      "category": "storm",
+      "priority": "P0",
+      "why_it_matters": "雷暴是户外活动最危险的天气之一。山顶、垭口、开阔地带雷击风险最高。雷暴信号比降水概率更关键。",
+      "normal_range_note": "0-100%。山区夏季午后雷暴概率可达40-70%",
+      "caution_threshold": "≥20%（关注雷暴发展）",
+      "danger_threshold": "≥40%（建议避免山顶/开阔地带活动）",
+      "data_sources": [
+        "Open-Meteo（CAPE指数）",
+        "ECMWF ENS",
+        "GFS",
+        "ICON-D2",
+        "HRRR"
+      ],
+      "display_hint_mobile": "闪电图标+概率百分比，危险等级用红/黄/绿标记"
+    },
+    {
+      "metric_id": "cloud_cover",
+      "name_zh": "云量",
+      "name_en": "Cloud Cover",
+      "unit": "%",
+      "category": "cloud",
+      "priority": "P1",
+      "why_it_matters": "判断日照和降雨趋势。云量>80% 通常意味着阴天或即将降水。云量骤增可能是冷锋到来的前兆。",
+      "normal_range_note": "0-100%。晴 0-20，少云 20-40，多云 40-70，阴 70-100",
+      "caution_threshold": "≥70%（配合其他指标判断降雨可能）",
+      "danger_threshold": null,
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "ICON"
+      ],
+      "display_hint_mobile": "百分比+文字描述（晴/少云/多云/阴），可配合小图标"
+    },
+    {
+      "metric_id": "visibility",
+      "name_zh": "能见度",
+      "name_en": "Visibility",
+      "unit": "km",
+      "category": "visibility",
+      "priority": "P0",
+      "why_it_matters": "直接影响导航和方向判断。山区能见度<1km时极易迷路，<100m时极其危险。雾、降水、扬尘都会降低能见度。",
+      "normal_range_note": "0-50km。良>10km，中5-10km，差1-5km，很差<1km，极差<100m",
+      "caution_threshold": "<5km",
+      "danger_threshold": "<1km（迷路风险显著）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "HRRR"
+      ],
+      "display_hint_mobile": "数值+描述，低能见度直接标注红色警告"
+    },
+    {
+      "metric_id": "relative_humidity",
+      "name_zh": "相对湿度",
+      "name_en": "Relative Humidity",
+      "unit": "%",
+      "category": "humidity",
+      "priority": "P1",
+      "why_it_matters": "影响体感温度和舒适度。高湿 (>80%) 结合高温极不舒适，低湿 (<30%) 结合低温体感更冷。也反映露水/结霜可能。",
+      "normal_range_note": "20-100%。潮湿 >80%，舒适 40-70%，干燥 <30%",
+      "caution_threshold": ">85% 或 <20%",
+      "danger_threshold": null,
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "高德天气"
+      ],
+      "display_hint_mobile": "百分比+干湿标签，配合露点温度一起展示"
+    },
+    {
+      "metric_id": "dew_point",
+      "name_zh": "露点温度",
+      "name_en": "Dew Point",
+      "unit": "°C",
+      "category": "humidity",
+      "priority": "P1",
+      "why_it_matters": "判断湿度舒适度和结露/结霜风险的专业指标。露点<0°C可能有霜冻，露点>20°C空气闷热。露点与气温越接近湿度越大。",
+      "normal_range_note": "-40°C ~ 30°C。干燥地区 -20~0°C，舒适区 5-15°C，闷热 >18°C",
+      "caution_threshold": "露点 <0°C（霜冻可能）或 >20°C（闷热）",
+      "danger_threshold": "露点 < -10°C（极端干燥）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF"
+      ],
+      "display_hint_mobile": "小字显示「露点 XX°C」，与湿度并排。可提供「结霜/露水」标签"
+    },
+    {
+      "metric_id": "pressure_msl",
+      "name_zh": "海平面气压",
+      "name_en": "Sea Level Pressure",
+      "unit": "hPa",
+      "category": "pressure",
+      "priority": "P1",
+      "why_it_matters": "气压骤降是天气恶化的关键信号（通常比降水提前6-24小时）。24小时内下降>10hPa预示低压系统接近。高原地区需要校正。",
+      "normal_range_note": "980-1050 hPa。标准海平面1013.25 hPa。青藏高原站址气压约600-700 hPa（需显示站址气压）",
+      "caution_threshold": "24小时下降 ≥8hPa",
+      "danger_threshold": "24小时下降 ≥15hPa（强低压接近）",
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "ICON"
+      ],
+      "display_hint_mobile": "hPa数值+趋势箭头（↑↓），附24小时气压变化趋势图"
+    },
+    {
+      "metric_id": "uv_index",
+      "name_zh": "紫外线指数",
+      "name_en": "UV Index",
+      "unit": "指数 0-11+",
+      "category": "sun",
+      "priority": "P1",
+      "why_it_matters": "高海拔每升高1000m紫外线增强10-12%。雪地反射可使UV暴露加倍。直接影响皮肤和眼睛保护决策。",
+      "normal_range_note": "0-11+。低 0-2，中 3-5，高 6-7，很高 8-10，极高 11+",
+      "caution_threshold": "≥6（高海拔+雪地需戴墨镜和防晒）",
+      "danger_threshold": "≥10（极端UV，雪盲风险）",
+      "data_sources": [
+        "Open-Meteo",
+        "CAMS",
+        "GFS"
+      ],
+      "display_hint_mobile": "指数数字+颜色等级（绿/黄/橙/红/紫），附简短的防护建议"
+    },
+    {
+      "metric_id": "sunrise_sunset",
+      "name_zh": "日出日落",
+      "name_en": "Sunrise / Sunset",
+      "unit": "HH:MM",
+      "category": "sun",
+      "priority": "P1",
+      "why_it_matters": "规划出行时间的关键参考。日出后30分钟天光充足，日落前30分钟需备头灯。月相也影响夜间光线。",
+      "normal_range_note": "随季节和纬度变化。夏季昼长可达14小时，冬季仅10小时（南北差异大）",
+      "caution_threshold": null,
+      "danger_threshold": null,
+      "data_sources": [
+        "Open-Meteo",
+        "高德天气"
+      ],
+      "display_hint_mobile": "时间并排显示（🌅 06:32 🌇 18:45），附日照时长"
+    },
+    {
+      "metric_id": "hourly_trend",
+      "name_zh": "小时级趋势",
+      "name_en": "Hourly Forecast Trend",
+      "unit": "图表",
+      "category": "temperature",
+      "priority": "P1",
+      "why_it_matters": "查看接下来24-48小时内温/风/降水的逐小时变化。山口和峡谷天气可能在1-2小时内剧烈变化。",
+      "normal_range_note": "24-168小时逐小时数据",
+      "caution_threshold": null,
+      "danger_threshold": null,
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "ICON-D2",
+        "HRRR"
+      ],
+      "display_hint_mobile": "滚动时间轴折线图，默认显示温度+降水量，可切换风/气压。支持双指缩放"
+    },
+    {
+      "metric_id": "daily_trend_7d",
+      "name_zh": "7日趋势",
+      "name_en": "7-Day Forecast Trend",
+      "unit": "图表",
+      "category": "temperature",
+      "priority": "P1",
+      "why_it_matters": "中长期天气趋势判断，决定是否出发或提前规划路线。7天预报准确率约65-80%。",
+      "normal_range_note": "7天。ECMWF前5天可信度高，GFS后5天趋势参考",
+      "caution_threshold": null,
+      "danger_threshold": null,
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "ICON"
+      ],
+      "display_hint_mobile": "每日最高/最低温曲线+降水概览，右侧可滚动切换日详情"
+    },
+    {
+      "metric_id": "data_update_time",
+      "name_zh": "数据更新时间",
+      "name_en": "Data Update Time",
+      "unit": "ISO 8601",
+      "category": "model",
+      "priority": "P2",
+      "why_it_matters": "反映数据时效性。GFS每日更新4次，ECMWF每日2次。过时数据可能导致错误判断。",
+      "normal_range_note": "GFS 00/06/12/18 UTC，ECMWF 00/12 UTC，ICON 00/06/12/18 UTC",
+      "caution_threshold": "数据超过12小时未更新",
+      "danger_threshold": "数据超过24小时未更新",
+      "data_sources": [
+        "Open-Meteo（自动携带）"
+      ],
+      "display_hint_mobile": "页面底部小字「数据更新于 HH:MM，来源：XX模型」"
+    },
+    {
+      "metric_id": "model_source",
+      "name_zh": "模型来源",
+      "name_en": "Model Source",
+      "unit": "文本",
+      "category": "model",
+      "priority": "P2",
+      "why_it_matters": "不同模型各有优劣，标注来源帮助用户判断数据可信度。Open-Meteo聚合30+模型，自动选优但需告知用户。",
+      "normal_range_note": "标记当前使用的模型名称和分辨率",
+      "caution_threshold": null,
+      "danger_threshold": null,
+      "data_sources": [
+        "Open-Meteo",
+        "GFS",
+        "ECMWF",
+        "ICON",
+        "HRRR"
+      ],
+      "display_hint_mobile": "「数据源自 Open-Meteo（ECMWF IFS HRES 9km）」格式"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "WIND_001",
+      "metric_id": "wind_speed",
+      "condition_expression": "wind_speed >= 30 AND wind_speed < 50",
+      "severity": "watch",
+      "plain_language_explanation": "风力较强，迎风行走会明显受阻。山脊或垭口实际风感可能比预报值大1-2级。",
+      "technical_note": "风速30-50 km/h对应蒲氏5-7级（清劲风至疾风）。户外标准中≥30km/h需注意平衡安全。",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Beaufort_scale"
+      ]
+    },
+    {
+      "rule_id": "WIND_002",
+      "metric_id": "wind_speed",
+      "condition_expression": "wind_speed >= 50",
+      "severity": "danger",
+      "plain_language_explanation": "风速达7级以上，会对站立和行进造成显著困难。建议避免在海拔开放区域活动。",
+      "technical_note": "风速≥50km/h（≥28节）接近8级大风。高山环境实际风速可能更高。",
+      "source_urls": [
+        "https://www.weather.gov/safety/wind"
+      ]
+    },
+    {
+      "rule_id": "WIND_003",
+      "metric_id": "wind_speed",
+      "condition_expression": "wind_speed >= 20 AND wind_speed < 30",
+      "severity": "info",
+      "plain_language_explanation": "轻到中风，一般不影响活动。山口和裸岩地段可能会有阵风增强。",
+      "technical_note": "20-30 km/h对应蒲氏4-5级。多数户外活动可正常进行。",
+      "source_urls": [
+        "https://www.mountaineering.ie/"
+      ]
+    },
+    {
+      "rule_id": "WIND_004",
+      "metric_id": "wind_gust",
+      "condition_expression": "wind_gusts_10m >= 40 AND wind_gusts_10m < 60",
+      "severity": "watch",
+      "plain_language_explanation": "阵风较强，突然的强风可能影响行走平衡。窄谷、垭口和山脊阵风会显著增强。",
+      "technical_note": "阵风瞬时值≥40km/h时，对徒步行进已构成影响。阵风系数（gust factor）通常为平均风速的1.3-2倍。",
+      "source_urls": [
+        "https://www.metoffice.gov.uk/weather/guides/coast-and-sea/beaufort-scale"
+      ]
+    },
+    {
+      "rule_id": "WIND_005",
+      "metric_id": "wind_gust",
+      "condition_expression": "wind_gusts_10m >= 60",
+      "severity": "danger",
+      "plain_language_explanation": "阵风强劲，站立和行进困难。容易把人吹倒，尤其在高海拔裸露地带风险极大。",
+      "technical_note": "阵风≥60km/h达到8级标准。重度户外活动建议取消。",
+      "source_urls": [
+        "https://www.weather.gov/safety/wind"
+      ]
+    },
+    {
+      "rule_id": "WIND_006",
+      "metric_id": "wind_gust",
+      "condition_expression": "wind_gusts_10m >= 80",
+      "severity": "danger",
+      "plain_language_explanation": "极端强阵风，人身安全严重受到威胁。必须立即停止任何户外活动。",
+      "technical_note": "阵风≥80km/h（10级烈风），可吹倒人体。高海拔山口实测可达100+km/h。",
+      "source_urls": [
+        "https://www.ncei.noaa.gov/"
+      ]
+    },
+    {
+      "rule_id": "WIND_007",
+      "metric_id": "wind_direction",
+      "condition_expression": "wind_direction >= 315 OR wind_direction < 45",
+      "severity": "info",
+      "plain_language_explanation": "北风。通常携带冷空气，气温将下降。中国北方冬季北风会显著降低体感温度。",
+      "technical_note": "北风风向区间315°-45°。冷锋过境后常转为偏北风。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "WIND_008",
+      "metric_id": "wind_direction",
+      "condition_expression": "wind_direction >= 135 AND wind_direction < 225",
+      "severity": "info",
+      "plain_language_explanation": "南风。通常携带暖湿空气，可能带来降水或升温。南方夏季南风通常暖湿。",
+      "technical_note": "南风区间135°-225°。暖湿气流多来自副热带高压边缘。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "WIND_009",
+      "metric_id": "wind_speed",
+      "condition_expression": "wind_speed_10m >= 10 AND elevation > 3000",
+      "severity": "info",
+      "plain_language_explanation": "高海拔地区即使轻风体感也明显更强。海拔3000m以上空气密度低，风寒效应更突出。",
+      "technical_note": "海拔每升高1000m，空气密度下降约10%，相同风速下风压降低但风寒效应因低温加剧。",
+      "source_urls": [
+        "https://www.weather.gov/safety/wind"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_001",
+      "metric_id": "precipitation_amount",
+      "condition_expression": "precipitation >= 0.3 AND precipitation < 2.5",
+      "severity": "info",
+      "plain_language_explanation": "小雨。地面微湿，不影响行进，但注意路面湿滑和视线模糊。",
+      "technical_note": "小时降水量<2.5mm为小雨。持续6小时以上累计雨量仍可达中雨标准。",
+      "source_urls": [
+        "https://www.cma.gov.cn/"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_002",
+      "metric_id": "precipitation_amount",
+      "condition_expression": "precipitation >= 2.5 AND precipitation < 10",
+      "severity": "watch",
+      "plain_language_explanation": "中雨。路面明显积水，影响行进速度和可见度。持续超过2小时需关注路线上游山洪风险。",
+      "technical_note": "小时降水量2.5-10mm为中雨。中雨持续伴山坡地形可能诱发小型泥石流。",
+      "source_urls": [
+        "https://www.cma.gov.cn/"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_003",
+      "metric_id": "precipitation_amount",
+      "condition_expression": "precipitation >= 10 AND precipitation < 30",
+      "severity": "warning",
+      "plain_language_explanation": "大雨。能见度下降明显，溪流可能迅速上涨。峡谷、河道边活动有山洪风险。",
+      "technical_note": "小时降水量10-30mm为大雨。山洪暴发阈值因地形而异，一般小时雨量>20mm时风险显著。",
+      "source_urls": [
+        "https://www.cma.gov.cn/",
+        "https://www.weather.gov/flood/"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_004",
+      "metric_id": "precipitation_amount",
+      "condition_expression": "precipitation >= 30",
+      "severity": "danger",
+      "plain_language_explanation": "暴雨或以上。短时间内大量降水可引发山洪、泥石流、滑坡。立即转移到高处安全地带。",
+      "technical_note": "小时降水量≥30mm为暴雨。山洪响应时间在山区可能仅15-30分钟。",
+      "source_urls": [
+        "https://www.cma.gov.cn/",
+        "https://www.weather.gov/flood/"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_005",
+      "metric_id": "precipitation_probability",
+      "condition_expression": "precipitation_probability >= 60",
+      "severity": "watch",
+      "plain_language_explanation": "降水的可能性较高。建议准备雨具和防水装备，关注后续小时预报确认降水时段。",
+      "technical_note": "PoP≥60%意味着在预报区域和时段内≥0.3mm降水的概率为60%。集合预报共识较高。",
+      "source_urls": [
+        "https://www.weather.gov/help/"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_006",
+      "metric_id": "precipitation_probability",
+      "condition_expression": "precipitation_probability >= 30 AND precipitation_probability < 60",
+      "severity": "info",
+      "plain_language_explanation": "有降雨可能但不是确定的。建议关注云量变化和本地天气信号，带上备用雨具。",
+      "technical_note": "PoP 30-60%为中等概率。天气系统不稳定时此区间变化较快。",
+      "source_urls": [
+        "https://www.weather.gov/help/"
+      ]
+    },
+    {
+      "rule_id": "STM_001",
+      "metric_id": "thunderstorm_probability",
+      "condition_expression": "thunderstorm_probability >= 20 AND thunderstorm_probability < 40",
+      "severity": "watch",
+      "plain_language_explanation": "有雷暴发展的可能。山区夏季午后雷暴多发，建议关注云层变化。如天空出现积雨云应提前撤离山脊和山顶。",
+      "technical_note": "雷暴概率≥20%意味着有显著的对流发展可能性。CAPE值>1000 J/kg通常与雷暴相关。",
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning"
+      ]
+    },
+    {
+      "rule_id": "STM_002",
+      "metric_id": "thunderstorm_probability",
+      "condition_expression": "thunderstorm_probability >= 40",
+      "severity": "danger",
+      "plain_language_explanation": "雷暴风险高。避免在山顶、山脊、空旷地带、高大孤树下活动。雷击在山区是最致命的天气风险之一。",
+      "technical_note": "雷暴概率≥40%时必须认真对待。闪电可在雷暴前方10-15km的晴空区发生（晴空霹雳）。",
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning"
+      ]
+    },
+    {
+      "rule_id": "STM_003",
+      "metric_id": "thunderstorm_probability",
+      "condition_expression": "thunderstorm_probability >= 10 AND thunderstorm_probability < 20",
+      "severity": "info",
+      "plain_language_explanation": "个别雷暴可能发生。夏季活动时注意观察天空，积云快速向上发展可能是雷暴前兆。",
+      "technical_note": "低概率雷暴仍可能发生。山中局部对流难以完全预报。",
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning"
+      ]
+    },
+    {
+      "rule_id": "VIS_001",
+      "metric_id": "visibility",
+      "condition_expression": "visibility < 5 AND visibility >= 1",
+      "severity": "watch",
+      "plain_language_explanation": "能见度较差。在陌生地形中容易迷失方向，建议放慢速度、频繁核对导航。山区往往低于预报值。",
+      "technical_note": "能见度1-5km为中到差。雾、雨、雪均可导致。地形越复杂导航风险越大。",
+      "source_urls": [
+        "https://www.weather.gov/fog/"
+      ]
+    },
+    {
+      "rule_id": "VIS_002",
+      "metric_id": "visibility",
+      "condition_expression": "visibility < 1 AND visibility >= 0.1",
+      "severity": "warning",
+      "plain_language_explanation": "能见度很差。极易迷路，尤其是在无路标的野山上。强烈建议停止行进，使用GPS导航。",
+      "technical_note": "能见度<1km定义为雾。无路径参考点时会显著增加迷路概率。",
+      "source_urls": [
+        "https://www.weather.gov/fog/"
+      ]
+    },
+    {
+      "rule_id": "VIS_003",
+      "metric_id": "visibility",
+      "condition_expression": "visibility < 0.1",
+      "severity": "danger",
+      "plain_language_explanation": "极低能见度。行进极其危险，极易发生失足坠落。必须就地等待能见度改善。",
+      "technical_note": "能见度<100m为浓雾。在悬崖、冰川、碎石坡等地形中极为危险。",
+      "source_urls": [
+        "https://www.weather.gov/fog/"
+      ]
+    },
+    {
+      "rule_id": "PRESS_001",
+      "metric_id": "pressure_msl",
+      "condition_expression": "pressure_change_24h <= -8 AND pressure_change_24h > -15",
+      "severity": "watch",
+      "plain_language_explanation": "气压在24小时内明显下降，预示低压系统正在接近。天气可能在12-24小时内转坏，风力增强并可能带来降水。",
+      "technical_note": "24小时下降8-15hPa是显著的信号。强低压中心下降可达20-30hPa/24h。气压下降越陡，天气恶化速度越快。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "PRESS_002",
+      "metric_id": "pressure_msl",
+      "condition_expression": "pressure_change_24h <= -15",
+      "severity": "danger",
+      "plain_language_explanation": "气压急剧下降，强低压系统即将或已经来临。伴随强风、大到暴雨或暴雪。建议立即寻找安全避难场所。",
+      "technical_note": "24小时下降≥15hPa通常与强烈气旋/温带气旋相关。阵风可能达烈风甚至暴风级。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "PRESS_003",
+      "metric_id": "pressure_msl",
+      "condition_expression": "pressure_change_24h >= 10",
+      "severity": "info",
+      "plain_language_explanation": "气压快速上升，说明高压系统正在移入。天气趋于稳定，但高压后部可能带来强风（冷高压南下常见）。",
+      "technical_note": "24小时上升≥10hPa代表强高压移入。冬季冷高压后部常伴有大风降温。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "PRESS_004",
+      "metric_id": "pressure_msl",
+      "condition_expression": "pressure_msl < 995",
+      "severity": "watch",
+      "plain_language_explanation": "气压显著低于标准海平面值，说明受低压系统控制。伴有风雨的可能性大。",
+      "technical_note": "海平面气压<995hPa为显著低压。气旋中心可低至950hPa以下。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "DEW_001",
+      "metric_id": "dew_point",
+      "condition_expression": "dew_point_2m > 20",
+      "severity": "info",
+      "plain_language_explanation": "露点高，空气湿度大，体感闷热。适合减少衣物，注意补充水分。",
+      "technical_note": "露点>20°C时空气接近饱和（相对湿度常>80%），人体排汗效率下降。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "DEW_002",
+      "metric_id": "dew_point",
+      "condition_expression": "dew_point_2m < 0 AND dew_point_2m >= -10",
+      "severity": "info",
+      "plain_language_explanation": "露点在冰点以下，空气干燥。表面温度低于0°C处可能结霜。高海拔装备注意防冻。",
+      "technical_note": "露点<0°C意味着霜冻点可以达到。帐篷外表面和装备在黎明前易结冰。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "DEW_003",
+      "metric_id": "dew_point",
+      "condition_expression": "dew_point_2m < -10",
+      "severity": "watch",
+      "plain_language_explanation": "空气极端干燥。皮肤和呼吸道水分流失加快，需注意保温和保湿。高海拔+低露点下冻伤风险增高。",
+      "technical_note": "露点<-10°C属于极端干燥条件。常见于冬季大陆性气团控制区域。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "UV_001",
+      "metric_id": "uv_index",
+      "condition_expression": "uv_index >= 6 AND uv_index < 8",
+      "severity": "watch",
+      "plain_language_explanation": "紫外线强度较高。暴露30分钟可能晒伤。需使用SPF30+防晒霜、戴帽子和太阳镜。",
+      "technical_note": "UV指数6-7为高。海拔3000m紫外线强度比海平面高40%。雪地反射再增加80%。",
+      "source_urls": [
+        "https://www.who.int/uv/"
+      ]
+    },
+    {
+      "rule_id": "UV_002",
+      "metric_id": "uv_index",
+      "condition_expression": "uv_index >= 8 AND uv_index < 11",
+      "severity": "warning",
+      "plain_language_explanation": "紫外线很高。暴露20分钟即可晒伤。高海拔和雪地场景下必须做好全方位防护。",
+      "technical_note": "UV指数8-10为很高。建议SPF50+广谱防晒、UVA/UVB防护镜、遮阳帽。",
+      "source_urls": [
+        "https://www.who.int/uv/"
+      ]
+    },
+    {
+      "rule_id": "UV_003",
+      "metric_id": "uv_index",
+      "condition_expression": "uv_index >= 11",
+      "severity": "danger",
+      "plain_language_explanation": "紫外线极端强。15分钟即可造成晒伤。高海拔雪地环境雪盲风险极高，必须佩戴符合UV400标准的雪镜。",
+      "technical_note": "UV指数11+为极端。常见于2000m+高海拔+雪地结合的场景。雪盲可能在几小时内发生。",
+      "source_urls": [
+        "https://www.who.int/uv/"
+      ]
+    },
+    {
+      "rule_id": "TEMP_001",
+      "metric_id": "temperature_current",
+      "condition_expression": "temperature_2m >= 35",
+      "severity": "watch",
+      "plain_language_explanation": "高温天气。注意热痉挛和中暑风险。增加饮水、减少日晒时段的剧烈活动。",
+      "technical_note": "≥35°C是国家级高温预警标准。热相关疾病发生风险显著上升。",
+      "source_urls": [
+        "https://www.cma.gov.cn/",
+        "https://www.cdc.gov/"
+      ]
+    },
+    {
+      "rule_id": "TEMP_002",
+      "metric_id": "temperature_current",
+      "condition_expression": "temperature_2m >= 40",
+      "severity": "danger",
+      "plain_language_explanation": "极端高温。不建议进行高强度户外活动。热射病风险极高。必须携带充足水源并频繁休息。",
+      "technical_note": "≥40°C为极端高温阈值。核心体温超过40°C即出现热射病症状。",
+      "source_urls": [
+        "https://www.cma.gov.cn/",
+        "https://www.cdc.gov/"
+      ]
+    },
+    {
+      "rule_id": "TEMP_003",
+      "metric_id": "temperature_current",
+      "condition_expression": "temperature_2m <= 0 AND temperature_2m > -10",
+      "severity": "watch",
+      "plain_language_explanation": "零度以下低温。需注意防寒保暖。潮湿衣物在此温度下可导致失温。",
+      "technical_note": "0°C到-10°C为轻度严寒。风速增加会显著加剧风寒效应。",
+      "source_urls": [
+        "https://www.weather.gov/safety/cold"
+      ]
+    },
+    {
+      "rule_id": "TEMP_004",
+      "metric_id": "temperature_current",
+      "condition_expression": "temperature_2m <= -10 AND temperature_2m > -20",
+      "severity": "warning",
+      "plain_language_explanation": "严寒。暴露在外的皮肤在30分钟内可能冻伤。必须穿戴多层防风防寒衣物、面罩和保暖手套。",
+      "technical_note": "-10°C到-20°C为中度严寒。风寒指数（Wind Chill）可使体感温度再低5-15°C。",
+      "source_urls": [
+        "https://www.weather.gov/safety/cold"
+      ]
+    },
+    {
+      "rule_id": "TEMP_005",
+      "metric_id": "temperature_current",
+      "condition_expression": "temperature_2m <= -20",
+      "severity": "danger",
+      "plain_language_explanation": "极寒。暴露的皮肤在10分钟内即可冻伤。强烈建议取消非必要的户外活动。必须使用专业极地装备。",
+      "technical_note": "≤-20°C为严重严寒。中国东北及青藏高原冬季可达此阈值。强风+极寒可致风寒效应降至-40°C以下。",
+      "source_urls": [
+        "https://www.weather.gov/safety/cold"
+      ]
+    },
+    {
+      "rule_id": "TEMP_006",
+      "metric_id": "temperature_apparent",
+      "condition_expression": "apparent_temperature <= -25",
+      "severity": "danger",
+      "plain_language_explanation": "体感温度极低。风寒效应严重，暴露皮肤在5-10分钟内可冻伤。建议完全避免户外活动。",
+      "technical_note": "体感温度基于温度、风速和湿度综合计算。≤-25°C已进入极端风寒警告范围。",
+      "source_urls": [
+        "https://www.weather.gov/safety/cold"
+      ]
+    },
+    {
+      "rule_id": "CLOUD_001",
+      "metric_id": "cloud_cover",
+      "condition_expression": "cloud_cover >= 80",
+      "severity": "info",
+      "plain_language_explanation": "阴天或接近全阴。日照不足，体感偏冷。注意观察云层类型——低层乌云预示降水，高层薄云（卷层云）可能只是过境。",
+      "technical_note": "云量≥80%通常有高度相关性，建议配合降水和能见度综合判断。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "CLOUD_002",
+      "metric_id": "cloud_cover",
+      "condition_expression": "cloud_cover <= 20",
+      "severity": "info",
+      "plain_language_explanation": "晴天或少云。日照充足，紫外线强。注意防晒和补充水分。",
+      "technical_note": "云量≤20%为晴或少云。太阳辐射强度取决于季节和纬度。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "CLOUD_003",
+      "metric_id": "cloud_cover",
+      "condition_expression": "cloud_cover >= 60 AND cloud_cover < 80",
+      "severity": "info",
+      "plain_language_explanation": "多云。云量较多，阳光时有时无。注意云层变化趋势——对流云增多可能是雷暴前兆。",
+      "technical_note": "云量60-80%为多云到阴。需结合云的类型（积云/层云/卷云）判断。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "HUM_001",
+      "metric_id": "relative_humidity",
+      "condition_expression": "relative_humidity_2m > 85",
+      "severity": "info",
+      "plain_language_explanation": "高湿度环境。体感偏闷热或湿冷（视温度）。露水或霜可能在清晨形成，路面湿滑。衣物不易晾干。",
+      "technical_note": "相对湿度>85%接近饱和。清晨常伴随雾或露水。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "HUM_002",
+      "metric_id": "relative_humidity",
+      "condition_expression": "relative_humidity_2m < 30",
+      "severity": "info",
+      "plain_language_explanation": "环境干燥。呼吸道易感到不适，皮肤水分蒸发快。注意及时补水。高海拔+低湿度+大风=加速脱水。",
+      "technical_note": "相对湿度<30%为干燥。常见于大陆性气团控制区域和高原地区。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "COMB_001",
+      "metric_id": null,
+      "condition_expression": "temperature_2m < 0 AND wind_speed_10m >= 20",
+      "severity": "warning",
+      "plain_language_explanation": "低温+大风组合。风寒效应显著，体感温度可能比气温低10-20°C。冻伤风险大增。",
+      "technical_note": "风寒温度（Wind Chill Temperature）使用NWS公式计算。如-10°C+20km/h风≈-18°C体感。",
+      "source_urls": [
+        "https://www.weather.gov/safety/cold"
+      ]
+    },
+    {
+      "rule_id": "COMB_002",
+      "metric_id": null,
+      "condition_expression": "temperature_2m >= 30 AND relative_humidity_2m >= 70",
+      "severity": "watch",
+      "plain_language_explanation": "高温高湿组合，体感比实际温度高3-8°C。中暑和热痉挛风险增大。",
+      "technical_note": "温湿指数（Heat Index）>32°C为警戒水平。35°C+70%RH时体感可达约44°C。",
+      "source_urls": [
+        "https://www.weather.gov/safety/heat"
+      ]
+    },
+    {
+      "rule_id": "COMB_003",
+      "metric_id": null,
+      "condition_expression": "temperature_2m >= 35 AND relative_humidity_2m >= 60",
+      "severity": "danger",
+      "plain_language_explanation": "极端高温高湿。热射病风险极高，不建议进行户外活动。",
+      "technical_note": "Heat Index >40°C为危险级别。人体已无法通过排汗有效降温。",
+      "source_urls": [
+        "https://www.weather.gov/safety/heat"
+      ]
+    },
+    {
+      "rule_id": "COMB_004",
+      "metric_id": null,
+      "condition_expression": "precipitation_amount >= 5 AND visibility < 3",
+      "severity": "warning",
+      "plain_language_explanation": "降雨导致能见度显著下降。路线识别困难，溪流和沟谷可能迅速积水。",
+      "technical_note": "中雨以上+低能见度组合是典型的天气恶化双因子信号。",
+      "source_urls": []
+    },
+    {
+      "rule_id": "COMB_005",
+      "metric_id": null,
+      "condition_expression": "precipitation_amount >= 2 AND wind_speed_10m >= 30",
+      "severity": "warning",
+      "plain_language_explanation": "风雨交加。雨水被风吹成水平方向，即使有雨衣也难完全防护。体感温度大幅下降。",
+      "technical_note": "雨+风的组合可能导致体温迅速流失，失温风险增加。",
+      "source_urls": []
+    },
+    {
+      "rule_id": "ELEV_001",
+      "metric_id": "temperature_current",
+      "condition_expression": "elevation > 3000 AND elevation <= 4500",
+      "severity": "info",
+      "plain_language_explanation": "海拔3000m以上，日气温变化剧烈，午后常有对流云发展。穿衣需多层级应对快速变化的天气。",
+      "technical_note": "高海拔区域气温垂直递减率约-6.5°C/1000m。日出后地表加热可迅速触发对流。",
+      "source_urls": [
+        "https://www.cma.gov.cn/"
+      ]
+    },
+    {
+      "rule_id": "ELEV_002",
+      "metric_id": "temperature_current",
+      "condition_expression": "elevation > 4500",
+      "severity": "warning",
+      "plain_language_explanation": "超高海拔，空气含氧量仅海平面的40-60%。0°C以下温度常见。极端天气可在数分钟内出现。",
+      "technical_note": "海拔4500m+属于极高山。空气密度仅海平面60%左右，风速对体感影响更显著。",
+      "source_urls": [
+        "https://www.cma.gov.cn/"
+      ]
+    },
+    {
+      "rule_id": "CLOUD_004",
+      "metric_id": "cloud_cover",
+      "condition_expression": "cloud_cover_low >= 60",
+      "severity": "info",
+      "plain_language_explanation": "低云量多，说明近地面湿度大，可能伴随雾或微弱降水。低云是影响山区能见度的主要因素。",
+      "technical_note": "低云（≤2km高度）云量≥60%时能见度通常较差。低云频繁在高海拔区域形成。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "TEMP_007",
+      "metric_id": "temperature_current",
+      "condition_expression": "temperature_2m >= 30 AND elevation > 2000",
+      "severity": "info",
+      "plain_language_explanation": "高海拔高温。高海拔日照强烈，尽管气温不高，紫外线和太阳辐射对皮肤伤害更大。",
+      "technical_note": "海拔2000m以上，太阳辐射强。30°C体感可能接近35°C级别的UV伤害。",
+      "source_urls": [
+        "https://www.who.int/uv/"
+      ]
+    },
+    {
+      "rule_id": "VIS_004",
+      "metric_id": "visibility",
+      "condition_expression": "visibility < 10 AND precipitation_amount > 0",
+      "severity": "info",
+      "plain_language_explanation": "降水使能见度下降，但尚未到危险程度。注意行走时保持间距和速度控制。",
+      "technical_note": "降水本身即降低能见度，雨强越大能见度越低。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_007",
+      "metric_id": "precipitation_amount",
+      "condition_expression": "precipitation_sum_24h >= 50",
+      "severity": "danger",
+      "plain_language_explanation": "24小时累计降水量已达50mm以上。山洪和滑坡风险极高。在山区应远离溪谷和沟道。",
+      "technical_note": "24h降水量≥50mm为暴雨量级。若上游有更强降水，山洪可能在下游区域爆发。",
+      "source_urls": [
+        "https://www.cma.gov.cn/",
+        "https://www.weather.gov/flood/"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_008",
+      "metric_id": "precipitation_amount",
+      "condition_expression": "precipitation >= 0 AND snow_fall > 0",
+      "severity": "info",
+      "plain_language_explanation": "降雪而非降雨。需注意雪地行走和防滑，雪盲风险随日照增加。",
+      "technical_note": "气温≤2°C且降水存在时可能为降雪。湿雪重而硬，干雪轻而松。",
+      "source_urls": []
+    },
+    {
+      "rule_id": "PRECIP_009",
+      "metric_id": "precipitation_amount",
+      "condition_expression": "precipitation >= 1 AND temperature_2m > 25 AND elevation < 1000",
+      "severity": "info",
+      "plain_language_explanation": "暖区降水，可能是对流性降雨（骤雨）。特点是来得快去得也快，但雨势可能很大。",
+      "technical_note": "暖季对流降雨往往集中在午后到傍晚。局地性强，预报难度大。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "SUN_001",
+      "metric_id": "sunrise_sunset",
+      "condition_expression": "time >= sunset - 3600 AND time < sunset",
+      "severity": "info",
+      "plain_language_explanation": "距离日落还有不到1小时。日落前30分钟光线快速变暗。建议准备头灯，确认天黑前能到达营地或安全地点。",
+      "technical_note": "日落后约30分钟为航海晨昏蒙影（Civil Twilight）结束，此后无人工光源无法清晰视物。",
+      "source_urls": [
+        "https://www.timeanddate.com/"
+      ]
+    },
+    {
+      "rule_id": "SUN_002",
+      "metric_id": "sunrise_sunset",
+      "condition_expression": "time >= sunrise - 1800 AND time < sunrise",
+      "severity": "info",
+      "plain_language_explanation": "距离日出不到30分钟。天光开始变亮，但地面能见度仍有限。",
+      "technical_note": "日出前30分钟天光逐渐增强，但颜色辨识困难。林中可能仍很暗。",
+      "source_urls": [
+        "https://www.timeanddate.com/"
+      ]
+    },
+    {
+      "rule_id": "WIND_010",
+      "metric_id": "wind_speed",
+      "condition_expression": "wind_speed_10m >= 20 AND location_type IN ('mountain_pass', 'ridge')",
+      "severity": "watch",
+      "plain_language_explanation": "山口/山脊区域风速通常比周边高1-2倍。预报20km/h的风，实际山口感受可能达40km/h。",
+      "technical_note": "峡谷效应和山脊加速效应可使局部风速显著增强。Venturi效应在窄谷中最明显。",
+      "source_urls": []
+    },
+    {
+      "rule_id": "COMB_006",
+      "metric_id": null,
+      "condition_expression": "precipitation_probability >= 50 AND thunderstorm_probability >= 15",
+      "severity": "warning",
+      "plain_language_explanation": "降水和雷暴概率均偏高。可能伴随短时强降水、大风甚至冰雹。",
+      "technical_note": "雨+雷同时预报时对流系统通常较强烈，可能伴有下击暴流。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "PRESS_005",
+      "metric_id": "pressure_msl",
+      "condition_expression": "elevation > 2500 AND pressure_msl > 0",
+      "severity": "info",
+      "plain_language_explanation": "高海拔区域气压值已非海平面修正值，而是站址气压。海拔3000m处气压仅约700hPa。",
+      "technical_note": "Open-Meteo默认提供海平面气压（pressure_msl）。如需站址气压需用surface_pressure。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "rule_id": "MODEL_001",
+      "metric_id": "data_update_time",
+      "condition_expression": "data_age_hours > 12 AND data_age_hours <= 24",
+      "severity": "info",
+      "plain_language_explanation": "当前数据超过12小时未更新。建议参考最近的小时趋势判断天气演变。",
+      "technical_note": "ECMWF每12小时更新一次，GFS每6小时。数据较老时参考价值下降。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "rule_id": "MODEL_002",
+      "metric_id": "data_update_time",
+      "condition_expression": "data_age_hours > 24",
+      "severity": "warning",
+      "plain_language_explanation": "数据超过24小时未更新，预报可信度显著降低。建议从其他源交叉验证。",
+      "technical_note": "天气预报中24小时以上的旧数据基本不可靠。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "rule_id": "HUM_003",
+      "metric_id": "relative_humidity",
+      "condition_expression": "relative_humidity_2m >= 90 AND temperature_2m < 0",
+      "severity": "warning",
+      "plain_language_explanation": "高湿度+零下温度。雾凇或冰晶极易形成，路面可能暗冰。行走需格外注意防滑。",
+      "technical_note": "高湿低温条件下，空气中水汽直接凝华形成雾凇或冰雾。对能见度和路面都有影响。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "COMB_007",
+      "metric_id": null,
+      "condition_expression": "wind_speed_10m >= 40 AND precipitation_amount >= 2 AND temperature_2m > 25",
+      "severity": "info",
+      "plain_language_explanation": "大风伴随降雨，即使温度不低，雨水被风吹打也会快速带走体表热量。",
+      "technical_note": "即使气温25°C，湿风条件下体感可能降至18-20°C。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "rule_id": "ELEV_003",
+      "metric_id": null,
+      "condition_expression": "elevation > 2000 AND cloud_cover < 30",
+      "severity": "info",
+      "plain_language_explanation": "高海拔晴天，昼夜温差可达15-20°C。白天日照强烈，入夜后迅速降温。",
+      "technical_note": "高海拔白天强烈的太阳短波辐射和夜间有效长波辐射共同导致大温差。",
+      "source_urls": [
+        "https://www.cma.gov.cn/"
+      ]
+    },
+    {
+      "rule_id": "PRECIP_010",
+      "metric_id": "precipitation_probability",
+      "condition_expression": "precipitation_probability >= 40 AND wind_speed_10m >= 20",
+      "severity": "watch",
+      "plain_language_explanation": "有降水可能且风不小。风会把雨吹偏，雨衣/雨伞防护效果打折扣。",
+      "technical_note": "中概率降水+中风的组合在山区可能意味着不稳定天气。",
+      "source_urls": []
+    },
+    {
+      "rule_id": "CLOUD_005",
+      "metric_id": "cloud_cover",
+      "condition_expression": "cloud_cover_low >= 80",
+      "severity": "watch",
+      "plain_language_explanation": "低云密布，山体被云雾笼罩。能见度极差，路线极易迷失。在浓雾中切勿贸然行进。",
+      "technical_note": "低云覆盖≥80%意味着山体处于云层中。实际能见度可能<50m。",
+      "source_urls": []
+    },
+    {
+      "rule_id": "TEMP_008",
+      "metric_id": "temperature_current",
+      "condition_expression": "temperature_2m > 0 AND temperature_2m <= 3 AND precipitation_probability >= 40",
+      "severity": "watch",
+      "plain_language_explanation": "接近冰点且有降水可能。如果降水发生，可能为冻雨或雨夹雪，路面极其湿滑。",
+      "technical_note": "0-3°C是冻雨和冰粒形成的临界温度区间。预报不确定时建议按最坏情况准备。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "open_meteo",
+      "name": "Open-Meteo",
+      "country_or_org": "瑞士",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "全球",
+      "strengths": "完全免费开源，30+天气模型聚合，无API Key，CC BY 4.0许可，支持商业使用。每小时/每日/当前数据均可获取。支持自定义模型选择。",
+      "weaknesses": "非商业用途免费10,000次/天，商业用量超限需订阅。数据延迟约30分钟。非原始模型输出，是聚合数据。",
+      "best_for": "核心数据源。作为天气窗口的底层API，99%的字段可通过它获取。ECMWF IFS HRES 9km精细度足够户外场景。",
+      "fields_available": "温度、体感温度、风速、阵风、风向、降水概率、降水量、云量、低/中/高层云、能见度、湿度、露点、气压、UV指数、日出日落、短波辐射、CAPE指数、雷暴参数",
+      "api_or_url": "https://open-meteo.com/en/docs (HTTP GET, 无需认证)",
+      "license_or_usage_note": "CC BY 4.0 — 免费使用和分发，需注明出处。非商业10k次/天。",
+      "recommended_use_in_app": "主力数据源，直接API调用获取所有核心字段"
+    },
+    {
+      "source_id": "ecmwf_ifs",
+      "name": "ECMWF IFS HRES / ENS",
+      "country_or_org": "欧洲中期天气预报中心 (ECMWF)",
+      "source_type": "model",
+      "free_api_available": false,
+      "coverage": "全球",
+      "strengths": "公认全球最准确的预报模型（连续14年评分第一）。HRES 9km分辨率，ENS 51成员集合预报。前5天预报尤为可靠。欧洲山区和温带气旋预报最佳。",
+      "weaknesses": "每日仅更新2次（00/12 UTC），数据新鲜度不如GFS。原始数据需付费（通过Open-Meteo间接免费获取）。在热带地区的表现提升空间较大。",
+      "best_for": "作为 Open-Meteo 的后端模型，通过 Open-Meteo 间接使用。",
+      "fields_available": "温度（2m/850hPa等）、风速（10m/80m/120m）、风向、阵风、降水、云量、能见度、湿度、露点、气压、海平面气压、CAPE、UV、短波辐射、长波辐射、雪深、土壤温湿度",
+      "api_or_url": "https://www.ecmwf.int/（原始数据付费）→ 通过 Open-Meteo 免费获取",
+      "license_or_usage_note": "ECMWF 数据许可协议限制直接分发。Open-Meteo 以 CC BY 4.0 形式提供聚合数据。",
+      "recommended_use_in_app": "通过 Open-Meteo 的 model=ecmwf_ifas_hres 参数指定使用。不直接调用 ECMWF API。"
+    },
+    {
+      "source_id": "noaa_gfs",
+      "name": "GFS / NCEP (NOAA)",
+      "country_or_org": "美国国家海洋和大气管理局 (NOAA)",
+      "source_type": "model",
+      "free_api_available": true,
+      "coverage": "全球",
+      "strengths": "完全免费开源，每日更新4次（00/06/12/18 UTC），数据新鲜度最好。热带气旋和极端天气预报表现优秀。16天预报范围较长。",
+      "weaknesses": "准确率落后ECMWF约1天（即GFS第6天≈ECMWF第7天）。第7天后精度显著下降。有冷偏差倾向。",
+      "best_for": "Open-Meteo 后备模型，或当需要最新数据（ECMWF未更新时段）。长时效趋势参考（7天后）。",
+      "fields_available": "温度、风速、阵风、风向、降水、云量、能见度、湿度、露点、气压、UV、CAPE、短波辐射、土壤温湿度、雪深",
+      "api_or_url": "https://www.ncei.noaa.gov/ → 通过 Open-Meteo 免费获取",
+      "license_or_usage_note": "NOAA 数据完全公开免费，无使用限制。",
+      "recommended_use_in_app": "通过 Open-Meteo 的 model=gfs_seamless 参数使用。作为 ECMWF 不可用时的回退选项。"
+    },
+    {
+      "source_id": "dwd_icon",
+      "name": "ICON / DWD",
+      "country_or_org": "德国气象局 (DWD)",
+      "source_type": "model",
+      "free_api_available": true,
+      "coverage": "全球 + 欧洲区域",
+      "strengths": "非流体静力核心精确处理复杂地形。ICON-EU 6.5km分辨率，ICON-D2 2km涵盖中欧。欧洲山地、谷风和地形降水预报优于ECMWF和GFS。开源。",
+      "weaknesses": "全球范围仅7.5天预报。欧洲以外地区表现不如ECMWF/GFS。用户社区较小。",
+      "best_for": "欧洲山地场景的补充参考。通过 Open-Meteo 可选 ICON 模型。",
+      "fields_available": "温度、风速、阵风、风向、降水、云量、湿度、露点、气压、CAPE、短波辐射、雪深",
+      "api_or_url": "https://www.dwd.de/ → 通过 Open-Meteo 免费获取",
+      "license_or_usage_note": "DWD 数据免费开源，许可协议允许再分发。",
+      "recommended_use_in_app": "通过 Open-Meteo 的 model=icon_seamless 参数使用。欧洲区域可指定 icon-eu 提高精度。"
+    },
+    {
+      "source_id": "windy_api",
+      "name": "Windy (API)",
+      "country_or_org": "捷克/英国 (Windy.com, 现隶属 meteoblue)",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "全球",
+      "strengths": "可视化展示极佳，20+气象参数，支持点预报和地图图层。Webcam API 提供全球实景。已被 meteoblue 收购，后端实力增强。",
+      "weaknesses": "免费版功能有限。API 需要 Key。价格和限制不透明。更适合做可视化展示而非纯数据源。",
+      "best_for": "外部参考入口。用户可在 Windy 查看天气地图和动态可视化，但不作为自有数据源。",
+      "fields_available": "温度、风速、阵风、风向、降水、气压、湿度、云量、浪高、UV、空气质量、卫星云图、雷达",
+      "api_or_url": "https://api.windy.com/（需注册获取 API Key）",
+      "license_or_usage_note": "Windy API 有免费额度限制，商业用途需订阅。",
+      "recommended_use_in_app": "不直接调用。可作为「查看详情」外部跳转链接。"
+    },
+    {
+      "source_id": "meteoblue_api",
+      "name": "Meteoblue Weather API",
+      "country_or_org": "瑞士 (meteoblue AG)",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "全球",
+      "strengths": "多模型融合引擎，提供高分辨率降尺度预报。免费 API 支持基本变量（温度、降水、风、湿度、气压、UV等）。全球 100万+ 地点覆盖。",
+      "weaknesses": "免费版仅约 1,000-5,000 次/月，限制较多。高级功能需付费（100€/月起）。",
+      "best_for": "Open-Meteo 的补充或备选。如 Open-Meteo 不可用时可切换。",
+      "fields_available": "温度、风速、风向、降水、湿度、气压、UV、云量、能见度（部分）、日出日落（免费版有限）",
+      "api_or_url": "https://business.meteoblue.com/products/weather-apis/free-weather-api（需注册获取 API Key）",
+      "license_or_usage_note": "免费 API 有调用限额。Enterprise 版 €100/月起。",
+      "recommended_use_in_app": "备选数据源。默认为 Open-Meteo，meteoblue 作为故障转移。"
+    },
+    {
+      "source_id": "amap_weather",
+      "name": "高德天气 / 高德定位",
+      "country_or_org": "中国 (高德)",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "中国（含港澳台）",
+      "strengths": "中国最易接入的免费天气API。每日30万次调用免费。支持全国行政区划adcode查询。实况+未来4天预报。数据来自中国气象局。",
+      "weaknesses": "仅覆盖中国。字段有限（温度、天气现象、风向、风力、湿度）。没有阵风、降水概率、能见度等专业字段。需要高德API Key。",
+      "best_for": "中国地区的地理编码/逆地理编码（小地名→坐标）。作为中国天气数据的辅助验证源。",
+      "fields_available": "实时气温、天气现象（晴/多云/雨等）、风向、风力等级、湿度、城市名称",
+      "api_or_url": "https://lbs.amap.com/api/webservice/guide/api/weatherinfo（需注册获取 API Key）",
+      "license_or_usage_note": "每日免费30万次，需注册高德开放平台。超出需购买配额。",
+      "recommended_use_in_app": "主要用于中国地理编码（小地名搜索→坐标），天气数据仅辅助验证，主力仍用 Open-Meteo。"
+    },
+    {
+      "source_id": "weather_com_cn",
+      "name": "中国天气网 / 中国气象局 (CMA)",
+      "country_or_org": "中国 (中国气象局)",
+      "source_type": "reference",
+      "free_api_available": true,
+      "coverage": "中国",
+      "strengths": "官方权威数据源。全国2400+市县预报、灾害预警、雷达图、卫星云图。12379国家预警发布。",
+      "weaknesses": "公开API不稳定，需通过第三方（高德/和风/心知）间接获取。官方开放平台（data.cma.cn）需注册和审批。开放数据偏历史气象，实时API缺乏。",
+      "best_for": "中国灾害预警的外部参考入口。用户可点击跳转到中国天气网查看预警详情。不作为自有API调用。",
+      "fields_available": "天气现象、温度、风速风力、风向、湿度、气压、降水、灾害预警（仅限中国城市级）",
+      "api_or_url": "https://www.weather.com.cn/（网页，无稳定公开API接口）",
+      "license_or_usage_note": "网页数据免费浏览。不可用于商业自用API调用。",
+      "recommended_use_in_app": "不直接API调用。提供外部链接跳转到中国天气网查看详细预警。"
+    },
+    {
+      "source_id": "qweather",
+      "name": "和风天气 (QWeather)",
+      "country_or_org": "中国",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "全球（中国为主）",
+      "strengths": "中国覆盖最细的天气API之一。3-5km网格级预报。20万+城市。分钟级降水、AQI、灾害预警。免费版1,000次/天。",
+      "weaknesses": "免费额度较少。商业用途需付费（按量计费）。部分高级功能（分钟级降水、预警）需专业版。",
+      "best_for": "中国场景下的 Open-Meteo 补充。如果需要中国发布的官方预警或分钟级降水，和风是优质选择。",
+      "fields_available": "当前天气、小时/日预报、生活指数、空气质量、灾害预警、分钟级降水、太阳辐射、潮汐",
+      "api_or_url": "https://dev.qweather.com/（需注册获取 API Key）",
+      "license_or_usage_note": "免费版 1,000次/天。付费版按量计费。",
+      "recommended_use_in_app": "中国场景的补充。和风地理编码对中国小地名亦可。"
+    },
+    {
+      "source_id": "seniverse",
+      "name": "心知天气 (Seniverse)",
+      "country_or_org": "中国",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "全球（中国为重点）",
+      "strengths": "中国气象局官方授权合作伙伴。5km网格级预报。分钟级更新。提供历史天气、空气质量、45天长期预报。",
+      "weaknesses": "免费版限制较多。付费较高。部分数据仅供企业用户。",
+      "best_for": "中国区域的天气数据备选源。",
+      "fields_available": "天气实况、逐时预报、15天逐日预报、空气质量、生活指数、气象灾害预警",
+      "api_or_url": "https://www.seniverse.com/api（需注册获取 API Key）",
+      "license_or_usage_note": "免费版有限制调用次数。付费版按月/按量计费。",
+      "recommended_use_in_app": "中国区域备选数据源，优先级低于 Open-Meteo 和 高德。"
+    },
+    {
+      "source_id": "google_weather",
+      "name": "Google Weather API",
+      "country_or_org": "美国 (Google)",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "全球",
+      "strengths": "Google Maps Platform 的一部分。支持当前天气、日/小时预报、历史数据、公共预警。北美数据尤为准确。",
+      "weaknesses": "在中国大陆不可用。需 Google Cloud 账号和付费（有免费额度）。数据来源不透明。",
+      "best_for": "海外用户备选。不适合作为主力。",
+      "fields_available": "温度、体感温度、风速、风向、湿度、降水、气压、UV、日出日落、预警",
+      "api_or_url": "https://developers.google.com/maps/documentation/weather（需 Google Cloud 账号）",
+      "license_or_usage_note": "Google Cloud 定价，有免费试用额度。中国不可用。",
+      "recommended_use_in_app": "暂不接入。Open-Meteo 已足够覆盖全球。"
+    },
+    {
+      "source_id": "open_meteo_geocoding",
+      "name": "Open-Meteo Geocoding API",
+      "country_or_org": "瑞士 (Open-Meteo)",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "全球",
+      "strengths": "与天气 API 同源，免费无 Key。支持地名搜索→经纬度。支持多语言（含中文）。响应速度快。",
+      "weaknesses": "小地名覆盖不如高德全面。中国村镇级地点可能匹配不到或返回不准确。",
+      "best_for": "海外地点的地理编码。中国小地名需用高德辅助。",
+      "fields_available": "地名、国家、纬度、经度、海拔、时区、语言",
+      "api_or_url": "https://open-meteo.com/en/docs/geocoding-api（HTTP GET，无需认证）",
+      "license_or_usage_note": "免费无限制，CC BY 4.0。",
+      "recommended_use_in_app": "海外地点搜索。中国地点使用高德地理编码。"
+    },
+    {
+      "source_id": "nws_api",
+      "name": "US National Weather Service API",
+      "country_or_org": "美国 (NOAA/NWS)",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "美国本土及领地",
+      "strengths": "完全免费，无使用限制。提供点预报、网格预报、观测、预警、雷达等完整数据。HRRR 3km分辨率北美最优。",
+      "weaknesses": "仅覆盖美国。字段命名与美国标准一致。",
+      "best_for": "美国地点可做 Open-Meteo 的参考验证。",
+      "fields_available": "温度、降水、风、阵风、湿度、气压、能见度、UV、预警、观测",
+      "api_or_url": "https://www.weather.gov/documentation/services-web-api（免费，无需认证）",
+      "license_or_usage_note": "完全免费公开，无使用限制。",
+      "recommended_use_in_app": "暂不作为自有数据源。美国地点测试时可用作验证。"
+    },
+    {
+      "source_id": "openweathermap",
+      "name": "OpenWeatherMap",
+      "country_or_org": "英国 (OpenWeather Ltd)",
+      "source_type": "api",
+      "free_api_available": true,
+      "coverage": "全球",
+      "strengths": "知名免费天气API，每月免费100万次调用。1分钟更新。支持当前天气、小时/日预报、历史数据、空气质量。JSON 格式友好。",
+      "weaknesses": "免费API仅60次/分钟。小地点坐标搜索不如专门地理编码API。部分高级功能（分钟级降水、预警）需付费。",
+      "best_for": "全球备选数据源。验证Open-Meteo数据的交叉参考。",
+      "fields_available": "温度、体感温度、最高/最低温、气压、湿度、风速、风向、阵风（付费）、云量、能见度、降水（1h/3h）、日出日落",
+      "api_or_url": "https://openweathermap.org/api（需注册获取 API Key）",
+      "license_or_usage_note": "免费版 1,000,000次/月，60次/分钟。付费按量计费。",
+      "recommended_use_in_app": "暂不优先接入。Open-Meteo 覆盖更完整且无需 Key。"
+    }
+  ],
+  "ui": [
+    {
+      "section_id": "search",
+      "section_name_zh": "搜索入口",
+      "mobile_title": "查询地点天气",
+      "short_description": "搜索村镇、景区、山口、营地或直接输入经纬度",
+      "empty_state_text": "在地点框中搜索，或输入经纬度（如 30.996, 102.830）",
+      "loading_text": "正在搜索地点…",
+      "error_text": "未找到该地点。试试输入更完整的名称或使用经纬度坐标。",
+      "data_note": "使用 Open-Meteo Geocoding API + 高德地图地理编码"
+    },
+    {
+      "section_id": "current_conditions",
+      "section_name_zh": "当前实况",
+      "mobile_title": "实况",
+      "short_description": "当前位置当前时刻的气温、体感温度、风速和天气现象",
+      "empty_state_text": "暂无实况数据",
+      "loading_text": "正在获取当前天气…",
+      "error_text": "当前天气数据不可用",
+      "data_note": "Open-Meteo current_weather + hourly 最新数据，数据延迟约30分钟"
+    },
+    {
+      "section_id": "hourly_forecast",
+      "section_name_zh": "小时预报",
+      "mobile_title": "逐小时",
+      "short_description": "未来48小时逐小时温度、降水概率和风的变化曲线",
+      "empty_state_text": "暂无小时预报",
+      "loading_text": "正在加载小时趋势…",
+      "error_text": "小时预报数据加载失败",
+      "data_note": "Open-Meteo 逐小时数据，默认展示未来48小时。前24小时精度较高，后24小时供趋势参考。"
+    },
+    {
+      "section_id": "wind_section",
+      "section_name_zh": "风场",
+      "mobile_title": "风力风向",
+      "short_description": "风速、阵风、风向和风力等级。山口、垭口实际风速可能高于预报值。",
+      "empty_state_text": "暂无风场数据",
+      "loading_text": "获取风场数据…",
+      "error_text": "风场数据不可用",
+      "data_note": "Open-Meteo wind_speed_10m + wind_gusts_10m + wind_direction_10m。山区实际风感可能更强。"
+    },
+    {
+      "section_id": "precipitation",
+      "section_name_zh": "降水",
+      "mobile_title": "降水",
+      "short_description": "降水概率和预计降水量。概率≥60%时建议准备雨具。",
+      "empty_state_text": "暂无降水预测",
+      "loading_text": "获取降水数据…",
+      "error_text": "降水数据不可用",
+      "data_note": "降水概率来自集合预报（ECMWF ENS）统计，降水量为小时累计值。"
+    },
+    {
+      "section_id": "thunderstorm",
+      "section_name_zh": "雷暴",
+      "mobile_title": "雷暴",
+      "short_description": "雷暴发生概率。雷暴是山区最危险的天气现象之一。",
+      "empty_state_text": "暂无雷暴信号",
+      "loading_text": "正在监测雷暴风险…",
+      "error_text": "雷暴数据不可用",
+      "data_note": "基于CAPE指数和集合预报统计的雷暴概率。实际局部雷暴可能不在此预报覆盖范围内。"
+    },
+    {
+      "section_id": "visibility",
+      "section_name_zh": "能见度",
+      "mobile_title": "能见度",
+      "short_description": "水平能见度距离。低能见度是山区迷路的主要原因之一。",
+      "empty_state_text": "暂无能见度数据",
+      "loading_text": "获取能见度数据…",
+      "error_text": "能见度数据不可用",
+      "data_note": "能见度数据来源于全球模型，山区局部雾可能未被精确捕捉。"
+    },
+    {
+      "section_id": "cloud",
+      "section_name_zh": "云量",
+      "mobile_title": "云量",
+      "short_description": "总云量和低/中/高层云分布。云量骤增可能是天气变化的信号。",
+      "empty_state_text": "暂无云量数据",
+      "loading_text": "获取云量数据…",
+      "error_text": "云量数据不可用",
+      "data_note": "Open-Meteo 提供总云量（cloud_cover）和分层云量（low/mid/high）。"
+    },
+    {
+      "section_id": "humidity_dew",
+      "section_name_zh": "湿度/露点",
+      "mobile_title": "湿度",
+      "short_description": "相对湿度和露点温度。露点比湿度更能反映空气的干湿程度。",
+      "empty_state_text": "暂无湿度数据",
+      "loading_text": "获取湿度数据…",
+      "error_text": "湿度数据不可用",
+      "data_note": "相对湿度和露点温度来源于Open-Meteo。露点<0°C可能有霜冻。"
+    },
+    {
+      "section_id": "pressure",
+      "section_name_zh": "气压",
+      "mobile_title": "气压",
+      "short_description": "海平面气压和24小时变化趋势。气压骤降是天气转坏的早期信号。",
+      "empty_state_text": "暂无气压数据",
+      "loading_text": "获取气压数据…",
+      "error_text": "气压数据不可用",
+      "data_note": "Open-Meteo 海平面气压（pressure_msl）。24小时变化≥8hPa需关注天气变化。"
+    },
+    {
+      "section_id": "sunrise_sunset",
+      "section_name_zh": "日出日落",
+      "mobile_title": "日照",
+      "short_description": "今日日出、日落时间和日照时长。规划出行和营地时间的参考。",
+      "empty_state_text": "暂无日照数据",
+      "loading_text": "获取日出日落数据…",
+      "error_text": "日照数据不可用",
+      "data_note": "基于地理位置和日期计算，与天气无关。"
+    },
+    {
+      "section_id": "daily_7d",
+      "section_name_zh": "7日趋势",
+      "mobile_title": "7天",
+      "short_description": "未来7天最高温/最低温/降水趋势概览。中长期路线规划参考。",
+      "empty_state_text": "暂无预报数据",
+      "loading_text": "正在加载7日趋势…",
+      "error_text": "7日趋势数据不可用",
+      "data_note": "前5天预报可靠度较高，后2天为趋势参考。ECMWF/GFS双模型对比降低不确定性。"
+    },
+    {
+      "section_id": "data_sources",
+      "section_name_zh": "专业来源",
+      "mobile_title": "数据源",
+      "short_description": "当前天气数据来源于哪些模型和机构，以及各模型的特点。",
+      "empty_state_text": null,
+      "loading_text": null,
+      "error_text": null,
+      "data_note": "默认使用 Open-Meteo 聚合数据，自动选择最佳模型。数据遵循 CC BY 4.0 许可。"
+    },
+    {
+      "section_id": "data_disclaimer",
+      "section_name_zh": "数据说明",
+      "mobile_title": "说明",
+      "short_description": "天气数据和使用的限制说明",
+      "empty_state_text": null,
+      "loading_text": null,
+      "error_text": null,
+      "data_note": "天气数据来源于开源气象模型聚合，不保证100%准确。山区天气变数大，预报仅供参考。数据来源：Open-Meteo CC BY 4.0"
+    },
+    {
+      "section_id": "uv",
+      "section_name_zh": "紫外线",
+      "mobile_title": "紫外线",
+      "short_description": "当前和每日最大紫外线指数。高海拔+雪地场景UV加倍。",
+      "empty_state_text": "暂无紫外线数据",
+      "loading_text": "获取紫外线数据…",
+      "error_text": "紫外线数据不可用",
+      "data_note": "来自Open-Meteo/CAMS紫外线预报。海拔3000m紫外线比海面高约40%。"
+    }
+  ],
+  "layout_priority": [
+    {
+      "section_id": "current_conditions",
+      "priority": "P0",
+      "mobile_position": "first_screen",
+      "must_show_metrics": [
+        "temperature_current",
+        "temperature_apparent",
+        "wind_speed",
+        "wind_gust",
+        "precipitation_probability",
+        "precipitation_amount"
+      ],
+      "optional_metrics": [
+        "wind_direction",
+        "cloud_cover",
+        "relative_humidity"
+      ],
+      "hide_on_first_screen": [],
+      "reason": "第一屏核心。用户打开天气页最关心的就是当前气温、风速和有没有雨。体感温度和阵风对户外场景比实际温/持续风更重要。"
+    },
+    {
+      "section_id": "hourly_forecast",
+      "priority": "P0",
+      "mobile_position": "meteogram",
+      "must_show_metrics": [
+        "temperature_current",
+        "precipitation_probability",
+        "wind_speed"
+      ],
+      "optional_metrics": [
+        "precipitation_amount",
+        "wind_gust",
+        "cloud_cover"
+      ],
+      "hide_on_first_screen": [],
+      "reason": "小时趋势是第二视觉层次。温度+降水概率+风速三条曲线是用户判断之后几小时天气的核心。"
+    },
+    {
+      "section_id": "daily_7d",
+      "priority": "P1",
+      "mobile_position": "meteogram",
+      "must_show_metrics": [
+        "temperature_max",
+        "temperature_min",
+        "precipitation_probability"
+      ],
+      "optional_metrics": [
+        "wind_speed",
+        "precipitation_amount"
+      ],
+      "hide_on_first_screen": [],
+      "reason": "7日趋势放在小时趋势之后，折线图展示每日高低温+降水。前5天可信度较高。"
+    },
+    {
+      "section_id": "wind_section",
+      "priority": "P1",
+      "mobile_position": "detail_grid",
+      "must_show_metrics": [
+        "wind_speed",
+        "wind_gust",
+        "wind_direction"
+      ],
+      "optional_metrics": [],
+      "hide_on_first_screen": [
+        "wind_gust",
+        "wind_direction"
+      ],
+      "reason": "风速已在第一屏显示，阵风和风向放在详情网格。用户需要时可以展开查看完整风场。"
+    },
+    {
+      "section_id": "precipitation",
+      "priority": "P0",
+      "mobile_position": "first_screen",
+      "must_show_metrics": [
+        "precipitation_probability",
+        "precipitation_amount"
+      ],
+      "optional_metrics": [
+        "thunderstorm_probability"
+      ],
+      "hide_on_first_screen": [],
+      "reason": "降水和雷暴是户外决策关键。降水概率和降水量放在第一屏，雷暴概率作为边栏展示。"
+    },
+    {
+      "section_id": "thunderstorm",
+      "priority": "P0",
+      "mobile_position": "first_screen",
+      "must_show_metrics": [
+        "thunderstorm_probability"
+      ],
+      "optional_metrics": [],
+      "hide_on_first_screen": [],
+      "reason": "雷暴是山区最危险的天气之一。即使概率不高也应在第一屏显示，用颜色编码（绿/黄/红）来降低数字焦虑。"
+    },
+    {
+      "section_id": "visibility",
+      "priority": "P0",
+      "mobile_position": "detail_grid",
+      "must_show_metrics": [
+        "visibility"
+      ],
+      "optional_metrics": [],
+      "hide_on_first_screen": [
+        "visibility"
+      ],
+      "reason": "能见度对导航重要但只在低值时需要关注。默认不占第一屏空间，低于阈值时自动弹到第一屏。"
+    },
+    {
+      "section_id": "cloud",
+      "priority": "P1",
+      "mobile_position": "detail_grid",
+      "must_show_metrics": [
+        "cloud_cover"
+      ],
+      "optional_metrics": [],
+      "hide_on_first_screen": [
+        "cloud_cover"
+      ],
+      "reason": "云量信息在判断日出/星空时有用，但非常规必要性。放在详情网格。"
+    },
+    {
+      "section_id": "humidity_dew",
+      "priority": "P1",
+      "mobile_position": "detail_grid",
+      "must_show_metrics": [
+        "relative_humidity",
+        "dew_point"
+      ],
+      "optional_metrics": [],
+      "hide_on_first_screen": [
+        "relative_humidity",
+        "dew_point"
+      ],
+      "reason": "湿度/露点对舒适度判断有用但不是第一屏必需。结合低温露点数据自动提示霜冻风险。"
+    },
+    {
+      "section_id": "pressure",
+      "priority": "P1",
+      "mobile_position": "detail_grid",
+      "must_show_metrics": [
+        "pressure_msl"
+      ],
+      "optional_metrics": [],
+      "hide_on_first_screen": [
+        "pressure_msl"
+      ],
+      "reason": "气压专业性强，大多数用户不直接关注。但当24h变化≥8hPa时自动提升显示优先级。"
+    },
+    {
+      "section_id": "sunrise_sunset",
+      "priority": "P1",
+      "mobile_position": "first_screen",
+      "must_show_metrics": [
+        "sunrise_sunset"
+      ],
+      "optional_metrics": [
+        "uv_index"
+      ],
+      "hide_on_first_screen": [],
+      "reason": "日出日落虽非实时气象数据，但对出行规划极重要，占用空间极小。放在第一屏边缘位置（底部工具条）。"
+    },
+    {
+      "section_id": "uv",
+      "priority": "P1",
+      "mobile_position": "detail_grid",
+      "must_show_metrics": [
+        "uv_index"
+      ],
+      "optional_metrics": [],
+      "hide_on_first_screen": [
+        "uv_index"
+      ],
+      "reason": "紫外线在高海拔/雪地场景关键但非常规需要。高于6时自动提示。"
+    },
+    {
+      "section_id": "data_sources",
+      "priority": "P2",
+      "mobile_position": "source_drawer",
+      "must_show_metrics": [
+        "model_source",
+        "data_update_time"
+      ],
+      "optional_metrics": [],
+      "hide_on_first_screen": [
+        "model_source",
+        "data_update_time"
+      ],
+      "reason": "数据来源和更新时间是专业用户需要的信息。放在底部抽屉或页面底部。"
+    }
+  ],
+  "meteogram_layers": [
+    {
+      "layer_id": "temp_feels_like",
+      "name_zh": "温度/体感温度",
+      "metrics": [
+        "temperature_2m",
+        "apparent_temperature"
+      ],
+      "chart_type": "line",
+      "color_role": "temperature",
+      "mobile_height_px": 140,
+      "reading_tip": "实线=气温，虚线=体感温度。两条线差距越大，风或湿度对体感的影响越明显。"
+    },
+    {
+      "layer_id": "precipitation_prob",
+      "name_zh": "降水概率/降水量",
+      "metrics": [
+        "precipitation_probability",
+        "precipitation"
+      ],
+      "chart_type": "bar",
+      "color_role": "precipitation",
+      "mobile_height_px": 100,
+      "reading_tip": "蓝色柱=降水概率（左侧y轴），≥60%时建议备雨具。点击柱可查看具体毫米数。"
+    },
+    {
+      "layer_id": "wind_speed_gust",
+      "name_zh": "风速/阵风",
+      "metrics": [
+        "wind_speed_10m",
+        "wind_gusts_10m"
+      ],
+      "chart_type": "line",
+      "color_role": "wind",
+      "mobile_height_px": 120,
+      "reading_tip": "实线=持续风速，浅色区域=阵风区间。阵风比持续风速高50-100%时山口/垭口风感更强。"
+    },
+    {
+      "layer_id": "wind_direction_barb",
+      "name_zh": "风向",
+      "metrics": [
+        "wind_direction_10m"
+      ],
+      "chart_type": "wind_barb",
+      "color_role": "wind",
+      "mobile_height_px": 60,
+      "reading_tip": "箭头指向来风方向（北=箭头向上）。锯齿标记风速等级。"
+    },
+    {
+      "layer_id": "cloud_cover",
+      "name_zh": "云量",
+      "metrics": [
+        "cloud_cover",
+        "cloud_cover_low",
+        "cloud_cover_mid",
+        "cloud_cover_high"
+      ],
+      "chart_type": "band",
+      "color_role": "cloud",
+      "mobile_height_px": 80,
+      "reading_tip": "深色=总云量。低/中/高层云分层显示。低云密集且急剧增多可能是降水前兆。"
+    },
+    {
+      "layer_id": "visibility",
+      "name_zh": "能见度",
+      "metrics": [
+        "visibility"
+      ],
+      "chart_type": "line",
+      "color_role": "visibility",
+      "mobile_height_px": 80,
+      "reading_tip": "数值越低雾越浓。<1km（红色区域）为浓雾，迷路风险高。<100m为极浓雾，应停止行进。"
+    },
+    {
+      "layer_id": "pressure",
+      "name_zh": "气压",
+      "metrics": [
+        "pressure_msl"
+      ],
+      "chart_type": "line",
+      "color_role": "pressure",
+      "mobile_height_px": 80,
+      "reading_tip": "气压骤降（24h≥8hPa）预示天气转坏。骤升（≥10hPa）预示高压到来天气转好但可能有大风。"
+    },
+    {
+      "layer_id": "humidity_dew",
+      "name_zh": "湿度/露点",
+      "metrics": [
+        "relative_humidity_2m",
+        "dew_point_2m"
+      ],
+      "chart_type": "line",
+      "color_role": "humidity",
+      "mobile_height_px": 80,
+      "reading_tip": "实线=相对湿度，虚线=露点。露点<0°C可能结霜。温度与露点越接近湿度越大。"
+    }
+  ],
+  "geocode_fallbacks": [
+    {
+      "query_zh": "四姑娘山镇",
+      "preferred_query": "四川省阿坝州小金县四姑娘山镇",
+      "fallback_queries": [
+        "日隆镇",
+        "四姑娘山 日隆"
+      ],
+      "manual_lat": 30.996,
+      "manual_lng": 102.83,
+      "ambiguity_note": "原名日隆镇，部分旧资料仍用原名",
+      "display_name": "四川省阿坝州小金县四姑娘山镇",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "雨崩村",
+      "preferred_query": "云南省迪庆州德钦县云岭乡雨崩村",
+      "fallback_queries": [
+        "云南德钦 雨崩村",
+        "梅里雪山 雨崩村",
+        "迪庆 雨崩村"
+      ],
+      "manual_lat": 28.405,
+      "manual_lng": 98.767,
+      "ambiguity_note": "云南 德钦",
+      "display_name": "云南省迪庆州德钦县云岭乡雨崩村",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "哈巴村",
+      "preferred_query": "云南省迪庆州香格里拉市三坝乡哈巴村",
+      "fallback_queries": [
+        "哈巴雪山 哈巴村",
+        "香格里拉 哈巴村"
+      ],
+      "manual_lat": 27.379,
+      "manual_lng": 100.137,
+      "ambiguity_note": "不要混淆为新疆哈巴河县",
+      "display_name": "云南省迪庆州香格里拉市三坝乡哈巴村",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "武功山",
+      "preferred_query": "高德地理编码: 武功山",
+      "fallback_queries": [
+        "江西武功山金顶"
+      ],
+      "manual_lat": 27.455,
+      "manual_lng": 114.173,
+      "ambiguity_note": "武功山范围大，需明确是金顶（1918m）还是山脚（如萍乡登山口）。",
+      "display_name": "江西武功山金顶",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "虎跳峡",
+      "preferred_query": "高德地理编码: 虎跳峡",
+      "fallback_queries": [
+        "云南省香格里拉市虎跳峡景区"
+      ],
+      "manual_lat": 27.236,
+      "manual_lng": 100.132,
+      "ambiguity_note": "分上/中/下虎跳（跨度约20km）。坐标取自维基百科（27°14′9.37″N 100°7′56.93″E），为虎跳峡峡谷中心点。桥头镇入口约27.18,100.13。",
+      "display_name": "云南省香格里拉市虎跳峡景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "独库公路",
+      "preferred_query": "高德地理编码: 独库公路",
+      "fallback_queries": [
+        "新疆独山子独库公路起点"
+      ],
+      "manual_lat": 43.0,
+      "manual_lng": 84.5,
+      "ambiguity_note": "独库公路全长561km，跨越多个气候区。需根据具体路段查询。默认北端起点独山子。",
+      "display_name": "新疆独山子独库公路起点",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "青海湖",
+      "preferred_query": "高德地理编码: 青海湖",
+      "fallback_queries": [
+        "青海省青海湖景区"
+      ],
+      "manual_lat": 36.873,
+      "manual_lng": 100.232,
+      "ambiguity_note": "坐标取自高德API「青海湖景区」兴趣点（100.232,36.873），即二郎剑景区入口。原估算偏差约23km，已修正。环湖368km东西端天气可能不同。",
+      "display_name": "青海省青海湖景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "冈仁波齐",
+      "preferred_query": "高德地理编码: 冈仁波齐",
+      "fallback_queries": [
+        "西藏阿里地区普兰县冈仁波齐"
+      ],
+      "manual_lat": 31.067,
+      "manual_lng": 81.312,
+      "ambiguity_note": "位置敏感，部分地图可能有偏移。转山路线起点塔尔钦（31.020/81.180）。",
+      "display_name": "西藏阿里地区普兰县冈仁波齐",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "纳木错",
+      "preferred_query": "高德地理编码: 纳木错",
+      "fallback_queries": [
+        "西藏当雄县纳木错扎西半岛"
+      ],
+      "manual_lat": 30.786,
+      "manual_lng": 91.111,
+      "ambiguity_note": "面积1920km²，高德返回纳木错乡坐标（91.111,30.786）。原手工估算坐标偏差约50km，已通过高德API修正。",
+      "display_name": "西藏当雄县纳木错扎西半岛",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "贡嘎山",
+      "preferred_query": "高德地理编码: 贡嘎山",
+      "fallback_queries": [
+        "四川省甘孜州康定市贡嘎山"
+      ],
+      "manual_lat": 29.59,
+      "manual_lng": 101.88,
+      "ambiguity_note": "贡嘎主峰（7556m）和贡嘎山镇（29.600/101.880）坐标不同。子梅垭口是观景点。",
+      "display_name": "四川省甘孜州康定市贡嘎山",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "鳌太线",
+      "preferred_query": "高德地理编码: 鳌太线",
+      "fallback_queries": [
+        "陕西省太白县塘口村鳌太线起点"
+      ],
+      "manual_lat": 34.0,
+      "manual_lng": 107.5,
+      "ambiguity_note": "鳌太线跨越秦岭主脊（塘口村-拔仙台），全长约80km。坐标取线路中点。小地名地图收录。",
+      "display_name": "陕西省太白县塘口村鳌太线起点",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "墨脱",
+      "preferred_query": "高德地理编码: 墨脱",
+      "fallback_queries": [
+        "西藏林芝市墨脱县"
+      ],
+      "manual_lat": 29.325,
+      "manual_lng": 95.333,
+      "ambiguity_note": "墨脱县 vs 墨脱镇。派镇→墨脱徒步路线全长约110km。",
+      "display_name": "西藏林芝市墨脱县",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "喀拉峻草原",
+      "preferred_query": "高德地理编码: 喀拉峻草原",
+      "fallback_queries": [
+        "新疆伊犁州特克斯县喀拉峻草原"
+      ],
+      "manual_lat": 43.0,
+      "manual_lng": 82.5,
+      "ambiguity_note": "喀拉峻草原范围大（约2000km²），核心区在特克斯县南。",
+      "display_name": "新疆伊犁州特克斯县喀拉峻草原",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "黄山光明顶",
+      "preferred_query": "安徽省黄山市黄山区黄山风景区光明顶",
+      "fallback_queries": [
+        "黄山 光明顶",
+        "黄山气象站"
+      ],
+      "manual_lat": 30.133,
+      "manual_lng": 118.167,
+      "ambiguity_note": "光明顶（1860m）与黄山北大门（约200m）温差可达12°C",
+      "display_name": "安徽省黄山市黄山区黄山风景区光明顶",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "大理古城",
+      "preferred_query": "高德地理编码: 大理古城",
+      "fallback_queries": [
+        "云南省大理古城"
+      ],
+      "manual_lat": 25.678,
+      "manual_lng": 100.23,
+      "ambiguity_note": "大理古城 vs 大理市（下关），坐标不同。",
+      "display_name": "云南省大理古城",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "泸沽湖",
+      "preferred_query": "高德地理编码: 泸沽湖",
+      "fallback_queries": [
+        "云南省宁蒗县泸沽湖"
+      ],
+      "manual_lat": 27.7,
+      "manual_lng": 100.8,
+      "ambiguity_note": "跨云南和四川两省，分属宁蒗县和盐源县。",
+      "display_name": "云南省宁蒗县泸沽湖",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "长白山天池",
+      "preferred_query": "高德地理编码: 长白山天池",
+      "fallback_queries": [
+        "吉林省长白山天池"
+      ],
+      "manual_lat": 42.005,
+      "manual_lng": 128.057,
+      "ambiguity_note": "北坡/西坡/南坡入口不同。天池海拔2189m。",
+      "display_name": "吉林省长白山天池",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "稻城亚丁",
+      "preferred_query": "高德地理编码: 稻城亚丁",
+      "fallback_queries": [
+        "四川省甘孜州稻城亚丁景区"
+      ],
+      "manual_lat": 28.45,
+      "manual_lng": 100.35,
+      "ambiguity_note": "亚丁村 vs 稻城县城（香格里拉镇）。亚丁村海拔4060m。",
+      "display_name": "四川省甘孜州稻城亚丁景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "珠峰大本营",
+      "preferred_query": "高德地理编码: 珠峰大本营",
+      "fallback_queries": [
+        "西藏定日县珠穆朗玛峰大本营"
+      ],
+      "manual_lat": 28.14,
+      "manual_lng": 86.85,
+      "ambiguity_note": "北坡大本营（5200m）vs 南坡（尼泊尔侧）。中国侧在定日县。",
+      "display_name": "西藏定日县珠穆朗玛峰大本营",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "峨眉山金顶",
+      "preferred_query": "高德地理编码: 峨眉山金顶",
+      "fallback_queries": [
+        "四川省峨眉山金顶"
+      ],
+      "manual_lat": 29.52,
+      "manual_lng": 103.34,
+      "ambiguity_note": "金顶（3079m）vs 山脚报国寺。山上常年云雾。",
+      "display_name": "四川省峨眉山金顶",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "梅里雪山飞来寺",
+      "preferred_query": "高德地理编码: 梅里雪山飞来寺",
+      "fallback_queries": [
+        "云南省德钦县飞来寺"
+      ],
+      "manual_lat": 28.33,
+      "manual_lng": 98.87,
+      "ambiguity_note": "飞来寺观景台是最佳雪山观景点。",
+      "display_name": "云南省德钦县飞来寺",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "扎尕那",
+      "preferred_query": "甘肃省甘南州迭部县益哇镇扎尕那",
+      "fallback_queries": [
+        "甘南 扎尕那",
+        "迭部 扎尕那"
+      ],
+      "manual_lat": 34.25,
+      "manual_lng": 103.21,
+      "ambiguity_note": "甘肃 迭部",
+      "display_name": "甘肃省甘南州迭部县益哇镇扎尕那",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "亚丁村",
+      "preferred_query": "高德地理编码: 亚丁村",
+      "fallback_queries": [
+        "四川省稻城县亚丁村"
+      ],
+      "manual_lat": 28.42,
+      "manual_lng": 100.37,
+      "ambiguity_note": "亚丁村（4060m）在稻城亚丁景区内。",
+      "display_name": "四川省稻城县亚丁村",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "林芝",
+      "preferred_query": "高德地理编码: 林芝",
+      "fallback_queries": [],
+      "manual_lat": 29.65,
+      "manual_lng": 94.36,
+      "ambiguity_note": null,
+      "display_name": "林芝",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "色达五明佛学院",
+      "preferred_query": "高德地理编码: 色达五明佛学院",
+      "fallback_queries": [
+        "四川省色达县五明佛学院"
+      ],
+      "manual_lat": 32.27,
+      "manual_lng": 100.32,
+      "ambiguity_note": "色达县 vs 佛学院。佛学院海拔约4000m。",
+      "display_name": "四川省色达县五明佛学院",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "腾冲",
+      "preferred_query": "高德地理编码: 腾冲",
+      "fallback_queries": [],
+      "manual_lat": 25.03,
+      "manual_lng": 98.49,
+      "ambiguity_note": null,
+      "display_name": "腾冲",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "羊卓雍错",
+      "preferred_query": "高德地理编码: 羊卓雍错",
+      "fallback_queries": [
+        "西藏浪卡子县羊卓雍错"
+      ],
+      "manual_lat": 28.88,
+      "manual_lng": 90.6,
+      "ambiguity_note": "湖面狭长，观景点多在岗巴拉山口（29.000/90.760）。",
+      "display_name": "西藏浪卡子县羊卓雍错",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "张掖丹霞",
+      "preferred_query": "高德地理编码: 张掖丹霞",
+      "fallback_queries": [
+        "甘肃省张掖市临泽县七彩丹霞景区"
+      ],
+      "manual_lat": 38.92,
+      "manual_lng": 100.13,
+      "ambiguity_note": "七彩丹霞 vs 冰沟丹霞。七彩丹霞在临泽县。",
+      "display_name": "甘肃省张掖市临泽县七彩丹霞景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "赛里木湖",
+      "preferred_query": "新疆博尔塔拉州博乐市赛里木湖",
+      "fallback_queries": [
+        "博乐 赛里木湖",
+        "果子沟 赛里木湖"
+      ],
+      "manual_lat": 44.58,
+      "manual_lng": 81.19,
+      "ambiguity_note": "新疆 博乐",
+      "display_name": "新疆博尔塔拉州博乐市赛里木湖",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "漠河",
+      "preferred_query": "高德地理编码: 漠河",
+      "fallback_queries": [],
+      "manual_lat": 52.97,
+      "manual_lng": 122.53,
+      "ambiguity_note": null,
+      "display_name": "漠河",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "吐鲁番",
+      "preferred_query": "高德地理编码: 吐鲁番",
+      "fallback_queries": [],
+      "manual_lat": 42.95,
+      "manual_lng": 89.18,
+      "ambiguity_note": null,
+      "display_name": "吐鲁番",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "九寨沟",
+      "preferred_query": "高德地理编码: 九寨沟",
+      "fallback_queries": [
+        "四川省九寨沟景区"
+      ],
+      "manual_lat": 33.25,
+      "manual_lng": 103.92,
+      "ambiguity_note": "沟口（2000m）vs 原始森林（3000m），高差大。",
+      "display_name": "四川省九寨沟景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "喀纳斯湖",
+      "preferred_query": "高德地理编码: 喀纳斯湖",
+      "fallback_queries": [
+        "新疆阿勒泰喀纳斯景区"
+      ],
+      "manual_lat": 48.82,
+      "manual_lng": 87.02,
+      "ambiguity_note": "喀纳斯景区范围大，坐标取观鱼台。",
+      "display_name": "新疆阿勒泰喀纳斯景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "华山",
+      "preferred_query": "高德地理编码: 华山",
+      "fallback_queries": [
+        "陕西省华阴市华山风景区"
+      ],
+      "manual_lat": 34.48,
+      "manual_lng": 110.08,
+      "ambiguity_note": "北峰最低（1614m），南峰最高（2154m）。",
+      "display_name": "陕西省华阴市华山风景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "张家界天子山",
+      "preferred_query": "高德地理编码: 张家界天子山",
+      "fallback_queries": [
+        "湖南省张家界天子山景区"
+      ],
+      "manual_lat": 29.4,
+      "manual_lng": 110.46,
+      "ambiguity_note": "天子山 vs 袁家界/杨家界。",
+      "display_name": "湖南省张家界天子山景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "梅里雪山雨崩上村",
+      "preferred_query": "高德地理编码: 梅里雪山雨崩上村",
+      "fallback_queries": [
+        "云南省德钦县雨崩上村"
+      ],
+      "manual_lat": 28.407,
+      "manual_lng": 98.764,
+      "ambiguity_note": "与下雨崩村（28.387/98.773）相距1.5km",
+      "display_name": "云南省德钦县雨崩上村",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "雨崩下村",
+      "preferred_query": "高德地理编码: 雨崩下村",
+      "fallback_queries": [
+        "云南省德钦县雨崩下村"
+      ],
+      "manual_lat": 28.387,
+      "manual_lng": 98.773,
+      "ambiguity_note": "与上雨崩村相距1.5km，神瀑路线起点。",
+      "display_name": "云南省德钦县雨崩下村",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "库拉岗日",
+      "preferred_query": "手动输入坐标",
+      "fallback_queries": [
+        "西藏洛扎县库拉岗日"
+      ],
+      "manual_lat": 28.23,
+      "manual_lng": 90.58,
+      "ambiguity_note": "山南市洛扎县境内。高德查无结果，非行政区划名。需用洛扎县坐标或手动输入坐标查询。",
+      "display_name": "西藏洛扎县库拉岗日",
+      "source_urls": []
+    },
+    {
+      "query_zh": "他念他翁",
+      "preferred_query": "手动输入坐标",
+      "fallback_queries": [],
+      "manual_lat": 29.0,
+      "manual_lng": 98.5,
+      "ambiguity_note": "横断山脉中等难度徒步路线，起终点坐标不统一。坐标取线路中点。不属于行政区划名，高德/Open-Meteo可能都搜不到。",
+      "display_name": "他念他翁",
+      "source_urls": []
+    },
+    {
+      "query_zh": "乌孙古道",
+      "preferred_query": "手动输入坐标",
+      "fallback_queries": [],
+      "manual_lat": 42.2,
+      "manual_lng": 82.5,
+      "ambiguity_note": "乌孙古道穿越天山，南北入口不同。坐标取路线中点。非行政区划名，需用坐标直查。",
+      "display_name": "乌孙古道",
+      "source_urls": []
+    },
+    {
+      "query_zh": "夏塔古道",
+      "preferred_query": "高德地理编码: 夏塔古道",
+      "fallback_queries": [
+        "新疆昭苏县夏塔古道"
+      ],
+      "manual_lat": 42.4,
+      "manual_lng": 80.7,
+      "ambiguity_note": "昭苏县夏塔乡。夏塔是景区名，高德可搜。坐标取景区大门。",
+      "display_name": "新疆昭苏县夏塔古道",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "太白山拔仙台",
+      "preferred_query": "高德地理编码: 太白山拔仙台",
+      "fallback_queries": [
+        "陕西省眉县太白山拔仙台"
+      ],
+      "manual_lat": 33.95,
+      "manual_lng": 107.77,
+      "ambiguity_note": "拔仙台（3767m）是太白山最高峰，秦岭主峰。",
+      "display_name": "陕西省眉县太白山拔仙台",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "漓江杨堤",
+      "preferred_query": "高德地理编码: 漓江杨堤",
+      "fallback_queries": [
+        "广西桂林阳朔县杨堤码头"
+      ],
+      "manual_lat": 25.1,
+      "manual_lng": 110.43,
+      "ambiguity_note": "杨堤是漓江徒步经典起点。",
+      "display_name": "广西桂林阳朔县杨堤码头",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "小五台山",
+      "preferred_query": "高德地理编码: 小五台山",
+      "fallback_queries": [
+        "河北省蔚县小五台山"
+      ],
+      "manual_lat": 39.92,
+      "manual_lng": 115.02,
+      "ambiguity_note": "东台（2882m）是河北最高峰。自然保护区有时不开放。",
+      "display_name": "河北省蔚县小五台山",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "海螺沟",
+      "preferred_query": "高德地理编码: 海螺沟",
+      "fallback_queries": [
+        "四川省泸定县海螺沟景区"
+      ],
+      "manual_lat": 29.55,
+      "manual_lng": 102.02,
+      "ambiguity_note": "冰川末端 vs 景区大门，海拔高差约2000m。",
+      "display_name": "四川省泸定县海螺沟景区",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "莫干山",
+      "preferred_query": "高德地理编码: 莫干山",
+      "fallback_queries": [],
+      "manual_lat": 30.63,
+      "manual_lng": 119.85,
+      "ambiguity_note": null,
+      "display_name": "莫干山",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "雪乡",
+      "preferred_query": "高德地理编码: 雪乡",
+      "fallback_queries": [
+        "黑龙江省海林市雪乡"
+      ],
+      "manual_lat": 44.35,
+      "manual_lng": 128.95,
+      "ambiguity_note": "双峰林场（海林市），冬季积雪可达2m。",
+      "display_name": "黑龙江省海林市雪乡",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "五台山",
+      "preferred_query": "高德地理编码: 五台山",
+      "fallback_queries": [
+        "山西省五台山北台顶"
+      ],
+      "manual_lat": 39.0,
+      "manual_lng": 113.58,
+      "ambiguity_note": "北台顶（3061m）vs 台怀镇（1700m），温差可达15°C。",
+      "display_name": "山西省五台山北台顶",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "雅鲁藏布大峡谷",
+      "preferred_query": "高德地理编码: 雅鲁藏布大峡谷",
+      "fallback_queries": [
+        "西藏米林县派镇雅鲁藏布大峡谷"
+      ],
+      "manual_lat": 29.5,
+      "manual_lng": 95.0,
+      "ambiguity_note": "大峡谷入口处取派镇坐标。全长约500km。",
+      "display_name": "西藏米林县派镇雅鲁藏布大峡谷",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "念青唐古拉山",
+      "preferred_query": "高德地理编码: 念青唐古拉山",
+      "fallback_queries": [
+        "西藏当雄县念青唐古拉山"
+      ],
+      "manual_lat": 30.4,
+      "manual_lng": 90.6,
+      "ambiguity_note": "山脉长约700km，主峰7111m。坐标取当雄附近观景点。",
+      "display_name": "西藏当雄县念青唐古拉山",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "阿里暗夜公园",
+      "preferred_query": "高德地理编码: 阿里暗夜公园",
+      "fallback_queries": [
+        "西藏阿里地区暗夜公园"
+      ],
+      "manual_lat": 31.47,
+      "manual_lng": 80.14,
+      "ambiguity_note": "阿里地区狮泉河镇附近。海拔4200m。",
+      "display_name": "西藏阿里地区暗夜公园",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "理塘",
+      "preferred_query": "高德地理编码: 理塘",
+      "fallback_queries": [],
+      "manual_lat": 30.0,
+      "manual_lng": 100.27,
+      "ambiguity_note": null,
+      "display_name": "理塘",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "党岭",
+      "preferred_query": "四川省甘孜州丹巴县党岭村",
+      "fallback_queries": [
+        "丹巴 党岭村",
+        "党岭葫芦海"
+      ],
+      "manual_lat": 31.072,
+      "manual_lng": 101.407,
+      "ambiguity_note": "全国有多处同名党岭（陕西、广东、河南），务必加四川丹巴前缀。光搜「党岭」可能匹配错误",
+      "display_name": "四川省甘孜州丹巴县党岭村",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "年保玉则",
+      "preferred_query": "高德地理编码: 年保玉则",
+      "fallback_queries": [
+        "青海省久治县年保玉则"
+      ],
+      "manual_lat": 33.25,
+      "manual_lng": 101.13,
+      "ambiguity_note": "久治县，又名年宝叶什则。已关闭，但天气查询需求仍在。",
+      "display_name": "青海省久治县年保玉则",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "天山天池",
+      "preferred_query": "高德地理编码: 天山天池",
+      "fallback_queries": [
+        "新疆阜康市天山天池"
+      ],
+      "manual_lat": 43.88,
+      "manual_lng": 88.13,
+      "ambiguity_note": "天池海拔1910m，阜康市境内。",
+      "display_name": "新疆阜康市天山天池",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "喀什古城",
+      "preferred_query": "高德地理编码: 喀什古城",
+      "fallback_queries": [],
+      "manual_lat": 39.47,
+      "manual_lng": 75.98,
+      "ambiguity_note": null,
+      "display_name": "喀什古城",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "西双版纳热带雨林",
+      "preferred_query": "高德地理编码: 西双版纳热带雨林",
+      "fallback_queries": [
+        "云南省景洪市西双版纳热带雨林"
+      ],
+      "manual_lat": 21.85,
+      "manual_lng": 100.8,
+      "ambiguity_note": "范围大，可取景洪市（21.980/100.790）或勐腊县。",
+      "display_name": "云南省景洪市西双版纳热带雨林",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "黄果树瀑布",
+      "preferred_query": "高德地理编码: 黄果树瀑布",
+      "fallback_queries": [],
+      "manual_lat": 25.98,
+      "manual_lng": 105.67,
+      "ambiguity_note": null,
+      "display_name": "黄果树瀑布",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "柴达木盆地翡翠湖",
+      "preferred_query": "高德地理编码: 柴达木盆地翡翠湖",
+      "fallback_queries": [
+        "青海省大柴旦翡翠湖"
+      ],
+      "manual_lat": 37.38,
+      "manual_lng": 95.28,
+      "ambiguity_note": "大柴旦翡翠湖 vs 茫崖翡翠湖。坐标取大柴旦。",
+      "display_name": "青海省大柴旦翡翠湖",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "东极岛",
+      "preferred_query": "高德地理编码: 东极岛",
+      "fallback_queries": [
+        "浙江省舟山市东极岛庙子湖"
+      ],
+      "manual_lat": 30.18,
+      "manual_lng": 122.68,
+      "ambiguity_note": "东极岛含庙子湖/东福山/青浜等岛屿。坐标取庙子湖（主岛）。",
+      "display_name": "浙江省舟山市东极岛庙子湖",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "湄洲岛",
+      "preferred_query": "高德地理编码: 湄洲岛",
+      "fallback_queries": [],
+      "manual_lat": 25.0,
+      "manual_lng": 119.12,
+      "ambiguity_note": null,
+      "display_name": "湄洲岛",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "虎跳峡halfway客栈",
+      "preferred_query": "高德地理编码: 虎跳峡halfway客栈",
+      "fallback_queries": [
+        "云南虎跳峡halfway客栈"
+      ],
+      "manual_lat": 27.241,
+      "manual_lng": 100.141,
+      "ambiguity_note": "Halfway是虎跳峡高路徒步经典中途客栈。坐标来自Columbia官方路书PDF：27°14′29.13″N, 100°08′29.41″E。验证通过。",
+      "display_name": "云南虎跳峡halfway客栈",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "大理苍山洗马潭",
+      "preferred_query": "高德地理编码: 大理苍山洗马潭",
+      "fallback_queries": [
+        "云南省大理苍山洗马潭"
+      ],
+      "manual_lat": 25.688,
+      "manual_lng": 100.1,
+      "ambiguity_note": "苍山洗马潭海拔3920m，苍山最高索道终点。",
+      "display_name": "云南省大理苍山洗马潭",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "玉龙雪山云杉坪",
+      "preferred_query": "高德地理编码: 玉龙雪山云杉坪",
+      "fallback_queries": [
+        "云南省丽江市玉龙雪山云杉坪"
+      ],
+      "manual_lat": 27.02,
+      "manual_lng": 100.23,
+      "ambiguity_note": "云杉坪（3240m）vs 冰川公园（4680m）vs 蓝月谷。",
+      "display_name": "云南省丽江市玉龙雪山云杉坪",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "南迦巴瓦峰",
+      "preferred_query": "高德地理编码: 南迦巴瓦峰",
+      "fallback_queries": [
+        "西藏米林县索松村南迦巴瓦观景台"
+      ],
+      "manual_lat": 29.63,
+      "manual_lng": 95.06,
+      "ambiguity_note": "雅鲁藏布大峡谷内，主峰7782m。观景台在索松村（29.550/95.000）。",
+      "display_name": "西藏米林县索松村南迦巴瓦观景台",
+      "source_urls": [
+        "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      ]
+    },
+    {
+      "query_zh": "Everest Base Camp (Nepal)",
+      "preferred_query": "Open-Meteo Geocoding: Everest Base Camp (Nepal)",
+      "fallback_queries": [
+        "27.988,86.925"
+      ],
+      "manual_lat": 27.988,
+      "manual_lng": 86.925,
+      "ambiguity_note": "南坡大本营（5364m），尼泊尔侧。",
+      "display_name": "27.988,86.925",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Annapurna Base Camp",
+      "preferred_query": "尼泊尔安纳普尔纳保护区ABC大本营",
+      "fallback_queries": [
+        "ABC Nepal",
+        "Annapurna Sanctuary"
+      ],
+      "manual_lat": 28.53,
+      "manual_lng": 83.88,
+      "ambiguity_note": "尼泊尔 Gandaki",
+      "display_name": "尼泊尔安纳普尔纳保护区ABC大本营",
+      "source_urls": [
+        "https://open-meteo.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "Chamonix-Mont-Blanc",
+      "preferred_query": "Open-Meteo Geocoding: Chamonix-Mont-Blanc",
+      "fallback_queries": [
+        "Chamonix, France"
+      ],
+      "manual_lat": 45.923,
+      "manual_lng": 6.869,
+      "ambiguity_note": null,
+      "display_name": "Chamonix, France",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Zermatt",
+      "preferred_query": "Open-Meteo Geocoding: Zermatt",
+      "fallback_queries": [
+        "Zermatt, Switzerland"
+      ],
+      "manual_lat": 46.02,
+      "manual_lng": 7.749,
+      "ambiguity_note": null,
+      "display_name": "Zermatt, Switzerland",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Kilimanjaro Base Camp",
+      "preferred_query": "Open-Meteo Geocoding: Kilimanjaro Base Camp",
+      "fallback_queries": [
+        "-3.067,37.350"
+      ],
+      "manual_lat": -3.067,
+      "manual_lng": 37.35,
+      "ambiguity_note": "马兰古路线大本营。赤道附近高海拔气候极端。",
+      "display_name": "-3.067,37.350",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Patagonia Torres del Paine",
+      "preferred_query": "Open-Meteo Geocoding: Patagonia Torres del Paine",
+      "fallback_queries": [
+        "Torres del Paine, Chile"
+      ],
+      "manual_lat": -51.0,
+      "manual_lng": -73.0,
+      "ambiguity_note": "巴塔哥尼亚区域天气极不稳定，W路线经典。",
+      "display_name": "Torres del Paine, Chile",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Inca Trail Machu Picchu",
+      "preferred_query": "Open-Meteo Geocoding: Inca Trail Machu Picchu",
+      "fallback_queries": [
+        "Cusco, Inca Trail, Peru"
+      ],
+      "manual_lat": -13.16,
+      "manual_lng": -72.53,
+      "ambiguity_note": "印加古道起点（KM82） vs 马丘比丘本身。",
+      "display_name": "Cusco, Inca Trail, Peru",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Mount Fuji 5th Station",
+      "preferred_query": "Open-Meteo Geocoding: Mount Fuji 5th Station",
+      "fallback_queries": [
+        "Mount Fuji Yoshida Trail 5th Station"
+      ],
+      "manual_lat": 35.36,
+      "manual_lng": 138.73,
+      "ambiguity_note": "富士山五合目（2305m）vs 山顶（3776m）。",
+      "display_name": "Mount Fuji Yoshida Trail 5th Station",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Dolomites Alta Via 1",
+      "preferred_query": "Open-Meteo Geocoding: Dolomites Alta Via 1",
+      "fallback_queries": [
+        "Cortina d'Ampezzo, Italy"
+      ],
+      "manual_lat": 46.55,
+      "manual_lng": 12.2,
+      "ambiguity_note": "Dolomites区域很大，坐标取Cortina d'Ampezzo（Lago di Braies起点）。",
+      "display_name": "Cortina d'Ampezzo, Italy",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Grand Canyon South Rim",
+      "preferred_query": "Open-Meteo Geocoding: Grand Canyon South Rim",
+      "fallback_queries": [
+        "Grand Canyon South Rim, Arizona"
+      ],
+      "manual_lat": 36.06,
+      "manual_lng": -112.14,
+      "ambiguity_note": "South Rim（2100m）vs North Rim（2500m）vs 谷底（800m）。温差巨大。",
+      "display_name": "Grand Canyon South Rim, Arizona",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Yosemite Valley",
+      "preferred_query": "Open-Meteo Geocoding: Yosemite Valley",
+      "fallback_queries": [
+        "Yosemite Valley, California"
+      ],
+      "manual_lat": 37.74,
+      "manual_lng": -119.58,
+      "ambiguity_note": "Yosemite Valley vs Tuolumne Meadows（2600m）。",
+      "display_name": "Yosemite Valley, California",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Banff Lake Louise",
+      "preferred_query": "Open-Meteo Geocoding: Banff Lake Louise",
+      "fallback_queries": [
+        "Lake Louise, Alberta, Canada"
+      ],
+      "manual_lat": 51.41,
+      "manual_lng": -116.22,
+      "ambiguity_note": null,
+      "display_name": "Lake Louise, Alberta, Canada",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Snowdonia National Park",
+      "preferred_query": "Open-Meteo Geocoding: Snowdonia National Park",
+      "fallback_queries": [
+        "Snowdonia, Wales, UK"
+      ],
+      "manual_lat": 53.07,
+      "manual_lng": -4.08,
+      "ambiguity_note": "Snowdon峰（1085m）是威尔士最高点。",
+      "display_name": "Snowdonia, Wales, UK",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Trolltunga, Norway",
+      "preferred_query": "Open-Meteo Geocoding: Trolltunga, Norway",
+      "fallback_queries": [
+        "Trolltunga, Odda, Norway"
+      ],
+      "manual_lat": 60.13,
+      "manual_lng": 6.75,
+      "ambiguity_note": "巨魔之舌徒步起点Skjeggedal。",
+      "display_name": "Trolltunga, Odda, Norway",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Mount Cook Village",
+      "preferred_query": "Open-Meteo Geocoding: Mount Cook Village",
+      "fallback_queries": [
+        "Mount Cook Village, New Zealand"
+      ],
+      "manual_lat": -43.73,
+      "manual_lng": 170.1,
+      "ambiguity_note": null,
+      "display_name": "Mount Cook Village, New Zealand",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Rinjani Crater Rim",
+      "preferred_query": "Open-Meteo Geocoding: Rinjani Crater Rim",
+      "fallback_queries": [
+        "Rinjani, Lombok, Indonesia"
+      ],
+      "manual_lat": -8.4,
+      "manual_lng": 116.45,
+      "ambiguity_note": "龙目岛林贾尼火山，徒步路线起点Sembalun或Senaru。",
+      "display_name": "Rinjani, Lombok, Indonesia",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Mount Kinabalu",
+      "preferred_query": "Open-Meteo Geocoding: Mount Kinabalu",
+      "fallback_queries": [
+        "Kinabalu Park, Sabah, Malaysia"
+      ],
+      "manual_lat": 6.075,
+      "manual_lng": 116.558,
+      "ambiguity_note": "京那巴鲁山（4095m），婆罗洲最高峰。",
+      "display_name": "Kinabalu Park, Sabah, Malaysia",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Salkantay Trek, Peru",
+      "preferred_query": "Open-Meteo Geocoding: Salkantay Trek, Peru",
+      "fallback_queries": [
+        "Mollepata, Cusco, Peru"
+      ],
+      "manual_lat": -13.33,
+      "manual_lng": -72.6,
+      "ambiguity_note": "Salkantay徒步是马丘比丘替代路线。",
+      "display_name": "Mollepata, Cusco, Peru",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Bergen, Norway",
+      "preferred_query": "Open-Meteo Geocoding: Bergen, Norway",
+      "fallback_queries": [],
+      "manual_lat": 60.39,
+      "manual_lng": 5.33,
+      "ambiguity_note": null,
+      "display_name": "Bergen, Norway",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Death Valley Furnace Creek",
+      "preferred_query": "Open-Meteo Geocoding: Death Valley Furnace Creek",
+      "fallback_queries": [
+        "Furnace Creek, Death Valley, California"
+      ],
+      "manual_lat": 36.46,
+      "manual_lng": -116.87,
+      "ambiguity_note": "Furnace Creek是死谷游客中心所在地",
+      "display_name": "Furnace Creek, Death Valley, California",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Sahara Desert Merzouga",
+      "preferred_query": "Open-Meteo Geocoding: Sahara Desert Merzouga",
+      "fallback_queries": [
+        "Merzouga, Morocco"
+      ],
+      "manual_lat": 31.1,
+      "manual_lng": -4.01,
+      "ambiguity_note": "撒哈拉沙漠边缘的Erg Chebbi沙丘区。",
+      "display_name": "Merzouga, Morocco",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "Reykjavik, Iceland",
+      "preferred_query": "Open-Meteo Geocoding: Reykjavik, Iceland",
+      "fallback_queries": [],
+      "manual_lat": 64.146,
+      "manual_lng": -21.94,
+      "ambiguity_note": null,
+      "display_name": "Reykjavik, Iceland",
+      "source_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ]
+    },
+    {
+      "query_zh": "上雨崩村",
+      "preferred_query": "云南省迪庆州德钦县云岭乡上雨崩村",
+      "fallback_queries": [
+        "雨崩上村",
+        "德钦 上雨崩"
+      ],
+      "manual_lat": 28.407,
+      "manual_lng": 98.764,
+      "ambiguity_note": "与下雨崩村（28.387/98.773）相距1.5km，天气可能略有差异",
+      "display_name": "云南省迪庆州德钦县云岭乡上雨崩村",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "下雨崩村",
+      "preferred_query": "云南省迪庆州德钦县云岭乡下雨崩村",
+      "fallback_queries": [
+        "雨崩下村",
+        "德钦 下雨崩"
+      ],
+      "manual_lat": 28.387,
+      "manual_lng": 98.773,
+      "ambiguity_note": "与上雨崩村（28.407/98.764）相距1.5km，天气可能略有差异",
+      "display_name": "云南省迪庆州德钦县云岭乡下雨崩村",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "塔公",
+      "preferred_query": "四川省甘孜州康定市塔公镇",
+      "fallback_queries": [
+        "塔公草原",
+        "康定 塔公"
+      ],
+      "manual_lat": 30.33,
+      "manual_lng": 101.56,
+      "ambiguity_note": "青海同名地点很多，务必加四川/康定前缀",
+      "display_name": "四川省甘孜州康定市塔公镇",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "禾木",
+      "preferred_query": "新疆阿勒泰地区布尔津县禾木喀纳斯蒙古族乡",
+      "fallback_queries": [
+        "禾木村",
+        "喀纳斯 禾木",
+        "阿勒泰 禾木"
+      ],
+      "manual_lat": 48.57,
+      "manual_lng": 87.43,
+      "ambiguity_note": "新疆 布尔津",
+      "display_name": "新疆阿勒泰地区布尔津县禾木喀纳斯蒙古族乡",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "尼汝村",
+      "preferred_query": "云南省迪庆州香格里拉市洛吉乡尼汝村",
+      "fallback_queries": [
+        "香格里拉 尼汝村",
+        "尼汝徒步"
+      ],
+      "manual_lat": 27.92,
+      "manual_lng": 100.03,
+      "ambiguity_note": "云南 香格里拉",
+      "display_name": "云南省迪庆州香格里拉市洛吉乡尼汝村",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "尼色峨",
+      "preferred_query": "四川省凉山州冕宁县尼色峨",
+      "fallback_queries": [],
+      "manual_lat": 28.38,
+      "manual_lng": 102.0,
+      "ambiguity_note": "极偏门地点，高德可能查不到。多数户外资料仅用坐标参考",
+      "display_name": "四川省凉山州冕宁县尼色峨",
+      "source_urls": [],
+      "confidence": "D"
+    },
+    {
+      "query_zh": "然乌湖",
+      "preferred_query": "西藏昌都市八宿县然乌镇",
+      "fallback_queries": [
+        "G318 然乌湖",
+        "八宿 然乌"
+      ],
+      "manual_lat": 29.5,
+      "manual_lng": 96.8,
+      "ambiguity_note": "西藏 八宿",
+      "display_name": "西藏昌都市八宿县然乌镇",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "念青唐古拉山观景台",
+      "preferred_query": "西藏当雄县G109国道念青唐古拉山观景台",
+      "fallback_queries": [
+        "纳木错 念青唐古拉",
+        "G109 观景台"
+      ],
+      "manual_lat": 30.48,
+      "manual_lng": 90.58,
+      "ambiguity_note": "观景台是点位不是行政区划，地图上可能标注不精确",
+      "display_name": "西藏当雄县G109国道念青唐古拉山观景台",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "珠峰大本营（北坡）",
+      "preferred_query": "西藏日喀则市定日县珠峰大本营",
+      "fallback_queries": [
+        "珠穆朗玛峰大本营",
+        "定日 珠峰大本营"
+      ],
+      "manual_lat": 28.14,
+      "manual_lng": 86.85,
+      "ambiguity_note": "西藏侧（北坡）和尼泊尔侧（南坡）坐标不同，需明确是哪一侧",
+      "display_name": "西藏日喀则市定日县珠峰大本营",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "珠峰大本营（南坡）",
+      "preferred_query": "尼泊尔萨加玛塔国家公园（南坡 EBC）",
+      "fallback_queries": [
+        "Everest Base Camp",
+        "EBC Nepal"
+      ],
+      "manual_lat": 27.988,
+      "manual_lng": 86.925,
+      "ambiguity_note": "尼泊尔侧坐标与西藏侧不同",
+      "display_name": "尼泊尔萨加玛塔国家公园（南坡 EBC）",
+      "source_urls": [
+        "https://open-meteo.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "子梅垭口",
+      "preferred_query": "四川省甘孜州康定市贡嘎山乡子梅垭口",
+      "fallback_queries": [
+        "贡嘎 子梅垭口",
+        "康定 子梅垭口"
+      ],
+      "manual_lat": 29.6,
+      "manual_lng": 101.82,
+      "ambiguity_note": "高海拔垭口（4500m），不是行政村，高德/地图搜到的位置可能有几百米偏差",
+      "display_name": "四川省甘孜州康定市贡嘎山乡子梅垭口",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "折多山垭口",
+      "preferred_query": "四川省甘孜州康定市G318折多山垭口",
+      "fallback_queries": [
+        "G318 折多山",
+        "康定 折多山"
+      ],
+      "manual_lat": 30.07,
+      "manual_lng": 101.8,
+      "ambiguity_note": "垭口坐标与折多山主峰不同",
+      "display_name": "四川省甘孜州康定市G318折多山垭口",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "东达山垭口",
+      "preferred_query": "西藏昌都市左贡县G318东达山垭口",
+      "fallback_queries": [
+        "G318 东达山",
+        "左贡 东达山"
+      ],
+      "manual_lat": 30.0,
+      "manual_lng": 97.5,
+      "ambiguity_note": "G318川藏线最高点（5130m），垭口坐标较精确但地名标注不统一",
+      "display_name": "西藏昌都市左贡县G318东达山垭口",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "狼塔C线入口",
+      "preferred_query": "新疆昌吉州呼图壁县狼塔徒步起点",
+      "fallback_queries": [
+        "狼塔C 入口",
+        "呼图壁 狼塔"
+      ],
+      "manual_lat": 43.4,
+      "manual_lng": 86.5,
+      "ambiguity_note": "不是标准地名，高德搜索可能失败。坐标取徒步起点（呼图壁河谷）",
+      "display_name": "新疆昌吉州呼图壁县狼塔徒步起点",
+      "source_urls": [],
+      "confidence": "C"
+    },
+    {
+      "query_zh": "扎溪卡",
+      "preferred_query": "四川省甘孜州石渠县扎溪卡草原",
+      "fallback_queries": [
+        "石渠 扎溪卡",
+        "扎溪卡草原"
+      ],
+      "manual_lat": 33.0,
+      "manual_lng": 98.5,
+      "ambiguity_note": "偏门地名，高德可能只能搜到石渠县级别",
+      "display_name": "四川省甘孜州石渠县扎溪卡草原",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "C"
+    },
+    {
+      "query_zh": "雅拉雪山观景台",
+      "preferred_query": "四川省甘孜州康定市塔公镇雅拉雪山观景台",
+      "fallback_queries": [
+        "塔公 雅拉雪山",
+        "康定 雅拉雪山观景台"
+      ],
+      "manual_lat": 30.35,
+      "manual_lng": 101.54,
+      "ambiguity_note": "非行政区划，观景台位置可能有多处",
+      "display_name": "四川省甘孜州康定市塔公镇雅拉雪山观景台",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "芒涯翡翠湖",
+      "preferred_query": "青海省海西州茫崖市花土沟镇翡翠湖",
+      "fallback_queries": [
+        "茫崖 翡翠湖",
+        "青海 翡翠湖"
+      ],
+      "manual_lat": 38.25,
+      "manual_lng": 90.85,
+      "ambiguity_note": "大柴旦翡翠湖和茫崖翡翠湖是两个不同的湖（相距约500km），务必区分",
+      "display_name": "青海省海西州茫崖市花土沟镇翡翠湖",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "大柴旦翡翠湖",
+      "preferred_query": "青海省海西州大柴旦行政委员会翡翠湖",
+      "fallback_queries": [
+        "大柴旦 翡翠湖",
+        "青海 大柴旦湖"
+      ],
+      "manual_lat": 37.85,
+      "manual_lng": 95.28,
+      "ambiguity_note": "与茫崖翡翠湖相距约500km，天气完全不同",
+      "display_name": "青海省海西州大柴旦行政委员会翡翠湖",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "纳木错扎西半岛",
+      "preferred_query": "西藏当雄县纳木错扎西半岛",
+      "fallback_queries": [
+        "纳木错 扎西半岛",
+        "纳木错景区入口"
+      ],
+      "manual_lat": 30.75,
+      "manual_lng": 90.63,
+      "ambiguity_note": "纳木错湖面辽阔（1920km²），扎西半岛是主要游客集散点",
+      "display_name": "西藏当雄县纳木错扎西半岛",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "乌孙古道入口（北疆）",
+      "preferred_query": "新疆伊犁州特克斯县乌孙古道北入口",
+      "fallback_queries": [
+        "特克斯 乌孙古道入口"
+      ],
+      "manual_lat": 42.7,
+      "manual_lng": 82.0,
+      "ambiguity_note": "非标准地名。南北入口相距约120km，天气完全不同",
+      "display_name": "新疆伊犁州特克斯县乌孙古道北入口",
+      "source_urls": [],
+      "confidence": "C"
+    },
+    {
+      "query_zh": "乌孙古道出口（南疆）",
+      "preferred_query": "新疆阿克苏地区拜城县乌孙古道南出口",
+      "fallback_queries": [
+        "拜城 乌孙古道出口"
+      ],
+      "manual_lat": 41.8,
+      "manual_lng": 82.3,
+      "ambiguity_note": "非标准地名。南北温差可达15°C以上",
+      "display_name": "新疆阿克苏地区拜城县乌孙古道南出口",
+      "source_urls": [],
+      "confidence": "C"
+    },
+    {
+      "query_zh": "武功山金顶",
+      "preferred_query": "江西省萍乡市芦溪县武功山风景区金顶",
+      "fallback_queries": [
+        "萍乡 武功山金顶",
+        "武功山白鹤峰"
+      ],
+      "manual_lat": 27.455,
+      "manual_lng": 114.173,
+      "ambiguity_note": "武功山金顶（1918m）与山脚武功山游客中心温差较大",
+      "display_name": "江西省萍乡市芦溪县武功山风景区金顶",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "A"
+    },
+    {
+      "query_zh": "喀纳斯观鱼台",
+      "preferred_query": "新疆阿勒泰地区布尔津县喀纳斯景区观鱼台",
+      "fallback_queries": [
+        "喀纳斯景区 观鱼台",
+        "布尔津 喀纳斯观鱼台"
+      ],
+      "manual_lat": 48.8,
+      "manual_lng": 87.05,
+      "ambiguity_note": "观鱼台（2030m）与喀纳斯湖口坐标不同，景区内小地点地图精度有限",
+      "display_name": "新疆阿勒泰地区布尔津县喀纳斯景区观鱼台",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "稻城亚丁洛绒牛场",
+      "preferred_query": "四川省甘孜州稻城县亚丁景区洛绒牛场",
+      "fallback_queries": [
+        "亚丁 洛绒牛场",
+        "稻城亚丁景区"
+      ],
+      "manual_lat": 28.35,
+      "manual_lng": 100.38,
+      "ambiguity_note": "洛绒牛场（4150m）是亚丁景区内徒步中转站，非独立行政区划",
+      "display_name": "四川省甘孜州稻城县亚丁景区洛绒牛场",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "独库公路乔尔玛",
+      "preferred_query": "新疆伊犁州尼勒克县独库公路乔尔玛服务区",
+      "fallback_queries": [
+        "独库公路 乔尔玛",
+        "G217 乔尔玛"
+      ],
+      "manual_lat": 43.6,
+      "manual_lng": 84.2,
+      "ambiguity_note": "独库公路中段重要节点，海拔约3400m",
+      "display_name": "新疆伊犁州尼勒克县独库公路乔尔玛服务区",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "Mount Fuji 五合目",
+      "preferred_query": "日本山梨县富士山五合目（吉田路线）",
+      "fallback_queries": [
+        "富士山五合目",
+        "Fuji Subaru Line 5th Station"
+      ],
+      "manual_lat": 35.36,
+      "manual_lng": 138.73,
+      "ambiguity_note": "富士山有4条登山路线，五合目位置不同。吉田路线五合目是最常用起点",
+      "display_name": "日本山梨县富士山五合目（吉田路线）",
+      "source_urls": [
+        "https://open-meteo.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "Chamonix 勃朗峰缆车站",
+      "preferred_query": "法国上萨瓦省夏蒙尼勃朗峰缆车站",
+      "fallback_queries": [
+        "Chamonix Aiguille du Midi",
+        "夏蒙尼 南针峰缆车"
+      ],
+      "manual_lat": 45.92,
+      "manual_lng": 6.87,
+      "ambiguity_note": "法国 Haute-Savoie",
+      "display_name": "法国上萨瓦省夏蒙尼勃朗峰缆车站",
+      "source_urls": [
+        "https://open-meteo.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "Torres del Paine Las Torres 基地",
+      "preferred_query": "智利麦哲伦区百内国家公园三塔基地",
+      "fallback_queries": [
+        "Torres del Paine Base Torres",
+        "W Trek Mirador"
+      ],
+      "manual_lat": -51.0,
+      "manual_lng": -73.0,
+      "ambiguity_note": "百内天气极端不稳定，天气预报可能不可靠",
+      "display_name": "智利麦哲伦区百内国家公园三塔基地",
+      "source_urls": [
+        "https://open-meteo.com/"
+      ],
+      "confidence": "B"
+    },
+    {
+      "query_zh": "K2 大本营",
+      "preferred_query": "巴基斯坦吉尔吉特-巴尔蒂斯坦K2大本营",
+      "fallback_queries": [
+        "K2 Base Camp Pakistan",
+        "Concordia"
+      ],
+      "manual_lat": 35.72,
+      "manual_lng": 76.52,
+      "ambiguity_note": "K2大本营和Concordia营地坐标不同，多数徒步止于Concordia",
+      "display_name": "巴基斯坦吉尔吉特-巴尔蒂斯坦K2大本营",
+      "source_urls": [
+        "https://open-meteo.com/"
+      ],
+      "confidence": "C"
+    },
+    {
+      "query_zh": "勃朗峰TMB起点（莱苏什）",
+      "preferred_query": "法国上萨瓦省莱苏什（Les Houches）TMB起点",
+      "fallback_queries": [
+        "TMB Les Houches",
+        "Tour du Mont Blanc 起点"
+      ],
+      "manual_lat": 45.89,
+      "manual_lng": 6.8,
+      "ambiguity_note": "TMB（环勃朗峰）有多个起始点，莱苏什是最常用起点",
+      "display_name": "法国上萨瓦省莱苏什（Les Houches）TMB起点",
+      "source_urls": [
+        "https://open-meteo.com/"
+      ],
+      "confidence": "B"
+    }
+  ],
+  "tooltips": [
+    {
+      "metric_id": "temperature_current",
+      "short_label": "气温",
+      "tooltip_zh": "当前2米高度的空气温度，遮阳通风处测量。阳光直射下车内/地表温度远高于此值。",
+      "expert_note": "气象站标准是百叶箱中1.5-2m高度测量。户外体验可偏离±5°C取决于日照和地表类型。",
+      "bad_reading_example": "夏季车仪表盘显示45°C，但气象站数据只有32°C——正常偏差。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "metric_id": "temperature_apparent",
+      "short_label": "体感",
+      "tooltip_zh": "结合气温、风速和湿度计算的人体真实感受温度。冬天风大体感可低10-20°C。",
+      "expert_note": "使用NWS风寒指数（冬季）和Steadman热指数（夏季）计算。不同模型采用的计算公式略有差异。",
+      "bad_reading_example": "气温5°C+风速30km/h→体感约-2°C。只看气温会低估保暖需求。",
+      "source_urls": [
+        "https://www.weather.gov/safety/cold"
+      ]
+    },
+    {
+      "metric_id": "temperature_max",
+      "short_label": "最高温",
+      "tooltip_zh": "当日预测最高气温，一般出现在午后14-15时。",
+      "expert_note": "高海拔最高温出现时间可能偏移。山区午后对流可能压低实际最高温。",
+      "bad_reading_example": null,
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "metric_id": "temperature_min",
+      "short_label": "最低温",
+      "tooltip_zh": "当日预测最低气温，一般出现在日出前后。",
+      "expert_note": "高海拔/盆地夜间辐射冷却强，最低温可能比预报低3-5°C。",
+      "bad_reading_example": null,
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "metric_id": "wind_speed",
+      "short_label": "风速",
+      "tooltip_zh": "10米高度处持续风速。山口和垭口实际风力可能比预报大1-2级（峡谷效应）。",
+      "expert_note": "蒲氏风级：5级=清劲风(30-39km/h)行走受阻，7级=疾风(50-61km/h)站立困难。",
+      "bad_reading_example": "谷底预报20km/h→山口实测可达40-50km/h。地形放大系数可达2-3倍。",
+      "source_urls": [
+        "https://en.wikipedia.org/wiki/Beaufort_scale"
+      ]
+    },
+    {
+      "metric_id": "wind_gust",
+      "short_label": "阵风",
+      "tooltip_zh": "过去一小时内出现的最大瞬间风速。阵风比持续风更能反映实际风险。",
+      "expert_note": "阵风系数=阵风/持续风速，通常1.3-2.0。系数越大风越阵性（不稳定）。",
+      "bad_reading_example": "持续风30km/h→阵风可达60km/h。突然的强风容易把人吹倒。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "metric_id": "wind_direction",
+      "short_label": "风向",
+      "tooltip_zh": "风来的方向（北=吹北风=冷空气南下）。16方位或0-360°表示。",
+      "expert_note": "山区风向受地形影响大，可能与区域风向不一致。山谷风效应：白天谷风上坡，夜间山风下坡。",
+      "bad_reading_example": null,
+      "source_urls": []
+    },
+    {
+      "metric_id": "precipitation_probability",
+      "short_label": "降水概率",
+      "tooltip_zh": "预报区域和时间段内出现≥0.3mm降水的概率。60%=大概率需要备雨具。",
+      "expert_note": "来自集合预报（ECMWF 51成员/GEFS 31成员）统计。山区实际降水变数更大。",
+      "bad_reading_example": "PoP=30%不意味着30%时间下雨，而是有30%的概率下雨。",
+      "source_urls": [
+        "https://www.weather.gov/help/"
+      ]
+    },
+    {
+      "metric_id": "precipitation_amount",
+      "short_label": "降水量",
+      "tooltip_zh": "小时累计降水量。<2.5mm=小雨，2.5-10=中雨，>10=大雨（小时值）。",
+      "expert_note": "中国气象局标准：小时雨量≥30mm=暴雨。注意累计雨量比瞬时雨量更能反映山洪风险。",
+      "bad_reading_example": "2mm/h×持续6h=12mm累计→中到大雨量级，道路可能积水。",
+      "source_urls": [
+        "https://www.cma.gov.cn/"
+      ]
+    },
+    {
+      "metric_id": "thunderstorm_probability",
+      "short_label": "雷暴风险",
+      "tooltip_zh": "发生雷暴（含闪电）的概率。雷击是山区最致命的天气风险之一。",
+      "expert_note": "基于CAPE指数和对流有效位能估算。≥20%需关注，≥40%建议避免山顶/开阔地带。",
+      "bad_reading_example": "晴天也可能被雷击——雷暴可在前方10-15km的晴空区产生闪电（晴空霹雳）。",
+      "source_urls": [
+        "https://www.weather.gov/safety/lightning"
+      ]
+    },
+    {
+      "metric_id": "cloud_cover",
+      "short_label": "云量",
+      "tooltip_zh": "天空被云遮挡的百分比。0%=晴，100%=全阴。低云增多通常预示降水。",
+      "expert_note": "总云量≠降雨概率。高云（卷云）通常无降水，低云（雨层云）才携带降水。",
+      "bad_reading_example": "云量90%但不一定下雨——如果是高层云可能只是阴天无降水。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "metric_id": "visibility",
+      "short_label": "能见度",
+      "tooltip_zh": "水平方向能看清目标物的最远距离。<1km=雾，<100m=浓雾。低能见度是山区迷路主因。",
+      "expert_note": "模型能见度是网格均值，山区局部雾（如山谷雾）可能远低于预报值。",
+      "bad_reading_example": "预报能见度5km，但山凹处可能有局部浓雾<200m。山谷雾在清晨最常见。",
+      "source_urls": [
+        "https://www.weather.gov/fog/"
+      ]
+    },
+    {
+      "metric_id": "relative_humidity",
+      "short_label": "湿度",
+      "tooltip_zh": "空气中水汽含量与饱和量的百分比。>80%潮湿，<30%干燥。高湿+高温=闷热。",
+      "expert_note": "相对湿度随温度变化——气温升高时即使水汽不变，湿度百分比也会下降。",
+      "bad_reading_example": "清晨湿度>90%看似很湿，但10点后可能降到50%（因气温升高）。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "metric_id": "dew_point",
+      "short_label": "露点",
+      "tooltip_zh": "空气中水汽开始凝结的温度。露点越高空气越潮湿。>20°C闷热，<0°C可能结霜。",
+      "expert_note": "露点比相对湿度更稳定——不随气温变化。同一气团的露点在一天内变化很小。",
+      "bad_reading_example": "相对湿度从清晨95%降到午后50%，但露点始终保持在12°C→舒适。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "metric_id": "pressure_msl",
+      "short_label": "气压",
+      "tooltip_zh": "海平面修正后的气压值。24小时内骤降≥8hPa是天气转坏的典型信号。",
+      "expert_note": "标准海平面气压1013.25hPa。气压变化比绝对值更重要。高原站点显示站址气压。",
+      "bad_reading_example": "24h内从1015hPa降至1000hPa→强低压接近，预计12-24h内有大风降雨。",
+      "source_urls": [
+        "https://www.weather.gov/"
+      ]
+    },
+    {
+      "metric_id": "uv_index",
+      "short_label": "紫外线",
+      "tooltip_zh": "太阳紫外线强度。0-2低，3-5中，6-7高，8-10很高，11+极高。",
+      "expert_note": "海拔每升高1000m UV增强10-12%。雪地反射再增加80%。高海拔+雪地=UV加倍。",
+      "bad_reading_example": "海平面UV=6（高），3000m山顶UV≈8.4（很高）。雪地额外反射后等效UV≈15（极端）。",
+      "source_urls": [
+        "https://www.who.int/uv/"
+      ]
+    },
+    {
+      "metric_id": "sunrise_sunset",
+      "short_label": "日照",
+      "tooltip_zh": "日出和日落时间。日出前30分钟天光渐亮，日落后30分钟内需备头灯。日照时长随季节和纬度变化。",
+      "expert_note": "日出日落时间由地理位置和日期精确计算，不受天气影响。云层遮挡可能使实际天亮推迟。",
+      "bad_reading_example": "预报日出06:32，但阴天可能实际到06:45才足够亮。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "metric_id": "hourly_trend",
+      "short_label": "小时趋势",
+      "tooltip_zh": "未来24-48小时内温/风/降水的逐小时变化曲线。山口和峡谷天气可能在1-2小时内剧烈变化。",
+      "expert_note": "默认展示48小时，前24h精度高，后24h供趋势参考。ECMWF/GFS双模型对比可降低不确定性。",
+      "bad_reading_example": "午后预报有雷暴，但小时趋势显示14时才开始→可以调整上午出发。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    },
+    {
+      "metric_id": "daily_trend_7d",
+      "short_label": "7日趋势",
+      "tooltip_zh": "未来7天每日最高/最低温和降水概览。前5天可靠度较高，后2天做趋势参考。",
+      "expert_note": "ECMWF前5天预报准确率约85-95%，第7天降至约65-80%。GFS第7天后精度显著下降。",
+      "bad_reading_example": "第7天预报有雨不必立刻改计划，但若连续3天趋势一致则可信度较高。",
+      "source_urls": [
+        "https://open-meteo.com/en/docs"
+      ]
+    }
+  ],
+  "model_badges": [
+    {
+      "source_id": "open_meteo",
+      "badge_label": "Open-Meteo",
+      "badge_color_role": "primary",
+      "trust_note_short": "开源聚合数据，全球覆盖，CC BY 4.0",
+      "use_in_app": "primary",
+      "reason": "主力数据源。免费无Key，30+模型自动选优，所有核心字段均可通过它获取。前端直接调用。"
+    },
+    {
+      "source_id": "ecmwf_ifs",
+      "badge_label": "ECMWF",
+      "badge_color_role": "secondary",
+      "trust_note_short": "全球最准预报模型，14年评分第一",
+      "use_in_app": "primary",
+      "reason": "Open-Meteo默认后端模型。不直接API调用，通过Open-Meteo的model参数指定使用。"
+    },
+    {
+      "source_id": "noaa_gfs",
+      "badge_label": "GFS",
+      "badge_color_role": "secondary",
+      "trust_note_short": "免费开源，更新频率高，长时效参考",
+      "use_in_app": "primary",
+      "reason": "Open-Meteo可选模型。更新频率最高（4次/日），适合ECMWF空窗期使用。"
+    },
+    {
+      "source_id": "dwd_icon",
+      "badge_label": "ICON",
+      "badge_color_role": "secondary",
+      "trust_note_short": "德国气象局，欧洲山地地形最优",
+      "use_in_app": "primary",
+      "reason": "通过Open-Meteo指定。欧洲山地场景的首选模型，ICON-D2 2km分辨率对复杂地形精度最高。"
+    },
+    {
+      "source_id": "windy_api",
+      "badge_label": "Windy",
+      "badge_color_role": "reference",
+      "trust_note_short": "专业天气可视化，Webcam实景参考",
+      "use_in_app": "reference",
+      "reason": "不直接调用API。Windy的交互式天气地图是极好的可视化参考，可以提供外部跳转链接。"
+    },
+    {
+      "source_id": "meteoblue_api",
+      "badge_label": "Meteoblue",
+      "badge_color_role": "reference",
+      "trust_note_short": "专业气象服务，高精度降尺度",
+      "use_in_app": "reference",
+      "reason": "不直接调用API。作为Open-Meteo不可用时的备选方案，但不建议优先接入（比Open-Meteo限制多）。"
+    },
+    {
+      "source_id": "amap_weather",
+      "badge_label": "高德",
+      "badge_color_role": "primary",
+      "trust_note_short": "中国地理编码+天气（字段有限）",
+      "use_in_app": "primary",
+      "reason": "地理编码和地点搜索使用（中国小地名→坐标），天气数据仅辅助验证，手动调用高德API。"
+    },
+    {
+      "source_id": "weather_com_cn",
+      "badge_label": "中国天气网",
+      "badge_color_role": "reference",
+      "trust_note_short": "中国官方气象预警，外部参考",
+      "use_in_app": "reference",
+      "reason": "不API调用。提供外部跳转链接到中国天气网查看官方预警详情。"
+    },
+    {
+      "source_id": "qweather",
+      "badge_label": "和风天气",
+      "badge_color_role": "not_now",
+      "trust_note_short": "中国精细网格，但需付费/API Key",
+      "use_in_app": "not_now",
+      "reason": "暂不接入。如果未来需要中国官方预警数据或分钟级降水，和风是优质选择。"
+    },
+    {
+      "source_id": "seniverse",
+      "badge_label": "心知天气",
+      "badge_color_role": "not_now",
+      "trust_note_short": "CMA授权，但免费额度有限",
+      "use_in_app": "not_now",
+      "reason": "暂不接入。作为中国区域备选数据源。"
+    },
+    {
+      "source_id": "google_weather",
+      "badge_label": "Google",
+      "badge_color_role": "not_now",
+      "trust_note_short": "中国大陆不可用",
+      "use_in_app": "not_now",
+      "reason": "中国大陆不可用，暂不接入。"
+    },
+    {
+      "source_id": "nws_api",
+      "badge_label": "NWS",
+      "badge_color_role": "not_now",
+      "trust_note_short": "美国NWS纯免费，仅覆盖美国",
+      "use_in_app": "not_now",
+      "reason": "暂时不自有接入。Open-Meteo已覆盖NWS数据（通过模型选择）。"
+    },
+    {
+      "source_id": "openweathermap",
+      "badge_label": "OpenWeather",
+      "badge_color_role": "not_now",
+      "trust_note_short": "知名免费API，但需Key",
+      "use_in_app": "not_now",
+      "reason": "暂不接入。Open-Meteo无需Key、字段更全，已完全替代。"
+    },
+    {
+      "source_id": "open_meteo_geocoding",
+      "badge_label": "Open-Meteo地理编码",
+      "badge_color_role": "secondary",
+      "trust_note_short": "免费无Key地名搜索，海外好用",
+      "use_in_app": "primary",
+      "reason": "海外地点搜索用（Open-Meteo配套地理编码API）。中国地点用高德更准。"
+    }
+  ],
+  "merged_from": [
+    "weather_console_v4",
+    "leo_weather_geocode_qa_v1",
+    "leo_weather_metrics_qa_v1"
+  ]
+}
