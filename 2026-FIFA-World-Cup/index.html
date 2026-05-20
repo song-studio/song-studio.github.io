@@ -111,8 +111,12 @@ html[lang=en] .hero-sub{letter-spacing:clamp(3px,1.5vw,8px);font-size:clamp(13px
 .share-card{width:min(420px,94vw);border:1px solid rgba(255,255,255,.16);border-radius:22px;background:linear-gradient(145deg,rgba(16,28,48,.98),rgba(8,18,35,.98));padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
 .share-card h3{font-size:18px;color:#fff;margin-bottom:6px}
 .share-card p{font-size:12px;color:rgba(225,236,250,.82);line-height:1.6;margin-bottom:14px}
+.share-preview{border:1px solid rgba(255,255,255,.14);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border-radius:14px;padding:10px 12px;margin:0 0 10px}
+.share-preview b{display:block;color:#fff;font-size:13px}
+.share-preview span{display:block;color:rgba(225,236,250,.78);font-size:12px;margin-top:4px}
 .share-main-btn{width:100%;border:1px solid rgba(126,217,87,.52);background:linear-gradient(135deg,rgba(126,217,87,.22),rgba(52,168,83,.18));color:#f4fff2;border-radius:14px;padding:12px 14px;font-size:14px;font-weight:800;cursor:pointer}
 .share-main-btn:hover{filter:brightness(1.06)}
+.share-wechat-btn{width:100%;border:1px solid rgba(126,217,87,.52);background:rgba(126,217,87,.10);color:#d9ffe0;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px}
 .share-row{display:grid;gap:8px;margin-top:10px}
 .share-btn{width:100%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer;text-align:left}
 .share-btn:hover{background:rgba(255,255,255,.12)}
@@ -802,7 +806,12 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
 <div class="share-sheet" id="share-sheet" onclick="if(event.target===this)closeSharePanel()">
   <div class="share-card">
     <h3>分享</h3>
+    <div class="share-preview">
+      <b>2026 世界杯赛程 + 球迷卡牌赛</b>
+      <span>复制后可直接发微信好友或朋友圈</span>
+    </div>
     <button class="share-main-btn" type="button" onclick="copyForWeChat()">一键复制赛程和卡牌赛链接</button>
+    <button class="share-wechat-btn" type="button" onclick="openWeChatApp()">尝试打开微信</button>
     <button class="share-close" type="button" onclick="closeSharePanel()">关闭</button>
   </div>
 </div>
@@ -2807,6 +2816,12 @@ function copyForWeChat(){
   const text=`世界杯赛程\n${mainUrl}\n\n卡牌赛\n${cardUrl}`;
   copyText(text,'✅ 已复制');
   closeSharePanel();
+}
+function openWeChatApp(){
+  copyForWeChat();
+  try{
+    location.href='weixin://';
+  }catch(e){}
 }
 function shareFavSchedule(){
   const teams=favs.map(n=>{const td=TEAMS[n];return lang==='en'&&td?td.en:n;}).join(', ');
