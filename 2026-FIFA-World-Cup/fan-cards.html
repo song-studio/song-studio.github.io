@@ -85,6 +85,8 @@ body.theme-dark .panel{background:linear-gradient(145deg,oklch(100% .012 88 / .0
 body.theme-dark .phase-rail a{background:linear-gradient(145deg,oklch(100% .012 88 / .09),oklch(79% .12 198 / .045))}
 body.theme-dark .mobile-dock{background:oklch(10% .04 255 / .84)}
 body.theme-dark .mobile-dock a{background:oklch(100% .01 80 / .07)}
+.lang-toggle{min-width:46px;text-align:center}
+#mLangToggle{display:inline-flex;margin:4px 0 10px;padding:6px 11px}
 body.theme-dark .toast{background:oklch(13% .04 20 / .94)}
 body.theme-dark .modal{background:oklch(5% .02 20 / .78)}
 body.theme-dark .modal-card{background:linear-gradient(145deg,oklch(18% .055 16),oklch(11% .04 22))}
@@ -600,7 +602,7 @@ body.theme-dark .story-card:hover{
 </style>
 </head>
 <body>
-<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./index.html"><span class="brand-mark"></span><span>FAN CARDS</span></a><nav class="nav"><a href="./index.html">世界杯首页</a><a href="#draw">入场</a><a href="#daily">每日手气</a><a href="#quests">补给站</a><a href="#battle">预测局</a><a href="#collection">国家卡牌库</a><a href="#poster">我的档案</a></nav><button class="chip-btn theme-toggle" id="themeToggle" type="button">深色版</button></div></header>
+<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./index.html"><span class="brand-mark"></span><span>FAN CARDS</span></a><nav class="nav"><a href="./index.html">世界杯首页</a><a href="#draw">入场</a><a href="#daily">每日手气</a><a href="#quests">补给站</a><a href="#battle">预测局</a><a href="#collection">国家卡牌库</a><a href="#poster">我的档案</a></nav><button class="chip-btn lang-toggle" id="langToggle" type="button">EN</button><button class="chip-btn theme-toggle" id="themeToggle" type="button">深色版</button></div></header>
 <main>
 <div class="mobile-app" id="mobileApp">
   <div class="m-shell">
@@ -608,6 +610,7 @@ body.theme-dark .story-card:hover{
       <div class="m-brand-row">
         <div class="m-title">
           <a class="m-home-link" href="./index.html">← 世界杯首页</a>
+          <button class="chip-btn lang-toggle" id="mLangToggle" type="button">EN</button>
           <h1>世界杯球迷卡牌赛</h1>
           <p>先选主队，每天点亮国家卡。世界杯开赛后，用手里的卡预测比赛；命中后，星级和奖励会记录到你使用的那张卡上。</p>
         </div>
@@ -776,6 +779,77 @@ const storyEffects={
   'mexico':'主场狂欢：墨西哥比赛命中，点亮主场狂欢章。'
 };
 function storyEffectFor(id){return storyEffects[id]||'点亮后进入专属剧情，赛事推进时自动获得阶段奖励。'}
+const I18N_KEY='worldcupFanCardsLang';
+let pageLang=localStorage.getItem(I18N_KEY)||'zh';
+const textMemory=new WeakMap();
+const attrMemory=new WeakMap();
+const I18N_EN={
+  '世界杯首页':'World Cup Home','← 世界杯首页':'← World Cup Home','入场':'Entry','每日手气':'Daily Draw','补给站':'Supply Station','预测局':'Prediction Lab','国家卡牌库':'National Cards','我的档案':'My Archive','深色版':'Dark Mode','浅色版':'Light Mode','已切换到深色版。':'Switched to dark mode.','已切换到浅色版。':'Switched to light mode.',
+  '世界杯球迷卡牌赛':'World Cup Fan Card League','先选主队，每天点亮国家卡。世界杯开赛后，用手里的卡预测比赛；命中后，星级和奖励会记录到你使用的那张卡上。':'Pick a main team, reveal national cards each day, then use your cards to predict matches. Hits add stars and rewards to the card you used.',
+  '主队身份':'Main Team Identity','从正赛球队中选一支，记录你的观赛主线。彩蛋卡不能当主队。':'Choose one qualified team as your viewing identity. The Easter Egg card cannot be your main team.','国家出战卡':'National Match Cards','比赛日用于胜平负预测，命中后奖励写到出战卡上。':'Use them on match days to predict home win, draw, or away win. Rewards are written back to the card.','稀有叙事卡':'Rare Story Cards','既能解锁长期题，也能按本队参加单场预测。':'They unlock long-term story questions and can also play single-match predictions for their team.','彩蛋卡':'Easter Egg Card','第49张隐藏卡，抽到后每天可触发彩蛋剧场。':'The hidden 49th card. Once revealed, it can trigger the daily Easter Egg Theater.',
+  '今日任务':'Today','先选主队卡':'Choose Your Main Team','第一步先确定你的世界杯身份。后续预测、奖励和档案都会围绕它展开。':'First set your World Cup identity. Your predictions, rewards, and archive will grow around it.','开始今日任务':'Start Today','开始今日流程':'Start Today','选择主队卡':'Choose Main Team Card','首组只发一次。如果三张都不喜欢，可以使用一次主队直选。':'Your first pack appears once. If none of the three feels right, you can use one direct team pick.','输入国家名':'Enter a country','直选主队':'Direct Pick','每天只翻一张':'One Reveal Per Day','翻到新卡会点亮国家卡；重复卡会转成卡尘和能量。手机端只展示结果，完整卡面点开再看。':'New cards enter your collection. Duplicates turn into card dust and energy. On mobile, tap a card to view the full art.','翻今日手气':'Reveal Today\'s Card',
+  '奖励':'Rewards','我的实时奖励':'Live Rewards','今日签到':'Daily Check-in','卡尘补抽':'Dust Redraw','能量补抽':'Energy Redraw','触发彩蛋剧场':'Trigger Easter Egg Theater','彩蛋卡未点亮':'Easter Egg Card Locked','彩蛋卡已点亮':'Easter Egg Card Revealed','比赛日':'Match Day','用卡预测胜平负':'Use Cards to Predict','开赛后这里会出现当天比赛。每场先选主队卡或已点亮国家卡，再预测主胜、平局或客胜；命中后奖励写回出战卡。':'When matches begin, today\'s games appear here. Choose a main team card or revealed national card, then predict home win, draw, or away win. Hits write rewards back to that card.',
+  '稀有叙事':'Rare Stories','整届世界杯预测题':'Tournament Story Predictions','抽到对应稀有卡后，才能提交长期题。答案提交后锁定，结果揭晓时自动判定，并把命中记录写入你的世界杯档案。':'Reveal the matching rare card to unlock its long-term question. Answers lock after submission and are settled automatically when results are known.','卡牌库':'Card Library','我的国家卡':'My National Cards','默认只看一部分卡牌，点开单张卡可放大查看。':'Only part of the library is shown by default. Tap a card to inspect it.','查看全部卡牌':'Show All Cards','收起卡牌':'Collapse Cards','档案':'Archive','我的世界杯档案':'My World Cup Archive','现在可下载主队卡。世界杯推进后，会汇总主队轨迹、预测记录、稀有叙事命中和收藏进度。':'You can download your main team card now. As the tournament unfolds, this becomes your personal World Cup record.','下载我的主队卡':'Download My Main Team Card','复制分享链接 ↗':'Copy Share Link ↗',
+  '球迷':'Fan','卡牌赛':'Card League','先选主队，每天点亮国家卡，比赛日用卡预测':'Pick a main team, reveal cards daily, predict on match days','三步入门：① 选一支正赛球队作为主队；② 每天翻一张卡，点亮国家卡或获得资源；③ 开赛后用主队卡和国家卡预测胜平负。命中后，星级和奖励会记录到你使用的那张卡上。':'Three steps: choose a qualified main team, reveal one card each day, then predict match results with your main team card and national cards. Hits add stars and rewards to the card you used.','今日行动':'Today','首组卡只发一次，选一张作为你的世界杯主队。':'Your first three cards appear once. Pick one as your World Cup main team.','进入世界杯球迷卡牌赛':'Enter Fan Card League','查看国家卡牌':'View National Cards','查看完整规则':'Full Rules',
+  '48支正赛队，加一张隐藏彩蛋卡':'48 qualified teams plus one hidden Easter Egg card','每天翻一张，补抽计入3次上限':'Reveal one daily card. Redraws count toward the 3-card daily cap.','单场预测、叙事题、赛后档案分开记录':'Single-match predictions, story questions, and archive records are tracked separately.','49张世界杯球迷卡':'49 World Cup Fan Cards','现在点亮卡牌和资源，开赛后用卡预测比赛。国家卡负责单场胜平负，8张稀有叙事卡额外负责整届预测题，彩蛋卡负责隐藏补给。':'Reveal cards and resources now. During the tournament, national cards predict matches, eight rare story cards unlock tournament questions, and the Easter Egg card provides hidden supplies.','01 入场':'01 Entry','选主队':'Pick Main Team','02 点亮':'02 Reveal','每日一张':'Daily Card','03 预测':'03 Predict','比赛日出手':'Match Day','04 成档':'04 Archive','赛后汇总':'Final Record',
+  '主队三选一':'Choose One Main Team','首组卡只发一次。选中的球队会进入你的主队席，后续海报、预测记录与赛后档案都围绕它生成。彩蛋卡不能设为主队。':'Your first group appears once. The chosen team becomes your main team, anchoring posters, predictions, and your final archive. The Easter Egg card cannot be your main team.','查看首组卡':'Reveal First Pack','三张都不想要？':'Dislike all three?','可使用一次“主队直选”。输入正赛球队中文名后直接定主队，机会仅一次。':'Use one direct pick. Enter a qualified team name to set your main team. This chance is one-time only.','输入国家名，例如 阿根廷 / 巴西 / 日本':'Enter a country, e.g. Argentina / Brazil / Japan','使用一次直选':'Use Direct Pick','未使用':'Unused','主队必须是正赛球队，彩蛋卡不会进入主队选择。':'Your main team must be qualified. The Easter Egg card is excluded.','主队卡存在你的设备里，刷新页面也不会丢。':'Your main team card is stored on this device. Refreshing will not erase it.','比赛日主队也可作为出战卡，命中后奖励写回卡牌。':'On match days, your main team card can also play predictions and earn rewards.',
+  '玩法总览：三类卡的分工':'Overview: Three Card Roles','先看这里就够：国家卡打单场，稀有叙事卡多一条长期题，彩蛋卡领隐藏补给。三条线分清楚，但不会浪费任何强队卡。':'Start here: national cards play single matches, rare story cards unlock long-term questions, and the Easter Egg card grants hidden supplies.','国家卡（含稀有卡）':'National Cards (including rare cards)','赛前每天点亮。比赛日用它预测胜平负：命中+1星；如果出战卡正好是本场球队，命中+2星；猜错后该卡冷却到下一比赛日。':'Reveal them before the tournament. On match days, use them for home/draw/away predictions. A hit earns +1 star, or +2 if the card is one of the teams in that match. A miss cools the card until the next match day.','8张稀有叙事卡':'8 Rare Story Cards','它们首先是国家卡，可按本队参加单场预测；同时额外解锁一条整届世界杯长期题，答对后进入赛后档案。':'They are national cards first and can play matches for their teams. They also unlock one tournament-long story question, recorded in your final archive if correct.','彩蛋卡（第49张）':'Easter Egg Card (No. 49)','抽到后才揭晓卡面。它不当主队、不出战比赛；每天可触发一次彩蛋剧场，获得文案互动和 +6 能量。':'Its full card art appears only after you draw it. It cannot be your main team or play matches. Once per day it triggers Easter Egg Theater for +6 energy.','奖励与上限':'Rewards and Limits','每天最多开卡3次，包含每日手气、卡尘补抽和能量补抽。新卡：能量+8；重复卡：卡尘+6、能量+4；签到：能量+12；彩蛋剧场：能量+6。':'You can open up to 3 cards per day, including daily draw, dust redraw, and energy redraw. New card: +8 energy. Duplicate: +6 dust and +4 energy. Check-in: +12 energy. Easter Egg Theater: +6 energy.',
+  '每日手气是轻量打卡，不是无限刷卡。翻到新卡会点亮国家卡牌，重复卡会转成卡尘。':'Daily draw is a light check-in, not an infinite card farm. New cards are revealed; duplicates turn into card dust.','今天只有一次手气':'One Chance Today','它不改变你的主队卡，只增加国家卡牌和资源。早加入能积累更多收藏；晚加入也能用比赛日入场包直接参与预测。':'It does not change your main team card. It adds national cards and resources. Early players collect more; late players can still enter with stage packs.','已点亮':'Revealed','主队席':'Main Team','今日状态':'Today\'s Status','可翻':'Available','今日手气还没揭晓。':'Today\'s draw is not revealed yet.','赛前补给与赛中资源':'Pre-match Supplies and Match Resources','每日完成签到、抽卡与彩蛋剧场，可积累长期资源。资源不会因为赛事阶段变化而清空。':'Check in, draw cards, and use Easter Egg Theater to build long-term resources. Resources do not reset between stages.','今日补给清单':'Today\'s Supply List','每天刷新一轮。今日补给共三项：签到、翻手气、彩蛋剧场（需先点亮彩蛋卡）。':'Refreshes daily. Today has three supplies: check-in, daily draw, and Easter Egg Theater (requires the Easter Egg card).','资源背包':'Resource Bag','能量是长期补给资源，可用于能量补抽和后续赛事活动；卡尘来自重复卡，可用于补抽。':'Energy is a long-term resource for redraws and later events. Card dust comes from duplicates and can be used for redraws.','连续打卡':'Check-in Streak','卡尘':'Card Dust','消耗8卡尘补一抽':'Spend 8 Dust for Redraw','消耗24能量补一抽':'Spend 24 Energy for Redraw','导出卡包码':'Export Card Code','导入卡包码':'Import Card Code','收藏记录保存在当前浏览器。换手机或清缓存前，先导出卡包码。':'Your collection is stored in this browser. Export your card code before switching devices or clearing cache.',
+  '我的主队席':'My Main Team Seat','这是你的观赛身份。比赛日它可作为出战卡参加胜平负预测；主队晋级、淘汰与单场命中都会写入它的记录。':'This is your viewing identity. On match days it can play predictions, and its progress records wins, eliminations, and prediction hits.','赛前完成预测准备，开赛后进行每日预测':'Prepare before kickoff, predict daily once matches begin','比赛日流程：先选1张出战卡（主队卡或已点亮国家卡），再提交主胜/平/客胜。稀有叙事卡也可按本队出战，长期题请到「八张稀有叙事卡预测」区填写。':'Match day flow: choose one playable card, then submit home/draw/away. Rare story cards can play for their teams; their long-term questions are in the rare story section.','稀有叙事赛道':'Rare Story Track','八张稀有叙事卡预测':'Eight Rare Story Predictions','使用方式：抽到对应稀有卡，解锁对应题目，在截止前锁定答案。可以只答1题，也可以集齐后答满8题。':'How it works: reveal the matching rare card, unlock its question, and lock your answer before the deadline. You can answer one or all eight.','这8题是稀有卡的额外玩法：单场比赛照常按本队出战，长期题则预测整届世界杯的大剧情，包括冠军、亚军、季军、火力王、金靴进球数、东道主走势和决赛剧本。':'These eight questions are the rare-card bonus track. Single matches still use the team as usual; long-term questions cover champion, runner-up, third place, attacking leader, Golden Boot goals, host performance, and the final script.',
+  '彩蛋剧场':'Easter Egg Theater','中国队没进世界杯，但中国球迷永远在场。':'China did not qualify, but Chinese fans are always present.','彩蛋卡不参加主队选择，也不参与单场胜平负预测。它是一张资源卡：点亮后每天可触发一次彩蛋剧场，获得场外文案和 +6 能量，能量可长期保留并用于补抽。':'The Easter Egg card is not used as a main team or match prediction card. It is a resource card: once revealed, trigger it once per day for a side-story line and +6 energy.','触发今日彩蛋剧场':'Trigger Today\'s Easter Egg Theater','点亮彩蛋卡后，每天可触发一次彩蛋剧场：获得一条场外文案与能量奖励。':'After revealing the Easter Egg card, trigger it once per day for a side-story line and energy.','49张卡分阶段点亮':'Reveal 49 Cards Over Time','未点亮卡仅显示剪影。点亮后显示完整卡面与国家信息，并参与后续预测与奖励记录。':'Locked cards show silhouettes. Revealed cards show full art and can join later predictions and reward records.','卡牌进度':'Card Progress','全部':'All','非洲':'Africa','南美':'South America','欧洲':'Europe','大洋洲':'Oceania','中北美':'Concacaf','亚洲':'Asia','彩蛋':'Easter Egg',
+  '赛季路线':'Season Route','赛前到赛后的参与规则':'From Pre-tournament to Final Archive','赛前收集卡牌与资源；开赛后用卡预测当日比赛。无论何时进入，都能从当前阶段开始。':'Collect cards and resources before kickoff. Once matches begin, use cards to predict that day\'s games. Whenever you arrive, you can start from the current stage.','赛前：选主队与点亮卡牌':'Before Kickoff: Pick and Reveal','确定主队，每天翻一张卡，签到攒能量。新卡进入卡牌库，重复卡转成卡尘。':'Choose a main team, reveal one card daily, and check in for energy. New cards enter the library; duplicates become dust.','小组赛：用卡预测胜平负':'Group Stage: Predict Results','页面显示当天比赛。选择出战卡后提交主胜、平局或客胜，赛果写入后自动结算。':'Today\'s matches appear on the page. Choose a card and predict home win, draw, or away win. Results settle automatically.','淘汰赛：关键场与纪念状态':'Knockouts: Key Matches and Memorials','继续用存活球队卡预测。主队若被淘汰，会转为纪念状态，保留本届赛事轨迹。':'Keep predicting with surviving team cards. If your main team is eliminated, it becomes a memorial card with its tournament story preserved.','赛后：生成个人档案':'After the Final: Build Your Archive','汇总主队轨迹、单场预测星级、稀有叙事命中和卡牌收藏进度。':'Summarize main team history, prediction stars, rare story hits, and collection progress.','晚加入也能参与':'Late Players Can Join','开赛后第一次进入，会按当前阶段发放入场包：补足可用球队卡和能量，让新用户直接参加当天比赛。':'After kickoff, first-time visitors receive a stage pack with usable team cards and energy so they can play that day.','早来有积累，晚来有入口':'Early Players Build, Late Players Enter','早来的优势是卡牌更多、故事更完整；晚来的优势是可以从当前比赛日直接判断。收集和预测分开计分，避免新用户被挡在门外。':'Early players build richer collections and stories. Late players start from the current match day. Collection and prediction scores are tracked separately.',
+  '奖励系统':'Reward System','奖励会写回你的卡牌':'Rewards Are Written Back to Cards','每次预测都绑定一张出战卡。系统根据赛果给这张卡加星、加章或进入冷却。':'Every prediction is tied to one card. Results add stars, badges, or cooldowns to that card.','青铜星':'Bronze Star','银星':'Silver Star','金章':'Gold Badge','精准印记':'Exact Mark','爆冷闪电':'Upset Flash','告别纪念':'Farewell Memorial','赛后博物馆':'Post-tournament Museum','我的2026世界杯档案':'My 2026 World Cup Archive','现在先下载主队卡。等世界杯推进，它会变成完整档案：主队卡、预测命中、爆冷印记、淘汰纪念和最终封神状态都会收进去。':'Download your main team card now. As the tournament unfolds, it becomes a full archive with main team history, prediction hits, upset marks, memorials, and final status.',
+  '分享':'Share','2026 世界杯赛程 + 球迷卡牌赛':'2026 World Cup Schedule + Fan Card League','一键复制赛程和卡牌赛链接':'Copy Schedule and Card League Link','尝试打开微信':'Open WeChat','关闭':'Close','已复制':'Copied','✅ 已复制':'Copied','今日开卡':'Cards Today','能量':'Energy','预测星':'Prediction Stars','无奖励章':'No Badge','今日收获：':'Today\'s Rewards:','未定':'Unset','今日已翻，明天再来':'Done Today','今日开卡已满（3/3）':'Daily Card Limit Reached','今日开卡次数已满（3次），明天再来。':'Daily card limit reached. Come back tomorrow.','今天已经翻过手气了，明天再来。':'You already drew today. Come back tomorrow.','今天的手气已经用完。保持一点悬念，明天再翻。':'Today\'s draw is used. Keep some suspense for tomorrow.',
+  '普通':'Common','稀有':'Rare','史诗':'Epic','传说':'Legendary','隐藏':'Hidden','本命':'Main Team','待收集':'Locked','未点亮':'Locked','你的主队':'Your Main Team','你的本命':'Your Main Team','已选':'Chosen','奖励等级':'Reward Tier','粉丝积分':'Fan Points','预测局 / MATCH LAB':'Prediction Lab / Match Lab',
+  '阿尔及利亚':'Algeria','阿根廷':'Argentina','埃及':'Egypt','奥地利':'Austria','澳大利亚':'Australia','巴拉圭':'Paraguay','巴拿马':'Panama','巴西':'Brazil','比利时':'Belgium','波黑':'Bosnia and Herzegovina','德国':'Germany','厄瓜多尔':'Ecuador','佛得角':'Cabo Verde','刚果（金）':'DR Congo','哥伦比亚':'Colombia','海地':'Haiti','韩国':'Korea Republic','荷兰':'Netherlands','加拿大':'Canada','加纳':'Ghana','捷克':'Czechia','卡塔尔':'Qatar','科特迪瓦':'Ivory Coast','克罗地亚':'Croatia','库拉索':'Curacao','美国':'United States','摩洛哥':'Morocco','墨西哥':'Mexico','南非':'South Africa','挪威':'Norway','葡萄牙':'Portugal','日本':'Japan','瑞典':'Sweden','瑞士':'Switzerland','塞内加尔':'Senegal','沙特阿拉伯':'Saudi Arabia','苏格兰':'Scotland','突尼斯':'Tunisia','土耳其':'Turkiye','乌拉圭':'Uruguay','乌兹别克斯坦':'Uzbekistan','西班牙':'Spain','新西兰':'New Zealand','伊拉克':'Iraq','伊朗':'Iran','英格兰':'England','约旦':'Jordan','中国':'China',
+  '冠军归属':'Champion Pick','亚军席位':'Runner-up Pick','季军归属':'Third-place Pick','32强后火力王':'Knockout Scoring Leader','小组赛火力王':'Group Stage Scoring Leader','金靴进球数':'Golden Boot Goals','东道主最远者':'Best Host Team','决赛90分钟剧本':'Final 90-minute Script','填写答案':'Enter Answer','锁定答案':'Lock Answer','已锁定':'Locked','等待揭晓':'Awaiting Result','已提交，等待揭晓':'Submitted, awaiting result','已解锁：可提交这条整届预测':'Unlocked: submit this tournament prediction','需要先点亮稀有叙事卡：':'Reveal rare story card first: '
+};
+function textLang(){return pageLang==='en'?'en':'zh'}
+function translateText(text){
+  if(textLang()==='zh')return text;
+  let out=I18N_EN[text]||text;
+  if(out!==text)return out;
+  const keys=Object.keys(I18N_EN).filter(k=>k&&text.includes(k)).sort((a,b)=>b.length-a.length);
+  keys.forEach(k=>{out=out.split(k).join(I18N_EN[k])});
+  return out;
+}
+function localizeNode(root=document.body){
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
+    if(!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+    const tag=node.parentElement?.tagName;
+    if(['SCRIPT','STYLE','TEXTAREA'].includes(tag))return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodes=[];
+  while(walker.nextNode())nodes.push(walker.currentNode);
+  nodes.forEach(node=>{
+    if(!textMemory.has(node))textMemory.set(node,node.nodeValue);
+    node.nodeValue=textLang()==='zh'?textMemory.get(node):translateText(textMemory.get(node));
+  });
+  document.querySelectorAll('[placeholder],[aria-label],[title],input[value]').forEach(el=>{
+    ['placeholder','aria-label','title','value'].forEach(attr=>{
+      if(!el.hasAttribute(attr))return;
+      if(attr==='value'&&el.tagName!=='INPUT')return;
+      const key=attr+'Original';
+      let store=attrMemory.get(el)||{};
+      if(!store[key])store[key]=el.getAttribute(attr);
+      attrMemory.set(el,store);
+      el.setAttribute(attr,textLang()==='zh'?store[key]:translateText(store[key]));
+    });
+  });
+  document.documentElement.lang=textLang()==='en'?'en':'zh-CN';
+  document.querySelectorAll('#langToggle,#mLangToggle').forEach(btn=>btn.textContent=textLang()==='en'?'中':'EN');
+  const themeBtn=document.getElementById('themeToggle');
+  if(themeBtn){
+    const isDark=document.body.classList.contains('theme-dark');
+    themeBtn.textContent=textLang()==='en'?(isDark?'Light Mode':'Dark Mode'):(isDark?'浅色版':'深色版');
+  }
+}
+function toggleLang(){
+  pageLang=textLang()==='en'?'zh':'en';
+  localStorage.setItem(I18N_KEY,pageLang);
+  renderAll();
+}
 function applyTheme(theme){const dark=theme==='dark';document.body.classList.toggle('theme-dark',dark);const btn=$('#themeToggle');if(btn)btn.textContent=dark?'浅色版':'深色版';localStorage.setItem('worldcupFanCardsTheme',dark?'dark':'light')}
 function initTheme(){const params=new URLSearchParams(location.search);const mobile=window.matchMedia&&window.matchMedia('(max-width:560px)').matches;const theme=mobile?'dark':(params.get('theme')||localStorage.getItem('worldcupFanCardsTheme')||'dark');applyTheme(theme==='dark'?'dark':'light')}
 function jumpGuideTo(id){
@@ -843,7 +917,7 @@ function canOpenMore(s,max=3){ensureDailyOpenLimit(s);return (s.daily.openCount|
 function addOpenCount(s,n=1){ensureDailyOpenLimit(s);s.daily.openCount=(s.daily.openCount||0)+n;return s}
 function addTodayLoot(s,{energy=0,dust=0,stars=0,badge=''}={}){ensureDailyOpenLimit(s);s.todayLoot=s.todayLoot||{date:todayKey(),energy:0,dust:0,stars:0,badges:[]};s.todayLoot.energy=(s.todayLoot.energy||0)+energy;s.todayLoot.dust=(s.todayLoot.dust||0)+dust;s.todayLoot.stars=(s.todayLoot.stars||0)+stars;if(badge && !s.todayLoot.badges.includes(badge))s.todayLoot.badges.push(badge);return s}
 function rewardTier(hits=0){if(hits>=15)return '金章';if(hits>=8)return '银章';if(hits>=3)return '铜章';return '未授章'}
-function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),2300)}
+function toast(msg){const el=$('#toast');el.textContent=translateText(msg);el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),2300)}
 function copyTextWithFallback(text,msg='已复制'){
   if(navigator.clipboard?.writeText){
     navigator.clipboard.writeText(text).then(()=>toast(msg)).catch(()=>{
@@ -1607,7 +1681,7 @@ function renderMobileApp(){
 function updateHeroFloats(){const pool=allTeams.filter(t=>t.name!=='中国'&&t.thumb);if(pool.length<3){setFallbackHeroThumbs();return}const hero=sample(pool,3);['#floatOne','#floatTwo','#floatThree'].forEach((sel,i)=>{const el=$(sel);if(el&&hero[i])el.src=resolveAsset(hero[i].thumb)})}
 function exportSave(){const data=JSON.stringify(loadState());const code=btoa(unescape(encodeURIComponent(data)));navigator.clipboard?.writeText(code).then(()=>toast('卡包码已复制。')).catch(()=>prompt('这是你的卡包码，请保存：',code))}
 function importSave(){const code=prompt('粘贴卡包码，导入后会覆盖当前浏览器里的卡包记录。');if(!code)return;try{const data=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));saveState({...defaultState(),...data});renderAll();toast('卡包码已导入。')}catch(e){toast('卡包码无效，请检查是否复制完整。')}}
-function renderAll(){sanitizeFateSelection();renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState();renderMobileApp()}
+function renderAll(){sanitizeFateSelection();renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState();renderMobileApp();localizeNode()}
 async function init(){
   setFallbackHeroThumbs();
   const [cards,status,matches]=await Promise.all([
@@ -1645,7 +1719,9 @@ async function init(){
   drawPack(true)
 }
 initTheme();
-$('#themeToggle').onclick=()=>{const darking=!document.body.classList.contains('theme-dark');applyTheme(darking?'dark':'light');toast(darking?'已切换到深色版。':'已切换到浅色版。')};
+if($('#langToggle'))$('#langToggle').onclick=toggleLang;
+if($('#mLangToggle'))$('#mLangToggle').onclick=toggleLang;
+$('#themeToggle').onclick=()=>{const darking=!document.body.classList.contains('theme-dark');applyTheme(darking?'dark':'light');localizeNode();toast(darking?'已切换到深色版。':'已切换到浅色版。')};
 $('#heroDraw').onclick=()=>{const s=loadState();if(s.fate){location.hash='fate';return}location.hash='draw';setTimeout(drawPack,220)};
 if($('#heroShareBtn'))$('#heroShareBtn').onclick=shareFanCardsPage;
 $('#drawBtn').onclick=drawPack;
