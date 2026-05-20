@@ -543,7 +543,7 @@ body.theme-dark .story-card:hover{
   .m-hero{padding:6px 0 18px}
   .m-brand-row{display:flex;align-items:center;justify-content:space-between;gap:14px}
   .m-home-link{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;color:oklch(84% .13 84);font-size:12px;font-weight:900;text-decoration:none;letter-spacing:.4px}
-  .m-title h1{font-family:var(--fun);font-size:40px;line-height:1.02;letter-spacing:.02em;font-weight:900;color:oklch(96% .014 88);text-shadow:0 14px 30px oklch(3% .02 250 / .48)}
+  .m-title h1{font-family:var(--fun);font-size:clamp(28px,7.6vw,32px);line-height:1.06;letter-spacing:.01em;font-weight:900;white-space:nowrap;color:oklch(96% .014 88);text-shadow:0 14px 30px oklch(3% .02 250 / .48)}
   .m-title p{margin-top:7px;color:oklch(82% .025 86 / .76);font-size:13px;line-height:1.65}
   .m-card-logo{position:relative;width:78px;height:78px;flex:0 0 78px}
   .m-logo-card{position:absolute;width:46px;border-radius:9px;box-shadow:0 12px 24px oklch(2% .02 250 / .46);border:1px solid oklch(100% .02 88 / .18)}
@@ -1153,10 +1153,10 @@ function renderBattle(){
     return
   }
 
-  $('#battleSub').textContent='当前是赛前阶段：这里暂不开放单场提交。开赛后本区会自动显示当日比赛，你可直接用主队卡或已点亮国家卡提交预测。';
+  $('#battleSub').textContent='赛程数据入口已就绪：现在就可以维护 data/matches.json。填入当天比赛后，本区会显示预测列表；填入赛果后会自动结算。';
   const wait=document.createElement('article');
   wait.className='match-card';
-  wait.innerHTML=`<h3>比赛预测即将开启</h3><p>开赛后这里会按“当天赛程”生成预测卡片。你每场先选1张出战卡，再提交主胜/平局/客胜。</p><p class="micro" style="margin-top:8px">稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。</p>`;
+  wait.innerHTML=`<h3>赛程数据入口已就绪</h3><p>现在即可维护 <b>data/matches.json</b>：填入当天比赛后，这里会生成预测卡片；填入赛果 winner 后会自动结算星级和奖励。</p><p class="micro" style="margin-top:8px">稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。</p>`;
   lab.appendChild(wait)
 }
 function savePrediction(matchId,pick,cardId){
@@ -1375,7 +1375,25 @@ function renderFinalReportSummary(){
   const r=buildFinalReport();
   box.textContent=`当前报告：已结算 ${r.settled} 场，命中率 ${r.acc}%｜叙事命中 ${r.narrHit}/${r.narrTotal}｜主队更换 ${r.switches} 次。`;
 }
-function downloadPoster(){const s=loadState();const team=teamById(s.fate);if(!team){toast('先选一张主队卡。');location.hash='draw';return}const a=document.createElement('a');a.download=`${team.name}-主队卡.webp`;a.href=team.image;a.click();toast('主队卡图片已下载。')}
+function loadPosterImage(src){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=reject;img.src=src})}
+function drawPill(ctx,x,y,w,h,text,accent){ctx.save();ctx.beginPath();ctx.roundRect(x,y,w,h,h/2);ctx.fillStyle='rgba(14,20,38,.82)';ctx.fill();ctx.strokeStyle=accent;ctx.lineWidth=3;ctx.stroke();ctx.fillStyle='#f6edd0';ctx.font='700 34px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x+w/2,y+h/2+1);ctx.restore()}
+async function downloadPoster(){
+  const s=loadState();const team=teamById(s.fate);if(!team){toast('先选一张主队卡。');location.hash='draw';return}
+  try{
+    const img=await loadPosterImage(team.image);const st=statusOf(team);const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const fateImp=s.fateImprint||{};const tier=rewardTier(marks.hits||0);
+    const canvas=document.createElement('canvas');canvas.width=1800;canvas.height=2400;const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+    const g=ctx.createLinearGradient(0,0,1800,2400);g.addColorStop(0,'#171f39');g.addColorStop(.42,'#0b1022');g.addColorStop(1,'#24140f');ctx.fillStyle=g;ctx.fillRect(0,0,1800,2400);
+    ctx.fillStyle='rgba(232,192,92,.14)';ctx.beginPath();ctx.arc(1460,260,520,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(70,166,190,.12)';ctx.beginPath();ctx.arc(260,1960,620,0,Math.PI*2);ctx.fill();
+    ctx.save();ctx.beginPath();ctx.roundRect(210,210,1380,1840,88);ctx.fillStyle='rgba(255,247,220,.08)';ctx.fill();ctx.strokeStyle='rgba(235,200,105,.62)';ctx.lineWidth=5;ctx.stroke();ctx.clip();
+    const scale=Math.min(1260/img.width,1680/img.height);const iw=img.width*scale,ih=img.height*scale;ctx.drawImage(img,900-iw/2,1060-ih/2,iw,ih);ctx.restore();
+    ctx.fillStyle='rgba(6,10,22,.78)';ctx.fillRect(210,1810,1380,240);ctx.fillStyle='#f2e6c1';ctx.font='900 94px serif';ctx.textAlign='left';ctx.fillText(team.name,280,1918);ctx.font='700 34px serif';ctx.fillStyle='#e7c56d';ctx.fillText(`${st.stage} · ${st.state} · ${marks.hits||0}颗预测星`,284,1984);
+    drawPill(ctx,260,110,360,74,'2026 世界杯','#e6c36a');drawPill(ctx,1180,110,330,74,st.badge,'#e6c36a');
+    drawPill(ctx,260,2090,300,82,`${tier}`,'#e6c36a');drawPill(ctx,600,2090,360,82,`${marks.hits||0} 星奖励`,'#e6c36a');drawPill(ctx,1000,2090,430,82,`粉丝积分 ${fateImp.fanPoints||0}`,'#e6c36a');
+    if(fateImp.isMemorial)drawPill(ctx,640,2200,520,82,'纪念万能卡','#dca05c');
+    ctx.font='700 28px serif';ctx.fillStyle='rgba(242,230,193,.72)';ctx.textAlign='center';ctx.fillText('Song Studio · Fan Card Archive',900,2310);
+    const a=document.createElement('a');a.download=`${team.name}-高清主队纪念卡.png`;a.href=canvas.toDataURL('image/png');a.click();toast('高清主队纪念卡已下载。')
+  }catch(e){const a=document.createElement('a');a.download=`${team.name}-主队卡.webp`;a.href=team.image;a.click();toast('高清生成失败，已下载原始主队卡。')}
+}
 function updateHeroState(){const s=loadState();const btn=$('#heroDraw');if(btn){btn.textContent=s.fate?'查看我的主队席':'进入世界杯球迷卡牌赛'}}
 function renderRewardHud(){const s=ensureDailyOpenLimit(loadState());const open=s.daily?.openCount||0;const loot=s.todayLoot||{energy:0,dust:0,stars:0,badges:[]};if($('#hudEnergy'))$('#hudEnergy').textContent=s.energy||0;if($('#hudDust'))$('#hudDust').textContent=s.dust||0;if($('#hudOpen'))$('#hudOpen').textContent=`${open}/3`;if($('#hudStreak'))$('#hudStreak').textContent=s.streak||0;if($('#lootEnergy'))$('#lootEnergy').textContent=`+${loot.energy||0}`;if($('#lootDust'))$('#lootDust').textContent=`+${loot.dust||0}`;if($('#lootStars'))$('#lootStars').textContent=`+${loot.stars||0}`;if($('#lootBadges'))$('#lootBadges').textContent=(loot.badges&&loot.badges.length)?loot.badges.join(' / '):'无奖励章'}
 function mobileOpeningPackIds(){
@@ -1490,7 +1508,7 @@ function renderMobileApp(){
     battleList.innerHTML=matchesData.today.slice(0,5).map(m=>`<div class="m-list-item"><b>${m.title||'今日比赛'}</b><span>${m.home||''} ${m.time||''} ${m.away||''}。选出战卡后提交主胜、平局或客胜。</span></div>`).join('');
     $('#mBattleText').textContent='今日比赛已开放。每场先选一张主队卡或已点亮国家卡，再提交胜平负。赛果写入后自动结算星级奖励。';
   }else{
-    battleList.innerHTML='<div class="m-list-item"><b>赛程数据待导入</b><span>开赛后，只需要更新 data/matches.json 的当天赛程和赛果，这里就会显示比赛列表并自动结算。</span></div>';
+    battleList.innerHTML='<div class="m-list-item"><b>赛程数据入口已就绪</b><span>现在就可以维护 data/matches.json。填入当天比赛后显示预测列表，填入赛果后自动结算。</span></div>';
     $('#mBattleText').textContent='比赛日规则已准备好：主队卡和已点亮国家卡可出战；命中+1星，同队出战命中+2星，平局退还不加星。稀有叙事卡也按本队参加单场预测。';
   }
 
