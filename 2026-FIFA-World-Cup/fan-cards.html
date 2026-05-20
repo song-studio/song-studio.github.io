@@ -10,10 +10,10 @@
 <meta property="og:title" content="2026 FIFA World Cup Fan Cards | 世界杯球迷卡牌赛">
 <meta property="og:description" content="选主队、每日翻卡、预测比赛——49张国家卡牌等你点亮。">
 <meta property="og:image" content="https://song-studio.netlify.app/2026-fifa-world-cup/assets/fan-cards/base/thumb/argentina.webp">
-<meta property="og:url" content="https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards">
+<meta property="og:url" content="https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards">
+<link rel="canonical" href="https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKKXYYTL3J"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-QKKXYYTL3J')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -868,10 +868,8 @@ function copyTextWithFallback(text,msg='已复制'){
 function openFanSharePanel(){document.getElementById('fcShareSheet')?.classList.add('open')}
 function closeFanSharePanel(){document.getElementById('fcShareSheet')?.classList.remove('open')}
 function copyFanShareLinks(){
-  const mainUrl='https://song-studio.netlify.app/2026-fifa-world-cup/';
-  const cardUrl='https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html';
-  const text=`世界杯赛程\n${mainUrl}\n\n卡牌赛\n${cardUrl}`;
-  copyTextWithFallback(text,'✅ 已复制');
+  const text=`https://song-studio.netlify.app/2026-fifa-world-cup/share-card.html`;
+  copyTextWithFallback(text,"✅ 已复制");
   closeFanSharePanel();
 }
 function shareFanCardsPage(){openFanSharePanel()}

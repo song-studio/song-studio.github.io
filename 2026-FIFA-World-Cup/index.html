@@ -2818,10 +2818,8 @@ function copyCardsLink(){
   copyText(cardUrl,lang==='en'?'✅ Fan cards link copied!':'✅ 卡牌赛链接已复制');
 }
 function copyForWeChat(){
-  const mainUrl='https://song-studio.netlify.app/2026-fifa-world-cup/';
-  const cardUrl='https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html';
-  const text=`世界杯赛程\n${mainUrl}\n\n卡牌赛\n${cardUrl}`;
-  copyText(text,'✅ 已复制');
+  const text=`https://song-studio.netlify.app/2026-fifa-world-cup/share-card.html`;
+  copyText(text,"✅ 已复制");
   closeSharePanel();
 }
 function openWeChatApp(){
