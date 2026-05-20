@@ -801,14 +801,8 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
 </div>
 <div class="share-sheet" id="share-sheet" onclick="if(event.target===this)closeSharePanel()">
   <div class="share-card">
-    <h3>分享到微信</h3>
-    <p>点击下方按钮，直接调起系统分享面板并选择微信。</p>
-    <button class="share-main-btn" type="button" onclick="shareToWechatNow()">一键分享到微信</button>
-    <div class="share-row">
-      <button class="share-btn" type="button" onclick="copyForWeChat()">微信专用复制（备用）</button>
-      <button class="share-btn" type="button" onclick="copyMainLink()">复制首页链接</button>
-      <button class="share-btn" type="button" onclick="copyCardsLink()">复制卡牌赛链接</button>
-    </div>
+    <h3>分享</h3>
+    <button class="share-main-btn" type="button" onclick="copyForWeChat()">一键复制赛程和卡牌赛链接</button>
     <button class="share-close" type="button" onclick="closeSharePanel()">关闭</button>
   </div>
 </div>
@@ -2808,31 +2802,12 @@ function copyCardsLink(){
   const cardUrl='https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html';
   copyText(cardUrl,lang==='en'?'✅ Fan cards link copied!':'✅ 卡牌赛链接已复制');
 }
-function copyBothLinks(){
-  const mainUrl='https://song-studio.netlify.app/2026-fifa-world-cup/';
-  const cardUrl='https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html';
-  const text=(lang==='en'
-    ? `🏆 2026 FIFA World Cup\nMain: ${mainUrl}\nFan Card Game: ${cardUrl}`
-    : `🏆 2026 FIFA 世界杯\n首页：${mainUrl}\n球迷卡牌赛：${cardUrl}`);
-  copyText(text,lang==='en'?'✅ Share text copied!':'✅ 分享文案已复制');
-}
-function shareToWechatNow(){
-  const mainUrl='https://song-studio.netlify.app/2026-fifa-world-cup/';
-  const cardUrl='https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html';
-  const text='2026世界杯赛程与球迷卡牌赛';
-  if(navigator.share){
-    navigator.share({title:'2026 FIFA World Cup',text:`${text}\n${mainUrl}\n${cardUrl}`,url:mainUrl})
-      .then(()=>closeSharePanel())
-      .catch(()=>copyForWeChat());
-    return;
-  }
-  copyForWeChat();
-}
 function copyForWeChat(){
   const mainUrl='https://song-studio.netlify.app/2026-fifa-world-cup/';
   const cardUrl='https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards.html';
-  const text=`2026世界杯网站（赛程）\n${mainUrl}\n\n2026世界杯球迷卡牌赛\n${cardUrl}`;
-  copyText(text,'✅ 微信分享文案已复制，可直接粘贴发送');
+  const text=`世界杯赛程\n${mainUrl}\n\n卡牌赛\n${cardUrl}`;
+  copyText(text,'✅ 已复制');
+  closeSharePanel();
 }
 function shareFavSchedule(){
   const teams=favs.map(n=>{const td=TEAMS[n];return lang==='en'&&td?td.en:n;}).join(', ');
