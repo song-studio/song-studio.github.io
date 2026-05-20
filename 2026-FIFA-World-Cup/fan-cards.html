@@ -962,12 +962,14 @@ function useChinaGold(fromQuest=false){
     toast('今天的彩蛋剧场已使用，明天再来。');
     return;
   }
+  const line=chinaLines[Math.floor(Math.random()*chinaLines.length)];
   s.quests.china=true;
   s.energy=(s.energy||0)+6;
+  s.chinaLine={date:todayKey(),text:line};
   addTodayLoot(s,{energy:6});lootPop('+6能量（彩蛋）');
   saveState(s);
-  $('#chinaJoke').textContent=chinaLines[Math.floor(Math.random()*chinaLines.length)];
   renderAll();
+  const joke=$('#chinaJoke');if(joke)joke.textContent=line;
   location.hash='china';
   toast('彩蛋剧场生效：能量+6。');
 }
@@ -1153,10 +1155,10 @@ function renderBattle(){
     return
   }
 
-  $('#battleSub').textContent='赛程数据入口已就绪：现在就可以维护 data/matches.json。填入当天比赛后，本区会显示预测列表；填入赛果后会自动结算。';
+  $('#battleSub').textContent='完整赛程在世界杯首页。卡牌赛这里只显示当天可预测比赛：把当天比赛写入 data/matches.json 后，本区会自动生成预测列表。';
   const wait=document.createElement('article');
   wait.className='match-card';
-  wait.innerHTML=`<h3>赛程数据入口已就绪</h3><p>现在即可维护 <b>data/matches.json</b>：填入当天比赛后，这里会生成预测卡片；填入赛果 winner 后会自动结算星级和奖励。</p><p class="micro" style="margin-top:8px">稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。</p>`;
+  wait.innerHTML=`<h3>比赛日预测入口</h3><p>完整赛程已经在世界杯首页维护。卡牌赛只读取 <b>data/matches.json</b> 里的 today 对阵：填入当天比赛后，这里显示胜平负预测；填入赛果 winner 后自动结算星级和奖励。</p><p class="micro" style="margin-top:8px">稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。</p><div class="hero-actions" style="margin-top:14px"><a class="secondary-btn" href="index.html">查看完整赛程</a></div>`;
   lab.appendChild(wait)
 }
 function savePrediction(matchId,pick,cardId){
@@ -1379,24 +1381,23 @@ function renderFinalReportSummary(){
 function loadPosterImage(src){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=reject;img.src=src})}
 function drawRoundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath()}
 function drawPill(ctx,x,y,w,h,text,accent){ctx.save();drawRoundRect(ctx,x,y,w,h,h/2);ctx.fillStyle='rgba(10,14,30,.82)';ctx.fill();ctx.strokeStyle=accent;ctx.lineWidth=4;ctx.stroke();ctx.fillStyle='#fff0c6';ctx.font='800 34px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x+w/2,y+h/2+1);ctx.restore()}
+function drawEmbossedSeal(ctx,x,y,r,label,sub){ctx.save();ctx.translate(x,y);ctx.rotate(-Math.PI/18);ctx.shadowColor='rgba(0,0,0,.36)';ctx.shadowBlur=28;ctx.shadowOffsetY=14;const g=ctx.createRadialGradient(-r*.25,-r*.32,r*.08,0,0,r);g.addColorStop(0,'rgba(255,249,202,.96)');g.addColorStop(.38,'rgba(231,186,58,.88)');g.addColorStop(1,'rgba(122,61,16,.82)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();ctx.shadowColor='transparent';ctx.strokeStyle='rgba(255,252,216,.9)';ctx.lineWidth=r*.055;ctx.beginPath();ctx.arc(0,0,r*.84,0,Math.PI*2);ctx.stroke();ctx.strokeStyle='rgba(67,32,7,.38)';ctx.lineWidth=r*.022;ctx.beginPath();ctx.arc(0,0,r*.68,0,Math.PI*2);ctx.stroke();for(let i=0;i<36;i++){ctx.save();ctx.rotate(i*Math.PI*2/36);ctx.strokeStyle=i%2?'rgba(255,246,190,.42)':'rgba(70,34,8,.28)';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(r*.74,0);ctx.lineTo(r*.91,0);ctx.stroke();ctx.restore()}ctx.fillStyle='rgba(38,18,4,.86)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=`900 ${Math.round(r*.25)}px serif`;ctx.fillText(label,0,-r*.06);ctx.font=`800 ${Math.round(r*.14)}px serif`;ctx.fillText(sub,0,r*.25);ctx.restore()}
 function drawGoldSeal(ctx,x,y,r,label,sub){ctx.save();ctx.translate(x,y);const g=ctx.createRadialGradient(-r*.25,-r*.3,r*.12,0,0,r);g.addColorStop(0,'#fff5b8');g.addColorStop(.42,'#e7bd45');g.addColorStop(1,'#a96018');ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='rgba(255,248,200,.9)';ctx.lineWidth=7;ctx.stroke();ctx.strokeStyle='rgba(70,35,8,.35)';ctx.lineWidth=2;for(let i=0;i<28;i++){ctx.rotate(Math.PI*2/28);ctx.beginPath();ctx.moveTo(r*.78,0);ctx.lineTo(r*.94,0);ctx.stroke()}ctx.rotate(0);ctx.fillStyle='#241306';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='900 44px serif';ctx.fillText(label,0,-10);ctx.font='800 24px serif';ctx.fillText(sub,0,34);ctx.restore()}
 function rewardCardLabels(team,s){const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const st=statusOf(team);const rarity=rarityOf(team);const isNarrative=NARRATIVE_CARD_IDS.has(team.id);const fateImp=s.fateImprint||{};let type=team.id==='china'?'彩蛋卡':isNarrative?'稀有叙事卡':'国家出战卡';return{marks,st,rarity,type,tier:team.id==='china'?'彩蛋':rewardTier(marks.hits||0),fanPoints:fateImp.fanPoints||0,memorial:team.id===s.fate&&fateImp.isMemorial}}
 async function downloadRewardCard(teamId){
   const s=loadState();const team=teamById(teamId||s.fate);if(!team){toast('先点亮一张卡。');return}if(!stateOwns(team.id)){toast('这张卡还没有点亮，暂不能下载奖励纪念卡。');return}
   try{
-    const img=await loadPosterImage(team.image);const meta=rewardCardLabels(team,s);const canvas=document.createElement('canvas');canvas.width=2200;canvas.height=3000;const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
-    const bg=ctx.createLinearGradient(0,0,2200,3000);bg.addColorStop(0,'#121a34');bg.addColorStop(.48,'#070b19');bg.addColorStop(1,'#2a1408');ctx.fillStyle=bg;ctx.fillRect(0,0,2200,3000);
-    ctx.fillStyle='rgba(236,190,74,.18)';ctx.beginPath();ctx.arc(1770,310,680,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(68,163,190,.13)';ctx.beginPath();ctx.arc(250,2440,760,0,Math.PI*2);ctx.fill();
-    ctx.save();ctx.translate(1100,1500);ctx.rotate(-Math.PI/18);ctx.fillStyle='rgba(231,189,69,.12)';drawRoundRect(ctx,-1010,-148,2020,296,40);ctx.fill();ctx.strokeStyle='rgba(231,189,69,.30)';ctx.lineWidth=4;ctx.stroke();ctx.fillStyle='rgba(255,238,178,.18)';ctx.font='900 120px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(`${meta.tier} · ${meta.type}`,0,14);ctx.restore();
-    ctx.save();drawRoundRect(ctx,220,220,1760,2340,108);ctx.fillStyle='rgba(255,247,220,.07)';ctx.fill();ctx.strokeStyle='rgba(242,202,99,.74)';ctx.lineWidth=8;ctx.stroke();ctx.shadowColor='rgba(242,202,99,.30)';ctx.shadowBlur=40;ctx.stroke();ctx.clip();
-    const scale=Math.min(1580/img.width,2110/img.height);const iw=img.width*scale,ih=img.height*scale;ctx.drawImage(img,1100-iw/2,1360-ih/2,iw,ih);ctx.restore();
-    ctx.fillStyle='rgba(4,8,18,.82)';drawRoundRect(ctx,260,2100,1680,300,42);ctx.fill();ctx.strokeStyle='rgba(242,202,99,.30)';ctx.lineWidth=3;ctx.stroke();
-    ctx.fillStyle='#fff0c6';ctx.font='900 112px serif';ctx.textAlign='left';ctx.fillText(team.id==='china'?'彩蛋卡':team.name,330,2220);ctx.fillStyle='#e8c56b';ctx.font='800 42px serif';ctx.fillText(`${meta.st.stage} · ${meta.st.state} · ${meta.marks.hits||0}颗预测星`,336,2292);
-    drawPill(ctx,280,105,440,86,'2026 世界杯','#e7bd45');drawPill(ctx,760,105,440,86,meta.type,'#e7bd45');drawPill(ctx,1240,105,420,86,meta.st.badge,'#e7bd45');
-    drawPill(ctx,300,2480,370,92,`${meta.tier}`,'#e7bd45');drawPill(ctx,720,2480,430,92,`${meta.marks.hits||0} 星奖励`,'#e7bd45');drawPill(ctx,1200,2480,460,92,team.id==='china'?'每日能量 +6':`粉丝积分 ${meta.fanPoints}`,'#e7bd45');
-    drawGoldSeal(ctx,1710,2310,150,meta.tier,meta.type);if(meta.memorial)drawGoldSeal(ctx,520,1910,128,'纪念','万能卡');
-    ctx.font='800 34px serif';ctx.fillStyle='rgba(255,240,198,.76)';ctx.textAlign='center';ctx.fillText('Song Studio · World Cup Fan Card Archive',1100,2870);
-    const a=document.createElement('a');a.download=`${team.id==='china'?'彩蛋卡':team.name}-奖励纪念卡.png`;a.href=canvas.toDataURL('image/png');a.click();toast('奖励纪念卡已下载。')
+    const img=await loadPosterImage(team.image);const meta=rewardCardLabels(team,s);const canvas=document.createElement('canvas');canvas.width=1800;canvas.height=Math.round(1800*img.height/img.width);const ctx=canvas.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+    ctx.drawImage(img,0,0,canvas.width,canvas.height);
+    const w=canvas.width,h=canvas.height;
+    const vignette=ctx.createRadialGradient(w*.5,h*.46,w*.18,w*.5,h*.5,h*.78);vignette.addColorStop(0,'rgba(255,255,255,0)');vignette.addColorStop(.72,'rgba(6,9,22,.08)');vignette.addColorStop(1,'rgba(3,5,13,.38)');ctx.fillStyle=vignette;ctx.fillRect(0,0,w,h);
+    ctx.save();drawRoundRect(ctx,50,50,w-100,h-100,70);ctx.strokeStyle='rgba(255,234,170,.70)';ctx.lineWidth=10;ctx.shadowColor='rgba(245,197,24,.30)';ctx.shadowBlur=34;ctx.stroke();ctx.shadowColor='transparent';ctx.strokeStyle='rgba(40,20,5,.28)';ctx.lineWidth=3;ctx.stroke();ctx.restore();
+    ctx.save();ctx.globalAlpha=.92;drawRoundRect(ctx,86,86,510,116,28);ctx.fillStyle='rgba(8,12,26,.48)';ctx.fill();ctx.strokeStyle='rgba(255,228,150,.42)';ctx.lineWidth=3;ctx.stroke();ctx.fillStyle='rgba(255,242,196,.92)';ctx.textAlign='left';ctx.textBaseline='middle';ctx.font='900 38px serif';ctx.fillText(meta.type,126,126);ctx.font='800 25px serif';ctx.fillStyle='rgba(255,230,176,.76)';ctx.fillText(`${meta.st.state} · ${meta.marks.hits||0}颗预测星`,126,166);ctx.restore();
+    drawEmbossedSeal(ctx,w-300,h-360,160,meta.tier,meta.type);
+    if(meta.memorial)drawEmbossedSeal(ctx,286,h-430,118,'纪念','万能卡');
+    if((meta.marks.hits||0)>0){ctx.save();ctx.translate(w-330,260);ctx.rotate(Math.PI/40);ctx.strokeStyle='rgba(255,236,168,.82)';ctx.fillStyle='rgba(35,18,4,.58)';ctx.lineWidth=5;drawRoundRect(ctx,-220,-58,440,116,18);ctx.fill();ctx.stroke();ctx.fillStyle='rgba(255,244,202,.95)';ctx.font='900 38px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(`奖励星 x ${meta.marks.hits||0}`,0,0);ctx.restore()}
+    ctx.save();ctx.globalAlpha=.78;ctx.strokeStyle='rgba(255,230,170,.54)';ctx.lineWidth=5;ctx.setLineDash([24,18]);drawRoundRect(ctx,110,110,w-220,h-220,48);ctx.stroke();ctx.restore();
+    const a=document.createElement('a');a.download=`${team.id==='china'?'彩蛋卡':team.name}-奖励盖章卡.png`;a.href=canvas.toDataURL('image/png');a.click();toast('奖励盖章卡已下载。')
   }catch(e){const a=document.createElement('a');a.download=`${team.name}-卡牌.webp`;a.href=team.image;a.click();toast('高清生成失败，已下载原始卡牌。')}
 }
 function downloadPoster(){const s=loadState();if(!s.fate){toast('先选一张主队卡。');location.hash='draw';return}downloadRewardCard(s.fate)}
@@ -1505,17 +1506,19 @@ function renderMobileApp(){
   if(chinaBox&&china){
     const chinaDone=Boolean(s.goldRevealed);
     chinaBox.className=`m-china-reveal ${chinaDone?'':'locked'}`;
-    chinaBox.innerHTML=`<img src="${chinaDone?fullImageFor(china):thumbImageFor(china)}" alt="彩蛋卡"><div><b>${chinaDone?'彩蛋卡已点亮':'彩蛋卡未点亮'}</b><span>${chinaDone?`每天可触发一次彩蛋剧场，领取 +6 能量。今天${s.quests?.china?'已领取':'未领取'}。`:'它会在每日手气或补抽里出现。抽到后才揭晓完整卡面，并解锁彩蛋剧场。'}</span></div>`;
+    const line=s.chinaLine?.date===todayKey()?s.chinaLine.text:'';
+    chinaBox.innerHTML=`<img src="${chinaDone?fullImageFor(china):thumbImageFor(china)}" alt="彩蛋卡"><div><b>${chinaDone?'彩蛋卡已点亮':'彩蛋卡未点亮'}</b><span>${chinaDone?`每天可触发一次彩蛋剧场，领取 +6 能量。今天${s.quests?.china?'已领取':'未领取'}。${line?` 今日彩蛋：${line}`:''}`:'它会在每日手气或补抽里出现。抽到后才揭晓完整卡面，并解锁彩蛋剧场。'}</span></div>`;
   }
-  $('#mChinaBtn').onclick=()=>useChinaGold(false);
+  const mChinaBtn=$('#mChinaBtn');
+  if(mChinaBtn){mChinaBtn.textContent=!s.goldRevealed?'彩蛋卡未点亮':s.quests?.china?'今日彩蛋已领取':'触发彩蛋剧场';mChinaBtn.onclick=()=>useChinaGold(false)};
 
   const battleList=$('#mBattleList');
   if(matchesData.today?.length){
     battleList.innerHTML=matchesData.today.slice(0,5).map(m=>`<div class="m-list-item"><b>${m.title||'今日比赛'}</b><span>${m.home||''} ${m.time||''} ${m.away||''}。选出战卡后提交主胜、平局或客胜。</span></div>`).join('');
     $('#mBattleText').textContent='今日比赛已开放。每场先选一张主队卡或已点亮国家卡，再提交胜平负。赛果写入后自动结算星级奖励。';
   }else{
-    battleList.innerHTML='<div class="m-list-item"><b>赛程数据入口已就绪</b><span>现在就可以维护 data/matches.json。填入当天比赛后显示预测列表，填入赛果后自动结算。</span></div>';
-    $('#mBattleText').textContent='比赛日规则已准备好：主队卡和已点亮国家卡可出战；命中+1星，同队出战命中+2星，平局退还不加星。稀有叙事卡也按本队参加单场预测。';
+    battleList.innerHTML='<div class="m-list-item"><b>比赛日预测入口</b><span>完整赛程在世界杯首页。这里读取 data/matches.json 的当天比赛，维护后自动出现预测列表。</span></div><div class="m-list-item"><b>奖励规则</b><span>命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。</span></div>';
+    $('#mBattleText').textContent='比赛日规则已准备好：主队卡和已点亮国家卡可出战。稀有叙事卡也按本队参加单场预测，它的长期题另在稀有叙事区填写。';
   }
 
   $('#mStoryList').innerHTML=NARRATIVE_QUESTIONS.map(q=>{
