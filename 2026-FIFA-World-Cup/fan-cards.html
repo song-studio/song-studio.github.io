@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta name="theme-color" content="#150b12">
-<title>2026 FIFA World Cup Fan Cards | 世界杯球迷卡牌</title>
-<meta name="description" content="进入2026 FIFA世界杯球迷卡牌局，领取主队卡、点亮国家卡牌、参与赛期预测，生成你的世界杯收藏档案。">
+<title>2026 FIFA World Cup Fan Cards | 世界杯球迷卡牌赛</title>
+<meta name="description" content="进入2026 FIFA世界杯球迷卡牌赛，领取主队卡、点亮国家卡牌、参与赛期预测，生成你的世界杯收藏档案。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=LXGW+WenKai+TC&family=Noto+Serif+SC:wght@500;700;900&family=ZCOOL+QingKe+HuangYou&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
@@ -536,6 +536,7 @@ body.theme-dark .story-card:hover{
 
 .mobile-app{display:none}
 @media(max-width:560px){
+  .topbar{display:none!important}
   main>.hero,main>.section,.mobile-dock{display:none!important}
   .mobile-app{display:block;padding:18px 0 76px}
   .m-shell{width:min(100vw - 24px,420px);margin:0 auto}
@@ -578,6 +579,11 @@ body.theme-dark .story-card:hover{
   .m-list-item{border:1px solid oklch(86% .03 86 / .12);border-radius:12px;background:oklch(10% .024 252 / .62);padding:10px}
   .m-list-item b{display:block;color:oklch(94% .018 88);font-size:13px}
   .m-list-item span{display:block;margin-top:3px;color:oklch(82% .025 86 / .72);font-size:12px;line-height:1.45}
+  .m-china-reveal{display:grid;grid-template-columns:72px 1fr;gap:10px;align-items:center;margin-top:10px;border:1px solid oklch(86% .03 86 / .14);border-radius:14px;background:linear-gradient(180deg,oklch(20% .04 252 / .88),oklch(12% .026 252 / .88));padding:10px}
+  .m-china-reveal img{width:72px;aspect-ratio:3/4;object-fit:cover;border-radius:10px;box-shadow:0 12px 24px oklch(2% .02 250 / .38)}
+  .m-china-reveal.locked img{filter:blur(9px) saturate(.45) brightness(.58);transform:scale(1.04)}
+  .m-china-reveal b{display:block;color:oklch(94% .018 88);font-size:13px}
+  .m-china-reveal span{display:block;margin-top:3px;color:oklch(82% .025 86 / .72);font-size:12px;line-height:1.45}
   .m-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .m-card-grid:not(.expanded) .m-card-mini:nth-child(n+7){display:none}
 }
@@ -604,7 +610,7 @@ body.theme-dark .story-card:hover{
       <div class="m-playbook">
         <div class="m-type"><b>主队身份</b><span>从正赛球队中选一支，记录你的观赛主线。彩蛋卡不能当主队。</span></div>
         <div class="m-type"><b>国家出战卡</b><span>比赛日用于胜平负预测，命中后奖励写到出战卡上。</span></div>
-        <div class="m-type"><b>稀有叙事卡</b><span>8张稀有卡解锁整届世界杯长期预测题。</span></div>
+        <div class="m-type"><b>稀有叙事卡</b><span>既能解锁长期题，也能按本队参加单场预测。</span></div>
         <div class="m-type"><b>彩蛋卡</b><span>第49张隐藏卡，抽到后每天可触发彩蛋剧场。</span></div>
       </div>
       <div class="m-panel">
@@ -638,6 +644,7 @@ body.theme-dark .story-card:hover{
       <div class="m-panel-head"><div><div class="m-kicker">03 奖励</div><h2>我的实时奖励</h2></div></div>
       <div class="m-reward-grid" id="mRewardGrid"></div>
       <div class="m-list" id="mRewardHelp" style="margin-top:10px"></div>
+      <div id="mChinaReveal"></div>
       <div class="m-btn-row">
         <button class="m-btn" id="mCheckBtn" type="button">今日签到</button>
         <button class="m-btn" id="mDustBtn" type="button">卡尘补抽</button>
@@ -648,7 +655,7 @@ body.theme-dark .story-card:hover{
 
     <section class="m-panel" id="mBattlePanel">
       <div class="m-panel-head"><div><div class="m-kicker">04 比赛日</div><h2>用卡预测胜平负</h2></div></div>
-      <p id="mBattleText">开赛后这里会出现当天比赛。每场先选出战卡，再预测主胜、平局或客胜；命中后奖励写回出战卡。</p>
+      <p id="mBattleText">开赛后这里会出现当天比赛。每场先选主队卡或已点亮国家卡，再预测主胜、平局或客胜；命中后奖励写回出战卡。</p>
       <div class="m-list" id="mBattleList" style="margin-top:10px"></div>
     </section>
 
@@ -672,22 +679,22 @@ body.theme-dark .story-card:hover{
     </section>
   </div>
 </div>
-<section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">2026 FIFA WORLD CUP</div><h1 class="hero-title"><span class="t1">球迷</span><span class="t2">卡牌赛</span></h1><div class="hero-subtitle">不懂球也能玩：先选主队，再用国家卡参与比赛日预测</div><p class="hero-lead">三步入门：① 选主队卡；② 每天翻一张点亮国家卡牌（每天开卡总上限3次，含补抽）；③ 比赛日用主队卡或已点亮国家卡参与胜平负预测。奖励会累计到卡牌记录：命中加星、资源增加、叙事题命中入档。</p><div class="today-brief" id="todayBrief"><div><span>今日行动</span><strong id="todayTitle">先选主队卡</strong><p id="todayText">首组卡只发一次，选一张作为你的世界杯主队。</p></div><button class="today-action" id="todayAction" type="button">开始今日流程</button><div class="today-steps" id="todaySteps"></div></div><div class="reward-hud" id="rewardHud"><div class="reward-hud-title">我的实时奖励</div><div class="reward-hud-grid"><div class="reward-chip"><b id="hudEnergy">0</b><span>预言能量</span></div><div class="reward-chip"><b id="hudDust">0</b><span>卡尘</span></div><div class="reward-chip"><b id="hudOpen">0/3</b><span>今日开卡</span></div><div class="reward-chip"><b id="hudStreak">0</b><span>连续签到</span></div></div></div><div class="today-loot" id="todayLoot">今日收获：<b id="lootEnergy">+0</b> 能量 · <b id="lootDust">+0</b> 卡尘 · <b id="lootStars">+0</b> 预测星 · <b id="lootBadges">无奖励章</b></div><div class="hero-actions"><button class="primary-btn" id="heroDraw">进入世界杯球迷卡牌赛</button><a class="secondary-btn" href="#collection">先看朦胧国家卡牌</a><a class="secondary-btn soft-link" href="#roadmap">查看完整规则</a></div><div class="hero-note"><div class="note"><strong>48+1</strong><span>48支正赛队，加一张彩蛋卡保留神秘剧情</span></div><div class="note"><strong>每天</strong><span>每天只翻一张，重复卡会转成卡尘</span></div><div class="note"><strong>全程</strong><span>预测、淘汰、夺冠都会写入你的卡牌记录</span></div></div><div class="design-index"><div class="index-no">49</div><p><b>49张世界杯球迷卡</b>一套会随赛事留下痕迹的球迷卡：现在选主队和点亮国家卡牌，比赛日用卡预测，淘汰后封存纪念，赛后汇总个人世界杯档案。</p></div><div class="phase-rail" aria-label="玩法阶段"><a href="#draw"><b>01 入场</b><span>三选一</span></a><a href="#daily"><b>02 点亮</b><span>每日一张</span></a><a href="#battle"><b>03 预测</b><span>比赛日出手</span></a><a href="#poster"><b>04 成档</b><span>赛后博物馆</span></a></div></div><div class="pack-stage"><div class="stadium-ring"></div><img class="floating-card one" id="floatOne" alt="卡牌预览"><img class="floating-card two" id="floatTwo" alt="卡牌预览"><img class="floating-card three" id="floatThree" alt="卡牌预览"><div class="pack"><div class="pack-title">FAN<br>CARD<br>PACK</div></div></div></div></section>
+<section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">2026 FIFA WORLD CUP</div><h1 class="hero-title"><span class="t1">球迷</span><span class="t2">卡牌赛</span></h1><div class="hero-subtitle">先选主队，每天点亮国家卡，比赛日用卡预测</div><p class="hero-lead">三步入门：① 选一支正赛球队作为主队；② 每天翻一张卡，点亮国家卡或获得资源；③ 开赛后用主队卡和国家卡预测胜平负。命中后，星级和奖励会记录到你使用的那张卡上。</p><div class="today-brief" id="todayBrief"><div><span>今日行动</span><strong id="todayTitle">先选主队卡</strong><p id="todayText">首组卡只发一次，选一张作为你的世界杯主队。</p></div><button class="today-action" id="todayAction" type="button">开始今日流程</button><div class="today-steps" id="todaySteps"></div></div><div class="reward-hud" id="rewardHud"><div class="reward-hud-title">我的实时奖励</div><div class="reward-hud-grid"><div class="reward-chip"><b id="hudEnergy">0</b><span>能量</span></div><div class="reward-chip"><b id="hudDust">0</b><span>卡尘</span></div><div class="reward-chip"><b id="hudOpen">0/3</b><span>今日开卡</span></div><div class="reward-chip"><b id="hudStreak">0</b><span>连续签到</span></div></div></div><div class="today-loot" id="todayLoot">今日收获：<b id="lootEnergy">+0</b> 能量 · <b id="lootDust">+0</b> 卡尘 · <b id="lootStars">+0</b> 预测星 · <b id="lootBadges">无奖励章</b></div><div class="hero-actions"><button class="primary-btn" id="heroDraw">进入世界杯球迷卡牌赛</button><a class="secondary-btn" href="#collection">查看国家卡牌</a><a class="secondary-btn soft-link" href="#roadmap">查看完整规则</a></div><div class="hero-note"><div class="note"><strong>48+1</strong><span>48支正赛队，加一张隐藏彩蛋卡</span></div><div class="note"><strong>每天</strong><span>每天翻一张，补抽计入3次上限</span></div><div class="note"><strong>全程</strong><span>单场预测、叙事题、赛后档案分开记录</span></div></div><div class="design-index"><div class="index-no">49</div><p><b>49张世界杯球迷卡</b>现在点亮卡牌和资源，开赛后用卡预测比赛。国家卡负责单场胜平负，8张稀有叙事卡额外负责整届预测题，彩蛋卡负责隐藏补给。</p></div><div class="phase-rail" aria-label="玩法阶段"><a href="#draw"><b>01 入场</b><span>选主队</span></a><a href="#daily"><b>02 点亮</b><span>每日一张</span></a><a href="#battle"><b>03 预测</b><span>比赛日出手</span></a><a href="#poster"><b>04 成档</b><span>赛后汇总</span></a></div></div><div class="pack-stage"><div class="stadium-ring"></div><img class="floating-card one" id="floatOne" alt="卡牌预览"><img class="floating-card two" id="floatTwo" alt="卡牌预览"><img class="floating-card three" id="floatThree" alt="卡牌预览"><div class="pack"><div class="pack-title">FAN<br>CARD<br>PACK</div></div></div></div></section>
 
 
 
-<section class="section" id="draw"><div class="shell"><div class="panel pack-room"><div class="pack-copy"><div class="section-kicker">主队三选一</div><h2>主队三选一</h2><p>首组卡只发一次，不能重开。选中的球队会进入你的主队席：后续海报、预测记录与赛后档案都围绕它生成。</p><button class="primary-btn" id="drawBtn">查看首组卡</button><div class="direct-pick"><b>三张都不想要？</b><p class="micro" style="margin-top:4px">你可以使用一次“主队直选”。输入国家名后直接定主队，机会仅一次。</p><div class="direct-pick-row"><input id="directPickInput" list="directPickList" placeholder="输入国家名，例如 阿根廷 / 巴西 / 日本"><datalist id="directPickList"></datalist><button type="button" id="directPickBtn">使用一次直选</button></div><p class="micro" id="directPickHint" style="margin-top:6px">未使用</p></div><div class="mini-rules"><div class="mini-rule"><b>01</b><span>首组只出正赛球队，你的主队一定能在世界杯亮相。</span></div><div class="mini-rule"><b>02</b><span>主队卡存在你的设备里，刷新页面也不会丢。</span></div><div class="mini-rule"><b>03</b><span>赛事推进时，它会获得晋级、淘汰、夺冠等奖励。</span></div></div></div><div class="draw-zone"><div class="draw-grid" id="drawGrid"></div></div></div></div></section><section class="section" id="logic"><div class="shell"><div class="logic-brief"><h3>玩法总览：三类卡的分工</h3><p class="micro" style="margin-top:6px">三条玩法线分工明确：国家卡负责单场预测，稀有叙事卡负责整届趋势题，彩蛋卡负责场外补给与互动。</p><div class="logic-grid"><article class="logic-item"><b>国家卡（主玩法）</b><p>赛前：每日一翻，点亮国家卡牌；重复卡转卡尘。赛中：用已拥有卡参与单场胜平负预测；赛果写入后自动结算命中与奖励。</p></article><article class="logic-item"><b>8张稀有叙事卡</b><p>步骤1：先点亮对应国家卡。步骤2：解锁对应叙事题资格。步骤3：在截止前提交答案。步骤4：到揭晓时间自动判定并记录命中结果。</p></article><article class="logic-item"><b>彩蛋卡（第49张）</b><p>抽到并点亮后，每天可触发一次彩蛋剧场（文案互动 + 预言能量）。彩蛋卡不参与单场胜平负预测。</p></article></div><div class="rule-note"><b>奖励与上限（重要）</b><p class="micro" style="margin-top:6px">1) 每天开卡上限3次（每日手气+卡尘补抽）。2) 新卡：能量+8；重复卡：卡尘+6、能量+4。3) 签到：能量+12。4) 彩蛋剧场：每天1次，能量+6。</p></div></div></div></section>
+<section class="section" id="draw"><div class="shell"><div class="panel pack-room"><div class="pack-copy"><div class="section-kicker">主队三选一</div><h2>主队三选一</h2><p>首组卡只发一次。选中的球队会进入你的主队席，后续海报、预测记录与赛后档案都围绕它生成。彩蛋卡不能设为主队。</p><button class="primary-btn" id="drawBtn">查看首组卡</button><div class="direct-pick"><b>三张都不想要？</b><p class="micro" style="margin-top:4px">可使用一次“主队直选”。输入正赛球队中文名后直接定主队，机会仅一次。</p><div class="direct-pick-row"><input id="directPickInput" list="directPickList" placeholder="输入国家名，例如 阿根廷 / 巴西 / 日本"><datalist id="directPickList"></datalist><button type="button" id="directPickBtn">使用一次直选</button></div><p class="micro" id="directPickHint" style="margin-top:6px">未使用</p></div><div class="mini-rules"><div class="mini-rule"><b>01</b><span>主队必须是正赛球队，彩蛋卡不会进入主队选择。</span></div><div class="mini-rule"><b>02</b><span>主队卡存在你的设备里，刷新页面也不会丢。</span></div><div class="mini-rule"><b>03</b><span>比赛日主队也可作为出战卡，命中后奖励写回卡牌。</span></div></div></div><div class="draw-zone"><div class="draw-grid" id="drawGrid"></div></div></div></div></section><section class="section" id="logic"><div class="shell"><div class="logic-brief"><h3>玩法总览：三类卡的分工</h3><p class="micro" style="margin-top:6px">先看这里就够：国家卡打单场，稀有叙事卡多一条长期题，彩蛋卡领隐藏补给。三条线分清楚，但不会浪费任何强队卡。</p><div class="logic-grid"><article class="logic-item"><b>国家卡（含稀有卡）</b><p>赛前每天点亮。比赛日用它预测胜平负：命中+1星；如果出战卡正好是本场球队，命中+2星；猜错后该卡冷却到下一比赛日。</p></article><article class="logic-item"><b>8张稀有叙事卡</b><p>它们首先是国家卡，可按本队参加单场预测；同时额外解锁一条整届世界杯长期题，答对后进入赛后档案。</p></article><article class="logic-item"><b>彩蛋卡（第49张）</b><p>抽到后才揭晓卡面。它不当主队、不出战比赛；每天可触发一次彩蛋剧场，获得文案互动和 +6 能量。</p></article></div><div class="rule-note"><b>奖励与上限</b><p class="micro" style="margin-top:6px">每天最多开卡3次，包含每日手气、卡尘补抽和能量补抽。新卡：能量+8；重复卡：卡尘+6、能量+4；签到：能量+12；彩蛋剧场：能量+6。</p></div></div></div></section>
 <section class="section" id="daily"><div class="shell"><div class="section-head"><div><div class="section-kicker">每日手气</div><div class="section-title">每天只翻一张</div><p class="section-sub">每日手气是轻量打卡，不是无限刷卡。翻到新卡会点亮国家卡牌，重复卡会转成卡尘。</p></div></div><div class="panel daily-card"><div><h2 class="section-title">今天只有一次手气</h2><p class="section-sub">它不改变你的主队卡，只增加国家卡牌和资源。早加入能积累更多收藏；晚加入也能用比赛日入场包直接参与预测。</p><div class="daily-meter"><div><b id="ownedCount">0</b><span>已点亮</span></div><div><b id="fateName">未定</b><span>主队席</span></div><div><b id="dailyState">可翻</b><span>今日状态</span></div></div><div style="margin-top:20px"><button class="primary-btn" id="dailyBtn">翻今日手气</button></div></div><div class="daily-result" id="dailyResult">今日手气还没揭晓。</div></div></div></section>
 
 <section class="section" id="quests"><div class="shell"><div class="section-head"><div><div class="section-kicker">补给站</div><div class="section-title">赛前补给与赛中资源</div><p class="section-sub">每日完成签到、抽卡与彩蛋剧场，可积累长期资源。资源不会因为赛事阶段变化而清空。</p></div></div><div class="panel quest-grid"><div class="quest-board"><h2 class="section-title">今日补给清单</h2><p class="section-sub">每天刷新一轮。今日补给共三项：签到、翻手气、彩蛋剧场（需先点亮彩蛋卡）。</p><div class="quest-list" id="questList"></div></div><div class="vault"><div class="section-kicker">资源背包</div><div class="vault-number" id="energyNum">0</div><p class="section-sub">能量是长期补给资源，可用于能量补抽和后续赛事活动；卡尘来自重复卡，可用于补抽。</p><div class="vault-row vault-wide"><div class="vault-cell"><b id="streakNum">0</b><span>连续打卡</span></div><div class="vault-cell"><b id="dustNum">0</b><span>卡尘</span></div></div><div class="vault-actions"><button class="chip-btn" id="dustReroll">消耗8卡尘补一抽</button><button class="chip-btn" id="energyReroll">消耗24能量补一抽</button></div><div class="vault-actions"><button class="chip-btn" id="exportSave">导出卡包码</button><button class="chip-btn" id="importSave">导入卡包码</button></div><p class="micro vault-tip">收藏记录保存在当前浏览器。换手机或清缓存前，先导出卡包码。</p></div></div></div></section>
 
-<section class="section" id="fate"><div class="shell"><div class="section-head"><div><div class="section-kicker">我的主队席</div><div class="section-title">我的主队席</div><p class="section-sub">这是你的主角卡。它晋级、爆冷、淘汰或夺冠时，都会在卡牌上拿到对应奖励。</p></div></div><div class="panel fate-desk" id="fateDesk"></div></div></section>
+<section class="section" id="fate"><div class="shell"><div class="section-head"><div><div class="section-kicker">我的主队席</div><div class="section-title">我的主队席</div><p class="section-sub">这是你的观赛身份。比赛日它可作为出战卡参加胜平负预测；主队晋级、淘汰与单场命中都会写入它的记录。</p></div></div><div class="panel fate-desk" id="fateDesk"></div></div></section>
 
-<section class="section" id="battle"><div class="shell"><div class="section-head"><div><div class="section-kicker">预测局</div><div class="section-title">赛前完成预测准备，开赛后进行每日预测</div><p class="section-sub" id="battleSub">比赛日流程：先选1张出战卡（主队卡或国家卡），再提交主胜/平/客胜。稀有叙事卡请到「八张稀有叙事卡预测」区单独填写。</p></div></div><div class="match-lab" id="matchLab"></div></div></section>
-<section class="section" id="stories"><div class="shell"><div class="section-head"><div><div class="section-kicker">稀有叙事赛道</div><div class="section-title">八张稀有叙事卡预测</div><p class="micro" style="margin-top:8px">如何使用稀有叙事卡：先点亮对应国家卡，再填写该题。你可只提交1题，也可提交满8题；每题到截止时间自动锁定。</p><p class="section-sub">每张稀有叙事卡对应一条整届趋势预测。只有点亮对应国家卡后，才能提交该题答案。题目到截止时间自动锁定，揭晓时间自动判定。</p></div></div><div class="story-grid" id="storyGrid"></div></div></section>
+<section class="section" id="battle"><div class="shell"><div class="section-head"><div><div class="section-kicker">预测局</div><div class="section-title">赛前完成预测准备，开赛后进行每日预测</div><p class="section-sub" id="battleSub">比赛日流程：先选1张出战卡（主队卡或已点亮国家卡），再提交主胜/平/客胜。稀有叙事卡也可按本队出战，长期题请到「八张稀有叙事卡预测」区填写。</p></div></div><div class="match-lab" id="matchLab"></div></div></section>
+<section class="section" id="stories"><div class="shell"><div class="section-head"><div><div class="section-kicker">稀有叙事赛道</div><div class="section-title">八张稀有叙事卡预测</div><p class="micro" style="margin-top:8px">使用方式：抽到对应稀有卡，解锁对应题目，在截止前锁定答案。可以只答1题，也可以集齐后答满8题。</p><p class="section-sub">这8题是稀有卡的额外玩法：单场比赛照常按本队出战，长期题则预测整届世界杯的大剧情，包括冠军、亚军、季军、火力王、金靴进球数、东道主走势和决赛剧本。</p></div></div><div class="story-grid" id="storyGrid"></div></div></section>
 <section class="section" id="china"><div class="shell"><div class="panel china-stage"><div class="china-card" id="chinaCard"></div><div class="china-copy"><div class="section-kicker">彩蛋剧场</div><h2>彩蛋剧场</h2><p class="china-quote">中国队没进世界杯，但中国球迷永远在场。</p><p>彩蛋卡不参加主队选择，也不参与单场胜平负预测。它是一张资源卡：点亮后每天可触发一次彩蛋剧场，获得场外文案和 +6 能量，能量可长期保留并用于补抽。</p><button class="primary-btn" id="chinaBtn">触发今日彩蛋剧场</button><div class="joke-box" id="chinaJoke">点亮彩蛋卡后，每天可触发一次彩蛋剧场：获得一条场外文案与能量奖励。</div></div></div></div></section>
 <section class="section" id="collection"><div class="shell"><div class="gallery-head"><div><div class="section-kicker">国家卡牌库</div><div class="section-title">49张卡分阶段点亮</div><p class="section-sub">未点亮卡仅显示剪影。点亮后显示完整卡面与国家信息，并参与后续预测与奖励记录。</p></div><div class="progress-wrap"><div class="progress-text"><span>卡牌进度</span><span id="progressText">0/49</span></div><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div></div><div class="gallery-tools" id="filters"></div><div class="gallery" id="gallery"></div></div></section>
-<section class="section compactable open" id="roadmap"><div class="shell"><div class="section-head"><div><div class="section-kicker">赛季路线</div><div class="section-title">赛前到赛后的参与规则</div><p class="section-sub">赛前先收集与攒资源；开赛后参与胜平负预测。无论何时进入，都能从当前阶段直接开始。</p></div></div><div class="unlock-grid"><article class="unlock-card"><h3>赛前阶段：确定主队</h3><p>选主队、每天点亮一张、做今日补给，先把自己的球迷档案养起来。</p></article><article class="unlock-card locked"><h3>小组赛阶段：胜平负预测</h3><p>页面切换到真实对阵。用已拥有的卡预测胜平负；赛果写入后自动结算命中与奖励。</p></article><article class="unlock-card locked"><h3>淘汰赛阶段：结果结算与纪念</h3><p>晋级卡继续发光，淘汰队不会废掉，会变成告别纪念卡，保留你的追忆文案。</p></article><article class="unlock-card locked"><h3>赛后阶段：档案汇总</h3><p>赛后统一汇总预测记录、收藏进度与淘汰纪念，形成你的2026世界杯博物馆。</p></article></div><div class="late-pass"><article class="late-card"><h3>不同时间加入，均可参与</h3><p>开赛后第一次进入，会出现比赛日入场包：给当天相关球队卡和少量资源。晚来的用户不追前面的打卡天数，直接参与当天比赛。</p><div class="late-list"><span>赛前：每天点亮一张，慢慢养档案</span><span>小组赛：入场包补起步，重点看预测</span><span>淘汰赛：拿存活队卡，直接玩关键场</span></div></article><article class="late-card"><h3>分阶段参与，体验公平</h3><p>早来的优势是档案更厚、绝版纪念更多；晚来的优势是可以用判断力追预测。两条赛道分开，避免新用户一进来就觉得来不及。</p><div class="late-list"><span>收集赛道：比故事厚度</span><span>预测赛道：比判断准确</span><span>博物馆：记录自己的入场时间线</span></div></article></div></div></section><section class="section compactable" id="engine"><div class="shell"><div class="section-head"><div><div class="section-kicker">奖励系统</div><div class="section-title">卡牌会随世界杯进程持续累积奖励</div><p class="section-sub">页面会为每张卡保留赛事状态与个人战绩：待出征、晋级、淘汰纪念。你的收集、资源与预测记录会持续累计。</p></div></div><div class="engine-grid"><article class="engine-step"><h3>命中奖励</h3><p>预测命中会给出战卡加星。</p></article><article class="engine-step"><h3>精准奖励</h3><p>该奖励位已预留，待比分预测功能上线后启用。</p></article><article class="engine-step"><h3>爆冷奖励</h3><p>该奖励位已预留，待冷门预测功能上线后启用。</p></article><article class="engine-step"><h3>纪念奖励</h3><p>球队淘汰后转为纪念卡，保留它的最后一场故事。</p></article><article class="engine-step"><h3>叙事题记录</h3><p>稀有叙事题命中后会写入个人档案，作为赛后总结内容。</p></article></div></div></section>
+<section class="section compactable open" id="roadmap"><div class="shell"><div class="section-head"><div><div class="section-kicker">赛季路线</div><div class="section-title">赛前到赛后的参与规则</div><p class="section-sub">赛前收集卡牌与资源；开赛后用卡预测当日比赛。无论何时进入，都能从当前阶段开始。</p></div></div><div class="unlock-grid"><article class="unlock-card"><h3>赛前：选主队与点亮卡牌</h3><p>确定主队，每天翻一张卡，签到攒能量。新卡进入卡牌库，重复卡转成卡尘。</p></article><article class="unlock-card locked"><h3>小组赛：用卡预测胜平负</h3><p>页面显示当天比赛。选择出战卡后提交主胜、平局或客胜，赛果写入后自动结算。</p></article><article class="unlock-card locked"><h3>淘汰赛：关键场与纪念状态</h3><p>继续用存活球队卡预测。主队若被淘汰，会转为纪念状态，保留本届赛事轨迹。</p></article><article class="unlock-card locked"><h3>赛后：生成个人档案</h3><p>汇总主队轨迹、单场预测星级、稀有叙事命中和卡牌收藏进度。</p></article></div><div class="late-pass"><article class="late-card"><h3>晚加入也能参与</h3><p>开赛后第一次进入，会按当前阶段发放入场包：补足可用球队卡和能量，让新用户直接参加当天比赛。</p><div class="late-list"><span>赛前：靠每日翻卡慢慢积累</span><span>小组赛：入场包补起步，重点玩预测</span><span>淘汰赛：优先补当前可用球队卡</span></div></article><article class="late-card"><h3>早来有积累，晚来有入口</h3><p>早来的优势是卡牌更多、故事更完整；晚来的优势是可以从当前比赛日直接判断。收集和预测分开计分，避免新用户被挡在门外。</p><div class="late-list"><span>收集：看卡牌进度和稀有卡</span><span>预测：看命中星级和同队加成</span><span>档案：记录自己的入场时间线</span></div></article></div></div></section><section class="section compactable" id="engine"><div class="shell"><div class="section-head"><div><div class="section-kicker">奖励系统</div><div class="section-title">奖励会写回你的卡牌</div><p class="section-sub">每次预测都绑定一张出战卡。系统根据赛果自动计算星级、冷却、主队积分和叙事题结果。</p></div></div><div class="engine-grid"><article class="engine-step"><h3>单场命中</h3><p>胜平负预测命中，出战卡获得 +1 预测星。</p></article><article class="engine-step"><h3>同队加成</h3><p>如果出战卡正好是本场球队，且预测命中，该卡获得 +2 预测星。</p></article><article class="engine-step"><h3>平局退还</h3><p>赛果为平局时，系统退还本场判断，不加星，也不让卡进入冷却。</p></article><article class="engine-step"><h3>失误冷却</h3><p>猜错后，该出战卡冷却到下一比赛日，避免一张强卡无限刷。</p></article><article class="engine-step"><h3>叙事题记录</h3><p>稀有叙事题揭晓后，命中结果写入赛后档案。</p></article></div></div></section>
 <section class="section" id="poster"><div class="shell"><div class="panel poster-wrap"><div class="poster-preview" id="posterPreview"></div><div class="poster-copy"><div class="section-kicker">赛后博物馆</div><h2>我的2026世界杯档案</h2><p>现在可下载主队海报。赛程推进后会汇总为完整档案：主队轨迹、单场预测结果与叙事题命中记录。</p><div class="micro" id="finalReport" style="margin:10px 0 14px"></div><button class="primary-btn" id="downloadPoster">下载我的主队海报</button></div></div></div></section>
 </main>
 <nav class="mobile-dock" aria-label="手机快捷入口"><a href="#draw">主队</a><a href="#daily">手气</a><a href="#battle">预测</a><a href="#poster">档案</a></nav><div class="modal" id="modal"><button class="close" id="closeModal" aria-label="关闭弹窗">×</button><div class="modal-card" id="modalCard"></div></div><div class="toast" id="toast"></div><div class="loot-pop" id="lootPop"></div>
@@ -736,7 +743,7 @@ const combos = [
   {id:'euro-kings',title:'欧洲王座',teams:['france','germany','spain','portugal'],reward:'开赛后解锁欧洲王座专属玩法'},
   {id:'asia',title:'亚洲挑战者',teams:['japan','korea-republic','australia','saudi-arabia'],reward:'开赛后解锁亚洲挑战者专属玩法'},
   {id:'africa',title:'非洲鼓点',teams:['morocco','senegal','egypt','ghana','ivory-coast'],reward:'开赛后解锁非洲鼓点专属玩法'},
-  {id:'joker',title:'场外安慰团',teams:['china'],reward:'淘汰队可领取彩蛋卡安慰章'}
+  {id:'joker',title:'彩蛋补给',teams:['china'],reward:'点亮彩蛋卡后，每天可触发一次彩蛋剧场获得能量'}
 ];
 const TEAM_CN = {
   'argentina':'阿根廷','brazil':'巴西','france':'法国','portugal':'葡萄牙','spain':'西班牙','germany':'德国','united-states':'美国','mexico':'墨西哥','canada':'加拿大','england':'英格兰','netherlands':'荷兰','uruguay':'乌拉圭','japan':'日本','korea-republic':'韩国','morocco':'摩洛哥','senegal':'塞内加尔','croatia':'克罗地亚','belgium':'比利时','switzerland':'瑞士','austria':'奥地利','colombia':'哥伦比亚','ghana':'加纳','egypt':'埃及','australia':'澳大利亚','saudi-arabia':'沙特阿拉伯','turkey':'土耳其','czechia':'捷克','haiti':'海地','qatar':'卡塔尔','china':'中国'
@@ -777,15 +784,16 @@ function todayKey(){
 }
 
 const NARRATIVE_QUESTIONS=[
-{id:'argentina',cardId:'argentina',title:'冠军预测',type:'team',desc:'用阿根廷稀有卡提交：预测本届冠军球队',deadline:'2026-07-10',revealAt:'2026-07-19'},
-{id:'brazil',cardId:'brazil',title:'亚军预测',type:'team',desc:'用巴西稀有卡提交：预测本届亚军球队',deadline:'2026-07-10',revealAt:'2026-07-19'},
-{id:'germany',cardId:'germany',title:'季军预测',type:'team',desc:'用德国稀有卡提交：预测本届季军球队',deadline:'2026-07-16',revealAt:'2026-07-19'},
-{id:'france',cardId:'france',title:'从32强淘汰赛到决赛，进球最多的球队',type:'team',desc:'用法国稀有卡提交：预测淘汰赛阶段进球最多球队（含加时，不含点球大战）',deadline:'2026-07-12',revealAt:'2026-07-19'},
-{id:'united-states',cardId:'united-states',title:'小组赛进球最多球队',type:'team',desc:'用美国稀有卡提交：预测小组赛阶段进球最多球队',deadline:'2026-06-25',revealAt:'2026-06-26'},
-{id:'mexico',cardId:'mexico',title:'金靴进球数',type:'text',desc:'用墨西哥稀有卡提交：填写数字（例如 6）',deadline:'2026-07-12',revealAt:'2026-07-19'},
-{id:'portugal',cardId:'portugal',title:'东道主三队谁走最远',type:'team',desc:'用葡萄牙稀有卡提交：只可选择美国/加拿大/墨西哥',deadline:'2026-07-12',revealAt:'2026-07-19'},
-{id:'spain',cardId:'spain',title:'决赛90分钟内是否分出胜负',type:'text',desc:'用西班牙稀有卡提交：填写 是 或 否（只看常规时间+补时）',deadline:'2026-07-18',revealAt:'2026-07-19'}
+{id:'argentina',cardId:'argentina',title:'冠军归属',type:'team',desc:'用阿根廷稀有叙事卡提交：预测本届世界杯冠军球队',deadline:'2026-07-10',revealAt:'2026-07-19'},
+{id:'brazil',cardId:'brazil',title:'亚军席位',type:'team',desc:'用巴西稀有叙事卡提交：预测本届世界杯亚军球队',deadline:'2026-07-10',revealAt:'2026-07-19'},
+{id:'germany',cardId:'germany',title:'季军归属',type:'team',desc:'用德国稀有叙事卡提交：预测本届世界杯季军球队',deadline:'2026-07-16',revealAt:'2026-07-19'},
+{id:'france',cardId:'france',title:'32强后火力王',type:'team',desc:'用法国稀有叙事卡提交：预测从32强淘汰赛到决赛进球最多的球队（含加时，不含点球大战）',deadline:'2026-07-12',revealAt:'2026-07-19'},
+{id:'united-states',cardId:'united-states',title:'小组赛火力王',type:'team',desc:'用美国稀有叙事卡提交：预测小组赛阶段进球最多的球队',deadline:'2026-06-25',revealAt:'2026-06-26'},
+{id:'mexico',cardId:'mexico',title:'金靴进球数',type:'text',desc:'用墨西哥稀有叙事卡提交：填写金靴最终进球数，例如 6。这里猜数字，不填球员名',deadline:'2026-07-12',revealAt:'2026-07-19'},
+{id:'portugal',cardId:'portugal',title:'东道主最远者',type:'team',desc:'用葡萄牙稀有叙事卡提交：只在美国、加拿大、墨西哥三队中选择走得最远的一队',deadline:'2026-07-12',revealAt:'2026-07-19'},
+{id:'spain',cardId:'spain',title:'决赛90分钟剧本',type:'text',desc:'用西班牙稀有叙事卡提交：填写 是 或 否，预测决赛常规时间加补时是否分出胜负',deadline:'2026-07-18',revealAt:'2026-07-19'}
 ]
+const NARRATIVE_CARD_IDS = new Set(NARRATIVE_QUESTIONS.map(q=>q.cardId));
 function isPast(dateStr){return todayKey()>String(dateStr||'')}
 function isCardInCooldown(cardId,s=loadState()){
   const cd=s.imprints?.[cardId]?.cooldownUntil;
@@ -856,9 +864,11 @@ function ensureEntryPack(){
   s.entryStage=stage.key;
   s.entryPackNoticed=false;
   saveState(s);
-  toast(`${stage.label}已发放：补足可用卡、预言能量+${stage.energy}。`);
+  toast(`${stage.label}已发放：补足可用卡、能量+${stage.energy}。`);
 }
 function teamById(id){return allTeams.find(t=>t.id===id)}
+function fullImageFor(team){return resolveAsset(team?.specialImage||team?.image||team?.thumb||'')}
+function thumbImageFor(team){return resolveAsset(team?.specialThumb||team?.thumb||team?.image||'')}
 function statusOf(team){const s=loadState();const isFate=s.fate===team.id;const isOwned=s.owned?.includes(team.id);const base=cardStatus[team.id]||{stage:'开幕前',state:team.qualified?'待出征':'场外彩蛋',alive:team.qualified};const badge=team.name==='中国'?'彩蛋':isFate?'你的主队':isOwned?'已点亮':'待收集';return{...base,badge}}
 const rarityNames={common:'普卡',rare:'稀有',epic:'史诗',legendary:'传说',gold:'彩蛋'};
 const rarityPools={legendary:['argentina','brazil','france','portugal','spain','germany'],epic:['united-states','mexico','england','netherlands','uruguay','japan','korea-republic','morocco','senegal'],rare:['canada','croatia','belgium','switzerland','austria','colombia','ghana','egypt','australia','saudi-arabia','turkey']};
@@ -910,7 +920,7 @@ function chooseFate(id,opts={}){
 function directPickFate(){const s=loadState();if(s.fate){toast('你已经有主队卡了，无需再用直选。');return}if(s.directPickUsed){toast('主队直选机会已用完。');return}const input=$('#directPickInput');const team=findTeamByInput(input?.value);if(!team){toast('没有匹配到球队，请输入参赛队中文名或英文名。');return}chooseFate(team.id,{direct:true});if(input)input.value=''}
 function initDirectPickList(){const list=$('#directPickList');if(!list)return;list.innerHTML='';allTeams.filter(t=>t.qualified&&t.id!=='china').forEach(t=>{const op=document.createElement('option');op.value=t.name;op.label=`${t.name} (${t.id})`;list.appendChild(op)})}
 function renderDirectPick(){const s=loadState();const btn=$('#directPickBtn');const hint=$('#directPickHint');const input=$('#directPickInput');if(!btn||!hint||!input)return;const done=Boolean(s.directPickUsed||s.fate);btn.disabled=done;input.disabled=done;btn.style.opacity=done?'.62':'1';input.style.opacity=done?'.72':'1';hint.textContent=s.fate?'已选主队：主队锁定后不可再用直选':s.directPickUsed?'已使用一次：不可再次直选':'未使用'}
-function dailyDraw(){const s=ensureDailyOpenLimit(loadState());if(s.daily?.lastDraw===todayKey()){toast('今天已经翻过手气了，明天再来。');return}if(!canOpenMore(s,3)){toast('今天开卡次数已满（3次），明天再来。');return}const rareBlocked=isDailyRareBlocked(s);let pool=[...allTeams];if(rareBlocked){pool=pool.filter(t=>rarityTier(rarityOf(t).key)<=1);}if(!pool.length)pool=[...allTeams];const opened=(s.owned||[]).length;const chinaBoost=(!s.goldRevealed&&!(s.owned||[]).includes('china'))?(opened<=1?900:opened<=3?620:opened<=6?360:0):0;const weightedPool=pool.map(t=>t.id==='china'?{...t,__weight:rarityOf(t).weight+chinaBoost}:t);const team=sampleWeighted(weightedPool,1)[0];const rarity=rarityOf(team);const duplicate=s.owned.includes(team.id)||s.fate===team.id;s.daily={...s.daily,lastDraw:todayKey(),lastCard:team.id,duplicate,lastRareDate:s.daily?.lastRareDate||null};if(rarityTier(rarity.key)>=2){s.daily.lastRareDate=todayKey()}addOpenCount(s,1);if(team.id==='china')s.goldRevealed=true;if(duplicate){s.dust=(s.dust||0)+6;s.energy=(s.energy||0)+4;addTodayLoot(s,{energy:4,dust:6});lootPop('+4能量 · +6卡尘');saveState(s);completeQuest('draw',0);renderAll();toast(`已有${rarity.label}「${team.name}」，重复卡转成卡尘+6、预言能量+4。`)}else{s.owned.push(team.id);s.energy=(s.energy||0)+8;addTodayLoot(s,{energy:8});lootPop('+8能量');saveState(s);completeQuest('draw',0);renderAll();toast(team.id==='china'?'彩蛋卡已点亮：现在可使用彩蛋剧场领取每日奖励。':`新卡！${rarity.label}「${team.name}」点亮国家卡牌，预言能量+8。`);updateHeroFloats()}}
+function dailyDraw(){const s=ensureDailyOpenLimit(loadState());if(s.daily?.lastDraw===todayKey()){toast('今天已经翻过手气了，明天再来。');return}if(!canOpenMore(s,3)){toast('今天开卡次数已满（3次），明天再来。');return}const rareBlocked=isDailyRareBlocked(s);let pool=[...allTeams];if(rareBlocked){pool=pool.filter(t=>rarityTier(rarityOf(t).key)<=1);}if(!pool.length)pool=[...allTeams];const opened=(s.owned||[]).length;const chinaBoost=(!s.goldRevealed&&!(s.owned||[]).includes('china'))?(opened<=1?900:opened<=3?620:opened<=6?360:0):0;const weightedPool=pool.map(t=>t.id==='china'?{...t,__weight:rarityOf(t).weight+chinaBoost}:t);const team=sampleWeighted(weightedPool,1)[0];const rarity=rarityOf(team);const duplicate=s.owned.includes(team.id)||s.fate===team.id;s.daily={...s.daily,lastDraw:todayKey(),lastCard:team.id,duplicate,lastRareDate:s.daily?.lastRareDate||null};if(rarityTier(rarity.key)>=2){s.daily.lastRareDate=todayKey()}addOpenCount(s,1);if(team.id==='china')s.goldRevealed=true;if(duplicate){s.dust=(s.dust||0)+6;s.energy=(s.energy||0)+4;addTodayLoot(s,{energy:4,dust:6});lootPop('+4能量 · +6卡尘');saveState(s);completeQuest('draw',0);renderAll();toast(`已有${rarity.label}「${team.name}」，重复卡转成卡尘+6、能量+4。`)}else{s.owned.push(team.id);s.energy=(s.energy||0)+8;addTodayLoot(s,{energy:8});lootPop('+8能量');saveState(s);completeQuest('draw',0);renderAll();toast(team.id==='china'?'彩蛋卡已点亮：现在可使用彩蛋剧场领取每日奖励。':`新卡！${rarity.label}「${team.name}」点亮国家卡牌，能量+8。`);updateHeroFloats()}}
 function rerollDaily(){toast('每日手气每天只翻一次，保持卡牌稀有感。')}
 
 function ensureQuestDay(s){
@@ -938,7 +948,7 @@ function checkIn(){
   addTodayLoot(s,{energy:12});lootPop('+12能量（签到）');
   saveState(s);
   renderAll();
-  toast('打卡成功，预言能量+12。');
+  toast('打卡成功，能量+12。');
 }
 function useChinaGold(fromQuest=false){
   const s=ensureQuestDay(loadState());
@@ -959,12 +969,12 @@ function useChinaGold(fromQuest=false){
   $('#chinaJoke').textContent=chinaLines[Math.floor(Math.random()*chinaLines.length)];
   renderAll();
   location.hash='china';
-  toast('彩蛋剧场生效：预言能量+6。');
+  toast('彩蛋剧场生效：能量+6。');
 }
 function renderQuests(){
   const s=ensureQuestDay(loadState());
   const items=[
-    {key:'checked',icon:'签',title:'今日签到',desc:'每天来一次，领取预言能量。',action:'签到',run:'checkIn()'},
+    {key:'checked',icon:'签',title:'今日签到',desc:'每天来一次，领取能量。',action:'签到',run:'checkIn()'},
     {key:'draw',icon:'翻',title:'翻今日手气',desc:'翻一张未知卡，点亮国家卡牌或变成卡尘。',action:'去翻卡',run:"location.hash='daily'"},
     
     {key:'china',icon:'嘴',title:'彩蛋剧场',desc:'抽到并点亮彩蛋卡后，每天可触发一次，提供文案互动与补给奖励。',action:'去触发',run:'useChinaGold(true)'}
@@ -1103,8 +1113,8 @@ function renderTodayAction(){
   let action={title:'今日补给完成',text:'今天的动作都做完了。你可以去国家卡牌库查看还差哪些卡，或等待明天继续点亮。开赛后中途加入也会获得入场包。',label:'看国家卡牌',run:()=>{location.hash='collection'}};
   if(!s.fate){nextKey='fate';action={title:'先选主队卡',text:'首组卡只发一次，选一张作为你的世界杯主队。',label:'查看首组',run:()=>{location.hash='draw';setTimeout(drawPack,220)}}}
   else if(!dailyDone){nextKey='daily';action={title:'翻今日手气',text:'每天只翻一张卡，新卡进国家卡牌，重复卡变卡尘。',label:'翻一张',run:()=>dailyDraw()}}
-  else if(!s.quests.checked){nextKey='checked';action={title:'完成今日签到',text:'签到可领取预言能量。',label:'签到',run:()=>checkIn()}}
-  else if(!s.quests.china){nextKey='china';action={title:s.goldRevealed?'触发彩蛋剧场':'先点亮彩蛋卡',text:s.goldRevealed?'今天最后一步，触发彩蛋剧场领取预言能量。':'彩蛋剧场奖励需要先抽到并点亮彩蛋卡。',label:s.goldRevealed?'去触发':'去抽卡',run:()=>s.goldRevealed?useChinaGold(false):(location.hash='daily')}}
+  else if(!s.quests.checked){nextKey='checked';action={title:'完成今日签到',text:'签到可领取能量。',label:'签到',run:()=>checkIn()}}
+  else if(!s.quests.china){nextKey='china';action={title:s.goldRevealed?'触发彩蛋剧场':'先点亮彩蛋卡',text:s.goldRevealed?'今天最后一步，触发彩蛋剧场领取能量。':'彩蛋剧场奖励需要先抽到并点亮彩蛋卡。',label:s.goldRevealed?'去触发':'去抽卡',run:()=>s.goldRevealed?useChinaGold(false):(location.hash='daily')}}
   $('#todayTitle').textContent=action.title;
   $('#todayText').textContent=action.text;
   $('#todayAction').textContent=action.label;
@@ -1123,7 +1133,7 @@ function renderBattle(){
   const cards=getPredictableCards();
   const hint=document.createElement('article');
   hint.className='match-card';
-  hint.innerHTML=`<h3>比赛日预测入口</h3><p>可出战卡：${cards.length} 张（主队卡 + 已点亮国家卡）。稀有叙事卡只用于八条叙事题，彩蛋卡不参加单场预测。</p><p class="micro" style="margin-top:8px">操作入口：进入本区后，给每场比赛先选“出战卡”，再点主胜/平局/客胜提交。</p>`;
+  hint.innerHTML=`<h3>比赛日预测入口</h3><p>可出战卡：${cards.length} 张（主队卡 + 已点亮国家卡）。稀有叙事卡也能按本队出战，同时额外解锁长期题；彩蛋卡不参加单场预测。</p><p class="micro" style="margin-top:8px">操作入口：进入本区后，给每场比赛先选“出战卡”，再点主胜/平局/客胜提交。</p>`;
   lab.appendChild(hint);
 
   if(matchesData.today?.length){
@@ -1143,16 +1153,21 @@ function renderBattle(){
     return
   }
 
-  $('#battleSub').textContent='当前是赛前阶段：这里暂不开放单场提交。开赛后本区会自动显示当日比赛，你可直接用主队卡或国家卡提交预测。';
+  $('#battleSub').textContent='当前是赛前阶段：这里暂不开放单场提交。开赛后本区会自动显示当日比赛，你可直接用主队卡或已点亮国家卡提交预测。';
   const wait=document.createElement('article');
   wait.className='match-card';
-  wait.innerHTML=`<h3>比赛预测即将开启</h3><p>开赛后这里会按“当天赛程”生成预测卡片。你每场先选1张出战卡，再提交主胜/平局/客胜。</p><p class="micro" style="margin-top:8px">叙事稀有卡继续在「八张稀有叙事卡预测」里使用，不在这里出战。</p>`;
+  wait.innerHTML=`<h3>比赛预测即将开启</h3><p>开赛后这里会按“当天赛程”生成预测卡片。你每场先选1张出战卡，再提交主胜/平局/客胜。</p><p class="micro" style="margin-top:8px">稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。</p>`;
   lab.appendChild(wait)
 }
 function savePrediction(matchId,pick,cardId){
   const s=loadState();
   const using=cardId||s.fate;
   if(!using){toast('请先选择出战卡。');return}
+  const usingTeam=teamById(using);
+  if(!usingTeam||usingTeam.id==='china'||!usingTeam.qualified){
+    toast('彩蛋卡不参加单场预测，请选择主队卡或已点亮国家卡。');
+    return;
+  }
   s.predictions=s.predictions||{};
   if(s.predictions[matchId]){toast('本场已经提交过预测。');return}
   const isFateCard=(using===s.fate);
@@ -1344,11 +1359,12 @@ function openTeam(team){
       : `<button class="secondary-btn" style="opacity:.72;cursor:not-allowed" disabled>主队已锁定</button>`);
   const guestAction=`<button class="primary-btn" onclick="closeModal();location.hash='daily'">去翻今日手气</button>`;
   const displayName=team.id==='china'?'彩蛋卡':team.name;
+  const isNarrativeCard=NARRATIVE_CARD_IDS.has(team.id);
   const usage=team.id==='china'
     ? '彩蛋卡不参加主队选择和单场胜平负预测。点亮后每天可触发一次彩蛋剧场，领取能量奖励。'
-    : (rarityTier(rarity.key)>=2
-      ? '这张稀有叙事卡既是国家卡，也可解锁对应长期预测题；比赛日仍可作为出战卡。'
-      : '这张国家卡可在比赛日作为出战卡，预测命中后星级奖励会写到这张卡上。');
+    : (isNarrativeCard
+      ? '这张稀有叙事卡有双身份：比赛日可按对应国家出战；同时解锁一条整届世界杯长期预测题。'
+      : '这张国家出战卡可在比赛日参与胜平负预测，命中后星级奖励会写到这张卡上。');
   $('#modalCard').innerHTML=`<div style="position:relative"><img src="${team.image}" alt="${displayName}" style="${owned?'':'filter:blur(16px) saturate(.45) brightness(.48);transform:scale(1.02)'}"><span class="card-stamp">${owned?rarity.label:'未点亮'}</span></div><div class="modal-body"><span class="fate-tag">${team.region} · ${st.stage} · ${rarity.label}</span><h2>${displayName}</h2><p>${team.feature}</p><p><b>卡牌用途：</b>${usage}</p><p><b>赛事状态：</b>${st.state} · ${st.badge}</p>${linkText}<p><b>收藏状态：</b>${owned?'已经在你的卡牌库里。':'尚未点亮，只能看到朦胧预览。每日手气可以点亮它。'}</p>${owned?ownedAction:guestAction}</div>`;
   $('#modal').classList.add('open')
 }
@@ -1428,7 +1444,7 @@ function renderMobileApp(){
   const fateBox=$('#mFateBox');
   if(fate){
     const marks=s.imprints?.[fate.id]||{hits:0};
-    fateBox.innerHTML=`<div class="m-fate-card"><img src="${fate.thumb}" alt="${fate.name}"><div><div class="m-kicker">你的主队</div><h2>${fate.name}</h2><p>${fate.feature}</p><div class="m-status-grid" style="margin-top:8px"><div class="m-stat"><b>${marks.hits||0}</b><span>预测星</span></div><div class="m-stat"><b>${rewardTier(marks.hits||0)}</b><span>奖励等级</span></div><div class="m-stat"><b>${s.fateImprint?.fanPoints||0}</b><span>粉丝积分</span></div></div></div></div>`;
+    fateBox.innerHTML=`<div class="m-fate-card"><img src="${fullImageFor(fate)}" alt="${fate.name}"><div><div class="m-kicker">你的主队</div><h2>${fate.name}</h2><p>${fate.feature}</p><div class="m-status-grid" style="margin-top:8px"><div class="m-stat"><b>${marks.hits||0}</b><span>预测星</span></div><div class="m-stat"><b>${rewardTier(marks.hits||0)}</b><span>奖励等级</span></div><div class="m-stat"><b>${s.fateImprint?.fanPoints||0}</b><span>粉丝积分</span></div></div></div></div>`;
   }else{
     const ids=mobileOpeningPackIds();
     fateBox.innerHTML=`<div class="m-pick-grid">${ids.map(id=>{const t=teamById(id);return `<button class="m-card-mini" type="button" data-m-fate="${t.id}"><img src="${t.thumb}" alt="${t.name}"><strong>${t.name}</strong><span>${rarityOf(t).label}</span></button>`}).join('')}</div>`;
@@ -1442,7 +1458,7 @@ function renderMobileApp(){
   };
 
   const dailyName=dailyTeam?.id==='china'?'彩蛋卡':dailyTeam?.name;
-  $('#mDailyResult').innerHTML=dailyTeam?`<div class="m-fate-card"><img src="${dailyTeam.thumb}" alt="${dailyName}"><div><div class="m-kicker">${s.daily?.duplicate?'重复转化':dailyTeam.id==='china'?'彩蛋点亮':'今日点亮'}</div><h2>${dailyName}</h2><p>${dailyTeam.id==='china'?'彩蛋卡已点亮：它不当主队，不出战比赛；每天可触发彩蛋剧场，领取+6能量。':(s.daily?.duplicate?'重复卡已转成卡尘和能量。':'这张卡已进入你的国家卡牌库，比赛日可作为出战卡。')}</p></div></div>`:'<div class="m-list-item"><b>今日手气还没揭晓</b><span>每天只翻一张，保持卡牌稀有感。</span></div>';
+  $('#mDailyResult').innerHTML=dailyTeam?`<div class="m-fate-card"><img src="${dailyTeam.id==='china'?fullImageFor(dailyTeam):thumbImageFor(dailyTeam)}" alt="${dailyName}"><div><div class="m-kicker">${s.daily?.duplicate?'重复转化':dailyTeam.id==='china'?'彩蛋点亮':'今日点亮'}</div><h2>${dailyName}</h2><p>${dailyTeam.id==='china'?'彩蛋卡已点亮：它不当主队，不出战比赛；每天可触发彩蛋剧场，领取+6能量。':(s.daily?.duplicate?'重复卡已转成卡尘和能量。':'这张卡已进入你的国家卡牌库，比赛日可作为出战卡。')}</p></div></div>`:'<div class="m-list-item"><b>今日手气还没揭晓</b><span>每天只翻一张，保持卡牌稀有感。</span></div>';
   $('#mDailyBtn').textContent=dailyDone?'今日已翻，明天再来':'翻今日手气';
   $('#mDailyBtn').onclick=dailyDone?()=>toast('今天已经翻过手气了，明天再来。'):dailyDraw;
 
@@ -1460,15 +1476,22 @@ function renderMobileApp(){
     ['卡尘怎么用','抽到重复卡会得到卡尘。消耗8卡尘可补一抽，适合差几张卡时追进度。'],
     ['预测星怎么来','比赛日提交胜平负预测，赛果写入后自动结算。命中+1星；如果出战卡正好是本场球队，命中+2星。']
   ].map(([a,b])=>`<div class="m-list-item"><b>${a}</b><span>${b}</span></div>`).join('');
+  const china=teamById('china');
+  const chinaBox=$('#mChinaReveal');
+  if(chinaBox&&china){
+    const chinaDone=Boolean(s.goldRevealed);
+    chinaBox.className=`m-china-reveal ${chinaDone?'':'locked'}`;
+    chinaBox.innerHTML=`<img src="${chinaDone?fullImageFor(china):thumbImageFor(china)}" alt="彩蛋卡"><div><b>${chinaDone?'彩蛋卡已点亮':'彩蛋卡未点亮'}</b><span>${chinaDone?`每天可触发一次彩蛋剧场，领取 +6 能量。今天${s.quests?.china?'已领取':'未领取'}。`:'它会在每日手气或补抽里出现。抽到后才揭晓完整卡面，并解锁彩蛋剧场。'}</span></div>`;
+  }
   $('#mChinaBtn').onclick=()=>useChinaGold(false);
 
   const battleList=$('#mBattleList');
   if(matchesData.today?.length){
     battleList.innerHTML=matchesData.today.slice(0,5).map(m=>`<div class="m-list-item"><b>${m.title||'今日比赛'}</b><span>${m.home||''} ${m.time||''} ${m.away||''}。选出战卡后提交主胜、平局或客胜。</span></div>`).join('');
-    $('#mBattleText').textContent='今日比赛已开放。每场先选一张出战卡，再提交胜平负。赛果写入后自动结算星级奖励。';
+    $('#mBattleText').textContent='今日比赛已开放。每场先选一张主队卡或已点亮国家卡，再提交胜平负。赛果写入后自动结算星级奖励。';
   }else{
     battleList.innerHTML='<div class="m-list-item"><b>赛程数据待导入</b><span>开赛后，只需要更新 data/matches.json 的当天赛程和赛果，这里就会显示比赛列表并自动结算。</span></div>';
-    $('#mBattleText').textContent='比赛日规则已准备好：国家卡和主队卡都可出战；命中+1星，同队出战命中+2星，平局退还不加星。';
+    $('#mBattleText').textContent='比赛日规则已准备好：主队卡和已点亮国家卡可出战；命中+1星，同队出战命中+2星，平局退还不加星。稀有叙事卡也按本队参加单场预测。';
   }
 
   $('#mStoryList').innerHTML=NARRATIVE_QUESTIONS.map(q=>{
