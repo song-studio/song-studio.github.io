@@ -976,6 +976,24 @@ body.lang-en .hero-title .t2{
 </main>
 <nav class="mobile-dock" aria-label="手机快捷入口"><a href="#draw">主队</a><a href="#daily">手气</a><a href="#battle">预测</a><a href="#poster">档案</a></nav><div class="modal" id="modal"><button class="close" id="closeModal" aria-label="关闭弹窗">×</button><div class="modal-card" id="modalCard"></div></div><div class="fc-share-sheet" id="fcShareSheet" onclick="if(event.target===this)closeFanSharePanel()"><div class="fc-share-card"><h3>分享</h3><div class="fc-share-preview"><b>2026 世界杯赛程 + 球迷卡牌赛</b><div class="fc-share-preview-hero"><img src="assets/fan-cards/highlights/messi-wechat.jpg" alt="梅西卡牌预览"></div></div><div class="fc-share-links"><button class="fc-share-link-btn" type="button" onclick="copyFanHomeLink()">复制：世界杯赛程主页链接</button><button class="fc-share-link-btn" type="button" onclick="copyFanCardsLink()">复制：球迷卡牌赛链接</button></div><button class="fc-share-btn" type="button" onclick="copyFanShareLinks()">一键复制两条链接</button><button class="fc-share-wechat" type="button" onclick="openFanWeChatApp()">尝试打开微信</button><button class="fc-share-close" type="button" onclick="closeFanSharePanel()">关闭</button></div></div><div class="toast" id="toast"></div><div class="loot-pop" id="lootPop"></div>
 <script>
+// --- PWA install --- must be first, before init()
+let _pwaDefer, _pwaShown = false, _pwaTimer;
+function _showPwaBanner() {
+  if (_pwaShown || !_pwaDefer) return;
+  _pwaShown = true;
+  clearTimeout(_pwaTimer);
+  const el = document.getElementById('pwaBanner');
+  if (el) el.classList.remove('hidden');
+}
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  _pwaDefer = e;
+  _pwaTimer = setTimeout(_showPwaBanner, 30000);
+});
+window.addEventListener('scroll', () => {
+  if (!_pwaShown && _pwaDefer && window.scrollY > 400) _showPwaBanner();
+}, {once: false});
+
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const STORAGE_KEY = 'worldcupFanFateCardsV2';
@@ -2457,22 +2475,6 @@ window.fanCardAdmin={settleMatch,saveNarrativeAnswer,savePrediction,resolveNarra
 initMobileCompaction();
 init();
 
-// --- PWA install ---
-let _pwaDefer, _pwaShown = false, _pwaTimer;
-function _showPwaBanner() {
-  if (_pwaShown || !_pwaDefer) return;
-  _pwaShown = true;
-  clearTimeout(_pwaTimer);
-  $('#pwaBanner').classList.remove('hidden');
-}
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  _pwaDefer = e;
-  _pwaTimer = setTimeout(_showPwaBanner, 30000);
-});
-window.addEventListener('scroll', () => {
-  if (!_pwaShown && _pwaDefer && window.scrollY > 400) _showPwaBanner();
-}, {once: false});
 $('#pwaYes').onclick = async () => {
   $('#pwaBanner').classList.add('hidden');
   if (_pwaDefer) {
