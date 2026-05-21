@@ -14,6 +14,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://song-studio.github.io/2026-FIFA-World-Cup/fan-cards.html">
+<link rel="manifest" href="./manifest.json">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKKXYYTL3J"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-QKKXYYTL3J')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -792,9 +793,69 @@ body.lang-en .hero-title .t2{
   margin-top:auto!important;
 }
 
+.pwa-banner{
+  position:fixed;top:0;left:50%;transform:translateX(-50%);
+  z-index:9999;
+  width:calc(100% - 24px);max-width:420px;
+  margin-top:12px;
+  padding:12px 16px;
+  border-radius:14px;
+  background:oklch(20% .045 248 / .94);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid oklch(100% 0 0 / .10);
+  box-shadow:0 8px 32px oklch(0% 0 0 / .45);
+  display:flex;align-items:center;gap:12px;
+  animation:pwaSlide .45s cubic-bezier(.22,.61,.36,1);
+  font-family:'Noto Serif SC',serif;
+}
+.pwa-banner.hidden{display:none}
+@keyframes pwaSlide{from{opacity:0;transform:translateX(-50%) translateY(-16px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.pwa-banner .pwa-icon{
+  flex-shrink:0;width:44px;height:44px;border-radius:10px;
+  overflow:hidden;box-shadow:0 2px 8px oklch(0% 0 0 / .3);
+}
+.pwa-banner .pwa-icon img{width:100%;height:100%;object-fit:cover}
+.pwa-banner .pwa-body{flex:1;min-width:0}
+.pwa-banner .pwa-body .pwa-title{
+  color:oklch(96% .018 86);font-size:14px;font-weight:700;
+  letter-spacing:.02em;line-height:1.3;
+}
+.pwa-banner .pwa-body .pwa-sub{
+  color:oklch(51% .035 245 / .6);font-size:12px;
+  margin-top:2px;letter-spacing:.01em;
+}
+.pwa-banner .pwa-act{display:flex;gap:6px;flex-shrink:0}
+.pwa-banner .pwa-btn{
+  padding:8px 16px;border-radius:20px;border:none;
+  font-size:13px;font-weight:700;cursor:pointer;
+  letter-spacing:.02em;white-space:nowrap;
+  transition:transform .15s,opacity .15s;
+}
+.pwa-banner .pwa-btn:active{transform:scale(.96)}
+.pwa-btn.pwa-yes{
+  background:oklch(66% .145 78);color:oklch(20% .045 248);
+}
+.pwa-btn.pwa-no{
+  background:transparent;color:oklch(51% .035 245 / .6);
+  border:1px solid oklch(51% .035 245 / .2);
+}
+
 </style>
 </head>
 <body>
+<div class="pwa-banner hidden" id="pwaBanner">
+  <div class="pwa-icon"><img src="assets/icon-192.png" alt="Fan Cards"></div>
+  <div class="pwa-body">
+    <div class="pwa-title">添加到主屏幕</div>
+    <div class="pwa-sub">随时翻卡，不用找链接</div>
+  </div>
+  <div class="pwa-act">
+    <button class="pwa-btn pwa-yes" id="pwaYes">添加</button>
+    <button class="pwa-btn pwa-no" id="pwaNo">以后再说</button>
+  </div>
+</div>
+
 <header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./index.html"><span class="brand-mark"></span><span>FAN CARDS</span></a><nav class="nav"><a href="./index.html">世界杯首页</a><a href="#draw">入场</a><a href="#daily">每日手气</a><a href="#quests">补给站</a><a href="#battle">预测局</a><a href="#collection">国家卡牌库</a><a href="#poster">我的档案</a></nav><button class="chip-btn lang-toggle" id="langToggle" type="button">EN</button><button class="chip-btn theme-toggle" id="themeToggle" type="button">深色版</button></div></header>
 <main>
 <div class="mobile-app" id="mobileApp">
@@ -2367,6 +2428,39 @@ $('#downloadPoster').onclick=downloadPoster;
 window.fanCardAdmin={settleMatch,saveNarrativeAnswer,savePrediction,resolveNarrativesAuto,buildFinalReport,loadState,renderAll};
 initMobileCompaction();
 init();
+
+// --- PWA install ---
+let _pwaDefer, _pwaShown = false, _pwaTimer;
+function _showPwaBanner() {
+  if (_pwaShown || !_pwaDefer) return;
+  _pwaShown = true;
+  clearTimeout(_pwaTimer);
+  $('#pwaBanner').classList.remove('hidden');
+}
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  _pwaDefer = e;
+  _pwaTimer = setTimeout(_showPwaBanner, 30000);
+});
+window.addEventListener('scroll', () => {
+  if (!_pwaShown && _pwaDefer && window.scrollY > 400) _showPwaBanner();
+}, {once: false});
+$('#pwaYes').onclick = async () => {
+  $('#pwaBanner').classList.add('hidden');
+  if (_pwaDefer) {
+    _pwaDefer.prompt();
+    const r = await _pwaDefer.userChoice;
+    if (r.outcome === 'accepted') gtag('event','pwa_install',{event_category:'engagement'});
+    _pwaDefer = null;
+  }
+};
+$('#pwaNo').onclick = () => {
+  $('#pwaBanner').classList.add('hidden');
+};
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
 </script>
 </body>
 </html>

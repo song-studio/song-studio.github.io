@@ -1,0 +1,23 @@
+{
+  "name": "FIFA World Cup Fan Cards",
+  "short_name": "Fan Cards",
+  "description": "每日翻卡 · 预测比分 · 点亮49国",
+  "start_url": "/2026-FIFA-World-Cup/fan-cards.html",
+  "scope": "/2026-FIFA-World-Cup/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#150b12",
+  "background_color": "#150b12",
+  "icons": [
+    {
+      "src": "/2026-FIFA-World-Cup/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/2026-FIFA-World-Cup/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
