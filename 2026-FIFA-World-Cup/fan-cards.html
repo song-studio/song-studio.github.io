@@ -87,6 +87,7 @@ body.theme-dark .phase-rail a{background:linear-gradient(145deg,oklch(100% .012 
 body.theme-dark .mobile-dock{background:oklch(10% .04 255 / .84)}
 body.theme-dark .mobile-dock a{background:oklch(100% .01 80 / .07)}
 .lang-toggle{min-width:46px;text-align:center}
+.install-btn{flex:0 0 auto}
 #mLangToggle{display:inline-flex;margin:4px 0 10px;padding:6px 11px}
 body.theme-dark .toast{background:oklch(13% .04 20 / .94)}
 body.theme-dark .modal{background:oklch(5% .02 20 / .78)}
@@ -856,7 +857,7 @@ body.lang-en .hero-title .t2{
   </div>
 </div>
 
-<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./index.html"><span class="brand-mark"></span><span>FAN CARDS</span></a><nav class="nav"><a href="./index.html">世界杯首页</a><a href="#draw">入场</a><a href="#daily">每日手气</a><a href="#quests">补给站</a><a href="#battle">预测局</a><a href="#collection">国家卡牌库</a><a href="#poster">我的档案</a></nav><button class="chip-btn lang-toggle" id="langToggle" type="button">EN</button><button class="chip-btn theme-toggle" id="themeToggle" type="button">深色版</button></div></header>
+<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./index.html"><span class="brand-mark"></span><span>FAN CARDS</span></a><nav class="nav"><a href="./index.html">世界杯首页</a><a href="#draw">入场</a><a href="#daily">每日手气</a><a href="#quests">补给站</a><a href="#battle">预测局</a><a href="#collection">国家卡牌库</a><a href="#poster">我的档案</a></nav><button class="chip-btn lang-toggle" id="langToggle" type="button">EN</button><button class="chip-btn theme-toggle" id="themeToggle" type="button">深色版</button><button class="chip-btn install-btn" id="installBtn" type="button" title="添加到主屏幕">添加到桌面</button></div></header>
 <main>
 <div class="mobile-app" id="mobileApp">
   <div class="m-shell">
@@ -865,6 +866,7 @@ body.lang-en .hero-title .t2{
         <div class="m-title">
           <a class="m-home-link" href="./index.html">← 世界杯首页</a>
           <button class="chip-btn lang-toggle" id="mLangToggle" type="button">EN</button>
+          <button class="chip-btn install-btn" id="mInstallBtn" type="button" title="添加到主屏幕">添加到桌面</button>
           <h1>世界杯球迷卡牌赛</h1>
           <p>先选主队，每天点亮国家卡。世界杯开赛后，用手里的卡预测比赛；命中后，星级和奖励会记录到你使用的那张卡上。</p>
         </div>
@@ -2407,6 +2409,8 @@ initTheme();
 if($('#langToggle'))$('#langToggle').onclick=toggleLang;
 if($('#mLangToggle'))$('#mLangToggle').onclick=toggleLang;
 $('#themeToggle').onclick=()=>{const darking=!document.body.classList.contains('theme-dark');applyTheme(darking?'dark':'light');localizeNode();toast(darking?'已切换到深色版。':'已切换到浅色版。')};
+$('#installBtn').onclick=()=>{if(_pwaDefer){_pwaDefer.prompt();_pwaDefer.userChoice.then(r=>{if(r.outcome==='accepted')gtag('event','pwa_install',{event_category:'engagement'})})}else{toast('请在浏览器菜单中选「添加到主屏幕」')}};
+if($('#mInstallBtn'))$('#mInstallBtn').onclick=()=>$('#installBtn').click();
 $('#heroDraw').onclick=()=>{const s=loadState();if(s.fate){location.hash='fate';return}location.hash='draw';setTimeout(drawPack,220)};
 if($('#heroShareBtn'))$('#heroShareBtn').onclick=shareFanCardsPage;
 $('#drawBtn').onclick=drawPack;
