@@ -2422,10 +2422,13 @@ function _installClick(){
     return;
   }
   const isIOS=/iPhone|iPad|iPod/.test(navigator.userAgent);
+  const isChrome=/Chrome/i.test(navigator.userAgent)&&!/Edge|OPR|Samsung/i.test(navigator.userAgent);
   if(isIOS){
     toast('请用 Safari 浏览器打开本页 → 点底部 ↑ 分享 → 选「添加到主屏幕」→ 点添加',4000);
+  }else if(!isChrome){
+    toast('请用 Chrome 浏览器打开本页，即可一键安装',3500);
   }else{
-    toast('请在浏览器菜单中选「添加到主屏幕」');
+    toast('请稍等页面加载完成，再点一次即可安装',2500);
   }
 }
 $('#installBtn').onclick=_installClick;
