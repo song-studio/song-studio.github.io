@@ -132,7 +132,7 @@ body.theme-dark .quick-q{border-color:oklch(86% .03 86 / .18);background:linear-
 body.theme-dark .quick-q-row button{border-color:oklch(86% .03 86 / .22);background:oklch(14% .03 254 / .86);color:oklch(92% .02 86 / .94)}
 .reward-hud{margin-top:14px;border:1px solid oklch(28% .05 248 / .14);border-radius:16px;padding:10px;background:linear-gradient(145deg,oklch(100% .01 88 / .80),oklch(95% .03 204 / .58))}
 .reward-hud-title{font-size:12px;font-weight:900;color:oklch(42% .10 82);letter-spacing:.06em}
-.reward-hud-grid{margin-top:8px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.today-loot{margin-top:10px;border:1px dashed var(--line);border-radius:14px;padding:10px 12px;background:oklch(100% .01 88 / .45)}.today-loot b{color:var(--gold)}.loot-pop{position:fixed;right:18px;top:86px;z-index:62;opacity:0;transform:translateY(-8px);pointer-events:none;transition:.22s;background:oklch(14% .04 20 / .94);border:1px solid var(--line);border-radius:14px;padding:10px 12px;color:oklch(97% .01 90);font-size:12px;font-weight:900;box-shadow:var(--shadow)}.loot-pop.show{opacity:1;transform:translateY(0)}
+.reward-hud-grid{margin-top:8px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.reward-chip.tap-reroll{cursor:pointer;position:relative}.reward-chip.tap-reroll::after{content:'点我补抽';position:absolute;right:8px;top:6px;font-size:10px;opacity:.66}body.lang-en .reward-chip.tap-reroll::after{content:'Redraw'}.today-loot{margin-top:10px;border:1px dashed var(--line);border-radius:14px;padding:10px 12px;background:oklch(100% .01 88 / .45)}.today-loot b{color:var(--gold)}.loot-pop{position:fixed;right:18px;top:86px;z-index:62;opacity:0;transform:translateY(-8px);pointer-events:none;transition:.22s;background:oklch(14% .04 20 / .94);border:1px solid var(--line);border-radius:14px;padding:10px 12px;color:oklch(97% .01 90);font-size:12px;font-weight:900;box-shadow:var(--shadow)}.loot-pop.show{opacity:1;transform:translateY(0)}
 .fc-share-sheet{position:fixed;inset:0;background:oklch(8% .03 250 / .62);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;z-index:78;padding:18px}.fc-share-sheet.open{display:flex}.fc-share-card{width:min(420px,94vw);border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,oklch(20% .05 250 / .98),oklch(11% .04 250 / .98));padding:18px;box-shadow:var(--shadow)}.fc-share-card h3{font-size:18px;color:#fff;margin-bottom:8px}.fc-share-preview{border:1px solid oklch(100% .01 88 / .18);border-radius:14px;padding:10px;background:oklch(100% .01 88 / .06)}.fc-share-preview b{display:block;color:#fff;font-size:13px}.fc-share-preview-cards{display:flex;gap:8px;margin-top:10px}.fc-share-preview-cards img{width:31%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:1px solid oklch(100% .01 88 / .20)}.fc-share-btn{margin-top:10px;width:100%;border:1px solid oklch(80% .14 145 / .55);background:linear-gradient(135deg,oklch(78% .13 145 / .26),oklch(70% .12 145 / .16));color:#efffed;border-radius:12px;padding:11px 12px;font-size:14px;font-weight:800;cursor:pointer}.fc-share-wechat{margin-top:8px;width:100%;border:1px solid oklch(78% .13 145 / .45);background:oklch(78% .13 145 / .12);color:#ecffef;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer}.fc-share-close{margin-top:10px;width:100%;border:1px solid var(--line);background:oklch(100% .01 88 / .08);color:#fff;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer}
 .reward-chip{border:1px solid oklch(26% .045 248 / .16);border-radius:12px;padding:8px;background:oklch(100% .01 88 / .88)}
 .reward-chip b{display:block;font-family:var(--title);font-size:24px;line-height:1;color:oklch(34% .11 78)}
@@ -751,6 +751,39 @@ body.theme-dark .today-loot b,body.theme-dark .reward-hud-title{color:oklch(84% 
   .m-logo-card{width:59px}
   .m-title h1{font-size:22px;letter-spacing:-.01em}
 }
+body.lang-en .hero-title .t1,
+body.lang-en .hero-title .t2{
+  letter-spacing:0;
+}
+@media(max-width:560px){
+  body.lang-en .hero-title{
+    line-height:1.02;
+    max-width:58vw;
+  }
+  body.lang-en .hero-title .t1{
+    font-size:clamp(30px,8.4vw,40px);
+  }
+  body.lang-en .hero-title .t2{
+    font-size:clamp(24px,6.8vw,33px);
+    margin-left:0;
+    margin-top:.08em;
+    max-width:10ch;
+    white-space:normal;
+  }
+}
+
+/* v-final: align rare-story cards in desktop grid */
+.story-grid{
+  align-items:stretch;
+}
+.story-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.story-card .pick-row{
+  margin-top:auto!important;
+}
 
 </style>
 </head>
@@ -800,7 +833,7 @@ body.theme-dark .today-loot b,body.theme-dark .reward-hud-title{color:oklch(84% 
     </section>
 
     <section class="m-panel" id="mDailyPanel">
-      <div class="m-panel-head"><div><div class="m-kicker">02 每日手气</div><h2>每天只翻一张</h2></div></div>
+      <div class="m-panel-head"><div><div class="m-kicker">02 每日手气</div><h2>每天三翻二选</h2></div></div>
       <p>翻到新卡会点亮国家卡；重复卡会转成卡尘和能量。能量够18可补抽一次，当天最多开3张。</p>
       <div id="mDailyResult" style="margin-top:12px"></div>
       <button class="m-btn primary" id="mDailyBtn" type="button" style="margin-top:10px">翻今日手气</button>
@@ -847,12 +880,12 @@ body.theme-dark .today-loot b,body.theme-dark .reward-hud-title{color:oklch(84% 
     </section>
   </div>
 </div>
-<section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">2026 FIFA WORLD CUP</div><h1 class="hero-title"><span class="t1">球迷</span><span class="t2">卡牌赛</span></h1><div class="hero-subtitle">先选主队，每天点亮国家卡，比赛日用卡预测</div><p class="hero-lead">三步入门：① 选一支正赛球队作为主队；② 每天翻一张卡，点亮国家卡或获得资源；③ 开赛后用主队卡和国家卡预测胜平负。命中后，星级和奖励会记录到你使用的那张卡上。</p><div class="today-brief" id="todayBrief"><div><span>今日行动</span><strong id="todayTitle">先选主队卡</strong><p id="todayText">首组卡只发一次，选一张作为你的世界杯主队。</p></div><button class="today-action" id="todayAction" type="button">开始今日流程</button><div class="today-steps" id="todaySteps"></div></div><div class="reward-hud" id="rewardHud"><div class="reward-hud-title">我的实时奖励</div><div class="reward-hud-grid"><div class="reward-chip"><b id="hudEnergy">0</b><span>能量</span></div><div class="reward-chip"><b id="hudDust">0</b><span>卡尘</span></div><div class="reward-chip"><b id="hudOpen">0/3</b><span>今日开卡</span></div><div class="reward-chip"><b id="hudStreak">0</b><span>连续签到</span></div></div></div><div class="today-loot" id="todayLoot">今日收获：<b id="lootEnergy">+0</b> 能量 · <b id="lootDust">+0</b> 卡尘 · <b id="lootStars">+0</b> 预测星 · <b id="lootBadges">无奖励章</b></div><div class="hero-actions"><button class="primary-btn" id="heroDraw">进入世界杯球迷卡牌赛</button><a class="secondary-btn" href="#collection">查看国家卡牌</a><button class="secondary-btn" type="button" id="heroShareBtn">复制分享链接 ↗</button><a class="secondary-btn soft-link" href="#roadmap">查看完整规则</a></div><div class="hero-note"><div class="note"><strong>48+1</strong><span>48支正赛队，加一张隐藏彩蛋卡</span></div><div class="note"><strong>每天</strong><span>每天翻一张，补抽计入3次上限</span></div><div class="note"><strong>全程</strong><span>单场预测、叙事题、赛后档案分开记录</span></div></div><div class="design-index"><div class="index-no">49</div><p><b>49张世界杯球迷卡</b>现在点亮卡牌和资源，开赛后用卡预测比赛。国家卡负责单场胜平负，8张稀有叙事卡额外负责整届预测题，彩蛋卡负责隐藏补给。</p></div><div class="phase-rail" aria-label="玩法阶段"><a href="#draw"><b>01 入场</b><span>选主队</span></a><a href="#daily"><b>02 点亮</b><span>每日一张</span></a><a href="#battle"><b>03 预测</b><span>比赛日出手</span></a><a href="#poster"><b>04 成档</b><span>赛后汇总</span></a></div></div><div class="pack-stage"><div class="stadium-ring"></div><img class="floating-card one" id="floatOne" alt="卡牌预览"><img class="floating-card two" id="floatTwo" alt="卡牌预览"><img class="floating-card three" id="floatThree" alt="卡牌预览"><div class="pack"><div class="pack-title">FAN<br>CARD<br>PACK</div></div></div></div></section>
+<section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">2026 FIFA WORLD CUP</div><h1 class="hero-title"><span class="t1">球迷</span><span class="t2">卡牌赛</span></h1><div class="hero-subtitle">先选主队，每天点亮国家卡，比赛日用卡预测</div><p class="hero-lead">三步入门：① 选一支正赛球队作为主队；② 每天三翻二选，点亮国家卡或获得资源；③ 开赛后用主队卡和国家卡预测胜平负。命中后，星级和奖励会记录到你使用的那张卡上。</p><div class="today-brief" id="todayBrief"><div><span>今日行动</span><strong id="todayTitle">先选主队卡</strong><p id="todayText">首组卡只发一次，选一张作为你的世界杯主队。</p></div><button class="today-action" id="todayAction" type="button">开始今日流程</button><div class="today-steps" id="todaySteps"></div></div><div class="reward-hud" id="rewardHud"><div class="reward-hud-title">我的实时奖励</div><div class="reward-hud-grid"><div class="reward-chip tap-reroll" id="hudEnergyChip"><b id="hudEnergy">0</b><span>能量</span></div><div class="reward-chip tap-reroll" id="hudDustChip"><b id="hudDust">0</b><span>卡尘</span></div><div class="reward-chip"><b id="hudOpen">0/3</b><span>今日开卡</span></div><div class="reward-chip"><b id="hudStreak">0</b><span>连续签到</span></div></div></div><div class="today-loot" id="todayLoot">今日收获：<b id="lootEnergy">+0</b> 能量 · <b id="lootDust">+0</b> 卡尘 · <b id="lootStars">+0</b> 预测星 · <b id="lootBadges">无奖励章</b></div><div class="hero-actions"><button class="primary-btn" id="heroDraw">进入世界杯球迷卡牌赛</button><a class="secondary-btn" href="#collection">查看国家卡牌</a><button class="secondary-btn" type="button" id="heroShareBtn">复制分享链接 ↗</button><a class="secondary-btn soft-link" href="#roadmap">查看完整规则</a></div><div class="hero-note"><div class="note"><strong>48+1</strong><span>48支正赛队，加一张隐藏彩蛋卡</span></div><div class="note"><strong>每天</strong><span>每天三翻二选，补抽计入3次上限</span></div><div class="note"><strong>全程</strong><span>单场预测、叙事题、赛后档案分开记录</span></div></div><div class="design-index"><div class="index-no">49</div><p><b>49张世界杯球迷卡</b>现在点亮卡牌和资源，开赛后用卡预测比赛。国家卡负责单场胜平负，8张稀有叙事卡额外负责整届预测题，彩蛋卡负责隐藏补给。</p></div><div class="phase-rail" aria-label="玩法阶段"><a href="#draw"><b>01 入场</b><span>选主队</span></a><a href="#daily"><b>02 点亮</b><span>三翻二选</span></a><a href="#battle"><b>03 预测</b><span>比赛日出手</span></a><a href="#poster"><b>04 成档</b><span>赛后汇总</span></a></div></div><div class="pack-stage"><div class="stadium-ring"></div><img class="floating-card one" id="floatOne" alt="卡牌预览"><img class="floating-card two" id="floatTwo" alt="卡牌预览"><img class="floating-card three" id="floatThree" alt="卡牌预览"><div class="pack"><div class="pack-title">FAN<br>CARD<br>PACK</div></div></div></div></section>
 
 
 
 <section class="section" id="draw"><div class="shell"><div class="panel pack-room"><div class="pack-copy"><div class="section-kicker">主队三选一</div><h2>主队三选一</h2><p>首组卡只发一次。选中的球队会进入你的主队席，后续海报、预测记录与赛后档案都围绕它生成。彩蛋卡不能设为主队。</p><button class="primary-btn" id="drawBtn">查看首组卡</button><div class="direct-pick"><b>三张都不想要？</b><p class="micro" style="margin-top:4px">可使用一次“主队直选”。输入正赛球队中文名后直接定主队，机会仅一次。</p><div class="direct-pick-row"><input id="directPickInput" list="directPickList" placeholder="输入国家名，例如 阿根廷 / 巴西 / 日本"><datalist id="directPickList"></datalist><button type="button" id="directPickBtn">使用一次直选</button></div><p class="micro" id="directPickHint" style="margin-top:6px">未使用</p></div><div class="mini-rules"><div class="mini-rule"><b>01</b><span>主队必须是正赛球队，彩蛋卡不会进入主队选择。</span></div><div class="mini-rule"><b>02</b><span>主队卡存在你的设备里，刷新页面也不会丢。</span></div><div class="mini-rule"><b>03</b><span>比赛日主队也可作为出战卡，命中后奖励写回卡牌。</span></div></div></div><div class="draw-zone"><div class="draw-grid" id="drawGrid"></div></div></div></div></section><section class="section" id="logic"><div class="shell"><div class="logic-brief"><h3>玩法总览：三类卡的分工</h3><p class="micro" style="margin-top:6px">先看这里就够：国家卡打单场，稀有叙事卡多一条长期题，彩蛋卡领隐藏补给。三条线分清楚，但不会浪费任何强队卡。</p><div class="logic-grid"><article class="logic-item"><b>国家卡（含稀有卡）</b><p>赛前每天点亮。比赛日用它预测胜平负：命中+1星；如果出战卡正好是本场球队，命中+2星；猜错后该卡冷却到下一比赛日。</p></article><article class="logic-item"><b>8张稀有叙事卡</b><p>它们首先是国家卡，可按本队参加单场预测；同时额外解锁一条整届世界杯长期题，答对后进入赛后档案。</p></article><article class="logic-item"><b>彩蛋卡（第49张）</b><p>抽到后才揭晓卡面。它不当主队、不出战比赛；每天可触发一次彩蛋剧场获得 +8 能量，公开留言一次再获得 +10 能量。</p></article></div><div class="rule-note"><b>奖励与上限</b><p class="micro" style="margin-top:6px">每天最多开卡3次，包含每日手气、卡尘补抽和能量补抽。新卡：能量+8；重复卡：卡尘+6、能量+4；签到：能量+12；彩蛋剧场：能量+8；公开留言：能量+10。</p></div></div></div></section>
-<section class="section" id="daily"><div class="shell"><div class="section-head"><div><div class="section-kicker">每日手气</div><div class="section-title">每天只翻一张</div><p class="section-sub">每日手气是轻量打卡，不是无限刷卡。翻到新卡会点亮国家卡牌，重复卡会转成卡尘。</p></div></div><div class="panel daily-card"><div><h2 class="section-title">今天只有一次手气</h2><p class="section-sub">它不改变你的主队卡，只增加国家卡牌和资源。早加入能积累更多收藏；晚加入也能用比赛日入场包直接参与预测。</p><div class="daily-meter"><div><b id="ownedCount">0</b><span>已点亮</span></div><div><b id="fateName">未定</b><span>主队席</span></div><div><b id="dailyState">可翻</b><span>今日状态</span></div></div><div style="margin-top:20px"><button class="primary-btn" id="dailyBtn">翻今日手气</button></div></div><div class="daily-result" id="dailyResult">今日手气还没揭晓。</div></div></div></section>
+<section class="section" id="daily"><div class="shell"><div class="section-head"><div><div class="section-kicker">每日手气</div><div class="section-title">每天三翻二选</div><p class="section-sub">每日手气先发3张，当天可选2张入库。重复卡会转成卡尘，补抽仍计入今日开卡上限。</p></div></div><div class="panel daily-card"><div><h2 class="section-title">今天先翻3张，再选2张</h2><p class="section-sub">它不改变你的主队卡，只增加国家卡牌和资源。早加入能积累更多收藏；晚加入也能用比赛日入场包直接参与预测。</p><div class="daily-meter"><div><b id="ownedCount">0</b><span>已点亮</span></div><div><b id="fateName">未定</b><span>主队席</span></div><div><b id="dailyState">可翻</b><span>今日状态</span></div></div><div style="margin-top:20px"><button class="primary-btn" id="dailyBtn">开启三翻二选</button></div></div><div class="daily-result" id="dailyResult">今日手气还没揭晓。</div></div></div></section>
 
 <section class="section" id="quests"><div class="shell"><div class="section-head"><div><div class="section-kicker">补给站</div><div class="section-title">赛前补给与赛中资源</div><p class="section-sub">每日完成签到、抽卡与彩蛋剧场，可积累长期资源。资源不会因为赛事阶段变化而清空。</p></div></div><div class="panel quest-grid"><div class="quest-board"><h2 class="section-title">今日补给清单</h2><p class="section-sub">每天刷新一轮。今日补给共三项：签到、翻手气、彩蛋剧场（需先点亮彩蛋卡）。</p><div class="quest-list" id="questList"></div></div><div class="vault"><div class="section-kicker">资源背包</div><div class="vault-number" id="energyNum">0</div><p class="section-sub">能量是长期补给资源，可用于能量补抽和后续赛事活动；卡尘来自重复卡，可用于补抽。</p><div class="vault-row vault-wide"><div class="vault-cell"><b id="streakNum">0</b><span>连续打卡</span></div><div class="vault-cell"><b id="dustNum">0</b><span>卡尘</span></div></div><div class="vault-actions"><button class="chip-btn" id="dustReroll">消耗8卡尘补一抽</button><button class="chip-btn" id="energyReroll">消耗18能量补一抽</button></div><div class="vault-actions"><button class="chip-btn" id="exportSave">导出卡包码</button><button class="chip-btn" id="importSave">导入卡包码</button></div><p class="micro vault-tip">收藏记录保存在当前浏览器。换手机或清缓存前，先导出卡包码。</p></div></div></div></section>
 
@@ -870,8 +903,13 @@ body.theme-dark .today-loot b,body.theme-dark .reward-hud-title{color:oklch(84% 
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const STORAGE_KEY = 'worldcupFanFateCardsV2';
+const STORAGE_SCHEMA_VERSION = 3;
+const STORAGE_BACKUP_PREFIX = `${STORAGE_KEY}:backup:`;
+const STORAGE_BACKUP_KEEP = 3;
 const REWARD_DOWNLOADS_ENABLED = false; // 奖励纸雕章定稿后再开放贴章下载。
 const DAILY_OPEN_LIMIT = 3;
+const DAILY_FREE_PACK_SIZE = 3;
+const DAILY_FREE_KEEP = 2;
 const ENERGY_REROLL_COST = 18;
 const CHINA_THEATER_REWARD = 8;
 const CHINA_MESSAGE_REWARD = 10;
@@ -981,6 +1019,62 @@ const I18N_EN={
   '今日比赛':'Today’s Match','选出战卡后提交主胜、平局或客胜。':'After choosing a card, submit home win, draw, or away win.','完整赛程在世界杯首页。这里读取 data/matches.json 的当天比赛，维护后自动出现预测列表。':'Full schedule stays on the World Cup homepage. This page reads today’s matches from `data/matches.json` and auto-shows prediction entries.','奖励规则':'Reward Rules','命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。':'Hit +1 star; if your card is a team in that match, hit +2 stars; draw returns with no extra star.'
   ,'开幕前':'Pre-kickoff','待出征':'Ready','场外彩蛋':'Off-field Easter Egg','待收集':'Unrevealed','查看完整赛程':'View Full Schedule','今日已签到':'Checked In Today'
 };
+Object.assign(I18N_EN,{
+  '现在可下载主队海报。赛程推进后会汇总为完整档案：主队轨迹、单场预测结果与叙事题命中记录。':'You can download your main team poster now. As matches progress, it will become a full archive with main team history, match predictions, and rare story results.',
+  '下载我的主队海报':'Download My Main Team Poster',
+  '主队海报':'Main Team Poster',
+  '当前报告：已结算':'Current report: ',
+  '场，命中率':' settled matches, accuracy ',
+  '叙事命中':'story hits ',
+  '主队更换':'main team switches ',
+  '颗预测星':' Prediction Stars',
+  '预测星 ×':'Prediction Stars ×',
+  '能量章':'Energy Badge',
+  '收藏章':'Collection Badge',
+  '奖励盖章卡已下载。':'Stamped reward card downloaded.',
+  '高清生成失败，已下载原始卡牌。':'High-resolution render failed. Original card downloaded.',
+  '奖励纸雕章还在定稿，定稿后再开放下载。':'Paper-sculpture reward badges are still being finalized. Downloads will open after the badge style is approved.',
+  '这张卡已经有奖励资格。纸雕奖励章样式还在定稿，定稿后才开放贴章版下载。':'This card has earned reward eligibility. The paper-sculpture badge style is still being finalized before stamped downloads open.',
+  '这张卡已获得奖励，可以下载带纸雕章的收藏版。':'This card has earned a reward and can be downloaded as a stamped collector version.',
+  '获奖后才开放下载：预测命中、同队加成、稀有叙事命中、主队纪念或彩蛋剧场都会生成对应收藏章。':'Reward download unlocks after a hit, same-team bonus, rare story hit, main-team memorial, or Easter Egg Theater reward.',
+  '先点亮一张卡。':'Reveal a card first.',
+  '这张卡还没有点亮，暂不能下载奖励纪念卡。':'This card is not revealed yet, so reward download is locked.',
+  '先选一张主队卡。':'Choose a main team card first.',
+  '点亮':'Revealed',
+  '同队':'Same Team',
+  '加成':'Bonus',
+  '纪念':'Memorial',
+  '万能':'Wildcard',
+  '叙事':'Story',
+  '主线':'Track',
+  '奖励盖章卡':'Stamped Reward Card',
+  '卡牌':'Card',
+  '查看我的主队席':'View My Main Team',
+  '进入世界杯球迷卡牌赛':'Enter Fan Card League',
+  '今日补给完成':'Today’s Supply Complete',
+  '今天的动作都做完了。你可以去国家卡牌库查看还差哪些卡，或等待明天继续点亮。开赛后中途加入也会获得入场包。':'All actions are done today. Check your card library or come back tomorrow. Late players will receive a stage pack after kickoff.',
+  '看国家卡牌':'View National Cards',
+  '开启三翻二选':'Open Three, Keep Two',
+  '每天先翻3张，再选2张入库。新卡加能量，重复卡转卡尘和能量。':'Reveal 3 cards, keep 2. New cards add energy; duplicates become dust and energy.',
+  '去选两张':'Pick Two Cards',
+  '完成今日签到':'Complete Check-in',
+  '签到可领取能量。':'Check in to claim energy.',
+  '触发彩蛋剧场':'Trigger Easter Egg Theater',
+  '先点亮彩蛋卡':'Reveal Easter Egg Card First',
+  '今天最后一步，触发彩蛋剧场领取能量。':'Last step today: trigger Easter Egg Theater to claim energy.',
+  '彩蛋剧场奖励需要先抽到并点亮彩蛋卡。':'Easter Egg Theater unlocks after the Easter Egg card is revealed.',
+  '去触发':'Trigger',
+  '去翻卡':'Go Draw',
+  '已完成':'Done',
+  '每天来一次，领取能量。':'Check in once per day to claim energy.',
+  '翻一张未知卡，点亮国家卡牌或变成卡尘。':'Reveal a card to unlock a national card, or convert duplicates into dust.',
+  '抽到并点亮彩蛋卡后，每天可触发一次，提供文案互动与补给奖励。':'After revealing the Easter Egg card, trigger it once daily for interaction text and supply rewards.',
+  '去抽卡':'Draw Cards',
+  '开始今日流程':'Start Today',
+  '今日行动':'Today',
+  '主队席':'Main Team Slot',
+  '可翻':'Available'
+});
 function textLang(){return pageLang==='en'?'en':'zh'}
 function translateText(text){
   if(textLang()==='zh')return text;
@@ -991,6 +1085,24 @@ function translateText(text){
   return out;
 }
 function T(text){return translateText(text)}
+function teamDisplayNameById(id,lang=textLang()){
+  const t=teamById(id);
+  if(!t)return '';
+  if(lang==='en') return t.englishName||t.enName||t.name||t.id;
+  return t.name||t.englishName||t.id;
+}
+function matchDisplayParts(m){
+  const homeId=resolveTeamId(m?.homeId||m?.homeTeamId||m?.home);
+  const awayId=resolveTeamId(m?.awayId||m?.awayTeamId||m?.away);
+  const home=textLang()==='en'
+    ? (m?.homeEn||teamDisplayNameById(homeId,'en')||m?.home||'')
+    : (m?.home||teamDisplayNameById(homeId,'zh')||'');
+  const away=textLang()==='en'
+    ? (m?.awayEn||teamDisplayNameById(awayId,'en')||m?.away||'')
+    : (m?.away||teamDisplayNameById(awayId,'zh')||'');
+  const title=(m?.title||`${home} vs ${away}`).trim();
+  return {home,away,title};
+}
 function localizeNode(root=document.body){
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
     if(!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
@@ -1016,6 +1128,8 @@ function localizeNode(root=document.body){
     });
   });
   document.documentElement.lang=textLang()==='en'?'en':'zh-CN';
+  document.body.classList.toggle('lang-en',textLang()==='en');
+  document.body.classList.toggle('lang-zh',textLang()!=='en');
   document.querySelectorAll('#langToggle,#mLangToggle').forEach(btn=>btn.textContent=textLang()==='en'?'中':'EN');
   const themeBtn=document.getElementById('themeToggle');
   if(themeBtn){
@@ -1080,13 +1194,82 @@ function canUseMemorialWildcard(s=loadState()){
   if(!fi.isMemorial) return false;
   return fi.memorialWildcardUsedAt!==todayKey();
 }
-function defaultState(){return {owned:[],fate:null,fateHistory:[],openingPack:[],entryPackClaimed:false,entryStage:null,entryPackNoticed:false,goldRevealed:false,directPickUsed:false,daily:{lastDraw:null,lastCard:null,duplicate:false,openDate:null,openCount:0,lastRareDate:null},quests:{date:null,checked:false,china:false},chinaMessages:[],chinaMessageRewardDate:null,energy:0,dust:0,streak:0,lastCheckin:null,predictions:{},imprints:{},narrative:{},fateImprint:{fanPoints:0,level:0,isMemorial:false,memorialWildcardUsedAt:null,rewardedMatches:[]},todayLoot:{date:null,energy:0,dust:0,stars:0,badges:[]}}}
-function loadState(){try{return {...defaultState(),...JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}}catch{return defaultState()}}
-function saveState(s){localStorage.setItem(STORAGE_KEY,JSON.stringify(s))}
+function defaultState(){return {schemaVersion:STORAGE_SCHEMA_VERSION,owned:[],fate:null,fateHistory:[],openingPack:[],entryPackClaimed:false,entryStage:null,entryPackNoticed:false,goldRevealed:false,directPickUsed:false,onboarding:{chinaGifted:false},daily:{lastDraw:null,lastCard:null,duplicate:false,openDate:null,openCount:0,lastRareDate:null,packDate:null,packIds:[],packPicked:[],freeDone:false},quests:{date:null,checked:false,china:false},chinaMessages:[],chinaMessageRewardDate:null,energy:0,dust:0,streak:0,lastCheckin:null,predictions:{},imprints:{},narrative:{},fateImprint:{fanPoints:0,level:0,isMemorial:false,memorialWildcardUsedAt:null,rewardedMatches:[]},todayLoot:{date:null,energy:0,dust:0,stars:0,badges:[]}}}
+function normalizeState(raw){
+  const base=defaultState();
+  const src=(raw&&typeof raw==='object')?raw:{};
+  const s={...base,...src};
+  s.schemaVersion=STORAGE_SCHEMA_VERSION;
+  s.owned=Array.isArray(src.owned)?[...new Set(src.owned.filter(Boolean))]:[];
+  s.fateHistory=Array.isArray(src.fateHistory)?src.fateHistory:[];
+  s.openingPack=Array.isArray(src.openingPack)?src.openingPack:[];
+  s.daily={...base.daily,...(src.daily||{})};
+  s.daily.packIds=Array.isArray(s.daily.packIds)?s.daily.packIds:[];
+  s.daily.packPicked=Array.isArray(s.daily.packPicked)?s.daily.packPicked:[];
+  s.onboarding={...base.onboarding,...(src.onboarding||{})};
+  s.quests={...base.quests,...(src.quests||{})};
+  s.chinaMessages=Array.isArray(src.chinaMessages)?src.chinaMessages:[];
+  s.predictions=(src.predictions&&typeof src.predictions==='object')?src.predictions:{};
+  s.imprints=(src.imprints&&typeof src.imprints==='object')?src.imprints:{};
+  s.narrative=(src.narrative&&typeof src.narrative==='object')?src.narrative:{};
+  s.fateImprint={...base.fateImprint,...(src.fateImprint||{})};
+  s.fateImprint.rewardedMatches=Array.isArray(s.fateImprint.rewardedMatches)?s.fateImprint.rewardedMatches:[];
+  s.todayLoot={...base.todayLoot,...(src.todayLoot||{})};
+  s.todayLoot.badges=Array.isArray(s.todayLoot.badges)?s.todayLoot.badges:[];
+  s.energy=Math.max(0,Number.isFinite(Number(s.energy))?Number(s.energy):0);
+  s.dust=Math.max(0,Number.isFinite(Number(s.dust))?Number(s.dust):0);
+  s.streak=Math.max(0,Number.isFinite(Number(s.streak))?Number(s.streak):0);
+  return s;
+}
+function rotateStateBackups(currentRaw){
+  if(!currentRaw)return;
+  for(let i=STORAGE_BACKUP_KEEP-1;i>=1;i--){
+    const prev=localStorage.getItem(`${STORAGE_BACKUP_PREFIX}${i-1}`);
+    if(prev==null)localStorage.removeItem(`${STORAGE_BACKUP_PREFIX}${i}`);
+    else localStorage.setItem(`${STORAGE_BACKUP_PREFIX}${i}`,prev);
+  }
+  localStorage.setItem(`${STORAGE_BACKUP_PREFIX}0`,currentRaw);
+}
+function loadState(){
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(raw){
+    try{return normalizeState(JSON.parse(raw))}
+    catch(err){console.warn('state parse failed, trying backups',err)}
+  }
+  for(let i=0;i<STORAGE_BACKUP_KEEP;i++){
+    const backupRaw=localStorage.getItem(`${STORAGE_BACKUP_PREFIX}${i}`);
+    if(!backupRaw)continue;
+    try{
+      const restored=normalizeState(JSON.parse(backupRaw));
+      localStorage.setItem(STORAGE_KEY,JSON.stringify(restored));
+      return restored;
+    }catch(err){console.warn('backup parse failed',i,err)}
+  }
+  return defaultState();
+}
+function saveState(s){
+  const normalized=normalizeState(s);
+  const currentRaw=localStorage.getItem(STORAGE_KEY);
+  if(currentRaw)rotateStateBackups(currentRaw);
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(normalized));
+}
 function ensureDailyOpenLimit(s){
   const day=todayKey();
   s.daily=s.daily||{};
-  if(s.daily.openDate!==day){s.daily.openDate=day;s.daily.openCount=0;}
+  if(s.daily.openDate!==day){
+    s.daily.openDate=day;
+    s.daily.openCount=0;
+    s.daily.packDate=day;
+    s.daily.packIds=[];
+    s.daily.packPicked=[];
+    s.daily.freeDone=false;
+    s.daily.lastDraw=null;
+    s.daily.lastCard=null;
+    s.daily.duplicate=false;
+  }
+  if(!Array.isArray(s.daily.packIds))s.daily.packIds=[];
+  if(!Array.isArray(s.daily.packPicked))s.daily.packPicked=[];
+  if(typeof s.daily.freeDone!=='boolean')s.daily.freeDone=false;
   s.todayLoot=s.todayLoot||{date:day,energy:0,dust:0,stars:0,badges:[]};
   if(s.todayLoot.date!==day){s.todayLoot={date:day,energy:0,dust:0,stars:0,badges:[]};}
   return s;
@@ -1174,8 +1357,97 @@ function rarityTier(key){if(key==='legendary')return 4;if(key==='epic')return 3;
 function daysBetween(a,b){if(!a||!b)return 999;const da=new Date(`${a}T00:00:00`);const db=new Date(`${b}T00:00:00`);return Math.floor((db-da)/86400000)}
 function isDailyRareBlocked(s=loadState()){const last=s.daily?.lastRareDate;if(!last)return false;return daysBetween(last,todayKey())<2}
 function sampleWeighted(teams,n){const pool=[...teams];const out=[];while(out.length<n&&pool.length){const getW=t=>typeof t?.__weight==='number'?t.__weight:rarityOf(t).weight;const total=pool.reduce((sum,t)=>sum+getW(t),0);let roll=Math.random()*total;let picked=0;for(let i=0;i<pool.length;i++){roll-=getW(pool[i]);if(roll<=0){picked=i;break}}out.push(pool.splice(picked,1)[0])}return out}
+function buildDailyWeightedPool(s){
+  const rareBlocked=isDailyRareBlocked(s);
+  let pool=[...allTeams];
+  if(rareBlocked){pool=pool.filter(t=>rarityTier(rarityOf(t).key)<=1);}
+  if(!pool.length)pool=[...allTeams];
+  const opened=(s.owned||[]).length;
+  const needFastChina=!s.goldRevealed&&!(s.owned||[]).includes('china');
+  const chinaBoost=needFastChina?(opened<=1?2600:opened<=3?1200:opened<=6?550:0):0;
+  return pool.map(t=>t.id==='china'?{...t,__weight:rarityOf(t).weight+chinaBoost}:t);
+}
+function generateDailyPack(s){
+  ensureDailyOpenLimit(s);
+  const today=todayKey();
+  if(s.daily.packDate===today&&Array.isArray(s.daily.packIds)&&s.daily.packIds.length===DAILY_FREE_PACK_SIZE)return s.daily.packIds;
+  const weightedPool=buildDailyWeightedPool(s);
+  let picks=sampleWeighted(weightedPool,DAILY_FREE_PACK_SIZE);
+  const earlyGuide=!s.goldRevealed&&!(s.owned||[]).includes('china')&&((s.owned||[]).length<=3);
+  if(earlyGuide){
+    const china=teamById('china');
+    if(china&&!picks.some(t=>t.id==='china')){
+      picks[picks.length-1]=china;
+    }
+  }
+  s.daily.packDate=today;
+  s.daily.packIds=picks.filter(Boolean).map(t=>t.id).slice(0,DAILY_FREE_PACK_SIZE);
+  s.daily.packPicked=[];
+  s.daily.freeDone=false;
+  if(s.daily.packIds.length<DAILY_FREE_PACK_SIZE){
+    const fallback=allTeams.filter(t=>!s.daily.packIds.includes(t.id));
+    const need=DAILY_FREE_PACK_SIZE-s.daily.packIds.length;
+    s.daily.packIds.push(...sampleWeighted(fallback,need).map(t=>t.id));
+  }
+  return s.daily.packIds;
+}
+function claimDailyPackCard(teamId){
+  const s=ensureDailyOpenLimit(loadState());
+  let autoGiftedChina=false;
+  if(!canOpenMore(s,DAILY_OPEN_LIMIT)){toast('今天开卡次数已满（3次），明天再来。');return}
+  const today=todayKey();
+  if(s.daily.packDate!==today||!s.daily.packIds?.length)generateDailyPack(s);
+  if(!s.daily.packIds.includes(teamId)){toast('这张卡不在今日手气包里。');return}
+  if(s.daily.packPicked.includes(teamId)){toast('这张卡今天已经领取过了。');return}
+  if((s.daily.packPicked||[]).length>=DAILY_FREE_KEEP){toast('今日免费三翻二选已完成。');return}
+  const team=teamById(teamId);
+  if(!team){toast('卡牌数据异常，请刷新后重试。');return}
+  const rarity=rarityOf(team);
+  const duplicate=s.owned.includes(team.id)||s.fate===team.id;
+  s.daily.lastCard=team.id;
+  s.daily.duplicate=duplicate;
+  s.daily.packPicked.push(team.id);
+  if(rarityTier(rarity.key)>=2){s.daily.lastRareDate=today}
+  if(team.id==='china')s.goldRevealed=true;
+  if(duplicate){
+    s.dust=(s.dust||0)+6;
+    s.energy=(s.energy||0)+4;
+    addTodayLoot(s,{energy:4,dust:6});
+    lootPop('+4能量 · +6卡尘');
+  }else{
+    s.owned.push(team.id);
+    s.energy=(s.energy||0)+8;
+    addTodayLoot(s,{energy:8});
+    lootPop('+8能量');
+  }
+  addOpenCount(s,1);
+  const left=DAILY_FREE_KEEP-s.daily.packPicked.length;
+  if(left<=0){
+    s.daily.lastDraw=today;
+    s.daily.freeDone=true;
+    ensureQuestDay(s);
+    s.quests.draw=true;
+    // 新用户保底：首次完成三翻二选后，若还没拿到彩蛋卡，则自动补发一次。
+    const chinaOwned=s.goldRevealed||s.owned.includes('china');
+    if(!chinaOwned && !s.onboarding?.chinaGifted){
+      s.goldRevealed=true;
+      s.onboarding=s.onboarding||{};
+      s.onboarding.chinaGifted=true;
+      autoGiftedChina=true;
+    }
+  }
+  saveState(s);
+  renderAll();
+  if(duplicate){
+    toast(`重复卡「${team.name}」已转成卡尘+6、能量+4。${left>0?`今天还可再选${left}张。`:`今日三翻二选完成。${autoGiftedChina?' 已触发新手保底：彩蛋卡已补发。':''}`}`);
+  }else{
+    const msg=team.id==='china'?'彩蛋卡已点亮：现在可使用彩蛋剧场领取每日奖励。':`新卡！${rarity.label}「${team.name}」已点亮。`;
+    toast(`${msg}${left>0?` 今天还可再选${left}张。`:` 今日三翻二选完成。${autoGiftedChina?' 已触发新手保底：彩蛋卡已补发。':''}`}`);
+    updateHeroFloats();
+  }
+}
 function comboLinksFor(id){return combos.filter(c=>c.teams.includes(id))}
-function stateOwns(id){const s=loadState();return s.owned.includes(id) || s.fate === id}
+function stateOwns(id){const s=loadState();return (id==='china'&&s.goldRevealed) || s.owned.includes(id) || s.fate === id}
 function addOwned(id){const s=loadState();if(!s.owned.includes(id))s.owned.push(id);saveState(s)}
 function drawPack(silent=false){const s=loadState();let ids=Array.isArray(s.openingPack)?s.openingPack.filter(id=>teamById(id)):[];const locked=ids.length===3;if(!locked){const qualified=allTeams.filter(t=>t.qualified&&t.id!=='china');const strongIds=[...rarityPools.legendary,...rarityPools.epic];const strongPool=qualified.filter(t=>strongIds.includes(t.id));const picks=[];if(Math.random()<0.35&&strongPool.length){picks.push(...sampleWeighted(strongPool,1));}const need=3-picks.length;const restPool=qualified.filter(t=>!picks.some(x=>x.id===t.id));const normalRest=restPool.filter(t=>!strongIds.includes(t.id));picks.push(...sampleWeighted((normalRest.length>=need?normalRest:restPool),need));ids=picks.slice(0,3).map(t=>t.id);s.openingPack=ids;saveState(s)}const candidates=ids.map(teamById).filter(Boolean);const grid=$('#drawGrid');grid.innerHTML='';candidates.forEach((team,i)=>{const rarity=rarityOf(team);const card=document.createElement('button');card.className=`draw-card rarity-${rarity.key}`;card.style.setProperty('--tilt',`${(i-1)*4}deg`);card.innerHTML=`<div class="card-back">?</div><img src="${team.thumb}" alt="${team.name} 球迷卡"><span class="rarity-tag">${rarity.label}</span><div class="draw-caption">${team.flag} ${team.name}</div>`;setTimeout(()=>card.classList.add('revealed'),60+i*80);card.onclick=()=>chooseFate(team.id);grid.appendChild(card)});if(silent)return;if(locked){toast('首组卡已锁定，选定前不能重发。');return}const high=candidates.find(t=>['legendary','epic'].includes(rarityOf(t).key));toast(high?`首组卡已揭晓，本组出现${rarityOf(high).label}卡「${high.name}」。`:'首组卡已揭晓，选一张主队卡。')}
 function normalizeTeamKey(v){return String(v||'').toLowerCase().trim().replace(/\s+/g,'').replace(/[·'.\-]/g,'')}
@@ -1217,7 +1489,16 @@ function chooseFate(id,opts={}){
 function directPickFate(){const s=loadState();if(s.fate){toast('你已经有主队卡了，无需再用直选。');return}if(s.directPickUsed){toast('主队直选机会已用完。');return}const input=$('#directPickInput');const team=findTeamByInput(input?.value);if(!team){toast('没有匹配到球队，请输入参赛队中文名或英文名。');return}chooseFate(team.id,{direct:true});if(input)input.value=''}
 function initDirectPickList(){const list=$('#directPickList');if(!list)return;list.innerHTML='';allTeams.filter(t=>t.qualified&&t.id!=='china').forEach(t=>{const op=document.createElement('option');op.value=t.name;op.label=`${t.name} (${t.id})`;list.appendChild(op)})}
 function renderDirectPick(){const s=loadState();const btn=$('#directPickBtn');const hint=$('#directPickHint');const input=$('#directPickInput');if(!btn||!hint||!input)return;const done=Boolean(s.directPickUsed||s.fate);btn.disabled=done;input.disabled=done;btn.style.opacity=done?'.62':'1';input.style.opacity=done?'.72':'1';hint.textContent=s.fate?'已选主队：主队锁定后不可再用直选':s.directPickUsed?'已使用一次：不可再次直选':'未使用'}
-function dailyDraw(){const s=ensureDailyOpenLimit(loadState());if(s.daily?.lastDraw===todayKey()){toast('今天已经翻过手气了，明天再来。');return}if(!canOpenMore(s,DAILY_OPEN_LIMIT)){toast('今天开卡次数已满（3次），明天再来。');return}const rareBlocked=isDailyRareBlocked(s);let pool=[...allTeams];if(rareBlocked){pool=pool.filter(t=>rarityTier(rarityOf(t).key)<=1);}if(!pool.length)pool=[...allTeams];const opened=(s.owned||[]).length;const chinaBoost=(!s.goldRevealed&&!(s.owned||[]).includes('china'))?(opened<=1?900:opened<=3?620:opened<=6?360:0):0;const weightedPool=pool.map(t=>t.id==='china'?{...t,__weight:rarityOf(t).weight+chinaBoost}:t);const team=sampleWeighted(weightedPool,1)[0];const rarity=rarityOf(team);const duplicate=s.owned.includes(team.id)||s.fate===team.id;s.daily={...s.daily,lastDraw:todayKey(),lastCard:team.id,duplicate,lastRareDate:s.daily?.lastRareDate||null};if(rarityTier(rarity.key)>=2){s.daily.lastRareDate=todayKey()}addOpenCount(s,1);if(team.id==='china')s.goldRevealed=true;if(duplicate){s.dust=(s.dust||0)+6;s.energy=(s.energy||0)+4;addTodayLoot(s,{energy:4,dust:6});lootPop('+4能量 · +6卡尘');saveState(s);completeQuest('draw',0);renderAll();toast(`已有${rarity.label}「${team.name}」，重复卡转成卡尘+6、能量+4。`)}else{s.owned.push(team.id);s.energy=(s.energy||0)+8;addTodayLoot(s,{energy:8});lootPop('+8能量');saveState(s);completeQuest('draw',0);renderAll();toast(team.id==='china'?'彩蛋卡已点亮：现在可使用彩蛋剧场领取每日奖励。':`新卡！${rarity.label}「${team.name}」点亮国家卡牌，能量+8。`);updateHeroFloats()}}
+function dailyDraw(){
+  const s=ensureDailyOpenLimit(loadState());
+  if(!canOpenMore(s,DAILY_OPEN_LIMIT)){toast('今天开卡次数已满（3次），明天再来。');return}
+  if(s.daily?.freeDone){toast('今日免费三翻二选已完成，可用卡尘或能量补抽。');return}
+  generateDailyPack(s);
+  saveState(s);
+  renderAll();
+  const left=DAILY_FREE_KEEP-(s.daily.packPicked?.length||0);
+  toast(left>=DAILY_FREE_KEEP?'今日手气已揭晓：三翻二选，先选两张。':`继续选择：今天还可再选${left}张。`);
+}
 function rerollDaily(){toast('每日手气每天只翻一次，保持卡牌稀有感。')}
 
 function ensureQuestDay(s){
@@ -1363,21 +1644,49 @@ function renderChinaWall(targetId='chinaWall',inputId='chinaMessageInput'){
 function renderQuests(){
   const s=ensureQuestDay(loadState());
   const items=[
-    {key:'checked',icon:'签',title:'今日签到',desc:'每天来一次，领取能量。',action:'签到',run:'checkIn()'},
-    {key:'draw',icon:'翻',title:'翻今日手气',desc:'翻一张未知卡，点亮国家卡牌或变成卡尘。',action:'去翻卡',run:"location.hash='daily'"},
-    
-    {key:'china',icon:'嘴',title:'彩蛋剧场',desc:'抽到并点亮彩蛋卡后，每天可触发一次，提供文案互动与补给奖励。',action:'去触发',run:'useChinaGold(true)'}
+    {key:'checked',icon:'✓',title:T('今日签到'),desc:T('每天来一次，领取能量。'),action:T('签到'),run:'checkIn()'},
+    {key:'draw',icon:'🎴',title:T('翻今日手气'),desc:T('翻一张未知卡，点亮国家卡牌或变成卡尘。'),action:T('去翻卡'),run:"location.hash='daily'"},
+    {key:'china',icon:'🥚',title:T('彩蛋剧场'),desc:T('抽到并点亮彩蛋卡后，每天可触发一次，提供文案互动与补给奖励。'),action:T('去触发'),run:'useChinaGold(true)'}
   ];
   const owned=new Set([...(s.owned||[]),s.fate].filter(Boolean));
   const questState={...s.quests,draw:s.daily?.lastDraw===todayKey()};
-  $('#questList').innerHTML=items.map(it=>`<article class="quest-item ${questState[it.key]?'done':''}" data-quest="${it.key}"><div class="quest-icon">${it.icon}</div><div><h3>${it.title}</h3><p>${it.desc}</p></div><button class="quest-action" onclick="${questState[it.key]?'completedQuestToast()':it.run}">${questState[it.key]?'已完成':it.action}</button></article>`).join('');
+  $('#questList').innerHTML=items.map(it=>`<article class="quest-item ${questState[it.key]?'done':''}" data-quest="${it.key}"><div class="quest-icon">${it.icon}</div><div><h3>${it.title}</h3><p>${it.desc}</p></div><button class="quest-action" onclick="${questState[it.key]?'completedQuestToast()':it.run}">${questState[it.key]?T('已完成'):it.action}</button></article>`).join('');
   $('#energyNum').textContent=s.energy||0;
   $('#streakNum').textContent=s.streak||0;
   $('#dustNum').textContent=s.dust||0;
   $('#ownedCount').textContent=owned.size;
 }
 
-function renderDaily(){const s=ensureDailyOpenLimit(loadState());const used=s.daily?.lastDraw===todayKey();const openCount=s.daily?.openCount||0;const full=openCount>=DAILY_OPEN_LIMIT;const team=teamById(s.daily?.lastCard);$('#dailyState').textContent=full?'今日上限':'可翻';$('#dailyBtn').textContent=used?'今日已翻，明天再来':(full?'今日开卡已满（3/3）':'翻今日手气');$('#dailyBtn').onclick=used?()=>toast('今天的手气已经用完。保持一点悬念，明天再翻。'):(full?()=>toast('今天开卡次数已满（3次），明天再来。'):dailyDraw);$('#dailyBtn').style.opacity=(used||full)?'.72':'1';$('#ownedCount').textContent=new Set([...(s.owned||[]),s.fate].filter(Boolean)).size;$('#fateName').textContent=s.fate?(teamById(s.fate)?.name||'已选'):'未定';$('#dailyResult').innerHTML=team?`<div><img src="${team.thumb}" alt="${team.name}"><p style="margin-top:12px;font-weight:900">${team.flag} ${team.name}</p><p class="micro">${s.daily?.duplicate?'重复卡已转成卡尘':'今日已点亮'}</p><p class="micro">今日开卡：${openCount}/3</p></div>`:`今日手气还没揭晓。<div class="micro" style="margin-top:8px">今日开卡：${openCount}/3</div>`}
+function renderDaily(){
+  const s=ensureDailyOpenLimit(loadState());
+  const openCount=s.daily?.openCount||0;
+  const full=openCount>=DAILY_OPEN_LIMIT;
+  const freeDone=Boolean(s.daily?.freeDone);
+  const picks=s.daily?.packPicked||[];
+  const leftPick=Math.max(0,DAILY_FREE_KEEP-picks.length);
+  const team=teamById(s.daily?.lastCard);
+  $('#dailyState').textContent=full?'今日上限':(freeDone?'已完成':'可翻');
+  $('#dailyBtn').textContent=full?'今日开卡已满（3/3）':(freeDone?'今日三翻二选已完成':'开启三翻二选');
+  $('#dailyBtn').onclick=full?()=>toast('今天开卡次数已满（3次），明天再来。'):(freeDone?()=>toast('今日免费三翻二选已完成，可用卡尘或能量补抽。'):dailyDraw);
+  $('#dailyBtn').style.opacity=(full?'.72':'1');
+  $('#ownedCount').textContent=new Set([...(s.owned||[]),s.fate].filter(Boolean)).size;
+  $('#fateName').textContent=s.fate?(teamById(s.fate)?.name||'已选'):'未定';
+  const packReady=Array.isArray(s.daily?.packIds)&&s.daily.packIds.length===DAILY_FREE_PACK_SIZE;
+  if(packReady&&!freeDone){
+    const cards=s.daily.packIds.map(id=>teamById(id)).filter(Boolean).map(t=>{
+      const picked=picks.includes(t.id);
+      return `<button type="button" onclick="claimDailyPackCard('${t.id}')" ${picked?'disabled':''} style="border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:6px;cursor:${picked?'default':'pointer'};opacity:${picked?'.58':'1'}"><img src="${thumbImageFor(t)}" alt="${t.name}" style="width:100%;border-radius:10px;display:block"><div style="margin-top:6px;font-weight:900;font-size:12px">${t.flag} ${t.id==='china'?'彩蛋卡':t.name}</div><div class="micro">${rarityOf(t).label}${picked?' · 已领取':''}</div></button>`;
+    }).join('');
+    $('#dailyResult').innerHTML=`<div style="width:100%"><div class="micro" style="margin-bottom:8px">今日免费三翻二选：还可选 ${leftPick} 张（今日总开卡 ${openCount}/3）</div><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">${cards}</div></div>`;
+    return;
+  }
+  if(team){
+    const name=team.id==='china'?'彩蛋卡':team.name;
+    $('#dailyResult').innerHTML=`<div><img src="${thumbImageFor(team)}" alt="${name}"><p style="margin-top:12px;font-weight:900">${team.flag} ${name}</p><p class="micro">${s.daily?.duplicate?'重复卡已转成卡尘':'今日已点亮'}</p><p class="micro">今日开卡：${openCount}/3</p></div>`;
+  }else{
+    $('#dailyResult').innerHTML=`今日手气还没揭晓。<div class="micro" style="margin-top:8px">今日开卡：${openCount}/3</div>`;
+  }
+}
 function renderFate(){const s=loadState();const team=teamById(s.fate)||allTeams.find(t=>t.name==='阿根廷');const has=!!s.fate;const st=statusOf(team);const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const fateImp=s.fateImprint||{fanPoints:0,level:0,isMemorial:false};const tier=rewardTier(marks.hits||0);const storyActive=st.alive?'燃烧':'纪念';const switchHint=canSwitchFate(s)?T('主队更换规则：开赛前最多可更换1次。'):T('主队更换规则：当前已锁定，不可更换。');$('#fateDesk').innerHTML=`<div class="fate-card"><img src="${team.image}" alt="${team.name} ${T('主队卡')}"><span class="card-stamp">${st.badge}</span></div><div class="fate-info"><span class="fate-tag">${has?T('你的主队卡'):T('示例席位')}</span><h3>${team.name}</h3><p>${team.feature}</p><div class="status-strip"><div class="status-pill"><b>${team.flag}</b><span>${T('国家特征')}</span></div><div class="status-pill"><b>${st.state}</b><span>${T('当前状态')}</span></div><div class="status-pill"><b>${st.stage}</b><span>${T('赛事阶段')}</span></div><div class="status-pill"><b>${marks.hits||0}${T('星')}</b><span>${T('预测印记')}</span></div><div class="status-pill"><b>${tier}</b><span>${T('奖励等级')}</span></div></div><div class="story-track"><div class="story-step active"><b>${T('觉醒')}</b><span>${T('点亮或选为主队')}</span></div><div class="story-step ${storyActive==='燃烧'?'active':''}"><b>${T('燃烧')}</b><span>${T('晋级或仍在赛事中')}</span></div><div class="story-step ${storyActive==='封神'?'active':''}"><b>${T('封神')}</b><span>${T('决赛或冠军章')}</span></div></div><p class="micro" style="margin-top:14px">${T('主队奖励线：粉丝积分')} ${fateImp.fanPoints||0} ｜ ${T('主队等级')} Lv.${fateImp.level||0} ｜ ${fateImp.isMemorial?T('已转纪念万能卡'):T('未转纪念状态')}。</p><p class="micro" style="margin-top:8px">${switchHint}</p></div>`;renderPoster()}
 
 function saveNarrativeAnswer(slotId){
@@ -1499,11 +1808,11 @@ function renderTodayAction(){
     {key:'china',label:'彩蛋',done:!!s.quests.china}
   ];
   let nextKey='done';
-  let action={title:'今日补给完成',text:'今天的动作都做完了。你可以去国家卡牌库查看还差哪些卡，或等待明天继续点亮。开赛后中途加入也会获得入场包。',label:'看国家卡牌',run:()=>{location.hash='collection'}};
+  let action={title:T('今日补给完成'),text:T('今天的动作都做完了。你可以去国家卡牌库查看还差哪些卡，或等待明天继续点亮。开赛后中途加入也会获得入场包。'),label:T('看国家卡牌'),run:()=>{location.hash='collection'}};
   if(!s.fate){nextKey='fate';action={title:T('先选主队卡'),text:T('首组卡只发一次，选一张作为你的世界杯主队。'),label:T('查看首组卡'),run:()=>{location.hash='draw';setTimeout(drawPack,220)}}}
-  else if(!dailyDone){nextKey='daily';action={title:'翻今日手气',text:'每天只翻一张卡，新卡进国家卡牌，重复卡变卡尘。',label:'翻一张',run:()=>dailyDraw()}}
-  else if(!s.quests.checked){nextKey='checked';action={title:'完成今日签到',text:'签到可领取能量。',label:'签到',run:()=>checkIn()}}
-  else if(!s.quests.china){nextKey='china';action={title:s.goldRevealed?'触发彩蛋剧场':'先点亮彩蛋卡',text:s.goldRevealed?'今天最后一步，触发彩蛋剧场领取能量。':'彩蛋剧场奖励需要先抽到并点亮彩蛋卡。',label:s.goldRevealed?'去触发':'去抽卡',run:()=>s.goldRevealed?useChinaGold(false):(location.hash='daily')}}
+  else if(!dailyDone){nextKey='daily';action={title:T('开启三翻二选'),text:T('每天先翻3张，再选2张入库。新卡加能量，重复卡转卡尘和能量。'),label:T('去选两张'),run:()=>dailyDraw()}}
+  else if(!s.quests.checked){nextKey='checked';action={title:T('完成今日签到'),text:T('签到可领取能量。'),label:T('签到'),run:()=>checkIn()}}
+  else if(!s.quests.china){nextKey='china';action={title:s.goldRevealed?T('触发彩蛋剧场'):T('先点亮彩蛋卡'),text:s.goldRevealed?T('今天最后一步，触发彩蛋剧场领取能量。'):T('彩蛋剧场奖励需要先抽到并点亮彩蛋卡。'),label:s.goldRevealed?T('去触发'):T('去抽卡'),run:()=>s.goldRevealed?useChinaGold(false):(location.hash='daily')}}
   $('#todayTitle').textContent=action.title;
   $('#todayText').textContent=action.text;
   $('#todayAction').textContent=action.label;
@@ -1526,15 +1835,16 @@ function renderBattle(){
   lab.appendChild(hint);
 
   if(matchesData.today?.length){
-    $('#battleSub').textContent='今日对阵已出现。先选一张今日可用出战卡，再提交胜平负预测（同卡同日限1场，失败进下一比赛日冷却）。';
+    $('#battleSub').textContent=T('今日对阵已出现。先选一张今日可用出战卡，再提交胜平负预测（同卡同日限1场，失败进下一比赛日冷却）。');
     matchesData.today.forEach(m=>{
+      const p=matchDisplayParts(m);
       const el=document.createElement('article');
       el.className='match-card';
       const options=cards.length?cards.map(t=>`<option value="${t.id}">${t.flag} ${t.name}</option>`).join(''):'<option value="">暂无可用卡</option>';
-      el.innerHTML=`<h3>${m.title||'今日比赛'}</h3><p>${m.home||''} ${m.time||''} ${m.away||''}</p><p class="micro" style="margin-top:8px">选择本场出战卡</p><select class="pick-card" style="margin-top:8px;width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:oklch(100% .01 80 / .06);color:var(--ink)">${options}</select><div class="pick-row"><button data-pick="home">主胜</button><button data-pick="draw">平局</button><button data-pick="away">客胜</button></div>`;
+      el.innerHTML=`<h3>${p.title||T('今日比赛')}</h3><p>${p.home||''} ${m.time||''} ${p.away||''}</p><p class="micro" style="margin-top:8px">${T('选择本场出战卡')}</p><select class="pick-card" style="margin-top:8px;width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:oklch(100% .01 80 / .06);color:var(--ink)">${options}</select><div class="pick-row"><button data-pick="home">${T('主胜')}</button><button data-pick="draw">${T('平局')}</button><button data-pick="away">${T('客胜')}</button></div>`;
       const sel=el.querySelector('.pick-card');
       el.querySelectorAll('button').forEach(btn=>btn.onclick=()=>{
-        if(!sel.value){toast('先点亮至少一张球队卡再参与预测。');return}
+        if(!sel.value){toast(T('先点亮至少一张球队卡再参与预测。'));return}
         savePrediction(m.id||m.title,btn.dataset.pick,sel.value)
       });
       lab.appendChild(el)
@@ -1542,7 +1852,7 @@ function renderBattle(){
     return
   }
 
-  $('#battleSub').textContent='完整赛程在世界杯首页。卡牌赛这里只显示当天可预测比赛：把当天比赛写入 data/matches.json 后，本区会自动生成预测列表。';
+  $('#battleSub').textContent=T('完整赛程在世界杯首页。卡牌赛这里只显示当天可预测比赛：把当天比赛写入 data/matches.json 后，本区会自动生成预测列表。');
   const wait=document.createElement('article');
   wait.className='match-card';
   wait.innerHTML=`<h3>${T('比赛日预测入口')}</h3><p>${T('完整赛程已经在世界杯首页维护。卡牌赛只读取 <b>data/matches.json</b> 里的 today 对阵：填入当天比赛后，这里显示胜平负预测；填入赛果 winner 后自动结算星级和奖励。')}</p><p class="micro" style="margin-top:8px">${T('稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。')}</p><div class="hero-actions" style="margin-top:14px"><a class="secondary-btn" href="index.html">${T('查看完整赛程')}</a></div>`;
@@ -1618,7 +1928,7 @@ function settleMatch(matchId,actualResult,opts={}){
   im.pending=Math.max(0,(im.pending||0)-1);
   rec.settled=true;
   saveState(s);
-  renderAll();
+  if(!opts.silent) renderAll();
   if(!opts.silent) toast(`比赛${matchId}已结算：${rec.result==='hit'?'命中加星':rec.result==='draw'?'平局退还':'失误进入冷却池'}。`);
 }
 function normalizeWinner(v){
@@ -1700,6 +2010,7 @@ function autoSettleFromMatches(){
     if(!before&&after) settled+=1;
     applyFateRewardsFromMatch(m);
   });
+  if(settled>0) renderAll();
   return settled;
 }
 
@@ -1763,11 +2074,13 @@ function openTeam(team){
   $('#modal').classList.add('open')
 }
 function closeModal(){$('#modal').classList.remove('open')}
-function renderPoster(){const s=loadState();const team=teamById(s.fate)||allTeams.find(t=>t.name==='阿根廷');const st=statusOf(team);const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};$('#posterPreview').innerHTML=`<img src="${team.image}" alt="${team.name} 海报预览"><span class="card-stamp">${st.badge}</span><div style="position:absolute;left:26px;bottom:24px;right:26px"><div style="font-family:var(--title);font-size:46px;line-height:.9">${team.name}</div><div style="color:var(--gold);font-weight:900">${st.stage} · ${st.state} · ${marks.hits||0}颗预测星</div></div>`}
+function renderPoster(){const s=loadState();const team=teamById(s.fate)||allTeams.find(t=>t.name==='阿根廷');const st=statusOf(team);const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const name=T(team.name);$('#posterPreview').innerHTML=`<img src="${team.image}" alt="${name} ${T('主队海报')}"><span class="card-stamp">${st.badge}</span><div style="position:absolute;left:26px;bottom:24px;right:26px"><div style="font-family:var(--title);font-size:46px;line-height:.9">${name}</div><div style="color:var(--gold);font-weight:900">${st.stage} · ${st.state} · ${marks.hits||0} ${T('预测星')}</div></div>`}
 function renderFinalReportSummary(){
   const box=$('#finalReport'); if(!box)return;
   const r=buildFinalReport();
-  box.textContent=`当前报告：已结算 ${r.settled} 场，命中率 ${r.acc}%｜叙事命中 ${r.narrHit}/${r.narrTotal}｜主队更换 ${r.switches} 次。`;
+  box.textContent=textLang()==='en'
+    ? `Current report: ${r.settled} settled matches, ${r.acc}% accuracy | Story hits ${r.narrHit}/${r.narrTotal} | Main team switches ${r.switches}.`
+    : `当前报告：已结算 ${r.settled} 场，命中率 ${r.acc}%｜叙事命中 ${r.narrHit}/${r.narrTotal}｜主队更换 ${r.switches} 次。`;
 }
 function loadPosterImage(src){return new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=reject;img.src=src})}
 function drawRoundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath()}
@@ -1791,23 +2104,24 @@ async function downloadRewardCard(teamId){
     const vignette=ctx.createRadialGradient(w*.5,h*.45,w*.16,w*.5,h*.5,h*.82);vignette.addColorStop(0,'rgba(255,255,255,0)');vignette.addColorStop(.76,'rgba(6,9,22,.06)');vignette.addColorStop(1,'rgba(3,5,13,.32)');ctx.fillStyle=vignette;ctx.fillRect(0,0,w,h);
     ctx.save();drawRoundRect(ctx,46,46,w-92,h-92,70);ctx.strokeStyle='rgba(255,236,172,.70)';ctx.lineWidth=10;ctx.shadowColor='rgba(245,197,24,.24)';ctx.shadowBlur=32;ctx.stroke();ctx.shadowColor='transparent';ctx.strokeStyle='rgba(55,27,7,.24)';ctx.lineWidth=3;ctx.stroke();ctx.restore();
     const hits=meta.marks.hits||0;
+    const medalText=(text)=>T(text);
     if(team.id==='china'){
-      drawPaperMedal(ctx,w-285,h-360,168,'彩蛋','能量章','red');
+      drawPaperMedal(ctx,w-285,h-360,168,medalText('彩蛋'),medalText('能量章'),'red');
     }else if(hits>=3){
-      drawPaperMedal(ctx,w-285,h-360,172,meta.tier,`${hits} 星`,rewardMedalTheme(meta.tier));
+      drawPaperMedal(ctx,w-285,h-360,172,medalText(meta.tier),`${hits} ${T('星')}`,rewardMedalTheme(meta.tier));
     }else{
-      drawPaperMedal(ctx,w-285,h-350,154,'点亮','收藏章','blue');
+      drawPaperMedal(ctx,w-285,h-350,154,medalText('点亮'),medalText('收藏章'),'blue');
     }
-    if(meta.bonusHits>0)drawPaperMedal(ctx,300,h-390,126,'同队','加成','gold');
-    if(meta.memorial)drawPaperMedal(ctx,305,h-610,118,'纪念','万能','silver');
-    if(NARRATIVE_CARD_IDS.has(team.id))drawPaperMedal(ctx,w-285,315,116,'叙事','主线','blue');
-    if(hits>0)drawBlindEmboss(ctx,w-330,172,350,86,`预测星 × ${hits}`);
+    if(meta.bonusHits>0)drawPaperMedal(ctx,300,h-390,126,medalText('同队'),medalText('加成'),'gold');
+    if(meta.memorial)drawPaperMedal(ctx,305,h-610,118,medalText('纪念'),medalText('万能'),'silver');
+    if(NARRATIVE_CARD_IDS.has(team.id))drawPaperMedal(ctx,w-285,315,116,medalText('叙事'),medalText('主线'),'blue');
+    if(hits>0)drawBlindEmboss(ctx,w-330,172,350,86,`${T('预测星 ×')} ${hits}`);
     ctx.save();ctx.globalAlpha=.70;ctx.strokeStyle='rgba(255,230,170,.48)';ctx.lineWidth=5;ctx.setLineDash([22,18]);drawRoundRect(ctx,112,112,w-224,h-224,48);ctx.stroke();ctx.restore();
-    const a=document.createElement('a');a.download=`${team.id==='china'?'彩蛋卡':team.name}-奖励盖章卡.png`;a.href=canvas.toDataURL('image/png');a.click();toast('奖励盖章卡已下载。')
-  }catch(e){const a=document.createElement('a');a.download=`${team.name}-卡牌.webp`;a.href=team.image;a.click();toast('高清生成失败，已下载原始卡牌。')}
+    const a=document.createElement('a');a.download=`${T(team.id==='china'?'彩蛋卡':team.name)}-${T('奖励盖章卡')}.png`;a.href=canvas.toDataURL('image/png');a.click();toast(T('奖励盖章卡已下载。'))
+  }catch(e){const a=document.createElement('a');a.download=`${T(team.name)}-${T('卡牌')}.webp`;a.href=team.image;a.click();toast(T('高清生成失败，已下载原始卡牌。'))}
 }
 function downloadPoster(){const s=loadState();if(!s.fate){toast('先选一张主队卡。');location.hash='draw';return}downloadRewardCard(s.fate)}
-function updateHeroState(){const s=loadState();const btn=$('#heroDraw');if(btn){btn.textContent=s.fate?'查看我的主队席':'进入世界杯球迷卡牌赛'}}
+function updateHeroState(){const s=loadState();const btn=$('#heroDraw');if(btn){btn.textContent=s.fate?T('查看我的主队席'):T('进入世界杯球迷卡牌赛')}}
 function renderRewardHud(){const s=ensureDailyOpenLimit(loadState());const open=s.daily?.openCount||0;const loot=s.todayLoot||{energy:0,dust:0,stars:0,badges:[]};if($('#hudEnergy'))$('#hudEnergy').textContent=s.energy||0;if($('#hudDust'))$('#hudDust').textContent=s.dust||0;if($('#hudOpen'))$('#hudOpen').textContent=`${open}/3`;if($('#hudStreak'))$('#hudStreak').textContent=s.streak||0;if($('#lootEnergy'))$('#lootEnergy').textContent=`+${loot.energy||0}`;if($('#lootDust'))$('#lootDust').textContent=`+${loot.dust||0}`;if($('#lootStars'))$('#lootStars').textContent=`+${loot.stars||0}`;if($('#lootBadges'))$('#lootBadges').textContent=(loot.badges&&loot.badges.length)?loot.badges.join(' / '):'无奖励章'}
 function mobileOpeningPackIds(){
   const s=loadState();
@@ -1855,7 +2169,7 @@ function renderMobileApp(){
   ['#mLogoOne','#mLogoTwo','#mLogoThree'].forEach((sel,i)=>{const el=$(sel);if(el&&logo[i])el.src=resolveAsset(logo[i].thumb)});
 
   let title=T('先选主队卡'), text=T('第一步先确定你的世界杯身份。后续预测、奖励和档案都会围绕它展开。'), label=T('选择主队卡'), target='mPickPanel';
-  if(fate&&!dailyDone){title=T('今天翻一张国家卡');text=T('每天只翻一张。新卡点亮收藏，重复卡会转成卡尘和能量。');label=T('翻今日手气');target='daily'}
+  if(fate&&!dailyDone){title=T('今天三翻二选');text=T('先翻3张，再选2张入库。新卡点亮收藏，重复卡会转成卡尘和能量。');label=T('去选两张');target='daily'}
   else if(fate&&dailyDone&&!checked){title=T('领取今日补给');text=T('签到获得+12能量。能量长期保留，可用于能量补抽和后续赛事活动。');label=T('今日签到');target='check'}
   else if(fate&&dailyDone){title=T('今日任务已完成');text=T('你已经完成今天的关键动作。可以查看奖励、卡牌库或等待比赛日预测。');label=T('查看我的奖励');target='mRewardPanel'}
   $('#mTodayTitle').textContent=title;
@@ -1889,14 +2203,26 @@ function renderMobileApp(){
   };
 
   const dailyName=dailyTeam?.id==='china'?T('彩蛋卡'):dailyTeam?.name;
-  $('#mDailyResult').innerHTML=dailyTeam?`<div class="m-fate-card"><img src="${dailyTeam.id==='china'?fullImageFor(dailyTeam):thumbImageFor(dailyTeam)}" alt="${dailyName}"><div><div class="m-kicker">${s.daily?.duplicate?T('重复转化'):dailyTeam.id==='china'?T('彩蛋点亮'):T('今日点亮')}</div><h2>${dailyName}</h2><p>${dailyTeam.id==='china'?T('彩蛋卡已点亮：它不当主队，不出战比赛；每天可触发彩蛋剧场，领取+8能量。'):(s.daily?.duplicate?T('重复卡已转成卡尘和能量。'):T('这张卡已进入你的国家卡牌库，比赛日可作为出战卡。'))}</p></div></div>`:`<div class="m-list-item"><b>${T('今日手气还没揭晓')}</b><span>${T('每天只翻一张，保持卡牌稀有感。')}</span></div>`;
-  $('#mDailyBtn').textContent=dailyDone?T('今日已翻，明天再来'):T('翻今日手气');
-  $('#mDailyBtn').onclick=dailyDone?()=>toast(T('今天已经翻过手气了，明天再来。')):dailyDraw;
+  const packReady=Array.isArray(s.daily?.packIds)&&s.daily.packIds.length===DAILY_FREE_PACK_SIZE&&!dailyDone;
+  if(packReady){
+    const left=Math.max(0,DAILY_FREE_KEEP-(s.daily.packPicked||[]).length);
+    const cards=s.daily.packIds.map(id=>teamById(id)).filter(Boolean).map(t=>{
+      const picked=(s.daily.packPicked||[]).includes(t.id);
+      return `<button class="m-card-mini ${picked?'locked':''}" type="button" onclick="claimDailyPackCard('${t.id}')" ${picked?'disabled':''}><img src="${thumbImageFor(t)}" alt="${t.name}"><strong>${t.id==='china'?T('彩蛋卡'):t.name}</strong><span>${picked?T('已领取'):rarityOf(t).label}</span></button>`;
+    }).join('');
+    $('#mDailyResult').innerHTML=`<div class="m-list-item"><b>${T('今天三翻二选')}</b><span>${T('先翻3张再选2张。')} ${T('还可选')} ${left} ${T('张')}（${T('今日开卡')} ${openCount}/3）</span></div><div class="m-card-grid" style="margin-top:10px">${cards}</div>`;
+  }else{
+    $('#mDailyResult').innerHTML=dailyTeam?`<div class="m-fate-card"><img src="${dailyTeam.id==='china'?fullImageFor(dailyTeam):thumbImageFor(dailyTeam)}" alt="${dailyName}"><div><div class="m-kicker">${s.daily?.duplicate?T('重复转化'):dailyTeam.id==='china'?T('彩蛋点亮'):T('今日点亮')}</div><h2>${dailyName}</h2><p>${dailyTeam.id==='china'?T('彩蛋卡已点亮：它不当主队，不出战比赛；每天可触发彩蛋剧场，领取+8能量。'):(s.daily?.duplicate?T('重复卡已转成卡尘和能量。'):T('这张卡已进入你的国家卡牌库，比赛日可作为出战卡。'))}</p></div></div>`:`<div class="m-list-item"><b>${T('今日手气还没揭晓')}</b><span>${T('每天三翻二选。翻出3张后选2张，保持稀有感。')}</span></div>`;
+  }
+  $('#mDailyBtn').textContent=dailyDone?T('今日已完成，明天再来'):(packReady?T('继续选卡'):T('开启三翻二选'));
+  $('#mDailyBtn').onclick=dailyDone?()=>toast(T('今日免费三翻二选已完成。')):dailyDraw;
 
   $('#mRewardGrid').innerHTML=[
-    [T('能量'),s.energy||0],[T('卡尘'),s.dust||0],[T('签到'),s.streak||0],
-    [T('今日能量'),`+${loot.energy||0}`],[T('今日卡尘'),`+${loot.dust||0}`],[T('预测星'),`+${loot.stars||0}`]
-  ].map(([a,b])=>`<div class="m-stat"><b>${b}</b><span>${a}</span></div>`).join('');
+    [T('能量'),s.energy||0,'energy'],[T('卡尘'),s.dust||0,'dust'],[T('签到'),s.streak||0,''],
+    [T('今日能量'),`+${loot.energy||0}`,''],[T('今日卡尘'),`+${loot.dust||0}`,''],[T('预测星'),`+${loot.stars||0}`,'']
+  ].map(([a,b,act])=>`<div class="m-stat ${act?'tap-reroll':''}" ${act?`data-reroll="${act}"`:''}><b>${b}</b><span>${a}</span></div>`).join('');
+  $('#mRewardGrid').querySelectorAll('[data-reroll="energy"]').forEach(el=>el.onclick=spendEnergyReroll);
+  $('#mRewardGrid').querySelectorAll('[data-reroll="dust"]').forEach(el=>el.onclick=spendDustReroll);
   $('#mCheckBtn').textContent=checked?T('今日已签到'):T('今日签到');
   $('#mCheckBtn').onclick=checked?completedQuestToast:checkIn;
   $('#mDustBtn').onclick=spendDustReroll;
@@ -1949,7 +2275,7 @@ function renderMobileApp(){
 }
 function updateHeroFloats(){const pool=allTeams.filter(t=>t.name!=='中国'&&t.thumb);if(pool.length<3){setFallbackHeroThumbs();return}const hero=sample(pool,3);['#floatOne','#floatTwo','#floatThree'].forEach((sel,i)=>{const el=$(sel);if(el&&hero[i])el.src=resolveAsset(hero[i].thumb)})}
 function exportSave(){const data=JSON.stringify(loadState());const code=btoa(unescape(encodeURIComponent(data)));navigator.clipboard?.writeText(code).then(()=>toast('卡包码已复制。')).catch(()=>prompt('这是你的卡包码，请保存：',code))}
-function importSave(){const code=prompt('粘贴卡包码，导入后会覆盖当前浏览器里的卡包记录。');if(!code)return;try{const data=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));saveState({...defaultState(),...data});renderAll();toast('卡包码已导入。')}catch(e){toast('卡包码无效，请检查是否复制完整。')}}
+function importSave(){const code=prompt('粘贴卡包码，导入后会覆盖当前浏览器里的卡包记录。');if(!code)return;try{const data=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));saveState(data);renderAll();toast('卡包码已导入。')}catch(e){toast('卡包码无效，请检查是否复制完整。')}}
 function renderAll(){sanitizeFateSelection();renderDaily();renderQuests();renderTodayAction();renderFate();renderStories();renderChina();renderBattle();renderFilters();renderGallery();renderDirectPick();renderRewardHud();renderFinalReportSummary();updateHeroState();renderMobileApp();localizeNode()}
 async function init(){
   setFallbackHeroThumbs();
@@ -1978,11 +2304,12 @@ async function init(){
   cardStatus=status;
   matchesData=matches;
   ensureEntryPack();
-  const settledCount=autoSettleFromMatches();
-  const resolvedNarr=resolveNarrativesAuto();
   initDirectPickList();
   updateHeroFloats();
   renderAll();
+  const settledCount=autoSettleFromMatches();
+  const resolvedNarr=resolveNarrativesAuto();
+  if(resolvedNarr>0) renderAll();
   refreshChinaMessages();
   if(settledCount>0) toast(`已自动结算 ${settledCount} 场比赛结果。`);
   if(resolvedNarr>0) toast(`已自动揭晓 ${resolvedNarr} 条叙事题。`);
@@ -2004,6 +2331,8 @@ $('#exportSave').onclick=exportSave;
 $('#importSave').onclick=importSave;
 $('#dustReroll').onclick=spendDustReroll;
 $('#energyReroll').onclick=spendEnergyReroll;
+if($('#hudEnergyChip'))$('#hudEnergyChip').onclick=spendEnergyReroll;
+if($('#hudDustChip'))$('#hudDustChip').onclick=spendDustReroll;
 $('#closeModal').onclick=closeModal;
 $('#modal').onclick=e=>{if(e.target.id==='modal')closeModal()};
 $('#chinaBtn').onclick=()=>useChinaGold(false);
