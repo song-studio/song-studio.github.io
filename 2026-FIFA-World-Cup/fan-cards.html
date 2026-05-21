@@ -88,6 +88,15 @@ body.theme-dark .mobile-dock{background:oklch(10% .04 255 / .84)}
 body.theme-dark .mobile-dock a{background:oklch(100% .01 80 / .07)}
 .lang-toggle{min-width:46px;text-align:center}
 .install-btn{flex:0 0 auto}
+.m-install-btn{
+  flex:0 0 auto;width:28px;height:28px;border-radius:50%;
+  border:1px solid var(--line);
+  background:oklch(100% .012 88 / .82);
+  color:var(--muted);font-size:16px;font-weight:700;
+  cursor:pointer;display:grid;place-items:center;
+  line-height:1;padding:0;
+}
+.m-install-btn:active{background:oklch(83% .145 82 / .15);border-color:var(--gold)}
 #mLangToggle{display:inline-flex;margin:4px 0 10px;padding:6px 11px}
 body.theme-dark .toast{background:oklch(13% .04 20 / .94)}
 body.theme-dark .modal{background:oklch(5% .02 20 / .78)}
@@ -866,7 +875,7 @@ body.lang-en .hero-title .t2{
         <div class="m-title">
           <a class="m-home-link" href="./index.html">← 世界杯首页</a>
           <button class="chip-btn lang-toggle" id="mLangToggle" type="button">EN</button>
-          <button class="chip-btn install-btn" id="mInstallBtn" type="button" title="添加到主屏幕">添加到桌面</button>
+          <button class="m-install-btn" id="mInstallBtn" type="button" title="添加到主屏幕">＋</button>
           <h1>世界杯球迷卡牌赛</h1>
           <p>先选主队，每天点亮国家卡。世界杯开赛后，用手里的卡预测比赛；命中后，星级和奖励会记录到你使用的那张卡上。</p>
         </div>
@@ -966,7 +975,7 @@ body.lang-en .hero-title .t2{
 <section class="section" id="china"><div class="shell"><div class="panel china-stage"><div class="china-card" id="chinaCard"></div><div class="china-copy"><div class="section-kicker">彩蛋剧场</div><h2>彩蛋剧场</h2><p class="china-quote">中国队没进世界杯，但中国球迷永远在场。</p><p>彩蛋卡不参加主队选择，也不参与单场胜平负预测。它是一张资源卡：点亮后每天可触发一次彩蛋剧场获得 +8 能量，也可写一条公开球迷留言获得 +10 能量。能量可长期保留并用于补抽。</p><button class="primary-btn" id="chinaBtn">触发今日彩蛋剧场</button><div class="joke-box" id="chinaJoke">点亮彩蛋卡后，每天可触发一次彩蛋剧场获得 +8 能量；公开留言每天首次再得 +10 能量。能量够18可补抽一次，当天最多开3张。</div><div class="china-wall" id="chinaWall"></div></div></div></div></section>
 <section class="section" id="collection"><div class="shell"><div class="gallery-head"><div><div class="section-kicker">国家卡牌库</div><div class="section-title">49张卡分阶段点亮</div><p class="section-sub">未点亮卡仅显示剪影。点亮后显示完整卡面与国家信息，并参与后续预测与奖励记录。</p></div><div class="progress-wrap"><div class="progress-text"><span>卡牌进度</span><span id="progressText">0/49</span></div><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div></div></div><div class="gallery-tools" id="filters"></div><div class="gallery" id="gallery"></div></div></section>
 <section class="section compactable open" id="roadmap"><div class="shell"><div class="section-head"><div><div class="section-kicker">赛季路线</div><div class="section-title">赛前到赛后的参与规则</div><p class="section-sub">赛前收集卡牌与资源；开赛后用卡预测当日比赛。无论何时进入，都能从当前阶段开始。</p></div></div><div class="unlock-grid"><article class="unlock-card"><h3>赛前：选主队与点亮卡牌</h3><p>确定主队，每天翻一张卡，签到攒能量。新卡进入卡牌库，重复卡转成卡尘。</p></article><article class="unlock-card locked"><h3>小组赛：用卡预测胜平负</h3><p>页面显示当天比赛。选择出战卡后提交主胜、平局或客胜，赛果写入后自动结算。</p></article><article class="unlock-card locked"><h3>淘汰赛：关键场与纪念状态</h3><p>继续用存活球队卡预测。主队若被淘汰，会转为纪念状态，保留本届赛事轨迹。</p></article><article class="unlock-card locked"><h3>赛后：生成个人档案</h3><p>汇总主队轨迹、单场预测星级、稀有叙事命中和卡牌收藏进度。</p></article></div><div class="late-pass"><article class="late-card"><h3>晚加入也能参与</h3><p>开赛后第一次进入，会按当前阶段发放入场包：补足可用球队卡和能量，让新用户直接参加当天比赛。</p><div class="late-list"><span>赛前：靠每日翻卡慢慢积累</span><span>小组赛：入场包补起步，重点玩预测</span><span>淘汰赛：优先补当前可用球队卡</span></div></article><article class="late-card"><h3>早来有积累，晚来有入口</h3><p>早来的优势是卡牌更多、故事更完整；晚来的优势是可以从当前比赛日直接判断。收集和预测分开计分，避免新用户被挡在门外。</p><div class="late-list"><span>收集：看卡牌进度和稀有卡</span><span>预测：看命中星级和同队加成</span><span>档案：记录自己的入场时间线</span></div></article></div></div></section><section class="section compactable" id="engine"><div class="shell"><div class="section-head"><div><div class="section-kicker">奖励系统</div><div class="section-title">奖励会写回你的卡牌</div><p class="section-sub">每次预测都绑定一张出战卡。系统根据赛果自动计算星级、冷却、主队积分和叙事题结果。</p></div></div><div class="engine-grid"><article class="engine-step"><h3>单场命中</h3><p>胜平负预测命中，出战卡获得 +1 预测星。</p></article><article class="engine-step"><h3>同队加成</h3><p>如果出战卡正好是本场球队，且预测命中，该卡获得 +2 预测星。</p></article><article class="engine-step"><h3>平局退还</h3><p>赛果为平局时，系统退还本场判断，不加星，也不让卡进入冷却。</p></article><article class="engine-step"><h3>失误冷却</h3><p>猜错后，该出战卡冷却到下一比赛日，避免一张强卡无限刷。</p></article><article class="engine-step"><h3>叙事题记录</h3><p>稀有叙事题揭晓后，命中结果写入赛后档案。</p></article></div></div></section>
-<section class="section" id="poster"><div class="shell"><div class="panel poster-wrap"><div class="poster-preview" id="posterPreview"></div><div class="poster-copy"><div class="section-kicker">赛后博物馆</div><h2>我的2026世界杯档案</h2><p>现在可下载主队海报。赛程推进后会汇总为完整档案：主队轨迹、单场预测结果与叙事题命中记录。</p><div class="micro" id="finalReport" style="margin:10px 0 14px"></div><button class="primary-btn" id="downloadPoster">下载我的主队海报</button></div></div></div></section>
+<section class="section" id="poster"><div class="shell"><div class="panel poster-wrap"><div class="poster-preview" id="posterPreview"></div><div class="poster-copy"><div class="section-kicker">赛后博物馆</div><h2>我的2026世界杯档案</h2><p>现在可下载主队海报。赛程推进后会汇总为完整档案：主队轨迹、单场预测结果与叙事题命中记录。</p><div class="micro" id="finalReport" style="margin:10px 0 14px"></div><button class="primary-btn" id="downloadPoster">下载我的主队海报</button><button class="primary-btn" id="bottomInstallBtn" style="margin-top:10px">添加到桌面</button></div></div></div></section>
 </main>
 <nav class="mobile-dock" aria-label="手机快捷入口"><a href="#draw">主队</a><a href="#daily">手气</a><a href="#battle">预测</a><a href="#poster">档案</a></nav><div class="modal" id="modal"><button class="close" id="closeModal" aria-label="关闭弹窗">×</button><div class="modal-card" id="modalCard"></div></div><div class="fc-share-sheet" id="fcShareSheet" onclick="if(event.target===this)closeFanSharePanel()"><div class="fc-share-card"><h3>分享</h3><div class="fc-share-preview"><b>2026 世界杯赛程 + 球迷卡牌赛</b><div class="fc-share-preview-hero"><img src="assets/fan-cards/highlights/messi-wechat.jpg" alt="梅西卡牌预览"></div></div><div class="fc-share-links"><button class="fc-share-link-btn" type="button" onclick="copyFanHomeLink()">复制：世界杯赛程主页链接</button><button class="fc-share-link-btn" type="button" onclick="copyFanCardsLink()">复制：球迷卡牌赛链接</button></div><button class="fc-share-btn" type="button" onclick="copyFanShareLinks()">一键复制两条链接</button><button class="fc-share-wechat" type="button" onclick="openFanWeChatApp()">尝试打开微信</button><button class="fc-share-close" type="button" onclick="closeFanSharePanel()">关闭</button></div></div><div class="toast" id="toast"></div><div class="loot-pop" id="lootPop"></div>
 <script>
@@ -2409,8 +2418,18 @@ initTheme();
 if($('#langToggle'))$('#langToggle').onclick=toggleLang;
 if($('#mLangToggle'))$('#mLangToggle').onclick=toggleLang;
 $('#themeToggle').onclick=()=>{const darking=!document.body.classList.contains('theme-dark');applyTheme(darking?'dark':'light');localizeNode();toast(darking?'已切换到深色版。':'已切换到浅色版。')};
-$('#installBtn').onclick=()=>{if(_pwaDefer){_pwaDefer.prompt();_pwaDefer.userChoice.then(r=>{if(r.outcome==='accepted')gtag('event','pwa_install',{event_category:'engagement'})})}else{toast('请在浏览器菜单中选「添加到主屏幕」')}};
-if($('#mInstallBtn'))$('#mInstallBtn').onclick=()=>$('#installBtn').click();
+function _installClick(){
+  if(_pwaDefer){
+    _pwaDefer.prompt();
+    _pwaDefer.userChoice.then(r=>{if(r.outcome==='accepted')gtag('event','pwa_install',{event_category:'engagement'})});
+    return;
+  }
+  const isIOS=/iPhone|iPad|iPod/.test(navigator.userAgent);
+  toast(isIOS?'点底部 Safari 分享按钮 → 选「添加到主屏幕」':'请在浏览器菜单中选「添加到主屏幕」');
+}
+$('#installBtn').onclick=_installClick;
+if($('#mInstallBtn'))$('#mInstallBtn').onclick=_installClick;
+if($('#bottomInstallBtn'))$('#bottomInstallBtn').onclick=_installClick;
 $('#heroDraw').onclick=()=>{const s=loadState();if(s.fate){location.hash='fate';return}location.hash='draw';setTimeout(drawPack,220)};
 if($('#heroShareBtn'))$('#heroShareBtn').onclick=shareFanCardsPage;
 $('#drawBtn').onclick=drawPack;

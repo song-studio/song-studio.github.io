@@ -1,6 +1,6 @@
 {
-  "name": "FIFA World Cup Fan Cards",
-  "short_name": "Fan Cards",
+  "name": "世界杯球迷卡牌",
+  "short_name": "球迷卡牌",
   "description": "每日翻卡 · 预测比分 · 点亮49国",
   "start_url": "/2026-FIFA-World-Cup/fan-cards.html",
   "scope": "/2026-FIFA-World-Cup/",
