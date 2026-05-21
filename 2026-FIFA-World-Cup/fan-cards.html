@@ -1368,7 +1368,7 @@ function canOpenMore(s,max=DAILY_OPEN_LIMIT){ensureDailyOpenLimit(s);return (s.d
 function addOpenCount(s,n=1){ensureDailyOpenLimit(s);s.daily.openCount=(s.daily.openCount||0)+n;return s}
 function addTodayLoot(s,{energy=0,dust=0,stars=0,badge=''}={}){ensureDailyOpenLimit(s);s.todayLoot=s.todayLoot||{date:todayKey(),energy:0,dust:0,stars:0,badges:[]};s.todayLoot.energy=(s.todayLoot.energy||0)+energy;s.todayLoot.dust=(s.todayLoot.dust||0)+dust;s.todayLoot.stars=(s.todayLoot.stars||0)+stars;if(badge && !s.todayLoot.badges.includes(badge))s.todayLoot.badges.push(badge);return s}
 function rewardTier(hits=0){if(hits>=15)return '金章';if(hits>=8)return '银章';if(hits>=3)return '铜章';return '未授章'}
-function toast(msg){const el=$('#toast');el.textContent=translateText(msg);el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),2300)}
+function toast(msg,dur){const el=$('#toast');el.textContent=translateText(msg);el.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove('show'),dur||2300)}
 function copyTextWithFallback(text,msg='已复制'){
   if(navigator.clipboard?.writeText){
     navigator.clipboard.writeText(text).then(()=>toast(msg)).catch(()=>{
@@ -2422,7 +2422,11 @@ function _installClick(){
     return;
   }
   const isIOS=/iPhone|iPad|iPod/.test(navigator.userAgent);
-  toast(isIOS?'点底部 Safari 分享按钮 → 选「添加到主屏幕」':'请在浏览器菜单中选「添加到主屏幕」');
+  if(isIOS){
+    toast('① 点 Safari 底部 ↑ 分享图标  ② 往下滑找到「添加到主屏幕」  ③ 点右上角「添加」',3000);
+  }else{
+    toast('请在浏览器菜单中选「添加到主屏幕」');
+  }
 }
 $('#installBtn').onclick=_installClick;
 if($('#mInstallBtn'))$('#mInstallBtn').onclick=_installClick;
