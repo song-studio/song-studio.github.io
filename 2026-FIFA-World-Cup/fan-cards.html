@@ -990,6 +990,7 @@ function translateText(text){
   keys.forEach(k=>{out=out.split(k).join(I18N_EN[k])});
   return out;
 }
+function T(text){return translateText(text)}
 function localizeNode(root=document.body){
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
     if(!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
