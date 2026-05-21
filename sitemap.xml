@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://song-studio.netlify.app/</loc>
+    <loc>https://song-studio.github.io/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://song-studio.netlify.app/2026-fifa-world-cup/</loc>
+    <loc>https://song-studio.github.io/2026-fifa-world-cup/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://song-studio.netlify.app/2026-fifa-world-cup/fan-cards</loc>
+    <loc>https://song-studio.github.io/2026-fifa-world-cup/fan-cards</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://song-studio.netlify.app/weather-pro.html</loc>
+    <loc>https://song-studio.github.io/weather-pro.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://song-studio.netlify.app/route-pro.html</loc>
+    <loc>https://song-studio.github.io/route-pro.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://song-studio.netlify.app/racing/</loc>
+    <loc>https://song-studio.github.io/racing/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
