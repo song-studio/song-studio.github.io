@@ -88,15 +88,7 @@ body.theme-dark .mobile-dock{background:oklch(10% .04 255 / .84)}
 body.theme-dark .mobile-dock a{background:oklch(100% .01 80 / .07)}
 .lang-toggle{min-width:46px;text-align:center}
 .install-btn{flex:0 0 auto}
-.m-install-btn{
-  flex:0 0 auto;width:28px;height:28px;border-radius:50%;
-  border:1px solid var(--line);
-  background:oklch(100% .012 88 / .82);
-  color:var(--muted);font-size:16px;font-weight:700;
-  cursor:pointer;display:grid;place-items:center;
-  line-height:1;padding:0;
-}
-.m-install-btn:active{background:oklch(83% .145 82 / .15);border-color:var(--gold)}
+.m-install-chip{min-width:auto;padding:8px 10px;font-size:11px}
 #mLangToggle{display:inline-flex;margin:4px 0 10px;padding:6px 11px}
 body.theme-dark .toast{background:oklch(13% .04 20 / .94)}
 body.theme-dark .modal{background:oklch(5% .02 20 / .78)}
@@ -874,8 +866,8 @@ body.lang-en .hero-title .t2{
       <div class="m-brand-row">
         <div class="m-title">
           <a class="m-home-link" href="./index.html">← 世界杯首页</a>
+          <button class="chip-btn lang-toggle m-install-chip" id="mInstallBtn" type="button" title="添加到主屏幕">添加</button>
           <button class="chip-btn lang-toggle" id="mLangToggle" type="button">EN</button>
-          <button class="m-install-btn" id="mInstallBtn" type="button" title="添加到主屏幕">＋</button>
           <h1>世界杯球迷卡牌赛</h1>
           <p>先选主队，每天点亮国家卡。世界杯开赛后，用手里的卡预测比赛；命中后，星级和奖励会记录到你使用的那张卡上。</p>
         </div>
@@ -956,6 +948,7 @@ body.lang-en .hero-title .t2{
       <p id="mArchiveText">现在可下载主队卡。世界杯推进后，会汇总主队轨迹、预测记录、稀有叙事命中和收藏进度。</p>
       <button class="m-btn primary" id="mDownloadBtn" type="button">下载我的主队卡</button>
       <button class="m-btn" id="mShareBtn" type="button" style="margin-top:8px">复制分享链接 ↗</button>
+      <button class="m-btn" id="mInstallBtn2" type="button" style="margin-top:8px">添加到桌面</button>
     </section>
   </div>
 </div>
@@ -2429,6 +2422,7 @@ function _installClick(){
 }
 $('#installBtn').onclick=_installClick;
 if($('#mInstallBtn'))$('#mInstallBtn').onclick=_installClick;
+if($('#mInstallBtn2'))$('#mInstallBtn2').onclick=_installClick;
 if($('#bottomInstallBtn'))$('#bottomInstallBtn').onclick=_installClick;
 $('#heroDraw').onclick=()=>{const s=loadState();if(s.fate){location.hash='fate';return}location.hash='draw';setTimeout(drawPack,220)};
 if($('#heroShareBtn'))$('#heroShareBtn').onclick=shareFanCardsPage;
