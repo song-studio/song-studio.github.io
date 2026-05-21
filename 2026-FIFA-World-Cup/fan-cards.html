@@ -654,6 +654,56 @@ body.theme-dark .today-step.next{
   border-color:oklch(84% .13 84 / .48)!important;
   background:linear-gradient(155deg,oklch(26% .06 84 / .62),oklch(12% .026 258 / .86))!important;
 }
+
+/* final-mobile-polish-v2: reward tiles, compact language toggle */
+.lang-toggle{
+  width:auto!important;
+  min-width:44px!important;
+  min-height:30px!important;
+  padding:0 10px!important;
+  border-radius:999px!important;
+  font-size:12px!important;
+  line-height:1!important;
+}
+#mLangToggle{
+  margin:0!important;
+  align-self:flex-start;
+  box-shadow:none!important;
+}
+@media(max-width:560px){
+  .m-title{position:relative;padding-right:56px}
+  #mLangToggle{
+    position:absolute;
+    right:0;
+    top:0;
+    width:42px!important;
+    min-width:42px!important;
+    min-height:28px!important;
+    padding:0!important;
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    border:1px solid oklch(86% .03 86 / .18)!important;
+    background:oklch(13% .026 252 / .86)!important;
+    color:oklch(92% .018 86 / .92)!important;
+  }
+  .m-reward-grid .m-stat,
+  .m-status-grid .m-stat,
+  .m-list-item,
+  body.theme-dark .m-reward-grid .m-stat,
+  body.theme-dark .m-status-grid .m-stat,
+  body.theme-dark .m-list-item{
+    border-color:oklch(86% .035 86 / .18)!important;
+    background:linear-gradient(155deg,oklch(17% .036 252 / .90),oklch(10% .026 258 / .88))!important;
+    color:oklch(92% .018 86 / .92)!important;
+    box-shadow:inset 0 1px 0 oklch(100% .01 88 / .055),0 12px 26px oklch(3% .018 250 / .22)!important;
+  }
+  .m-reward-grid .m-stat b,
+  .m-status-grid .m-stat b{color:oklch(84% .13 84)!important}
+  .m-reward-grid .m-stat span,
+  .m-status-grid .m-stat span,
+  .m-list-item span{color:oklch(82% .022 86 / .72)!important}
+}
 </style>
 </head>
 <body>
@@ -855,6 +905,7 @@ const I18N_EN={
   '赛季路线':'Season Route','赛前到赛后的参与规则':'From Pre-tournament to Final Archive','赛前收集卡牌与资源；开赛后用卡预测当日比赛。无论何时进入，都能从当前阶段开始。':'Collect cards and resources before kickoff. Once matches begin, use cards to predict that day\'s games. Whenever you arrive, you can start from the current stage.','赛前：选主队与点亮卡牌':'Before Kickoff: Pick and Reveal','确定主队，每天翻一张卡，签到攒能量。新卡进入卡牌库，重复卡转成卡尘。':'Choose a main team, reveal one card daily, and check in for energy. New cards enter the library; duplicates become dust.','小组赛：用卡预测胜平负':'Group Stage: Predict Results','页面显示当天比赛。选择出战卡后提交主胜、平局或客胜，赛果写入后自动结算。':'Today\'s matches appear on the page. Choose a card and predict home win, draw, or away win. Results settle automatically.','淘汰赛：关键场与纪念状态':'Knockouts: Key Matches and Memorials','继续用存活球队卡预测。主队若被淘汰，会转为纪念状态，保留本届赛事轨迹。':'Keep predicting with surviving team cards. If your main team is eliminated, it becomes a memorial card with its tournament story preserved.','赛后：生成个人档案':'After the Final: Build Your Archive','汇总主队轨迹、单场预测星级、稀有叙事命中和卡牌收藏进度。':'Summarize main team history, prediction stars, rare story hits, and collection progress.','晚加入也能参与':'Late Players Can Join','开赛后第一次进入，会按当前阶段发放入场包：补足可用球队卡和能量，让新用户直接参加当天比赛。':'After kickoff, first-time visitors receive a stage pack with usable team cards and energy so they can play that day.','早来有积累，晚来有入口':'Early Players Build, Late Players Enter','早来的优势是卡牌更多、故事更完整；晚来的优势是可以从当前比赛日直接判断。收集和预测分开计分，避免新用户被挡在门外。':'Early players build richer collections and stories. Late players start from the current match day. Collection and prediction scores are tracked separately.',
   '奖励系统':'Reward System','奖励会写回你的卡牌':'Rewards Are Written Back to Cards','每次预测都绑定一张出战卡。系统根据赛果给这张卡加星、加章或进入冷却。':'Every prediction is tied to one card. Results add stars, badges, or cooldowns to that card.','青铜星':'Bronze Star','银星':'Silver Star','金章':'Gold Badge','精准印记':'Exact Mark','爆冷闪电':'Upset Flash','告别纪念':'Farewell Memorial','赛后博物馆':'Post-tournament Museum','我的2026世界杯档案':'My 2026 World Cup Archive','现在先下载主队卡。等世界杯推进，它会变成完整档案：主队卡、预测命中、爆冷印记、淘汰纪念和最终封神状态都会收进去。':'Download your main team card now. As the tournament unfolds, it becomes a full archive with main team history, prediction hits, upset marks, memorials, and final status.',
   '分享':'Share','2026 世界杯赛程 + 球迷卡牌赛':'2026 World Cup Schedule + Fan Card League','一键复制赛程和卡牌赛链接':'Copy Schedule and Card League Link','尝试打开微信':'Open WeChat','关闭':'Close','已复制':'Copied','✅ 已复制':'Copied','今日开卡':'Cards Today','能量':'Energy','预测星':'Prediction Stars','无奖励章':'No Badge','今日收获：':'Today\'s Rewards:','未定':'Unset','今日已翻，明天再来':'Done Today','今日开卡已满（3/3）':'Daily Card Limit Reached','今日开卡次数已满（3次），明天再来。':'Daily card limit reached. Come back tomorrow.','今天已经翻过手气了，明天再来。':'You already drew today. Come back tomorrow.','今天的手气已经用完。保持一点悬念，明天再翻。':'Today\'s draw is used. Keep some suspense for tomorrow.',
+  '今天翻一张国家卡':'Reveal One National Card Today','新卡点亮收藏，重复卡会转成卡尘和能量。':'New cards enter your collection; duplicates turn into dust and energy.','领取今日补给':'Claim Today\'s Supply','签到获得+12能量。能量长期保留，可用于能量补抽和后续赛事活动。':'Check in for +12 energy. Energy is kept long term for redraws and later events.','今日任务已完成':'Today Complete','你已经完成今天的关键动作。可以查看奖励、卡牌库或等待比赛日预测。':'You have finished today\'s key actions. Check rewards, browse cards, or wait for match-day predictions.','查看我的奖励':'View My Rewards','主队':'Main Team','卡牌进度':'Card Progress','今日能量':'Today Energy','今日卡尘':'Today Dust','签到':'Check-in','能量怎么来':'How to earn energy','签到 +12；点亮新卡 +8；重复卡 +4；彩蛋剧场 +6。能量长期保留，赛前赛中都不会清空。':'Check-in +12; new card +8; duplicate +4; Easter Egg Theater +6. Energy is kept long term and does not reset.','能量怎么用':'How to use energy','当前可消耗24能量补一抽，点亮一张未拥有的正赛国家卡；后续赛事活动也会沿用这条资源线。':'Spend 24 energy for one redraw and reveal an unowned qualified national card. Later event features will use the same resource line.','卡尘怎么用':'How to use card dust','抽到重复卡会得到卡尘。消耗8卡尘可补一抽，适合差几张卡时追进度。':'Duplicate cards become dust. Spend 8 dust for one redraw, useful when you are missing a few cards.','预测星怎么来':'How to earn prediction stars','比赛日提交胜平负预测，赛果写入后自动结算。命中+1星；如果出战卡正好是本场球队，命中+2星。':'Submit match predictions on match days. After results are entered, hits earn +1 star; if your card is one of the teams in that match, it earns +2 stars.','今日手气还没揭晓':'Today\'s card is not revealed yet','保持卡牌稀有感。':'Keep the mystery alive.','今日已翻，明天再来':'Done Today','今日已签到':'Checked In Today','彩蛋卡已点亮：它不当主队，不出战比赛；每天可触发彩蛋剧场，领取+6能量。':'Easter Egg card revealed: it cannot be main team or play matches. Trigger the theater once per day for +6 energy.','重复卡已转成卡尘和能量。':'Duplicate converted into dust and energy.','这张卡已进入你的国家卡牌库，比赛日可作为出战卡。':'This card entered your national card library and can play on match days.','比赛日预测入口':'Match Prediction Entry','完整赛程在世界杯首页。这里读取 data/matches.json 的当天比赛，维护后自动出现预测列表。':'The full schedule is on the World Cup homepage. This area reads today\'s matches from data/matches.json and shows predictions after maintenance.','奖励规则':'Reward Rules','命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。':'Hit +1 star; if the card is one of the match teams, hit +2 stars; draws return without stars.',
   '普通':'Common','稀有':'Rare','史诗':'Epic','传说':'Legendary','隐藏':'Hidden','本命':'Main Team','待收集':'Locked','未点亮':'Locked','你的主队':'Your Main Team','你的本命':'Your Main Team','已选':'Chosen','奖励等级':'Reward Tier','粉丝积分':'Fan Points','预测局 / MATCH LAB':'Prediction Lab / Match Lab',
   '阿尔及利亚':'Algeria','阿根廷':'Argentina','埃及':'Egypt','奥地利':'Austria','澳大利亚':'Australia','巴拉圭':'Paraguay','巴拿马':'Panama','巴西':'Brazil','比利时':'Belgium','波黑':'Bosnia and Herzegovina','德国':'Germany','厄瓜多尔':'Ecuador','佛得角':'Cabo Verde','刚果（金）':'DR Congo','哥伦比亚':'Colombia','海地':'Haiti','韩国':'Korea Republic','荷兰':'Netherlands','加拿大':'Canada','加纳':'Ghana','捷克':'Czechia','卡塔尔':'Qatar','科特迪瓦':'Ivory Coast','克罗地亚':'Croatia','库拉索':'Curacao','美国':'United States','摩洛哥':'Morocco','墨西哥':'Mexico','南非':'South Africa','挪威':'Norway','葡萄牙':'Portugal','日本':'Japan','瑞典':'Sweden','瑞士':'Switzerland','塞内加尔':'Senegal','沙特阿拉伯':'Saudi Arabia','苏格兰':'Scotland','突尼斯':'Tunisia','土耳其':'Turkiye','乌拉圭':'Uruguay','乌兹别克斯坦':'Uzbekistan','西班牙':'Spain','新西兰':'New Zealand','伊拉克':'Iraq','伊朗':'Iran','英格兰':'England','约旦':'Jordan','中国':'China',
   '冠军归属':'Champion Pick','亚军席位':'Runner-up Pick','季军归属':'Third-place Pick','32强后火力王':'Knockout Scoring Leader','小组赛火力王':'Group Stage Scoring Leader','金靴进球数':'Golden Boot Goals','东道主最远者':'Best Host Team','决赛90分钟剧本':'Final 90-minute Script','填写答案':'Enter Answer','锁定答案':'Lock Answer','已锁定':'Locked','等待揭晓':'Awaiting Result','已提交，等待揭晓':'Submitted, awaiting result','已解锁：可提交这条整届预测':'Unlocked: submit this tournament prediction','需要先点亮稀有叙事卡：':'Reveal rare story card first: '

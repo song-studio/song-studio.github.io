@@ -553,6 +553,27 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
 .drw-h2h-lbl{font-size:12px;color:var(--text-muted);}
 .drw-h2h-val{font-size:12px;font-weight:700;color:var(--text);}
 .drw-h2h-quote{font-size:13px;color:var(--gold);font-style:italic;margin-top:8px;padding-top:8px;border-top:1px solid rgba(245,197,24,.15);line-height:1.6;}
+
+/* final-home-mobile-polish-v2: compact hero controls and nav-safe spacing */
+@media(max-width:768px){
+  #hero{min-height:640px;padding-top:58px;}
+  #hero-content{padding:96px 24px 54px;}
+  .hero-eye{margin-bottom:22px;font-size:9.5px;letter-spacing:3px;padding:4px 12px;}
+  .hero-action-row{align-items:center;gap:8px;margin-top:0;}
+  .hero-cta,.fan-card-hero-btn{
+    width:min(232px,74vw)!important;
+    min-height:42px!important;
+    padding:0 14px!important;
+    font-size:11px!important;
+    letter-spacing:.7px!important;
+  }
+  .fan-card-hero-btn i{width:17px;height:22px;border-radius:4px;}
+  .hero-intro{max-width:300px;margin:-10px auto 12px;font-size:12px;line-height:1.58;text-align:center;}
+}
+@media(max-width:380px){
+  #hero-content{padding-top:104px;}
+  .hero-cta,.fan-card-hero-btn{width:min(220px,72vw)!important;}
+}
 </style>
 </head><body>
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg"><defs>
