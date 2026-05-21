@@ -9,11 +9,11 @@
 <meta name="keywords" content="世界杯卡牌,球迷卡,世界杯预测,2026世界杯游戏,FIFA卡牌,球队卡,世界杯收藏,主队卡">
 <meta property="og:title" content="2026 FIFA World Cup Fan Cards | 世界杯球迷卡牌赛">
 <meta property="og:description" content="选主队、每日翻卡、预测比赛——49张国家卡牌等你点亮。">
-<meta property="og:image" content="https://song-studio.github.io/2026-fifa-world-cup/assets/fan-cards/base/thumb/argentina.webp">
-<meta property="og:url" content="https://song-studio.github.io/2026-fifa-world-cup/fan-cards.html">
+<meta property="og:image" content="https://song-studio.github.io/2026-FIFA-World-Cup/assets/fan-cards/base/thumb/argentina.webp">
+<meta property="og:url" content="https://song-studio.github.io/2026-FIFA-World-Cup/fan-cards.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://song-studio.github.io/2026-fifa-world-cup/fan-cards.html">
+<link rel="canonical" href="https://song-studio.github.io/2026-FIFA-World-Cup/fan-cards.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKKXYYTL3J"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-QKKXYYTL3J')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -599,6 +599,61 @@ body.theme-dark .story-card:hover{
   .m-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .m-card-grid:not(.expanded) .m-card-mini:nth-child(n+7){display:none}
 }
+
+/* github-fix-v1: unify dark action chips and reward blocks */
+body.theme-dark .hero-note .note,
+body.theme-dark .note,
+body.theme-dark .daily-meter div,
+body.theme-dark .status-pill,
+body.theme-dark .vault-cell,
+body.theme-dark .reward-chip,
+body.theme-dark .today-step,
+body.theme-dark .quest-item,
+body.theme-dark .quest-action,
+body.theme-dark .chip-btn,
+body.theme-dark .secondary-btn,
+body.theme-dark .direct-pick,
+body.theme-dark .direct-pick input,
+body.theme-dark .direct-pick button,
+body.theme-dark .quick-q,
+body.theme-dark .quick-q-row button,
+body.theme-dark .logic-brief,
+body.theme-dark .logic-item,
+body.theme-dark .rule-note,
+body.theme-dark .late-card{
+  border-color:oklch(86% .035 86 / .18)!important;
+  background:linear-gradient(155deg,oklch(17% .036 252 / .88),oklch(10% .026 258 / .86))!important;
+  color:oklch(92% .018 86 / .92)!important;
+  box-shadow:inset 0 1px 0 oklch(100% .01 88 / .055),0 14px 32px oklch(3% .018 250 / .22)!important;
+}
+body.theme-dark .primary-btn,
+body.theme-dark .today-action,
+body.theme-dark .fc-share-btn{
+  border:1px solid oklch(84% .13 84 / .58)!important;
+  background:linear-gradient(180deg,oklch(84% .13 84),oklch(66% .12 72))!important;
+  color:oklch(12% .032 248)!important;
+}
+body.theme-dark .note strong,
+body.theme-dark .reward-chip b,
+body.theme-dark .daily-meter b,
+body.theme-dark .status-pill b,
+body.theme-dark .vault-cell b,
+body.theme-dark .quest-icon,
+body.theme-dark .quick-q-out{color:oklch(84% .13 84)!important}
+body.theme-dark .note span,
+body.theme-dark .reward-chip span,
+body.theme-dark .status-pill span,
+body.theme-dark .quest-item p,
+body.theme-dark .micro{color:oklch(82% .022 86 / .72)!important}
+body.theme-dark .quest-item.done,
+body.theme-dark .today-step.done{
+  border-color:oklch(74% .13 148 / .42)!important;
+  background:linear-gradient(155deg,oklch(23% .06 150 / .58),oklch(12% .026 258 / .86))!important;
+}
+body.theme-dark .today-step.next{
+  border-color:oklch(84% .13 84 / .48)!important;
+  background:linear-gradient(155deg,oklch(26% .06 84 / .62),oklch(12% .026 258 / .86))!important;
+}
 </style>
 </head>
 <body>
@@ -942,7 +997,7 @@ function copyTextWithFallback(text,msg='已复制'){
 function openFanSharePanel(){document.getElementById('fcShareSheet')?.classList.add('open')}
 function closeFanSharePanel(){document.getElementById('fcShareSheet')?.classList.remove('open')}
 function copyFanShareLinks(){
-  const text=`https://song-studio.github.io/2026-fifa-world-cup/share-card.html`;
+  const text=`https://song-studio.github.io/2026-FIFA-World-Cup/share-card.html`;
   copyTextWithFallback(text,"✅ 已复制");
   closeFanSharePanel();
 }
