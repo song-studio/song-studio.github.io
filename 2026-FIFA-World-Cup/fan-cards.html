@@ -770,6 +770,13 @@ body.lang-en .hero-title .t2{
     max-width:10ch;
     white-space:normal;
   }
+  /* Mobile EN: force app title to 2 lines so it doesn't overlap the card logo */
+  body.lang-en .m-title h1{
+    white-space:normal;
+    word-break:normal;
+    line-height:1.08;
+    max-width:12ch;
+  }
 }
 
 /* v-final: align rare-story cards in desktop grid */
@@ -1073,7 +1080,21 @@ Object.assign(I18N_EN,{
   '开始今日流程':'Start Today',
   '今日行动':'Today',
   '主队席':'Main Team Slot',
-  '可翻':'Available'
+  '可翻':'Available',
+  '今天三翻二选':'Open Three, Keep Two Today',
+  '每天三翻二选':'Open Three, Keep Two Daily',
+  '今日三翻二选已完成':'Open-Three Keep-Two Completed Today',
+  '今日已完成，明天再来':'Done Today, Come Back Tomorrow',
+  '今日免费三翻二选：还可选':'Today free Open-Three Keep-Two: picks left',
+  '今日总开卡':'Cards opened today',
+  '今日已点亮':'Revealed Today',
+  '今日开卡：':'Cards today:',
+  '今日手气还没揭晓。':'Today’s draw has not been revealed yet.',
+  '彩蛋卡':'Easter Egg Card',
+  '已领取':'Claimed',
+  '重复卡已转成卡尘':'Duplicate converted to dust',
+  '今日上限':'Daily Limit',
+  '今日开卡已满（3/3）':'Daily Card Limit Reached (3/3)'
 });
 function textLang(){return pageLang==='en'?'en':'zh'}
 function translateText(text){
@@ -1665,26 +1686,26 @@ function renderDaily(){
   const picks=s.daily?.packPicked||[];
   const leftPick=Math.max(0,DAILY_FREE_KEEP-picks.length);
   const team=teamById(s.daily?.lastCard);
-  $('#dailyState').textContent=full?'今日上限':(freeDone?'已完成':'可翻');
-  $('#dailyBtn').textContent=full?'今日开卡已满（3/3）':(freeDone?'今日三翻二选已完成':'开启三翻二选');
-  $('#dailyBtn').onclick=full?()=>toast('今天开卡次数已满（3次），明天再来。'):(freeDone?()=>toast('今日免费三翻二选已完成，可用卡尘或能量补抽。'):dailyDraw);
+  $('#dailyState').textContent=full?T('今日上限'):(freeDone?T('已完成'):T('可翻'));
+  $('#dailyBtn').textContent=full?T('今日开卡已满（3/3）'):(freeDone?T('今日三翻二选已完成'):T('开启三翻二选'));
+  $('#dailyBtn').onclick=full?()=>toast(T('今天开卡次数已满（3次），明天再来。')):(freeDone?()=>toast(T('今日免费三翻二选已完成，可用卡尘或能量补抽。')):dailyDraw);
   $('#dailyBtn').style.opacity=(full?'.72':'1');
   $('#ownedCount').textContent=new Set([...(s.owned||[]),s.fate].filter(Boolean)).size;
-  $('#fateName').textContent=s.fate?(teamById(s.fate)?.name||'已选'):'未定';
+  $('#fateName').textContent=s.fate?(teamById(s.fate)?.name||T('已选')):T('未定');
   const packReady=Array.isArray(s.daily?.packIds)&&s.daily.packIds.length===DAILY_FREE_PACK_SIZE;
   if(packReady&&!freeDone){
     const cards=s.daily.packIds.map(id=>teamById(id)).filter(Boolean).map(t=>{
       const picked=picks.includes(t.id);
-      return `<button type="button" onclick="claimDailyPackCard('${t.id}')" ${picked?'disabled':''} style="border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:6px;cursor:${picked?'default':'pointer'};opacity:${picked?'.58':'1'}"><img src="${thumbImageFor(t)}" alt="${t.name}" style="width:100%;border-radius:10px;display:block"><div style="margin-top:6px;font-weight:900;font-size:12px">${t.flag} ${t.id==='china'?'彩蛋卡':t.name}</div><div class="micro">${rarityOf(t).label}${picked?' · 已领取':''}</div></button>`;
+      return `<button type="button" onclick="claimDailyPackCard('${t.id}')" ${picked?'disabled':''} style="border:1px solid var(--line);border-radius:12px;background:var(--soft);padding:6px;cursor:${picked?'default':'pointer'};opacity:${picked?'.58':'1'}"><img src="${thumbImageFor(t)}" alt="${t.name}" style="width:100%;border-radius:10px;display:block"><div style="margin-top:6px;font-weight:900;font-size:12px">${t.flag} ${t.id==='china'?T('彩蛋卡'):t.name}</div><div class="micro">${rarityOf(t).label}${picked?` · ${T('已领取')}`:''}</div></button>`;
     }).join('');
-    $('#dailyResult').innerHTML=`<div style="width:100%"><div class="micro" style="margin-bottom:8px">今日免费三翻二选：还可选 ${leftPick} 张（今日总开卡 ${openCount}/3）</div><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">${cards}</div></div>`;
+    $('#dailyResult').innerHTML=`<div style="width:100%"><div class="micro" style="margin-bottom:8px">${T('今日免费三翻二选：还可选')} ${leftPick} ${T('张')}（${T('今日总开卡')} ${openCount}/3）</div><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">${cards}</div></div>`;
     return;
   }
   if(team){
-    const name=team.id==='china'?'彩蛋卡':team.name;
-    $('#dailyResult').innerHTML=`<div><img src="${thumbImageFor(team)}" alt="${name}"><p style="margin-top:12px;font-weight:900">${team.flag} ${name}</p><p class="micro">${s.daily?.duplicate?'重复卡已转成卡尘':'今日已点亮'}</p><p class="micro">今日开卡：${openCount}/3</p></div>`;
+    const name=team.id==='china'?T('彩蛋卡'):team.name;
+    $('#dailyResult').innerHTML=`<div><img src="${thumbImageFor(team)}" alt="${name}"><p style="margin-top:12px;font-weight:900">${team.flag} ${name}</p><p class="micro">${s.daily?.duplicate?T('重复卡已转成卡尘'):T('今日已点亮')}</p><p class="micro">${T('今日开卡：')}${openCount}/3</p></div>`;
   }else{
-    $('#dailyResult').innerHTML=`今日手气还没揭晓。<div class="micro" style="margin-top:8px">今日开卡：${openCount}/3</div>`;
+    $('#dailyResult').innerHTML=`${T('今日手气还没揭晓。')}<div class="micro" style="margin-top:8px">${T('今日开卡：')}${openCount}/3</div>`;
   }
 }
 function renderFate(){const s=loadState();const team=teamById(s.fate)||allTeams.find(t=>t.name==='阿根廷');const has=!!s.fate;const st=statusOf(team);const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const fateImp=s.fateImprint||{fanPoints:0,level:0,isMemorial:false};const tier=rewardTier(marks.hits||0);const storyActive=st.alive?'燃烧':'纪念';const switchHint=canSwitchFate(s)?T('主队更换规则：开赛前最多可更换1次。'):T('主队更换规则：当前已锁定，不可更换。');$('#fateDesk').innerHTML=`<div class="fate-card"><img src="${team.image}" alt="${team.name} ${T('主队卡')}"><span class="card-stamp">${st.badge}</span></div><div class="fate-info"><span class="fate-tag">${has?T('你的主队卡'):T('示例席位')}</span><h3>${team.name}</h3><p>${team.feature}</p><div class="status-strip"><div class="status-pill"><b>${team.flag}</b><span>${T('国家特征')}</span></div><div class="status-pill"><b>${st.state}</b><span>${T('当前状态')}</span></div><div class="status-pill"><b>${st.stage}</b><span>${T('赛事阶段')}</span></div><div class="status-pill"><b>${marks.hits||0}${T('星')}</b><span>${T('预测印记')}</span></div><div class="status-pill"><b>${tier}</b><span>${T('奖励等级')}</span></div></div><div class="story-track"><div class="story-step active"><b>${T('觉醒')}</b><span>${T('点亮或选为主队')}</span></div><div class="story-step ${storyActive==='燃烧'?'active':''}"><b>${T('燃烧')}</b><span>${T('晋级或仍在赛事中')}</span></div><div class="story-step ${storyActive==='封神'?'active':''}"><b>${T('封神')}</b><span>${T('决赛或冠军章')}</span></div></div><p class="micro" style="margin-top:14px">${T('主队奖励线：粉丝积分')} ${fateImp.fanPoints||0} ｜ ${T('主队等级')} Lv.${fateImp.level||0} ｜ ${fateImp.isMemorial?T('已转纪念万能卡'):T('未转纪念状态')}。</p><p class="micro" style="margin-top:8px">${switchHint}</p></div>`;renderPoster()}
