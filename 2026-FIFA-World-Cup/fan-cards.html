@@ -2444,9 +2444,9 @@ function _installClick(){
   if(isIOS){
     toast('请用 Safari 浏览器打开本页 → 点底部 ↑ 分享 → 选「添加到主屏幕」→ 点添加',4000);
   }else if(!isChrome){
-    toast('请用 Chrome 浏览器打开本页，即可一键安装',3500);
+    toast('请用 Chrome 浏览器打开本页 → 右上角 ⋮ → 安装应用',3500);
   }else{
-    toast('请稍等页面加载完成，再点一次即可安装',2500);
+    toast('请稍等几秒页面加载完，再点一次即可安装；或者点右上角 ⋮ → 安装应用',3500);
   }
 }
 $('#installBtn').onclick=_installClick;
