@@ -116,9 +116,6 @@ html[lang=en] .hero-sub{letter-spacing:clamp(3px,1.5vw,8px);font-size:clamp(13px
 .share-preview span{display:block;color:rgba(225,236,250,.78);font-size:12px;margin-top:4px}
 .share-preview-hero{margin-top:10px;border:1px solid rgba(255,255,255,.2);border-radius:12px;background:rgba(8,18,35,.72);padding:10px}
 .share-preview-hero img{width:100%;aspect-ratio:1/1;object-fit:contain;border-radius:10px;display:block;box-shadow:0 10px 24px rgba(0,0,0,.35)}
-.share-links{display:grid;gap:8px;margin-top:10px}
-.share-link-btn{width:100%;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);color:#fff;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer;text-align:left}
-.share-link-btn:hover{background:rgba(255,255,255,.12)}
 .share-main-btn{width:100%;border:1px solid rgba(126,217,87,.52);background:linear-gradient(135deg,rgba(126,217,87,.22),rgba(52,168,83,.18));color:#f4fff2;border-radius:14px;padding:12px 14px;font-size:14px;font-weight:800;cursor:pointer}
 .share-main-btn:hover{filter:brightness(1.06)}
 .share-wechat-btn{width:100%;border:1px solid rgba(126,217,87,.52);background:rgba(126,217,87,.10);color:#d9ffe0;border-radius:12px;padding:10px 12px;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px}
@@ -844,10 +841,6 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
       <div class="share-preview-hero">
         <img src="assets/fan-cards/highlights/messi-wechat.jpg" alt="梅西卡牌预览">
       </div>
-    </div>
-    <div class="share-links">
-      <button class="share-link-btn" type="button" onclick="copyMainLink()">复制：世界杯赛程主页链接</button>
-      <button class="share-link-btn" type="button" onclick="copyCardsLink()">复制：球迷卡牌赛链接</button>
     </div>
     <button class="share-main-btn" type="button" onclick="copyForWeChat()">一键复制两条链接</button>
     <button class="share-wechat-btn" type="button" onclick="openWeChatApp()">尝试打开微信</button>
@@ -2841,14 +2834,6 @@ function shareMainAndCards(){
 }
 function openSharePanel(){document.getElementById('share-sheet')?.classList.add('open')}
 function closeSharePanel(){document.getElementById('share-sheet')?.classList.remove('open')}
-function copyMainLink(){
-  const mainUrl='https://song-studio.github.io/2026-FIFA-World-Cup/';
-  copyText(mainUrl,lang==='en'?'✅ Home link copied!':'✅ 首页链接已复制');
-}
-function copyCardsLink(){
-  const cardUrl='https://song-studio.github.io/2026-FIFA-World-Cup/fan-cards.html';
-  copyText(cardUrl,lang==='en'?'✅ Fan cards link copied!':'✅ 卡牌赛链接已复制');
-}
 function copyForWeChat(){
   const text=`世界杯赛程：\nhttps://song-studio.github.io/2026-FIFA-World-Cup/\n\n球迷卡牌赛：\nhttps://song-studio.github.io/2026-FIFA-World-Cup/fan-cards.html`;
   copyText(text,"✅ 已复制");
