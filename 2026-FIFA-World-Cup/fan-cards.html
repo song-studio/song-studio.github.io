@@ -715,16 +715,18 @@ body.theme-dark .reward-hud-grid .reward-chip{
   box-shadow:inset 0 1px 0 oklch(100% .01 88 / .055),0 12px 26px oklch(3% .018 250 / .22)!important;
 }
 body.theme-dark .today-loot b,body.theme-dark .reward-hud-title{color:oklch(84% .13 84)!important}
-.china-wall,.m-china-wall{margin-top:12px;border:1px solid oklch(86% .035 86 / .16);border-radius:18px;background:linear-gradient(155deg,oklch(17% .036 252 / .88),oklch(10% .026 258 / .86));padding:12px;color:oklch(92% .018 86 / .92)}
+.china-wall,.m-china-wall{margin-top:12px;border:1px solid oklch(86% .035 86 / .16);border-radius:18px;background:linear-gradient(155deg,oklch(17% .036 252 / .88),oklch(10% .026 258 / .86));padding:12px;color:oklch(92% .018 86 / .92);position:relative;z-index:3}
 .china-wall-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
 .china-wall-head b{color:oklch(84% .13 84)}
 .china-wall-head span{font-size:12px;color:oklch(82% .022 86 / .72)}
-.china-wall-list{display:grid;gap:7px;max-height:168px;overflow-y:auto;padding-right:2px}
+.china-wall-list{display:grid;gap:7px;max-height:220px;overflow-y:auto;padding-right:2px}
 .china-msg{border:1px solid oklch(86% .035 86 / .12);border-radius:12px;background:oklch(8% .024 252 / .45);padding:8px 10px;font-size:13px;line-height:1.45}
 .china-msg small{display:block;margin-top:2px;color:oklch(82% .022 86 / .56);font-size:10px}
 .china-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-top:10px}
+.china-form{position:relative;z-index:2}
 .china-form input{min-width:0;border:1px solid oklch(86% .035 86 / .16);border-radius:12px;background:oklch(8% .024 252 / .72);color:oklch(94% .018 88);padding:0 11px;min-height:42px}
 .china-form button{border:1px solid oklch(84% .13 84 / .50);border-radius:12px;background:linear-gradient(180deg,oklch(84% .13 84),oklch(67% .11 72));color:oklch(12% .03 248);font-weight:900;padding:0 14px;min-height:42px;cursor:pointer}
+.china-form input,.china-form button{pointer-events:auto}
 @media(max-width:560px){
   .mobile-app *, .mobile-app *::before, .mobile-app *::after{box-sizing:border-box}
   html,body{width:100%;min-width:0;background:oklch(8% .024 252)!important;overflow-x:hidden!important}
@@ -967,7 +969,17 @@ const I18N_EN={
   '阿尔及利亚':'Algeria','阿根廷':'Argentina','埃及':'Egypt','奥地利':'Austria','澳大利亚':'Australia','巴拉圭':'Paraguay','巴拿马':'Panama','巴西':'Brazil','比利时':'Belgium','波黑':'Bosnia and Herzegovina','德国':'Germany','厄瓜多尔':'Ecuador','佛得角':'Cabo Verde','刚果（金）':'DR Congo','哥伦比亚':'Colombia','海地':'Haiti','韩国':'Korea Republic','荷兰':'Netherlands','加拿大':'Canada','加纳':'Ghana','捷克':'Czechia','卡塔尔':'Qatar','科特迪瓦':'Ivory Coast','克罗地亚':'Croatia','库拉索':'Curacao','美国':'United States','摩洛哥':'Morocco','墨西哥':'Mexico','南非':'South Africa','挪威':'Norway','葡萄牙':'Portugal','日本':'Japan','瑞典':'Sweden','瑞士':'Switzerland','塞内加尔':'Senegal','沙特阿拉伯':'Saudi Arabia','苏格兰':'Scotland','突尼斯':'Tunisia','土耳其':'Turkiye','乌拉圭':'Uruguay','乌兹别克斯坦':'Uzbekistan','西班牙':'Spain','新西兰':'New Zealand','伊拉克':'Iraq','伊朗':'Iran','英格兰':'England','约旦':'Jordan','中国':'China',
   '冠军归属':'Champion Pick','亚军席位':'Runner-up Pick','季军归属':'Third-place Pick','32强后火力王':'Knockout Scoring Leader','小组赛火力王':'Group Stage Scoring Leader','金靴进球数':'Golden Boot Goals','东道主最远者':'Best Host Team','决赛90分钟剧本':'Final 90-minute Script','填写答案':'Enter Answer','锁定答案':'Lock Answer','已锁定':'Locked','等待揭晓':'Awaiting Result','已提交，等待揭晓':'Submitted, awaiting result','已解锁：可提交这条整届预测':'Unlocked: submit this tournament prediction','需要先点亮稀有叙事卡：':'Reveal rare story card first: ','第49张隐藏卡。触发剧场+8能量，留言再+10能量。':'The hidden 49th card. Theater gives +8 energy; one public message gives +10 more.','翻到新卡会点亮国家卡；重复卡会转成卡尘和能量。能量够18可补抽一次，当天最多开3张。':'New cards are revealed; duplicates become dust and energy. Spend 18 energy for an extra draw, up to 3 cards per day.','球迷留言板':'Fan Message Board','公开留言 +10 能量，可用于补抽':'Public message +10 energy for redraws','今日留言能量已领':'Message energy claimed today','点亮彩蛋卡后开放':'Unlocks after the Easter Egg card is revealed','等你写下第一句世界杯观赛心情。':'Waiting for your first World Cup message.','写一句观赛心情，今日首次公开留言 +10 能量':'Write one match-day thought. First public message today: +10 energy','留言领能量':'Post for Energy','先点亮彩蛋卡，才能在球迷留言板领取能量。':'Reveal the Easter Egg card before posting for energy.','先写一句观赛心情。':'Write one match-day thought first.','留言已保存，今日留言能量已领取。':'Message saved. Today’s message energy is already claimed.','留言已保存：能量+10。':'Message saved: +10 energy.','今日彩蛋已领取':'Easter Egg Claimed Today','今天已领取':'claimed today','今天未领取':'not claimed today','今日彩蛋：':'Today’s Easter Egg: ',
   '每天':'Daily','全程':'Full Tournament','赛前：靠每日翻卡慢慢积累':'Before kickoff: reveal one card each day','淘汰赛：优先补当前可用球队卡':'Knockouts: prioritize currently active team cards','预测：看命中星级和同队加成':'Predictions: track hit stars and same-team bonuses','单场命中':'Match Hit','同队加成':'Same-team Bonus','平局退还':'Draw Return','赛果为平局时，系统退还本场判断，不加星，也不让卡进入冷却。':'If the result is a draw, the prediction is returned: no star and no cooldown.','失误冷却':'Miss Cooldown','叙事题记录':'Story Question Record','手气':'Draw','预测':'Predict',
-  '选择你的主队卡':'Choose Your Main Team Card','你的主队':'Your Main Team','重复转化':'Duplicate Converted','今日点亮':'Revealed Today','彩蛋点亮':'Easter Egg Revealed','奖励等级':'Reward Tier','未授章':'No Badge','粉丝积分':'Fan Points','今日上限':'Daily Limit','今日点亮':'Revealed Today','今日开卡：':'Cards Today: ','公开留言 +10 能量，可用于补抽':'Public message +10 energy for redraws','球迷留言板':'Fan Message Board','写一句观赛心情，今日首次公开留言 +10 能量':'Write one match-day thought. First public message today: +10 energy','点亮彩蛋卡后，每天可触发一次彩蛋剧场获得 +8 能量；公开留言每天首次再得 +10 能量。能量够18可补抽一次，当天最多开3张。':'After revealing the Easter Egg card, trigger the theater once per day for +8 energy. Your first public message each day gives +10 energy. Spend 18 energy for a redraw, up to 3 cards per day.','签到 +12；点亮新卡 +8；重复卡 +4；彩蛋剧场 +8；公开留言 +10。能量长期保留，赛前赛中都不会清空。':'Check-in +12; new card +8; duplicate +4; Easter Egg Theater +8; public message +10. Energy is kept long term and does not reset.'
+  '选择你的主队卡':'Choose Your Main Team Card','你的主队':'Your Main Team','重复转化':'Duplicate Converted','今日点亮':'Revealed Today','彩蛋点亮':'Easter Egg Revealed','奖励等级':'Reward Tier','未授章':'No Badge','粉丝积分':'Fan Points','今日上限':'Daily Limit','今日点亮':'Revealed Today','今日开卡：':'Cards Today: ','公开留言 +10 能量，可用于补抽':'Public message +10 energy for redraws','球迷留言板':'Fan Message Board','写一句观赛心情，今日首次公开留言 +10 能量':'Write one match-day thought. First public message today: +10 energy','点亮彩蛋卡后，每天可触发一次彩蛋剧场获得 +8 能量；公开留言每天首次再得 +10 能量。能量够18可补抽一次，当天最多开3张。':'After revealing the Easter Egg card, trigger the theater once per day for +8 energy. Your first public message each day gives +10 energy. Spend 18 energy for a redraw, up to 3 cards per day.','签到 +12；点亮新卡 +8；重复卡 +4；彩蛋剧场 +8；公开留言 +10。能量长期保留，赛前赛中都不会清空。':'Check-in +12; new card +8; duplicate +4; Easter Egg Theater +8; public message +10. Energy is kept long term and does not reset.',
+  '主队卡':'Main Team Card','示例席位':'Preview Slot','国家特征':'Team Trait','当前状态':'Current Status','赛事阶段':'Tournament Stage','预测印记':'Prediction Marks','星':' Star','点亮或选为主队':'Revealed or selected as main team','晋级或仍在赛事中':'Advanced or still alive','决赛或冠军章':'Final or Champion badge','主队奖励线：粉丝积分':'Main Team Reward Line: Fan Points','主队等级':'Main Team Level','已转纪念万能卡':'Converted to Memorial Wildcard','未转纪念状态':'Not memorial yet','未获得稀有卡：先点亮「':'Rare card not unlocked: reveal “','」国家卡':'” national card first','当前答案：':'Current answer: ','已过截止，未提交':'Deadline passed, not submitted','尚未提交':'Not submitted','截止：':'Deadline: ','揭晓：':'Reveal: ','叙事稀有卡：':'Rare story card: ',
+  '等你写下第一句世界杯观赛心情。':'Waiting for your first World Cup message.','球迷看台':'Fan Stand',
+  '今天翻一张国家卡':'Reveal one national card today','每天只翻一张。新卡点亮收藏，重复卡会转成卡尘和能量。':'One reveal per day. New cards expand your collection; duplicates become dust and energy.','领取今日补给':'Claim today’s supply','签到获得+12能量。能量长期保留，可用于能量补抽和后续赛事活动。':'Check in for +12 energy. Energy persists and can be used for redraws and later events.','查看我的奖励':'View my rewards','主队':'Main Team','未选':'Not chosen','卡牌进度':'Card Progress','没有匹配到球队，请输入参赛队中文名。':'No matching team found. Please enter a qualified team name.',
+  '彩蛋卡已点亮：它不当主队，不出战比赛；每天可触发彩蛋剧场，领取+8能量。':'Easter Egg card revealed: it cannot be a main team or match card; trigger theater daily for +8 energy.','这张卡已进入你的国家卡牌库，比赛日可作为出战卡。':'This card is now in your national card library and can be used on match days.','今日手气还没揭晓':'Today’s card has not been revealed','每天只翻一张，保持卡牌稀有感。':'One reveal per day to keep rarity meaningful.',
+  '签到':'Check-in','今日能量':'Today Energy','能量怎么来':'How to gain energy','能量怎么用':'How to use energy','卡尘怎么用':'How to use card dust','预测星怎么来':'How to gain prediction stars',
+  '它会在每日手气或补抽里出现。抽到后才揭晓完整卡面，并解锁彩蛋剧场。':'It appears in daily draw or redraws. Full art is revealed after drawing it, then Easter Egg Theater unlocks.','今天':'today','比赛日预测入口':'Match-day prediction entry','完整赛程已经在世界杯首页维护。卡牌赛只读取 <b>data/matches.json</b> 里的 today 对阵：填入当天比赛后，这里显示胜平负预测；填入赛果 winner 后自动结算星级和奖励。':'Full schedule is maintained on the World Cup homepage. Fan Cards reads only `today` matches in `data/matches.json`: add today’s games to enable predictions, then add `winner` to auto-settle stars and rewards.','稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。':'If a rare story card is revealed, it can also play single-match predictions for its country. Its long-term question is in the “Eight Rare Story Predictions” section.',
+  '可出战卡':'Playable cards','张（主队卡 + 已点亮国家卡）。稀有叙事卡也能按本队出战，同时额外解锁长期题；彩蛋卡不参加单场预测。':' cards (main team + revealed national cards). Rare story cards can also play for their teams and unlock long-term questions; Easter Egg card cannot play single matches.','操作入口：进入本区后，给每场比赛先选“出战卡”，再点主胜/平局/客胜提交。':'How to play: enter this section, pick a card for each match, then submit home win / draw / away win.',
+  '每天可触发一次彩蛋剧场，领取 +8 能量；留言一次再领 +10 能量。今天':'Trigger Easter Egg Theater once per day for +8 energy; one message adds +10 more. Today ',
+  '今日比赛':'Today’s Match','选出战卡后提交主胜、平局或客胜。':'After choosing a card, submit home win, draw, or away win.','完整赛程在世界杯首页。这里读取 data/matches.json 的当天比赛，维护后自动出现预测列表。':'Full schedule stays on the World Cup homepage. This page reads today’s matches from `data/matches.json` and auto-shows prediction entries.','奖励规则':'Reward Rules','命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。':'Hit +1 star; if your card is a team in that match, hit +2 stars; draw returns with no extra star.'
+  ,'开幕前':'Pre-kickoff','待出征':'Ready','场外彩蛋':'Off-field Easter Egg','待收集':'Unrevealed','查看完整赛程':'View Full Schedule','今日已签到':'Checked In Today'
 };
 function textLang(){return pageLang==='en'?'en':'zh'}
 function translateText(text){
@@ -1153,7 +1165,7 @@ function ensureEntryPack(){
 function teamById(id){return allTeams.find(t=>t.id===id)}
 function fullImageFor(team){return resolveAsset(team?.specialImage||team?.image||team?.thumb||'')}
 function thumbImageFor(team){return resolveAsset(team?.specialThumb||team?.thumb||team?.image||'')}
-function statusOf(team){const s=loadState();const isFate=s.fate===team.id;const isOwned=s.owned?.includes(team.id);const base=cardStatus[team.id]||{stage:'开幕前',state:team.qualified?'待出征':'场外彩蛋',alive:team.qualified};const badge=team.name==='中国'?'彩蛋':isFate?'你的主队':isOwned?'已点亮':'待收集';return{...base,badge}}
+function statusOf(team){const s=loadState();const isFate=s.fate===team.id;const isOwned=s.owned?.includes(team.id);const base=cardStatus[team.id]||{stage:'开幕前',state:team.qualified?'待出征':'场外彩蛋',alive:team.qualified};const badge=team.name==='中国'?T('彩蛋'):isFate?T('你的主队'):isOwned?T('已点亮'):T('待收集');return{...base,stage:T(base.stage),state:T(base.state),badge}}
 const rarityNames={common:'普卡',rare:'稀有',epic:'史诗',legendary:'传说',gold:'彩蛋'};
 const rarityPools={legendary:['argentina','brazil','france','portugal','spain','germany'],epic:['united-states','mexico','england','netherlands','uruguay','japan','korea-republic','morocco','senegal'],rare:['canada','croatia','belgium','switzerland','austria','colombia','ghana','egypt','australia','saudi-arabia','turkey']};
 function rarityOf(team){if(team.id==='china'||team.cardType==='gold-joker')return{key:'gold',label:rarityNames.gold,weight:1};if(rarityPools.legendary.includes(team.id))return{key:'legendary',label:rarityNames.legendary,weight:2};if(rarityPools.epic.includes(team.id)||team.specialImage)return{key:'epic',label:rarityNames.epic,weight:6};if(rarityPools.rare.includes(team.id))return{key:'rare',label:rarityNames.rare,weight:14};return{key:'common',label:rarityNames.common,weight:78}}
@@ -1335,16 +1347,17 @@ function renderChinaWall(targetId='chinaWall',inputId='chinaMessageInput'){
   const s=ensureChinaMessageState(loadState());
   const revealed=Boolean(s.goldRevealed);
   const rewarded=s.chinaMessageRewardDate===todayKey();
+  const locale=pageLang==='en'?'en-US':'zh-CN';
   const serverMessages=publicFanMessages.map(m=>({
     text:m.content,
     nickname:m.nickname,
     flag:m.team_flag||'⚽',
-    date:m.created_at?new Date(m.created_at).toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}):''
+    date:m.created_at?new Date(m.created_at).toLocaleString(locale,{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}):''
   }));
   const localMessages=s.chinaMessages.map(m=>({text:m.text,nickname:'本机',flag:'⚽',date:m.date?`${m.date} ${m.time||''}`:''}));
   const messages=serverMessages.length?serverMessages:localMessages;
-  const empty=[{text:'等你写下第一句世界杯观赛心情，所有球迷都能看到。',nickname:'球迷看台',flag:'⚽',date:''}];
-  box.innerHTML=`<div class="china-wall-head"><b>球迷留言板</b><span>${revealed?(rewarded?'今日留言能量已领':'公开留言 +10 能量，可用于补抽'):'点亮彩蛋卡后开放'}</span></div><div class="china-wall-list">${(messages.length?messages:empty).slice(0,20).map(m=>`<div class="china-msg"><b>${escapeHtml(m.flag||'⚽')} ${escapeHtml(m.nickname||'球迷')}</b><br>${escapeHtml(m.text)}${m.date?`<small>${escapeHtml(m.date)}</small>`:''}</div>`).join('')}</div><div class="china-form"><input id="${inputId}" maxlength="48" ${revealed?'':'disabled'} placeholder="写一句观赛心情，今日首次公开留言 +10 能量"><button type="button" ${revealed?'':'disabled'} onclick="submitChinaMessage('${inputId}')">留言领能量</button></div>`;
+  const empty=[{text:T('等你写下第一句世界杯观赛心情。'),nickname:T('球迷看台'),flag:'⚽',date:''}];
+  box.innerHTML=`<div class="china-wall-head"><b>${T('球迷留言板')}</b><span>${revealed?(rewarded?T('今日留言能量已领'):T('公开留言 +10 能量，可用于补抽')):T('点亮彩蛋卡后开放')}</span></div><div class="china-wall-list">${(messages.length?messages:empty).slice(0,20).map(m=>`<div class="china-msg"><b>${escapeHtml(m.flag||'⚽')} ${escapeHtml(m.nickname||T('球迷'))}</b><br>${escapeHtml(m.text)}${m.date?`<small>${escapeHtml(m.date)}</small>`:''}</div>`).join('')}</div><div class="china-form"><input id="${inputId}" maxlength="48" ${revealed?'':'disabled'} placeholder="${escapeHtml(T('写一句观赛心情，今日首次公开留言 +10 能量'))}"><button type="button" ${revealed?'':'disabled'} onclick="submitChinaMessage('${inputId}')">${T('留言领能量')}</button></div>`;
 }
 function renderQuests(){
   const s=ensureQuestDay(loadState());
@@ -1364,7 +1377,7 @@ function renderQuests(){
 }
 
 function renderDaily(){const s=ensureDailyOpenLimit(loadState());const used=s.daily?.lastDraw===todayKey();const openCount=s.daily?.openCount||0;const full=openCount>=DAILY_OPEN_LIMIT;const team=teamById(s.daily?.lastCard);$('#dailyState').textContent=full?'今日上限':'可翻';$('#dailyBtn').textContent=used?'今日已翻，明天再来':(full?'今日开卡已满（3/3）':'翻今日手气');$('#dailyBtn').onclick=used?()=>toast('今天的手气已经用完。保持一点悬念，明天再翻。'):(full?()=>toast('今天开卡次数已满（3次），明天再来。'):dailyDraw);$('#dailyBtn').style.opacity=(used||full)?'.72':'1';$('#ownedCount').textContent=new Set([...(s.owned||[]),s.fate].filter(Boolean)).size;$('#fateName').textContent=s.fate?(teamById(s.fate)?.name||'已选'):'未定';$('#dailyResult').innerHTML=team?`<div><img src="${team.thumb}" alt="${team.name}"><p style="margin-top:12px;font-weight:900">${team.flag} ${team.name}</p><p class="micro">${s.daily?.duplicate?'重复卡已转成卡尘':'今日已点亮'}</p><p class="micro">今日开卡：${openCount}/3</p></div>`:`今日手气还没揭晓。<div class="micro" style="margin-top:8px">今日开卡：${openCount}/3</div>`}
-function renderFate(){const s=loadState();const team=teamById(s.fate)||allTeams.find(t=>t.name==='阿根廷');const has=!!s.fate;const st=statusOf(team);const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const fateImp=s.fateImprint||{fanPoints:0,level:0,isMemorial:false};const tier=rewardTier(marks.hits||0);const storyActive=st.alive?'燃烧':'纪念';const switchHint=canSwitchFate(s)?'主队更换规则：开赛前最多可更换1次。':'主队更换规则：当前已锁定，不可更换。';$('#fateDesk').innerHTML=`<div class="fate-card"><img src="${team.image}" alt="${team.name} 主队卡"><span class="card-stamp">${st.badge}</span></div><div class="fate-info"><span class="fate-tag">${has?'你的主队卡':'示例席位'}</span><h3>${team.name}</h3><p>${team.feature}</p><div class="status-strip"><div class="status-pill"><b>${team.flag}</b><span>国家特征</span></div><div class="status-pill"><b>${st.state}</b><span>当前状态</span></div><div class="status-pill"><b>${st.stage}</b><span>赛事阶段</span></div><div class="status-pill"><b>${marks.hits||0}星</b><span>预测印记</span></div><div class="status-pill"><b>${tier}</b><span>奖励等级</span></div></div><div class="story-track"><div class="story-step active"><b>觉醒</b><span>点亮或选为主队</span></div><div class="story-step ${storyActive==='燃烧'?'active':''}"><b>燃烧</b><span>晋级或仍在赛事中</span></div><div class="story-step ${storyActive==='封神'?'active':''}"><b>封神</b><span>决赛或冠军章</span></div></div><p class="micro" style="margin-top:14px">主队奖励线：粉丝积分 ${fateImp.fanPoints||0} ｜ 主队等级 Lv.${fateImp.level||0} ｜ ${fateImp.isMemorial?'已转纪念万能卡':'未转纪念状态'}。</p><p class="micro" style="margin-top:8px">${switchHint}</p></div>`;renderPoster()}
+function renderFate(){const s=loadState();const team=teamById(s.fate)||allTeams.find(t=>t.name==='阿根廷');const has=!!s.fate;const st=statusOf(team);const marks=s.imprints?.[team.id]||{hits:0,exact:0,upsets:0};const fateImp=s.fateImprint||{fanPoints:0,level:0,isMemorial:false};const tier=rewardTier(marks.hits||0);const storyActive=st.alive?'燃烧':'纪念';const switchHint=canSwitchFate(s)?T('主队更换规则：开赛前最多可更换1次。'):T('主队更换规则：当前已锁定，不可更换。');$('#fateDesk').innerHTML=`<div class="fate-card"><img src="${team.image}" alt="${team.name} ${T('主队卡')}"><span class="card-stamp">${st.badge}</span></div><div class="fate-info"><span class="fate-tag">${has?T('你的主队卡'):T('示例席位')}</span><h3>${team.name}</h3><p>${team.feature}</p><div class="status-strip"><div class="status-pill"><b>${team.flag}</b><span>${T('国家特征')}</span></div><div class="status-pill"><b>${st.state}</b><span>${T('当前状态')}</span></div><div class="status-pill"><b>${st.stage}</b><span>${T('赛事阶段')}</span></div><div class="status-pill"><b>${marks.hits||0}${T('星')}</b><span>${T('预测印记')}</span></div><div class="status-pill"><b>${tier}</b><span>${T('奖励等级')}</span></div></div><div class="story-track"><div class="story-step active"><b>${T('觉醒')}</b><span>${T('点亮或选为主队')}</span></div><div class="story-step ${storyActive==='燃烧'?'active':''}"><b>${T('燃烧')}</b><span>${T('晋级或仍在赛事中')}</span></div><div class="story-step ${storyActive==='封神'?'active':''}"><b>${T('封神')}</b><span>${T('决赛或冠军章')}</span></div></div><p class="micro" style="margin-top:14px">${T('主队奖励线：粉丝积分')} ${fateImp.fanPoints||0} ｜ ${T('主队等级')} Lv.${fateImp.level||0} ｜ ${fateImp.isMemorial?T('已转纪念万能卡'):T('未转纪念状态')}。</p><p class="micro" style="margin-top:8px">${switchHint}</p></div>`;renderPoster()}
 
 function saveNarrativeAnswer(slotId){
   const q=NARRATIVE_QUESTIONS.find(x=>x.id===slotId);
@@ -1451,8 +1464,8 @@ function renderStories(){
     const inputHtml=q.type==='team'
       ? `<select data-narrative-input="${q.id}" ${locked?'disabled':''} style="width:100%;margin-top:10px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:oklch(100% .01 80 / .06);color:var(--ink)"><option value="">选择球队</option>${teamOptions}</select>`
       : `<input data-narrative-input="${q.id}" ${locked?'disabled':''} placeholder="输入答案" style="width:100%;margin-top:10px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:oklch(100% .01 80 / .06);color:var(--ink)">`;
-    const statusText=!ownedCard?`未获得稀有卡：先点亮「${needTeam?.name||q.cardId}」国家卡`:(rec?`当前答案：${answerText}`:(isPast(q.deadline)?'已过截止，未提交':'尚未提交'));
-    el.innerHTML=`<h3>${q.title}</h3><p>${q.desc}</p><p class="micro">叙事稀有卡：${needTeam?.flag||''} ${needTeam?.name||q.cardId}</p><p class="micro">截止：${q.deadline} ｜ 揭晓：${q.revealAt}</p>${inputHtml}<div class="pick-row" style="margin-top:10px"><button ${locked?'disabled':''}>${locked?(ownedCard?'已锁定':'未解锁'):'锁定答案'}</button></div><p class="micro" style="margin-top:8px">${statusText}</p>`;
+    const statusText=!ownedCard?`${T('未获得稀有卡：先点亮「')} ${needTeam?.name||q.cardId} ${T('」国家卡')}`:(rec?`${T('当前答案：')}${answerText}`:(isPast(q.deadline)?T('已过截止，未提交'):T('尚未提交')));
+    el.innerHTML=`<h3>${q.title}</h3><p>${q.desc}</p><p class="micro">${T('叙事稀有卡：')}${needTeam?.flag||''} ${needTeam?.name||q.cardId}</p><p class="micro">${T('截止：')}${q.deadline} ｜ ${T('揭晓：')}${q.revealAt}</p>${inputHtml}<div class="pick-row" style="margin-top:10px"><button ${locked?'disabled':''}>${locked?(ownedCard?T('已锁定'):T('未解锁')):T('锁定答案')}</button></div><p class="micro" style="margin-top:8px">${statusText}</p>`;
     const btn=el.querySelector('button');
     if(btn && !locked) btn.onclick=()=>saveNarrativeAnswer(q.id);
     if(rec&&q.type==='team'){
@@ -1486,7 +1499,7 @@ function renderTodayAction(){
   ];
   let nextKey='done';
   let action={title:'今日补给完成',text:'今天的动作都做完了。你可以去国家卡牌库查看还差哪些卡，或等待明天继续点亮。开赛后中途加入也会获得入场包。',label:'看国家卡牌',run:()=>{location.hash='collection'}};
-  if(!s.fate){nextKey='fate';action={title:'先选主队卡',text:'首组卡只发一次，选一张作为你的世界杯主队。',label:'查看首组',run:()=>{location.hash='draw';setTimeout(drawPack,220)}}}
+  if(!s.fate){nextKey='fate';action={title:T('先选主队卡'),text:T('首组卡只发一次，选一张作为你的世界杯主队。'),label:T('查看首组卡'),run:()=>{location.hash='draw';setTimeout(drawPack,220)}}}
   else if(!dailyDone){nextKey='daily';action={title:'翻今日手气',text:'每天只翻一张卡，新卡进国家卡牌，重复卡变卡尘。',label:'翻一张',run:()=>dailyDraw()}}
   else if(!s.quests.checked){nextKey='checked';action={title:'完成今日签到',text:'签到可领取能量。',label:'签到',run:()=>checkIn()}}
   else if(!s.quests.china){nextKey='china';action={title:s.goldRevealed?'触发彩蛋剧场':'先点亮彩蛋卡',text:s.goldRevealed?'今天最后一步，触发彩蛋剧场领取能量。':'彩蛋剧场奖励需要先抽到并点亮彩蛋卡。',label:s.goldRevealed?'去触发':'去抽卡',run:()=>s.goldRevealed?useChinaGold(false):(location.hash='daily')}}
@@ -1508,7 +1521,7 @@ function renderBattle(){
   const cards=getPredictableCards();
   const hint=document.createElement('article');
   hint.className='match-card';
-  hint.innerHTML=`<h3>比赛日预测入口</h3><p>可出战卡：${cards.length} 张（主队卡 + 已点亮国家卡）。稀有叙事卡也能按本队出战，同时额外解锁长期题；彩蛋卡不参加单场预测。</p><p class="micro" style="margin-top:8px">操作入口：进入本区后，给每场比赛先选“出战卡”，再点主胜/平局/客胜提交。</p>`;
+  hint.innerHTML=`<h3>${T('比赛日预测入口')}</h3><p>${T('可出战卡')}：${cards.length} ${T('张（主队卡 + 已点亮国家卡）。稀有叙事卡也能按本队出战，同时额外解锁长期题；彩蛋卡不参加单场预测。')}</p><p class="micro" style="margin-top:8px">${T('操作入口：进入本区后，给每场比赛先选“出战卡”，再点主胜/平局/客胜提交。')}</p>`;
   lab.appendChild(hint);
 
   if(matchesData.today?.length){
@@ -1531,7 +1544,7 @@ function renderBattle(){
   $('#battleSub').textContent='完整赛程在世界杯首页。卡牌赛这里只显示当天可预测比赛：把当天比赛写入 data/matches.json 后，本区会自动生成预测列表。';
   const wait=document.createElement('article');
   wait.className='match-card';
-  wait.innerHTML=`<h3>比赛日预测入口</h3><p>完整赛程已经在世界杯首页维护。卡牌赛只读取 <b>data/matches.json</b> 里的 today 对阵：填入当天比赛后，这里显示胜平负预测；填入赛果 winner 后自动结算星级和奖励。</p><p class="micro" style="margin-top:8px">稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。</p><div class="hero-actions" style="margin-top:14px"><a class="secondary-btn" href="index.html">查看完整赛程</a></div>`;
+  wait.innerHTML=`<h3>${T('比赛日预测入口')}</h3><p>${T('完整赛程已经在世界杯首页维护。卡牌赛只读取 <b>data/matches.json</b> 里的 today 对阵：填入当天比赛后，这里显示胜平负预测；填入赛果 winner 后自动结算星级和奖励。')}</p><p class="micro" style="margin-top:8px">${T('稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。')}</p><div class="hero-actions" style="margin-top:14px"><a class="secondary-btn" href="index.html">${T('查看完整赛程')}</a></div>`;
   lab.appendChild(wait)
 }
 function savePrediction(matchId,pick,cardId){
@@ -1840,10 +1853,10 @@ function renderMobileApp(){
   const logo=sample(logoPool.length>=3?logoPool:allTeams,3);
   ['#mLogoOne','#mLogoTwo','#mLogoThree'].forEach((sel,i)=>{const el=$(sel);if(el&&logo[i])el.src=resolveAsset(logo[i].thumb)});
 
-  let title='先选主队卡', text='第一步先确定你的世界杯身份。后续预测、奖励和档案都会围绕它展开。', label='选择主队卡', target='mPickPanel';
-  if(fate&&!dailyDone){title='今天翻一张国家卡';text='每天只翻一张。新卡点亮收藏，重复卡会转成卡尘和能量。';label='翻今日手气';target='daily'}
-  else if(fate&&dailyDone&&!checked){title='领取今日补给';text='签到获得+12能量。能量长期保留，可用于能量补抽和后续赛事活动。';label='今日签到';target='check'}
-  else if(fate&&dailyDone){title='今日任务已完成';text='你已经完成今天的关键动作。可以查看奖励、卡牌库或等待比赛日预测。';label='查看我的奖励';target='mRewardPanel'}
+  let title=T('先选主队卡'), text=T('第一步先确定你的世界杯身份。后续预测、奖励和档案都会围绕它展开。'), label=T('选择主队卡'), target='mPickPanel';
+  if(fate&&!dailyDone){title=T('今天翻一张国家卡');text=T('每天只翻一张。新卡点亮收藏，重复卡会转成卡尘和能量。');label=T('翻今日手气');target='daily'}
+  else if(fate&&dailyDone&&!checked){title=T('领取今日补给');text=T('签到获得+12能量。能量长期保留，可用于能量补抽和后续赛事活动。');label=T('今日签到');target='check'}
+  else if(fate&&dailyDone){title=T('今日任务已完成');text=T('你已经完成今天的关键动作。可以查看奖励、卡牌库或等待比赛日预测。');label=T('查看我的奖励');target='mRewardPanel'}
   $('#mTodayTitle').textContent=title;
   $('#mTodayText').textContent=text;
   $('#mPrimaryAction').textContent=label;
@@ -1853,15 +1866,15 @@ function renderMobileApp(){
     else mScroll(target);
   };
   $('#mStatusGrid').innerHTML=[
-    ['主队',fate?fate.name:'未选'],
-    ['今日开卡',`${openCount}/3`],
-    ['卡牌进度',`${ownedCount}/49`]
+    [T('主队'),fate?fate.name:T('未选')],
+    [T('今日开卡'),`${openCount}/3`],
+    [T('卡牌进度'),`${ownedCount}/49`]
   ].map(([a,b])=>`<div class="m-stat"><b>${b}</b><span>${a}</span></div>`).join('');
 
   const fateBox=$('#mFateBox');
   if(fate){
     const marks=s.imprints?.[fate.id]||{hits:0};
-    fateBox.innerHTML=`<div class="m-fate-card"><img src="${fullImageFor(fate)}" alt="${fate.name}"><div><div class="m-kicker">你的主队</div><h2>${fate.name}</h2><p>${fate.feature}</p><div class="m-status-grid" style="margin-top:8px"><div class="m-stat"><b>${marks.hits||0}</b><span>预测星</span></div><div class="m-stat"><b>${rewardTier(marks.hits||0)}</b><span>奖励等级</span></div><div class="m-stat"><b>${s.fateImprint?.fanPoints||0}</b><span>粉丝积分</span></div></div></div></div>`;
+    fateBox.innerHTML=`<div class="m-fate-card"><img src="${fullImageFor(fate)}" alt="${fate.name}"><div><div class="m-kicker">${T('你的主队')}</div><h2>${fate.name}</h2><p>${fate.feature}</p><div class="m-status-grid" style="margin-top:8px"><div class="m-stat"><b>${marks.hits||0}</b><span>${T('预测星')}</span></div><div class="m-stat"><b>${rewardTier(marks.hits||0)}</b><span>${T('奖励等级')}</span></div><div class="m-stat"><b>${s.fateImprint?.fanPoints||0}</b><span>${T('粉丝积分')}</span></div></div></div></div>`;
   }else{
     const ids=mobileOpeningPackIds();
     fateBox.innerHTML=`<div class="m-pick-grid">${ids.map(id=>{const t=teamById(id);return `<button class="m-card-mini" type="button" data-m-fate="${t.id}"><img src="${t.thumb}" alt="${t.name}"><strong>${t.name}</strong><span>${rarityOf(t).label}</span></button>`}).join('')}</div>`;
@@ -1870,28 +1883,28 @@ function renderMobileApp(){
   const mInput=$('#mDirectPickInput');
   $('#mDirectPickBtn').onclick=()=>{
     const team=findTeamByInput(mInput?.value);
-    if(!team){toast('没有匹配到球队，请输入参赛队中文名。');return}
+    if(!team){toast(T('没有匹配到球队，请输入参赛队中文名。'));return}
     chooseFate(team.id,{direct:true});
   };
 
-  const dailyName=dailyTeam?.id==='china'?'彩蛋卡':dailyTeam?.name;
-  $('#mDailyResult').innerHTML=dailyTeam?`<div class="m-fate-card"><img src="${dailyTeam.id==='china'?fullImageFor(dailyTeam):thumbImageFor(dailyTeam)}" alt="${dailyName}"><div><div class="m-kicker">${s.daily?.duplicate?'重复转化':dailyTeam.id==='china'?'彩蛋点亮':'今日点亮'}</div><h2>${dailyName}</h2><p>${dailyTeam.id==='china'?'彩蛋卡已点亮：它不当主队，不出战比赛；每天可触发彩蛋剧场，领取+8能量。':(s.daily?.duplicate?'重复卡已转成卡尘和能量。':'这张卡已进入你的国家卡牌库，比赛日可作为出战卡。')}</p></div></div>`:'<div class="m-list-item"><b>今日手气还没揭晓</b><span>每天只翻一张，保持卡牌稀有感。</span></div>';
-  $('#mDailyBtn').textContent=dailyDone?'今日已翻，明天再来':'翻今日手气';
-  $('#mDailyBtn').onclick=dailyDone?()=>toast('今天已经翻过手气了，明天再来。'):dailyDraw;
+  const dailyName=dailyTeam?.id==='china'?T('彩蛋卡'):dailyTeam?.name;
+  $('#mDailyResult').innerHTML=dailyTeam?`<div class="m-fate-card"><img src="${dailyTeam.id==='china'?fullImageFor(dailyTeam):thumbImageFor(dailyTeam)}" alt="${dailyName}"><div><div class="m-kicker">${s.daily?.duplicate?T('重复转化'):dailyTeam.id==='china'?T('彩蛋点亮'):T('今日点亮')}</div><h2>${dailyName}</h2><p>${dailyTeam.id==='china'?T('彩蛋卡已点亮：它不当主队，不出战比赛；每天可触发彩蛋剧场，领取+8能量。'):(s.daily?.duplicate?T('重复卡已转成卡尘和能量。'):T('这张卡已进入你的国家卡牌库，比赛日可作为出战卡。'))}</p></div></div>`:`<div class="m-list-item"><b>${T('今日手气还没揭晓')}</b><span>${T('每天只翻一张，保持卡牌稀有感。')}</span></div>`;
+  $('#mDailyBtn').textContent=dailyDone?T('今日已翻，明天再来'):T('翻今日手气');
+  $('#mDailyBtn').onclick=dailyDone?()=>toast(T('今天已经翻过手气了，明天再来。')):dailyDraw;
 
   $('#mRewardGrid').innerHTML=[
-    ['能量',s.energy||0],['卡尘',s.dust||0],['签到',s.streak||0],
-    ['今日能量',`+${loot.energy||0}`],['今日卡尘',`+${loot.dust||0}`],['预测星',`+${loot.stars||0}`]
+    [T('能量'),s.energy||0],[T('卡尘'),s.dust||0],[T('签到'),s.streak||0],
+    [T('今日能量'),`+${loot.energy||0}`],[T('今日卡尘'),`+${loot.dust||0}`],[T('预测星'),`+${loot.stars||0}`]
   ].map(([a,b])=>`<div class="m-stat"><b>${b}</b><span>${a}</span></div>`).join('');
-  $('#mCheckBtn').textContent=checked?'今日已签到':'今日签到';
+  $('#mCheckBtn').textContent=checked?T('今日已签到'):T('今日签到');
   $('#mCheckBtn').onclick=checked?completedQuestToast:checkIn;
   $('#mDustBtn').onclick=spendDustReroll;
   $('#mEnergyBtn').onclick=spendEnergyReroll;
   $('#mRewardHelp').innerHTML=[
-    ['能量怎么来','签到 +12；点亮新卡 +8；重复卡 +4；彩蛋剧场 +8；公开留言 +10。能量长期保留，赛前赛中都不会清空。'],
-    ['能量怎么用','当前可消耗18能量补一抽，点亮一张未拥有的正赛国家卡；每天最多开卡3次。'],
-    ['卡尘怎么用','抽到重复卡会得到卡尘。消耗8卡尘可补一抽，适合差几张卡时追进度。'],
-    ['预测星怎么来','比赛日提交胜平负预测，赛果写入后自动结算。命中+1星；如果出战卡正好是本场球队，命中+2星。']
+    [T('能量怎么来'),T('签到 +12；点亮新卡 +8；重复卡 +4；彩蛋剧场 +8；公开留言 +10。能量长期保留，赛前赛中都不会清空。')],
+    [T('能量怎么用'),T('当前可消耗18能量补一抽，点亮一张未拥有的正赛国家卡；每天最多开卡3次。')],
+    [T('卡尘怎么用'),T('抽到重复卡会得到卡尘。消耗8卡尘可补一抽，适合差几张卡时追进度。')],
+    [T('预测星怎么来'),T('比赛日提交胜平负预测，赛果写入后自动结算。命中+1星；如果出战卡正好是本场球队，命中+2星。')]
   ].map(([a,b])=>`<div class="m-list-item"><b>${a}</b><span>${b}</span></div>`).join('');
   const china=teamById('china');
   const chinaBox=$('#mChinaReveal');
@@ -1899,19 +1912,19 @@ function renderMobileApp(){
     const chinaDone=Boolean(s.goldRevealed);
     chinaBox.className=`m-china-reveal ${chinaDone?'':'locked'}`;
     const line=s.chinaLine?.date===todayKey()?s.chinaLine.text:'';
-    chinaBox.innerHTML=`<img src="${chinaDone?fullImageFor(china):thumbImageFor(china)}" alt="彩蛋卡"><div><b>${chinaDone?'彩蛋卡已点亮':'彩蛋卡未点亮'}</b><span>${chinaDone?`每天可触发一次彩蛋剧场，领取 +8 能量；留言一次再领 +10 能量。今天${s.quests?.china?'已领取':'未领取'}。${line?` 今日彩蛋：${line}`:''}`:'它会在每日手气或补抽里出现。抽到后才揭晓完整卡面，并解锁彩蛋剧场。'}</span></div>`;
+    chinaBox.innerHTML=`<img src="${chinaDone?fullImageFor(china):thumbImageFor(china)}" alt="${T('彩蛋卡')}"><div><b>${chinaDone?T('彩蛋卡已点亮'):T('彩蛋卡未点亮')}</b><span>${chinaDone?`${T('每天可触发一次彩蛋剧场，领取 +8 能量；留言一次再领 +10 能量。今天')}${s.quests?.china?T('已领取'):T('未领取')}。${line?` ${T('今日彩蛋：')}${line}`:''}`:T('它会在每日手气或补抽里出现。抽到后才揭晓完整卡面，并解锁彩蛋剧场。')}</span></div>`;
   }
   const mChinaBtn=$('#mChinaBtn');
-  if(mChinaBtn){mChinaBtn.textContent=!s.goldRevealed?'彩蛋卡未点亮':s.quests?.china?'今日彩蛋已领取':'触发彩蛋剧场';mChinaBtn.onclick=()=>useChinaGold(false)};
+  if(mChinaBtn){mChinaBtn.textContent=!s.goldRevealed?T('彩蛋卡未点亮'):s.quests?.china?T('今日彩蛋已领取'):T('触发彩蛋剧场');mChinaBtn.onclick=()=>useChinaGold(false)};
   renderChinaWall('mChinaWall','mChinaMessageInput');
 
   const battleList=$('#mBattleList');
   if(matchesData.today?.length){
-    battleList.innerHTML=matchesData.today.slice(0,5).map(m=>`<div class="m-list-item"><b>${m.title||'今日比赛'}</b><span>${m.home||''} ${m.time||''} ${m.away||''}。选出战卡后提交主胜、平局或客胜。</span></div>`).join('');
-    $('#mBattleText').textContent='今日比赛已开放。每场先选一张主队卡或已点亮国家卡，再提交胜平负。赛果写入后自动结算星级奖励。';
+    battleList.innerHTML=matchesData.today.slice(0,5).map(m=>`<div class="m-list-item"><b>${m.title||T('今日比赛')}</b><span>${m.home||''} ${m.time||''} ${m.away||''}。${T('选出战卡后提交主胜、平局或客胜。')}</span></div>`).join('');
+    $('#mBattleText').textContent=T('今日比赛已开放。每场先选一张主队卡或已点亮国家卡，再提交胜平负。赛果写入后自动结算星级奖励。');
   }else{
-    battleList.innerHTML='<div class="m-list-item"><b>比赛日预测入口</b><span>完整赛程在世界杯首页。这里读取 data/matches.json 的当天比赛，维护后自动出现预测列表。</span></div><div class="m-list-item"><b>奖励规则</b><span>命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。</span></div>';
-    $('#mBattleText').textContent='比赛日规则已准备好：主队卡和已点亮国家卡可出战。稀有叙事卡也按本队参加单场预测，它的长期题另在稀有叙事区填写。';
+    battleList.innerHTML=`<div class="m-list-item"><b>${T('比赛日预测入口')}</b><span>${T('完整赛程在世界杯首页。这里读取 data/matches.json 的当天比赛，维护后自动出现预测列表。')}</span></div><div class="m-list-item"><b>${T('奖励规则')}</b><span>${T('命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。')}</span></div>`;
+    $('#mBattleText').textContent=T('比赛日规则已准备好：主队卡和已点亮国家卡可出战。稀有叙事卡也按本队参加单场预测，它的长期题另在稀有叙事区填写。');
   }
 
   $('#mStoryList').innerHTML=NARRATIVE_QUESTIONS.map(q=>{
@@ -1925,11 +1938,11 @@ function renderMobileApp(){
   cardGrid.innerHTML=allTeams.map(t=>{
     const owned=t.id==='china'?Boolean(s.goldRevealed):ownedSet.has(t.id);
     const name=t.id==='china'?'彩蛋':t.name;
-    return `<button class="m-card-mini ${owned?'':'locked'}" type="button" data-m-card="${t.id}"><img src="${t.thumb}" alt="${name}"><strong>${owned?name:'未点亮'}</strong><span>${owned?rarityOf(t).label:'待收集'}</span></button>`;
+    return `<button class="m-card-mini ${owned?'':'locked'}" type="button" data-m-card="${t.id}"><img src="${t.thumb}" alt="${name}"><strong>${owned?name:T('未点亮')}</strong><span>${owned?rarityOf(t).label:T('待收集')}</span></button>`;
   }).join('');
   cardGrid.querySelectorAll('[data-m-card]').forEach(btn=>btn.onclick=()=>openTeam(teamById(btn.dataset.mCard)));
-  $('#mCardsText').textContent=`已点亮 ${ownedCount}/49。默认只露一部分，点开卡牌可放大查看。`;
-  $('#mToggleCards').onclick=()=>{cardGrid.classList.toggle('expanded');$('#mToggleCards').textContent=cardGrid.classList.contains('expanded')?'收起卡牌':'查看全部卡牌'};
+  $('#mCardsText').textContent=`${T('已点亮')} ${ownedCount}/49。${T('默认只露一部分，点开单张卡可放大查看。')}`;
+  $('#mToggleCards').onclick=()=>{cardGrid.classList.toggle('expanded');$('#mToggleCards').textContent=cardGrid.classList.contains('expanded')?T('收起卡牌'):T('查看全部卡牌')};
   $('#mDownloadBtn').onclick=downloadPoster;
   if($('#mShareBtn'))$('#mShareBtn').onclick=shareFanCardsPage;
 }

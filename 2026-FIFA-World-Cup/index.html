@@ -557,8 +557,10 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
 /* final-home-mobile-polish-v2: compact hero controls and nav-safe spacing */
 @media(max-width:768px){
   #hero{min-height:640px;padding-top:58px;}
-  #hero-content{padding:96px 24px 54px;}
-  .hero-eye{margin-bottom:22px;font-size:9.5px;letter-spacing:3px;padding:4px 12px;}
+  #hero-content{padding:84px 24px 54px;}
+  .hero-eye{margin-bottom:18px;font-size:9.5px;letter-spacing:3px;padding:4px 12px;}
+  .hero-text-col{padding-top:8px;}
+  .mcp-chip-wrap{top:44px;right:14px;}
   .hero-action-row{align-items:center;gap:8px;margin-top:0;}
   .hero-cta,.fan-card-hero-btn{
     width:min(232px,74vw)!important;
@@ -571,9 +573,13 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
   .hero-intro{max-width:300px;margin:-10px auto 12px;font-size:12px;line-height:1.58;text-align:center;}
 }
 @media(max-width:380px){
-  #hero-content{padding-top:104px;}
+  #hero-content{padding-top:90px;}
   .hero-cta,.fan-card-hero-btn{width:min(220px,72vw)!important;}
+  .mcp-chip-wrap{top:42px;right:10px;}
 }
+.mcp-chip-wrap{position:absolute;top:18px;right:18px;z-index:10}
+.mcp-chip{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:5px 12px 5px 8px;display:flex;align-items:center;gap:6px;cursor:pointer;color:#fff;font-size:11px;font-weight:700;letter-spacing:.5px;transition:all .2s;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+.mcp-dot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 6px #34d399;display:inline-block;animation:mcpPulse 2s ease-in-out infinite}
 </style>
 </head><body>
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -637,9 +643,9 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
     <div id="hero-globe-wrap"><div class="globe-title">2026 WORLD CUP</div></div>
     <div class="hero-sep"></div>
     <!-- MCP标签 -->
-    <div style="position:absolute;top:14px;right:16px;z-index:10">
-      <button onclick="openMCP()" style="background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:5px 12px 5px 8px;display:flex;align-items:center;gap:6px;cursor:pointer;color:#fff;font-size:11px;font-weight:700;letter-spacing:.5px;transition:all .2s;box-shadow:0 2px 12px rgba(0,0,0,.2)">
-        <span style="width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 6px #34d399;display:inline-block;animation:mcpPulse 2s ease-in-out infinite"></span>
+    <div class="mcp-chip-wrap">
+      <button class="mcp-chip" onclick="openMCP()">
+        <span class="mcp-dot"></span>
         MCP
       </button>
     </div>
