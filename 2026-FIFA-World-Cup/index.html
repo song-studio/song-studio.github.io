@@ -3168,8 +3168,8 @@ function _answerTrivia(i){
 
 /* ══ 留言板 ══ */
 var _cmtPage=0,_cmtLoading=false;
-var CMT_API='https://fifa2026worldcups.netlify.app/api-proxy/api/comments';
-var CMT_KEY='sk-sp-04adf81a8e7f4c338368909de6d86f64';
+var CMT_API='https://fifa2026worldcups.netlify.app/api-proxy/api/public-comments';
+var CMT_BOARD='worldcup';
 
 // 字数统计
 document.addEventListener('DOMContentLoaded',function(){
@@ -3188,7 +3188,7 @@ document.addEventListener('DOMContentLoaded',function(){
 function loadComments(append){
   if(_cmtLoading)return;
   _cmtLoading=true;
-  fetch(CMT_API+'?limit=10&offset='+(_cmtPage*10),{headers:{'X-API-Key':CMT_KEY}})
+  fetch(CMT_API+'?board='+encodeURIComponent(CMT_BOARD)+'&limit=10&offset='+(_cmtPage*10))
   .then(function(r){return r.json();})
   .then(function(d){
     _cmtLoading=false;
@@ -3254,8 +3254,8 @@ function submitComment(){
     if(text.length<2){if(errEl)errEl.textContent=lang!=='en'?'至少输入2个字':'Write at least 2 chars';return;}
     if(errEl)errEl.textContent='';
     if(btn){btn.textContent=lang!=='en'?'发布中...':'Posting...';btn.disabled=true;}
-    fetch(CMT_API,{method:'POST',headers:{'Content-Type':'application/json','X-API-Key':CMT_KEY},
-      body:JSON.stringify({nickname:name,team_flag:flag,content:text})})
+    fetch(CMT_API,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({board:CMT_BOARD,nickname:name,team_flag:flag,content:text})})
     .then(function(r){return r.json();})
     .then(function(d){
       if(btn){btn.textContent=lang!=='en'?'发布 →':'Post →';btn.disabled=false;}
@@ -3279,7 +3279,7 @@ function submitComment(){
 
 function likeComment(id,btn){
   btn.disabled=true;
-  fetch(CMT_API+'/like/'+id,{method:'POST',headers:{'X-API-Key':CMT_KEY}})
+  fetch(CMT_API+'/like/'+id,{method:'POST'})
   .then(function(r){return r.json();})
   .then(function(d){
     var num=btn.querySelector('.like-num');
@@ -3314,7 +3314,7 @@ setTimeout(function(){
 },500);
 
 function _fbHeaders(){
-  return {'Content-Type':'application/json','X-API-Key':'sk-sp-04adf81a8e7f4c338368909de6d86f64'};
+  return {'Content-Type':'application/json'};
 }
 
 function loadMoreComments(){_cmtPage++;loadComments(true);}
@@ -3322,7 +3322,7 @@ function loadMoreComments(){_cmtPage++;loadComments(true);}
 /* old submitComment removed */
 
 function _likeComment(id,btn){
-  fetch('https://fifa2026worldcups.netlify.app/api-proxy/api/comments/like/'+id,{method:'POST',headers:_fbHeaders()})
+  fetch(CMT_API+'/like/'+id,{method:'POST',headers:_fbHeaders()})
   .then(function(r){return r.json();})
   .then(function(d){
     if(d.likes!==undefined)btn.textContent='👍 '+d.likes;
