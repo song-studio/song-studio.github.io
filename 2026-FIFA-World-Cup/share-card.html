@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
 <title>2026世界杯赛程与球迷卡牌赛</title>
 <meta name="description" content="一站进入：2026世界杯赛程 + 球迷卡牌赛。">
 <meta property="og:title" content="2026世界杯赛程与球迷卡牌赛">
@@ -13,23 +13,132 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://song-studio.github.io/2026-FIFA-World-Cup/share-card.html">
 <style>
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans SC",sans-serif;background:#070d18;color:#f2f6ff;display:grid;place-items:center;min-height:100vh}
-.wrap{width:min(760px,92vw);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:22px;background:linear-gradient(160deg,#0f1c34,#0a1426);box-shadow:0 20px 60px rgba(0,0,0,.45)}
-h1{font-size:28px;margin:0 0 8px}p{opacity:.85;margin:0 0 14px}
-.img{width:100%;max-height:330px;object-fit:contain;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:#0b1222}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-a{color:#fff;text-decoration:none;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06)}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Source Han Serif SC","Noto Serif SC","STSong",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:
+    radial-gradient(800px 360px at 15% -8%,rgba(238,198,111,.15),transparent 42%),
+    radial-gradient(900px 420px at 95% -10%,rgba(78,129,223,.16),transparent 46%),
+    #070d18;
+  color:#f2f6ff;
+  display:grid;
+  place-items:center;
+  min-height:100vh;
+  padding:20px 14px 28px;
+}
+.wrap{
+  width:min(760px,calc(100vw - 26px));
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:24px;
+  padding:20px 20px 18px;
+  background:linear-gradient(160deg,#132343,#0a152b);
+  box-shadow:0 24px 72px rgba(0,0,0,.52);
+  position:relative;
+  overflow:hidden;
+}
+.wrap::before{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;
+  border-radius:999px;
+  right:-56px;top:-62px;
+  background:radial-gradient(circle,rgba(238,198,111,.22),rgba(238,198,111,0));
+  pointer-events:none;
+}
+.kicker{
+  display:inline-flex;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.06);
+  font-size:12px;
+  letter-spacing:.08em;
+  color:#eed091;
+  margin-bottom:10px;
+}
+h1{
+  font-size:clamp(24px,6.4vw,34px);
+  margin:0 0 8px;
+  line-height:1.15;
+  letter-spacing:.01em;
+}
+p{
+  opacity:.9;
+  margin:0 0 14px;
+  line-height:1.7;
+  color:#d8deea;
+  font-size:15px;
+}
+.preview{
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;
+  overflow:hidden;
+  background:#0b1222;
+}
+.img{
+  width:100%;
+  max-height:min(48vh,420px);
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:14px;
+}
+.btn{
+  color:#fff;
+  text-decoration:none;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
+  background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
+  text-align:center;
+  font-size:15px;
+  font-weight:700;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+  border-color:rgba(238,198,111,.58);
+  background:linear-gradient(145deg,rgba(238,198,111,.24),rgba(238,198,111,.12));
+}
+.btn.primary{
+  border-color:rgba(238,198,111,.44);
+  color:#ffefca;
+}
+.foot{
+  margin-top:10px;
+  font-size:12px;
+  color:#b7c0d1;
+  opacity:.9;
+}
+@media (max-width:620px){
+  .wrap{padding:16px 14px 14px;border-radius:20px}
+  h1{font-size:clamp(22px,7vw,28px)}
+  .actions{grid-template-columns:1fr}
+  .btn{padding:12px 12px}
+  .img{max-height:42vh}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
+<div class="kicker">WORLD CUP 2026 · FAN GATE</div>
 <h1>2026世界杯赛程与球迷卡牌赛</h1>
 <p>一个入口，直接进入赛事赛程与卡牌玩法。</p>
+<div class="preview">
 <img class="img" src="assets/fan-cards/highlights/messi-wechat.jpg" alt="世界杯球迷卡牌">
-<div class="actions">
-<a href="index.html">进入世界杯赛程</a>
-<a href="fan-cards.html">进入球迷卡牌赛</a>
 </div>
+<div class="actions">
+<a class="btn" href="index.html">进入世界杯赛程</a>
+<a class="btn primary" href="fan-cards.html">进入球迷卡牌赛</a>
+</div>
+<div class="foot">手机端已适配：单击按钮即可直达目标页面。</div>
 </div>
 </body>
 </html>
