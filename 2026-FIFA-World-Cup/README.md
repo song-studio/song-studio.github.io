@@ -13,3 +13,14 @@
 ## Data Model
 
 V1 stores user-owned cards, the fate card, daily draw status, and prediction choices in browser localStorage. Match data can start as static JSON and later be updated by GitHub Actions.
+
+## QA Smoke Check
+
+Before each release, run:
+
+```bash
+cd /Users/song/Desktop/Codex/song-studio.github.io/song-studio.github.io-work/2026-FIFA-World-Cup
+./qa/smoke-check.sh
+```
+
+Only deploy when the script reports PASS.
