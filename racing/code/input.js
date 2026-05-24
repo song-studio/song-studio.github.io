@@ -95,6 +95,15 @@ function inputInit()
     isTouchDevice && touchInputInit();
 }
 
+let stickCenter, buttonCenter, startCenter, gs;
+
+function touchInputInit()
+{
+    touchGamepadStick = vec3();
+    touchGamepadButtons = [];
+    touchGamepadTimer = new Timer;
+}
+
 function gamepadsUpdate() {} // stub - no gamepad support
 
 function inputUpdate()
