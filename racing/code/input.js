@@ -47,6 +47,10 @@ function inputInit()
         gamepadDataValues[0] = [];
     }
 
+    touchGamepadTimer = new Timer;
+    touchGamepadButtons = [];
+    touchGamepadStick = vec3();
+
     onkeydown = (e)=>
     {
         isUsingGamepad = 0;
