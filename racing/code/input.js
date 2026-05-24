@@ -169,14 +169,7 @@ const mouseToScreen = (mousePos) =>
         }
     }
 
-    // call default touch handler so normal touch events still work
-    //handleTouchDefault(e);
-
-    // prevent default handling like copy and magnifier lens
-    if (document.hasFocus()) // allow document to get focus
-        e.preventDefault();
-    
-    // must return true so the document will get focus
+    // must return true so mouse events get focus
     return true;
 }
 
