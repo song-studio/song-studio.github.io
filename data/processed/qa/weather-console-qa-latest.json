@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-05-24T11:10:12.994Z",
+  "source_file": "data/processed/weather_console_v7.json",
+  "summary": {
+    "metrics_count": 22,
+    "rules_count": 68,
+    "sources_count": 14,
+    "geocode_count": 127,
+    "decision_module_count": 9,
+    "api_live_count": 20,
+    "geocode_missing_coord": 0,
+    "geocode_missing_name": 0,
+    "geocode_need_manual_review": 7,
+    "thunderstorm_threshold_keys": [
+      "safe",
+      "watch",
+      "warning",
+      "danger"
+    ],
+    "has_thunderstorm_thresholds": true
+  },
+  "gate": {
+    "pass": true,
+    "failures": []
+  }
+}

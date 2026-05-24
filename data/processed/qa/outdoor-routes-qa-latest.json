@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-05-24T11:10:12.964Z",
+  "source_file": "data/processed/outdoor_routes_v12.json",
+  "summary": {
+    "total_routes": 125,
+    "by_mode": {
+      "mountaineering": 22,
+      "motorcycle": 12,
+      "cycling": 24,
+      "hiking": 67
+    },
+    "by_scope": {
+      "domestic": 95,
+      "global": 30
+    },
+    "average_completeness": 0.9774,
+    "confidence_A_count": 91,
+    "navigable_count": 111,
+    "public_track_count": 75,
+    "duplicate_name_start_end": [],
+    "top_gaps": [],
+    "critical_routes": []
+  },
+  "gate": {
+    "pass": true,
+    "failures": []
+  }
+}

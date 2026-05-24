@@ -50,3 +50,25 @@
 纯静态站点，GitHub Pages 托管。HTML/CSS/JS 内联，零构建依赖。
 
 世界杯数据后端部署于腾讯云，Flask + gunicorn，API 免认证开放。
+
+---
+
+## 数据质量校验（上线前必跑）
+
+当前仓库内置了路线与气象的数据质检脚本，目标是保证“可用、真实、可追踪”。
+
+```bash
+node scripts/qa-data-all.mjs
+```
+
+输出目录：
+
+- `data/processed/qa/outdoor-routes-qa-latest.json`
+- `data/processed/qa/weather-console-qa-latest.json`
+- `data/processed/qa/data-qa-summary-latest.json`
+
+说明：
+
+- `PASS`：达到当前上线门槛。
+- `FAIL`：会列出缺口（字段缺失、重复、完整度不足等），先修数据再上线。
+- GitHub Actions 会在涉及数据变更时自动运行同一套质检规则。
