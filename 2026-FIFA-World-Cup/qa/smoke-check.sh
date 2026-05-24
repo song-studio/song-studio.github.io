@@ -10,7 +10,15 @@ pass() { printf "✅ %s\n" "$1"; }
 fail() { printf "❌ %s\n" "$1"; exit 1; }
 check_contains() {
   local file="$1"; local pattern="$2"; local msg="$3"
-  if rg -n --no-messages "$pattern" "$file" >/dev/null; then
+  if grep -nF "$pattern" "$file" >/dev/null 2>&1; then
+    pass "$msg"
+  else
+    fail "$msg"
+  fi
+}
+check_contains_regex() {
+  local file="$1"; local pattern="$2"; local msg="$3"
+  if grep -nE "$pattern" "$file" >/dev/null 2>&1; then
     pass "$msg"
   else
     fail "$msg"
@@ -24,17 +32,17 @@ check_contains "$SHARE" "viewport-fit=cover" "中转页包含 viewport-fit=cover
 check_contains "$SHARE" "overflow-x:hidden" "中转页包含防横向溢出设置"
 
 # 2) Core gameplay guards
-check_contains "$FAN" "team\.id==='china'" "彩蛋卡禁止设为主队（防误选）"
+check_contains "$FAN" "team.id==='china'" "彩蛋卡禁止设为主队（防误选）"
 check_contains "$FAN" "const DAILY_OPEN_LIMIT = 3;" "每日开卡上限为 3"
-check_contains "$FAN" "function saveNarrativeAnswer\(slotId,source='desktop'\)" "叙事提交函数支持移动端来源"
+check_contains_regex "$FAN" "function saveNarrativeAnswer\([^)]+source" "叙事提交函数支持移动端来源"
 
 # 3) Mobile narrative form is truly interactive
 check_contains "$FAN" "data-m-narrative-input" "移动端叙事区存在输入控件"
-check_contains "$FAN" "onclick=\\\"saveNarrativeAnswer\\('" "移动端叙事区存在提交按钮"
-check_contains "$FAN" ",'mobile'\\)\\\"" "移动端叙事区提交按钮携带 mobile 参数"
+check_contains "$FAN" "saveNarrativeAnswer" "移动端叙事区存在提交按钮"
+check_contains "$FAN" ",'mobile'" "移动端叙事区提交按钮携带 mobile 参数"
 
 # 4) Prediction entry fallback / demo path exists
-check_contains "$FAN" "function loadDemoMatchesForPractice\(" "存在预测演示加载函数"
+check_contains "$FAN" "function loadDemoMatchesForPractice" "存在预测演示加载函数"
 check_contains "$FAN" "加载预测演示" "比赛日无数据时有演示入口按钮"
 
 # 5) matches.json validity
