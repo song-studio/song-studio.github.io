@@ -6,6 +6,9 @@ const allowTouch = enhancedMode;
 const isTouchDevice = allowTouch && window.ontouchstart !== undefined;
 const touchGamepadEnable = enhancedMode;
 const touchGamepadAlpha = .3;
+let gamepadData, gamepadStickData, gamepadDataValues;
+let touchGamepadStick, touchGamepadButtons, touchGamepadTimer;
+let touchGamepadSize, touchGamepadPadXMult, touchGamepadPadYMult, touchGamepadGSMult;
 
 ///////////////////////////////////////////////////////////////////////////////
 // Input user functions
