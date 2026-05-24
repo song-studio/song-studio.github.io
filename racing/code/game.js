@@ -40,8 +40,8 @@ const playerStartZ = 2e3;
 const turnWorldScale = 2e4;
 const testStartZ = testLevel ? testLevel*checkpointDistance-1e3 : quickStart&&!testLevelInfo?5e3:0;
 
-let mainCanvasSize;// = pixelate ? vec3(640, 420) : vec3(1280, 720);
-let mainCanvas, mainContext;
+var mainCanvasSize;// = pixelate ? vec3(640, 420) : vec3(1280, 720);
+var mainCanvas, mainContext;
 let time, frame, frameTimeLastMS, averageFPS, frameTimeBufferMS, paused;
 let checkpointTimeLeft, startCountdown, startCountdownTimer, gameOverTimer, nextCheckpointDistance;
 let raceTime, playerLevel, playerWin, playerNewDistanceRecord, playerNewRecord;
