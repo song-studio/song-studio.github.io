@@ -169,8 +169,8 @@ const mouseToScreen = (mousePos) =>
         }
     }
 
-    // must return true so mouse events get focus
-    return true;
+    // transform mouse pixel coords to normalized 0-1 screen coords
+    return vec3(mousePos.x / mainCanvasSize.x, mousePos.y / mainCanvasSize.y);
 }
 
 // update the touch gamepad, called automatically by the engine
