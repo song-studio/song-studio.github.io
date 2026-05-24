@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-05-24T11:20:48.921Z",
+  "input": "data/processed/outdoor_routes_v13.json",
+  "totals": {
+    "routes": 125,
+    "ok": 7,
+    "blocked": 68,
+    "broken": 0,
+    "error": 0,
+    "unknown": 50
+  },
+  "pass": true,
+  "rules": [
+    "broken 必须为 0",
+    "error 必须为 0"
+  ]
+}

@@ -31,11 +31,13 @@ function main() {
 
   const runs = [
     run('outdoor-routes', 'scripts/qa-outdoor-routes.mjs'),
-    run('weather-console', 'scripts/qa-weather-console.mjs')
+    run('weather-console', 'scripts/qa-weather-console.mjs'),
+    run('track-links', 'scripts/qa-track-links.mjs')
   ];
 
   const routeLatest = parseLatestJson(path.join(OUT_DIR, 'outdoor-routes-qa-latest.json'));
   const weatherLatest = parseLatestJson(path.join(OUT_DIR, 'weather-console-qa-latest.json'));
+  const trackLinksLatest = parseLatestJson(path.join(OUT_DIR, 'track-links-qa-latest.json'));
 
   const allPass = runs.every(r => r.ok);
   const summary = {
@@ -48,6 +50,7 @@ function main() {
     })),
     route_gate: routeLatest?.gate || null,
     weather_gate: weatherLatest?.gate || null,
+    track_links_gate: trackLinksLatest || null,
     route_summary: routeLatest?.summary || null,
     weather_summary: weatherLatest?.summary || null
   };

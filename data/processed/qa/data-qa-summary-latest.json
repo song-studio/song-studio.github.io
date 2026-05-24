@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T11:10:12.932Z",
+  "generated_at": "2026-05-24T11:20:48.841Z",
   "all_pass": true,
   "runs": [
     {
@@ -11,6 +11,11 @@
       "label": "weather-console",
       "ok": true,
       "status": 0
+    },
+    {
+      "label": "track-links",
+      "ok": true,
+      "status": 0
     }
   ],
   "route_gate": {
@@ -20,6 +25,23 @@
   "weather_gate": {
     "pass": true,
     "failures": []
+  },
+  "track_links_gate": {
+    "generated_at": "2026-05-24T11:20:48.921Z",
+    "input": "data/processed/outdoor_routes_v13.json",
+    "totals": {
+      "routes": 125,
+      "ok": 7,
+      "blocked": 68,
+      "broken": 0,
+      "error": 0,
+      "unknown": 50
+    },
+    "pass": true,
+    "rules": [
+      "broken 必须为 0",
+      "error 必须为 0"
+    ]
   },
   "route_summary": {
     "total_routes": 125,

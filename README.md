@@ -61,6 +61,16 @@
 node scripts/qa-data-all.mjs
 ```
 
+该命令会一次性执行：
+- `scripts/qa-outdoor-routes.mjs`
+- `scripts/qa-weather-console.mjs`
+- `scripts/qa-track-links.mjs`
+
+轨迹链接专项探活与分级：
+```bash
+node scripts/audit-track-links.mjs
+```
+
 输出目录：
 
 - `data/processed/qa/outdoor-routes-qa-latest.json`

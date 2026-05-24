@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-05-24T11:18:36.650Z",
+  "input": "data/processed/outdoor_routes_v12.json",
+  "output": "data/processed/outdoor_routes_v13.json",
+  "total_routes": 125,
+  "total_with_url": 75,
+  "status_counts": {
+    "ok": 7,
+    "blocked": 68,
+    "broken": 0,
+    "error": 0,
+    "unknown": 50
+  },
+  "bad_links": []
+}
