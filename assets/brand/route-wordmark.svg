@@ -3,11 +3,11 @@
   <desc id="d">路线决策台品牌字标</desc>
   <defs>
     <linearGradient id="routeFill" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#1479a9"/>
-      <stop offset="0.28" stop-color="#2d96c6"/>
-      <stop offset="0.44" stop-color="#d99a37"/>
-      <stop offset="0.62" stop-color="#176f9f"/>
-      <stop offset="1" stop-color="#6f7d83"/>
+      <stop offset="0" stop-color="#00699e"/>
+      <stop offset="0.28" stop-color="#087caf"/>
+      <stop offset="0.44" stop-color="#d08718"/>
+      <stop offset="0.62" stop-color="#005f91"/>
+      <stop offset="1" stop-color="#526069"/>
     </linearGradient>
     <filter id="lift" x="-10%" y="-22%" width="124%" height="155%">
       <feDropShadow dx="0" dy="1.4" stdDeviation="0.5" flood-color="#ffffff" flood-opacity="0.92"/>
@@ -22,8 +22,8 @@
       <path d="M5 65 C28 41 63 39 94 64" fill="none" stroke="#7c8b91" stroke-width="3"/>
     </g>
     <g transform="translate(346 61)">
-      <polyline points="0,16 35,3 70,22 105,7 143,19" fill="none" stroke="#50656b" stroke-width="3" stroke-linejoin="round"/>
-      <g fill="#d99a37" stroke="#f9f5e8" stroke-width="2">
+      <polyline points="0,16 35,3 70,22 105,7 143,19" fill="none" stroke="#334b52" stroke-width="3" stroke-linejoin="round"/>
+      <g fill="#d08718" stroke="#f9f5e8" stroke-width="2">
         <circle cx="0" cy="16" r="5"/><circle cx="35" cy="3" r="5"/><circle cx="70" cy="22" r="5"/><circle cx="105" cy="7" r="5"/><circle cx="143" cy="19" r="5"/>
       </g>
     </g>
