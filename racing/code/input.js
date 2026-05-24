@@ -121,8 +121,7 @@ const mouseToScreen = (mousePos) =>
             {
                 touchGamepadButtons[0] = 1;
             }
-            continue;
-        }
+            return;
 
         let touchPos = mouseToScreen(vec3(touch.clientX, touch.clientY));
         touchPos = touchPos.multiply(mainCanvasSize);
