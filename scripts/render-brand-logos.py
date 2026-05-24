@@ -41,7 +41,7 @@ def draw_brand_text(img, text, font, xy, stops, stroke=8):
     # White bevel outline.
     d = ImageDraw.Draw(img)
     d.text(xy, text, font=font, fill=(247, 253, 247, 255), stroke_width=stroke + 2, stroke_fill=(247, 253, 247, 255))
-    d.text(xy, text, font=font, fill=(40, 90, 110, 255), stroke_width=stroke, stroke_fill=(40, 90, 110, 255))
+    d.text(xy, text, font=font, fill=(18, 102, 135, 255), stroke_width=stroke, stroke_fill=(18, 102, 135, 255))
     m = mask_text(size, text, font, xy, 0)
     img.alpha_composite(Image.composite(make_gradient(size, stops), Image.new('RGBA', size), m))
     # Top gloss clipped into glyphs.
@@ -63,18 +63,18 @@ def weather_logo():
     font = ImageFont.truetype(LANTING, 116, index=FONT_INDEX_HEAVY_SC)
     img = Image.new('RGBA', (880, 210), (0,0,0,0))
     draw_brand_text(img, '气象山野', font, (18, 36), [
-        (0, (0, 118, 188, 255)),
-        (0.36, (35, 180, 214, 255)),
-        (0.62, (16, 134, 83, 255)),
-        (1, (135, 121, 54, 255)),
+        (0, (0, 132, 210, 255)),
+        (0.34, (36, 190, 238, 255)),
+        (0.62, (0, 164, 128, 255)),
+        (1, (80, 178, 72, 255)),
     ], stroke=8)
     d = ImageDraw.Draw(img)
     # Integrated mountain mark, similar to the reference, but smaller and cleaner.
-    d.polygon([(548,145),(594,62),(626,115),(662,50),(740,145)], fill=(226,246,232,245), outline=(64,114,79,255))
+    d.polygon([(548,145),(594,62),(626,115),(662,50),(740,145)], fill=(218,250,232,248), outline=(24,145,102,255))
     for x,h in [(626,58),(653,74),(681,62)]:
-        d.rounded_rectangle((x,145-h,x+20,146), radius=8, fill=(8,105,65,245))
-    d.arc((138,20,235,86), 190, 535, fill=(224,250,255,230), width=9)
-    d.line([(36,168),(160,176),(330,172),(515,158)], fill=(10,72,86,90), width=4)
+        d.rounded_rectangle((x,145-h,x+20,146), radius=8, fill=(0,139,93,248))
+    d.arc((138,20,235,86), 190, 535, fill=(232,253,255,245), width=9)
+    d.line([(36,168),(160,176),(330,172),(515,158)], fill=(0,122,150,110), width=4)
     crop(img, 14).save(OUT/'weather-wordmark.png')
 
 
@@ -82,22 +82,22 @@ def route_logo():
     font = ImageFont.truetype(LANTING, 116, index=FONT_INDEX_HEAVY_SC)
     img = Image.new('RGBA', (970, 210), (0,0,0,0))
     draw_brand_text(img, '路线决策台', font, (16, 36), [
-        (0, (0, 105, 170, 255)),
-        (0.28, (28, 153, 206, 255)),
-        (0.45, (225, 142, 25, 255)),
-        (0.64, (0, 104, 160, 255)),
-        (1, (94, 111, 120, 255)),
+        (0, (0, 96, 210, 255)),
+        (0.30, (0, 166, 232, 255)),
+        (0.48, (255, 166, 28, 255)),
+        (0.68, (0, 132, 205, 255)),
+        (1, (40, 106, 150, 255)),
     ], stroke=8)
     d = ImageDraw.Draw(img)
     # Compass plus route graph, like the provided image but with less clutter.
     ox, oy = 704, 31
-    d.line([(ox+32, oy), (ox+4, oy+66)], fill=(0,104,160,235), width=6)
-    d.line([(ox+32, oy), (ox+61, oy+66)], fill=(0,104,160,235), width=6)
-    d.line([(ox+32, oy), (ox+32, oy+88)], fill=(225,142,25,250), width=7)
+    d.line([(ox+32, oy), (ox+4, oy+66)], fill=(0,118,220,240), width=6)
+    d.line([(ox+32, oy), (ox+61, oy+66)], fill=(0,118,220,240), width=6)
+    d.line([(ox+32, oy), (ox+32, oy+88)], fill=(255,166,28,255), width=7)
     pts = [(670,160),(724,140),(780,170),(842,138),(915,164)]
-    d.line(pts, fill=(41,61,68,235), width=5)
+    d.line(pts, fill=(36,84,122,238), width=5)
     for x,y in pts:
-        d.ellipse((x-8,y-8,x+8,y+8), fill=(225,142,25,255), outline=(255,248,232,255), width=3)
+        d.ellipse((x-8,y-8,x+8,y+8), fill=(255,166,28,255), outline=(255,248,232,255), width=3)
     crop(img, 14).save(OUT/'route-wordmark.png')
 
 if __name__ == '__main__':
