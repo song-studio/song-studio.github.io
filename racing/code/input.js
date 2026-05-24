@@ -95,6 +95,8 @@ function inputInit()
     isTouchDevice && touchInputInit();
 }
 
+function gamepadsUpdate() {} // stub - no gamepad support
+
 function inputUpdate()
 {
     // clear input when lost focus (prevent stuck keys)
