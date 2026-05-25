@@ -11,7 +11,7 @@
 | 工具 | 说明 |
 |------|------|
 | [气象山野](https://song-studio.github.io/weather-pro.html) | 面向城市、营地、山口、路线起点的专业气象查询。体感温度、阵风、能见度、露点、气压、24h 风险 |
-| [路线决策台](https://song-studio.github.io/route-pro.html) | 徒步/骑行/登山户外线路判断。轨迹等级、补给、撤退、装备风险、沿线天气 |
+| [路线决策台](https://song-studio.github.io/route-pro.html) | 徒步/骑行/登山户外线路判断。库内线路提供轨迹等级、补给、撤退、装备风险、沿线天气；任意点与起终点查询提供地图基础参考 |
 | [2026 FIFA 世界杯](https://song-studio.github.io/2026-fifa-world-cup/) | 48 队 · 12 组 · 完整赛程 · 球迷卡牌对战 · 实时比分 |
 | [F1 数据站](https://song-studio.github.io/racing/) | 赛程 · 积分 · 车手 · 车队 |
 
