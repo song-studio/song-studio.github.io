@@ -2354,21 +2354,38 @@ function rewardBadgeMatteCanvas(img,src,type){
   rewardBadgeMatteCache[key]=c;
   return c;
 }
+function drawRewardBadgeReliefRim(ctx,matte,dw,dh){
+  // Thin paper-cut relief around the badge edge, matching the approved sculpted-rim look.
+  const rim=dw*.026;
+  ctx.save();
+  ctx.globalAlpha=.72;
+  ctx.shadowColor='rgba(24,14,7,.36)';
+  ctx.shadowBlur=30;
+  ctx.shadowOffsetX=8;
+  ctx.shadowOffsetY=24;
+  for(let i=0;i<10;i++){
+    const a=i*Math.PI*2/10;
+    const ox=Math.cos(a)*rim;
+    const oy=Math.sin(a)*rim;
+    ctx.drawImage(matte,-dw/2+ox,-dh/2+oy,dw,dh);
+  }
+  ctx.globalAlpha=.48;
+  ctx.shadowColor='rgba(85,62,35,.24)';
+  ctx.shadowBlur=10;
+  ctx.shadowOffsetX=3;
+  ctx.shadowOffsetY=7;
+  ctx.drawImage(matte,-dw*1.018/2,-dh*1.018/2,dw*1.018,dh*1.018);
+  ctx.restore();
+}
 function drawRewardBadgeAsset(ctx,img,slot,type){
   if(!img)return;
   const src=REWARD_BADGE_VISIBLE_BOUNDS[type]||{x:0,y:0,w:img.width,h:img.height};
   const ratio=src.h/src.w;
   const dw=slot.w,dh=dw*ratio;
   const matte=rewardBadgeMatteCanvas(img,src,type);
-  const matteScale=1.075;
   ctx.save();ctx.translate(slot.x,slot.y);ctx.rotate((slot.rot||0)*Math.PI/180);
-  ctx.shadowColor='rgba(24,14,7,.45)';ctx.shadowBlur=38;ctx.shadowOffsetX=9;ctx.shadowOffsetY=28;
-  ctx.drawImage(matte,-dw*matteScale/2,-dh*matteScale/2,dw*matteScale,dh*matteScale);
-  ctx.shadowColor='rgba(65,45,24,.22)';ctx.shadowBlur=10;ctx.shadowOffsetX=2;ctx.shadowOffsetY=5;
-  ctx.globalAlpha=.86;
-  ctx.drawImage(matte,-dw*1.025/2,-dh*1.025/2,dw*1.025,dh*1.025);
-  ctx.globalAlpha=1;
-  ctx.shadowColor='rgba(26,16,8,.32)';ctx.shadowBlur=18;ctx.shadowOffsetX=4;ctx.shadowOffsetY=12;
+  drawRewardBadgeReliefRim(ctx,matte,dw,dh);
+  ctx.shadowColor='rgba(26,16,8,.34)';ctx.shadowBlur=20;ctx.shadowOffsetX=5;ctx.shadowOffsetY=14;
   ctx.drawImage(img,src.x,src.y,src.w,src.h,-dw/2,-dh/2,dw,dh);
   ctx.shadowColor='transparent';
   ctx.globalCompositeOperation='screen';
