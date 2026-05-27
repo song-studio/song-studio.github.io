@@ -1,0 +1,937 @@
+{
+  "cy_011": {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 561,
+      "source_note": "独山子-库车全长561km(官方)",
+      "method": "官方公路里程"
+    },
+    "surface_mix": "柏油100%",
+    "crosswind_exposure": "中(巴音布鲁克草原段横风大)",
+    "resupply_interval": "一般(每50-80km有加油站/镇,但中间有长无人段)",
+    "risk_tags": [
+      "高海拔(3400m)",
+      "长陡坡(连续上坡数十公里)",
+      "落石(峡谷段)",
+      "冬季封山",
+      "大货车多(旅游旺季)"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿途各镇有卫生院",
+      "nearest_road": "全程国道217",
+      "signal": "大部分有信号",
+      "rescue_phone": "独库公路沿线交警",
+      "access": "良好"
+    }
+  },
+  "cy_003": {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 360,
+      "source_note": "环湖一周约360km(官方公路里程)",
+      "method": "官方"
+    },
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "高(青海湖西岸/北岸横风大,可达7-8级)",
+    "resupply_interval": "充足(每20-30km有乡镇)",
+    "risk_tags": [
+      "高海拔(3200m)",
+      "大风(西岸横风)",
+      "暴晒(无遮挡)",
+      "大货车多(环湖东路)"
+    ],
+    "emergency": {
+      "nearest_hospital": "刚察县/西海镇/黑马河有卫生院",
+      "nearest_road": "环湖公路",
+      "signal": "全程有信号",
+      "rescue_phone": "刚察县应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_004": {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 800,
+      "source_note": "东西线环岛约800km(东线420+西线380)",
+      "method": "官方"
+    },
+    "surface_mix": "柏油90%+水泥10%",
+    "crosswind_exposure": "低-中(东线沿海偶有海风)",
+    "resupply_interval": "充足(每10-20km有村镇)",
+    "risk_tags": [
+      "暴晒(紫外线强)",
+      "台风(5-9月)",
+      "高温(夏季)",
+      "旅游旺季交通复杂"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线各城镇有医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "全程有信号",
+      "rescue_phone": "沿线交警",
+      "access": "良好"
+    }
+  },
+  "cy_001": {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2150,
+      "source_note": "成都-拉萨318国道约2150km",
+      "method": "官方公路里程"
+    },
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般(每20-40km有乡镇)",
+    "risk_tags": [
+      "高反(东达山5130m)",
+      "大车流(318国道车多)",
+      "塌方(雨季)",
+      "长距离上坡(连续数日)"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线各县城有医院",
+      "nearest_road": "全程318国道",
+      "signal": "大部分有信号",
+      "rescue_phone": "318沿线交警",
+      "access": "良好"
+    }
+  },
+  "cy_007": {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2850,
+      "source_note": "叶城-拉孜约2850km(含狮泉河段)",
+      "method": "官方公路里程"
+    },
+    "surface_mix": "柏油60%+碎石30%+土路10%",
+    "crosswind_exposure": "高(阿里无人区段大风)",
+    "resupply_interval": "不足(最长无补给段约200km+无人区)",
+    "risk_tags": [
+      "极高海拔(>5000m连续多日)",
+      "无人区多日",
+      "搓板路",
+      "补给间隔极大"
+    ],
+    "emergency": {
+      "nearest_hospital": "狮泉河(阿里)/日土县",
+      "nearest_road": "全程219国道",
+      "signal": "大部分无信号",
+      "rescue_phone": "阿里地区应急管理局",
+      "access": "困难"
+    }
+  },
+  "mc_001": {
+    "route_id": "mc_001",
+    "name_zh": "318川藏南线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2150,
+      "source_note": "成都-拉萨,与骑行同线",
+      "method": "官方"
+    },
+    "surface_mix": "",
+    "crosswind_exposure": "",
+    "resupply_interval": "",
+    "risk_tags": [
+      "高反",
+      "大车流",
+      "塌方(雨季)",
+      "冰雪路面(达坂)"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线县城",
+      "access": "良好"
+    }
+  },
+  "mc_006": {
+    "route_id": "mc_006",
+    "name_zh": "219新藏线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2100,
+      "source_note": "叶城-拉孜(219国道)",
+      "method": "官方"
+    },
+    "surface_mix": "",
+    "crosswind_exposure": "",
+    "resupply_interval": "",
+    "risk_tags": [
+      "极高海拔",
+      "无人区",
+      "油箱续航不足(>300km无人区)"
+    ],
+    "emergency": {
+      "nearest_hospital": "狮泉河/日土",
+      "access": "困难"
+    }
+  },
+  "mc_005": {
+    "route_id": "mc_005",
+    "name_zh": "214滇藏线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 3000,
+      "source_note": "214国道滇藏线全程",
+      "method": "公路"
+    },
+    "surface_mix": "柏油80%+碎石15%+土路5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "降雨多",
+      "横断山脉复杂地形",
+      "交通事故",
+      "高海拔",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_004": {
+    "route_id": "mc_004",
+    "name_zh": "317川藏北线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2350,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油75%+碎石20%+土路5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "路况差于318",
+      "交通事故",
+      "人烟稀少",
+      "塌方",
+      "高海拔"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cn_cycling_bingcha_010": {
+    "route_id": "cn_cycling_bingcha_010",
+    "name_zh": "丙察察摩旅",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 300,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油30%+碎石50%+土路20%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "大流沙塌方",
+      "雨季泥石流",
+      "目若村淤泥",
+      "交通事故",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_003": {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 305,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油30%+碎石50%+土路20%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "大流沙",
+      "非铺装路面270km",
+      "交通事故",
+      "泥石流",
+      "塌方150+"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_009": {
+    "route_id": "cy_009",
+    "name_zh": "丝绸之路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1100,
+      "source_note": "西安-兰州-嘉峪关-敦煌段约1100km,完整丝路>4000km",
+      "method": "新浪博客骑行攻略"
+    },
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "高(河西走廊风口多,甘肃风沙大)",
+    "resupply_interval": "一般(兰州-嘉峪关段40-50km无补给)",
+    "risk_tags": [
+      "干燥(补给间隔大)",
+      "大风(河西走廊)",
+      "暴晒(戈壁)",
+      "昼夜温差大"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_010": {
+    "route_id": "cy_010",
+    "name_zh": "京杭大运河骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1800,
+      "source_note": "北京-杭州全程约1800km,苏北段平坦",
+      "method": "什么值得买/攻略"
+    },
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "充足(苏北30km有补给,南段更密)",
+    "risk_tags": [
+      "长距离(1800km)",
+      "城市路段交通复杂",
+      "雾霾(北方段)"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_013": {
+    "route_id": "mc_013",
+    "name_zh": "伊犁河谷摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 1600,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "长距离",
+      "交通事故",
+      "冰雪达坂",
+      "落石",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_018": {
+    "route_id": "cy_018",
+    "name_zh": "千岛湖环湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 150,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油90%+水泥10%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "低",
+      "交通事故",
+      "适合休闲",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_021": {
+    "route_id": "mc_021",
+    "name_zh": "喀喇昆仑公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 420,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油70%+碎石25%+土路5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "边防证",
+      "边境敏感",
+      "低温达坂",
+      "交通事故",
+      "高海拔"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_008": {
+    "route_id": "cy_008",
+    "name_zh": "大香格里拉环线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1500,
+      "source_note": "丽江-香格里拉-稻城-理塘-泸沽湖-丽江约1400-1600km",
+      "method": "骑行攻略"
+    },
+    "surface_mix": "柏油70%+水泥15%+碎石15%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般(乡镇间隔30-80km)",
+    "risk_tags": [
+      "高海拔(连续>4000m)",
+      "盘山路多",
+      "雨季塌方",
+      "部分段无手机信号"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_002": {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2350,
+      "source_note": "成都-那曲-拉萨G317约2350km",
+      "method": "公路数据/TibetWay"
+    },
+    "surface_mix": "柏油75%+碎石15%+土路10%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "不足(补给点较318稀疏)",
+    "risk_tags": [
+      "高海拔(雀儿山4889m)",
+      "补给稀疏",
+      "沙石路段",
+      "比318更加艰苦",
+      "大车流(那曲段)"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_014": {
+    "route_id": "mc_014",
+    "name_zh": "川西大环线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 1800,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油75%+水泥15%+碎石10%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "雨季塌方",
+      "油站间隔大",
+      "交通事故",
+      "多垭口",
+      "极高海拔"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_017": {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1000,
+      "source_note": "约1000km(新浪骑行攻略),现有数据900km偏低",
+      "method": "新浪骑行攻略"
+    },
+    "surface_mix": "柏油80%+水泥12%+碎石8%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般(乡镇间隔30-50km)",
+    "risk_tags": [
+      "交通事故",
+      "落石",
+      "高海拔",
+      "暴晒",
+      "盘山公路"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_014": {
+    "route_id": "cy_014",
+    "name_zh": "广西沿边公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 725,
+      "source_note": "东兴竹山村-那坡弄合村,全长725km(百度攻略)",
+      "method": "百度/8264"
+    },
+    "surface_mix": "柏油80%+水泥20%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般(乡镇间隔30-60km)",
+    "risk_tags": [
+      "连续长坡",
+      "边境敏感区",
+      "湿热(夏季)",
+      "上坡多"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_027": {
+    "route_id": "cy_027",
+    "name_zh": "张北草原天路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 132,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油80%+碎石15%+土路5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "交通事故",
+      "旅游旺季车多",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_013": {
+    "route_id": "cy_013",
+    "name_zh": "沿312国道上海至乌鲁木齐",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 3900,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般(城镇间隔50-80km)",
+    "risk_tags": [
+      "长距离",
+      "风沙",
+      "大货车多",
+      "交通事故",
+      "戈壁"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_015": {
+    "route_id": "mc_015",
+    "name_zh": "海南环岛摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 800,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油90%+水泥10%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "交通事故",
+      "高温",
+      "台风季",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_009": {
+    "route_id": "mc_009",
+    "name_zh": "滇缅公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 500,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油80%+水泥15%+碎石5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "山路",
+      "雨雾",
+      "交通事故",
+      "湿热",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_005": {
+    "route_id": "cy_005",
+    "name_zh": "滇藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2325,
+      "source_note": "昆明-大理-香格里拉-林芝-拉萨约2300-2400km",
+      "method": "骑行攻略"
+    },
+    "surface_mix": "柏油80%+水泥15%+碎石5%",
+    "crosswind_exposure": "低-中",
+    "resupply_interval": "一般(每30-60km有乡镇)",
+    "risk_tags": [
+      "高反(东达山5130m)",
+      "长上坡(白马雪山)",
+      "雨季塌方",
+      "大车流(214国道)"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_002": {
+    "route_id": "mc_002",
+    "name_zh": "独库公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 561,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "一日四季",
+      "冰雪路面",
+      "交通事故",
+      "陡坡弯道",
+      "落石"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_026": {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 240,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油100%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "低",
+      "交通事故",
+      "暴晒",
+      "城市路段"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_016": {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 120,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "交通事故",
+      "机动车多",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_021": {
+    "route_id": "cy_021",
+    "name_zh": "翁金线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 45,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油90%+水泥10%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "低",
+      "交通事故",
+      "适合新手",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_023": {
+    "route_id": "cy_023",
+    "name_zh": "阿尔山骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 450,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油75%+砂石20%+土路5%",
+    "crosswind_exposure": "高(呼伦贝尔草原大风)",
+    "resupply_interval": "不足(草原段几十公里无补给)",
+    "risk_tags": [
+      "草原大风",
+      "补给间隔极大",
+      "暴晒(无遮挡)",
+      "低温(即使夏季)"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_019": {
+    "route_id": "cy_019",
+    "name_zh": "阿禾公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 225,
+      "source_note": "阿勒泰-禾木,全长约200km,现有225km接近",
+      "method": "知乎/新疆旅游"
+    },
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "长爬坡",
+      "交通事故",
+      "高海拔",
+      "暴晒",
+      "天气骤变"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_006": {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1950,
+      "source_note": "西宁-格尔木-唐古拉山口-拉萨约1950km",
+      "method": "公路数据"
+    },
+    "surface_mix": "柏油85%+碎石10%+土路5%",
+    "crosswind_exposure": "高(可可西里无人区段大风)",
+    "resupply_interval": "不足(最长无补给段>200km无人区)",
+    "risk_tags": [
+      "极高海拔(唐古拉5231m)",
+      "无人区长间隔",
+      "大风(可可西里)",
+      "大货车多(青藏运输线)"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_008": {
+    "route_id": "mc_008",
+    "name_zh": "黔东南摩旅环线",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 700,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "surface_mix": "柏油80%+水泥20%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "risk_tags": [
+      "雨雾",
+      "交通事故",
+      "山路弯多",
+      "湿滑",
+      "暴晒"
+    ],
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "gl_cycling_taiwan_006": {
+    "route_id": "gl_cycling_taiwan_006",
+    "name_zh": "台湾环岛骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 900,
+      "source_note": "大环线约900-1000km(台北-台东-垦丁-台中-台北)",
+      "method": "台湾骑行攻略"
+    },
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "中(苏花/东北角强风)",
+    "resupply_interval": "充足",
+    "risk_tags": [
+      "苏花公路落石",
+      "东北季风(冬季)",
+      "台风(7-9月)",
+      "车辆多"
+    ],
+    "emergency": {
+      "access": "良好",
+      "nearest_hospital": "各大城镇医院",
+      "nearest_road": "全程公路",
+      "signal": "全程有信号"
+    }
+  },
+  "gl_cycling_shimanami_009": {
+    "route_id": "gl_cycling_shimanami_009",
+    "name_zh": "岛波海道骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 70,
+      "source_note": "尾道-今治约70km(跨6座大桥)",
+      "method": "日本官方"
+    },
+    "surface_mix": "柏油100%",
+    "crosswind_exposure": "高(跨海大桥风力大)",
+    "resupply_interval": "充足",
+    "risk_tags": [
+      "台风(7-9月)",
+      "冬季寒冷",
+      "大桥侧风"
+    ],
+    "emergency": {
+      "access": "良好"
+    }
+  }
+}

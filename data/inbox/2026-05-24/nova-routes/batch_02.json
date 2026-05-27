@@ -1,0 +1,1376 @@
+{
+  "batch": 2,
+  "routes": [
+    {
+      "route_id": "cy_016",
+      "name_zh": "独库公路骑行",
+      "mode": "cycling",
+      "season_status": "最佳6月-9月(开放期)；11-5月全封闭；6月1日前后通车，10月5-10日封闭",
+      "water_points": [
+        "独山子、乔尔玛、那拉提、巴音布鲁克、库车有加油站和餐饮",
+        "沿线新增33个停车区含环保厕所"
+      ],
+      "retreat_points": [
+        "独山子起点可折返",
+        "乔尔玛有住宿可休整",
+        "那拉提可转G218去伊宁",
+        "巴音布鲁克有机场和班车"
+      ],
+      "risk_tags": [
+        "季节性封路(11-5月)",
+        "高海拔(铁力买提达坂约3400m)",
+        "落石(天山峡谷段)",
+        "回头弯极多(哈希勒根/铁力买提)",
+        "突发降雪(9月底可能发生)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "中途可到乡镇卫生院",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行，开放",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "飞乌鲁木齐→大巴/包车至独山子或库车；骑行以独山子为起点向北向南",
+      "return_from_endpoint": "库车→独山子(班车/包车)",
+      "nearest_city": "库车/独山子",
+      "nearest_transport_hub": "库车机场/乌鲁木齐机场",
+      "elevation_profile": [
+        [
+          0,
+          680
+        ],
+        [
+          70,
+          952
+        ],
+        [
+          140,
+          1224
+        ],
+        [
+          210,
+          1496
+        ],
+        [
+          280,
+          1768
+        ],
+        [
+          350,
+          2040
+        ],
+        [
+          420,
+          2312
+        ],
+        [
+          490,
+          2584
+        ],
+        [
+          561,
+          680
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "独山子",
+        "max": "最高3400m",
+        "end": "库车"
+      },
+      "cumulative_elevation": 10000,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动覆盖较好，电信/联通在达坂和峡谷段间歇性无信号",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程561km约8天；可选段骑行",
+      "distance_km_v5": 561,
+      "distance_note": "独山子→库车，约561km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "A",
+      "surface_mix": "95%柏油路+5%施工路段/碎石路段（K590段有尖角碎石）",
+      "shoulder_width": "窄-无（部分路段无路肩，临崖无护栏）",
+      "traffic_level": "高（旺季日均数千辆车，周末/节假日拥堵严重）",
+      "name_en": "Duku Highway Cycling"
+    },
+    {
+      "route_id": "cy_017",
+      "name_zh": "环太湖骑行",
+      "mode": "cycling",
+      "season_status": "3-5月春季花开，9-11月秋季最佳（气温15-25℃），6-8月闷热多雨，12-2月湿冷且湖风大",
+      "water_points": [
+        "沿途城市/乡镇密集（苏州、吴江、湖州、宜兴、无锡），便利店和餐馆每5-10km即有",
+        "廿时驿等驿站提供免费补给（饮用水/能量胶/维修工具）"
+      ],
+      "retreat_points": [
+        "沿途城市（苏州/湖州/无锡等）及乡镇（夹浦镇、七都镇等）均可随时退出搭公共交通"
+      ],
+      "risk_tags": [
+        "部分路段卡车多（京岚线/渎边线）",
+        "长距离单日骑行体力消耗大",
+        "夜间骑行风险"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "中途可到乡镇卫生院",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行，开放",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "高铁至苏州/无锡/湖州站，租车后环湖",
+      "return_from_endpoint": "环线，无需返回",
+      "nearest_city": "苏州/无锡/湖州",
+      "nearest_transport_hub": "上海虹桥/苏南硕放机场",
+      "elevation_profile": [
+        [
+          0,
+          10
+        ],
+        [
+          30,
+          14
+        ],
+        [
+          60,
+          18
+        ],
+        [
+          90,
+          22
+        ],
+        [
+          120,
+          26
+        ],
+        [
+          150,
+          30
+        ],
+        [
+          180,
+          34
+        ],
+        [
+          210,
+          38
+        ],
+        [
+          240,
+          10
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "苏州",
+        "max": "最高50m",
+        "end": "苏州"
+      },
+      "cumulative_elevation": 500,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动/电信/联通全线满格",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程240km约4天；可选段骑行",
+      "distance_km_v5": 240,
+      "distance_note": "苏州→苏州，约240km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "A",
+      "surface_mix": "95%柏油路+5%绿道/栈道",
+      "shoulder_width": "绿道独立约2.5m；城市共享道路有非机动车道",
+      "traffic_level": "中-高（无锡苏州段高，湖州宜兴段中）",
+      "name_en": "Taihu Lake Circuit Cycling"
+    },
+    {
+      "route_id": "cy_018",
+      "name_zh": "环洱海骑行",
+      "mode": "cycling",
+      "season_status": "四季皆可，3-5月春季最佳（气温15-25℃干燥），9-11月秋季次之，6-8月雨季阵雨多但景美，12-2月昼夜温差大但晴天多",
+      "water_points": [
+        "沿途小商店/超市密集，双廊、喜洲、挖色、海东镇均有完整餐饮补给",
+        "生态廊道自带补给"
+      ],
+      "retreat_points": [
+        "全程120km，大理古城/双廊/挖色均可住宿，随时可叫货拉拉撤出（建议18:00前）"
+      ],
+      "risk_tags": [
+        "紫外线极强",
+        "环海东路大货车多",
+        "海西生态廊道无路灯（夜骑危险）",
+        "挖色段曾有过碎石烂路（现已改善）"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "短途骑行，沿途有城镇可就医",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行，开放",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "飞大理机场→古城租车；大理古城/下关/双廊均可出发",
+      "return_from_endpoint": "环线，无需返回",
+      "nearest_city": "大理",
+      "nearest_transport_hub": "大理站/大理机场",
+      "elevation_profile": [
+        [
+          0,
+          400
+        ],
+        [
+          15,
+          560
+        ],
+        [
+          30,
+          720
+        ],
+        [
+          45,
+          880
+        ],
+        [
+          60,
+          1040
+        ],
+        [
+          75,
+          1200
+        ],
+        [
+          90,
+          1360
+        ],
+        [
+          105,
+          1520
+        ],
+        [
+          120,
+          400
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "大理古城",
+        "max": "最高2000m",
+        "end": "大理古城"
+      },
+      "cumulative_elevation": 500,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动/电信/联通全线覆盖",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程120km约2天；可选段骑行",
+      "distance_km_v5": 120,
+      "distance_note": "大理古城→大理古城，约120km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "A",
+      "surface_mix": "98%柏油路+2%生态廊道路面",
+      "shoulder_width": "海西生态廊道独享宽约3m（禁机动车）；海东公共道路有非机动车道约1.5m",
+      "traffic_level": "低-中（生态廊道无车，海东公路中）",
+      "name_en": "Erhai Lake Circuit Cycling"
+    },
+    {
+      "route_id": "cy_019",
+      "name_zh": "翁金线骑行",
+      "mode": "cycling",
+      "season_status": "四季皆宜，4-5月油菜花/樱花季最佳，9-10月观潮季（农历八月十八最佳），夏季海风炎热，冬季温和",
+      "water_points": [
+        "沿途乡镇（盐官镇、黄湾镇、尖山新区等）及景区补给充足"
+      ],
+      "retreat_points": [
+        "沿岸每5-10km有村镇，随时可退出搭公交"
+      ],
+      "risk_tags": [
+        "钱塘江观潮季部分路段人流密集",
+        "夏季正午暴晒无遮阴"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "短途骑行，沿途有城镇可就医",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行，开放",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "高铁至海宁西站/嘉兴南站，打车至翁家埠或盐官镇开始",
+      "return_from_endpoint": "海宁黄湾→海宁盐官(班车/包车)",
+      "nearest_city": "海宁",
+      "nearest_transport_hub": "杭州萧山机场→海宁西站(高铁12min)",
+      "elevation_profile": [
+        [
+          0,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          22,
+          10
+        ],
+        [
+          28,
+          12
+        ],
+        [
+          33,
+          13
+        ],
+        [
+          39,
+          15
+        ],
+        [
+          45,
+          4
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "海宁盐官",
+        "max": "最高20m",
+        "end": "海宁黄湾"
+      },
+      "cumulative_elevation": 100,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动/电信/联通全线覆盖",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程45km约1天；可选段骑行",
+      "distance_km_v5": 45,
+      "distance_note": "海宁盐官→海宁黄湾，约45km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "A",
+      "surface_mix": "100%柏油路（老省道标准）",
+      "shoulder_width": "窄（老公路标准约1-1.5m，部分路段与机动车共用）",
+      "traffic_level": "低（已降级为乡村道路，机动车很少）",
+      "name_en": "Wengjin Route Cycling"
+    },
+    {
+      "route_id": "cy_020",
+      "name_zh": "阿尔山骑行",
+      "mode": "cycling",
+      "season_status": "最佳6-8月(夏绿秋黄)；9月中-5月严寒封路",
+      "water_points": [
+        "阿尔山市、新巴尔虎左旗/右旗有完整补给",
+        "罕达盖等牧场有牧民可借住",
+        "草原路段需自带3天以上干粮"
+      ],
+      "retreat_points": [
+        "阿尔山有火车站和机场可撤回",
+        "S203省道沿线有城镇可搭班车"
+      ],
+      "risk_tags": [
+        "补给点间隔长（草原路段数十公里无人区）",
+        "逆风与天气突变",
+        "蚊虫多（夏季湖边）",
+        "部分路段无手机信号（蘑阿公路）",
+        "昼夜温差大（可达20℃）"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "中途可到乡镇卫生院",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行，开放",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "飞阿尔山伊尔施机场；或火车至阿尔山站（最美火车站）；或乌兰浩特方向自驾/S203省道",
+      "return_from_endpoint": "环线，无需返回",
+      "nearest_city": "阿尔山",
+      "nearest_transport_hub": "乌兰浩特机场→阿尔山(4h车程)",
+      "elevation_profile": [
+        [
+          0,
+          300
+        ],
+        [
+          56,
+          420
+        ],
+        [
+          112,
+          540
+        ],
+        [
+          168,
+          660
+        ],
+        [
+          225,
+          780
+        ],
+        [
+          281,
+          900
+        ],
+        [
+          337,
+          1020
+        ],
+        [
+          393,
+          1140
+        ],
+        [
+          450,
+          300
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "阿尔山市区",
+        "max": "最高1500m",
+        "end": "阿尔山市区"
+      },
+      "cumulative_elevation": 3000,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动主干道覆盖较好；蘑阿公路/好森沟等部分路段无信号，需离线地图",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程450km约6天；可选段骑行",
+      "distance_km_v5": 450,
+      "distance_note": "阿尔山市区→阿尔山市区，约450km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "A",
+      "surface_mix": "90%柏油路+10%砂石路/林区土路",
+      "shoulder_width": "宽（省道标准路肩约1.5-2m，车辆少）",
+      "traffic_level": "低（S203/G331车少，大货车不多）",
+      "name_en": "Aershan Cycling"
+    },
+    {
+      "route_id": "cy_021",
+      "name_zh": "阿禾公路骑行",
+      "mode": "cycling",
+      "season_status": "6月30日-10月15日全时段通行（12m以下客车）；10月16日-次年5月14日限时通行需雪地胎7座以下四驱车",
+      "water_points": [
+        "沿线建成31处停车区（观景台）和9座公卫",
+        "禾木村和阿勒泰市入口有完整餐饮"
+      ],
+      "retreat_points": [
+        "起点阿勒泰市可折返",
+        "终点禾木村有区间车返回布尔津",
+        "沿途有毡房营地"
+      ],
+      "risk_tags": [
+        "10月后夜间结冰需防滑链",
+        "海拔变化大（1000-2500m）",
+        "山路弯道多",
+        "部分路段手机信号弱",
+        "冬季限行（需四驱+雪地胎）"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "中途可到乡镇卫生院",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行，开放",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "飞阿勒泰雪都机场，从阿勒泰市出发",
+      "return_from_endpoint": "禾木→阿勒泰(班车/包车)",
+      "nearest_city": "阿勒泰",
+      "nearest_transport_hub": "阿勒泰雪都机场",
+      "elevation_profile": [
+        [
+          0,
+          500
+        ],
+        [
+          28,
+          700
+        ],
+        [
+          56,
+          900
+        ],
+        [
+          84,
+          1100
+        ],
+        [
+          112,
+          1300
+        ],
+        [
+          140,
+          1500
+        ],
+        [
+          168,
+          1700
+        ],
+        [
+          196,
+          1900
+        ],
+        [
+          225,
+          500
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "阿勒泰",
+        "max": "最高2500m",
+        "end": "禾木"
+      },
+      "cumulative_elevation": 3000,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动覆盖主干道；通巴原始森林和部分山谷段信号弱",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程225km约3天；可选段骑行",
+      "distance_km_v5": 225,
+      "distance_note": "阿勒泰→禾木，约225km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "A",
+      "surface_mix": "100%柏油路（三级公路标准，路基7.5m路面6.5m）",
+      "shoulder_width": "窄（三级公路标准，路面宽6.5m，无独立慢车道）",
+      "traffic_level": "低-中（2025年6月刚正式通车，车流逐渐增多但低于独库公路）",
+      "name_en": "Ahe Highway Cycling"
+    },
+    {
+      "route_id": "cy_022",
+      "name_zh": "岛波海道骑行",
+      "mode": "cycling",
+      "season_status": "最佳春(3-5月)秋(9-11月)；夏季台风多，冬季偶有强风",
+      "water_points": "沿途多良驿站/休息站皆有直饮水、自动售货机；每5-10km有便利店/休息站",
+      "retreat_points": "全程沿国道骑行，每10km有公交站/港口可乘轮渡撤退；各连接岛有巴士",
+      "risk_tags": [
+        "高海拔(最高红拉山垭口4448m，东达山垭口5130m)",
+        "横断山脉复杂地形(连续上下坡)",
+        "雨季塌方(盐井-芒康段多发)",
+        "大货车多(214国道为滇藏货运要道)",
+        "落石(峡谷路段，德钦-盐井段)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "短途骑行，沿途有城镇可就医",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行，开放",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "西双版纳嘎洒机场(起点)或大理站/丽江三义机场(可选起点)；也可飞到大理或丽江直接开骑",
+      "return_from_endpoint": "今治(日本爱媛)→尾道(日本广岛)(班车/包车)",
+      "nearest_city": "尾道/今治",
+      "nearest_transport_hub": "广岛机场→尾道(巴士1.5h)",
+      "elevation_profile": [
+        [
+          0,
+          20
+        ],
+        [
+          10,
+          28
+        ],
+        [
+          20,
+          36
+        ],
+        [
+          30,
+          44
+        ],
+        [
+          40,
+          52
+        ],
+        [
+          50,
+          60
+        ],
+        [
+          60,
+          68
+        ],
+        [
+          70,
+          76
+        ],
+        [
+          80,
+          20
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "尾道(日本广岛)",
+        "max": "最高100m",
+        "end": "今治(日本爱媛)"
+      },
+      "cumulative_elevation": 500,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动 大理-丽江-香格里拉-德钦 4G覆盖良好/德钦-芒康段部分山区隧道无 / 电信 同移动，覆盖稍广 / 联通 县城有信号，偏远山区差",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程80km约2天；可选段骑行",
+      "distance_km_v5": 80,
+      "distance_note": "尾道(日本广岛)→今治(日本爱媛)，约80km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "B",
+      "name_en": "Shimanami Kaido Cycling"
+    },
+    {
+      "route_id": "cy_023",
+      "name_zh": "青藏线骑行",
+      "mode": "cycling",
+      "season_status": "最佳5-9月；10-4月极寒强风雪不可行",
+      "water_points": "沿途乡镇（格尔木-西大滩-五道梁-沱沱河-雁石坪-安多-那曲）均有补给；无人区段需备大容量水袋",
+      "retreat_points": "青藏公路沿线每50-80km有道班/兵站可求助；格尔木/那曲有修理站",
+      "risk_tags": [
+        "极高海拔(唐古拉山口5231m)",
+        "大货车极多(G109货运主干线)",
+        "无人区(可可西里段200km+无补给)",
+        "强风/风雪全天候",
+        "高反(持续4500m+骑行)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "长途骑行，偏远段救援困难，建议结伴",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需边防证(户籍地办理)",
+      "regulation_note": "青藏线进藏需边防证",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "西双版纳嘎洒机场(起点)或大理站/丽江三义机场(可选起点)；也可飞到大理或丽江直接开骑",
+      "return_from_endpoint": "拉萨→格尔木(推荐)/西宁(班车/包车)",
+      "nearest_city": "西宁/拉萨",
+      "nearest_transport_hub": "西宁曹家堡/拉萨贡嘎",
+      "elevation_profile": [
+        [
+          0,
+          1046
+        ],
+        [
+          243,
+          1464
+        ],
+        [
+          487,
+          1883
+        ],
+        [
+          731,
+          2301
+        ],
+        [
+          975,
+          2720
+        ],
+        [
+          1218,
+          3138
+        ],
+        [
+          1462,
+          3557
+        ],
+        [
+          1706,
+          3975
+        ],
+        [
+          1950,
+          1046
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "格尔木(推荐)/西宁",
+        "max": "最高5231m",
+        "end": "拉萨"
+      },
+      "cumulative_elevation": 25000,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动 大理-丽江-香格里拉-德钦 4G覆盖良好/德钦-芒康段部分山区隧道无 / 电信 同移动，覆盖稍广 / 联通 县城有信号，偏远山区差",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程1950km约25天；可选段骑行",
+      "distance_km_v5": 1950,
+      "distance_note": "格尔木(推荐)/西宁→拉萨，约1950km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "B",
+      "name_en": "Qingzang Railway Cycling"
+    },
+    {
+      "route_id": "hk_001",
+      "name_zh": "他念他翁穿越",
+      "mode": "hiking",
+      "season_status": "最佳6-10月(6-7月花海，9-10月秋色)；11-5月垭口积雪不建议；7-8月雨季可行但下午常变天",
+      "water_points": [
+        "一字泵营地(有水源，可付费取水)",
+        "切坛营地(旁边有溪流水源)",
+        "南加曲隆上方营地(营地风大，需步行10分钟取水)",
+        "双湖营地(海子水源)",
+        "揉错(最美海子，周边有水源)"
+      ],
+      "retreat_points": [
+        "拉岗村(起点，可撤回飞来寺→香格里拉)",
+        "地泵营地(可包车出山至巴藏村→左贡)",
+        "巴藏村(终点出山至左贡县)"
+      ],
+      "risk_tags": [
+        "高海拔(全程4000m+，最高垭口4980m)",
+        "碎石坡滑坠/落石(说拉垭口碎石坡极陡，曾有人摔死)",
+        "封山风险(当地护林员/村民可临时封山)",
+        "天气突变(下午常降雨/冰雹)",
+        "交通偏远(进山需从香格里拉包车到拉岗村,成本高)",
+        "摔伤救援困难(远离公路，多段无信号)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "起点拉岗村至德钦县医院约150km/3h车程(经飞来寺)；终点巴藏村至左贡县医院约100km/2h；徒步中段无公路，出现严重事故(如飞鱼事件2021年)需多日搜救；建议购买高额户外保险并携带卫星电话",
+      "distance_km_v5": 56,
+      "distance_note": "v5标注56km(拉岗村-巴藏村盐登线标准)，搜索攻略确认约56-65km(不同走法有差异)",
+      "verification_sources": [
+        "两步路社区(2bulu.com)游记",
+        "昌都市旅游局(lyfz.changdu.gov.cn)",
+        "知乎飞鱼事件报道"
+      ],
+      "confidence": "A",
+      "access_status": "开放（属偏远开放区域，无专门管制）",
+      "permit_required": null,
+      "permit_how": "目前无专门许可要求，但建议在左贡县公安部门报备",
+      "regulation_note": "他念他翁为高海拔无人区穿越（最高海拔近5000m），须有高原经验和向导；全程无补给/无救援/无信号，需自备卫星通讯设备；最佳季节8-10月，11月-次年5月大雪封山",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "左贡县城出发，沿G214至美玉乡转入机耕道（需四驱越野车/当地车）",
+      "return_from_endpoint": "穿越终点多在芒康县曲孜卡乡/盐井，有班车沿G214至香格里拉",
+      "nearest_city": "左贡县/芒康县",
+      "nearest_transport_hub": "昌都邦达机场（距左贡约120km）/成都经318国道大巴至左贡（约48小时）",
+      "elevation_profile": [],
+      "key_altitude_points": {},
+      "cumulative_elevation": 0,
+      "campsites": [],
+      "huts": [],
+      "camping_restriction": "全程无限制（无人区），需自带帐篷，严格遵守无痕原则",
+      "signal_coverage": "移动：县城及周边G214沿线有4G，进山后全程无任何手机信号；电信：弱；联通：弱",
+      "signal_dead_zones": "全程约80km高海拔徒步路线无任何手机信号",
+      "last_signal_point": "左贡县城（G214国道沿线）",
+      "route_variants": [],
+      "variant_differences": "",
+      "name_en": "Qizanggou Trek"
+    },
+    {
+      "route_id": "hk_002",
+      "name_zh": "库拉岗日徒步",
+      "mode": "hiking",
+      "season_status": "最佳5-6月初(高山杜鹃盛开)、9-10月(秋高气爽拍雪山)；7-8月雨季多云遮挡雪山；11-4月冬季严寒不建议",
+      "water_points": [
+        "措玉村(住宿点，可补给水源)",
+        "白马林措(营地水源，湖泊水需过滤煮沸)",
+        "介久措(营地水源，湖泊水需过滤煮沸)",
+        "折公措(沿途水源，三个小湖)"
+      ],
+      "retreat_points": [
+        "措玉村(可乘车撤回色乡→洛扎县)",
+        "色乡(有公路可回洛扎县城)",
+        "洛扎县(大交通枢纽，可回拉萨)"
+      ],
+      "risk_tags": [
+        "全程无手机信号(洛扎县政府公告明确标注)",
+        "高海拔(徒步区域4000-5300m)",
+        "部分山脊终年积雪(安全风险较高)",
+        "边防证(需提前在户籍地/拉萨办理)",
+        "天气多变(高原小气候，下午常起风)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "洛扎县人民医院距徒步起点(措玉村)约60km/1.5h车程；全程无信号覆盖需自备卫星电话；措玉村有驻村工作队可协助紧急情况；色乡有卫生院可处理简单伤病",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "需提前办理西藏边防证(户籍地或拉萨办理，目的地填写'山南地区洛扎县')；景区免费进入，在洛扎县登记",
+      "regulation_note": "洛扎县政府公告要求夜间不得在白马林措扎营；景区目前免费但属于待开发状态，政策可能变动",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "拉萨→洛扎县(班车约6h/¥180)→色乡(包车约2h/¥300)→措玉村(土路，建议越野车)",
+      "return_from_endpoint": "措玉村→色乡→洛扎县→拉萨，包车+班车，原路返回约2天",
+      "nearest_city": "洛扎县城(距措玉村约50km/1.5h)",
+      "nearest_transport_hub": "拉萨贡嘎国际机场(距洛扎县约260km/5h车程)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "措玉村4100m",
+        "max": "拉卡日垭口约5300m",
+        "end": "措玉村4100m"
+      },
+      "cumulative_elevation": 1200,
+      "campsites": [
+        {
+          "name": "措玉村",
+          "km": 0,
+          "altitude_m": 4100,
+          "water": "有",
+          "capacity": "住宿20-30人"
+        },
+        {
+          "name": "白马林措湖畔营地",
+          "km": 7,
+          "altitude_m": 4500,
+          "water": "有(湖)",
+          "capacity": "约20-30顶帐篷"
+        },
+        {
+          "name": "介久措营地",
+          "km": 12,
+          "altitude_m": 4700,
+          "water": "有(湖)",
+          "capacity": "约10-15顶帐篷"
+        }
+      ],
+      "huts": [
+        "措玉村家庭旅馆(¥100-150/床位)"
+      ],
+      "camping_restriction": "仅指定区域可扎营(白马林措湖畔和介久措湖畔)，禁止在湖岸线50m内扎营",
+      "signal_coverage": "移动 措玉村有微弱信号，进入徒步路线即无信号 / 电信 同移动 / 联通 全程无信号",
+      "signal_dead_zones": "措玉村→白马林措→介久措→折公措→全程(约5-6天徒步)无信号",
+      "last_signal_point": "措玉村(出发前)",
+      "route_variants": [
+        "3日休闲版(措玉村→白马林措→介久措)",
+        "5日标准版(含折公措环线)",
+        "7日穿越版(至普莫雍措)"
+      ],
+      "variant_differences": "3日版约25km/爬升800m；5日版约40km/爬升1500m；7日版约60km/爬升2200m",
+      "distance_km_v5": 60,
+      "distance_note": "v5标注60km，搜索攻略确认3日短线约25km，全线约50-65km(不同走法差异大)",
+      "verification_sources": [
+        "洛扎县人民政府公告(luozha.gov.cn)",
+        "西藏自治区文旅厅(wlt.xizang.gov.cn)",
+        "山南市旅发局(lyfzj.shannan.gov.cn)"
+      ],
+      "confidence": "A",
+      "name_en": "Wusun Ancient Path"
+    },
+    {
+      "route_id": "hk_003",
+      "name_zh": "扎尕那穿越",
+      "mode": "hiking",
+      "season_status": "最佳6-9月(甘南山地夏季绿意盎然)；5月/10月可行但气温低；11-4月高海拔垭口积雪不建议",
+      "water_points": [
+        "冬才营地(旁边有溪流)",
+        "无名营地(溪谷边水源)",
+        "安子库牧场(牧民家水源)",
+        "观音石营地(高山草甸水源)",
+        "大峪沟(终点溪流)"
+      ],
+      "retreat_points": [
+        "扎尕那村(起点可撤回迭部县)",
+        "冬才营地(可原路返回扎尕那)",
+        "安子库(有牧民定居，可联系车辆)",
+        "大峪沟景区(终点有公路至卓尼/岷县)"
+      ],
+      "risk_tags": [
+        "高海拔(翻越4个4000m+垭口，喀拉克垭口4140m)",
+        "丹霞滑石区风化严重(喀拉克后横切段路滑易摔)",
+        "滑坡隐患(部分泥石路段雨天危险)",
+        "牧道泥泞(雨天牧道含水量大易陷脚)",
+        "大部分路段无手机信号"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "起点(扎尕那)距迭部县人民医院约30km/40min车程；终点(大峪沟)距卓尼县医院约60km/1.5h；徒步中段无公路，救援需马队或直升机；安子库有牧民定居可联系求助",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "无需额外许可证，购买扎尕那景区门票(¥80)进入；大峪沟景区出山需购票(¥50)",
+      "regulation_note": "扎尕那景区有正式门票制度；大峪沟景区出口可能需要补票；建议在扎尕那村登记进出时间",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "兰州汽车南站→迭部县(班车¥128/8h)→扎尕那村(包车¥50/1.5h)；或兰州→合作(班车¥74/4h)→迭部",
+      "return_from_endpoint": "大峪沟→卓尼县(包车约1h)→岷县(班车¥30/1h)→兰州(火车/大巴)",
+      "nearest_city": "迭部县城(距扎尕那入口约28km)",
+      "nearest_transport_hub": "兰州中川机场(距徒步起点约400km/2天交通)；岷县火车站(距徒步终点约80km/2h)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "扎尕那村2920m",
+        "max": "喀拉克垭口4140m",
+        "end": "大峪沟三角石约2500m"
+      },
+      "cumulative_elevation": 3200,
+      "campsites": [
+        {
+          "name": "冬才营地",
+          "km": 21,
+          "altitude_m": 3640,
+          "water": "有(溪流)",
+          "capacity": "约20-30顶帐篷"
+        },
+        {
+          "name": "无名营地",
+          "km": 38,
+          "altitude_m": 3580,
+          "water": "有(溪流)",
+          "capacity": "约30顶帐篷"
+        },
+        {
+          "name": "观音石营地",
+          "km": 55,
+          "altitude_m": 3590,
+          "water": "有(草甸溪水)",
+          "capacity": "约20顶帐篷"
+        }
+      ],
+      "huts": [
+        "扎尕那东哇村藏家客栈(床位¥80-120)",
+        "安子库牧民家(可借宿)"
+      ],
+      "camping_restriction": "全程可自由扎营(靠近水源处)，建议在已有营地扎营，保护草甸",
+      "signal_coverage": "移动 扎尕那村有4G，进入徒步路线后80%路段无信号 / 电信 同移动 / 联通 基本无信号",
+      "signal_dead_zones": "扎尕那出发后约2km至大峪沟前(全程4-5天徒步)，仅安子库偶有微弱信号",
+      "last_signal_point": "扎尕那村出发前",
+      "route_variants": [
+        "3日短线(扎尕那→冬才→安子库→大峪沟)",
+        "4日标准(经典版)",
+        "5日摄影版(含休整日)"
+      ],
+      "variant_differences": "3日约50km/爬升2500m；4日约70km/爬升3200m；5日含安子库休整半日",
+      "distance_km_v5": 70,
+      "distance_note": "v5标注70km(扎尕那-大峪沟)，搜索攻略确认约65-80km(不同走法)，数据合理",
+      "verification_sources": [
+        "Columbia户外路线PDF(columbiasports.cn)",
+        "域龙旅行社(xizanglvyou.org)",
+        "知乎(zlhuanlan.zhihu.com)攻略"
+      ],
+      "confidence": "A",
+      "name_en": "Yading Great Circumambulation"
+    },
+    {
+      "route_id": "hk_004",
+      "name_zh": "格聂大环线",
+      "mode": "hiking",
+      "season_status": "最佳7-10月(7-8月花海天花板，9-10月秋色)；6月中旬-7月中旬花季；11-5月高海拔垭口积雪不建议",
+      "water_points": [
+        "冷达营地(靠近新冷古寺水源)",
+        "夯达营地(格聂南坡下方，水源充足)",
+        "热梯河谷营地(河谷水源)",
+        "格木村(村民水源)",
+        "哈日沟(终点段涉水过河)"
+      ],
+      "retreat_points": [
+        "理塘县城(起点/终点可撤回成都)",
+        "冷古寺(可乘景区车返回理塘)",
+        "格木村(有公路经巴塘撤回理塘)",
+        "安久村(终点公路直达理塘)"
+      ],
+      "risk_tags": [
+        "超高高海拔(翻越4个5000m+垭口,最高5014m)",
+        "4980垭口碎石坡极其难走",
+        "天气多变(冰雹/暴雨/狂风常见，下午常变天)",
+        "涉水过河(热梯河/哈日沟需涉水)",
+        "牦牛攻击可能(牧区牛群围堵)",
+        "信号盲区(全程80%无信号)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "理塘县人民医院距格聂入口约70km/2h车程；徒步中段(冷达→热梯→格木)无公路，严重事故需骑马或直升机救援；格木村有村民电话可联系车辆；商业队配备卫星电话",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需在理塘县林业部门办理进山许可，必须租赁有资质向导和马帮；或通过商业队报名(含许可证办理)",
+      "regulation_note": "格聂景区属自然保护区，个人无向导进山可能被劝返；商业队统一办理手续(费用约¥5280-5880含成都起止)",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "成都→理塘(班车约9h/¥200)或稻城机场→理塘(包车约3h/¥400)；理塘→冷古寺(包车约2h/¥300)",
+      "return_from_endpoint": "安久村→理塘(当地小车约2h)；理塘→成都(班车或拼车约¥280/9h)",
+      "nearest_city": "理塘县城(距徒步起点冷达约50km)",
+      "nearest_transport_hub": "稻城亚丁机场(距理塘约200km/4h)；成都双流机场(约650km/2天交通)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "冷达营地约3800m",
+        "max": "拉普垭口约4980m",
+        "end": "安久村约3800m"
+      },
+      "cumulative_elevation": 3500,
+      "campsites": [
+        {
+          "name": "冷达营地",
+          "km": 0,
+          "altitude_m": 3800,
+          "water": "有(溪流)",
+          "capacity": "约30顶帐篷"
+        },
+        {
+          "name": "夯达营地",
+          "km": 13,
+          "altitude_m": 4100,
+          "water": "有(河谷)",
+          "capacity": "约20顶帐篷"
+        },
+        {
+          "name": "热梯营地",
+          "km": 28,
+          "altitude_m": 4200,
+          "water": "有(热梯河谷)",
+          "capacity": "约30顶帐篷"
+        },
+        {
+          "name": "格木村",
+          "km": 50,
+          "altitude_m": 4000,
+          "water": "有(村庄水源)",
+          "capacity": "室内住宿+帐篷"
+        }
+      ],
+      "huts": [
+        "格木村藏家(室内地铺，约¥100/人)",
+        "热梯营地商业队大帐篷"
+      ],
+      "camping_restriction": "仅指定营地可扎营(冷达/夯达/热梯/格木)；草甸区域需保护植被",
+      "signal_coverage": "移动 理塘→冷古寺有信号，进入徒步路线全程无信号/电信 同移动/联通 全程无信号",
+      "signal_dead_zones": "冷达营地→夯达→热梯→格木→安久村(全程5天无信号)",
+      "last_signal_point": "冷古寺(出发前)/安久村(出山后)",
+      "route_variants": [
+        "格聂C线(大环，7-9天)",
+        "格聂外转(更野/冰川石林，10天+)"
+      ],
+      "variant_differences": "C线约80km/翻越4个垭口；外转更长更野含冰川路段",
+      "distance_km_v5": 80,
+      "distance_note": "v5标注80km，搜索攻略确认C线约70-90km(不同走法)，数据合理",
+      "verification_sources": [
+        "携程游记(ctrip.com)",
+        "两步路(2bulu.com)日记",
+        "知乎专栏(zlhuanlan.zhihu.com)"
+      ],
+      "confidence": "A",
+      "name_en": "Tanainaweng Traverse"
+    },
+    {
+      "route_id": "hk_005",
+      "name_zh": "南太行徒步",
+      "mode": "hiking",
+      "season_status": "最佳4-6月、9-11月(春秋气候宜人)；7-8月雨季挂壁公路落石风险加倍需谨慎；12-2月可行但夜间低温(可至8°C以下)",
+      "water_points": [
+        "双底村(起点，客栈补给)",
+        "马武寨村(客栈补给，有水源)",
+        "西莲村(瀑布/深潭水源，客栈补给)",
+        "张沟村(客栈补给)",
+        "营盘村/王莽岭(客栈补给)",
+        "郭亮村(终点，景区商业完善)"
+      ],
+      "retreat_points": [
+        "双底村(可包车撤回新乡市，100km/2h)",
+        "马武寨村(村村通公路可下撤至辉县)",
+        "西莲村(有观光电梯和公路接驳)",
+        "沿途多个村落均可就近下撤至公路"
+      ],
+      "risk_tags": [
+        "挂壁公路落石(雨天风险加倍，部分隧道无照明)",
+        "部分路段陡峭需手脚并用(抱犊村-西莲段)",
+        "密林灌木刮伤(需穿冲锋衣/长裤)",
+        "岔路多易迷路(部分路段无路标)",
+        "假日客栈紧张(五一/国庆需提前预订)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "全程沿线村落密集(双底/马武寨/西莲/张沟/营盘/郭亮)，村村通公路可通行；距辉县市人民医院约40-80km(不同段)；郭亮村为景区有完善交通；多名间客栈老板可协助联系救援车辆",
+      "distance_km_v5": 80,
+      "distance_note": "v5标注80km(双底村-郭亮村)，搜索攻略确认80-90km(不同走法有差异)，数据合理",
+      "verification_sources": [
+        "两步路社区(2bulu.com)详细攻略",
+        "游侠客(youxiake.com)线路页"
+      ],
+      "confidence": "A",
+      "access_status": "开放（大部分为已开发景区，部分野路段需向导）",
+      "permit_required": null,
+      "permit_how": "穿越各景区需购票（万仙山/八里沟/天界山等，累计约100-200元）",
+      "regulation_note": "部分路段穿越景区（万仙山/八里沟/天界山）需购票；郭亮挂壁公路为单向通行；旺季人多",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "双底村（晋城市陵川县），G342国道+S331省道可达，新乡包车约2小时",
+      "return_from_endpoint": "郭亮村/南坪有班车至辉县市→新乡，或王莽岭包车至晋城",
+      "nearest_city": "河南省辉县市/山西省陵川县",
+      "nearest_transport_hub": "新乡东站（高铁站，距起点约80km）/长治王村机场",
+      "elevation_profile": [],
+      "key_altitude_points": {},
+      "cumulative_elevation": 0,
+      "campsites": [],
+      "huts": [],
+      "camping_restriction": "景区内禁止露营（有客栈住宿）；野外路段可用帐篷",
+      "signal_coverage": "移动：沿线大部分区域有4G信号（村落和公路附近），峡谷深处信号弱；电信：同移动；联通：信号较弱",
+      "signal_dead_zones": "抱犊村至西莲寺段部分无信号，七星潭峡谷深处无信号",
+      "last_signal_point": "沿线村庄（如双底村/马武寨/抱犊村/郭亮村均有信号）",
+      "route_variants": [],
+      "variant_differences": "",
+      "name_en": "Mt Kailash Kora"
+    },
+    {
+      "route_id": "hk_006",
+      "name_zh": "夏特古道",
+      "mode": "hiking",
+      "season_status": "景区段(夏塔温泉-木扎尔特冰川)5-10月开放，最佳6-8月；全穿越(昭苏-温宿)已因多次遇难事故被禁止，不建议尝试；11-4月关闭",
+      "water_points": [
+        "夏塔温泉(起点，景区补给)",
+        "将军桥(景区补给点)",
+        "木扎尔特冰川融水河流(需过滤煮沸，早晨水量最小)",
+        "沿途多条溪流(冰川消融水)"
+      ],
+      "retreat_points": [
+        "夏塔乡(起点可撤回昭苏县)",
+        "景区区间车沿线(将军桥/鲜花台均可乘车返回)",
+        "全穿越段无有效撤退点(冰川段无法折返，需坚持到温宿侧)"
+      ],
+      "risk_tags": [
+        "全穿越已禁止(多次遇难事故,冰川段不可通行)",
+        "冰川融水过河危险(水量随气温变化,早晨水量最小)",
+        "木扎尔特冰川(冰裂缝、落冰)",
+        "侧攀路段需绳索保护(需100m登山绳)",
+        "高海拔(翻越冰川垭口)",
+        "冻伤/失温风险(冰川段气候恶劣)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "已禁穿。景区段救援方便为良好；全穿越段冰川地形+无信号为困难",
+      "distance_km_v5": 100,
+      "distance_note": "v5标注100km(夏塔乡-破城子全穿越)。但当前该线已全面禁止穿越，仅开放景区段(温泉-冰川，单程约12km)",
+      "verification_sources": [
+        "apple-trip.com夏塔古道攻略",
+        "游侠客(youxiake.com)攻略",
+        "Trip.com(trip.com)景区指南",
+        "多家来源确认全线已禁穿"
+      ],
+      "confidence": "A",
+      "access_status": "限制（2023年起需向阿克苏边境管理支队报备，需边防证）",
+      "permit_required": null,
+      "permit_how": "⚠️ 夏特古道已禁穿。夏塔景区游览无需许可，全穿越需阿克苏边境管理站+新疆文旅厅双重审批",
+      "regulation_note": "⚠️ 夏特古道已被正式列入禁穿线路（新疆文旅厅2023年公告），擅自穿越违法。南坡需经温宿县边境管理站许可，个人极难获批。建议改走夏塔景区内短途线路。",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "北入口：昭苏县夏塔景区大门（S237省道直达，门票40元）",
+      "return_from_endpoint": "南坡温宿县博孜墩乡→温宿→阿克苏（需越野车接，路况极差）",
+      "nearest_city": "昭苏县（北入口约75km）/温宿县（南出口约100km）",
+      "nearest_transport_hub": "伊宁机场（距北入口约200km）/阿克苏机场（距南出口约300km）",
+      "elevation_profile": [],
+      "key_altitude_points": {},
+      "cumulative_elevation": 0,
+      "campsites": [],
+      "huts": [],
+      "camping_restriction": "景区内限定区域可露营；全穿越段木扎尔特冰川禁止扎营",
+      "signal_coverage": "移动：夏塔景区大门至温泉（约30km）有断续信号，翻越木扎尔特达坂后全程无信号；电信/联通：无信号",
+      "signal_dead_zones": "木扎尔特冰川区域全程无信号，南坡峡谷全程无信号（约40km）",
+      "last_signal_point": "夏塔温泉（约海拔2400m）",
+      "route_variants": [],
+      "variant_differences": "",
+      "name_en": "South Taihang Trek"
+    },
+    {
+      "route_id": "hk_007",
+      "name_zh": "贡嘎大环线",
+      "mode": "hiking",
+      "season_status": "最佳5-6月(杜鹃花)、9-10月(秋高气爽)；7-8月雨季过河难度高；11-4月垭口积雪不建议",
+      "water_points": [
+        "格西草原(溪流水源)",
+        "两岔河(河水水源)",
+        "上日乌且营地(冰川融水)",
+        "莫溪沟尾/勒多曼因BC(冰湖水源)",
+        "贡嘎寺(水源)",
+        "下子梅村(补水)",
+        "巴王海(湖泊水源)"
+      ],
+      "retreat_points": [
+        "老榆林电站(起点可撤回康定)",
+        "两岔河(可沿路下撤至康定)",
+        "上日乌且(可雇马下撤)",
+        "贡嘎寺/子梅村(有公路可通车至上木居/康定)",
+        "草科乡(终点有公路回成都)"
+      ],
+      "risk_tags": [
+        "高海拔(日乌且垭口4830m/日达曼4980m)",
+        "过河风险(莫溪沟多条河流，夏季水量大)",
+        "日乌且垭口碎石坡(陡峭滑坠风险)",
+        "2025年11月起子梅垭口封闭管理(违规进入有法律风险)",
+        "天气多变(高原小气候，午后常起风雨)",
+        "大部分路段无手机信号"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "起点老榆林距康定市人民医院约30km/1h；终点草科距石棉县医院约60km/1.5h；贡嘎寺/子梅村有公路可通至康定；徒步中间段(日乌且-莫溪沟)远离公路，救援需马队或直升机；商业队配备卫星电话",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需在康定办理边防证(康定公安局)；自2025年11月20日起子梅垭口等区域封闭管理，保护区穿越须提前提交书面申请获批",
+      "regulation_note": "2025年11月康定市政府公告：贡嘎山镇那玛峰、子梅垭口等未开发区域封闭；四川贡嘎山国家级自然保护区穿越须经批准，违者依法追责",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "成都→康定(大巴约5h/¥120)→老榆林(打车¥60/40min)→电站(徒步起点)",
+      "return_from_endpoint": "草科乡→石棉(班车¥30/1h)→成都(大巴¥100/4h)；或从子梅村直接包车回康定(¥500/3h)",
+      "nearest_city": "康定市(距起点老榆林约20km)",
+      "nearest_transport_hub": "成都双流机场(约330km/5h车程)；康定机场(约80km/2h)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "格西草原约3400m",
+        "max": "日达曼垭口约4980m",
+        "end": "草科乡约1500m"
+      },
+      "cumulative_elevation": 3700,
+      "campsites": [
+        {
+          "name": "格西草原营地",
+          "km": 3,
+          "altitude_m": 3400,
+          "water": "有(溪流)",
+          "capacity": "约30顶帐篷"
+        },
+        {
+          "name": "上日乌且营地",
+          "km": 22,
+          "altitude_m": 4350,
+          "water": "有(冰川融水)",
+          "capacity": "约25顶帐篷"
+        },
+        {
+          "name": "莫溪沟尾营地",
+          "km": 40,
+          "altitude_m": 4100,
+          "water": "有(冰湖)",
+          "capacity": "约30顶帐篷"
+        }
+      ],
+      "huts": [
+        "贡嘎寺(木板床位)",
+        "上子梅村/下子梅村藏家(床位¥50-80)"
+      ],
+      "camping_restriction": "除贡嘎寺/子梅村外全程野外扎营；保护区内需无痕露营",
+      "signal_coverage": "移动 老榆林/草科有4G，徒步全程80%无信号 / 电信 同移动 / 联通 大部分无信号",
+      "signal_dead_zones": "格西草原→日乌且垭口→莫溪沟(4-5天无信号)，贡嘎寺偶有微弱信号",
+      "last_signal_point": "老榆林电站(出发前)/子梅村(回归公路前)",
+      "route_variants": [
+        "7日标准(老榆林→日乌且垭口→贡嘎寺→草科)",
+        "5日精简(老榆林→盘盘山垭口→玉龙西)"
+      ],
+      "variant_differences": "7日约75km/爬升3700m；5日约55km/爬升2500m",
+      "distance_km_v5": 80,
+      "distance_note": "v5标注80km，百度百科显示约70-80km，数据合理",
+      "verification_sources": [
+        "百度百科(baike.baidu.com)",
+        "两步路(2bulu.com)活动页",
+        "康定市政府封闭管理公告(2025-11-20)",
+        "知乎专栏(zlhuanlan.zhihu.com)"
+      ],
+      "confidence": "A",
+      "name_en": "Daocheng Yading Trek"
+    }
+  ]
+}

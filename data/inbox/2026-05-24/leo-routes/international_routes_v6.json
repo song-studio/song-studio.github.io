@@ -1,0 +1,653 @@
+{
+  "gl_mount_kilimanjaro_010": {
+    "route_id": "gl_mount_kilimanjaro_010",
+    "name_zh": "乞力马扎罗马切梅路线",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 62,
+      "source_note": "登山路线,距离为近似值",
+      "confidence": "medium"
+    },
+    "elevation_gain_m": {
+      "value": 4200,
+      "source_note": "累计爬升,含冲顶段",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 5895,
+      "source_note": "峰顶海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-10月(旱季)",
+      "feasible": "全年",
+      "closed": "雨季登顶率低",
+      "note": "乞力马扎罗旱季最佳"
+    },
+    "water_points": [
+      "各营地有蓄水",
+      "BC营地水源",
+      "冰川融水(需净化)"
+    ],
+    "water_note": "冰川融水需净化;BC有供水",
+    "retreat_points": [
+      "可原路返回",
+      "BC可下撤"
+    ],
+    "retreat_note": "各营地均可下撤至BC",
+    "risk_tags": [
+      "下降段雨林湿热",
+      "AMS(急性高反)",
+      "顶峰-20°C",
+      "技术攀登",
+      "天气变化"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "5895m海拔级登山,难度中级,需专业登山装备和向导",
+    "emergency": {
+      "nearest_hospital": "最近城镇医院(待补)",
+      "nearest_road": "大本营通山路",
+      "signal": "BC有卫星通信",
+      "rescue_phone": "当地登山协会",
+      "access": "困难"
+    }
+  },
+  "gl_mount_fuji_007": {
+    "route_id": "gl_mount_fuji_007",
+    "name_zh": "富士山吉田路线",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 8,
+      "source_note": "登山路线,距离为近似值",
+      "confidence": "medium"
+    },
+    "elevation_gain_m": {
+      "value": 1470,
+      "source_note": "累计爬升,含冲顶段",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 3776,
+      "source_note": "峰顶海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "7-9月",
+      "feasible": "7-9月",
+      "closed": "10-6月",
+      "note": "富士山7-9月开放登山"
+    },
+    "water_points": [
+      "五合目购买",
+      "山间小屋可买(高价)",
+      "BC营地水源",
+      "冰川融水(需净化)"
+    ],
+    "water_note": "冰川融水需净化;BC有供水",
+    "retreat_points": [
+      "各合目可下山",
+      "BC可下撤"
+    ],
+    "retreat_note": "各营地均可下撤至BC",
+    "risk_tags": [
+      "低温",
+      "雷暴",
+      "高反(3776m)",
+      "技术攀登",
+      "天气变化"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 1,
+    "difficulty_reason": "3776m海拔级登山,难度初级,需专业登山装备和向导",
+    "emergency": {
+      "nearest_hospital": "最近城镇医院(待补)",
+      "nearest_road": "大本营通山路",
+      "signal": "BC有卫星通信",
+      "rescue_phone": "当地登山协会",
+      "access": "困难"
+    }
+  },
+  "gl_hiking_inca_004": {
+    "route_id": "gl_hiking_inca_004",
+    "name_zh": "印加古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 42,
+      "source_note": "官方标称42km(Piscacucho-太阳门-马丘比丘)",
+      "method": "维基百科/官方"
+    },
+    "elevation_gain_m": {
+      "value": 2800,
+      "source_note": "累爬约2800m(翻死女人山口4215m)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 4215,
+      "source_note": "死女人山口(Dead Woman Pass)4215m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-9月(旱季)",
+      "feasible": "4-10月",
+      "closed": "11-3月(雨季关闭)",
+      "note": "11-3月雨季关闭维护",
+      "source": "维基百科"
+    },
+    "water_points": [
+      "沿途营地(溪流需净化)",
+      "Wiñay Wayna(水源)"
+    ],
+    "retreat_points": [
+      "KM82起点(可撤回)",
+      "马丘比丘(终点)"
+    ],
+    "risk_tags": [
+      "高反(4215m)",
+      "雨季(11-3月封闭)",
+      "湿热",
+      "需提前数月预订Permit"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "42km/4天/翻4215m垭口/印加遗址/需许可",
+    "emergency": {
+      "nearest_hospital": "乌鲁班巴(Urubamba)医院",
+      "access": "一般(轨道路线)"
+    }
+  },
+  "gl_hiking_abc_002": {
+    "route_id": "gl_hiking_abc_002",
+    "name_zh": "安纳普尔娜大本营徒步(ABC)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 115,
+      "source_note": "博卡拉-Nayapul-ABC-博卡拉约105-120km",
+      "method": "维基百科/LP"
+    },
+    "elevation_gain_m": {
+      "value": 3800,
+      "source_note": "累爬约3800m(含ABC 4130m)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4130,
+      "source_note": "安纳普尔娜大本营4130m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-11月,3-4月",
+      "feasible": "全年",
+      "closed": "无(但雨季云雾多)",
+      "note": "春秋最佳;雨季(6-9月)云雾多",
+      "source": "维基百科"
+    },
+    "water_points": [
+      "沿途茶馆密集(every 1-2h)",
+      "客栈可补水"
+    ],
+    "retreat_points": [
+      "Nayapul(起点)",
+      "沿途大量村庄可撤"
+    ],
+    "risk_tags": [
+      "高反(4130m)",
+      "下午云雾(雨季)",
+      "阶梯多(3300级台阶)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "115km/7-10天/茶馆路线/成熟/高海拔",
+    "emergency": {
+      "nearest_hospital": "博卡拉(Pokhara)医院",
+      "access": "良好"
+    }
+  },
+  "gl_hiking_kumano_005": {
+    "route_id": "gl_hiking_kumano_005",
+    "name_zh": "熊野古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 75,
+      "source_note": "中边路全程(Takijiri-Hongu约75km)",
+      "method": "UNESCO"
+    },
+    "elevation_gain_m": {
+      "value": 3500,
+      "source_note": "累爬约3500m(山地起伏)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 1100,
+      "source_note": "最高点约1100m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "4-5月(樱),10-11月(红叶)",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "春秋最佳;夏季湿热有蚂蟥;8-9月台风",
+      "source": "UNESCO/日本旅游"
+    },
+    "water_points": [
+      "沿途村落(自动售货机)",
+      "温泉酒店"
+    ],
+    "retreat_points": [
+      "沿途公交车站(可随时退出)",
+      "熊野本宫大社"
+    ],
+    "risk_tags": [
+      "山蚂蟥(夏季)",
+      "台风(8-9月)",
+      "湿热(夏季)",
+      "台阶多"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "75km/4-6天/成熟古道/UNESCO世界遗产/公交可撤",
+    "emergency": {
+      "nearest_hospital": "田边市医院",
+      "access": "良好"
+    }
+  },
+  "gl_hiking_tmb_003": {
+    "route_id": "gl_hiking_tmb_003",
+    "name_zh": "环勃朗峰徒步(TMB)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 170,
+      "source_note": "官方TMB全程约170km(法意瑞三国)",
+      "method": "官方TMB路线"
+    },
+    "elevation_gain_m": {
+      "value": 10000,
+      "source_note": "累爬约10000m(含10个+垭口)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 2665,
+      "source_note": "Col de la Seigne/Col du Bonhomme约2665m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6月下旬-9月上旬",
+      "feasible": "5月下旬-10月中旬",
+      "closed": "10月下旬-5月中旬(大雪)",
+      "note": "7-8月旺季木屋需提前预订;6月尚有积雪",
+      "source": "官方TMB网站"
+    },
+    "water_points": [
+      "沿途小镇/山屋(密集补给)",
+      "山泉(需净化)"
+    ],
+    "retreat_points": [
+      "沿途小镇(公交/缆车可撤回)",
+      "Les Houches/Chamonix"
+    ],
+    "risk_tags": [
+      "高山冰雪",
+      "雷暴(7-8月午后)",
+      "长距离(170km)",
+      "大量爬升(10000m)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "170km/10-12天/累爬10000m/翻10+垭口/世界顶级徒步线",
+    "emergency": {
+      "nearest_hospital": "霞慕尼(Chamonix)医院",
+      "access": "良好"
+    }
+  },
+  "gl_hiking_ebc_001": {
+    "route_id": "gl_hiking_ebc_001",
+    "name_zh": "珠峰大本营徒步(EBC)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 130,
+      "source_note": "卢克拉-Lukla-EBC-Gokyo-卢克拉约130-150km(大环线)",
+      "method": "维基百科/LP"
+    },
+    "elevation_gain_m": {
+      "value": 5000,
+      "source_note": "累爬约5000m(含Kala Patthar 5545m)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5545,
+      "source_note": "Kala Patthar观景点5545m(EBC本身5364m)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-11月,3-4月",
+      "feasible": "9-11月,2-5月",
+      "closed": "12-1月(严寒),6-8月(季风雨季)",
+      "note": "10-11月秋高气爽看峰最佳;3-4月春花开;12-1月极端寒冷",
+      "source": "LP/维基百科"
+    },
+    "water_points": [
+      "沿途茶馆(Lukla-Namche-EBC全线茶馆密集)",
+      "需买瓶装水或净化"
+    ],
+    "retreat_points": [
+      "卢克拉(起/终,可飞回加都)",
+      "Namche Bazaar(直升机救援点)"
+    ],
+    "risk_tags": [
+      "AMS(急性高反,>3000m)",
+      "下午云层(遮挡雪山)",
+      "冬季大雪",
+      "卢克拉机场(世界最危险机场之一)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "130km/12-16天/最高5545m/茶馆路线/高反主要风险",
+    "emergency": {
+      "nearest_hospital": "加德满都(严重时需直升机)/Namche有诊所",
+      "access": "一般(需直升机救援)"
+    }
+  },
+  "gl_hiking_milford_008": {
+    "route_id": "gl_hiking_milford_008",
+    "name_zh": "米尔福德步道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 53.5,
+      "source_note": "官方标称53.5km(Glade Wharf-Sandfly Point)",
+      "method": "新西兰DOC官方"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累爬约1500m(翻MacKinnon Pass 1154m)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 1154,
+      "source_note": "MacKinnon Pass 1154m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-4月(新西兰夏)",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "新西兰夏季(10-4月)最佳;冬季可能有雪",
+      "source": "新西兰环保部"
+    },
+    "water_points": [
+      "沿途山屋(雨水收集)",
+      "溪流(需净化)"
+    ],
+    "retreat_points": [
+      "Glade Wharf(起点)",
+      "Sandfly Point(终点可坐船)"
+    ],
+    "risk_tags": [
+      "峡湾暴雨(年200天降雨)",
+      "沙蝇(夏季密集)",
+      "溪流涨水",
+      "需提前数月预订"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "53.5km/4天/新西兰Great Walk/成熟步道/主要问题是天气",
+    "emergency": {
+      "nearest_hospital": "蒂阿瑙(Te Anau)医院(约120km)",
+      "access": "良好(终点可坐船)"
+    }
+  },
+  "gl_cycling_taiwan_006": {
+    "route_id": "gl_cycling_taiwan_006",
+    "name_zh": "台湾环岛骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 900,
+      "source_note": "大环线约900-1000km(台北-台东-垦丁-台中-台北)",
+      "method": "台湾骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "累爬约6000m(含苏花/南回等山路)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 400,
+      "source_note": "台湾沿海公路海拔较低,山区路段除外",
+      "method": "地形"
+    },
+    "season": {
+      "best": "10-12月,3-4月",
+      "feasible": "全年",
+      "closed": "7-9月(台风季)",
+      "note": "秋冬春三季;夏季台风危险",
+      "source": "骑行攻略"
+    },
+    "water_points": [
+      "沿途便利店密集(7-11/全家)"
+    ],
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "中(苏花/东北角强风)",
+    "resupply_interval": "充足",
+    "risk_tags": [
+      "苏花公路落石",
+      "东北季风(冬季)",
+      "台风(7-9月)",
+      "车辆多"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "900km/8-12天/公路骑行/补给密集/难点在强风和落石",
+    "emergency": {
+      "access": "良好",
+      "nearest_hospital": "各大城镇医院",
+      "nearest_road": "全程公路",
+      "signal": "全程有信号"
+    }
+  },
+  "gl_cycling_shimanami_009": {
+    "route_id": "gl_cycling_shimanami_009",
+    "name_zh": "岛波海道骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 70,
+      "source_note": "尾道-今治约70km(跨6座大桥)",
+      "method": "日本官方"
+    },
+    "elevation_gain_m": {
+      "value": 500,
+      "source_note": "桥上坡起伏累计约500m",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 100,
+      "source_note": "跨海大桥高度",
+      "method": "地形"
+    },
+    "season": {
+      "best": "4-5月(樱),10-11月(红叶)",
+      "feasible": "3-11月",
+      "closed": "12-2月(寒冷)",
+      "note": "春秋最佳;夏季炎热",
+      "source": "日本观光"
+    },
+    "water_points": [
+      "各岛(休息站/便利店)",
+      "大桥服务区"
+    ],
+    "surface_mix": "柏油100%",
+    "crosswind_exposure": "高(跨海大桥风力大)",
+    "resupply_interval": "充足",
+    "risk_tags": [
+      "台风(7-9月)",
+      "冬季寒冷",
+      "大桥侧风"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 1,
+    "difficulty_reason": "70km/跨6桥/日本休闲骑行/难度低/风景优美",
+    "emergency": {
+      "access": "良好"
+    }
+  },
+  "intl_act": {
+    "name_zh": "安娜普尔纳大环线(ACT)",
+    "name_en": "Annapurna Circuit Trek",
+    "country": "尼泊尔",
+    "distance_km": 170,
+    "max_altitude_m": 5416,
+    "season": "10-11月,3-4月"
+  },
+  "intl_langtang": {
+    "name_zh": "郎当徒步(Langtang)",
+    "name_en": "Langtang Valley Trek",
+    "country": "尼泊尔",
+    "distance_km": 75,
+    "max_altitude_m": 4984,
+    "season": "10-11月,3-4月"
+  },
+  "intl_north_alps": {
+    "name_zh": "北阿尔卑斯纵走",
+    "name_en": "North Alps Traverse",
+    "country": "日本",
+    "distance_km": 120,
+    "max_altitude_m": 3190,
+    "season": "7-9月"
+  },
+  "intl_av1": {
+    "name_zh": "多洛米蒂Alta Via 1",
+    "name_en": "Dolomites Alta Via 1",
+    "country": "意大利",
+    "distance_km": 120,
+    "max_altitude_m": 2752,
+    "season": "6月下旬-9月中旬"
+  },
+  "intl_west_highland": {
+    "name_zh": "西高地之路",
+    "name_en": "West Highland Way",
+    "country": "英国",
+    "distance_km": 154,
+    "max_altitude_m": 850,
+    "season": "5-9月"
+  },
+  "intl_camino": {
+    "name_zh": "圣地亚哥朝圣之路(最后100km)",
+    "name_en": "Camino de Santiago French Way",
+    "country": "西班牙",
+    "distance_km": 100,
+    "max_altitude_m": 1200,
+    "season": "4-10月"
+  },
+  "intl_torres_w": {
+    "name_zh": "百内国家公园W线",
+    "name_en": "Torres del Paine W Trek",
+    "country": "智利",
+    "distance_km": 75,
+    "max_altitude_m": 1200,
+    "season": "10-4月"
+  },
+  "intl_patagonia_o": {
+    "name_zh": "百内国家公园O线",
+    "name_en": "Torres del Paine O Circuit",
+    "country": "智利",
+    "distance_km": 130,
+    "max_altitude_m": 1400,
+    "season": "10-4月"
+  },
+  "intl_mt_kenya": {
+    "name_zh": "肯尼亚山(Naro Moru路线)",
+    "name_en": "Mt Kenya Naro Moru Route",
+    "country": "肯尼亚",
+    "distance_km": 35,
+    "max_altitude_m": 4985,
+    "season": "6-10月"
+  },
+  "intl_jmt": {
+    "name_zh": "约翰缪尔径精华段",
+    "name_en": "John Muir Trail JMT",
+    "country": "美国",
+    "distance_km": 340,
+    "max_altitude_m": 4410,
+    "season": "7-9月"
+  },
+  "intl_pct_highlight": {
+    "name_zh": "太平洋屋脊径Sierra段",
+    "name_en": "PCT Sierra Section",
+    "country": "美国",
+    "distance_km": 200,
+    "max_altitude_m": 4000,
+    "season": "7-8月"
+  },
+  "intl_half_dome": {
+    "name_zh": "优胜美地半穹顶",
+    "name_en": "Yosemite Half Dome",
+    "country": "美国",
+    "distance_km": 23,
+    "max_altitude_m": 2695,
+    "season": "5-10月"
+  },
+  "intl_kinabalu": {
+    "name_zh": "京那巴鲁山",
+    "name_en": "Mt Kinabalu",
+    "country": "马来西亚",
+    "distance_km": 8,
+    "max_altitude_m": 4095,
+    "season": "3-9月"
+  },
+  "intl_rinjani": {
+    "name_zh": "林贾尼山",
+    "name_en": "Mt Rinjani",
+    "country": "印尼",
+    "distance_km": 25,
+    "max_altitude_m": 3726,
+    "season": "4-11月"
+  },
+  "intl_gr20": {
+    "name_zh": "GR20科西嘉",
+    "name_en": "GR20 Corsica",
+    "country": "法国",
+    "distance_km": 180,
+    "max_altitude_m": 2606,
+    "season": "6月下旬-9月中旬"
+  },
+  "intl_overland_track": {
+    "name_zh": "陆上步道(Overland Track)",
+    "name_en": "Overland Track Tasmania",
+    "country": "澳大利亚",
+    "distance_km": 65,
+    "max_altitude_m": 1615,
+    "season": "10-4月"
+  },
+  "intl_fitz_roy": {
+    "name_zh": "菲茨罗伊峰徒步",
+    "name_en": "Mt Fitz Roy Trek",
+    "country": "阿根廷",
+    "distance_km": 25,
+    "max_altitude_m": 1200,
+    "season": "10-4月"
+  },
+  "intl_mt_batur": {
+    "name_zh": "巴杜尔火山日出徒步",
+    "name_en": "Mt Batur Sunrise",
+    "country": "印尼",
+    "distance_km": 6,
+    "max_altitude_m": 1717,
+    "season": "4-10月"
+  },
+  "intl_tongariro": {
+    "name_zh": "汤加里罗越山步道",
+    "name_en": "Tongariro Alpine Crossing",
+    "country": "新西兰",
+    "distance_km": 19.4,
+    "max_altitude_m": 1886,
+    "season": "11-4月"
+  },
+  "intl_calabria": {
+    "name_zh": "众神之路(阿马尔菲)",
+    "name_en": "Path of the Gods",
+    "country": "意大利",
+    "distance_km": 8,
+    "max_altitude_m": 600,
+    "season": "4-6月,9-10月"
+  }
+}

@@ -1,0 +1,2602 @@
+{
+  "version": "v7_decision_fields",
+  "generated_at": "2026-05-24T10:15+08:00",
+  "summary": {
+    "total": 103,
+    "modes": {
+      "mountaineering": 22,
+      "motorcycle": 12,
+      "cycling": 24,
+      "hiking": 45
+    }
+  },
+  "routes": [
+    {
+      "route_id": "ma_017",
+      "name_zh": "卓奥友峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "卓奥友峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "ma_020",
+      "name_zh": "启孜峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "启孜峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "ma_021",
+      "name_zh": "姜桑拉姆峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "姜桑拉姆峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "ma_019",
+      "name_zh": "宁金抗沙峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "宁金抗沙峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "ma_018",
+      "name_zh": "希夏邦马峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "希夏邦马峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "ma_022",
+      "name_zh": "库拉岗日主峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "库拉岗日主峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "214滇藏线摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "214滇藏线摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_009",
+      "name_zh": "219新藏线摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "219新藏线摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_006",
+      "name_zh": "317川藏北线摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "317川藏北线摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_007",
+      "name_zh": "318川藏南线摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "318川藏南线摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_011",
+      "name_zh": "丙察察线摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "丙察察线摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_013",
+      "name_zh": "伊犁河谷摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "伊犁河谷摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_014",
+      "name_zh": "喀喇昆仑公路摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "喀喇昆仑公路摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_012",
+      "name_zh": "川西大环线摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "川西大环线摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_015",
+      "name_zh": "海南环岛摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "海南环岛摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_016",
+      "name_zh": "滇缅公路摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "滇缅公路摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_010",
+      "name_zh": "独库公路摩旅",
+      "mode": "motorcycle",
+      "decision_summary_zh": "独库公路摩旅, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "mc_017",
+      "name_zh": "黔东南摩旅环线",
+      "mode": "motorcycle",
+      "decision_summary_zh": "黔东南摩旅环线, 长途摩旅路线",
+      "go_no_go_factors": [
+        "🟢 查沿途加油站间距",
+        "🟢 避开冬季高海拔封路",
+        "🔴 冰雪路面不可走"
+      ],
+      "best_window": "5-10月",
+      "hard_stop_rules": [
+        "⚠️ 油量不足半箱→进站加油",
+        "⚠️ 冰雪/暴雨→暂停"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "部分边境路线需边防证",
+      "rescue_reality_zh": "国道沿线有维修点，但偏远高海拔路段救援困难",
+      "signal_reality_zh": "国道大部分有信号，偏远段弱",
+      "water_reliability": "high",
+      "camping_reality_zh": "沿途有旅馆，也可露营",
+      "who_should_avoid_zh": "无长途摩旅经验者、车辆故障频发者",
+      "road_condition_note": "国道/省道为主",
+      "fuel_stations": "平均每100-150km有加油站，偏远段需自备油桶",
+      "repair_access": "县城有修车店，乡镇普遍无摩修"
+    },
+    {
+      "route_id": "cy_001",
+      "name_zh": "丝绸之路骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "丝绸之路骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 1100,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_002",
+      "name_zh": "京杭大运河骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "京杭大运河骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 1800,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_003",
+      "name_zh": "大香格里拉环线骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "大香格里拉环线骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 1500,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_004",
+      "name_zh": "川藏北线(317国道)骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "川藏北线(317国道)骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 2350,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_005",
+      "name_zh": "川藏南线(318国道)骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "川藏南线(318国道)骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 2150,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_006",
+      "name_zh": "川西小环线骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "川西小环线骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 900,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_007",
+      "name_zh": "广西沿边公路骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "广西沿边公路骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 725,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_008",
+      "name_zh": "新藏线骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "新藏线骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 2850,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_009",
+      "name_zh": "沿312国道上海至乌鲁木齐",
+      "mode": "cycling",
+      "decision_summary_zh": "沿312国道上海至乌鲁木齐, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 3900,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_010",
+      "name_zh": "滇藏线骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "滇藏线骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 2325,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_011",
+      "name_zh": "环海南岛骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "环海南岛骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 800,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "cy_012",
+      "name_zh": "环青海湖骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "环青海湖骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 360,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "hk_013",
+      "name_zh": "玉虚峰徒步",
+      "decision_summary_zh": "玉虚峰徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_014",
+      "name_zh": "长白山南坡穿越",
+      "decision_summary_zh": "长白山南坡穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "千岛湖环湖骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "千岛湖环湖骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 150,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "台湾环岛骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "台湾环岛骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 940,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "张北草原天路骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "张北草原天路骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 132,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "独库公路骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "独库公路骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 561,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "环太湖骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "环太湖骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 240,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "环洱海骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "环洱海骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 120,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "翁金线骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "翁金线骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 45,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "阿尔山骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "阿尔山骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 450,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "阿禾公路骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "阿禾公路骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 225,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "岛波海道骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "岛波海道骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 80,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "丙察察摩旅",
+      "mode": "cycling",
+      "decision_summary_zh": "丙察察摩旅, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 300,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "青藏线骑行",
+      "mode": "cycling",
+      "decision_summary_zh": "青藏线骑行, 长距离公路/混合路面骑行",
+      "go_no_go_factors": [
+        "🟢 查看沿途天气预报",
+        "🟢 避让大型运输车辆高峰",
+        "🔴 高海拔山区冬季封闭"
+      ],
+      "best_window": "5-10月为主窗口",
+      "hard_stop_rules": [
+        "⚠️ 横风＞7级停止骑行",
+        "⚠️ 连续暴雨→暂停等候"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可",
+      "rescue_reality_zh": "沿国道骑行较易获得救援，偏远路段需自行联系",
+      "signal_reality_zh": "国道路段大部分有信号，偏远路段信号弱",
+      "water_reliability": "high",
+      "water_note_zh": "沿途有村镇补给",
+      "camping_reality_zh": "沿途有旅馆住宿，也可扎营",
+      "who_should_avoid_zh": "体力不足者、未做高原适应者(高海拔路线)",
+      "road_condition_note": "柏油路为主",
+      "shoulder_note": "国道部分路段无路肩，注意安全",
+      "crosswind_risk": "一般",
+      "resupply_interval_km": 1950,
+      "climbing_intensity": "需具体路线分析",
+      "repair_points": "沿途县城有修车店，偏远路段自备工具"
+    },
+    {
+      "route_id": "hk_023",
+      "name_zh": "七藏沟徒步",
+      "decision_summary_zh": "高原海子徒步，翻越2个4200m+垭口",
+      "go_no_go_factors": [
+        "🟢 6-10月最佳，天气稳定可行",
+        "🟢 有马帮驮运可轻装",
+        "🔴 冬季冰雪封闭不可走",
+        "🔴 雨季(7-8月)溪水暴涨危险"
+      ],
+      "best_window": "6月(杜鹃海)/9-10月(秋色)，7-8月雨季避开",
+      "hard_stop_rules": [
+        "连续3天中雨以上取消",
+        "队员出现高反症状立即下撤至草海(3300m)",
+        "河流水位超过膝盖停止前进"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "无需特殊许可证",
+      "rescue_reality_zh": "无专业救援队，靠松潘县消防（距沟口3h车程）。建议买户外保险并雇向导",
+      "signal_reality_zh": "沟内大部分无信号，红星海子垭口间断有移动4G",
+      "water_reliability": "high",
+      "water_note_zh": "沿途溪流众多，可直接饮用（建议消毒）",
+      "camping_reality_zh": "卡卡沟口/长海子/草海子有成熟营地，鱼海子也可扎营",
+      "who_should_avoid_zh": "无高海拔经验者、无向导者、雨季出行者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_029",
+      "name_zh": "乌孙古道",
+      "decision_summary_zh": "天山南北穿越，翻越琼达坂全程高海拔",
+      "go_no_go_factors": [
+        "🟢 6-9月可行",
+        "🟢 天堂湖绝美",
+        "🔴 冬季大雪封山",
+        "🔴 雨天琼达坂危险"
+      ],
+      "best_window": "7-8月最佳，9月入秋后夜间低温",
+      "hard_stop_rules": [
+        "❄️ 达坂积雪超过膝盖停止",
+        "🌊 过河水流超过大腿取消",
+        "🚑 有人出现失温症状立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "琼库什台有马帮，严重情况需直升救援（伊犁），至少6h响应",
+      "signal_reality_zh": "天山深处全程无信号，仅天堂湖附近偶有移动信号",
+      "water_reliability": "high",
+      "water_note_zh": "",
+      "camping_reality_zh": "琼库什台/包扎敦/天堂湖有固定营地，其余路段择地平缓处扎营",
+      "who_should_avoid_zh": "无重装经验者、恐高者、独行者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_043",
+      "name_zh": "亚丁大转山",
+      "decision_summary_zh": "亚丁大转山徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_001",
+      "name_zh": "他念他翁穿越",
+      "decision_summary_zh": "他念他翁穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_010",
+      "name_zh": "冈仁波齐转山",
+      "decision_summary_zh": "冈仁波齐转山，高海拔50km朝圣路线",
+      "go_no_go_factors": [
+        "🟢 5-10月最佳",
+        "🔴 11-4月冰雪封闭",
+        "🔴 海拔5600m+对心肺要求极高"
+      ],
+      "best_window": "6-9月，8月朝圣旺季",
+      "hard_stop_rules": [
+        "极度头痛/呕吐立即下撤至塔钦",
+        "气温低于-15°C+强风取消",
+        "积雪封路不可强行翻卓玛拉"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "塔钦有医疗站，重病需转阿里地区医院(4h车程)，直升救援极其昂贵",
+      "signal_reality_zh": "止热寺附近有信号，卓玛拉山口无信号",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "止热寺/尊珠寺有帐篷营地，不可随意扎营",
+      "who_should_avoid_zh": "心肺疾病者、无高海拔经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_005",
+      "name_zh": "南太行徒步",
+      "decision_summary_zh": "南太行徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_013",
+      "name_zh": "喀拉峻草原穿越",
+      "decision_summary_zh": "喀拉峻草原穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_022",
+      "name_zh": "墨脱徒步",
+      "decision_summary_zh": "墨脱徒步，翻越多雄拉山进藏",
+      "go_no_go_factors": [
+        "🟢 5-11月",
+        "🔴 12-4月大雪封山",
+        "🔴 蚂蟥区(6-8月)需注意"
+      ],
+      "best_window": "5-6月(花季)/9-10月(秋色)",
+      "hard_stop_rules": [
+        "多雄拉山风雨突变→不可强行翻越",
+        "蚂蟥多时考虑绕行"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "墨脱需边防证",
+      "rescue_reality_zh": "派镇/墨脱有卫生所，中途无救援。建议雇向导",
+      "signal_reality_zh": "全程大部分无信号，汗密/背崩有信号",
+      "water_reliability": "high",
+      "water_note_zh": "",
+      "camping_reality_zh": "拉格/汗密/背崩有客栈，不需帐篷",
+      "who_should_avoid_zh": "怕蚂蟥者、膝盖不好者(全程大下坡)",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_006",
+      "name_zh": "夏特古道",
+      "decision_summary_zh": "夏特古道徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_016",
+      "name_zh": "大五台顺穿",
+      "decision_summary_zh": "大五台顺穿徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_045",
+      "name_zh": "天山雪莲峰徒步",
+      "decision_summary_zh": "天山雪莲峰徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_011",
+      "name_zh": "太白南南穿越",
+      "decision_summary_zh": "太白南南穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_046",
+      "name_zh": "孟克德古道",
+      "decision_summary_zh": "孟克德古道徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_044",
+      "name_zh": "年保玉则穿越",
+      "decision_summary_zh": "年保玉则穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_037",
+      "name_zh": "库布齐沙漠穿越",
+      "decision_summary_zh": "库布齐沙漠穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_002",
+      "name_zh": "库拉岗日徒步",
+      "decision_summary_zh": "库拉岗日徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_008",
+      "name_zh": "徽杭古道",
+      "decision_summary_zh": "徽杭古道，入门级徒步穿越，一日可完成",
+      "go_no_go_factors": [
+        "🟢 全年可走，四季各有特色",
+        "🟢 适合新手的入门路线",
+        "🔴 暴雨天有滑坡风险"
+      ],
+      "best_window": "3-11月，避开12-2月冰雪",
+      "hard_stop_rules": [
+        "雨天路滑(青石板)注意防滑，非极端天气不需取消"
+      ],
+      "permit_level": "simple",
+      "permit_note_zh": "需购买景区门票(约60元)",
+      "rescue_reality_zh": "沿途有村落，手机信号全覆盖，救援响应快",
+      "signal_reality_zh": "全程4G信号全覆盖",
+      "water_reliability": "high",
+      "water_note_zh": "",
+      "camping_reality_zh": "沿线有客栈可住宿，不需帐篷",
+      "who_should_avoid_zh": "无（适合所有人）",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_003",
+      "name_zh": "扎尕那穿越",
+      "decision_summary_zh": "扎尕那穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_004",
+      "name_zh": "格聂大环线",
+      "decision_summary_zh": "格聂大环线徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_009",
+      "name_zh": "梅里北坡徒步",
+      "decision_summary_zh": "梅里北坡徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_014",
+      "name_zh": "雨崩徒步",
+      "decision_summary_zh": "雨崩徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_034",
+      "name_zh": "珠峰东坡徒步",
+      "decision_summary_zh": "珠峰东坡徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_007",
+      "name_zh": "贡嘎大环线",
+      "decision_summary_zh": "贡嘎大环线徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_012",
+      "name_zh": "虎跳峡高路徒步",
+      "decision_summary_zh": "虎跳峡高路徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_015",
+      "name_zh": "长穿毕",
+      "decision_summary_zh": "长穿毕徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_025",
+      "name_zh": "梅里外转",
+      "decision_summary_zh": "梅里外转徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_020",
+      "name_zh": "漓江徒步",
+      "decision_summary_zh": "漓江徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_026",
+      "name_zh": "喀纳斯环线",
+      "decision_summary_zh": "喀纳斯环线徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_027",
+      "name_zh": "党岭徒步",
+      "decision_summary_zh": "党岭徒步徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_030",
+      "name_zh": "箭扣长城",
+      "decision_summary_zh": "箭扣长城徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_031",
+      "name_zh": "武功山反穿",
+      "decision_summary_zh": "武功山高山草甸反穿，视野开阔",
+      "go_no_go_factors": [
+        "🟢 5-11月高山草甸绿色",
+        "🟢 可轻装沿途住客栈",
+        "🔴 冬季山顶-10°C+大风"
+      ],
+      "best_window": "6-9月(绿色草甸)/10-11月(金色草甸)",
+      "hard_stop_rules": [
+        "雷暴天气不可在山脊行走",
+        "6级以上大风→撤回客栈"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "成熟景区路线，沿途有村落救援方便",
+      "signal_reality_zh": "全程有信号，山脊部分路段弱",
+      "water_reliability": "high",
+      "water_note_zh": "",
+      "camping_reality_zh": "金顶/发云界有客栈帐篷，沈子村可补给",
+      "who_should_avoid_zh": "无（适合有基础体能的人）",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_042",
+      "name_zh": "洛克线",
+      "decision_summary_zh": "洛克线，木里至稻城横断腹地穿越",
+      "go_no_go_factors": [
+        "🟢 6-10月",
+        "🔴 11-5月大雪",
+        "🔴 海拔2400-4800m大跨度"
+      ],
+      "best_window": "9-10月(秋色)/6-7月(花海)",
+      "hard_stop_rules": [
+        "连续高反→迫降嘟噜村",
+        "暴雪→撤回木里"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "需办四川木里保护区准入+稻城亚丁门票",
+      "rescue_reality_zh": "嘟噜村有马帮，严重情况需木里县医院(距起点6h车程)",
+      "signal_reality_zh": "全程基本无信号，嘟噜村/冲古寺有信号",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "嘟噜/万花池/蛇湖有固定营地",
+      "who_should_avoid_zh": "无高海拔经验者、独行女性（建议结伴雇向导）",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_047",
+      "name_zh": "狼塔C+V线",
+      "decision_summary_zh": "狼塔C+V线，天山最虐徒步，极致强度",
+      "go_no_go_factors": [
+        "🟢 6-9月强驴专属",
+        "🔴 其他月份不可行"
+      ],
+      "best_window": "7-8月(融雪后/冬季前)",
+      "hard_stop_rules": [
+        "连续过河(台河)超过10次→撤回",
+        "天气突变+能见度不足50m→择地扎营"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "全程无人区，救援极端困难。建议卫星电话+GPS信标",
+      "signal_reality_zh": "全程无手机信号（需卫星电话）",
+      "water_reliability": "high",
+      "water_note_zh": "",
+      "camping_reality_zh": "沿途择地扎营，无固定营地",
+      "who_should_avoid_zh": "所有非强驴、无卫星通讯者、独行者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_035",
+      "name_zh": "鳌太穿越",
+      "decision_summary_zh": "鳌太穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_038",
+      "name_zh": "腾格里沙漠五湖连穿",
+      "decision_summary_zh": "腾格里沙漠五湖连穿徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_040",
+      "name_zh": "麦理浩径",
+      "decision_summary_zh": "麦理浩径十段，香港最长远足径",
+      "go_no_go_factors": [
+        "🟢 全年可走",
+        "🟢 交通便利随时可撤",
+        "🔴 夏季高温湿热"
+      ],
+      "best_window": "10-3月(凉爽)",
+      "hard_stop_rules": [
+        "酷暑警告(35°C+)→建议凌晨出发",
+        "台风预警→全部关闭"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "香港成熟郊野公园，999可到大部分路段",
+      "signal_reality_zh": "全程4G信号",
+      "water_reliability": "high",
+      "water_note_zh": "",
+      "camping_reality_zh": "沿途有合法营地和水源补给点",
+      "who_should_avoid_zh": "无",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_039",
+      "name_zh": "神农架老君山穿越",
+      "decision_summary_zh": "神农架老君山穿越徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_041",
+      "name_zh": "安纳普尔娜大本营徒步(ABC)",
+      "decision_summary_zh": "安纳普尔娜大本营徒步(ABC)徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_036",
+      "name_zh": "珠峰大本营徒步(EBC)",
+      "decision_summary_zh": "珠峰大本营(EBC)高海拔冰川徒步，往返14天",
+      "go_no_go_factors": [
+        "🟢 10-11月/3-5月最佳",
+        "🔴 6-9月雨季往返难",
+        "🔴 海拔5500m+有严重高反风险"
+      ],
+      "best_window": "10月中-11月(最稳定)，3-4月(春季)",
+      "hard_stop_rules": [
+        "血氧低于75%+频繁头痛→立即下撤",
+        "出现共济失调/意识模糊→紧急Lukla撤离",
+        "Lobuche至Gorakshep段遇暴雪→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "需办理尼泊尔TIMS卡+萨加玛塔国家公园门票",
+      "rescue_reality_zh": "Lukla有救援直升(约$3000-5000)，天气不好飞不了。沿途只有简易诊所",
+      "signal_reality_zh": "沿途均有付费WiFi，数据信号极弱",
+      "water_reliability": "medium",
+      "water_note_zh": "",
+      "camping_reality_zh": "全线茶室住宿(不需帐篷)，Lobuche以上条件简陋",
+      "who_should_avoid_zh": "未登过4000m+者、高血压/心脏病患者、时间紧张者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_028",
+      "name_zh": "环勃朗峰徒步(TMB)",
+      "decision_summary_zh": "环勃朗峰徒步(TMB)徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_017",
+      "name_zh": "熊野古道",
+      "decision_summary_zh": "熊野古道徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_019",
+      "name_zh": "印加古道",
+      "decision_summary_zh": "印加古道徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "hk_018",
+      "name_zh": "米尔福德步道",
+      "decision_summary_zh": "米尔福德步道徒步，海拔范围待确认",
+      "go_no_go_factors": [
+        "🟢 查看天气预报判断可行性",
+        "🔴 恶劣天气取消"
+      ],
+      "best_window": "6-10月为主窗口，高海拔路线避开7-8月雨季",
+      "hard_stop_rules": [
+        "⚠️ 恶劣天气持续2天以上取消",
+        "⚠️ 队员伤病立即下撤"
+      ],
+      "permit_level": "none",
+      "permit_note_zh": "",
+      "rescue_reality_zh": "救援条件有限，建议雇向导并买保险",
+      "signal_reality_zh": "山区信号不稳定",
+      "water_reliability": "seasonal",
+      "water_note_zh": "",
+      "camping_reality_zh": "路线有固定营地位置",
+      "who_should_avoid_zh": "无户外经验者",
+      "mode": "hiking"
+    },
+    {
+      "route_id": "mt_004",
+      "name_zh": "哈巴雪山",
+      "mode": "mountaineering",
+      "decision_summary_zh": "哈巴雪山, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_001",
+      "name_zh": "四姑娘山大峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "四姑娘山大峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_002",
+      "name_zh": "四姑娘山二峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "四姑娘山二峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_003",
+      "name_zh": "四姑娘山三峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "四姑娘山三峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_005",
+      "name_zh": "玉珠峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "玉珠峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_006",
+      "name_zh": "那玛峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "那玛峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_007",
+      "name_zh": "慕士塔格峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "慕士塔格峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_008",
+      "name_zh": "雀儿山",
+      "mode": "mountaineering",
+      "decision_summary_zh": "雀儿山, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_009",
+      "name_zh": "半脊峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "半脊峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_010",
+      "name_zh": "雪宝顶",
+      "mode": "mountaineering",
+      "decision_summary_zh": "雪宝顶, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_011",
+      "name_zh": "贡嘎山",
+      "mode": "mountaineering",
+      "decision_summary_zh": "贡嘎山, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_012",
+      "name_zh": "岗什卡峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "岗什卡峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_013",
+      "name_zh": "珠穆朗玛峰",
+      "mode": "mountaineering",
+      "decision_summary_zh": "珠穆朗玛峰, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_014",
+      "name_zh": "乔戈里峰(K2)",
+      "mode": "mountaineering",
+      "decision_summary_zh": "乔戈里峰(K2), 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_015",
+      "name_zh": "乞力马扎罗马切梅路线",
+      "mode": "mountaineering",
+      "decision_summary_zh": "乞力马扎罗马切梅路线, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    },
+    {
+      "route_id": "mt_020",
+      "name_zh": "富士山吉田路线",
+      "mode": "mountaineering",
+      "decision_summary_zh": "富士山吉田路线, 技术性雪山攀登",
+      "go_no_go_factors": [
+        "🟢 登顶窗口期短，需紧抓好天气",
+        "🔴 恶劣天气不冲顶",
+        "🔴 需技术装备和向导"
+      ],
+      "best_window": "季节依赖具体山峰",
+      "hard_stop_rules": [
+        "⚠️ 雪况不稳定→不可登顶",
+        "⚠️ 队员体能不足→撤回"
+      ],
+      "permit_level": "strict",
+      "permit_note_zh": "多数5000m+雪山需登山许可和向导",
+      "rescue_reality_zh": "高海拔救援极其困难且昂贵(5000m+直升约3-8万)",
+      "signal_reality_zh": "大本营以下有信号，雪线以上无信号",
+      "water_reliability": "medium",
+      "camping_reality_zh": "C1/C2有固定营地，高营条件简陋",
+      "who_should_avoid_zh": "无雪山经验者、未做海拔适应者"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "version": "v6",
+  "date": "2026-05-24",
+  "primary_data_source": {
+    "api": "Open-Meteo",
+    "field": "cape",
+    "full_name": "Convective Available Potential Energy",
+    "unit": "J/kg",
+    "availability": "逐小时，72小时预报",
+    "test_result": "已验证24个时次中13个非零（四姑娘山镇），可用",
+    "note": "CAPE指数是对流能量的直接度量。CAPE > 1000 J/kg即有雷暴可能。Open-Meteo同时提供convective_inhibition（对流抑制）辅助判断。"
+  },
+  "secondary_data_source": {
+    "api": "Open-Meteo",
+    "field": "lightning_potential",
+    "unit": "J/kg",
+    "availability": "逐小时",
+    "test_result": "此前测试中无历史数据，实际无雷暴日所有值为0",
+    "note": "lightning_potential可能是CAPE的衍生字段或仅在有实际闪电模型时才有值。不适合作为主要判断依据。"
+  },
+  "threshold_system": {
+    "method": "CAPE指数四级阈值体系",
+    "thresholds": [
+      {"level": "safe", "range": "cape < 300", "code": "green", "label": "低", "plain_language": "对流能量低，雷暴可能性小。"},
+      {"level": "watch", "range": "cape 300-800", "code": "yellow", "label": "关注", "plain_language": "有一定对流能量，山区夏季午后可能发展雷暴。"},
+      {"level": "warning", "range": "cape 800-1500", "code": "orange", "label": "警戒", "plain_language": "对流能量充足，雷暴概率显著。建议避免山脊/山顶活动。"},
+      {"level": "danger", "range": "cape >= 1500", "code": "red", "label": "危险", "plain_language": "强对流能量，雷暴和极端天气风险高。强烈建议取消户外活动。"}
+    ],
+    "caution": "CAPE需要结合抬升条件（convective_inhibition）判断。CIN > -50 J/kg时即使CAPE较高也可能抑制对流。建议同时检查云量和湿度数据。",
+    "elevation_correction": "海拔3000m+地区CAPE值通常偏低，实际雷暴风险可能比CAPE值指示的更高。山区局部热力对流难以完全被模型捕捉。"
+  },
+  "alternative_sources": [
+    {
+      "source": "ECMWF ENS (via Open-Meteo)",
+      "access": "model=ecmwf_ifas_hres",
+      "fields": "cape, convective_precipitation",
+      "advantage": "ECMWF集合预报可提供概率信息（51个成员），比确定性预报更有参考价值。",
+      "recommendation": "当CAPE处于临界区间(300-800)时，切换ECMWF模型做交叉验证。"
+    },
+    {
+      "source": "GFS (via Open-Meteo)",
+      "access": "model=gfs_seamless",
+      "fields": "cape",
+      "advantage": "GFS每日更新4次，时效性更好。北美区域表现可靠。",
+      "recommendation": "当需要最新数据（ECMWF未更新时段）时使用。"
+    },
+    {
+      "source": "Windy.com 闪电图层",
+      "access": "外部链接跳转",
+      "advantage": "实时闪电探测网络（Blitzortung/GLD360），可查看5分钟内闪电分布。",
+      "recommendation": "作为「更多详情」外部链接嵌入。用户可跳转查看实时闪电图。"
+    }
+  ],
+  "recommended_approach": {
+    "primary": "Open-Meteo CAPE指数 + 四级阈值",
+    "cross_validation": "CAPE在300-800区间时切换ECMWF模型验证",
+    "ui_display": "不直接显示CAPE数值给用户。转换为雷暴概率百分比的文字标签（低/关注/警戒/危险）+ 颜色编码（绿/黄/橙/红）",
+    "probability_conversion": "CAPE<300→<10%, CAPE300-800→10-30%, CAPE800-1500→30-60%, CAPE>1500→>60%",
+    "fallback_for_danger": "雷暴警戒+时，建议用户另外打开Windy闪电图层做实时确认。",
+    "update_frequency": "Open-Meteo CAPE每1小时可查，GFS每6小时整体更新。建议用户查询时实时获取。"
+  },
+  "rules": [
+    {"rule_id": "STM_001", "severity": "watch", "condition": "cape >= 300 AND cape < 800", "plain": "有一定雷暴发展可能，建议关注云层变化。"},
+    {"rule_id": "STM_002", "severity": "warning", "condition": "cape >= 800 AND cape < 1500", "plain": "雷暴风险较高，避免在山脊、山顶、开阔地带活动。"},
+    {"rule_id": "STM_003", "severity": "danger", "condition": "cape >= 1500", "plain": "强雷暴风险。必须取消山顶/空旷地带活动。"},
+    {"rule_id": "STM_004", "severity": "info", "condition": "cape >= 300 AND cloud_cover_low >= 60", "plain": "CAPE中等+低云量大，对流发展条件充分。"}
+  ]
+}

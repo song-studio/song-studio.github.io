@@ -1,0 +1,427 @@
+{
+  "version": "v8_track_upgrade_patch",
+  "generated_at": "2026-05-24T11:00+08:00",
+  "intent": "建议更新到outdoor_routes_v7.json中每条的track_grade/can_navigate等轨迹可信度字段",
+  "updates": [
+    {
+      "route_id": "hk_047",
+      "name_zh": "天山雪莲峰徒步",
+      "patch_fields": {
+        "track_grade_verified": "key_points",
+        "can_navigate": false,
+        "recommended_track_source": "两步路/8264",
+        "public_track_url": null,
+        "evidence_summary_zh": "名称有歧义：两步路上的'天山雪莲峰'指川西理县错青美洛线，非新疆天山。建议核实路线名称后补搜",
+        "user_warning_zh": "路线名称可能有歧义，当前坐标为估算中点，不可直接导航",
+        "route_geometry_notes": "关键点示意",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "C"
+      }
+    },
+    {
+      "route_id": "hk_018",
+      "name_zh": "孟克德古道",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=孟克德古道",
+        "evidence_summary_zh": "两步路APP内搜索'孟克德古道'可返回多条实走轨迹",
+        "user_warning_zh": "两步路可搜索到多条轨迹，下载后离线导航",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_029",
+      "name_zh": "年保玉则穿越",
+      "patch_fields": {
+        "track_grade_verified": "unverified",
+        "can_navigate": false,
+        "recommended_track_source": "无",
+        "public_track_url": null,
+        "evidence_summary_zh": "景区2018年永久关闭，两步路旧轨迹已无实际参考价值",
+        "user_warning_zh": "路线已永久关闭，禁止进入。保留数据仅供气象背景查询",
+        "route_geometry_notes": "无可用轨迹（已关闭）",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "C"
+      }
+    },
+    {
+      "route_id": "hk_013",
+      "name_zh": "狼塔C+V线",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=狼塔C+V",
+        "evidence_summary_zh": "两步路APP内搜索'狼塔C+V'或'狼塔CV'可返回多条轨迹",
+        "user_warning_zh": "两步路有大量实走轨迹，需下载离线地图+GPS设备导航",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_025",
+      "name_zh": "神农架老君山穿越",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=神农架老君山",
+        "evidence_summary_zh": "两步路有实走轨迹，APP内搜索'神农架老君山穿越'可返回",
+        "user_warning_zh": "有公开轨迹但需下载离线核验，山区信号差",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_023",
+      "name_zh": "七藏沟徒步",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路",
+        "public_track_url": "https://www.2bulu.com/track/t-uUDOOl8Vnrzp%2FR2KBg5Tzw%3D%3D.htm",
+        "evidence_summary_zh": "2022年实走轨迹，卡卡沟进长沟村出，4天3夜，已验证可访问",
+        "user_warning_zh": "两步路搜索七藏沟可下载多条轨迹，建议下载2-3条交叉验证",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "cn_cycling_bingcha_010",
+      "name_zh": "丙察察摩旅",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "高德/百度地图",
+        "public_track_url": null,
+        "evidence_summary_zh": "沿G219国道，汽车导航APP即可",
+        "user_warning_zh": "沿G219国道行驶，汽车导航可用。雨季注意塌方",
+        "route_geometry_notes": "道路路线(G219国道)",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "cy_009",
+      "name_zh": "丝绸之路骑行",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "高德/百度地图",
+        "public_track_url": null,
+        "evidence_summary_zh": "沿G312国道，汽车导航APP即可",
+        "user_warning_zh": "沿G312国道骑行，使用导航APP即可。注意补给间隔",
+        "route_geometry_notes": "道路路线(G312国道)",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_004",
+      "name_zh": "乌孙古道",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=乌孙古道",
+        "evidence_summary_zh": "两步路大量轨迹，APP内搜索'乌孙古道'返回多条",
+        "user_warning_zh": "两步路可搜索乌孙古道获取多条轨迹，建议下载离线使用",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_007",
+      "name_zh": "亚丁大转山",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=亚丁大转山",
+        "evidence_summary_zh": "两步路有轨迹可搜",
+        "user_warning_zh": "有公开轨迹，部分路段在景区内，注意门票和区域限制",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_008",
+      "name_zh": "鳌太穿越",
+      "patch_fields": {
+        "track_grade_verified": "unverified",
+        "can_navigate": false,
+        "recommended_track_source": "无",
+        "public_track_url": null,
+        "evidence_summary_zh": "鳌太线已禁止穿越，不可推荐",
+        "user_warning_zh": "⚠️ 鳌太线已公告禁止穿越，违法进入后果自负。旧轨迹仅供参考",
+        "route_geometry_notes": "无可用轨迹（已禁止）",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "C"
+      }
+    },
+    {
+      "route_id": "hk_037",
+      "name_zh": "梅里外转",
+      "patch_fields": {
+        "track_grade_verified": "key_points",
+        "can_navigate": false,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=梅里外转",
+        "evidence_summary_zh": "两步路有轨迹但260km岔路极多",
+        "user_warning_zh": "有公开轨迹但路线极长，建议分段下载。岔路多，需有经验向导",
+        "route_geometry_notes": "完整穿越路线（长线）",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "C"
+      }
+    },
+    {
+      "route_id": "hk_002",
+      "name_zh": "雨崩徒步",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=雨崩",
+        "evidence_summary_zh": "成熟景区路线，两步路可搜雨崩徒步轨迹",
+        "user_warning_zh": "景区路线成熟，有停车场客栈卫星电话，轨迹仅作参考",
+        "route_geometry_notes": "多条短途路线组成的成熟景区",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_009",
+      "name_zh": "武功山反穿",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=武功山反穿",
+        "evidence_summary_zh": "两步路大量轨迹",
+        "user_warning_zh": "两步路可搜索武功山反穿获取多条轨迹",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_001",
+      "name_zh": "虎跳峡高路徒步",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=虎跳峡高路",
+        "evidence_summary_zh": "国际知名路线，两步路有轨迹",
+        "user_warning_zh": "路线成熟，道路明显。两步路可搜索轨迹下载",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_005",
+      "name_zh": "长穿毕",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=长穿毕",
+        "evidence_summary_zh": "四姑娘山经典穿越，两步路有轨迹",
+        "user_warning_zh": "有公开轨迹，需翻越叉子沟垭口(4700m)，注意高反",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_033",
+      "name_zh": "麦理浩径",
+      "patch_fields": {
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "recommended_track_source": "Oasistrek(香港)",
+        "public_track_url": "https://www.oasistrek.com/mac_trail.php",
+        "evidence_summary_zh": "香港渔护署官方步道，Oasistrek有完整路线图和分段详解",
+        "user_warning_zh": "官方步道，标记清晰。可从oasistrek/GaiaGPS下载GPX",
+        "route_geometry_notes": "官方管理的完整步道",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_020",
+      "name_zh": "珠峰东坡徒步",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=珠峰东坡",
+        "evidence_summary_zh": "两步路搜索'珠峰东坡'或'嘎玛沟'有轨迹",
+        "user_warning_zh": "两步路多条轨迹可选，高海拔路线需做好充分准备",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_011",
+      "name_zh": "墨脱徒步",
+      "patch_fields": {
+        "track_grade_verified": "key_points",
+        "can_navigate": false,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=墨脱徒步",
+        "evidence_summary_zh": "传统徒步线部分被公路覆盖，两步路可搜",
+        "user_warning_zh": "传统徒步线，扎墨公路通车后部分路段被公路覆盖。建议核实最新路况",
+        "route_geometry_notes": "分段轨迹（部分被公路覆盖）",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "C"
+      }
+    },
+    {
+      "route_id": "hk_006",
+      "name_zh": "洛克线",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=洛克线",
+        "evidence_summary_zh": "两步路有实走轨迹，APP搜索可见",
+        "user_warning_zh": "两步路可搜索洛克线获取多条轨迹，下载离线使用",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_002",
+      "name_zh": "四姑娘山二峰",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=四姑娘山二峰",
+        "evidence_summary_zh": "四姑娘山景区官方管理，两步路有登顶轨迹",
+        "user_warning_zh": "有登山路线轨迹，但冲顶段需向导+技术装备，不建议仅靠轨迹自行攀登",
+        "route_geometry_notes": "登山路线轨迹",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_004",
+      "name_zh": "哈巴雪山",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=哈巴雪山",
+        "evidence_summary_zh": "入门雪山，两步路有登顶轨迹",
+        "user_warning_zh": "有登山路线轨迹，但需向导。5396m存在高原反应风险",
+        "route_geometry_notes": "登山路线轨迹",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_003",
+      "name_zh": "贡嘎大环线",
+      "patch_fields": {
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "recommended_track_source": "两步路搜索页",
+        "public_track_url": "https://www.2bulu.com/search/?keyword=贡嘎大环线",
+        "evidence_summary_zh": "两步路有轨迹可搜",
+        "user_warning_zh": "两步路多条轨迹可选，高海拔线注意天气窗口",
+        "route_geometry_notes": "完整穿越路线",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "cy_003",
+      "name_zh": "环青海湖骑行",
+      "patch_fields": {
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "recommended_track_source": "高德/百度地图",
+        "public_track_url": null,
+        "evidence_summary_zh": "沿环湖公路骑行，导航APP即可",
+        "user_warning_zh": "沿公路骑行，使用导航APP即可。注意7-8月旺季车流",
+        "route_geometry_notes": "道路路线(环湖公路)",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "cy_001",
+      "name_zh": "川藏南线(318国道)骑行",
+      "patch_fields": {
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "recommended_track_source": "高德/百度地图",
+        "public_track_url": null,
+        "evidence_summary_zh": "沿G318国道，全程可导航",
+        "user_warning_zh": "沿G318国道骑行，汽车导航可用。注意折多山/高尔寺等高海拔垭口",
+        "route_geometry_notes": "道路路线(G318国道)",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "cy_011",
+      "name_zh": "独库公路骑行",
+      "patch_fields": {
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "recommended_track_source": "高德/百度地图",
+        "public_track_url": null,
+        "evidence_summary_zh": "沿G217独库公路，6-10月开放",
+        "user_warning_zh": "沿G217国道骑行，导航APP可用。冬季封闭(10月-次年5月)",
+        "route_geometry_notes": "道路路线(G217国道)",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "cy_004",
+      "name_zh": "环海南岛骑行",
+      "patch_fields": {
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "recommended_track_source": "高德/百度地图",
+        "public_track_url": null,
+        "evidence_summary_zh": "沿海南环岛旅游公路/国道，全程可导航",
+        "user_warning_zh": "沿环岛旅游公路/国道骑行，导航APP完全可用",
+        "route_geometry_notes": "道路路线(环岛公路)",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "214滇藏线摩旅",
+      "patch_fields": {
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "recommended_track_source": "高德/百度地图/G214国道",
+        "public_track_url": null,
+        "evidence_summary_zh": "214国道(滇藏线大理-芒康)为国家公路网组成部分，全程硬化。海拔跨度大(大理1970m-红拉雪山4300m)",
+        "user_warning_zh": "沿G214国道行驶，汽车导航APP可用。注意白马雪山冬季暗冰",
+        "route_geometry_notes": "道路路线(G214国道)",
+        "last_verified_date": "2026-05-24",
+        "track_confidence": "A"
+      }
+    }
+  ]
+}

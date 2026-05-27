@@ -1,0 +1,3132 @@
+{
+  "hk_001": {
+    "route_id": "hk_001",
+    "name_zh": "虎跳峡高路徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 22,
+      "source_note": "第一天纳西雅阁→Halfway约17km+第二天Halfway→中虎跳5-6km",
+      "method": "实测汇总(文旅头条/8264)"
+    },
+    "elevation_gain_m": {
+      "value": 1250,
+      "source_note": "28道拐连续爬升+全程起伏",
+      "method": "实测(文旅头条攻略)"
+    },
+    "max_altitude_m": {
+      "value": 2670,
+      "source_note": "Halfway客栈海拔",
+      "method": "实测"
+    },
+    "season": {
+      "best": "4-6月,9-10月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "4-6月春末/9-10月秋季最佳，玉龙雪山清晰可见；6-8月雨季水量大但落石风险升高；冬季可行但寒冷",
+      "source": "文旅头条/马蜂窝/8264攻略交叉验证"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "实测汇总(文旅头条/8264)"
+  },
+  "hk_002": {
+    "route_id": "hk_002",
+    "name_zh": "雨崩徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "尼农进出约30km+冰湖往返16km+神瀑往返12km≈50-55km(视路线组合)",
+      "method": "实测数据(两步路/携程攻略)"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "含进村爬升1000m+冰湖900m+神瀑600m，累计约2200-2500m",
+      "method": "实测汇总"
+    },
+    "max_altitude_m": {
+      "value": 3900,
+      "source_note": "冰湖海拔3864m，神湖海拔4426m(未计入)，取冰湖数据",
+      "method": "实测(携程攻略/健行笔记)"
+    },
+    "season": {
+      "best": "9-11月(秋季)",
+      "feasible": "5-11月",
+      "closed": "12-4月(大雪)",
+      "note": "9-11月秋季空气洁净日照金山高概率；5-6月高山杜鹃盛开；7-8月雨季但气温舒适，松茸上市；12-4月可能有积雪",
+      "source": "两步路社区/携程攻略/健行笔记交叉验证"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "实测数据(两步路/携程攻略)"
+  },
+  "hk_003": {
+    "route_id": "hk_003",
+    "name_zh": "贡嘎大环线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 100,
+      "source_note": "老榆林->草科全程约85-100km(含乘车段)，纯徒步约70-85km",
+      "method": "两步路社区/游侠客攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3800,
+      "source_note": "累计爬升约3500-4000m，含日乌且垭口4830m翻越",
+      "method": "两步路活动页"
+    },
+    "max_altitude_m": {
+      "value": 4920,
+      "source_note": "日乌且垭口4830m(游侠客)/4920m(GOOGLE地形)，取4920m",
+      "method": "两步路攻略"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-3月",
+      "note": "9-10月秋色最佳；4-5月春季天气稳定；6-8月雨季云雾多；冬季大雪封山",
+      "source": "游侠客/两步路社区"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "两步路社区/游侠客攻略"
+  },
+  "hk_009": {
+    "route_id": "hk_009",
+    "name_zh": "武功山反穿",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 25,
+      "source_note": "龙山村->金顶约25-28km(反穿)，Day1约11km+Day2约14-16km",
+      "method": "携程攻略/ProcessOn/向野行交叉验证"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "累计爬升约1700-1900m，含龙山村到发云界连续爬升1100m",
+      "method": "实测数据"
+    },
+    "max_altitude_m": {
+      "value": 1918,
+      "source_note": "金顶海拔1918.3m(官方数据)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "3-11月",
+      "closed": "12-2月(有冰雪但部分封路)",
+      "note": "5-6月绿色草甸、9-10月金色草甸+云海最高概率；6-7月雨季注意雷暴；冬季需冰爪",
+      "source": "向野行/携程攻略交叉验证"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "携程攻略/ProcessOn/向野行交叉验证"
+  },
+  "hk_008": {
+    "route_id": "hk_008",
+    "name_zh": "鳌太穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 81,
+      "source_note": "常用标称81km(塘口->厚畛子)，GPS实测85-120km，含石海绕行后中国探险协会称>170km(含起伏累计)",
+      "method": "两步路轨迹/中国探险协会报告交叉验证",
+      "precision_note": "现有81km偏低，建议标为85-120km范围"
+    },
+    "elevation_gain_m": {
+      "value": 4200,
+      "source_note": "多个来源标称4200-6000m(多次爬升下降)，取保守值4200m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 3767,
+      "source_note": "拔仙台海拔3767.2m(官方测量)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月(安全窗口)",
+      "feasible": "5月中旬-10月上旬",
+      "closed": "10月中旬-5月上旬(冬季极端危险)",
+      "note": "6-9月是相对安全窗口但仍有极端天气；5月和10月偶有大雪须高度警惕；冬季严禁(违禁线路)。2018年起官方禁止穿越",
+      "source": "中国探险协会/中青报/太白山管理局交叉验证"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "两步路轨迹/中国探险协会报告交叉验证"
+  },
+  "hk_011": {
+    "route_id": "hk_011",
+    "name_zh": "墨脱徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 96,
+      "source_note": "派镇->松林口->拉格38km+拉格->汗密30km+汗密->背崩28km=96km,不含背崩->墨脱35km",
+      "method": "GreatTibetTour/两步路活动页"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "含翻越多雄拉山口4221m,整体呈下降趋势(终点墨脱800m)",
+      "method": "常见攻略值"
+    },
+    "max_altitude_m": {
+      "value": 4200,
+      "source_note": "多雄拉山口海拔4221m",
+      "method": "GreatTibetTour"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-11月",
+      "closed": "12-4月(多雄拉山积雪封山)",
+      "note": "5-6月杜鹃花季;9-10月秋色少雨;7-8月雨季塌方高发",
+      "source": "GreatTibetTour/两步路社区"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "GreatTibetTour/两步路活动页"
+  },
+  "hk_005": {
+    "route_id": "hk_005",
+    "name_zh": "长穿毕",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 40,
+      "source_note": "D1喇嘛寺-木骡子12km+D2木骡子-叉子沟尾11km+D3翻垭口-毕棚沟约17km,合计40km",
+      "method": "两步路社区/游侠客/脸书攻略交叉验证"
+    },
+    "elevation_gain_m": {
+      "value": 1900,
+      "source_note": "含翻垭口768m+其他起伏累计",
+      "method": "近似值"
+    },
+    "max_altitude_m": {
+      "value": 4668,
+      "source_note": "叉子沟尾垭口海拔4668m(两步路)/4650m(游侠客)",
+      "method": "两步路实测"
+    },
+    "season": {
+      "best": "9月中旬-10月下旬(秋色)",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "秋季红叶彩林最美;5-6月花海季但多雨;7-8月雨季;垭口积雪期11-4月危险",
+      "source": "两步路/游侠客"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "两步路社区/游侠客/脸书攻略交叉验证"
+  },
+  "hk_020": {
+    "route_id": "hk_020",
+    "name_zh": "珠峰东坡徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 80,
+      "source_note": "搜狐/两步路:纯徒步约60-80km(7天),现有100km含拉萨-曲当车程偏高,建议修正为80km",
+      "method": "搜狐文章/两步路社区"
+    },
+    "elevation_gain_m": {
+      "value": 4300,
+      "source_note": "两步路实测累计上升4300m,现有4500m略微偏高",
+      "method": "两步路实测"
+    },
+    "max_altitude_m": {
+      "value": 5344,
+      "source_note": "郎玛拉垭口5344m(搜狐/两步路),现有5300m接近",
+      "method": "两步路/搜狐"
+    },
+    "season": {
+      "best": "5月中-6月中,9月中-10月初",
+      "feasible": "5月下旬-10月中旬",
+      "closed": "10月下旬-5月上旬(大雪封山/政府封山)",
+      "note": "5-6月花季;9-10月秋色最佳;7-8月雨季云雾多但也有云海;10月后政府封山",
+      "source": "搜狐/两步路/LoveTibet"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "搜狐文章/两步路社区"
+  },
+  "hk_010": {
+    "route_id": "hk_010",
+    "name_zh": "冈仁波齐转山",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 52,
+      "source_note": "外圈52km(山口起算)/56km(塔钦起算)",
+      "method": "多家攻略一致"
+    },
+    "elevation_gain_m": {
+      "value": 2100,
+      "source_note": "塔钦4675m->卓玛拉5630m->塔钦4675m,累计约2100m",
+      "method": "攻略估算"
+    },
+    "max_altitude_m": {
+      "value": 5630,
+      "source_note": "卓玛拉山口5630-5648m(各来源略有差异)",
+      "method": "多家攻略一致"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪封山)",
+      "note": "2026年是藏历马年,转山1圈=常年13圈功德;5-6月/9-10月天气最稳定;冬季封山",
+      "source": "卓玛旅游/TibetCN"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "多家攻略一致"
+  },
+  "hk_004": {
+    "route_id": "hk_004",
+    "name_zh": "乌孙古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 120,
+      "source_note": "琼库什台->黑英山山口约110-130km,雪豹乐活说125km,常标120km",
+      "method": "两步路社区/活动页"
+    },
+    "elevation_gain_m": {
+      "value": 4200,
+      "source_note": "含翻阿克布拉克达坂及多次上下起伏,雪豹说累计较大",
+      "method": "常见攻略值"
+    },
+    "max_altitude_m": {
+      "value": 3860,
+      "source_note": "阿克布拉克达坂3860m(两步路说3860/活动页3800)",
+      "method": "两步路攻略"
+    },
+    "season": {
+      "best": "6-9月(秋季9月最佳)",
+      "feasible": "6月上旬-10月上旬",
+      "closed": "10月中旬-5月(大雪封山/冰河危险)",
+      "note": "7-8月水量大过河危险;9月秋色最佳+水量减少;6月花季雪较厚",
+      "source": "两步路社区/活动页"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "两步路社区/活动页"
+  },
+  "hk_014": {
+    "route_id": "hk_014",
+    "name_zh": "夏特古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 120,
+      "source_note": "夏塔乡->破城子全程120km(传统),现已禁穿仅开放夏塔景区段约46km",
+      "method": "携程攻略/苹果旅行/域龙旅行社"
+    },
+    "elevation_gain_m": {
+      "value": 3600,
+      "source_note": "累计爬升约3600m(含翻越哈达木孜达坂及冰川段)",
+      "method": "常见攻略值"
+    },
+    "max_altitude_m": {
+      "value": 4850,
+      "source_note": "木扎尔特冰川区域最高点约4850m",
+      "method": "常见攻略值"
+    },
+    "season": {
+      "best": "6月中旬-7月中旬",
+      "feasible": "5月下旬-10月上旬",
+      "closed": "10月中旬-5月中旬(大雪封山)",
+      "note": "秋季(10月)水量减少但已偏冷;夏季(6-7月)花海最佳;夏塔景区5-10月开放;途中下午易雷雨/冰雹",
+      "source": "携程/域龙旅行社/苹果旅行"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "携程攻略/苹果旅行/域龙旅行社"
+  },
+  "hk_036": {
+    "route_id": "hk_036",
+    "name_zh": "扎尕那穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 55,
+      "source_note": "扎尕那->卓尼(三角石)约55-70km,Columbia指南说近70km,常标55km",
+      "method": "Columbia 100条/两步路社区"
+    },
+    "elevation_gain_m": {
+      "value": 2800,
+      "source_note": "连续翻越16个垭口(含喀拉克4140m)",
+      "method": "攻略值"
+    },
+    "max_altitude_m": {
+      "value": 4140,
+      "source_note": "喀拉克垭口4140m(Columbia GPS实测)",
+      "method": "Columbia指南"
+    },
+    "season": {
+      "best": "6-8月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪垭口封闭)",
+      "note": "6-8月花海草甸最美;9-10月秋色;冬季大雪无法穿越",
+      "source": "Columbia/两步路"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "Columbia 100条/两步路社区"
+  },
+  "hk_023": {
+    "route_id": "hk_023",
+    "name_zh": "七藏沟徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 45,
+      "source_note": "二号线:卡卡沟口->长海子->草海子->红星海子->草海子->阿翁沟,约45-55km",
+      "method": "Columbia 100条/两步路社区"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "Columbia说海拔上升~1000m但含多次起伏累计约1800m",
+      "method": "Columbia指南"
+    },
+    "max_altitude_m": {
+      "value": 4200,
+      "source_note": "红星海子4200m(红星垭口4600m但非必经)",
+      "method": "Columbia指南"
+    },
+    "season": {
+      "best": "6-10月",
+      "feasible": "5月中旬-11月上旬",
+      "closed": "11月中旬-5月上旬(大雪)",
+      "note": "6月高山杜鹃;10月满山秋色;7-8月雨季但花盛",
+      "source": "Columbia指南"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "Columbia 100条/两步路社区"
+  },
+  "ma_002": {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 16,
+      "source_note": "海子沟口->大本营约12km+冲顶往返约10km,合计约16km(不含车程)",
+      "method": "两步路活动页/大鹅文化"
+    },
+    "elevation_gain_m": {
+      "value": 2100,
+      "source_note": "四姑娘山镇3200m->大本营4200m(爬升~1100m)+冲顶段4200->5276m(爬升~1050m),累计约2100m",
+      "method": "两步路活动页"
+    },
+    "max_altitude_m": {
+      "value": 5276,
+      "source_note": "二峰顶5276m(官方测量)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(积雪期)",
+      "note": "12-5月积雪期雪厚;7-11月雪少或无;6-9月天气稳定适合入门",
+      "source": "两步路活动页"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "两步路活动页/大鹅文化"
+  },
+  "ma_004": {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 16,
+      "source_note": "【建议修正为24-28km】现有16km仅算大本营-顶峰往返;向野行说28km(含哈巴村->大本营8km)",
+      "method": "向野行/携程攻略"
+    },
+    "elevation_gain_m": {
+      "value": 2100,
+      "source_note": "【建议修正为2700m】向野行说总爬升2696m(哈巴村2700->顶峰5396)",
+      "method": "向野行"
+    },
+    "max_altitude_m": {
+      "value": 5396,
+      "source_note": "哈巴雪山官方高度5396m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "4-6月,9-11月",
+      "feasible": "4-11月",
+      "closed": "12-3月(风速大/寒冷)",
+      "note": "4-6月风力小无雨水+杜鹃花开;9-11月几乎无风;7-8月雨季泥泞;12-3月风速大",
+      "source": "携程攻略/向野行"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "向野行/携程攻略"
+  },
+  "hk_019": {
+    "route_id": "hk_019",
+    "name_zh": "南太行徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "双底->马武寨->抱犊村->八里沟->王莽岭标准穿越约50km",
+      "method": "8264/游侠客攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累计爬升约1200-1500m(多次上下)",
+      "method": "攻略值"
+    },
+    "max_altitude_m": {
+      "value": 1700,
+      "source_note": "王莽岭海拔约1700m",
+      "method": "常见值"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "3-11月",
+      "closed": "12-2月(部分防火封山)",
+      "note": "春秋最佳;7-8月雨季峡谷路段山洪危险;冬季部分山区防火封山",
+      "source": "新浪/游侠客"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "8264/游侠客攻略"
+  },
+  "hk_030": {
+    "route_id": "hk_030",
+    "name_zh": "徽杭古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 20,
+      "source_note": "江南第一关->蓝天凹->永来村全程约18-20km",
+      "method": "多家攻略一致"
+    },
+    "elevation_gain_m": {
+      "value": 800,
+      "source_note": "安徽绩溪303m->蓝天凹1050m爬升约750-800m",
+      "method": "攻略值"
+    },
+    "max_altitude_m": {
+      "value": 1050,
+      "source_note": "蓝天凹海拔1050m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "春季杜鹃+秋季红叶;冬季可行但寒冷;夏季有雷雨",
+      "source": "携程/徽州旅游"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "多家攻略一致"
+  },
+  "hk_016": {
+    "route_id": "hk_016",
+    "name_zh": "漓江徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 20,
+      "source_note": "杨堤->兴坪精华段约20km(含过渡)",
+      "method": "常见攻略值"
+    },
+    "elevation_gain_m": {
+      "value": 200,
+      "source_note": "无明显爬升,沿江平路",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 200,
+      "source_note": "漓江沿岸海拔",
+      "method": "估算"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "春雨漓江/秋日晴朗;夏季湿热注意防暑",
+      "source": "经验值"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "常见攻略值"
+  },
+  "hk_041": {
+    "route_id": "hk_041",
+    "name_zh": "他念他翁穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 120,
+      "source_note": "盐登线约117km(经典);大米勇环线约56km(轻装)",
+      "method": "两步路/8264"
+    },
+    "elevation_gain_m": {
+      "value": 5000,
+      "source_note": "【建议修正】盐登线累升>9600m,现有5000m偏低;翻6个5000m垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4900,
+      "source_note": "多个垭口5000m+,徒步最高约4900-5000m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "6-7月(花期),10月中(天气稳定)",
+      "feasible": "6-10月",
+      "closed": "11-5月(大雪)",
+      "note": "6-7月花海;10月中天气稳定看揉错蓝色;7-9月雨季湿滑",
+      "source": "两步路社区"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "两步路/8264"
+  },
+  "hk_037": {
+    "route_id": "hk_037",
+    "name_zh": "梅里外转",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 145,
+      "source_note": "【建议修正为150-170km】传统外转路线约150-170km,另有说>250km含绕行",
+      "method": "携程/域龙/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "翻多克拉4480m+说拉4815m+达古拉等多个垭口,累升约6000m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4815,
+      "source_note": "说拉垭口4815m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "10-11月(秋季)",
+      "feasible": "10-5月",
+      "closed": "6-9月(雨季/气候不稳定)",
+      "note": "10月底-11月看日照金山最佳;12-2月寒冷但可走;6-8月雨季不宜",
+      "source": "携程/域龙"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "携程/域龙/两步路"
+  },
+  "cy_011": {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 561,
+      "source_note": "独山子-库车全长561km(官方)",
+      "method": "官方公路里程"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "累爬约8000m含多次翻达坂(哈希勒根/玉希莫勒盖/铁力买提等)",
+      "method": "攻略估算"
+    },
+    "max_altitude_m": {
+      "value": 3400,
+      "source_note": "哈希勒根达坂约3400m/铁力买提达坂3220m",
+      "method": "攻略值"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6月中旬-10月上旬",
+      "closed": "10月中旬-6月上旬(大雪封山)",
+      "note": "每年6月初-10月通车;7-8月旺季车多;9月秋色好车少",
+      "source": "公路局公告/攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "官方公路里程"
+  },
+  "cy_003": {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 360,
+      "source_note": "环湖一周约360km(官方公路里程)",
+      "method": "官方"
+    },
+    "elevation_gain_m": {
+      "value": 1200,
+      "source_note": "环湖起伏,累爬约1000-1200m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 3250,
+      "source_note": "青海湖海拔3196m,周边最高约3250m",
+      "method": "实测"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(寒冷)",
+      "note": "7-8月油菜花季最佳但人多车多;冬季寒冷风大不宜骑行",
+      "source": "骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "官方"
+  },
+  "cy_004": {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 800,
+      "source_note": "东西线环岛约800km(东线420+西线380)",
+      "method": "官方"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "东线丘陵起伏+西线平坦,累爬约2000m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 500,
+      "source_note": "海南最高点五指山1867m,沿海骑行海拔<500m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "11-2月",
+      "feasible": "10-4月",
+      "closed": "5-9月(台风+酷暑)",
+      "note": "冬季最舒适;5-9月台风季和酷暑不宜;春节高峰期住宿贵",
+      "source": "骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "官方"
+  },
+  "cy_001": {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2150,
+      "source_note": "成都-拉萨318国道约2150km",
+      "method": "官方公路里程"
+    },
+    "elevation_gain_m": {
+      "value": 35000,
+      "source_note": "翻14座4000m+垭口(东达山5130m),累爬约35000m",
+      "method": "骑行攻略"
+    },
+    "max_altitude_m": {
+      "value": 5130,
+      "source_note": "东达山垭口5130m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月(冰雪)",
+      "note": "7-8月雨季塌方高发;5-6月春季天气稳定;9-10月秋色",
+      "source": "骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "官方公路里程"
+  },
+  "cy_007": {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2850,
+      "source_note": "叶城-拉孜约2850km(含狮泉河段)",
+      "method": "官方公路里程"
+    },
+    "elevation_gain_m": {
+      "value": 45000,
+      "source_note": "翻多个5000m+达坂,累爬极大",
+      "method": "骑行攻略"
+    },
+    "max_altitude_m": {
+      "value": 5400,
+      "source_note": "红土达坂5380m/界山达坂5347m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-9月",
+      "closed": "10-4月",
+      "note": "极高海拔无人区;窗口极短;7-8月雨季但可走",
+      "source": "骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "官方公路里程"
+  },
+  "hk_017": {
+    "route_id": "hk_017",
+    "name_zh": "库拉岗日徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "色乡-白马林措-介久措-折公措三湖线约40-50km",
+      "method": "攻略值"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "累爬约2000m(翻垭口+湖边起伏)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4900,
+      "source_note": "折公措垭口约4900m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "5-6月天气稳定看雪山倒影;9-10月秋色+稳定",
+      "source": "西藏旅游攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "攻略值"
+  },
+  "ma_019": {
+    "route_id": "ma_019",
+    "name_zh": "希夏邦马峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 30,
+      "source_note": "BC-C1-C2-C3-冲顶,前进路线约25-35km",
+      "method": "登山攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3000,
+      "source_note": "BC约5000m->顶峰8012m,爬升约3000m",
+      "method": "登山攻略"
+    },
+    "max_altitude_m": {
+      "value": 8012,
+      "source_note": "希夏邦马顶峰8012m(世界第14)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "4-5月,9-10月",
+      "closed": "11-3月(严寒),6-8月(季风)",
+      "note": "8000m级登山窗口极短;春秋两季",
+      "source": "登山指南"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山攻略"
+  },
+  "mc_001": {
+    "route_id": "mc_001",
+    "name_zh": "318川藏南线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2150,
+      "source_note": "成都-拉萨,与骑行同线",
+      "method": "官方"
+    },
+    "elevation_gain_m": {
+      "value": 35000,
+      "source_note": "翻14座4000m+垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5130,
+      "source_note": "东达山",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月",
+      "source": "摩旅攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "官方"
+  },
+  "mc_006": {
+    "route_id": "mc_006",
+    "name_zh": "219新藏线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2100,
+      "source_note": "叶城-拉孜(219国道)",
+      "method": "官方"
+    },
+    "elevation_gain_m": {
+      "value": 45000,
+      "source_note": "极高起伏",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5400,
+      "source_note": "红土达坂5380m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-9月",
+      "closed": "10-4月",
+      "source": "摩旅攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "官方"
+  },
+  "add_daocheng": {
+    "route_id": "add_daocheng",
+    "name_zh": "稻城亚丁",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 15,
+      "source_note": "洛绒牛场-牛奶海-五色海往返约15km(景区短线)",
+      "method": "景区数据"
+    },
+    "elevation_gain_m": {
+      "value": 600,
+      "source_note": "洛绒牛场4100m->五色海4700m,爬升约600m",
+      "method": "景区"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "五色海/牛奶海约4600-4700m",
+      "method": "景区"
+    },
+    "season": {
+      "best": "9-10月(秋色)",
+      "feasible": "4-11月",
+      "closed": "12-3月(大雪封闭)",
+      "note": "9-10月秋色最美;7-8月雨季云雾多",
+      "source": "景区公告"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "景区数据"
+  },
+  "add_kanas": {
+    "route_id": "add_kanas",
+    "name_zh": "喀纳斯环线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "贾登峪-禾木-喀纳斯三村环线约60-80km",
+      "method": "攻略值"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "累爬约2000m(上升/下降各约1000m)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 2400,
+      "source_note": "沿途最高点约2400m(观鱼台)",
+      "method": "景区"
+    },
+    "season": {
+      "best": "6-8月(绿),9-10月(秋)",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪封山)",
+      "note": "9月下旬-10月初秋色金红最美;6-8月绿意盎然",
+      "source": "新疆旅游攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "攻略值"
+  },
+  "add_dangling": {
+    "route_id": "add_dangling",
+    "name_zh": "党岭徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 35,
+      "source_note": "党岭村-葫芦海-卓雍措往返约30-40km",
+      "method": "攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "党岭村3300m->葫芦海4100m,爬升约800m+起伏",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4300,
+      "source_note": "卓雍措约4300m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "6-8月(花海),10月(秋色)",
+      "feasible": "5-11月",
+      "closed": "12-4月(大雪)",
+      "note": "10月秋色最美;6-8月花海+绿意",
+      "source": "四川旅游攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "攻略"
+  },
+  "add_jiankou": {
+    "route_id": "add_jiankou",
+    "name_zh": "箭扣长城",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 15,
+      "source_note": "西大墙-北京结-鹰飞倒仰-天梯-正北楼约10-20km",
+      "method": "攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1000,
+      "source_note": "累爬约800-1000m(长城上下起伏大)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 1000,
+      "source_note": "正北楼约1000m",
+      "method": "实测"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "4-11月",
+      "closed": "12-3月(冰雪+部分封闭)",
+      "note": "秋季红叶最美;春季山花;夏季雷雨危险(鹰飞倒仰段雷击)",
+      "source": "北京户外攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "攻略"
+  },
+  "ma_039": {
+    "route_id": "ma_039",
+    "name_zh": "乔戈里峰(K2)",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 35,
+      "source_note": "BC(4900m)-C1-C2-C3-C4-冲顶(8611m)约30-40km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3600,
+      "source_note": "BC4900m->顶峰8611m,爬升约3700m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 8611,
+      "source_note": "K2世界第二高峰8611m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-7月",
+      "feasible": "6-8月",
+      "closed": "9-5月",
+      "note": "K2登峰季极短,仅6-7月;死亡率约25%",
+      "source": "登山指南"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山指南"
+  },
+  "ma_006": {
+    "route_id": "ma_006",
+    "name_zh": "半脊峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 10,
+      "source_note": "BC(3500m)-C1(4500m)-C2(5000m)-顶峰(5430m),约10-12km",
+      "method": "买户外/搜狐"
+    },
+    "elevation_gain_m": {
+      "value": 1600,
+      "source_note": "BC3500m->顶峰5430m,爬升约1930m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5430,
+      "source_note": "半脊峰5430m",
+      "method": "维基百科"
+    },
+    "season": {
+      "best": "7-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "7-10月气候稳定;5月尚有积雪",
+      "source": "买户外"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "买户外/搜狐"
+  },
+  "ma_017": {
+    "route_id": "ma_017",
+    "name_zh": "卓奥友峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 35,
+      "source_note": "BC-C1-C2-C3-顶峰约30-40km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "BC约5000m->顶峰8201m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 8201,
+      "source_note": "卓奥友峰8201m(世界第6)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "4-5月,9-10月",
+      "closed": "11-3月(严寒),6-8月(季风)",
+      "note": "8000m级,春秋两季窗口",
+      "source": "登山指南"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山指南"
+  },
+  "ma_036": {
+    "route_id": "ma_036",
+    "name_zh": "启孜峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 14,
+      "source_note": "BC(5200m)-C1(5600m)-顶峰(6206m)约12-15km",
+      "method": "维基百科/新浪"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "BC5200m->顶峰6206m,约1000m+进山段",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 6206,
+      "source_note": "启孜峰6206m(念青唐古拉山)",
+      "method": "维基百科"
+    },
+    "season": {
+      "best": "6月,8月底-9月初",
+      "feasible": "5-9月",
+      "closed": "10-4月(严寒)",
+      "note": "6月/8月底-9月初最佳;7-8月雨季",
+      "source": "新华社/维基百科"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "维基百科/新浪"
+  },
+  "ma_003": {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 14,
+      "source_note": "四姑娘山镇-三峰BC-冲顶约14km",
+      "method": "景区官方"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "约2200m累计爬升",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5355,
+      "source_note": "三峰5355m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "与四姑娘山其他峰一致",
+      "source": "景区"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "景区官方"
+  },
+  "ma_001": {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 12,
+      "source_note": "四姑娘山镇-大峰BC-冲顶约12km",
+      "method": "景区官方"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "四姑娘山镇3200m->大峰5025m累计约1800m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5025,
+      "source_note": "大峰5025m(官方测量)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(积雪)",
+      "note": "四姑娘山6-9月最佳;5月有积雪但可攀登",
+      "source": "景区官方"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "景区官方"
+  },
+  "ma_037": {
+    "route_id": "ma_037",
+    "name_zh": "姜桑拉姆峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 12,
+      "source_note": "BC(4800m)-顶峰约10km",
+      "method": "户外资料网"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "BC4800m->顶峰约6558m,累计约1800m",
+      "method": "户外资料网"
+    },
+    "max_altitude_m": {
+      "value": 6558,
+      "source_note": "姜桑拉姆实际6558m(户外资料网标注),原数据6324m有误",
+      "method": "户外资料网"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "山势平缓,冰雪丰富,有大片裂缝区;适合初级登山者",
+      "source": "户外资料网"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "户外资料网"
+  },
+  "ma_016": {
+    "route_id": "ma_016",
+    "name_zh": "宁金抗沙峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 25,
+      "source_note": "BC(4800m)-C1-C2-顶峰(7206m)约20-30km,百度百科",
+      "method": "百度百科/Summitpost"
+    },
+    "elevation_gain_m": {
+      "value": 2800,
+      "source_note": "BC4800m->顶峰7206m,爬升约2400m+",
+      "method": "百度百科"
+    },
+    "max_altitude_m": {
+      "value": 7206,
+      "source_note": "宁金抗沙峰7206m(百度百科/维基百科)",
+      "method": "百度百科/Wikipedia"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "4-5月,9-10月",
+      "closed": "6-8月(雨季),11-3月(严寒)",
+      "note": "百度百科明确记载登山适宜期4-5月及9-10月;7000m级适合业余登山者尝试",
+      "source": "百度百科"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "百度百科/Summitpost"
+  },
+  "ma_011": {
+    "route_id": "ma_011",
+    "name_zh": "岗什卡峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 12,
+      "source_note": "七彩瀑停车场-BC-C1-顶峰约10-15km",
+      "method": "光明网"
+    },
+    "elevation_gain_m": {
+      "value": 1400,
+      "source_note": "停车场约3800m->顶峰5254m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 5254,
+      "source_note": "岗什卡峰5254.5m(祁连山东段最高)",
+      "method": "官方测量"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-9月",
+      "closed": "10-4月(严寒)",
+      "note": "7-8月冰川训练佳",
+      "source": "光明网"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "光明网"
+  },
+  "ma_040": {
+    "route_id": "ma_040",
+    "name_zh": "库拉岗日主峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 20,
+      "source_note": "BC-C1-C2-顶峰(7538m)约20-25km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "BC约4300m->顶峰7538m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 7538,
+      "source_note": "库拉岗日主峰7538m(山南最高)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "春秋窗口",
+      "source": "西藏登山指南"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山指南"
+  },
+  "ma_009": {
+    "route_id": "ma_009",
+    "name_zh": "慕士塔格峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 30,
+      "source_note": "BC(4400m)-ABC(5100m)-C1(5500m)-C2(6300m)-C3(6900m)-冲顶(7546m)约30km",
+      "method": "登山指南/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "BC4400m->顶峰7546m,累计爬升约3100-3200m",
+      "method": "登山指南"
+    },
+    "max_altitude_m": {
+      "value": 7546,
+      "source_note": "慕士塔格峰7546m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "7月",
+      "feasible": "6月底-8月底",
+      "closed": "9-5月(严寒)",
+      "note": "7000m级,登峰季集中6月底-8月;7月最佳;其它时间极端寒冷",
+      "source": "登山指南"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山指南/两步路"
+  },
+  "ma_007": {
+    "route_id": "ma_007",
+    "name_zh": "玉珠峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 15,
+      "source_note": "BC(5050m)-C1(5600m)-顶峰(6178m),约10-15km",
+      "method": "维基百科/携程"
+    },
+    "elevation_gain_m": {
+      "value": 1700,
+      "source_note": "BC(5050m)-C1(5600m)-顶峰(6178m),累计约1100-1700m",
+      "method": "携程攻略"
+    },
+    "max_altitude_m": {
+      "value": 6178,
+      "source_note": "玉珠峰6178m(昆仑山东段最高)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "7-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(严寒)",
+      "note": "7-9月气候稳定;5月/10月气温较低;南坡易",
+      "source": "维基百科"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "维基百科/携程"
+  },
+  "ma_018": {
+    "route_id": "ma_018",
+    "name_zh": "珠穆朗玛峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 40,
+      "source_note": "BC(5300m)-C1-C2-C3-C4-南峰-顶峰(8849m)约35-50km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3650,
+      "source_note": "BC5300m->顶峰8849m,爬升约3550m",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 8849,
+      "source_note": "珠穆朗玛峰8849m(中国官方)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "4月中旬-5月底(春季)",
+      "feasible": "4月中旬-5月底",
+      "closed": "6-3月(夏季季风+冬季严寒)",
+      "note": "春季窗口(4月下旬-5月底)是唯一登峰期;秋季偶尔也有但窗口短;冬季不可",
+      "source": "西藏登协"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山指南"
+  },
+  "ma_020": {
+    "route_id": "ma_020",
+    "name_zh": "贡嘎山",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 28,
+      "source_note": "BC-C1-C2-顶峰约25-30km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3800,
+      "source_note": "BC约3700m->顶峰7509m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 7509,
+      "source_note": "贡嘎山7509m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "9-10月",
+      "feasible": "9-10月",
+      "closed": "11-8月",
+      "note": "贡嘎窗口极短,仅9-10月;死亡率>60%,比8000m峰更难",
+      "source": "登山指南"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山指南"
+  },
+  "ma_005": {
+    "route_id": "ma_005",
+    "name_zh": "那玛峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 18,
+      "source_note": "子梅村(3200m)-BC(4200m)-C1(4800m)-顶峰(5588m)约18km",
+      "method": "维基百科/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "子梅村3200m->顶峰5588m,累计约1800m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5588,
+      "source_note": "那玛峰5588m(贡嘎卫峰)",
+      "method": "维基百科"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-11月",
+      "closed": "12-4月(大雪)",
+      "note": "春秋最佳;7-8月雨季冰川裂缝风险增加",
+      "source": "维基百科/两步路"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "维基百科/两步路"
+  },
+  "ma_008": {
+    "route_id": "ma_008",
+    "name_zh": "雀儿山",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 20,
+      "source_note": "BC(4050m)-C1(4850m)-C2(5350m)-C3(5585m)-冲顶(6168m)约20km",
+      "method": "搜狐/维基百科"
+    },
+    "elevation_gain_m": {
+      "value": 2400,
+      "source_note": "BC4050m->顶峰6168m,约2100m+营地间上下",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 6168,
+      "source_note": "雀儿山主峰6168m",
+      "method": "维基百科"
+    },
+    "season": {
+      "best": "4-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月(严寒)",
+      "note": "春秋两季最佳;7-8月冰川融水多冰裂缝更危险",
+      "source": "维基百科/搜狐"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "搜狐/维基百科"
+  },
+  "ma_010": {
+    "route_id": "ma_010",
+    "name_zh": "雪宝顶",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 12,
+      "source_note": "BC(4200m)-C1-顶峰(5588m)约10-15km",
+      "method": "搜狐旅游"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "BC约3800m->顶峰5588m,累计约1800m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5588,
+      "source_note": "雪宝顶5588m(岷山主峰)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "7-8月",
+      "feasible": "5-9月",
+      "closed": "10-4月(旱季大雪)",
+      "note": "7-8月雨水少最佳;5-6月有雪;10-4月旱季但雪线高",
+      "source": "搜狐/携程"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "搜狐旅游"
+  },
+  "gl_mount_kilimanjaro_010": {
+    "route_id": "gl_mount_kilimanjaro_010",
+    "name_zh": "乞力马扎罗马切梅路线",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 62,
+      "source_note": "登山路线,距离为近似值",
+      "confidence": "medium"
+    },
+    "elevation_gain_m": {
+      "value": 4200,
+      "source_note": "累计爬升,含冲顶段",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 5895,
+      "source_note": "峰顶海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-10月(旱季)",
+      "feasible": "全年",
+      "closed": "雨季登顶率低",
+      "note": "乞力马扎罗旱季最佳"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山路线,距离为近似值"
+  },
+  "gl_mount_fuji_007": {
+    "route_id": "gl_mount_fuji_007",
+    "name_zh": "富士山吉田路线",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 8,
+      "source_note": "登山路线,距离为近似值",
+      "confidence": "medium"
+    },
+    "elevation_gain_m": {
+      "value": 1470,
+      "source_note": "累计爬升,含冲顶段",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 3776,
+      "source_note": "峰顶海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "7-9月",
+      "feasible": "7-9月",
+      "closed": "10-6月",
+      "note": "富士山7-9月开放登山"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "登山路线,距离为近似值"
+  },
+  "mc_005": {
+    "route_id": "mc_005",
+    "name_zh": "214滇藏线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 3000,
+      "source_note": "214国道滇藏线全程",
+      "method": "公路"
+    },
+    "elevation_gain_m": {
+      "value": 40000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 5000,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-11月",
+      "closed": "12-3月",
+      "note": "214滇藏线摩旅"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路"
+  },
+  "mc_004": {
+    "route_id": "mc_004",
+    "name_zh": "317川藏北线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2350,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 38000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 5200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月",
+      "note": "317川藏北线"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cn_cycling_bingcha_010": {
+    "route_id": "cn_cycling_bingcha_010",
+    "name_zh": "丙察察摩旅",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 300,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "丙察察冬季雪封"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "mc_003": {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 305,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "丙察察摩旅"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_009": {
+    "route_id": "cy_009",
+    "name_zh": "丝绸之路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1100,
+      "source_note": "西安-兰州-嘉峪关-敦煌段约1100km,完整丝路>4000km",
+      "method": "新浪博客骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 4000,
+      "source_note": "兰州1500m->敦煌1100m,缓降",
+      "method": "新浪博客"
+    },
+    "max_altitude_m": {
+      "value": 2700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月(严寒)",
+      "note": "312国道,路况良好平坦柏油路;兰州-嘉峪关段40-50km无补给;气候干燥风沙大",
+      "source": "新浪博客/网易"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "新浪博客骑行攻略"
+  },
+  "cy_010": {
+    "route_id": "cy_010",
+    "name_zh": "京杭大运河骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1800,
+      "source_note": "北京-杭州全程约1800km,苏北段平坦",
+      "method": "什么值得买/攻略"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "平原为主极少起伏",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "3-11月",
+      "closed": "12-2月(北方寒冷)",
+      "note": "苏北段30km有修车点和补给站;全程平坦",
+      "source": "什么值得买骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "什么值得买/攻略"
+  },
+  "mc_013": {
+    "route_id": "mc_013",
+    "name_zh": "伊犁河谷摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 1600,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 18000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 3400,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9月",
+      "feasible": "5-9月",
+      "closed": "10-4月",
+      "note": "伊犁河谷摩旅"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_018": {
+    "route_id": "cy_018",
+    "name_zh": "千岛湖环湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 150,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 1000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 300,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "千岛湖全年可骑"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "mc_021": {
+    "route_id": "mc_021",
+    "name_zh": "喀喇昆仑公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 420,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 5000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4733,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "喀喇昆仑"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_008": {
+    "route_id": "cy_008",
+    "name_zh": "大香格里拉环线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1500,
+      "source_note": "丽江-香格里拉-稻城-理塘-泸沽湖-丽江约1400-1600km",
+      "method": "骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 25000,
+      "source_note": "翻越数十个4000m+垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "丽江-香格里拉-稻城-理塘-泸沽湖大环线",
+      "source": "骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "骑行攻略"
+  },
+  "cy_002": {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2350,
+      "source_note": "成都-那曲-拉萨G317约2350km",
+      "method": "公路数据/TibetWay"
+    },
+    "elevation_gain_m": {
+      "value": 38000,
+      "source_note": "翻雀儿山4889m/巴郎山4520m等众多达坂",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "5月/9-10月最佳;7-8月雨季塌方多;海拔较318更高",
+      "source": "TibetWay/骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路数据/TibetWay"
+  },
+  "mc_014": {
+    "route_id": "mc_014",
+    "name_zh": "川西大环线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 1800,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 30000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-11月",
+      "closed": "12-3月",
+      "note": "川西大环线"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_017": {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1000,
+      "source_note": "约1000km(新浪骑行攻略),现有数据900km偏低",
+      "method": "新浪骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 15000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4300,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-11月",
+      "closed": "12-3月(冰雪)",
+      "note": "含四姑娘山/亚拉雪山/贡嘎雪山;翻巴朗山等",
+      "source": "新浪/腾讯新闻"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "新浪骑行攻略"
+  },
+  "cy_014": {
+    "route_id": "cy_014",
+    "name_zh": "广西沿边公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 725,
+      "source_note": "东兴竹山村-那坡弄合村,全长725km(百度攻略)",
+      "method": "百度/8264"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "连续长坡多,累爬大",
+      "method": "骑行攻略"
+    },
+    "max_altitude_m": {
+      "value": 800,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "10-12月,2-4月",
+      "feasible": "10-4月",
+      "closed": "5-9月(雨季湿热)",
+      "note": "三级公路(部分二级),沥青路面宽6m;连续十几公里长坡",
+      "source": "百度/骑行之家"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "百度/8264"
+  },
+  "cy_027": {
+    "route_id": "cy_027",
+    "name_zh": "张北草原天路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 132,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 1800,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "春秋",
+      "feasible": "全年",
+      "closed": "冬季",
+      "note": ""
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_013": {
+    "route_id": "cy_013",
+    "name_zh": "沿312国道上海至乌鲁木齐",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 3900,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 12000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 2200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月",
+      "note": "312国道横跨多气候"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "mc_015": {
+    "route_id": "mc_015",
+    "name_zh": "海南环岛摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 800,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 500,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "11-2月",
+      "feasible": "10-4月",
+      "closed": "5-9月",
+      "note": "海南环岛"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "mc_009": {
+    "route_id": "mc_009",
+    "name_zh": "滇缅公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 500,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 4000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 2000,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "11-2月",
+      "feasible": "10-4月",
+      "closed": "5-9月",
+      "note": "滇缅公路"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_005": {
+    "route_id": "cy_005",
+    "name_zh": "滇藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2325,
+      "source_note": "昆明-大理-香格里拉-林芝-拉萨约2300-2400km",
+      "method": "骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 35000,
+      "source_note": "翻白马雪山/红拉山/东达山等",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5000,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月",
+      "note": "春秋最佳;7-8月雨季塌方;冬季大雪封山",
+      "source": "骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "骑行攻略"
+  },
+  "mc_002": {
+    "route_id": "mc_002",
+    "name_zh": "独库公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 561,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 3400,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6-10月",
+      "closed": "11-5月",
+      "note": "独库公路"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_026": {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 240,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 200,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 50,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "环太湖休闲"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_016": {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 120,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 300,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 2000,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "环洱海休闲"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_021": {
+    "route_id": "cy_021",
+    "name_zh": "翁金线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 45,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 50,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 10,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "翁金线沿海"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_023": {
+    "route_id": "cy_023",
+    "name_zh": "阿尔山骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 450,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 1100,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-8月",
+      "feasible": "6-9月",
+      "closed": "10-5月(严寒)",
+      "note": "草原公路补给间隔大;几十公里无商业设施;需自备路餐",
+      "source": "马蜂窝骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "cy_019": {
+    "route_id": "cy_019",
+    "name_zh": "阿禾公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 225,
+      "source_note": "阿勒泰-禾木,全长约200km,现有225km接近",
+      "method": "知乎/新疆旅游"
+    },
+    "elevation_gain_m": {
+      "value": 3770,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 2400,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪封闭)",
+      "note": "阿禾公路连接阿勒泰与禾木,新疆最美自驾/骑行路线之一",
+      "source": "知乎"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "知乎/新疆旅游"
+  },
+  "cy_006": {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1950,
+      "source_note": "西宁-格尔木-唐古拉山口-拉萨约1950km",
+      "method": "公路数据"
+    },
+    "elevation_gain_m": {
+      "value": 15000,
+      "source_note": "翻昆仑山口4767m/唐古拉山口5231m/风火山5010m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5231,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9月",
+      "feasible": "5-9月",
+      "closed": "10-4月",
+      "note": "青藏线窗口短;7-8月雨季但可走;冬季大风+严寒",
+      "source": "骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "公路数据"
+  },
+  "mc_008": {
+    "route_id": "mc_008",
+    "name_zh": "黔东南摩旅环线",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 700,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 1200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "黔东南摩旅"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "公路里程"
+  },
+  "hk_007": {
+    "route_id": "hk_007",
+    "name_zh": "亚丁大转山",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "7天行程约74-85km,常标70km",
+      "method": "游侠客/户外俱乐部"
+    },
+    "elevation_gain_m": {
+      "value": 3400,
+      "source_note": "累计爬升3360-5500m,翻6-8个4500m+垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4900,
+      "source_note": "且萨嘎丁垭口约4900m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "9-10月(秋色)",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪封山)",
+      "note": "9-10月秋色最美;5-6月花季;7-8月雨季",
+      "source": "游侠客/亚丁官网"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "游侠客/户外俱乐部"
+  },
+  "hk_012": {
+    "route_id": "hk_012",
+    "name_zh": "喀拉峻草原穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "琼库什台-喀拉峻-塔里木-伊宁约70km",
+      "method": "新疆旅游攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "累计爬升约1800m(含多次上下)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 2600,
+      "source_note": "喀拉峻草原最高点约2600m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "6-8月(花海)",
+      "feasible": "5-9月",
+      "closed": "10-4月(大雪)",
+      "note": "6月花海最美;7-8月绿色草原;5月草未绿;9月秋色",
+      "source": "新疆旅游"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "新疆旅游攻略"
+  },
+  "hk_034": {
+    "route_id": "hk_034",
+    "name_zh": "大五台顺穿",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "鸿门岩-东台-北台-中台-西台-南台-佛母洞约65-75km",
+      "method": "五台山攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3000,
+      "source_note": "累爬约3000m(含5个台往返起伏)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 3061,
+      "source_note": "北台叶斗峰3061m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-8月",
+      "feasible": "5-9月",
+      "closed": "10-4月(严寒)",
+      "note": "6-8月最适宜;7月下旬有佛教活动;冬季-30°C+大雪",
+      "source": "五台山景区"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "五台山攻略"
+  },
+  "hk_035": {
+    "route_id": "hk_035",
+    "name_zh": "太白南南穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 40,
+      "source_note": "厚畛子-三合宫-拔仙台-南天门-厚畛子约35-45km",
+      "method": "陕西户外攻略"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "累爬约2200m(含拔仙台登顶)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 3767,
+      "source_note": "拔仙台3767m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "6-9月安全窗口;10月后山顶有积雪;秦岭小气候多变",
+      "source": "8264攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "陕西户外攻略"
+  },
+  "hk_015": {
+    "route_id": "hk_015",
+    "name_zh": "腾格里沙漠五湖连穿",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "天鹅湖-乌兰湖-太阳湖-月亮湖等五湖连穿约45-55km",
+      "method": "沙漠徒步攻略"
+    },
+    "elevation_gain_m": {
+      "value": 200,
+      "source_note": "沙漠起伏,沙丘爬坡累积约200m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 1435,
+      "source_note": "阿拉善左旗海拔约1400-1500m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "3-5月,9-11月",
+      "closed": "12-2月(严寒),6-8月(酷暑>40°C)",
+      "note": "沙漠徒步只能在春秋;夏季地表温度>60°C危险;冬季严寒",
+      "source": "沙漠徒步攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "沙漠徒步攻略"
+  },
+  "hk_024": {
+    "route_id": "hk_024",
+    "name_zh": "库布齐沙漠穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 35,
+      "source_note": "夜鸣沙-七星湖约30-40km",
+      "method": "沙漠攻略"
+    },
+    "elevation_gain_m": {
+      "value": 150,
+      "source_note": "沙丘起伏,累计约150m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 1200,
+      "source_note": "库布齐沙漠海拔约1000-1200m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "3-5月,9-11月",
+      "closed": "12-2月,6-8月",
+      "note": "沙漠线只能在春秋季走;夏季酷暑冬季严寒",
+      "source": "沙漠徒步攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "沙漠攻略"
+  },
+  "hk_013": {
+    "route_id": "hk_013",
+    "name_zh": "狼塔C+V线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 200,
+      "source_note": "C线120km+V线80km=200km,常标180-200km",
+      "method": "163新闻/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 8500,
+      "source_note": "【建议修正为10000m】累升约10000m,现有8500偏低",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4010,
+      "source_note": "乌拉布图达坂4008m/天格尔达坂3760m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6月中旬-9月上旬",
+      "closed": "9月中旬-6月上旬(大雪+冰河)",
+      "note": "⚠️ 2024年6月已全面封禁,非法穿越违法;7-8月水量大过河危险",
+      "source": "163新闻/政府公告"
+    },
+    "verified": true,
+    "gpx_found": true,
+    "source": "163新闻/两步路"
+  },
+  "hk_026": {
+    "route_id": "hk_026",
+    "name_zh": "格聂大环线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 200,
+      "source_note": "格聂C线+大环约180-220km,常标200km",
+      "method": "格聂攻略"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "累爬约5500-6500m,含多次翻垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4900,
+      "source_note": "格聂神山周边垭口约4800-5000m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "7-10月",
+      "feasible": "6月中旬-10月中旬",
+      "closed": "10月下旬-6月上旬(大雪)",
+      "note": "9-10月秋色最佳;7-8月花海雨季;窗口较短",
+      "source": "格聂攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "格聂攻略"
+  },
+  "hk_006": {
+    "route_id": "hk_006",
+    "name_zh": "洛克线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "木里-嘟噜村-白水河-呷洛-稻城亚丁约70-80km",
+      "method": "洛克攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "翻多个4500m+垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4750,
+      "source_note": "垭口最高约4750m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "9-10月(秋色)",
+      "feasible": "5-11月",
+      "closed": "12-4月",
+      "note": "9-10月秋色最美;7-8月雨季",
+      "source": "洛克攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "洛克攻略"
+  },
+  "hk_025": {
+    "route_id": "hk_025",
+    "name_zh": "神农架老君山穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 30,
+      "source_note": "25-30km小环线(4天3晚)",
+      "method": "游侠客/湖北旅游"
+    },
+    "elevation_gain_m": {
+      "value": 1400,
+      "source_note": "四天累计爬升约1400m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 2900,
+      "source_note": "老君山约2936m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月(杜鹃),9-10月(秋)",
+      "feasible": "5-10月",
+      "closed": "12-4月(大雪/保护区封闭)",
+      "note": "5月杜鹃花海;7-8月雨季;9-10月秋色",
+      "source": "游侠客/湖北旅游"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "游侠客/湖北旅游"
+  },
+  "hk_018": {
+    "route_id": "hk_018",
+    "name_zh": "孟克德古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "独库634km-唐布拉约70km",
+      "method": "新疆旅游/苹果旅行"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "含翻门克廷达坂3450m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 3495,
+      "source_note": "门克廷达坂3495m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "7-10月",
+      "feasible": "6月初-10月上旬",
+      "closed": "10月中旬-5月(大雪)",
+      "note": "6-7月花海;9-10月秋色最美;10月初最佳",
+      "source": "新疆旅游"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "新疆旅游/苹果旅行"
+  },
+  "hk_029": {
+    "route_id": "hk_029",
+    "name_zh": "年保玉则穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 60,
+      "source_note": "经典穿越约40-65km(含仙女湖-妖女湖-日干措)",
+      "method": "攻略"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "含翻2个4500m垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4600,
+      "source_note": "垭口最高约4600m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6-9月(但景区关闭)",
+      "closed": "封闭中(2018年关闭至今)",
+      "note": "⚠️ 2018年起因环保关闭,确认仍关闭中,实际不可穿越",
+      "source": "新华社/央视报道"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "攻略"
+  },
+  "hk_047": {
+    "route_id": "hk_047",
+    "name_zh": "天山雪莲峰徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 80,
+      "source_note": "【数据存疑】该峰为技术攀登山峰6627m,非徒步路线,现有80km/4200m可能为周边转山数据",
+      "method": "Wikipedia/百度百科"
+    },
+    "elevation_gain_m": {
+      "value": 3000,
+      "source_note": "存疑,待进一步核实",
+      "method": "Wikipedia"
+    },
+    "max_altitude_m": {
+      "value": 4200,
+      "source_note": "【需修正】Wikipedia记载雪莲峰主峰6627m,非4200m",
+      "method": "Wikipedia"
+    },
+    "season": {
+      "best": "6-8月",
+      "feasible": "6-8月",
+      "closed": "9-5月",
+      "note": "雪莲峰是技术型山峰(6627m),非徒步路线;开花期6-8月",
+      "source": "Wikipedia"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "Wikipedia/百度百科"
+  },
+  "hk_046": {
+    "route_id": "hk_046",
+    "name_zh": "长白山南坡穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "南坡景区-天池-西坡约40-60km",
+      "method": "长白山攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累计爬升约1500m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 2691,
+      "source_note": "长白山白云峰2691m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6月中旬-9月",
+      "closed": "10-5月(大雪封山)",
+      "note": "南坡每年6月中-9月开放;窗口极短;冬季关闭",
+      "source": "长白山景区公告"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "长白山攻略"
+  },
+  "hk_021": {
+    "route_id": "hk_021",
+    "name_zh": "梅里北坡徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 65,
+      "source_note": "亚贡村-坡均-坡均错-双湖-亚贡约60-75km",
+      "method": "梅里北坡攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3500,
+      "source_note": "翻越多个4500m垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5200,
+      "source_note": "滇藏垭口5200m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-11月",
+      "closed": "12-3月(大雪)",
+      "note": "9-10月秋色+看梅里概率高",
+      "source": "梅里攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "梅里北坡攻略"
+  },
+  "hk_033": {
+    "route_id": "hk_033",
+    "name_zh": "麦理浩径",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 100,
+      "source_note": "官方标称100km(北潭涌-屯门)",
+      "method": "香港官方"
+    },
+    "elevation_gain_m": {
+      "value": 4500,
+      "source_note": "累计爬升约4500m(含10段上下起伏)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 957,
+      "source_note": "大帽山957m(香港最高)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-2月(秋冬)",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "夏季湿热暴晒;秋冬干燥舒适",
+      "source": "香港渔农署"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "香港官方"
+  },
+  "hk_048": {
+    "route_id": "hk_048",
+    "name_zh": "玉虚峰徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 60,
+      "source_note": "昆仑山玉虚峰周边徒步约50-70km",
+      "method": "青海攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累爬约1500m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 4500,
+      "source_note": "玉虚峰海拔约4500m(非指主峰)",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "5-9月",
+      "feasible": "5-9月",
+      "closed": "10-4月(严寒)",
+      "note": "昆仑山高海拔寒冷,窗口有限",
+      "source": "青海旅游"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "青海攻略"
+  },
+  "cn_hiking_everest_005": {
+    "route_id": "cn_hiking_everest_005",
+    "name_zh": "珠峰东坡徒步(嘎玛沟)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 80,
+      "source_note": "嘎玛沟入口-珠峰东坡BC-出山约70-90km",
+      "method": "搜狐/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 4500,
+      "source_note": "累计爬升约4500m,与珠峰东坡路线重叠",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5350,
+      "source_note": "朗玛拉垭口5344m,取5350m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "5月中-6月中,9月中-10月初",
+      "feasible": "5月下旬-10月中旬",
+      "closed": "10月下旬-5月上旬(封山)",
+      "note": "与珠峰东坡窗口一致;5月杜鹃花期",
+      "source": "搜狐/两步路"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "搜狐/两步路"
+  },
+  "gl_hiking_inca_004": {
+    "route_id": "gl_hiking_inca_004",
+    "name_zh": "印加古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 42,
+      "source_note": "官方标称42km(Piscacucho-太阳门-马丘比丘)",
+      "method": "维基百科/官方"
+    },
+    "elevation_gain_m": {
+      "value": 2800,
+      "source_note": "累爬约2800m(翻死女人山口4215m)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 4215,
+      "source_note": "死女人山口(Dead Woman Pass)4215m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-9月(旱季)",
+      "feasible": "4-10月",
+      "closed": "11-3月(雨季关闭)",
+      "note": "11-3月雨季关闭维护",
+      "source": "维基百科"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "维基百科/官方"
+  },
+  "gl_hiking_abc_002": {
+    "route_id": "gl_hiking_abc_002",
+    "name_zh": "安纳普尔娜大本营徒步(ABC)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 115,
+      "source_note": "博卡拉-Nayapul-ABC-博卡拉约105-120km",
+      "method": "维基百科/LP"
+    },
+    "elevation_gain_m": {
+      "value": 3800,
+      "source_note": "累爬约3800m(含ABC 4130m)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4130,
+      "source_note": "安纳普尔娜大本营4130m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-11月,3-4月",
+      "feasible": "全年",
+      "closed": "无(但雨季云雾多)",
+      "note": "春秋最佳;雨季(6-9月)云雾多",
+      "source": "维基百科"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "维基百科/LP"
+  },
+  "gl_hiking_kumano_005": {
+    "route_id": "gl_hiking_kumano_005",
+    "name_zh": "熊野古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 75,
+      "source_note": "中边路全程(Takijiri-Hongu约75km)",
+      "method": "UNESCO"
+    },
+    "elevation_gain_m": {
+      "value": 3500,
+      "source_note": "累爬约3500m(山地起伏)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 1100,
+      "source_note": "最高点约1100m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "4-5月(樱),10-11月(红叶)",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "春秋最佳;夏季湿热有蚂蟥;8-9月台风",
+      "source": "UNESCO/日本旅游"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "UNESCO"
+  },
+  "gl_hiking_tmb_003": {
+    "route_id": "gl_hiking_tmb_003",
+    "name_zh": "环勃朗峰徒步(TMB)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 170,
+      "source_note": "官方TMB全程约170km(法意瑞三国)",
+      "method": "官方TMB路线"
+    },
+    "elevation_gain_m": {
+      "value": 10000,
+      "source_note": "累爬约10000m(含10个+垭口)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 2665,
+      "source_note": "Col de la Seigne/Col du Bonhomme约2665m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6月下旬-9月上旬",
+      "feasible": "5月下旬-10月中旬",
+      "closed": "10月下旬-5月中旬(大雪)",
+      "note": "7-8月旺季木屋需提前预订;6月尚有积雪",
+      "source": "官方TMB网站"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "官方TMB路线"
+  },
+  "gl_hiking_ebc_001": {
+    "route_id": "gl_hiking_ebc_001",
+    "name_zh": "珠峰大本营徒步(EBC)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 130,
+      "source_note": "卢克拉-Lukla-EBC-Gokyo-卢克拉约130-150km(大环线)",
+      "method": "维基百科/LP"
+    },
+    "elevation_gain_m": {
+      "value": 5000,
+      "source_note": "累爬约5000m(含Kala Patthar 5545m)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5545,
+      "source_note": "Kala Patthar观景点5545m(EBC本身5364m)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-11月,3-4月",
+      "feasible": "9-11月,2-5月",
+      "closed": "12-1月(严寒),6-8月(季风雨季)",
+      "note": "10-11月秋高气爽看峰最佳;3-4月春花开;12-1月极端寒冷",
+      "source": "LP/维基百科"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "维基百科/LP"
+  },
+  "gl_hiking_milford_008": {
+    "route_id": "gl_hiking_milford_008",
+    "name_zh": "米尔福德步道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 53.5,
+      "source_note": "官方标称53.5km(Glade Wharf-Sandfly Point)",
+      "method": "新西兰DOC官方"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累爬约1500m(翻MacKinnon Pass 1154m)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 1154,
+      "source_note": "MacKinnon Pass 1154m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-4月(新西兰夏)",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "新西兰夏季(10-4月)最佳;冬季可能有雪",
+      "source": "新西兰环保部"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "新西兰DOC官方"
+  },
+  "gl_cycling_taiwan_006": {
+    "route_id": "gl_cycling_taiwan_006",
+    "name_zh": "台湾环岛骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 900,
+      "source_note": "大环线约900-1000km(台北-台东-垦丁-台中-台北)",
+      "method": "台湾骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "累爬约6000m(含苏花/南回等山路)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 400,
+      "source_note": "台湾沿海公路海拔较低,山区路段除外",
+      "method": "地形"
+    },
+    "season": {
+      "best": "10-12月,3-4月",
+      "feasible": "全年",
+      "closed": "7-9月(台风季)",
+      "note": "秋冬春三季;夏季台风危险",
+      "source": "骑行攻略"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "台湾骑行攻略"
+  },
+  "gl_cycling_shimanami_009": {
+    "route_id": "gl_cycling_shimanami_009",
+    "name_zh": "岛波海道骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 70,
+      "source_note": "尾道-今治约70km(跨6座大桥)",
+      "method": "日本官方"
+    },
+    "elevation_gain_m": {
+      "value": 500,
+      "source_note": "桥上坡起伏累计约500m",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 100,
+      "source_note": "跨海大桥高度",
+      "method": "地形"
+    },
+    "season": {
+      "best": "4-5月(樱),10-11月(红叶)",
+      "feasible": "3-11月",
+      "closed": "12-2月(寒冷)",
+      "note": "春秋最佳;夏季炎热",
+      "source": "日本观光"
+    },
+    "verified": true,
+    "gpx_found": false,
+    "source": "日本官方"
+  }
+}

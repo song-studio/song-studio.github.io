@@ -1,0 +1,137 @@
+{
+  "version": "v7_weather_modules",
+  "generated_at": "2026-05-24T10:30+08:00",
+  "summary": {
+    "total_modules": 9,
+    "mobile_critical_modules": [
+      "wind_gust",
+      "precipitation",
+      "cape_thunderstorm",
+      "high_altitude_cold",
+      "short_term_trend"
+    ]
+  },
+  "modules": [
+    {
+      "module_id": "wind_gust",
+      "module_title_zh": "风与阵风风险",
+      "what_user_gets": "当前风力、阵风强度、海拔修正后的等效风冷温度",
+      "metrics_used": [
+        "wind_speed_10m",
+        "wind_gusts_10m",
+        "wind_direction_10m",
+        "temperature_2m"
+      ],
+      "decision_rule_summary": "徒步25km/h注意平衡，35km/h停止山脊行进。骑行横风>30km/h危险。海拔每升1000m风≈高一级",
+      "mobile_priority": 10,
+      "copy_zh": "别人报风速，我们告诉你什么时候该撤"
+    },
+    {
+      "module_id": "precipitation",
+      "module_title_zh": "降水与路线可行性",
+      "what_user_gets": "实时降水(最近1h)、3h累计降水、未来24h降水概率、雪线预估",
+      "metrics_used": [
+        "precipitation",
+        "precipitation_probability",
+        "snowfall_height"
+      ],
+      "decision_rule_summary": "3h累计>10mm=不可徒步(溪水暴涨+路滑)，>30mm=不可骑行(滑坡风险)",
+      "mobile_priority": 9,
+      "copy_zh": "不是下不下雨，是下多大会封路"
+    },
+    {
+      "module_id": "visibility_cloud",
+      "module_title_zh": "能见度与低云",
+      "what_user_gets": "云底高度估算、能见度等级、低云对高海拔路线影响",
+      "metrics_used": [
+        "cloud_cover",
+        "visibility",
+        "relative_humidity_2m"
+      ],
+      "decision_rule_summary": "高海拔路线(4000m+)低云=能见度骤降+失温风险。云底低于路线海拔=不可走",
+      "mobile_priority": 7,
+      "copy_zh": "有云不等于不能走，云底低于你=不能走"
+    },
+    {
+      "module_id": "humidity_dewpoint",
+      "module_title_zh": "湿度与露点",
+      "what_user_gets": "相对湿度、露点温度、体感舒适度、衣物建议",
+      "metrics_used": [
+        "relative_humidity_2m",
+        "dewpoint_2m",
+        "temperature_2m"
+      ],
+      "decision_rule_summary": "露点>15°C=高湿度不适。露点接近气温=大雾/降水前兆。湿度>90%=昼夜温差小但体感更冷",
+      "mobile_priority": 4,
+      "copy_zh": "湿度告诉你衣服够不够，露点告诉你雾来不来"
+    },
+    {
+      "module_id": "pressure_trend",
+      "module_title_zh": "气压变化与天气趋势",
+      "what_user_gets": "海平面气压、3h/6h气压变化趋势、天气稳定性判断",
+      "metrics_used": [
+        "surface_pressure",
+        "pressure_msl"
+      ],
+      "decision_rule_summary": "3h下降>3hPa=天气转坏前兆>6hPa=2h内可能暴风雨。快速上升后回落=强对流前兆",
+      "mobile_priority": 5,
+      "copy_zh": "气压一掉，该撤就撤"
+    },
+    {
+      "module_id": "cape_thunderstorm",
+      "module_title_zh": "雷暴/对流风险",
+      "what_user_gets": "CAPE值/CIN值、雷暴概率、雷击风险评估",
+      "metrics_used": [
+        "cape",
+        "cin",
+        "lightning_potential_index"
+      ],
+      "decision_rule_summary": "CAPE>500 J/kg=弱对流注意、>1500=强雷暴风险。山脊/垭口在CAPE>1000时禁止逗留",
+      "mobile_priority": 8,
+      "copy_zh": "不是所有雨都危险，雷电才是真正的夺命因子"
+    },
+    {
+      "module_id": "high_altitude_cold",
+      "module_title_zh": "高海拔冷风险",
+      "what_user_gets": "风寒指数(WCT)、等效体感温度、冻伤风险时间、海拔修正",
+      "metrics_used": [
+        "temperature_2m",
+        "wind_speed_10m",
+        "wind_gusts_10m",
+        "elevation"
+      ],
+      "decision_rule_summary": "WCT<-10°C=注意保暖<-20°C=冻伤风险(裸露皮肤10min) <-30°C=禁止4000m+活动。海拔修正每1000m气温-6.5°C",
+      "mobile_priority": 9,
+      "copy_zh": "海拔+风才是真正的杀手，不是温度计上的数字"
+    },
+    {
+      "module_id": "sun_window",
+      "module_title_zh": "日照窗口与行动时间",
+      "what_user_gets": "日出日落时间、黄金户外时间、日照时长、紫外线指数",
+      "metrics_used": [
+        "sunrise",
+        "sunset",
+        "daylight_duration",
+        "uv_index",
+        "direct_radiation"
+      ],
+      "decision_rule_summary": "高海拔UV指数通常>11(需防护)。日出后2h-日落前2h为最佳行动窗口",
+      "mobile_priority": 6,
+      "copy_zh": "天亮≠能走，天黑≠必须停"
+    },
+    {
+      "module_id": "short_term_trend",
+      "module_title_zh": "短时天气趋势",
+      "what_user_gets": "未来6h逐小时温度/风/降水趋势，快速判断今日可行性",
+      "metrics_used": [
+        "temperature_2m",
+        "precipitation_probability",
+        "wind_speed_10m",
+        "weather_code"
+      ],
+      "decision_rule_summary": "逐小时看趋势：上午稳定窗口>下午转坏=早出发。持续恶化=改期",
+      "mobile_priority": 10,
+      "copy_zh": "未来6小时，决定了今天能不能出发"
+    }
+  ]
+}

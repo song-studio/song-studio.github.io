@@ -1,0 +1,7 @@
+Nova，请读取任务书：
+/Users/song/Desktop/Codex/song-studio.github.io/song-studio.github.io-work/data/inbox/2026-05-24/tasks/NOVA7-路线气象决策质量复审任务书.md
+
+你的输出目录固定为：
+/Users/song/Desktop/Codex/song-studio.github.io/song-studio.github.io-work/data/inbox/2026-05-24/nova7-review/
+
+这次不要再单纯扩充数量。重点是复审 v5/v6 路线和气象数据，把低质量、重复、可疑、没有真实轨迹或没有决策价值的数据挑出来，并补充能直接进入页面的决策字段。请严格按任务书输出 7 个文件，JSON 必须可解析，不要编造来源。

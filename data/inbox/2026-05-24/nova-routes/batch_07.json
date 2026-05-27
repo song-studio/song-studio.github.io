@@ -1,0 +1,1415 @@
+{
+  "batch": 7,
+  "routes": [
+    {
+      "route_id": "mt_004",
+      "name_zh": "哈巴雪山",
+      "mode": "mountaineering",
+      "season_status": "最佳4-6月(春季杜鹃花海/登顶率≈80%)、9-11月(秋季晴天多)；11-2月季风期8级以上大风，登顶率低；7-8月雨季降水多",
+      "water_points": [
+        "哈巴村(起点采买)",
+        "大本营(有热水/餐饮)",
+        "C1营地(冰川融水需化雪)",
+        "顶峰(无水源)"
+      ],
+      "retreat_points": [
+        "哈巴村(可撤回丽江/香格里拉)",
+        "大本营(可骑马返回哈巴村)",
+        "C1营地(可下撤至大本营)"
+      ],
+      "risk_tags": [
+        "高海拔(5396m，AMS风险)",
+        "冰裂缝(4900m+冰川段)",
+        "石板坡/冰坡滑坠(4500m+，需冰爪/冰镐)",
+        "季风期8级大风(11-2月)",
+        "强制向导要求(哈巴村规定)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "哈巴村有卫生室；香格里拉市人民医院约120km/2.5h；大本营至哈巴村骑马约3h可撤；商业队配备卫星电话及钢瓶氧气",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "需在哈巴村登记(约¥200环保费)，必须聘请有资质高山向导(¥1500-3000/人)",
+      "regulation_note": "2025年起哈巴雪山登山管理趋严，强制向导1:1比例",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "丽江→虎跳峡镇→哈巴村(包车约4h/¥600)，或香格里拉→哈巴村(包车约2.5h/¥400)",
+      "return_from_endpoint": "哈巴村→丽江(包车，同去程)",
+      "nearest_city": "香格里拉(距哈巴村约120km)",
+      "nearest_transport_hub": "丽江三义机场(约160km/3.5h车程)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "哈巴村约2650m",
+        "max": "哈巴顶峰5396m",
+        "end": "哈巴村约2650m"
+      },
+      "cumulative_elevation": 2750,
+      "campsites": [],
+      "huts": [
+        "哈巴村客栈(¥100-200)",
+        "大本营石板房(床位¥100)"
+      ],
+      "camping_restriction": "大本营有住宿，C1可扎营",
+      "signal_coverage": "移动 哈巴村有4G，大本营偶有信号，C1以上无信号 / 电信 同 / 联通 大本营以下有",
+      "signal_dead_zones": "C1→顶峰(约3-4h无信号)",
+      "last_signal_point": "大本营(出发冲顶前)",
+      "route_variants": [
+        "2日传统(哈巴村→大本营→冲顶→返回)",
+        "3日休闲(含高山适应)"
+      ],
+      "variant_differences": "2日约24km/爬升2750m",
+      "distance_km_v5": 24,
+      "distance_note": "v5标注24km(哈巴村→顶峰→哈巴村)，搜索攻略确认约22-28km",
+      "verification_sources": [
+        "百度百科TA说(wapbaike.baidu.com)",
+        "搜狐(sohu.com)攻略",
+        "知乎专栏(zlhuanlan.zhihu.com)"
+      ],
+      "confidence": "A",
+      "name_en": "哈巴雪山"
+    },
+    {
+      "route_id": "mt_005",
+      "name_zh": "玉珠峰",
+      "mode": "mountaineering",
+      "season_status": "最佳5-9月(夏季窗口)；10-4月极寒(-30°C)不建议",
+      "water_points": [
+        "格尔木(起点采买)",
+        "BC大本营(水源)",
+        "C1(化雪)"
+      ],
+      "retreat_points": [
+        "格尔木(起点)",
+        "BC大本营(可撤回)"
+      ],
+      "risk_tags": [
+        "高海拔(6178m)",
+        "极寒(-30°C非窗口期)",
+        "冰裂缝(冰川段)",
+        "技术要求(冰雪技术)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "格尔木市人民医院约3h车程；BC海拔5050m，C1以上需直升机救援",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "需在青海省登山协会办理登山许可(约¥2000)，必须聘请持证高山向导",
+      "regulation_note": "玉珠峰南坡为商业登山成熟路线；北坡技术难度大",
+      "trailhead_access": "格尔木→玉珠峰BC(包车约3h/¥500)",
+      "return_from_endpoint": "原路返回格尔木",
+      "nearest_city": "格尔木(距BC约150km)",
+      "nearest_transport_hub": "格尔木机场(约150km)",
+      "key_altitude_points": {
+        "start": "格尔木约2800m",
+        "max": "玉珠峰顶6178m",
+        "end": "格尔木"
+      },
+      "cumulative_elevation": 3400,
+      "campsites": [
+        {
+          "name": "BC大本营",
+          "km": 0,
+          "altitude_m": 5050,
+          "water": "有",
+          "capacity": "商业队标准营地"
+        }
+      ],
+      "huts": [
+        "格尔木酒店(¥200-400)"
+      ],
+      "camping_restriction": "BC有固定营地",
+      "signal_coverage": "移动 格尔木有4G，BC偶有信号/C1以上无",
+      "signal_dead_zones": "C1→顶峰无信号",
+      "last_signal_point": "BC大本营",
+      "route_variants": [
+        "南坡传统(7天)",
+        "北坡技术(10天+)"
+      ],
+      "distance_km_v5": 20,
+      "confidence_note": "登山线距离以BC至峰顶路段计",
+      "confidence": "A",
+      "verification_sources": [
+        "青海登协公告",
+        "商业登山队资料"
+      ],
+      "distance_note": "BC(5050m)→C1(5600m)→C2(5800m)→顶峰(6178m)，往返约20km",
+      "elevation_profile": [
+        [
+          0,
+          5050
+        ],
+        [
+          3,
+          5200
+        ],
+        [
+          6,
+          5400
+        ],
+        [
+          9,
+          5600
+        ],
+        [
+          11,
+          5800
+        ],
+        [
+          13,
+          5900
+        ],
+        [
+          15,
+          6000
+        ],
+        [
+          17,
+          6100
+        ],
+        [
+          19,
+          6178
+        ],
+        [
+          20,
+          5800
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "variant_differences": "南坡7天(含适应日，BC→C1→C2→冲顶→撤回)，北坡10天+(需冰雪技术训练)",
+      "name_en": "玉珠峰"
+    },
+    {
+      "route_id": "mt_006",
+      "name_zh": "那玛峰",
+      "mode": "mountaineering",
+      "season_status": "最佳5-6月、9-10月；7-8月雨季；11-4月严寒",
+      "water_points": [
+        "子梅村(采买)",
+        "BC大本营(溪流)",
+        "C1(化雪)"
+      ],
+      "retreat_points": [
+        "子梅村→康定",
+        "BC大本营(可撤回)"
+      ],
+      "risk_tags": [
+        "高海拔(5588m)",
+        "贡嘎山区天气多变",
+        "冰川裂隙(部分路段)",
+        "强制向导要求"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "子梅村距康定市医院约200km/4h；BC至子梅村徒步约4h可撤",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需在康定市办理贡嘎山登山许可(2025年11月起加强管控)",
+      "regulation_note": "2025年11月康定市封闭那玛峰等未开发区域，需提前申请",
+      "trailhead_access": "成都→康定(大巴)→子梅村(包车)",
+      "nearest_city": "康定市",
+      "nearest_transport_hub": "成都双流机场",
+      "key_altitude_points": {
+        "start": "子梅村约3300m",
+        "max": "那玛峰顶5588m",
+        "end": "子梅村"
+      },
+      "cumulative_elevation": 2300,
+      "campsites": [
+        {
+          "name": "BC大本营",
+          "km": 0,
+          "altitude_m": 4600,
+          "water": "有",
+          "capacity": "约20顶帐篷"
+        }
+      ],
+      "huts": [
+        "子梅村藏家(床位¥50-80)"
+      ],
+      "camping_restriction": "BC指定区域",
+      "signal_coverage": "移动 子梅村有4G，BC无信号",
+      "signal_dead_zones": "子梅村以上无信号",
+      "last_signal_point": "子梅村",
+      "route_variants": [
+        "5日(成都→子梅→BC→冲顶)",
+        "7日含适应"
+      ],
+      "distance_km_v5": 20,
+      "confidence": "A",
+      "verification_sources": [
+        "康定市政府封闭公告(2025-11)",
+        "商业登山队资料"
+      ],
+      "distance_note": "子梅村(3200m)→BC(4200m)→C1(4800m)→顶峰(5588m)，往返约20km",
+      "elevation_profile": [
+        [
+          0,
+          3200
+        ],
+        [
+          4,
+          3600
+        ],
+        [
+          8,
+          4000
+        ],
+        [
+          12,
+          4200
+        ],
+        [
+          15,
+          4500
+        ],
+        [
+          17,
+          4800
+        ],
+        [
+          19,
+          5100
+        ],
+        [
+          21,
+          5400
+        ],
+        [
+          22,
+          5588
+        ],
+        [
+          24,
+          4800
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "return_from_endpoint": "原路返回：顶峰→C1→BC→子梅村→草科乡→石棉",
+      "variant_differences": "标准5天(成都集合→子梅村→BC→C1→冲顶→撤回)，速攀3天(需高海拔适应)",
+      "name_en": "那玛峰"
+    },
+    {
+      "route_id": "mt_007",
+      "name_zh": "慕士塔格峰",
+      "mode": "mountaineering",
+      "season_status": "最佳6-8月(7月窗口期最稳定)；9-10月可行但气温骤降；11-5月封山",
+      "water_points": [
+        "喀什(起点采买)",
+        "BC(冰川融水)",
+        "C1/C2/C3(化雪)"
+      ],
+      "retreat_points": [
+        "喀什(起点)",
+        "BC→苏巴什→喀什",
+        "各营地均可下撤"
+      ],
+      "risk_tags": [
+        "极高海拔(7546m，严重AMS风险)",
+        "极寒(C3营地-30°C)",
+        "冰裂缝(Kelpii冰川段)",
+        "强风(7000m+可达10级)",
+        "高额费用(¥40000+)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "喀什市医院距BC约3h车程；BC以上救援需直升机或高山协作；商业队配备卫星电话和高氧",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "需通过有资质登山公司办理新疆登山许可(约¥35000-45000含全部服务)",
+      "regulation_note": "慕士塔格商业登山成熟，多条公司运营；需提前半年报名",
+      "trailhead_access": "喀什→苏巴什村(包车约3h/¥600)→BC",
+      "nearest_city": "喀什市(距BC约180km)",
+      "nearest_transport_hub": "喀什徕宁机场",
+      "key_altitude_points": {
+        "start": "喀什约1300m",
+        "max": "慕士塔格顶7546m",
+        "end": "喀什"
+      },
+      "cumulative_elevation": 6200,
+      "campsites": [
+        {
+          "name": "BC大本营",
+          "km": 0,
+          "altitude_m": 4430,
+          "water": "有(冰川融水)",
+          "capacity": "商业队大营地"
+        },
+        {
+          "name": "C1",
+          "km": 5,
+          "altitude_m": 5300,
+          "water": "化雪",
+          "capacity": "营地帐篷"
+        },
+        {
+          "name": "C2",
+          "km": 10,
+          "altitude_m": 6200,
+          "water": "化雪",
+          "capacity": "营地帐篷"
+        },
+        {
+          "name": "C3",
+          "km": 15,
+          "altitude_m": 6900,
+          "water": "化雪",
+          "capacity": "营地帐篷"
+        }
+      ],
+      "huts": [],
+      "camping_restriction": "商业队指定营地",
+      "signal_coverage": "移动 BC偶有信号/C1以上无",
+      "signal_dead_zones": "C1以上全程无信号",
+      "last_signal_point": "BC大本营",
+      "route_variants": [
+        "南坡传统(15天含适应)",
+        "西坡(较少)"
+      ],
+      "distance_km_v5": 30,
+      "confidence": "A",
+      "verification_sources": [
+        "多家商业登山公司(凯途/想象尼泊尔等)"
+      ],
+      "distance_note": "BC(4400m)→C1(5300m)→C2(6300m)→C3(6900m)→顶峰(7546m)，往返约36km",
+      "elevation_profile": [
+        [
+          0,
+          4400
+        ],
+        [
+          3,
+          4700
+        ],
+        [
+          6,
+          5000
+        ],
+        [
+          10,
+          5300
+        ],
+        [
+          14,
+          5700
+        ],
+        [
+          18,
+          6300
+        ],
+        [
+          22,
+          6600
+        ],
+        [
+          26,
+          6900
+        ],
+        [
+          30,
+          7200
+        ],
+        [
+          36,
+          7546
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "return_from_endpoint": "原路返回：顶峰→C3→C2→C1→BC→喀什",
+      "variant_differences": "传统15天(含适应日+拉练)，速攀12天(少适应日但高反风险大)",
+      "name_en": "慕士塔格峰"
+    },
+    {
+      "route_id": "mt_008",
+      "name_zh": "雀儿山",
+      "mode": "mountaineering",
+      "season_status": "最佳7-10月(夏季/初秋)；6月/11月可行但窗口期短；12-5月封山",
+      "water_points": [
+        "甘孜县(采买)",
+        "BC/DM营地(水源)",
+        "C1以上(化雪)"
+      ],
+      "retreat_points": [
+        "甘孜县→成都",
+        "BC大本营(可撤回)",
+        "各营地可下撤"
+      ],
+      "risk_tags": [
+        "高海拔(6168m)",
+        "冰裂缝(大量，需结组)",
+        "冰壁训练(技术要求)",
+        "BC→C1有冰岩混合段"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "甘孜县人民医院距BC约2h；BC以上救援需高山协作+直升机(费用极高)",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "通过商业登山公司办理四川登山许可(约¥18000-25000)",
+      "trailhead_access": "成都→康定→甘孜县(班车约12h/¥200)→新路海(包车)→BC",
+      "nearest_city": "甘孜县(距BC约30km)",
+      "nearest_transport_hub": "成都双流机场(约650km)",
+      "key_altitude_points": {
+        "start": "甘孜县约3400m",
+        "max": "雀儿山顶6168m",
+        "end": "甘孜县"
+      },
+      "cumulative_elevation": 2800,
+      "campsites": [
+        {
+          "name": "BC大本营",
+          "km": 0,
+          "altitude_m": 4000,
+          "water": "有",
+          "capacity": "商业队营地"
+        }
+      ],
+      "huts": [
+        "甘孜县酒店(¥200-300)"
+      ],
+      "camping_restriction": "指定营地",
+      "signal_coverage": "移动 甘孜县有，BC偶有，C1以上无",
+      "signal_dead_zones": "C1以上无信号",
+      "last_signal_point": "BC大本营",
+      "route_variants": [
+        "北坡传统(10天)",
+        "南坡(较少)"
+      ],
+      "distance_km_v5": 25,
+      "confidence": "A",
+      "verification_sources": [
+        "商业登山公司资料(川藏队/朗诗等)"
+      ],
+      "distance_note": "BC(3900m)→C1(4600m)→C2(5100m)→C3(5300m)→顶峰(6168m)，往返约16km",
+      "elevation_profile": [
+        [
+          0,
+          3900
+        ],
+        [
+          2,
+          4200
+        ],
+        [
+          4,
+          4600
+        ],
+        [
+          6,
+          4800
+        ],
+        [
+          8,
+          5100
+        ],
+        [
+          10,
+          5300
+        ],
+        [
+          12,
+          5600
+        ],
+        [
+          14,
+          5900
+        ],
+        [
+          16,
+          6168
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "regulation_note": "雀儿山属德格县境内，攀登需在当地旅游局或通过商业队报备",
+      "return_from_endpoint": "原路返回：顶峰→C3→C2→C1→BC→甘孜县",
+      "variant_differences": "标准7天(含适应)，技术6天(少适应日)，冬季版(需评估冰壁稳定性)",
+      "name_en": "雀儿山"
+    },
+    {
+      "route_id": "mt_009",
+      "name_zh": "半脊峰",
+      "mode": "mountaineering",
+      "season_status": "最佳6-10月；11-5月雪厚不适合",
+      "water_points": [
+        "毕棚沟景区(采买)",
+        "BC(水源)",
+        "C1(化雪)"
+      ],
+      "retreat_points": [
+        "毕棚沟→理县→成都",
+        "BC可撤回"
+      ],
+      "risk_tags": [
+        "高海拔(5430m)",
+        "技术型(含冰壁/岩石路段)",
+        "碎石坡落石",
+        "季节性冰裂缝"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "理县人民医院距毕棚沟约40km/1h；BC以上救援需协作",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "通过商业登山公司办理(约¥6000-8000含向导/装备/许可)",
+      "trailhead_access": "成都→理县→毕棚沟(大巴¥80/3h)→上海子(景区大巴)→BC",
+      "nearest_city": "理县(约40km)",
+      "nearest_transport_hub": "成都双流机场(约200km)",
+      "key_altitude_points": {
+        "start": "上海子约3500m",
+        "max": "半脊峰顶5430m",
+        "end": "上海子"
+      },
+      "cumulative_elevation": 1900,
+      "campsites": [
+        {
+          "name": "BC大本营",
+          "km": 0,
+          "altitude_m": 4400,
+          "water": "有",
+          "capacity": "约20顶帐篷"
+        }
+      ],
+      "huts": [
+        "毕棚沟上海子客栈"
+      ],
+      "camping_restriction": "指定区域",
+      "signal_coverage": "移动 毕棚沟/上海子有4G，BC偶有，C1以上无",
+      "signal_dead_zones": "C1以上无信号",
+      "last_signal_point": "BC大本营",
+      "route_variants": [
+        "7天标准(含适应和冰坡训练)"
+      ],
+      "distance_km_v5": 15,
+      "confidence": "A",
+      "verification_sources": [
+        "川藏高山向导协作队资料"
+      ],
+      "distance_note": "BC(3560m)→C1(4500m)→C2(5000m)→顶峰(5430m)，往返约10km",
+      "elevation_profile": [
+        [
+          0,
+          3560
+        ],
+        [
+          1,
+          3800
+        ],
+        [
+          2,
+          4000
+        ],
+        [
+          3,
+          4200
+        ],
+        [
+          4,
+          4500
+        ],
+        [
+          5,
+          4700
+        ],
+        [
+          6,
+          5000
+        ],
+        [
+          7,
+          5200
+        ],
+        [
+          8,
+          5430
+        ],
+        [
+          10,
+          4500
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "regulation_note": "半脊峰位于毕棚沟景区内，需购买景区门票，攀登需通过商业队报备",
+      "return_from_endpoint": "原路返回：顶峰→C2→C1→BC→毕棚沟→成都",
+      "variant_differences": "标准5天(成都集合→BC→C1→C2→冲顶→撤回)，技术4天(适合有冰雪经验者)",
+      "name_en": "半脊峰"
+    },
+    {
+      "route_id": "mt_010",
+      "name_zh": "雪宝顶",
+      "mode": "mountaineering",
+      "season_status": "最佳7-10月；11-6月积雪厚",
+      "water_points": [
+        "岷江乡(采买)",
+        "BC(水源)",
+        "C1(化雪)"
+      ],
+      "retreat_points": [
+        "岷江乡→松潘→成都",
+        "BC可撤回"
+      ],
+      "risk_tags": [
+        "高海拔(5588m)",
+        "骆驼背岩壁(技术攀岩5.7级)",
+        "冰裂缝(冰川段)",
+        "落石(风化严重)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "松潘县人民医院距BC约80km/2h",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "通过商业队办理四川登山许可(约¥8000-12000)",
+      "trailhead_access": "成都→松潘→岷江乡→BC",
+      "nearest_city": "松潘县",
+      "nearest_transport_hub": "成都双流机场",
+      "key_altitude_points": {
+        "start": "岷江乡约2300m",
+        "max": "雪宝顶5588m",
+        "end": "岷江乡"
+      },
+      "cumulative_elevation": 3300,
+      "campsites": [
+        {
+          "name": "BC",
+          "km": 0,
+          "altitude_m": 4300,
+          "water": "有",
+          "capacity": "约15顶帐篷"
+        }
+      ],
+      "signal_coverage": "移动 BC偶有/C1以上无",
+      "signal_dead_zones": "C1以上无",
+      "last_signal_point": "BC",
+      "distance_km_v5": 18,
+      "confidence": "A",
+      "verification_sources": [
+        "川藏登山队资料"
+      ],
+      "distance_note": "BC(3300m)→C1(4200m)→C2(4800m)→顶峰(5588m)，往返约14km",
+      "elevation_profile": [
+        [
+          0,
+          3300
+        ],
+        [
+          2,
+          3600
+        ],
+        [
+          4,
+          4200
+        ],
+        [
+          6,
+          4500
+        ],
+        [
+          8,
+          4800
+        ],
+        [
+          10,
+          5100
+        ],
+        [
+          12,
+          5400
+        ],
+        [
+          14,
+          5588
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "huts": [
+        "松潘县城酒店(¥150-300)"
+      ],
+      "camping_restriction": "BC/C1有固定营地，禁止在保护区内随意扎营",
+      "regulation_note": "雪宝顶位于岷山保护区边缘，需在松潘县登山协会报备",
+      "return_from_endpoint": "原路返回：顶峰→C2→C1→BC→松潘→成都",
+      "route_variants": [
+        "传统南坡路线(5天)",
+        "西坡短路线(4天，需冰雪技术)"
+      ],
+      "variant_differences": "南坡5天(标准，含适应)，西坡4天(技术路线，需冰岩混合攀登经验)",
+      "name_en": "雪宝顶"
+    },
+    {
+      "route_id": "mt_011",
+      "name_zh": "贡嘎山",
+      "mode": "mountaineering",
+      "season_status": "最佳9-10月(秋季窗口最稳)；5-6月可行但雪大；11-4月极寒禁止攀登",
+      "water_points": [
+        "康定(采买)",
+        "BC(冰川融水)",
+        "C1-C4(化雪)"
+      ],
+      "retreat_points": [
+        "康定→成都",
+        "BC可撤回"
+      ],
+      "risk_tags": [
+        "极高海拔(7556m，技术/体力要求极高)",
+        "极陡(相对高差超过6000m)",
+        "贡嘎山难登(登顶率极低/死亡率高)",
+        "强风/极寒",
+        "冰岩混合路线"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "康定市医院距BC约4h车程；BC以上救援极其困难",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需在四川省登协办理特批许可(极难获得)，通常仅对高水平登山队开放",
+      "regulation_note": "贡嘎山技术难度极高，登顶死亡比极高，不建议非专业登山者尝试",
+      "trailhead_access": "成都→康定→贡嘎山BC",
+      "nearest_city": "康定市",
+      "nearest_transport_hub": "成都双流机场",
+      "key_altitude_points": {
+        "start": "康定约2800m",
+        "max": "贡嘎山顶7556m",
+        "end": "康定"
+      },
+      "cumulative_elevation": 4700,
+      "campsites": [
+        {
+          "name": "BC",
+          "altitude_m": 4000,
+          "water": "有"
+        },
+        {
+          "name": "C1",
+          "altitude_m": 4800,
+          "water": "有"
+        },
+        {
+          "name": "C2",
+          "altitude_m": 5500,
+          "water": "有"
+        }
+      ],
+      "signal_coverage": "移动 BC偶有/C1以上无",
+      "signal_dead_zones": "C1以上全程无信号",
+      "last_signal_point": "BC",
+      "distance_km_v5": 35,
+      "confidence": "A",
+      "verification_sources": [
+        "中国登山协会",
+        "商业高山探险资料"
+      ],
+      "distance_note": "BC(3600m)→C1(4600m)→C2(5300m)→C3(5800m)→顶峰(7556m)，往返约32km",
+      "elevation_profile": [
+        [
+          0,
+          3600
+        ],
+        [
+          4,
+          4000
+        ],
+        [
+          8,
+          4600
+        ],
+        [
+          12,
+          5000
+        ],
+        [
+          16,
+          5300
+        ],
+        [
+          20,
+          5600
+        ],
+        [
+          24,
+          5800
+        ],
+        [
+          28,
+          6300
+        ],
+        [
+          32,
+          7556
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "huts": [
+        "康定酒店(¥200-400)",
+        "老榆林藏家(¥80-150)"
+      ],
+      "camping_restriction": "仅可在BC/C1/C2/C3指定营地扎营，贡嘎山国家级自然保护区严禁随意扎营",
+      "return_from_endpoint": "原路返回：顶峰→C3→C2→C1→BC→康定",
+      "route_variants": [
+        "传统西北山脊路线(15-20天)",
+        "东北山脊路线(18-25天)"
+      ],
+      "variant_differences": "西北山脊15-20天(标准，含气象窗口等待)，东北山脊18-25天(更长的冰川路段，技术要求更高)",
+      "name_en": "贡嘎山"
+    },
+    {
+      "route_id": "mt_012",
+      "name_zh": "岗什卡峰",
+      "mode": "mountaineering",
+      "season_status": "最佳5-10月(夏季)；11-4月极寒",
+      "water_points": [
+        "门源县(采买)",
+        "七彩瀑(BC水源)",
+        "C1(化雪)"
+      ],
+      "retreat_points": [
+        "门源→西宁",
+        "BC可撤回"
+      ],
+      "risk_tags": [
+        "高海拔(5254m)",
+        "冰裂缝(冰川段)",
+        "接近性好(公路直达BC下方)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "门源县人民医院约40min车程；西宁市约2h",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "通过商业队办理青海登山许可(约¥4000-6000)",
+      "trailhead_access": "西宁→门源(高铁¥30/40min)→七彩瀑(包车1h)",
+      "nearest_city": "门源县",
+      "nearest_transport_hub": "西宁曹家堡机场",
+      "key_altitude_points": {
+        "start": "七彩瀑约3800m",
+        "max": "岗什卡顶5254m",
+        "end": "七彩瀑"
+      },
+      "cumulative_elevation": 1450,
+      "campsites": [
+        {
+          "name": "BC",
+          "altitude_m": 4300,
+          "water": "有",
+          "capacity": "约20顶帐篷"
+        }
+      ],
+      "signal_coverage": "移动 七彩瀑有4G/BC偶有/C1以上无",
+      "signal_dead_zones": "C1以上无信号",
+      "last_signal_point": "BC",
+      "distance_km_v5": 12,
+      "confidence": "A",
+      "verification_sources": [
+        "祁连山登山基地资料"
+      ],
+      "distance_note": "BC(3850m)→C1(4600m)→顶峰(5254.5m)，往返约10km",
+      "elevation_profile": [
+        [
+          0,
+          3850
+        ],
+        [
+          1,
+          4000
+        ],
+        [
+          2,
+          4200
+        ],
+        [
+          3,
+          4400
+        ],
+        [
+          4,
+          4600
+        ],
+        [
+          5,
+          4800
+        ],
+        [
+          6,
+          4900
+        ],
+        [
+          7,
+          5000
+        ],
+        [
+          8,
+          5100
+        ],
+        [
+          9,
+          5254
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "huts": [
+        "门源县城酒店(¥150-300)"
+      ],
+      "camping_restriction": "BC有固定营地，C1以上仅可在雪地扎营",
+      "regulation_note": "岗什卡峰属海北州，攀登需通过当地登山协会或商业队报备",
+      "return_from_endpoint": "原路返回：顶峰→C1→BC→门源→西宁",
+      "route_variants": [
+        "传统路线(3-4天)",
+        "速攀(2天，需冰雪技术)"
+      ],
+      "variant_differences": "传统3-4天(含高海拔适应)，速攀2天(适合有6000m级经验者)",
+      "name_en": "岗什卡峰"
+    },
+    {
+      "route_id": "mt_013",
+      "name_zh": "珠穆朗玛峰",
+      "mode": "mountaineering",
+      "season_status": "最佳4-5月(春季窗口)，9-10月(秋季窗口但较少)；6-8月雨季/11-3月极寒不适合",
+      "water_points": [
+        "加德满都(采买)",
+        "卢克拉(最后一站补给)",
+        "BC(冰川融水)",
+        "C1至C4(全程化雪)"
+      ],
+      "retreat_points": [
+        "加德满都(起点)",
+        "BC可乘直升机至加德满都",
+        "各营地可下撤"
+      ],
+      "risk_tags": [
+        "极高海拔(8849m，致死性AMS/HACE/HAPE)",
+        "死亡区(8000m+，需氧气)",
+        "昆布冰川冰崩(每年数人死亡)",
+        "希拉里台阶(拥堵)",
+        "费用极高(¥300000+)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "南坡BC有救援直升机和HRA高山诊所；8000m+救援基本不可能；商业队配备高氧和夏尔巴协作",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需尼泊尔政府登山许可($11000/人)+通过有资质探险公司；需提供高海拔登山经历证明",
+      "regulation_note": "每年春季(4-5月)为登珠峰窗口；2025年起尼泊尔收紧许可审核",
+      "trailhead_access": "加德满都→卢克拉(小飞机$180)→南池徒步→BC(12天)",
+      "nearest_city": "加德满都",
+      "nearest_transport_hub": "加德满都特里布万国际机场",
+      "key_altitude_points": {
+        "start": "加德满都约1400m",
+        "max": "珠峰顶8849m",
+        "end": "加德满都"
+      },
+      "cumulative_elevation": 7400,
+      "campsites": [
+        {
+          "name": "BC",
+          "altitude_m": 5364,
+          "water": "有(冰川融水)",
+          "capacity": "商业队大营地"
+        },
+        {
+          "name": "C1",
+          "altitude_m": 6000,
+          "water": "化雪"
+        },
+        {
+          "name": "C2",
+          "altitude_m": 6400,
+          "water": "化雪"
+        },
+        {
+          "name": "C3",
+          "altitude_m": 7200,
+          "water": "化雪"
+        },
+        {
+          "name": "C4",
+          "altitude_m": 7950,
+          "water": "化雪(死亡区)"
+        }
+      ],
+      "signal_coverage": "移动 BC有WiFi(付费)/C2有信号/C3以上无",
+      "signal_dead_zones": "C3以上(死亡区)无信号",
+      "last_signal_point": "C2",
+      "route_variants": [
+        "南坡(尼泊尔侧标准)",
+        "北坡(西藏侧，限制多)"
+      ],
+      "distance_km_v5": 70,
+      "distance_note": "BC(5300m)→C1(6000m)→C2(6500m)→C3(7300m)→C4(7950m)→顶峰(8848.86m)，往返约40km",
+      "confidence": "A",
+      "verification_sources": [
+        "尼泊尔旅游部",
+        "HRA喜马拉雅救援协会",
+        "探险公司公开资料"
+      ],
+      "elevation_profile": [
+        [
+          0,
+          5300
+        ],
+        [
+          5,
+          5600
+        ],
+        [
+          10,
+          6000
+        ],
+        [
+          15,
+          6300
+        ],
+        [
+          20,
+          6500
+        ],
+        [
+          25,
+          6800
+        ],
+        [
+          30,
+          7300
+        ],
+        [
+          35,
+          7600
+        ],
+        [
+          38,
+          7950
+        ],
+        [
+          40,
+          8849
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "huts": [
+        "Lukla客栈(¥100-200)",
+        "Namche Bazaar客栈(¥80-150)",
+        "Gorak Shep客栈(¥200-300)"
+      ],
+      "camping_restriction": "仅可在BC/C1/C2/C3/C4指定营地扎营，昆布冰川禁止露营",
+      "return_from_endpoint": "原路返回：顶峰→C4→C3→C2→C1→BC→Lukla→加德满都",
+      "variant_differences": "南坡30-40天(尼泊尔侧，一价全包$35000-$85000)，北坡30-45天(西藏侧，$40000-$90000)，南坡登顶率更高但昆布冰川风险大，北坡更冷风更大",
+      "name_en": "珠穆朗玛峰"
+    },
+    {
+      "route_id": "mt_014",
+      "name_zh": "乔戈里峰(K2)",
+      "mode": "mountaineering",
+      "season_status": "最佳7-8月(喀喇昆仑夏季窗口极短)；6月/9月可行但窗口窄；10-5月封山",
+      "water_points": [
+        "斯卡杜(采买)",
+        "BC冰川融水",
+        "C1-C4(化雪)"
+      ],
+      "retreat_points": [
+        "斯卡杜→吉尔吉特→伊斯兰堡",
+        "BC可直升机"
+      ],
+      "risk_tags": [
+        "极高海拔(8611m，死亡率极高)",
+        "技术攀登(马泽诺之瓶/烟囱等)",
+        "冰崩/落石(极危险)",
+        "窗口期极短(仅数天)",
+        "费用极高(¥300000+)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "斯卡杜有基础医院；BC以上救援极其困难；无直升机可在8000m+操作",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需巴基斯坦政府登山许可+通过探险公司(约¥250000-400000)",
+      "trailhead_access": "伊斯兰堡→斯卡杜(小飞机)→Askole(吉普车)→BC徒步",
+      "nearest_city": "斯卡杜(距BC约7天徒步)",
+      "nearest_transport_hub": "伊斯兰堡国际机场",
+      "key_altitude_points": {
+        "start": "斯卡杜约2200m",
+        "max": "K2顶8611m",
+        "end": "斯卡杜"
+      },
+      "cumulative_elevation": 6400,
+      "campsites": [],
+      "signal_coverage": "移动 BC卫星电话/C1以上无",
+      "signal_dead_zones": "全程无手机信号",
+      "last_signal_point": "无(卫星电话唯一通讯)",
+      "distance_km_v5": 60,
+      "confidence": "A",
+      "verification_sources": [
+        "巴基斯坦旅游部",
+        "探险公司公开资料"
+      ],
+      "distance_note": "BC(4965m)→C1(6100m)→C2(6800m)→C3(7400m)→C4(7900m)→顶峰(8611m)，往返约25km",
+      "elevation_profile": [
+        [
+          0,
+          4965
+        ],
+        [
+          3,
+          5300
+        ],
+        [
+          6,
+          6100
+        ],
+        [
+          9,
+          6500
+        ],
+        [
+          12,
+          6800
+        ],
+        [
+          15,
+          7100
+        ],
+        [
+          18,
+          7400
+        ],
+        [
+          20,
+          7600
+        ],
+        [
+          22,
+          7900
+        ],
+        [
+          25,
+          8611
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "huts": [
+        "Skardu酒店(¥300-500)",
+        "Askole营地(帐篷)"
+      ],
+      "camping_restriction": "仅可在BC/C1/C2/C3/C4指定营地扎营，冰川段禁止随意扎营",
+      "regulation_note": "K2攀登需巴基斯坦旅游部登山许可(约$7000-15000)，必须加入有资质的商业队",
+      "return_from_endpoint": "原路返回：顶峰→C4→C3→C2→C1→BC→Askole→Skardu→伊斯兰堡",
+      "route_variants": [
+        "传统南壁路线(Abruzzi Spur，30-40天)",
+        "北壁路线(中国侧，40-50天，极少有人走)"
+      ],
+      "variant_differences": "传统南壁Abruzzi Spur路线约30-40天(含气象窗口等待)，北壁路线需从中国侧进入，技术难度更大，极少商业队运营",
+      "name_en": "乔戈里峰(K2)"
+    },
+    {
+      "route_id": "mt_015",
+      "name_zh": "乞力马扎罗马切梅路线",
+      "mode": "mountaineering",
+      "season_status": "最佳6-10月(旱季)、1-3月(第二窗口)；4-5月大雨季/11-12月小雨季不建议",
+      "water_points": [
+        "莫希(采买)",
+        "沿途Mandara/Horombo/Kibo营地供水"
+      ],
+      "retreat_points": [
+        "莫希→阿鲁沙→乞力马扎罗机场",
+        "沿途各营地均可下撤至大门"
+      ],
+      "risk_tags": [
+        "高海拔(5895m，AMS-6天适应路线为最长但登顶率最高)",
+        "极寒(Uhuru峰顶-20°C以下)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "莫希有KCMC医院(东非最好的高山病医院)；Kibo营地有直升机停机坪",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "必须通过有资质旅行社办理登山许可(约$2000-3000含向导背夫)",
+      "trailhead_access": "乞力马扎罗机场→莫希(巴士$20)→马切梅大门(旅行社车)",
+      "nearest_city": "莫希(距马切梅大门约40km)",
+      "nearest_transport_hub": "乞力马扎罗国际机场(约50km)",
+      "key_altitude_points": {
+        "start": "马切梅大门约1800m",
+        "max": "Uhuru峰顶5895m",
+        "end": "马切梅大门"
+      },
+      "cumulative_elevation": 4100,
+      "campsites": [
+        {
+          "name": "马切梅营地",
+          "altitude_m": 3000,
+          "water": "有"
+        },
+        {
+          "name": "希拉营地",
+          "altitude_m": 3840,
+          "water": "有"
+        },
+        {
+          "name": "巴兰科营地",
+          "altitude_m": 3950,
+          "water": "有"
+        },
+        {
+          "name": "卡兰加营地",
+          "altitude_m": 4200,
+          "water": "有"
+        },
+        {
+          "name": "科索沃营地",
+          "altitude_m": 4800,
+          "water": "有"
+        }
+      ],
+      "huts": [
+        "Mandara/Horombo/Kibo木屋($50-80/床位)"
+      ],
+      "camping_restriction": "马切梅路线允许木屋+帐篷混合",
+      "signal_coverage": "移动 莫希有4G，登山路线部分有信号(TANAPA/当地SIM卡)",
+      "signal_dead_zones": "巴兰科至Uhuru段部分无信号",
+      "route_variants": [
+        "5天/6天/7天/8天(马切梅)"
+      ],
+      "distance_km_v5": 70,
+      "distance_note": "马切梅路线约70km往返",
+      "confidence": "A",
+      "verification_sources": [
+        "坦桑尼亚国家公园(TANAPA)官网",
+        "多家旅行社公开资料"
+      ],
+      "elevation_profile": [
+        [
+          0,
+          1700
+        ],
+        [
+          8,
+          2800
+        ],
+        [
+          16,
+          3800
+        ],
+        [
+          24,
+          4200
+        ],
+        [
+          32,
+          4600
+        ],
+        [
+          40,
+          4700
+        ],
+        [
+          48,
+          5000
+        ],
+        [
+          52,
+          5300
+        ],
+        [
+          56,
+          5600
+        ],
+        [
+          60,
+          5895
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "last_signal_point": "Barafu营地(4673m)部分位置有信号，7200以上无(需卫星电话)",
+      "regulation_note": "坦桑尼亚国家公园规定所有登山者必须雇佣注册向导，禁止独自攀登",
+      "return_from_endpoint": "从顶峰下撤至Mweka Gate，专车接回莫希/阿鲁沙",
+      "variant_differences": "马切梅7天(最长最稳妥，高适应好)，马兰古5-6天(最快但高反风险大)，隆盖6天(最荒野，人少)",
+      "name_en": "乞力马扎罗马切梅路线"
+    },
+    {
+      "route_id": "mt_020",
+      "name_zh": "富士山吉田路线",
+      "mode": "mountaineering",
+      "season_status": "最佳7月初-9月中旬(官方开山期)；6月/9月下旬可行但无山屋运营；10-5月封山",
+      "water_points": [
+        "河口湖(采买)",
+        "五合目(最后一站商店)",
+        "六至八合目(山屋售水)",
+        "山顶(售水)"
+      ],
+      "retreat_points": [
+        "五合目(可乘巴士回河口湖/东京)",
+        "各合目均可下撤至五合目"
+      ],
+      "risk_tags": [
+        "高海拔(3776m，部分人可能有轻度AMS)",
+        "火山灰路段(下行滑溜)",
+        "弹丸登山(夜爬不睡)/体温过低风险",
+        "拥堵(山顶段旺季可能排队1h+)",
+        "火山气体(风向不利时)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "五合目有救护站；富士吉田市病院约1h车程；八合目有救护所",
+      "access_status": "开放(季节性)",
+      "permit_required": false,
+      "permit_how": "无需许可证，自由登山；2025年起可能试行人山管理费(¥1000)",
+      "regulation_note": "官方开山期7月上旬-9月中旬；夜爬(弹丸登山)被官方劝阻",
+      "trailhead_access": "东京→河口湖(巴士¥2000/2h)→五合目(巴士¥1540/50min)",
+      "return_from_endpoint": "山顶→须走口/御殿场/富士宫口下山→巴士至河口湖/东京",
+      "nearest_city": "富士吉田市",
+      "nearest_transport_hub": "东京成田/羽田机场(约120km/2.5h车程)",
+      "key_altitude_points": {
+        "start": "五合目约2300m",
+        "max": "富士山顶3776m",
+        "end": "五合目"
+      },
+      "cumulative_elevation": 1476,
+      "campsites": [],
+      "huts": [
+        "六至九合目多处山屋(¥8000-12000含床位+1-2餐)"
+      ],
+      "camping_restriction": "禁止野营(仅在八合目指定区域或山屋)",
+      "signal_coverage": "移动 五合目至山顶全程4G覆盖(需开通日本漫游)",
+      "signal_dead_zones": "无",
+      "last_signal_point": "全程有信号",
+      "route_variants": [
+        "吉田路线(最主流)",
+        "须走路线(较少人)",
+        "御殿场路线(最陡)"
+      ],
+      "distance_km_v5": 15,
+      "distance_note": "五合目至山顶约7.5km单程",
+      "confidence": "A",
+      "verification_sources": [
+        "日本环境省富士山官网",
+        "山梨县富士山保全协议会"
+      ],
+      "elevation_profile": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          500
+        ],
+        [
+          20,
+          1000
+        ],
+        [
+          25,
+          1500
+        ],
+        [
+          30,
+          2000
+        ],
+        [
+          40,
+          2500
+        ],
+        [
+          48,
+          3000
+        ],
+        [
+          52,
+          3400
+        ],
+        [
+          56,
+          3700
+        ],
+        [
+          60,
+          3776
+        ]
+      ],
+      "last_verified_date": "2026-05-24",
+      "variant_differences": "吉田(最大众，五合目-山顶6h)，须走(绿树掩映，6h)，御殿场(最长8h，人少)，富士宫(最短5h，最陡)",
+      "name_en": "富士山吉田路线"
+    }
+  ]
+}

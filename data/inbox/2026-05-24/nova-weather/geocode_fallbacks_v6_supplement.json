@@ -1,0 +1,865 @@
+{
+  "version": "v6_supplement",
+  "total": 45,
+  "domestic": 30,
+  "overseas": 15,
+  "confidence_A": 45,
+  "confidence_C": 0,
+  "locations": [
+    {
+      "query_zh": "海坨山",
+      "preferred_query": "海坨山",
+      "fallback_queries": [
+        "北京延庆海坨山"
+      ],
+      "ambiguity_note": "北京延庆，冬奥会赛区，主峰2241m。海坨山 vs 小海坨。",
+      "region": "华北",
+      "manual_lat": 40.576262,
+      "manual_lng": 115.824592,
+      "amap_poi": "海坨山",
+      "amap_address": "延庆区",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "海坨山"
+    },
+    {
+      "query_zh": "小五台",
+      "preferred_query": "小五台山金河口",
+      "fallback_queries": [
+        "河北蔚县小五台"
+      ],
+      "ambiguity_note": "已在87条中。此处为补充东台顶（2882m）入口坐标。",
+      "region": "华北",
+      "manual_lat": 39.933923,
+      "manual_lng": 115.003255,
+      "amap_poi": "小五台金河景区",
+      "amap_address": "常宁乡西金河口村",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "小五台"
+    },
+    {
+      "query_zh": "箭扣长城",
+      "preferred_query": "北京怀柔箭扣长城",
+      "fallback_queries": [
+        "箭扣长城 西栅子"
+      ],
+      "ambiguity_note": "北京怀柔，西栅子村是箭扣徒步起点。",
+      "region": "华北",
+      "manual_lat": 40.443673,
+      "manual_lng": 116.5355,
+      "amap_poi": "箭扣长城地上停车场",
+      "amap_address": "北京顺通虹鳟鱼度假村北侧50米",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "箭扣长城"
+    },
+    {
+      "query_zh": "老掌沟",
+      "preferred_query": "河北沽源老掌沟",
+      "fallback_queries": [
+        "老掌沟 越野"
+      ],
+      "ambiguity_note": "河北沽源县，京北越野和徒步经典。",
+      "region": "华北",
+      "manual_lat": 41.365886,
+      "manual_lng": 115.964932,
+      "amap_poi": "老掌沟",
+      "amap_address": "沽源县",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "老掌沟"
+    },
+    {
+      "query_zh": "坝上",
+      "preferred_query": "河北丰宁坝上草原",
+      "fallback_queries": [
+        "丰宁坝上"
+      ],
+      "ambiguity_note": "坝上范围广（丰宁/围场/张北），坐标取丰宁坝上入口。",
+      "region": "华北",
+      "manual_lat": 41.601121,
+      "manual_lng": 115.988194,
+      "amap_poi": "丰宁坝上草原",
+      "amap_address": "大滩镇榆树沟",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "坝上"
+    },
+    {
+      "query_zh": "乌兰布统",
+      "preferred_query": "内蒙古赤峰乌兰布统景区",
+      "fallback_queries": [
+        "乌兰布统"
+      ],
+      "ambiguity_note": "内蒙古赤峰市克什克腾旗。与河北塞罕坝相邻。",
+      "region": "华北",
+      "manual_lat": 42.587692,
+      "manual_lng": 117.200053,
+      "amap_poi": "乌兰布统景区",
+      "amap_address": [],
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "乌兰布统"
+    },
+    {
+      "query_zh": "库布齐沙漠",
+      "preferred_query": "内蒙古鄂尔多斯库布齐沙漠",
+      "fallback_queries": [
+        "库布齐沙漠 七星湖"
+      ],
+      "ambiguity_note": "内蒙古鄂尔多斯，夜鸣沙/七星湖为经典营地入口。",
+      "region": "华北",
+      "manual_lat": 40.28048,
+      "manual_lng": 109.939687,
+      "amap_poi": "库布其沙漠",
+      "amap_address": "库布齐沙漠旅游景区北侧",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "库布齐沙漠"
+    },
+    {
+      "query_zh": "徽杭古道",
+      "preferred_query": "安徽绩溪徽杭古道",
+      "fallback_queries": [
+        "徽杭古道入口"
+      ],
+      "ambiguity_note": "安徽绩溪→浙江临安。坐标取绩溪侧入口。",
+      "region": "华东",
+      "manual_lat": 30.137632,
+      "manual_lng": 118.804247,
+      "amap_poi": "徽杭古道",
+      "amap_address": "伏岭江南村",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "徽杭古道"
+    },
+    {
+      "query_zh": "莫干山",
+      "preferred_query": "莫干山风景区",
+      "fallback_queries": [
+        "浙江德清莫干山"
+      ],
+      "ambiguity_note": "已在87条中，此处保持补充完整性。浙江德清。",
+      "region": "华东",
+      "manual_lat": 30.607076,
+      "manual_lng": 119.866469,
+      "amap_poi": "莫干山风景名胜区",
+      "amap_address": "莫干山",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "莫干山"
+    },
+    {
+      "query_zh": "雁荡山",
+      "preferred_query": "浙江温州雁荡山",
+      "fallback_queries": [
+        "雁荡山灵峰"
+      ],
+      "ambiguity_note": "浙江温州乐清市，北雁荡最经典。",
+      "region": "华东",
+      "manual_lat": 28.373656,
+      "manual_lng": 121.033716,
+      "amap_poi": "雁荡山风景名胜区",
+      "amap_address": "雁荡镇响岭头村",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "雁荡山"
+    },
+    {
+      "query_zh": "太姥山",
+      "preferred_query": "福建宁德太姥山",
+      "fallback_queries": [
+        "太姥山景区"
+      ],
+      "ambiguity_note": "福建福鼎市，海边名山。",
+      "region": "华东",
+      "manual_lat": 27.124142,
+      "manual_lng": 120.184719,
+      "amap_poi": "太姥山国家级风景名胜区",
+      "amap_address": "太姥山镇",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "太姥山"
+    },
+    {
+      "query_zh": "武夷山徒步起点",
+      "preferred_query": "福建武夷山风景区",
+      "fallback_queries": [
+        "武夷山 天游峰"
+      ],
+      "ambiguity_note": "福建武夷山市，坐标取景区南入口。",
+      "region": "华东",
+      "manual_lat": 27.656446,
+      "manual_lng": 117.959681,
+      "amap_poi": "武夷山风景名胜区",
+      "amap_address": "大王峰路21号",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "武夷山徒步起点"
+    },
+    {
+      "query_zh": "漓江徒步起点",
+      "preferred_query": "桂林阳朔杨堤码头",
+      "fallback_queries": [
+        "杨堤 漓江"
+      ],
+      "ambiguity_note": "杨堤→兴坪是漓江经典徒步段。",
+      "region": "华南",
+      "manual_lat": 24.992979,
+      "manual_lng": 110.454812,
+      "amap_poi": "杨堤码头",
+      "amap_address": "杨提乡漓江景区杨堤风光内",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "漓江徒步起点"
+    },
+    {
+      "query_zh": "丹霞山",
+      "preferred_query": "广东韶关丹霞山",
+      "fallback_queries": [
+        "丹霞山长老峰"
+      ],
+      "ambiguity_note": "广东韶关仁化县，世界地质公园。",
+      "region": "华南",
+      "manual_lat": 25.02608,
+      "manual_lng": 113.732609,
+      "amap_poi": "中国丹霞山世界地质公园",
+      "amap_address": "106国道",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "丹霞山"
+    },
+    {
+      "query_zh": "鼎湖山",
+      "preferred_query": "广东肇庆鼎湖山",
+      "fallback_queries": [
+        "鼎湖山景区"
+      ],
+      "ambiguity_note": "广东肇庆，北回归线上的绿洲。",
+      "region": "华南",
+      "manual_lat": 23.167688,
+      "manual_lng": 112.539083,
+      "amap_poi": "鼎湖山风景名胜区",
+      "amap_address": "上山路",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "鼎湖山"
+    },
+    {
+      "query_zh": "七娘山",
+      "preferred_query": "深圳大鹏七娘山",
+      "fallback_queries": [
+        "七娘山 国家地质公园"
+      ],
+      "ambiguity_note": "深圳大鹏半岛，深圳第二高峰（869m）。",
+      "region": "华南",
+      "manual_lat": 22.528186,
+      "manual_lng": 114.520967,
+      "amap_poi": "七娘山起点大榕树",
+      "amap_address": "地质公园路31号",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "七娘山"
+    },
+    {
+      "query_zh": "东西冲",
+      "preferred_query": "深圳大鹏东西冲海岸线",
+      "fallback_queries": [
+        "东西冲穿越"
+      ],
+      "ambiguity_note": "深圳大鹏半岛，经典海岸线徒步。东涌→西涌。",
+      "region": "华南",
+      "manual_lat": 22.490799,
+      "manual_lng": 114.580964,
+      "amap_poi": "大鹏半岛东西冲海岸线",
+      "amap_address": "东涌家园东南侧280米",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "东西冲"
+    },
+    {
+      "query_zh": "喀纳斯徒步起点",
+      "preferred_query": "新疆喀纳斯景区贾登峪",
+      "fallback_queries": [
+        "贾登峪"
+      ],
+      "ambiguity_note": "贾登峪→禾木是喀纳斯经典徒步。",
+      "region": "西北",
+      "manual_lat": 48.607285,
+      "manual_lng": 86.999057,
+      "amap_poi": "喀纳斯景区",
+      "amap_address": "232省道",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "喀纳斯徒步起点"
+    },
+    {
+      "query_zh": "禾木",
+      "preferred_query": "新疆布尔津禾木村",
+      "fallback_queries": [
+        "禾木村"
+      ],
+      "ambiguity_note": "喀纳斯区域，图瓦人村落。秋天最美。",
+      "region": "西北",
+      "manual_lat": 48.583994,
+      "manual_lng": 87.445471,
+      "amap_poi": "禾木村·悦溪别院",
+      "amap_address": "禾木哈纳斯蒙古族乡禾木新村49号38号",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "禾木"
+    },
+    {
+      "query_zh": "白哈巴",
+      "preferred_query": "新疆哈巴河白哈巴村",
+      "fallback_queries": [
+        "白哈巴"
+      ],
+      "ambiguity_note": "西北第一村，喀纳斯区域。",
+      "region": "西北",
+      "manual_lat": 48.693135,
+      "manual_lng": 86.785314,
+      "amap_poi": "白哈巴风景区",
+      "amap_address": "大喀纳斯旅游区新疆喀纳斯国家地质公园",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "白哈巴"
+    },
+    {
+      "query_zh": "赛里木湖",
+      "preferred_query": "赛里木湖景区",
+      "fallback_queries": [
+        "新疆赛里木湖东门"
+      ],
+      "ambiguity_note": "已在87条中，此处补充东门入口坐标。",
+      "region": "西北",
+      "manual_lat": 44.617077,
+      "manual_lng": 81.386542,
+      "amap_poi": "赛里木湖国家级风景名胜区",
+      "amap_address": "30国道旁",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "赛里木湖"
+    },
+    {
+      "query_zh": "夏塔古道起点",
+      "preferred_query": "新疆昭苏夏塔景区",
+      "fallback_queries": [
+        "夏塔古道 温泉酒店"
+      ],
+      "ambiguity_note": "夏塔古道徒步起点（温泉酒店）。昭苏县。",
+      "region": "西北",
+      "manual_lat": 42.668839,
+      "manual_lng": 80.588177,
+      "amap_poi": "夏塔旅游景区",
+      "amap_address": "273省道与文化街交叉口南500米",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "夏塔古道起点"
+    },
+    {
+      "query_zh": "梅里北坡起点",
+      "preferred_query": "云南德钦亚贡村",
+      "fallback_queries": [
+        "亚贡村 梅里北坡"
+      ],
+      "ambiguity_note": "亚贡村是梅里北坡徒步（坡均/坡均错）起点。德钦县。",
+      "region": "西南",
+      "manual_lat": 28.604869,
+      "manual_lng": 98.724424,
+      "amap_poi": "梅里北坡",
+      "amap_address": [],
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "梅里北坡起点"
+    },
+    {
+      "query_zh": "亚丁村",
+      "preferred_query": "亚丁村",
+      "fallback_queries": [
+        "四川稻城亚丁村"
+      ],
+      "ambiguity_note": "已在87条中。亚丁村海拔4060m。",
+      "region": "西南",
+      "manual_lat": 28.454273,
+      "manual_lng": 100.339561,
+      "amap_poi": "亚丁村",
+      "amap_address": "香格里拉镇甘孜稻城亚丁景区内(东侧)",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "亚丁村"
+    },
+    {
+      "query_zh": "格聂",
+      "preferred_query": "四川理塘格聂神山",
+      "fallback_queries": [
+        "格聂之眼"
+      ],
+      "ambiguity_note": "四川理塘县，格聂C线经典徒步路线。",
+      "region": "西南",
+      "manual_lat": 29.82279,
+      "manual_lng": 99.643848,
+      "amap_poi": "格聂神山",
+      "amap_address": [],
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "格聂"
+    },
+    {
+      "query_zh": "党岭",
+      "preferred_query": "党岭村",
+      "fallback_queries": [
+        "四川丹巴党岭村"
+      ],
+      "ambiguity_note": "已在87条中。丹巴县，葫芦海为核心景观。",
+      "region": "西南",
+      "manual_lat": 31.074966,
+      "manual_lng": 101.406818,
+      "amap_poi": "党岭",
+      "amap_address": "丹东镇",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "党岭"
+    },
+    {
+      "query_zh": "七藏沟沟口",
+      "preferred_query": "四川松潘七藏沟",
+      "fallback_queries": [
+        "七藏沟 阿翁沟"
+      ],
+      "ambiguity_note": "四川松潘县，黄龙景区后方。沟口坐标取阿翁沟入口。",
+      "region": "西南",
+      "manual_lat": 32.871814,
+      "manual_lng": 103.723208,
+      "amap_poi": "七藏沟景区",
+      "amap_address": "川主寺镇东部",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "七藏沟沟口"
+    },
+    {
+      "query_zh": "长白山北坡",
+      "preferred_query": "长白山北坡景区",
+      "fallback_queries": [
+        "长白山北坡山门"
+      ],
+      "ambiguity_note": "长白山北坡入口（二道白河）。天池坐标已在87条中。",
+      "region": "东北",
+      "manual_lat": 42.404142,
+      "manual_lng": 128.117438,
+      "amap_poi": "长白山北景区",
+      "amap_address": "长白山池北区长白山景区",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "长白山北坡"
+    },
+    {
+      "query_zh": "长白山西坡",
+      "preferred_query": "长白山西坡景区",
+      "fallback_queries": [
+        "长白山西坡山门"
+      ],
+      "ambiguity_note": "长白山西坡入口（松江河镇）。1442级台阶。",
+      "region": "东北",
+      "manual_lat": 42.035868,
+      "manual_lng": 127.812782,
+      "amap_poi": "长白山西景区",
+      "amap_address": [],
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "长白山西坡"
+    },
+    {
+      "query_zh": "北极村",
+      "preferred_query": "黑龙江漠河北极村",
+      "fallback_queries": [
+        "北极村"
+      ],
+      "ambiguity_note": "漠河市北极镇，中国最北村镇。",
+      "region": "东北",
+      "manual_lat": 53.475645,
+      "manual_lng": 122.360052,
+      "amap_poi": "北极村旅游风景区-北极村碑",
+      "amap_address": "漠河乡北极村旅游风景区内(东南角)",
+      "geocode_source": "amap_api",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "北极村"
+    },
+    {
+      "query_zh": "Lukla",
+      "preferred_query": "Open-Meteo Geocoding: Lukla, Nepal",
+      "fallback_queries": [
+        "Lukla Nepal"
+      ],
+      "ambiguity_note": "尼泊尔卢克拉机场（2840m），EBC徒步起点。",
+      "region": "海外-尼泊尔",
+      "manual_lat": 27.6873,
+      "manual_lng": 86.7314,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Lukla",
+      "elevation_m": 2840,
+      "country": "Nepal"
+    },
+    {
+      "query_zh": "Pokhara",
+      "preferred_query": "Open-Meteo Geocoding: Pokhara, Nepal",
+      "fallback_queries": [
+        "Pokhara Nepal"
+      ],
+      "ambiguity_note": "尼泊尔博卡拉，ABC/ACT徒步起点城市。",
+      "region": "海外-尼泊尔",
+      "manual_lat": 28.2096,
+      "manual_lng": 83.9856,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Pokhara",
+      "elevation_m": 827,
+      "country": "Nepal"
+    },
+    {
+      "query_zh": "Jomsom",
+      "preferred_query": "Open-Meteo Geocoding: Jomsom, Nepal",
+      "fallback_queries": [
+        "Jomsom Nepal"
+      ],
+      "ambiguity_note": "尼泊尔，ACT徒步终点/木斯塘入口。",
+      "region": "海外-尼泊尔",
+      "manual_lat": 28.7836,
+      "manual_lng": 83.7336,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Jomsom",
+      "elevation_m": 2743,
+      "country": "Nepal"
+    },
+    {
+      "query_zh": "Namche Bazaar",
+      "preferred_query": "Open-Meteo Geocoding: Namche Bazaar, Nepal",
+      "fallback_queries": [
+        "Namche Bazaar Nepal"
+      ],
+      "ambiguity_note": "尼泊尔，EBC徒步的夏尔巴首都(3440m)。",
+      "region": "海外-尼泊尔",
+      "manual_lat": 27.805,
+      "manual_lng": 86.71,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Namche Bazaar",
+      "elevation_m": 3440,
+      "country": "Nepal"
+    },
+    {
+      "query_zh": "富士山五合目",
+      "preferred_query": "Open-Meteo Geocoding: Fujisan 5th Station",
+      "fallback_queries": [
+        "Fuji Yoshida Trail 5th Station"
+      ],
+      "ambiguity_note": "日本富士山吉田路线五合目（2305m）。已在87条中。",
+      "region": "海外-日本",
+      "manual_lat": 35.3606,
+      "manual_lng": 138.73,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "富士山五合目",
+      "elevation_m": 2305,
+      "country": "Japan"
+    },
+    {
+      "query_zh": "熊野古道起点",
+      "preferred_query": "Open-Meteo Geocoding: Kumano Kodo, Japan",
+      "fallback_queries": [
+        "Kumano Hongu Taisha Japan"
+      ],
+      "ambiguity_note": "日本和歌山县，熊野古道中边路，坐标取田辺。",
+      "region": "海外-日本",
+      "manual_lat": 33.7275,
+      "manual_lng": 135.378,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "熊野古道起点",
+      "elevation_m": 50,
+      "country": "Japan"
+    },
+    {
+      "query_zh": "Chamonix",
+      "preferred_query": "Open-Meteo Geocoding: Chamonix, France",
+      "fallback_queries": [
+        "Chamonix France"
+      ],
+      "ambiguity_note": "法国霞慕尼，勃朗峰徒步起点。已在87条中。",
+      "region": "海外-欧洲",
+      "manual_lat": 45.9237,
+      "manual_lng": 6.8694,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Chamonix",
+      "elevation_m": 1035,
+      "country": "France"
+    },
+    {
+      "query_zh": "Zermatt",
+      "preferred_query": "Open-Meteo Geocoding: Zermatt, Switzerland",
+      "fallback_queries": [
+        "Zermatt Switzerland"
+      ],
+      "ambiguity_note": "瑞士采尔马特，马特洪峰区域。已在87条中。",
+      "region": "海外-欧洲",
+      "manual_lat": 46.02,
+      "manual_lng": 7.749,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Zermatt",
+      "elevation_m": 1620,
+      "country": "Switzerland"
+    },
+    {
+      "query_zh": "Grindelwald",
+      "preferred_query": "Open-Meteo Geocoding: Grindelwald, Switzerland",
+      "fallback_queries": [
+        "Grindelwald Switzerland"
+      ],
+      "ambiguity_note": "瑞士格林德瓦，少女峰/Eiger Trail 起点。",
+      "region": "海外-欧洲",
+      "manual_lat": 46.624,
+      "manual_lng": 8.041,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Grindelwald",
+      "elevation_m": 1034,
+      "country": "Switzerland"
+    },
+    {
+      "query_zh": "Cortina d'Ampezzo",
+      "preferred_query": "Open-Meteo Geocoding: Cortina d'Ampezzo, Italy",
+      "fallback_queries": [
+        "Cortina Italy"
+      ],
+      "ambiguity_note": "意大利多洛米蒂，Alta Via 1 起点。已在87条中。",
+      "region": "海外-欧洲",
+      "manual_lat": 46.5375,
+      "manual_lng": 12.1365,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Cortina d'Ampezzo",
+      "elevation_m": 1224,
+      "country": "Italy"
+    },
+    {
+      "query_zh": "Cusco",
+      "preferred_query": "Open-Meteo Geocoding: Cusco, Peru",
+      "fallback_queries": [
+        "Cusco Peru"
+      ],
+      "ambiguity_note": "秘鲁库斯科，印加古道起点城市（3399m）。已在87条中。",
+      "region": "海外-南美",
+      "manual_lat": -13.532,
+      "manual_lng": -71.9675,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Cusco",
+      "elevation_m": 3399,
+      "country": "Peru"
+    },
+    {
+      "query_zh": "Torres del Paine入口",
+      "preferred_query": "Open-Meteo Geocoding: Torres del Paine, Chile",
+      "fallback_queries": [
+        "Torres del Paine National Park Chile"
+      ],
+      "ambiguity_note": "智利百内国家公园，W/O路线起点。",
+      "region": "海外-南美",
+      "manual_lat": -51.0,
+      "manual_lng": -73.0,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Torres del Paine入口",
+      "elevation_m": 150,
+      "country": "Chile"
+    },
+    {
+      "query_zh": "Moshi",
+      "preferred_query": "Open-Meteo Geocoding: Moshi, Tanzania",
+      "fallback_queries": [
+        "Moshi Tanzania"
+      ],
+      "ambiguity_note": "坦桑尼亚莫希，乞力马扎罗登山起点城市。",
+      "region": "海外-非洲",
+      "manual_lat": -3.335,
+      "manual_lng": 37.34,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Moshi",
+      "elevation_m": 890,
+      "country": "Tanzania"
+    },
+    {
+      "query_zh": "Kinabalu Park HQ",
+      "preferred_query": "Open-Meteo Geocoding: Kinabalu Park, Malaysia",
+      "fallback_queries": [
+        "Kinabalu Park Sabah"
+      ],
+      "ambiguity_note": "马来西亚沙巴，京那巴鲁山登山入口。已在87条中。",
+      "region": "海外-东南亚",
+      "manual_lat": 6.008,
+      "manual_lng": 116.543,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Kinabalu Park HQ",
+      "elevation_m": 1563,
+      "country": "Malaysia"
+    },
+    {
+      "query_zh": "Doi Inthanon",
+      "preferred_query": "Open-Meteo Geocoding: Doi Inthanon, Thailand",
+      "fallback_queries": [
+        "Doi Inthanon National Park"
+      ],
+      "ambiguity_note": "泰国最高峰（2565m），清迈。",
+      "region": "海外-东南亚",
+      "manual_lat": 18.589,
+      "manual_lng": 98.487,
+      "geocode_source": "known_coordinates",
+      "confidence": "A",
+      "source_urls": [
+        "https://lbs.amap.com/"
+      ],
+      "display_name": "Doi Inthanon",
+      "elevation_m": 2565,
+      "country": "Thailand"
+    }
+  ]
+}

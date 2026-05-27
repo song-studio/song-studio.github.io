@@ -1,0 +1,1409 @@
+{
+  "batch": 5,
+  "routes": [
+    {
+      "route_id": "hk_042",
+      "name_zh": "洛克线",
+      "mode": "hiking",
+      "season_status": "最佳6-10月(夏秋季节)；5月/11月春冬气温极低；12-4月垭口大雪不建议",
+      "water_points": [
+        "嘟噜村(起点补最后一站水)",
+        "满措牛场(溪流水源)",
+        "万花池牛场(溪流水源)",
+        "新果牛场(水源充沛)",
+        "蛇湖(湖水需过滤)",
+        "牛奶海/五色海(终点水源)"
+      ],
+      "retreat_points": [
+        "嘟噜村(起点可撤回木里县)",
+        "沿途各牛场可原路下撤至嘟噜村",
+        "蛇湖(可下撤至亚丁景区)",
+        "亚丁景区(终点有景区大巴)"
+      ],
+      "risk_tags": [
+        "高海拔(咋巴拉垭口4700m/松多垭口4700m)",
+        "全程无手机信号(5-6天)",
+        "碎石坡(咋巴拉垭口上下，滑坠风险)",
+        "泥石流威胁(洛克线近年多发)",
+        "木里道路险峻(进山公路极差)",
+        "蚂蟥/毒虫(嘟噜村至满措段)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "嘟噜村至木里县人民医院约200km/5h车程；徒步全程无公路无信号，严重事故需骑马或直升机救援；商业队配备卫星电话和氧气",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "建议在木里县聘请有资质向导(商业队约¥4000-6000含全部)；个人进入需登记",
+      "regulation_note": "亚丁景区出山需补门票(¥150)；木里侧无门票但路况极差",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "西昌→木里(班车¥80/5h)→嘟噜村(包车约¥600/4h，烂路)，或从泸沽湖→嘟噜村",
+      "return_from_endpoint": "亚丁景区→大巴→香格里拉镇→稻城机场/成都",
+      "nearest_city": "木里县城(距嘟噜村约200km)",
+      "nearest_transport_hub": "稻城亚丁机场(距终点约120km)；西昌青山机场(距起点约240km)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "嘟噜村约2400m",
+        "max": "松多垭口约4700m",
+        "end": "亚丁景区约4000m"
+      },
+      "cumulative_elevation": 3500,
+      "campsites": [
+        {
+          "name": "万花池牛场",
+          "km": 30,
+          "altitude_m": 4150,
+          "water": "有(溪流)",
+          "capacity": "约30顶帐篷"
+        },
+        {
+          "name": "新果牛场",
+          "km": 45,
+          "altitude_m": 4250,
+          "water": "有(溪流充沛)",
+          "capacity": "约40顶帐篷"
+        },
+        {
+          "name": "蛇湖营地",
+          "km": 58,
+          "altitude_m": 4520,
+          "water": "有(湖)",
+          "capacity": "约25顶帐篷"
+        }
+      ],
+      "huts": [
+        "嘟噜村藏家(床位¥60-80)"
+      ],
+      "camping_restriction": "全程野外扎营，需无痕露营",
+      "signal_coverage": "移动 嘟噜村有微弱信号，进山后全程无信号 / 电信 同移动 / 联通 全程无信号",
+      "signal_dead_zones": "嘟噜村出发至亚丁出山(全程5-6天无信号)",
+      "last_signal_point": "嘟噜村(出发前)",
+      "route_variants": [
+        "5日经典(嘟噜村→亚丁)",
+        "7日摄影(含休整)",
+        "泸沽湖-亚丁9日大穿越"
+      ],
+      "variant_differences": "5日约60km/爬升3500m；9日约110km含泸沽湖至嘟噜村段",
+      "distance_km_v5": 60,
+      "distance_note": "v5标注60km，搜索攻略确认约55-70km(嘟噜村-亚丁)，数据合理",
+      "verification_sources": [
+        "西部印象(eelxs.com)攻略",
+        "马蜂窝(mafengwo.cn)攻略",
+        "知乎专栏(zlhuanlan.zhihu.com)"
+      ],
+      "confidence": "A",
+      "name_en": "洛克线 Trek"
+    },
+    {
+      "route_id": "hk_043",
+      "name_zh": "亚丁大转山",
+      "mode": "hiking",
+      "season_status": "最佳6-10月(6月上旬杜鹃花海，10月中下旬彩林为最美)；11-5月垭口积雪深厚不建议；7-8月雨季降水较多但可通行",
+      "water_points": [
+        "波用错(营地水源，4750m高山湖泊)",
+        "新果牛场(最大营地，水源充沛)",
+        "蛇湖(营地水源，4500m)",
+        "贡嘎扎则(白水河水源)",
+        "沿途多条溪流/河谷(季节性)"
+      ],
+      "retreat_points": [
+        "冲古寺(景区入口，可乘景区大巴撤回香格里拉镇)",
+        "卡斯牛棚(可从卡斯地狱谷方向下撤至亚丁景区)",
+        "沿途牛场(嘎洛牛场、新果牛场等，可联系马队下撤)"
+      ],
+      "risk_tags": [
+        "极高海拔(全程4000m+，最高垭口5036m，高反风险高)",
+        "碎石坡滑坠(松多垭口双湖打卡点等陡峭碎石坡)",
+        "天气突变(垭口小气候，可突降冰雹/雪)",
+        "多段横切/滑坡带(央迈勇横向垭口等)",
+        "冬季封山(11-5月垭口积雪)",
+        "景区管制(部分路段可能被巡山拦截)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "起终点均在亚丁景区内，可乘景区大巴通达香格里拉镇(距稻城县医院约110km/2h)；徒步中间段无公路，最近下撤点新果牛场/蛇湖需马队或直升机救援；商业队配备卫星电话及钢瓶氧气",
+      "distance_km_v5": 73,
+      "distance_note": "v5标注73km，搜索攻略确认70-80km(不同走法有差异)，数据合理",
+      "verification_sources": [
+        "场景运动(cjyd-sz.com)详细行程",
+        "知乎攻略(zlhuanlan.zhihu.com)",
+        "Masherbrum商业队详情页"
+      ],
+      "confidence": "A",
+      "access_status": "开放（需购买亚丁景区门票，属亚丁国家级自然保护区）",
+      "permit_required": null,
+      "permit_how": "购买亚丁景区门票（旺季266元/淡季220元）+ 景区车票120元",
+      "regulation_note": "需提前预订景区门票（旺季限流）；禁止无人机飞行；高山徒步需适应海拔",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "稻城亚丁景区大门（S216省道直达），景区大巴至冲古寺/洛绒牛场",
+      "return_from_endpoint": "景区大巴经洛绒牛场→冲古寺→景区大门→稻城县城",
+      "nearest_city": "稻城县（80km）",
+      "nearest_transport_hub": "稻城亚丁机场（海拔4411m，距景区约120km）",
+      "elevation_profile": [],
+      "key_altitude_points": {},
+      "cumulative_elevation": 0,
+      "campsites": [],
+      "huts": [],
+      "camping_restriction": "景区内全线禁止扎营，亚丁国家级自然保护区核心区严禁露营",
+      "signal_coverage": "移动：景区大门至冲古寺有4G，洛绒牛场部分区域有信号，翻越垭口后全程无信号；电信：同移动；联通：无信号",
+      "signal_dead_zones": "牛奶海至五色海区域无信号，卡斯地狱谷全程无信号，蛇湖周边无信号",
+      "last_signal_point": "洛绒牛场（约海拔4150m）",
+      "route_variants": [],
+      "variant_differences": "",
+      "name_en": "亚丁大转山 Trek"
+    },
+    {
+      "route_id": "hk_044",
+      "name_zh": "年保玉则穿越",
+      "mode": "hiking",
+      "season_status": "⚠️ 景区自2018年起关闭（生态修复），禁止游客进入徒步/穿越，开放时间待定。原可徒步期6-9月最佳",
+      "water_points": [
+        "景区入口(原可补给)",
+        "仙女湖/妖女湖(原沿途水源)",
+        "日干措(原营地水源)"
+      ],
+      "retreat_points": [
+        "久治县(原起点/终点，可撤回县城)",
+        "景区入口(原可原路返回)"
+      ],
+      "risk_tags": [
+        "景区已关闭(2018年起禁入，非法进入可能被处罚)",
+        "高海拔(年保玉则主峰5369m，徒步平均4000m+)",
+        "天气多变(高原小气候)",
+        "信号盲区"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "景区已关闭，无法进入；假设开放状态则为一般",
+      "distance_km_v5": 60,
+      "distance_note": "v5标注60km。但该线当前关闭中，数据仅供参考，不可执行",
+      "verification_sources": [
+        "青海省年保玉则景区关闭公告(2018年起)",
+        "多家户外平台确认禁穿信息"
+      ],
+      "confidence": "A",
+      "access_status": "⚠️ 关闭（年保玉则国家地质公园自2018年起关闭，暂未开放）",
+      "permit_required": null,
+      "permit_how": "⚠️ 年保玉则2018年起关闭至今，任何进入均属违法",
+      "regulation_note": "⚠️ 年保玉则自2018年4月10日起因生态保护关闭至今，禁止一切穿越和旅游活动。擅自进入属违法行为。如恢复开放需关注久治县政府公告。建议选择其他徒步线路替代。",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "久治县城（S101省道）→年保玉则景区大门（约20km，已封闭）",
+      "return_from_endpoint": "⚠️ 景区已关闭，无公共交通抵达",
+      "nearest_city": "久治县（约20km）/阿坝县（约120km）",
+      "nearest_transport_hub": "阿坝红原机场（约180km）/果洛玛沁机场（约250km）",
+      "elevation_profile": [],
+      "key_altitude_points": {},
+      "cumulative_elevation": 0,
+      "campsites": [],
+      "huts": [],
+      "camping_restriction": "⚠️ 景区关闭中，严禁进入；即使开放也有指定区域",
+      "signal_coverage": "移动：久治县城和景区入口有4G信号，年保玉则内部大部分区域无信号；电信：弱；联通：无信号",
+      "signal_dead_zones": "景区内全程约30km无信号（仙女湖深处至妖女湖区域）",
+      "last_signal_point": "年保玉则景区入口/久治县城",
+      "route_variants": [],
+      "variant_differences": "",
+      "name_en": "年保玉则穿越 Trek"
+    },
+    {
+      "route_id": "hk_045",
+      "name_zh": "天山雪莲峰徒步",
+      "mode": "hiking",
+      "season_status": "最佳6-8月(7月雪莲盛开)；6月积雪尚厚行走较累；9月后气温降低不建议；10-5月大雪封山",
+      "water_points": [
+        "阿克苏乡大河沿村(起点补给)",
+        "博格达登山大本营(冰川融水)",
+        "沿途冰川融水溪流(需过滤煮沸)"
+      ],
+      "retreat_points": [
+        "阿克苏乡(起点可撤回乌鲁木齐达坂城区)",
+        "博格达大本营(可原路返回)",
+        "天池方向(可出至景区公路)"
+      ],
+      "risk_tags": [
+        "冰川行走(6月积雪覆盖冰裂缝，难以辨认)",
+        "高海拔(博格达峰附近达4000m+)",
+        "天气突变(山区小气候)",
+        "冰川融水过河(水量受气温变化影响大)",
+        "无信号区(大部分路段无手机信号)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "远离公路，救援需徒步或直升机；起点阿克苏乡至达坂城区人民医院约120km/2h；博格达大本营至天池景区出口约25km徒步(可骑马)；建议携带卫星电话",
+      "distance_km_v5": 90,
+      "distance_note": "v5标注90km(阿克苏乡-天池)，搜索攻略确认约90km(不同走法有差异)",
+      "verification_sources": [
+        "搜狐(sohu.com)国庆小众线推荐",
+        "知乎专栏(zlhuanlan.zhihu.com)博格达攻略",
+        "新浪(k.sina.cn)天山穿越"
+      ],
+      "confidence": "B",
+      "confidence_note": "资料较少，部分字段基于博格达峰徒步共性和有限资料推断",
+      "access_status": "限制（属天山山脉非开放区域，实际为登山/徒步探险路线）",
+      "permit_required": null,
+      "permit_how": "非景区线路无需门票，但建议向当地森林公安报备",
+      "regulation_note": "该线路非景区线路，属于探险性质徒步；强烈建议聘请当地向导；需备卫星电话/北斗通讯设备；每年6-9月为可达窗口期，其余时间大雪覆盖",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "拜城县/库车市→铁力买提达坂附近（S307省道+越野车进山，需向导）",
+      "return_from_endpoint": "原路返回至铁力买提达坂，或穿越至库车大峡谷方向出",
+      "nearest_city": "库车市（约120km）/拜城县（约100km）",
+      "nearest_transport_hub": "库车龟兹机场（距起点约150km）/阿克苏机场（约260km）",
+      "elevation_profile": [],
+      "key_altitude_points": {},
+      "cumulative_elevation": 0,
+      "campsites": [],
+      "huts": [],
+      "camping_restriction": "天山内部全程可扎营，需自带高山帐篷和防熊措施",
+      "signal_coverage": "移动：县城及周边有4G，进入天山深处后完全无信号；电信：新疆偏远山区覆盖极差；联通：无",
+      "signal_dead_zones": "天山内部全程约50km无任何信号",
+      "last_signal_point": "G217独库公路沿线/或S307省道村镇",
+      "route_variants": [],
+      "variant_differences": "",
+      "name_en": "天山雪莲峰徒步 Trek"
+    },
+    {
+      "route_id": "hk_046",
+      "name_zh": "孟克德古道",
+      "mode": "hiking",
+      "season_status": "最佳6-9月(新疆山地徒步标准窗口期)；5月/10月可行但气温低，达坂可能有雪；11-4月大雪封山不建议",
+      "water_points": [
+        "217国道625km处起点(河谷水源)",
+        "乌兰萨德克沟溪流(沿途有水源)",
+        "天湖(乌兰萨德克湖，营地水源)",
+        "奎屯河(出山段水源)"
+      ],
+      "retreat_points": [
+        "217国道起点(可拦车撤回独山子/乔尔玛)",
+        "沿途可原路返回至独库公路",
+        "S315省道终点(可搭车至尼勒克/乔尔玛)"
+      ],
+      "risk_tags": [
+        "过河风险(多条溪流，冰川融水水温低水量变化大)",
+        "孟克德达坂(3450m，冰雪/陡坡)",
+        "熊等野生动物(天山牧区)",
+        "大部分路段无手机信号",
+        "独库公路交通(起点625km处停车需注意安全)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "起点217国道距离独山子约80km/1h，独山子有医院；终点S315省道距离尼勒克县约80km/1.5h；中间段远离公路，需原路返回或翻越达坂；建议携带卫星电话",
+      "distance_km_v5": 70,
+      "distance_note": "v5标注70km(217国道625km-315省道)，搜索攻略确认约65-80km，数据合理",
+      "verification_sources": [
+        "知乎专栏(zlhuanlan.zhihu.com)攻略",
+        "kknews.cc攻略"
+      ],
+      "confidence": "B",
+      "confidence_note": "资料较有限，部分字段基于新疆徒步共性和有限资料推断",
+      "access_status": "开放（属户外越野徒步路线，无专门管制，但需注意防火）",
+      "permit_required": null,
+      "permit_how": "目前无专门许可，但建议向独山子/尼勒克林业部门报备",
+      "regulation_note": "孟克德古道为天山经典越野徒步线路，沿途需跨越多个达坂；建议结伴同行并备GPS；独库公路限行季节（每年6-10月开放）需注意时间安排；天气多变的山区须备防水装备",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "独山子区（G217独库公路起点）→哈希勒根达坂入口（需越野车/包车）",
+      "return_from_endpoint": "尼勒克县→伊宁市（S315省道+高速，约4小时车程）",
+      "nearest_city": "独山子区（约50km）/尼勒克县（约80km）",
+      "nearest_transport_hub": "克拉玛依机场（约150km）/伊宁机场（约200km）",
+      "elevation_profile": [],
+      "key_altitude_points": {},
+      "cumulative_elevation": 0,
+      "campsites": [],
+      "huts": [],
+      "camping_restriction": "全程可扎营（天山高山草甸），需防熊/防狼措施",
+      "signal_coverage": "移动：独山子及尼勒克县城有4G，进山后约15km失去信号，天山内部全程无信号；电信：弱；联通：无",
+      "signal_dead_zones": "独库公路哈希勒根达坂至孟克德湖区域全程约40km无信号",
+      "last_signal_point": "独山子区（起点）/或独库公路沿线部分路段",
+      "route_variants": [],
+      "variant_differences": "",
+      "name_en": "孟克德古道 Trek"
+    },
+    {
+      "route_id": "hk_047",
+      "name_zh": "狼塔C+V线",
+      "mode": "hiking",
+      "season_status": "最佳6-9月(7-8月过河水量最大/9月较稳定)；5月/10月可行但冰达坂积雪；11-4月大雪封山不建议",
+      "water_points": [
+        "白杨沟达坂下(溪流)",
+        "台普希克马河(需过滤)",
+        "库勒阿特克达坂下(溪流)",
+        "乌兰达坂(溪流)",
+        "绿湖(高山湖泊)",
+        "蒙特开曾达坂(冰川融水)"
+      ],
+      "retreat_points": [
+        "呼图壁林场(起点可撤回)",
+        "C线蒙特开曾达坂前可原路返回",
+        "古仁格勒(终点有公路至巴伦台)",
+        "注：V线部分退出极为困难"
+      ],
+      "risk_tags": [
+        "冰达坂翻越(白杨沟/库勒阿特克/蒙特开曾，4600m+)",
+        "过河死亡风险(台普希克马河/特克斯河，曾有人被冲走)",
+        "全程约200km/11天无人区",
+        "熊/狼等野生动物(天山腹地有熊出没)",
+        "全程无手机信号(11天)",
+        "负重极重(无人区补给需背10天+粮食)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "全程无人区无公路无信号；起点呼图壁距昌吉市医院约150km/3h；终点古仁格勒距巴伦台约80km/2h；严重事故(坠崖/过河/失温)救援难度极大，需直升机；建议携带卫星电话+2部以上GPS",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需在昌吉州林业部门办理进山许可，建议通过商业队进入(¥6000-8000含装备/领队)",
+      "regulation_note": "狼塔区域属天山东部国有林管理局管辖，个人进入有被劝返风险",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "乌鲁木齐→呼图壁(大巴¥40/2h)→狼塔户外(包车¥300)→徒步起点",
+      "return_from_endpoint": "古仁格勒→巴伦台(搭车约3h)→库尔勒(班车¥50/3h)→乌鲁木齐(火车¥100/4h)",
+      "nearest_city": "呼图壁县(距起点约80km)/巴伦台镇(距终点约80km)",
+      "nearest_transport_hub": "乌鲁木齐地窝堡机场(距起点约180km/3h)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "呼图壁林场约2200m",
+        "max": "蒙特开曾达坂约4600m",
+        "end": "古仁格勒约2500m"
+      },
+      "cumulative_elevation": 8000,
+      "campsites": [
+        {
+          "name": "白杨沟达坂下营地",
+          "km": 25,
+          "altitude_m": 2800,
+          "water": "有(溪流)",
+          "capacity": "约10顶帐篷"
+        },
+        {
+          "name": "马鞍营地",
+          "km": 80,
+          "altitude_m": 3200,
+          "water": "有(溪流)",
+          "capacity": "约10顶帐篷"
+        },
+        {
+          "name": "绿湖营地",
+          "km": 150,
+          "altitude_m": 3500,
+          "water": "有(湖)",
+          "capacity": "约10顶帐篷"
+        }
+      ],
+      "huts": [],
+      "camping_restriction": "全线无人区，自由扎营",
+      "signal_coverage": "移动 全程无信号 / 电信 全程无信号 / 联通 全程无信号",
+      "signal_dead_zones": "全程11天无信号",
+      "last_signal_point": "呼图壁林场(出发前)/巴伦台(出山后)",
+      "route_variants": [
+        "C线(9天/130km)",
+        "C+V(11天/200km)",
+        "V线(7天/90km)"
+      ],
+      "variant_differences": "C线强度最高/过河最多；V线含大量草原，风景多样",
+      "distance_km_v5": 200,
+      "distance_note": "v5标注200km(C+V)，搜索攻略确认约200km(标准C+V)，数据合理",
+      "verification_sources": [
+        "两步路(2bulu.com)活动页",
+        "什么值得买(post.smzdm.com)攻略"
+      ],
+      "confidence": "A",
+      "name_en": "狼塔C+V线 Trek"
+    },
+    {
+      "route_id": "hk_048",
+      "name_zh": "喀拉峻草原穿越",
+      "mode": "hiking",
+      "season_status": "最佳5月下旬-8月底(6月中旬野花最盛)；5月中-7月底花期；9月后草黄入秋可行但色彩单一；10-4月寒冷不建议",
+      "water_points": [
+        "琼库什台(起点，商店有补给)",
+        "牧民家营地(付费使用水电，沿途多处)",
+        "东喀拉峻水源极缺(仅水坑，需带过滤器或背水)",
+        "塔里木景区商店(季节性开放)",
+        "恰西/库尔德宁(终点，有商店)"
+      ],
+      "retreat_points": [
+        "琼库什台(起点可撤回特克斯县)",
+        "沿途牧民家(可联系车辆下撤至公路)",
+        "塔里木景区(有公路可乘车至巩留)",
+        "库尔德宁(终点，有班车至巩留县)"
+      ],
+      "risk_tags": [
+        "草原段水源极短缺(东喀拉峻仅水坑，需过滤器或背大量水)",
+        "部分路段陡峭碎石(过河后爬升段坡度25-30°)",
+        "天气多变(6月仍可能降雪，昼夜温差20°C+)",
+        "信号盲区(移动全程无信号，电信仅部分牧民家偶有)",
+        "老路段路迹不明(部分废弃路线已被围栏封堵)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "琼库什台至特克斯县人民医院约80km/1.5h车程；库尔德宁至巩留县人民医院约50km/1h；草原中段远离公路，需借助牧民马匹或摩托车下撤；商业队配备卫星电话",
+      "distance_km_v5": 120,
+      "distance_note": "v5标注120km(琼库什台-库尔德宁)，搜索攻略确认约110-130km(不同走法有差异)，数据合理",
+      "verification_sources": [
+        "两步路社区(2bulu.com)详细攻略",
+        "知乎攻略(zlhuanlan.zhihu.com)",
+        "apple-trip.com攻略"
+      ],
+      "confidence": "A",
+      "access_status": "开放（部分穿越需购买喀拉峻景区门票）",
+      "permit_required": null,
+      "permit_how": "购买喀拉峻景区门票（约80元）+ 区间车票",
+      "regulation_note": "喀拉峻为世界自然遗产地（天山），禁止越野车碾压草甸；每年6-8月为最佳季节；需注意草原防火",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "特克斯县→琼库什台村（柏油路90km，可包车/拼车，约2小时）",
+      "return_from_endpoint": "喀拉峻景区大门有班车至特克斯县城（约1.5小时）",
+      "nearest_city": "特克斯县（90km）",
+      "nearest_transport_hub": "伊宁机场（距起点约200km）",
+      "elevation_profile": [],
+      "key_altitude_points": {},
+      "cumulative_elevation": 0,
+      "campsites": [],
+      "huts": [],
+      "camping_restriction": "世界自然遗产地禁止随意扎营，须在指定营地或向景区报备",
+      "signal_coverage": "移动：琼库什台村及喀拉峻景区大部有4G覆盖，草原中部及峡谷边缘信号弱；电信：同移动；联通：弱",
+      "signal_dead_zones": "阔克苏大峡谷周边信号不稳定，东喀拉峻至西喀拉峻间部分无信号",
+      "last_signal_point": "琼库什台村/喀拉峻景区游客中心",
+      "route_variants": [],
+      "variant_differences": "",
+      "name_en": "Kalajun Grassland Traverse"
+    },
+    {
+      "route_id": "hk_049",
+      "name_zh": "雨崩徒步",
+      "mode": "hiking",
+      "season_status": "最佳5-6月(高山杜鹃)、9-11月(日照金山概率最高)；7-8月雨季可行但偶有蚂蟥；12-4月可行有雪景但西当可能修路封闭",
+      "water_points": [
+        "西当温泉(起点，补水点)",
+        "雨崩上村(客栈补水/补给)",
+        "雨崩下村(客栈补水/补给)",
+        "笑农大本营(冰湖线水源，冰川融水)",
+        "神瀑(梅里雪山融水，圣水)"
+      ],
+      "retreat_points": [
+        "西当温泉(越野车可返回飞来寺/德钦)",
+        "雨崩上村/下村(可骑马或徒步撤回西当)",
+        "尼农(出山至德钦，班车¥20/人)"
+      ],
+      "risk_tags": [
+        "高海拔(冰湖3879m/神湖4426m，高反风险)",
+        "蚂蟥(雨季密集)",
+        "陡坡(冰湖线原始森林连续爬升)",
+        "坠崖(尼农出山段峡谷悬崖路)",
+        "西当封路(2024-2025修路期间仅尼农进出)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "雨崩村内有卫生服务站可处理简单伤病；德钦县人民医院约40km/1.5h(尼农出山后)；雨崩村至德钦有越野车和马帮可紧急下撤；全程大部分有手机信号",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "无需额外许可证，购买梅里雪山景区门票¥55即可进入",
+      "regulation_note": "神山核心区属自然保护区，禁止野外用火/扎营；虫草线非正式开放路线，风险自负",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "丽江→香格里拉(动车¥49/1.5h)→飞来寺(班车¥64/3.5h)→西当或尼农(班车¥20/1.5h)；景区越野车西当→雨崩上村¥200",
+      "return_from_endpoint": "尼农→德钦(班车¥20/1.5h)→香格里拉(班车¥62/3.5h)→丽江(动车¥49/1.5h)",
+      "nearest_city": "德钦县城(距飞来寺约40km/1h)",
+      "nearest_transport_hub": "香格里拉机场(距飞来寺约180km/4h车程)；丽江三义机场(约360km/7h)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "西当或尼农约2650m",
+        "max": "冰湖3879m或神湖4426m",
+        "end": "尼农约2200m"
+      },
+      "cumulative_elevation": 800,
+      "campsites": [],
+      "huts": [
+        "雨崩上村客栈(¥100-300/床位或标间，地暖/电热毯/24h热水)",
+        "雨崩下村客栈(条件同上)"
+      ],
+      "camping_restriction": "禁止野外扎营(梅里雪山自然保护区)，全部住客栈",
+      "signal_coverage": "移动 雨崩村内4G，冰湖线大部分有信号/神瀑线全程有信号/神湖线部分无信号/虫草线大部分无信号 / 电信 同移动 / 联通 部分无",
+      "signal_dead_zones": "神湖后半段(4400m+)、虫草线山脊部分路段无信号",
+      "last_signal_point": "雨崩村(出发各景点前)",
+      "route_variants": [
+        "3日经典(冰湖+神瀑)",
+        "4日深度(冰湖+神瀑+神湖)",
+        "5日全景(含虫草线)"
+      ],
+      "variant_differences": "3日版约32km/爬升1400m；4日版约46km/爬升2800m(含神湖14km陡上1400m)",
+      "distance_km_v5": 44,
+      "distance_note": "v5标注44km(含进出村)，搜索攻略确认西当进出约44km/尼农进出约50km，数据合理",
+      "verification_sources": [
+        "两步路(2bulu.com)详细攻略",
+        "健行笔记(hiking.biji.co)自助游记",
+        "Trip.com(trip.com)攻略"
+      ],
+      "confidence": "A",
+      "name_en": "Yubeng Trek"
+    },
+    {
+      "route_id": "ma_017",
+      "name_zh": "卓奥友峰",
+      "mode": "mountaineering",
+      "season_status": "最佳4-5月、9-10月(气象窗口期)；6-8月季风影响雪深风大；11-3月极寒(-40°C)不建议；2023年以来中国侧商业攀登受限(西藏登协政策收紧)",
+      "water_points": [
+        "日喀则(终点采买)",
+        "BC(化雪融水)",
+        "C1-C4(化雪)"
+      ],
+      "retreat_points": [
+        "各营地可原路下撤",
+        "BC(可包车撤回日喀则)",
+        "日喀则可转拉萨治疗"
+      ],
+      "risk_tags": [
+        "极高海拔8000m+",
+        "低压缺氧(含氧量仅海平面40%)",
+        "冰川(加布拉冰川)",
+        "冰裂缝",
+        "强风(8000m以上风速常超100km/h)",
+        "峰顶冰雪厚度(8000m级最厚)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "BC距日喀则约4h车程；C1以上救援需直升机(日喀则和平机场或拉萨调度)，高海拔段救援响应需24h+",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需通过中国登山协会或商业队办理登山许可(约¥8000-15000)，须提供5000m级登顶证明；2023年以来审批趋严",
+      "regulation_note": "卓奥友峰位于西藏聂拉木县，中尼界山，6000m以上攀登需特批，必须加入有资质商业队",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "拉萨→日喀则(火车/班车¥40/3h)→老定日(岗嘎镇)(包车约¥800/5h)→BC(越野车/拖拉机2h)",
+      "return_from_endpoint": "原路返回：顶峰→BC→老定日→日喀则→拉萨",
+      "nearest_city": "日喀则(距BC约200km)",
+      "nearest_transport_hub": "日喀则和平机场(距BC约220km)；拉萨贡嘎机场(约400km)",
+      "elevation_profile": [
+        [
+          0,
+          3800
+        ],
+        [
+          20,
+          4200
+        ],
+        [
+          40,
+          5000
+        ],
+        [
+          50,
+          5700
+        ],
+        [
+          56,
+          6400
+        ],
+        [
+          62,
+          7000
+        ],
+        [
+          68,
+          7400
+        ],
+        [
+          72,
+          7800
+        ],
+        [
+          76,
+          8201
+        ],
+        [
+          80,
+          5700
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "日喀则约3800m",
+        "max": "卓奥友顶8201m",
+        "end": "日喀则"
+      },
+      "cumulative_elevation": 3200,
+      "campsites": [
+        {
+          "name": "BC/前进基地营(5700m)",
+          "km": 0,
+          "altitude_m": 5700,
+          "water": "有(冰川融水)",
+          "capacity": "商业队标准营地"
+        },
+        {
+          "name": "C1(6400m)",
+          "km": 6,
+          "altitude_m": 6400,
+          "water": "化雪",
+          "capacity": "小平台8-10帐"
+        },
+        {
+          "name": "C2(7000m)",
+          "km": 12,
+          "altitude_m": 7000,
+          "water": "化雪",
+          "capacity": "冰斗边缘平坦营地"
+        },
+        {
+          "name": "C3(7400m)",
+          "km": 18,
+          "altitude_m": 7400,
+          "water": "化雪",
+          "capacity": "雪坡小平台"
+        },
+        {
+          "name": "C4(7800m)",
+          "km": 24,
+          "altitude_m": 7800,
+          "water": "化雪",
+          "capacity": "突击营地"
+        }
+      ],
+      "huts": [
+        "日喀则酒店(¥200-400)",
+        "老定日招待所(¥100-200)"
+      ],
+      "camping_restriction": "仅可在BC/C1/C2/C3/C4指定位置扎营，冰川段禁止",
+      "signal_coverage": "移动 日喀则-老定日有4G，BC偶有信号/C1以上无 / 电信 同移动 / 联通 无信号",
+      "signal_dead_zones": "C1→顶峰全程无信号(约7天)",
+      "last_signal_point": "老定日(岗嘎镇)",
+      "route_variants": [
+        "传统西北壁路线(25-30天)",
+        "东北山脊路线(30天+)"
+      ],
+      "variant_differences": "西北壁路线25-30天(含气象窗口等待，标准商业队路线)，东北山脊路线30天+(技术难度更大，极少用)",
+      "distance_km_v5": 35,
+      "distance_note": "日喀则→老定日→BC→C1→C2→C3→C4→顶峰，往返约35km(含适应拉练)",
+      "verification_sources": [
+        "Wikipedia(zh.wikipedia.org/zh-cn/卓奥友峰)",
+        "台湾登山会(alpineclub.org.tw)",
+        "搜狐(sohu.com/a/873618278_121124433)",
+        "peakbagger.com"
+      ],
+      "confidence": "A",
+      "name_en": "Cho Oyu"
+    },
+    {
+      "route_id": "ma_018",
+      "name_zh": "希夏邦马峰",
+      "mode": "mountaineering",
+      "season_status": "最佳4-5月、9-10月(8000米窗口期)；6-8月季风影响雪深，攀登窗口极短；11-3月极寒(-30°C)；注意2023年以来中国侧攀登许可收紧，2025年春季中国侧无商业活动",
+      "water_points": [
+        "聂拉木县城(终点采买)",
+        "司机营地/BC(冰川融水)",
+        "C1-C4(化雪)"
+      ],
+      "retreat_points": [
+        "各营地原路下撤",
+        "BC(包车回聂拉木)",
+        "聂拉木→日喀则医疗"
+      ],
+      "risk_tags": [
+        "8000米级(8027m)",
+        "中国唯一全境内8000m峰",
+        "强风(8000m以上)",
+        "低温(-40°C)",
+        "冰川(野博康加勒冰川，大冰塔区)",
+        "低压缺氧",
+        "雪崩风险(2002年北大山难)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "司机营地(4900m)距聂拉木县城约3h车程；C1以上救援仅能直升机(需从日喀则调度，响应时间6h+)；北大山难事件表明救援极困难",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需西藏登协/国家体育总局特批登山许可(约¥15000-30000)，须有7000m级登顶证明；外宾需额外审批",
+      "regulation_note": "希夏邦马峰位于聂拉木县，属珠峰自然保护区，8000m攀登需国家级审批；2002年北大山鹰社5人遇难",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "拉萨→日喀则(火车/班车¥40/3h)→聂拉木(班车¥100/8h)→司机营地(越野车2h/¥300)→BC(牦牛驮运18km)",
+      "return_from_endpoint": "原路返回：顶峰→BC→聂拉木→日喀则→拉萨",
+      "nearest_city": "聂拉木(距司机营地约80km)",
+      "nearest_transport_hub": "日喀则和平机场(距聂拉木约350km/7h)",
+      "elevation_profile": [
+        [
+          0,
+          3800
+        ],
+        [
+          15,
+          4300
+        ],
+        [
+          30,
+          5000
+        ],
+        [
+          36,
+          5800
+        ],
+        [
+          42,
+          6300
+        ],
+        [
+          48,
+          7000
+        ],
+        [
+          54,
+          7500
+        ],
+        [
+          60,
+          8027
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "聂拉木县城约3800m",
+        "max": "希夏邦马顶8027m",
+        "end": "聂拉木"
+      },
+      "cumulative_elevation": 3000,
+      "campsites": [
+        {
+          "name": "BC/前进基地营(5000m)",
+          "km": 0,
+          "altitude_m": 5000,
+          "water": "有(冰川融水)",
+          "capacity": "商业队标准营地"
+        },
+        {
+          "name": "C1(5800m)",
+          "km": 6,
+          "altitude_m": 5800,
+          "water": "化雪",
+          "capacity": "小平台"
+        },
+        {
+          "name": "C2(6300m)",
+          "km": 12,
+          "altitude_m": 6300,
+          "water": "化雪",
+          "capacity": "冰雪台阶"
+        },
+        {
+          "name": "C3(7000m)",
+          "km": 18,
+          "altitude_m": 7000,
+          "water": "化雪",
+          "capacity": "突击营地"
+        },
+        {
+          "name": "C4(7500m)",
+          "km": 24,
+          "altitude_m": 7500,
+          "water": "化雪",
+          "capacity": "冲顶营地"
+        }
+      ],
+      "huts": [
+        "聂拉木县城招待所(¥100-200)",
+        "日喀则酒店(¥200-400)"
+      ],
+      "camping_restriction": "仅可在BC/C1/C2/C3/C4扎营，冰川段禁止",
+      "signal_coverage": "移动 聂拉木-司机营地有4G(偶断)，C1以上无 / 电信 同移动 / 联通 无信号",
+      "signal_dead_zones": "C1→顶峰全程无信号(约15天)",
+      "last_signal_point": "聂拉木县城",
+      "route_variants": [
+        "传统南壁路线(25-35天)",
+        "北壁直达路线(30-40天)"
+      ],
+      "variant_differences": "南壁25-35天(标准商业路线，含气象窗口等待)，北壁30-40天(技术要求更高，仅少数商业队运营)",
+      "distance_km_v5": 30,
+      "distance_note": "聂拉木→司机营地→BC→C1→C2→C3→C4→顶峰，往返约60km",
+      "verification_sources": [
+        "Wikipedia(zh.wikipedia.org/zh-cn/希夏邦马峰)",
+        "搜狐(sohu.com/a/873618278_121124433)",
+        "Great Tibet Tour(greattibettour.com/cn/tibet-attractions/shishapangma)",
+        "西藏登协"
+      ],
+      "confidence": "A",
+      "name_en": "Shishapangma"
+    },
+    {
+      "route_id": "ma_019",
+      "name_zh": "宁金抗沙峰",
+      "mode": "mountaineering",
+      "season_status": "最佳4-5月、9-10月(气象窗口)；6-8月雨季雪多，11-3月极寒强风",
+      "water_points": [
+        "浪卡子(采买)",
+        "卡若拉冰川融水",
+        "BC(冰川融水)",
+        "高海拔营(化雪)"
+      ],
+      "retreat_points": [
+        "BC(原路返回浪卡子)",
+        "C1-C2(可原路下撤)",
+        "浪卡子(包车回拉萨/江孜)"
+      ],
+      "risk_tags": [
+        "极高海拔(7206m)",
+        "强风(7000m以上风速常超80km/h)",
+        "气候恶劣多变",
+        "技术型7000米(需冰雪混合技术)",
+        "冰川(卡若拉冰川延伸段，有冰裂缝)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "BC紧邻卡若拉冰川景区公路，救援车辆可达BC；但C1以上需直升机(浪卡子→拉萨调度)，高海拔段响应慢",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "通过西藏登协或商业队办理(¥5000-8000)，须提供6000m级登顶证明",
+      "regulation_note": "宁金抗沙峰(乃钦康桑)位于浪卡子县与江孜县交界，卡若拉冰川旁，属保护区范围",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "拉萨→浪卡子(班车¥50/3h)→卡若拉冰川BC(包车约1h/¥200)",
+      "return_from_endpoint": "原路返回：顶峰→BC→浪卡子→拉萨",
+      "nearest_city": "浪卡子(距BC约30km)",
+      "nearest_transport_hub": "拉萨贡嘎机场(约180km/3.5h)",
+      "elevation_profile": [
+        [
+          0,
+          5000
+        ],
+        [
+          3,
+          5400
+        ],
+        [
+          6,
+          5800
+        ],
+        [
+          9,
+          6000
+        ],
+        [
+          12,
+          6300
+        ],
+        [
+          15,
+          6500
+        ],
+        [
+          18,
+          6800
+        ],
+        [
+          21,
+          7000
+        ],
+        [
+          25,
+          7206
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "浪卡子县城约4480m",
+        "max": "宁金抗沙顶7206m",
+        "end": "浪卡子"
+      },
+      "cumulative_elevation": 2800,
+      "campsites": [
+        {
+          "name": "BC(5000m)",
+          "km": 0,
+          "altitude_m": 5000,
+          "water": "有(冰川融水)",
+          "capacity": "卡若拉冰川附近，10-15顶"
+        },
+        {
+          "name": "C1(5800m)",
+          "km": 6,
+          "altitude_m": 5800,
+          "water": "化雪",
+          "capacity": "小平台"
+        },
+        {
+          "name": "C2(6300m)",
+          "km": 12,
+          "altitude_m": 6300,
+          "water": "化雪",
+          "capacity": "雪坡"
+        },
+        {
+          "name": "C3(6800m)",
+          "km": 18,
+          "altitude_m": 6800,
+          "water": "化雪",
+          "capacity": "突击营地"
+        }
+      ],
+      "huts": [
+        "浪卡子县城招待所(¥80-150)",
+        "江孜酒店(¥150-300)"
+      ],
+      "camping_restriction": "仅可在BC/C1/C2/C3扎营，冰川段禁止",
+      "signal_coverage": "移动 浪卡子-卡若拉有4G，BC有信号/C1以上无 / 电信 同移动 / 联通 无信号",
+      "signal_dead_zones": "C1→顶峰无信号",
+      "last_signal_point": "卡若拉冰川景区",
+      "route_variants": [
+        "传统西南壁路线(12-15天)",
+        "东北脊路线(15-20天)"
+      ],
+      "variant_differences": "西南壁12-15天(标准商业路线，含适应)，东北脊15-20天(技术难度更高，少有人走)",
+      "distance_km_v5": 25,
+      "distance_note": "BC→C1→C2→C3→顶峰，往返约25km，总历时约12-15天",
+      "verification_sources": [
+        "peakbagger.com/peak.aspx?pid=16463",
+        "2bulu.com",
+        "搜狐登山记录",
+        "中国国家地理资料"
+      ],
+      "confidence": "A",
+      "name_en": "Nyainqêntanglha Peak"
+    },
+    {
+      "route_id": "ma_020",
+      "name_zh": "启孜峰",
+      "mode": "mountaineering",
+      "season_status": "最佳5-9月(入门6000米窗口)；10-4月雪深风大，不建议",
+      "water_points": [
+        "羊八井(起点采买)",
+        "BC(水源丰富，温泉河)",
+        "C1(化雪)"
+      ],
+      "retreat_points": [
+        "BC(原路返回羊八井)",
+        "C1(可原路下撤)",
+        "羊八井(包车回拉萨)"
+      ],
+      "risk_tags": [
+        "高海拔(6206m)",
+        "入门6000米训练山",
+        "冰川(末端有裂缝，需结组)",
+        "雪坡滑坠(需穿冰爪)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "BC距羊八井约30min车程，羊八井距拉萨约1.5h，高海拔段救援可徒步下山或联系当地马帮/越野车",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "西藏登协统一办理，通常通过商业队代办(¥2000-4000)",
+      "regulation_note": "启孜峰为西藏登山学校传统训练山峰，攀登需报备西藏登协",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "拉萨→羊八井(班车¥30/2h)→BC(徒步约2km)",
+      "return_from_endpoint": "原路返回：顶峰→C1→BC→羊八井→拉萨",
+      "nearest_city": "羊八井(距BC约5km)",
+      "nearest_transport_hub": "拉萨贡嘎机场(距羊八井约100km/1.5h)",
+      "elevation_profile": [
+        [
+          0,
+          4800
+        ],
+        [
+          2,
+          5000
+        ],
+        [
+          4,
+          5200
+        ],
+        [
+          5,
+          5400
+        ],
+        [
+          7,
+          5600
+        ],
+        [
+          9,
+          5800
+        ],
+        [
+          11,
+          6000
+        ],
+        [
+          12,
+          6100
+        ],
+        [
+          14,
+          6206
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "羊八井约4300m",
+        "max": "启孜峰顶6206m",
+        "end": "羊八井"
+      },
+      "cumulative_elevation": 2000,
+      "campsites": [
+        {
+          "name": "BC(4800m)",
+          "km": 0,
+          "altitude_m": 4800,
+          "water": "有(羊八井温泉河)",
+          "capacity": "训练营地(10-20顶)"
+        },
+        {
+          "name": "C1(5400m)",
+          "km": 5,
+          "altitude_m": 5400,
+          "water": "化雪",
+          "capacity": "雪坡营地"
+        }
+      ],
+      "huts": [
+        "羊八井温泉酒店(¥200)",
+        "拉萨酒店(¥150-400)"
+      ],
+      "camping_restriction": "仅可在BC/C1指定位置扎营",
+      "signal_coverage": "移动 羊八井有4G，BC信号弱/C1以上无 / 电信 同移动 / 联通 无信号",
+      "signal_dead_zones": "C1→顶峰无信号",
+      "last_signal_point": "羊八井",
+      "route_variants": [
+        "标准路线(3-4天)",
+        "速攀(2天，需高海拔适应)"
+      ],
+      "variant_differences": "标准3-4天(含适应，拉萨→羊八井→BC→C1→冲顶→撤回)，速攀2天(适合有6000m经验者)",
+      "distance_km_v5": 14,
+      "distance_note": "BC→C1→顶峰，往返约14km，总历时约3-4天",
+      "verification_sources": [
+        "peakbagger.com",
+        "2bulu.com",
+        "西藏登协资料",
+        "搜狐登山记录"
+      ],
+      "confidence": "B",
+      "name_en": "Qizhi Peak"
+    },
+    {
+      "route_id": "ma_021",
+      "name_zh": "姜桑拉姆峰",
+      "mode": "mountaineering",
+      "season_status": "最佳6-9月(入门级6000米窗口)；10-5月雪大风寒，不建议初学者",
+      "water_points": [
+        "浪卡子县城(采买)",
+        "BC(水源)",
+        "C1(化雪)"
+      ],
+      "retreat_points": [
+        "BC(原路返回浪卡子)",
+        "C1(原路下撤)",
+        "浪卡子(包车回拉萨)"
+      ],
+      "risk_tags": [
+        "高海拔(6324m)",
+        "入门技术型雪山",
+        "雪坡陡(局部>30°)",
+        "冰川(小规模，有明裂缝)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "BC距浪卡子县城约1h车程，浪卡子距拉萨约3h，高海拔段需马队协助",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "西藏登协通过商业队统一办理(¥2000-4000)",
+      "regulation_note": "姜桑拉姆峰位于浪卡子县，属羊卓雍措景区外围，攀登需报备",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "拉萨→浪卡子(班车¥50/3h，经羊卓雍措)→BC(徒步/包车)",
+      "return_from_endpoint": "原路返回：顶峰→C1→BC→浪卡子→拉萨",
+      "nearest_city": "浪卡子县城(距BC约10km)",
+      "nearest_transport_hub": "拉萨贡嘎机场(距浪卡子约150km/3h)",
+      "elevation_profile": [
+        [
+          0,
+          4800
+        ],
+        [
+          2,
+          5000
+        ],
+        [
+          4,
+          5200
+        ],
+        [
+          5,
+          5400
+        ],
+        [
+          7,
+          5700
+        ],
+        [
+          9,
+          6000
+        ],
+        [
+          10,
+          6200
+        ],
+        [
+          12,
+          6324
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "浪卡子县城约4480m",
+        "max": "姜桑拉姆顶6324m",
+        "end": "浪卡子"
+      },
+      "cumulative_elevation": 1800,
+      "campsites": [
+        {
+          "name": "BC(4800m)",
+          "km": 0,
+          "altitude_m": 4800,
+          "water": "有(融水)",
+          "capacity": "标准营地"
+        },
+        {
+          "name": "C1(5400m)",
+          "km": 5,
+          "altitude_m": 5400,
+          "water": "化雪",
+          "capacity": "雪坡小平台"
+        }
+      ],
+      "huts": [
+        "浪卡子县城招待所(¥80-150)",
+        "拉萨酒店(¥150-400)"
+      ],
+      "camping_restriction": "仅可在BC/C1扎营",
+      "signal_coverage": "移动 浪卡子县城有4G，BC偶有/C1以上无 / 电信 同移动 / 联通 无信号",
+      "signal_dead_zones": "C1→顶峰无信号",
+      "last_signal_point": "浪卡子县城",
+      "route_variants": [
+        "标准路线(3-4天)",
+        "训练路线(2+天，针对登山学校学员)"
+      ],
+      "variant_differences": "标准3-4天(含适应)，训练路线2天+可加训冰川技术",
+      "distance_km_v5": 12,
+      "distance_note": "BC→C1→顶峰，往返约12km",
+      "verification_sources": [
+        "peakbagger.com",
+        "2bulu.com",
+        "西藏登协"
+      ],
+      "confidence": "B",
+      "name_en": "Jiangsanlam Peak"
+    },
+    {
+      "route_id": "ma_022",
+      "name_zh": "库拉岗日主峰",
+      "mode": "mountaineering",
+      "season_status": "最佳5-6月、9-10月(气象窗口)；7-8月雨季雪崩风险大，11-4月极寒",
+      "water_points": [
+        "洛扎县城(采买)",
+        "白马林措(湖泊淡水)",
+        "BC(融水)",
+        "C1-C3(化雪)"
+      ],
+      "retreat_points": [
+        "BC可原路返回色乡/洛扎",
+        "C1-C2可原路下撤",
+        "色乡(包车回洛扎/拉萨)"
+      ],
+      "risk_tags": [
+        "极高海拔(7538m)",
+        "技术攀登型(冰岩混合)",
+        "冰川(库拉岗日冰川，大裂缝区)",
+        "边防证(洛扎县边境，距不丹约20km)",
+        "低温(-30°C)",
+        "雪崩(7-8月雨季风险高)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "BC距洛扎县城约2h车程；C1以上救援仅能用直升机(需从拉萨调度，响应4h+)；色乡卫生院仅基础处理，需送至洛扎或拉萨",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需通过商业队报备西藏登协+边防证(洛扎县办理，¥20)，攀登许可约¥5000-8000",
+      "regulation_note": "库拉岗日峰位于洛扎县边境地区(距不丹边境约20km)，登山+边防双许可；景区徒步路线仅到白马林措，登顶需专业攀登许可",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "拉萨→浪卡子(班车¥50/3h)→洛扎(班车¥60/4h)→色乡(包车¥200/1h)→BC(徒步)",
+      "return_from_endpoint": "原路返回：顶峰→BC→色乡→洛扎→拉萨",
+      "nearest_city": "洛扎县城(距BC约50km)",
+      "nearest_transport_hub": "拉萨贡嘎机场(距洛扎约280km/6h)",
+      "elevation_profile": [
+        [
+          0,
+          3700
+        ],
+        [
+          5,
+          4500
+        ],
+        [
+          8,
+          5300
+        ],
+        [
+          10,
+          5800
+        ],
+        [
+          12,
+          6000
+        ],
+        [
+          14,
+          6400
+        ],
+        [
+          16,
+          6800
+        ],
+        [
+          18,
+          7200
+        ],
+        [
+          20,
+          7538
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "色乡约3700m",
+        "max": "库拉岗日顶7538m",
+        "end": "色乡"
+      },
+      "cumulative_elevation": 3200,
+      "campsites": [
+        {
+          "name": "BC(4500m)",
+          "km": 0,
+          "altitude_m": 4500,
+          "water": "有(白马林措湖水)",
+          "capacity": "湖边平台，10-15顶"
+        },
+        {
+          "name": "C1(5300m)",
+          "km": 5,
+          "altitude_m": 5300,
+          "water": "化雪",
+          "capacity": "冰碛平台"
+        },
+        {
+          "name": "C2(6000m)",
+          "km": 10,
+          "altitude_m": 6000,
+          "water": "化雪",
+          "capacity": "冰川肩部"
+        },
+        {
+          "name": "C3(6800m)",
+          "km": 15,
+          "altitude_m": 6800,
+          "water": "化雪",
+          "capacity": "突击营地"
+        }
+      ],
+      "huts": [
+        "色乡藏族客栈(¥80-150)",
+        "洛扎县城招待所(¥100-200)"
+      ],
+      "camping_restriction": "仅可在BC/C1/C2/C3扎营，冰川段禁止",
+      "signal_coverage": "移动 洛扎-色乡有4G，BC偶有/无 / 电信 同移动 / 联通 无信号",
+      "signal_dead_zones": "C1→顶峰全程无信号",
+      "last_signal_point": "色乡",
+      "route_variants": [
+        "南壁传统路线(12-15天)",
+        "东北脊路线(15-20天)"
+      ],
+      "variant_differences": "南壁传统12-15天(标准商业路线)，东北脊15-20天(纯技术攀冰路线，极少商业队运营)",
+      "distance_km_v5": 20,
+      "distance_note": "色乡→BC→C1→C2→C3→顶峰，往返约20km",
+      "verification_sources": [
+        "voc.com.cn新闻报道",
+        "peakbagger.com",
+        "2bulu.com"
+      ],
+      "confidence": "B",
+      "name_en": "Kula Kangri Peak"
+    },
+    {
+      "route_id": "mc_005",
+      "name_zh": "214滇藏线摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳4-5月(雨季前)、9-10月(雨后秋景)；可行4-11月；7-8月雨季注意塌方/泥石流；11-3月高海拔段(白马雪山4292m)积雪结冰",
+      "water_points": [
+        "西双版纳(景洪)(起点，加油站密集)",
+        "大理(中石油/中石化多站)",
+        "丽江(加油站充足)",
+        "香格里拉(多个加油站)",
+        "德钦(有加油站，进藏前最后一补)",
+        "盐井(有加油站)",
+        "芒康(与G318汇合，加油站充足)"
+      ],
+      "retreat_points": [
+        "大理(有机场/火车站，可随时结束)",
+        "丽江(大交通便利，三义机场可飞全国)",
+        "香格里拉(有机场，可结束行程)",
+        "芒康(东达拉萨/西回云南)"
+      ],
+      "risk_tags": [
+        "高海拔(最高红拉山垭口4448m，东达山垭口5130m)",
+        "横断山脉复杂地形(连续上下坡)",
+        "雨季塌方(盐井-芒康段多发)",
+        "大货车多(214国道为滇藏货运要道)",
+        "落石(峡谷路段，德钦-盐井段)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "沿途县城密集，大理/丽江有较完善医疗；德钦-芒康段(约150km)山区救援较难；建议结伴并准备补胎工具",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道自行车/摩托骑行",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "西双版纳嘎洒机场(起点)或大理站/丽江三义机场(可选起点)；也可飞到大理或丽江直接开骑",
+      "return_from_endpoint": "终点为西宁，全程约3000km；也可在芒康并入G318进藏，或在大理/丽江/香格里拉提前结束",
+      "nearest_city": "大理",
+      "nearest_transport_hub": "丽江三义机场/大理站/香格里拉机场",
+      "elevation_profile": [
+        [
+          0,
+          1000
+        ],
+        [
+          375,
+          1850
+        ],
+        [
+          750,
+          2200
+        ],
+        [
+          1125,
+          2550
+        ],
+        [
+          1500,
+          2900
+        ],
+        [
+          1875,
+          3250
+        ],
+        [
+          2250,
+          3600
+        ],
+        [
+          2625,
+          3950
+        ],
+        [
+          3000,
+          4300
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "西双版纳(景洪)",
+        "max": "最高5000m(东达山)",
+        "end": "西宁"
+      },
+      "cumulative_elevation": 40000,
+      "campsites": [
+        {
+          "name": "沿途县城/镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150/晚)"
+      ],
+      "camping_restriction": "任意(建议找露营地/客栈)",
+      "signal_coverage": "移动 大理-丽江-香格里拉-德钦 4G覆盖良好/德钦-芒康段部分山区隧道无 / 电信 同移动，覆盖稍广 / 联通 县城有信号，偏远山区差",
+      "signal_dead_zones": "德钦至盐井段峡谷深处、白马雪山隧道",
+      "last_signal_point": "沿途县城(大理/丽江/香格里拉/德钦/盐井/芒康)",
+      "route_variants": [
+        "全程版(景洪→西宁)",
+        "精简版(大理→芒康接318)"
+      ],
+      "variant_differences": "全程约3000km(景洪→大理→丽江→香格里拉→德钦→芒康→左贡→昌都→西宁)；精简约800km(大理→芒康，接G318进藏)",
+      "distance_km_v5": 3000,
+      "distance_note": "西双版纳(景洪)→西宁，全长约3000km(含青海段)",
+      "verification_sources": [
+        "扎西得勒旅游网(tibet888.com)",
+        "知乎专栏(zhuanlan.zhihu.com/p/671348405)",
+        "携程攻略(ctrip.com)"
+      ],
+      "confidence": "A",
+      "name_en": "Yunnan-Tibet 214 Motorcycle Tour"
+    }
+  ]
+}

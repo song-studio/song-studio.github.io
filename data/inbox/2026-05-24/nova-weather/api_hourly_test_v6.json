@@ -1,0 +1,232 @@
+{
+  "version": "v6_hourly_test",
+  "timestamp": "2026-05-24 09:07",
+  "total_tested": 20,
+  "success": 20,
+  "partial": 0,
+  "fail": 0,
+  "test_method": "Open-Meteo hourly forecast (temperature_2m,precipitation,wind_speed_10m,pressure_msl,relative_humidity_2m)",
+  "forecast_days": 2,
+  "results": [
+    {
+      "name": "四姑娘山镇",
+      "query_coords": "31.09,102.83",
+      "api_coords": "31.1072,102.8266",
+      "elevation_m": 4552.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "-3.4~10.2°C",
+      "has_precipitation": true,
+      "current_temp": -2.6,
+      "status": "OK"
+    },
+    {
+      "name": "雨崩村",
+      "query_coords": "28.39,98.79",
+      "api_coords": "28.4359,98.7955",
+      "elevation_m": 3067.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "10.7~20.9°C",
+      "has_precipitation": true,
+      "current_temp": 12.9,
+      "status": "OK"
+    },
+    {
+      "name": "纳木错",
+      "query_coords": "30.77,90.88",
+      "api_coords": "30.7557,90.9563",
+      "elevation_m": 4736.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "-3.8~9.1°C",
+      "has_precipitation": true,
+      "current_temp": 2.6,
+      "status": "OK"
+    },
+    {
+      "name": "鹅銮鼻",
+      "query_coords": "21.9,120.85",
+      "api_coords": "21.9684,120.8333",
+      "elevation_m": 22.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "26.5~32.5°C",
+      "has_precipitation": false,
+      "current_temp": 27.2,
+      "status": "OK"
+    },
+    {
+      "name": "漠河",
+      "query_coords": "52.97,122.54",
+      "api_coords": "52.9701,122.5424",
+      "elevation_m": 437.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "3.0~20.5°C",
+      "has_precipitation": true,
+      "current_temp": 9.4,
+      "status": "OK"
+    },
+    {
+      "name": "独库公路中段",
+      "query_coords": "42.94,83.86",
+      "api_coords": "42.9174,83.8576",
+      "elevation_m": 2524.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "-3.2~13.7°C",
+      "has_precipitation": true,
+      "current_temp": 1.8,
+      "status": "OK"
+    },
+    {
+      "name": "他念他翁",
+      "query_coords": "29.0,98.5",
+      "api_coords": "28.9982,98.4633",
+      "elevation_m": 4554.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "1.1~10.6°C",
+      "has_precipitation": true,
+      "current_temp": 2.9,
+      "status": "OK"
+    },
+    {
+      "name": "党岭",
+      "query_coords": "31.07,101.41",
+      "api_coords": "31.1072,101.4371",
+      "elevation_m": 3564.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "6.0~22.3°C",
+      "has_precipitation": true,
+      "current_temp": 8.3,
+      "status": "OK"
+    },
+    {
+      "name": "长白山天池",
+      "query_coords": "42.03,128.07",
+      "api_coords": "42.0000,128.0625",
+      "elevation_m": 2571.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "-0.1~11.4°C",
+      "has_precipitation": false,
+      "current_temp": 0.9,
+      "status": "OK"
+    },
+    {
+      "name": "Everest BC",
+      "query_coords": "27.99,86.93",
+      "api_coords": "28.0141,86.9526",
+      "elevation_m": 8343.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "-29.4~-21.0°C",
+      "has_precipitation": false,
+      "current_temp": -23.8,
+      "status": "OK"
+    },
+    {
+      "name": "Chamonix",
+      "query_coords": "45.92,6.87",
+      "api_coords": "45.9200,6.8600",
+      "elevation_m": 1034.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "13.1~25.9°C",
+      "has_precipitation": false,
+      "current_temp": 14.9,
+      "status": "OK"
+    },
+    {
+      "name": "Zermatt",
+      "query_coords": "46.02,7.75",
+      "api_coords": "46.0200,7.7400",
+      "elevation_m": 1608.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "9.5~23.5°C",
+      "has_precipitation": false,
+      "current_temp": 11.3,
+      "status": "OK"
+    },
+    {
+      "name": "Grand Canyon",
+      "query_coords": "36.06,-112.14",
+      "api_coords": "36.0474,-112.1364",
+      "elevation_m": 1783.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "10.2~26.4°C",
+      "has_precipitation": false,
+      "current_temp": 14.7,
+      "status": "OK"
+    },
+    {
+      "name": "Kilimanjaro",
+      "query_coords": "-3.07,37.35",
+      "api_coords": "-3.0580,37.3489",
+      "elevation_m": 5729.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "-12.4~-3.5°C",
+      "has_precipitation": true,
+      "current_temp": -9.1,
+      "status": "OK"
+    },
+    {
+      "name": "Reykjavik",
+      "query_coords": "64.15,-21.94",
+      "api_coords": "64.1396,-21.9716",
+      "elevation_m": 0.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "7.0~11.3°C",
+      "has_precipitation": true,
+      "current_temp": 7.7,
+      "status": "OK"
+    },
+    {
+      "name": "Lukla",
+      "query_coords": "27.69,86.73",
+      "api_coords": "27.5923,86.7713",
+      "elevation_m": 2868.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "7.3~15.7°C",
+      "has_precipitation": true,
+      "current_temp": 9.3,
+      "status": "OK"
+    },
+    {
+      "name": "Moshi",
+      "query_coords": "-3.34,37.34",
+      "api_coords": "-3.3392,37.3242",
+      "elevation_m": 879.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "17.6~25.7°C",
+      "has_precipitation": false,
+      "current_temp": 18.8,
+      "status": "OK"
+    },
+    {
+      "name": "武功山",
+      "query_coords": "27.47,114.16",
+      "api_coords": "27.4517,114.1611",
+      "elevation_m": 897.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "20.6~29.2°C",
+      "has_precipitation": true,
+      "current_temp": 21.4,
+      "status": "OK"
+    },
+    {
+      "name": "吐鲁番",
+      "query_coords": "42.97,89.25",
+      "api_coords": "42.9877,89.1976",
+      "elevation_m": 97.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "20.4~31.2°C",
+      "has_precipitation": false,
+      "current_temp": 24.6,
+      "status": "OK"
+    },
+    {
+      "name": "东西冲",
+      "query_coords": "22.49,114.58",
+      "api_coords": "22.5308,114.5540",
+      "elevation_m": 0.0,
+      "hourly_completeness": "48/48",
+      "hourly_temperature_range": "26.6~29.6°C",
+      "has_precipitation": true,
+      "current_temp": 27.2,
+      "status": "OK"
+    }
+  ]
+}

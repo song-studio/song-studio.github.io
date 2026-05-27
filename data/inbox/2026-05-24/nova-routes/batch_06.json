@@ -1,0 +1,1599 @@
+{
+  "batch": 6,
+  "routes": [
+    {
+      "route_id": "mc_006",
+      "name_zh": "317川藏北线摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳5月、9-10月(避开雨季)；7-8月雨季泥石流/塌方风险较高；11-3月高海拔段(雀儿山5050m)积雪结冰，不推荐新手；路况总体比G318差(沙石路段多)",
+      "water_points": [
+        "成都(起点，加油站充足)",
+        "都江堰(加油站)",
+        "马尔康(加油站)",
+        "炉霍(加油站)",
+        "甘孜(加油站)",
+        "马尼干戈(加油站)",
+        "德格(有加油站，入藏前最后一站)",
+        "江达(加油站)",
+        "昌都(加油站充足)",
+        "类乌齐(有加油站)",
+        "丁青(加油站)",
+        "巴青(加油站)",
+        "那曲(加油站)",
+        "拉萨(终点)"
+      ],
+      "retreat_points": [
+        "成都(起点大交通枢纽)",
+        "马尔康(有客运站可回成都)",
+        "甘孜(有格萨尔机场可飞成都)",
+        "昌都(有邦达机场可飞各地)",
+        "那曲(交通枢纽，可回拉萨)",
+        "拉萨(终点)"
+      ],
+      "risk_tags": [
+        "高海拔(全程平均3500m+，雀儿山垭口5050m)",
+        "沙石路面(部分段未铺装，比318更颠簸)",
+        "雨季塌方(7-8月，丁青-巴青段路况最差)",
+        "高寒(那曲段冬季-20°C)",
+        "补给间隔长(部分段100-200km无加油站)",
+        "那曲-拉萨段大货车多"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "大城市(成都/昌都/那曲/拉萨)有完善医疗；马尔康/甘孜/德格有县级医院；丁青-巴青无人区段救援较困难",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行；部分路段(德格-江达)有检查站需身份证",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "成都双流/天府机场→成都市区取车；终点拉萨贡嘎机场",
+      "return_from_endpoint": "终点为拉萨(可飞机/火车返回)；也可从那曲坐青藏铁路返回",
+      "nearest_city": "成都(起点)/拉萨(终点)",
+      "nearest_transport_hub": "成都双流/天府机场(起点)；昌都邦达机场(沿途可选)；拉萨贡嘎机场(终点)",
+      "elevation_profile": [
+        [
+          0,
+          500
+        ],
+        [
+          200,
+          1000
+        ],
+        [
+          400,
+          2000
+        ],
+        [
+          600,
+          3000
+        ],
+        [
+          800,
+          3500
+        ],
+        [
+          1000,
+          4000
+        ],
+        [
+          1200,
+          4200
+        ],
+        [
+          1400,
+          4500
+        ],
+        [
+          1600,
+          4200
+        ],
+        [
+          1800,
+          4000
+        ],
+        [
+          2000,
+          3650
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "成都500m",
+        "max": "雀儿山5050m",
+        "end": "拉萨3650m"
+      },
+      "cumulative_elevation": 30000,
+      "campsites": [
+        {
+          "name": "沿途县城/镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150/晚)"
+      ],
+      "camping_restriction": "任意(建议找住宿地)",
+      "signal_coverage": "移动 成都-马尔康-昌都-那曲沿线大部分有4G/雀儿山段部分无 / 电信 同移动，覆盖略好 / 联通 县城有信号，偏远山区基本无",
+      "signal_dead_zones": "雀儿山段、丁青-巴青段部分山区",
+      "last_signal_point": "沿途县城",
+      "route_variants": [
+        "全程版(成都→那曲→拉萨)",
+        "转318(昌都→邦达→八宿入318)"
+      ],
+      "variant_differences": "全程2412km约需10-15天；昌都可转G318继续进藏",
+      "distance_km_v5": 2350,
+      "distance_note": "成都→拉萨，全长约2412km(G317川藏北线)",
+      "verification_sources": [
+        "腾讯新闻(news.qq.com)",
+        "findchina.tw G317攻略",
+        "tibetway.com川藏北线攻略"
+      ],
+      "confidence": "A",
+      "name_en": "Sichuan-Tibet 317 Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_007",
+      "name_zh": "318川藏南线摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳5-10月(秋季尤佳)；全年可通行(但11-3月高海拔垭口积雪暗冰)；7-8月雨季注意塌方(尤其海通沟/通麦段)；4月林芝桃花节为特色窗口",
+      "water_points": [
+        "成都(起点，加油站充足)",
+        "雅安(中石化/中石油)",
+        "康定(加油站)",
+        "理塘(加油站)",
+        "巴塘(加油站，进藏前关键补油)",
+        "芒康(加油站)",
+        "左贡(加油站)",
+        "八宿(加油站)",
+        "波密(加油站)",
+        "林芝(加油站密集)",
+        "拉萨(终点，加油站充足)"
+      ],
+      "retreat_points": [
+        "成都(起点大交通枢纽)",
+        "康定(有机场可飞成都)",
+        "理塘(有机场，交通枢纽)",
+        "巴塘(可原路回川)",
+        "林芝(有米林机场可飞各地)",
+        "拉萨(终点交通枢纽)"
+      ],
+      "risk_tags": [
+        "高海拔(东达山垭口5130m，业拉山4658m)",
+        "雨季塌方(巴塘-芒康海通沟段为高危区)",
+        "大货车多(川藏线货运繁忙)",
+        "连续下坡(怒江72拐刹车过热风险)",
+        "暗冰(11-3月高海拔垭口)",
+        "旺季拥堵(7-8月车多)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "沿途县城密集(约50-100km一站)，康定/理塘/巴塘/林芝/拉萨有较完善医疗；海通沟/通麦段塌方后救援响应1-2h",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行；进藏需身份证在沿途检查站登记",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "成都双流/天府机场(全国主要城市有航班)→成都市区取车；终点拉萨贡嘎机场可飞全国",
+      "return_from_endpoint": "终点为拉萨(贡嘎机场/拉萨站)；也可托运摩托后飞回",
+      "nearest_city": "成都(起点)/拉萨(终点)",
+      "nearest_transport_hub": "成都双流/天府机场(起点)；拉萨贡嘎机场(终点)；林芝米林机场(沿途可选)",
+      "elevation_profile": [
+        [
+          0,
+          500
+        ],
+        [
+          200,
+          1500
+        ],
+        [
+          400,
+          3000
+        ],
+        [
+          600,
+          4000
+        ],
+        [
+          800,
+          3500
+        ],
+        [
+          1000,
+          4000
+        ],
+        [
+          1200,
+          3000
+        ],
+        [
+          1400,
+          4000
+        ],
+        [
+          1600,
+          3500
+        ],
+        [
+          1800,
+          4000
+        ],
+        [
+          2000,
+          3650
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "成都500m",
+        "max": "东达山5130m",
+        "end": "拉萨3650m"
+      },
+      "cumulative_elevation": 35000,
+      "campsites": [
+        {
+          "name": "沿途县城/镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-200/晚)"
+      ],
+      "camping_restriction": "任意(建议找住宿地)",
+      "signal_coverage": "移动 成都-康定-理塘-巴塘-芒康-林芝-拉萨沿线大部分有4G/部分隧道峡谷无 / 电信 同移动，覆盖略广 / 联通 县城有信号，偏远地区弱",
+      "signal_dead_zones": "海通沟峡谷段、部分高山隧道内",
+      "last_signal_point": "沿途县城",
+      "route_variants": [
+        "全程版",
+        "精简版(选段骑行)"
+      ],
+      "variant_differences": "全程约2150km(成都→拉萨)需8-12天；选段可从康定/理塘/林芝开始",
+      "distance_km_v5": 2150,
+      "distance_note": "成都→拉萨，全长约2150km(G318川藏南线)",
+      "verification_sources": [
+        "360doc.com川藏南线攻略",
+        "2025知乎最新攻略(zhuanlan.zhihu.com/p/1981782095291515908)",
+        "两步路(2bulu.com)骑行攻略"
+      ],
+      "confidence": "A",
+      "name_en": "Sichuan-Tibet 318 Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_009",
+      "name_zh": "219新藏线摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳6-8月(避开冬雪)；可行5-10月；11-4月部分路段(界山达坂、麻扎达坂)大雪封山不建议；全程平均海拔4500m+，含氧量仅海平面44%",
+      "water_points": [
+        "叶城(起点零公里，充足补给)",
+        "库地(有加油站)",
+        "麻扎(有简陋加油点)",
+        "大红柳滩(加油站，务必加满，下站300km)",
+        "三十里营房(军站可补充)",
+        "多玛乡(有加油站)",
+        "狮泉河(阿里中心，加油站齐全)",
+        "札达/普兰(有加油站)",
+        "仲巴/萨嘎(有加油站)",
+        "拉孜(终点加油站)"
+      ],
+      "retreat_points": [
+        "叶城(起点可回喀什，有机场/火车站)",
+        "大红柳滩(有住宿，简易医疗)",
+        "三十里营房(军站可求助，有兵站医疗)",
+        "狮泉河(阿里行政中心，有医院+昆莎机场可飞拉萨/喀什)",
+        "拉孜(终点，可返日喀则/拉萨)"
+      ],
+      "risk_tags": [
+        "极高海拔(平均4500m+，界山达坂5360m)",
+        "无人区(大红柳滩-狮泉河约300km无补给)",
+        "强风(阿克赛钦盆地，常超8级)",
+        "低温(全年可至-20°C，冬季-40°C)",
+        "边防证必须(阿克赛钦/阿里地区)",
+        "含氧量仅44%(高反风险极高)",
+        "加油站间距大(部分段超300km无油)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "全程2143km偏远无人区多；狮泉河有阿里地区人民医院(条件有限)，叶城/日喀则两端有较完善医疗；中间段(大红柳滩-狮泉河)300km无人区救援极困难，需卫星电话求助；建议结伴并带卫星通讯设备",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "需边防证(户籍地办理，填新疆/西藏全境)",
+      "regulation_note": "边境地区需边防证；阿克赛钦/阿里地区为边境敏感区，沿途多个检查站",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "喀什→叶城(火车/班车约¥50/4h)；叶城零公里为G219起点；终点拉孜距日喀则约150km(班车¥50/3h)",
+      "return_from_endpoint": "终点为拉孜(距日喀则150km)；可继续经G318往拉萨，或从狮泉河飞回拉萨/喀什",
+      "nearest_city": "叶城(起点)/日喀则(终点)",
+      "nearest_transport_hub": "起点方向：喀什徕宁国际机场/喀什站；阿里段：阿里昆莎机场(距狮泉河镇约1h)",
+      "elevation_profile": [
+        [
+          0,
+          1080
+        ],
+        [
+          262,
+          1998
+        ],
+        [
+          525,
+          2376
+        ],
+        [
+          787,
+          2754
+        ],
+        [
+          1050,
+          3132
+        ],
+        [
+          1312,
+          3510
+        ],
+        [
+          1575,
+          3888
+        ],
+        [
+          1837,
+          4266
+        ],
+        [
+          2100,
+          4644
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "叶城",
+        "max": "最高5400m(界山达坂)",
+        "end": "拉孜"
+      },
+      "cumulative_elevation": 35000,
+      "campsites": [
+        {
+          "name": "沿途县城/镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150/晚)"
+      ],
+      "camping_restriction": "任意(建议找露营地/客栈)",
+      "signal_coverage": "移动 叶城-库地有4G/麻扎-大红柳滩大部分无/三十里营房有/狮泉河-拉孜有4G / 电信 同移动，狮泉河段稍好 / 联通 仅县城段有，大部分无人区无信号",
+      "signal_dead_zones": "麻扎至大红柳滩段(约150km无信号)、界山达坂区域、阿克赛钦盆地大面积无信号",
+      "last_signal_point": "叶城/大红柳滩/三十里营房/狮泉河/沿途县城",
+      "route_variants": [
+        "全程版",
+        "精简版(选段骑行)"
+      ],
+      "variant_differences": "全程约2143km(叶城→拉孜)需10-15天；选段可从任意城镇开始/结束",
+      "distance_km_v5": 2100,
+      "distance_note": "叶城→拉孜，全长约2143km(G219新藏线段)",
+      "verification_sources": [
+        "新疆交通厅官网(jtt.xinjiang.gov.cn)",
+        "携程攻略(gs.ctrip.com)",
+        "tibetway.com新藏线攻略",
+        "西藏旅游攻略网(xizanglvyou.org)"
+      ],
+      "confidence": "A",
+      "name_en": "Xinjiang-Tibet 219 Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_010",
+      "name_zh": "独库公路摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳6-9月(开放期，每年约6月初→10月初开放)；10月中至次年5月底冬季封路(约8个月)；2025年10月10日封闭，2026年预计6月初解封；建议6月底-8月出行",
+      "water_points": [
+        "独山子(起点加油站，中石油)",
+        "乔尔玛(有加油站，独库公路中段关键补油点)",
+        "那拉提镇(有2个加油站)",
+        "巴音布鲁克(有加油站)",
+        "库车(终点加油站)"
+      ],
+      "retreat_points": [
+        "独山子(起点可北返乌鲁木齐，全程高速)",
+        "乔尔玛(可北返独山子或西去唐布拉)",
+        "那拉提(食宿齐全，有卫生院)",
+        "巴音布鲁克(有住宿，镇上有卫生院)",
+        "库车(终点大交通枢纽，有机场/火车站)"
+      ],
+      "risk_tags": [
+        "季节性封路(11-5月完全封闭，6-10月开放，仅约4个月)",
+        "高海拔(铁力买提达坂3400m)",
+        "回头弯(哈希勒根达坂、玉希莫勒盖达坂急弯多发)",
+        "落石/塌方(天山峡谷段)",
+        "大雪(9月底可能突发降雪导致临时封路)",
+        "一日四季(温差可达20°C+)",
+        "限行(9:00-20:00可通行，那拉提-巴音布鲁克段不限时)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "独山子/库车两端有完善医疗(独山子人民医院、库车县人民医院)；中间段(乔尔玛-巴音布鲁克)距两端均超150km；沿途有交警巡逻，哈希勒根达坂和铁力买提达坂段事故救援响应约2-4h",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "独库公路(G217)为季节性开放国道，每日限行时间9:00-20:00(那拉提-巴音布鲁克段不限)；7座以上车辆禁止通行",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "乌鲁木齐→独山子(班车约¥80/3h，或火车到奎屯转汽车)；终点库车有机场(库车龟兹机场飞乌鲁木齐/成都)和火车站(南疆铁路)",
+      "return_from_endpoint": "终点为库车(龟兹机场/库车站)；也可原路返回独山子或从那拉提转G218西行",
+      "nearest_city": "库车/独山子",
+      "nearest_transport_hub": "独山子方向：乌鲁木齐地窝堡机场/乌鲁木齐站；库车方向：库车龟兹机场/库车站",
+      "elevation_profile": [
+        [
+          0,
+          680
+        ],
+        [
+          70,
+          1258
+        ],
+        [
+          140,
+          1496
+        ],
+        [
+          210,
+          1734
+        ],
+        [
+          280,
+          1972
+        ],
+        [
+          350,
+          2210
+        ],
+        [
+          420,
+          2448
+        ],
+        [
+          490,
+          2686
+        ],
+        [
+          561,
+          2924
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "独山子",
+        "max": "最高3400m",
+        "end": "库车"
+      },
+      "cumulative_elevation": 10000,
+      "campsites": [
+        {
+          "name": "沿途乡镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-200/晚)"
+      ],
+      "camping_restriction": "任意(建议住宿地，部分景区允许露营)",
+      "signal_coverage": "移动 独山子-乔尔玛段有4G/哈希勒根隧道内无/那拉提-巴音布鲁克有4G/铁力买提段信号弱 / 电信 同移动，部分峡谷段更好 / 联通 独山子-乔尔玛偶有，大部分山区段无",
+      "signal_dead_zones": "哈希勒根达坂隧道、铁力买提达坂北侧峡谷段、天山峡谷部分深谷",
+      "last_signal_point": "独山子/乔尔玛/那拉提/巴音布鲁克/库车",
+      "route_variants": [
+        "全程版(独山子→库车)"
+      ],
+      "variant_differences": "全程561km(独山子+库车)，常规1-3天骑完",
+      "distance_km_v5": 561,
+      "distance_note": "独山子→库车，全长约561km(G217独库公路段)",
+      "verification_sources": [
+        "中国日报(cn.chinadaily.com.cn/a/202405/25/)",
+        "独库公路微信公众号",
+        "乌鲁木齐本地宝(wlmq.bendibao.com)",
+        "player-travel.com独库攻略"
+      ],
+      "confidence": "A",
+      "name_en": "Duku Highway Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_011",
+      "name_zh": "丙察察线摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳5-6月、9-10月(避开雨季和雪期)；可行6-10月；7-8月雨季塌方泥石流频发，慎行；11-4月高海拔段(齐马拉山4636m)积雪封闭",
+      "water_points": [
+        "丙中洛(起点，有加油站)",
+        "察瓦龙(有加油站，注意油品质量)",
+        "目若村(有私油，价格高)",
+        "察隅(终点加油站)"
+      ],
+      "retreat_points": [
+        "丙中洛(起点可回贡山/大理)",
+        "察瓦龙(可东去左贡走G318)",
+        "目若村(有藏家住宿，简易补给)",
+        "察隅(终点，有医院/加油站)"
+      ],
+      "risk_tags": [
+        "最烂进藏路(非铺装路面占60%+)",
+        "悬崖路(丙中洛-察瓦龙段沿怒江峡谷，窄处仅3m)",
+        "塌方/落石(雨季频发，曾称\"死亡公路\")",
+        "高海拔(齐马拉山垭口4636m)",
+        "加油站间隔大(三站间约300km)",
+        "搓板路(察瓦龙-察隅段)",
+        "无路标(需离线导航)",
+        "油品差(察瓦龙私油可能有劣质)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "全程305km无公路救援覆盖；丙中洛→贡山县医院约50km/1.5h；察隅→林芝约500km/8h；中间段车辆抛锚只能等路过车辆帮助；建议结伴并带充足维修工具",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要(但需身份证通行证)",
+      "regulation_note": "丙察察为G219滇藏新通道核心段，部分(丙中洛-察瓦龙)涉及边境检查",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "大理→丙中洛(大巴约¥150/10h，或自驾)；终点察隅→林芝(班车约¥200/10h)",
+      "return_from_endpoint": "察隅(终点)→G559→然乌→G318→林芝→拉萨；也可原路返回丙中洛",
+      "nearest_city": "丙中洛(起点)/察隅(终点)",
+      "nearest_transport_hub": "起点方向：大理机场/保山机场；终点方向：林芝米林机场(距察隅约500km)",
+      "elevation_profile": [
+        [
+          0,
+          1750
+        ],
+        [
+          50,
+          2000
+        ],
+        [
+          100,
+          3000
+        ],
+        [
+          150,
+          4000
+        ],
+        [
+          200,
+          4636
+        ],
+        [
+          250,
+          3500
+        ],
+        [
+          305,
+          2300
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "丙中洛1750m",
+        "max": "齐马拉山4636m",
+        "end": "察隅2300m"
+      },
+      "cumulative_elevation": 8000,
+      "campsites": [
+        {
+          "name": "沿途乡镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "少量住宿"
+        }
+      ],
+      "huts": [
+        "丙中洛客栈(¥80-150)",
+        "察瓦龙住宿(¥80-120)",
+        "目若村藏家(¥50-80)",
+        "察隅宾馆(¥100-200)"
+      ],
+      "camping_restriction": "任意(建议乡镇内住宿)",
+      "signal_coverage": "移动 丙中洛-察瓦龙段大部分无/察瓦龙镇有微弱/察瓦龙-察隅段大部分无/察隅县城有4G / 电信 同移动 / 联通 仅县城偶有",
+      "signal_dead_zones": "全程约250km无信号(丙中洛-察瓦龙峡谷段+察瓦龙-察隅段大部分)",
+      "last_signal_point": "丙中洛(起点)/察瓦龙镇/察隅县城",
+      "route_variants": [
+        "全程版(丙中洛→察隅)",
+        "丙察左(丙中洛→察瓦龙→左贡)"
+      ],
+      "variant_differences": "丙察察305km(直接到察隅，接G559→G318)；丙察左(到左贡接G318，约270km，难度更大)",
+      "distance_km_v5": 305,
+      "distance_note": "丙中洛→察瓦龙→察隅，全长约305km(G219最艰险段)",
+      "verification_sources": [
+        "携程攻略(you.ctrip.com/travels/lhasa36/4131029.html)",
+        "知乎(zhuanlan.zhihu.com/p/26094471469)",
+        "player-travel.com丙察察解读"
+      ],
+      "confidence": "A",
+      "name_en": "Bingchacha Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_012",
+      "name_zh": "川西大环线摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳4-5月(花海)、9-10月(秋景)；7-8月雨季注意塌方(但绿意最浓)；11-3月高海拔段(折多山4298m)可能积雪，需防滑链",
+      "water_points": [
+        "成都(起点，加油站充足)",
+        "康定(有加油站)",
+        "新都桥(加油站)",
+        "道孚(有加油站)",
+        "炉霍(加油站)",
+        "色达(加油站)",
+        "甘孜(加油站)",
+        "德格(加油站)",
+        "白玉(有个体加油站)",
+        "理塘(至少3个加油站)",
+        "稻城(有加油站)",
+        "亚丁(景区有加油站)",
+        "雅江(有加油站)"
+      ],
+      "retreat_points": [
+        "成都(起点大交通枢纽)",
+        "康定(有机场可飞成都)",
+        "甘孜(格萨尔机场)",
+        "稻城亚丁机场(高海拔机场飞成都)",
+        "理塘(交通枢纽可转G318)"
+      ],
+      "risk_tags": [
+        "高海拔(折多山4298m，卡子拉山4718m)",
+        "雨季塌方(7-8月G318/G317沿线多)",
+        "冬季暗冰(折多山/高尔寺山)",
+        "高反风险(常在3500m+骑行数日)",
+        "长途(1800km环线需10-15天)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "康定/理塘/稻城有县级及以上医院；甘孜县城有甘孜州人民医院分院；偏远段(白玉/色达)救援响应需2-4h",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规骑行路线；色达喇荣五明佛学院可能需预约进入",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "成都双流/天府机场→成都市区取车，成都沿G318→康定(约330km/5h高速)",
+      "return_from_endpoint": "环线回到成都(或康定飞回)；也可在理塘转G318→拉萨继续行程",
+      "nearest_city": "成都(起点)",
+      "nearest_transport_hub": "成都双流/天府机场(起点)；康定机场/甘孜格萨尔机场/稻城亚丁机场(沿途可选撤离)",
+      "elevation_profile": [
+        [
+          0,
+          500
+        ],
+        [
+          200,
+          2500
+        ],
+        [
+          400,
+          3500
+        ],
+        [
+          600,
+          4000
+        ],
+        [
+          800,
+          3500
+        ],
+        [
+          1000,
+          4000
+        ],
+        [
+          1200,
+          4500
+        ],
+        [
+          1400,
+          4000
+        ],
+        [
+          1600,
+          3500
+        ],
+        [
+          1800,
+          500
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "成都500m",
+        "max": "卡子拉山4718m",
+        "end": "成都"
+      },
+      "cumulative_elevation": 30000,
+      "campsites": [
+        {
+          "name": "沿途县城/镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-200/晚)"
+      ],
+      "camping_restriction": "任意(建议住宿地)",
+      "signal_coverage": "移动 成都-康定-新都桥-理塘-稻城沿线大部分有4G/高尔寺山段/剪子弯山隧道段偶断 / 电信 同移动，色达段略好 / 联通 县城有，偏远山区弱",
+      "signal_dead_zones": "高尔寺山段、剪子弯山隧道段",
+      "last_signal_point": "沿途县城",
+      "route_variants": [
+        "川西大环线(成都→康定→八美→道孚→炉霍→色达→甘孜→新龙→理塘→稻城→亚丁→理塘→雅江→新都桥→康定→成都)",
+        "川西小环线(成都→康定→新都桥→塔公→八美→丹巴→四姑娘山→成都)"
+      ],
+      "variant_differences": "大环线1800km覆盖色达/亚丁等(10-15天)；小环线约900km走G318+G350(5-7天，路况更好)",
+      "distance_km_v5": 1800,
+      "distance_note": "川西大环线含色达+稻城亚丁，约1800km",
+      "verification_sources": [
+        "摩托范(58moto.com)",
+        "知乎川西自驾攻略(zhuanlan.zhihu.com)",
+        "淘宝摩旅攻略(mgoods.taobao.com)"
+      ],
+      "confidence": "A",
+      "name_en": "West Sichuan Grand Circuit Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_013",
+      "name_zh": "伊犁河谷摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳5-8月(草原最美，6月薰衣草)；4月可看杏花(吐尔根)；9-10月秋景(那拉提金色草原)；11-3月部分景区连接段封闭需绕行",
+      "water_points": [
+        "伊宁(起点，加油站密集)",
+        "霍城(有加油站)",
+        "霍尔果斯(有加油站)",
+        "昭苏(有加油站)",
+        "特克斯(八卦城，有加油站)",
+        "那拉提镇(有2个加油站)",
+        "新源(有加油站)",
+        "尼勒克(有加油站)",
+        "唐布拉(有加油站)"
+      ],
+      "retreat_points": [
+        "伊宁(有机场/火车站，市区医院完善)",
+        "那拉提(游客中心，食宿齐全，有卫生院)",
+        "特克斯(县城有医院/加油站)"
+      ],
+      "risk_tags": [
+        "山路起伏大(G218部分段限速40km/h)",
+        "加油站间隔80-100km(务必过半即加)",
+        "旺季拥堵(7-8月那拉提/巴音布鲁克游客集中)",
+        "牲畜上路(牧区牛羊常穿越公路)",
+        "边防证(霍尔果斯口岸附近需要)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "伊宁市/那拉提/特克斯均有县级及以上医院；环线大部分区段有公路救援(伊犁州120覆盖)；最偏远段为琼库什台山路(距特克斯约2h车程)",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要(霍尔果斯口岸需边防证)",
+      "regulation_note": "常规自驾/摩旅路线；霍尔果斯口岸如需出境需提前签证+ATA",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "伊宁机场(多城市直飞)+伊宁火车站(乌鲁木齐方向约5h高铁)；也可飞乌鲁木齐后转高铁",
+      "return_from_endpoint": "环线返回伊宁(可飞机/高铁返回)，也可从那拉提→独库公路→独山子继续行程",
+      "nearest_city": "伊宁(起点)",
+      "nearest_transport_hub": "伊宁机场/伊宁站",
+      "elevation_profile": [
+        [
+          0,
+          600
+        ],
+        [
+          100,
+          1000
+        ],
+        [
+          200,
+          1500
+        ],
+        [
+          300,
+          2000
+        ],
+        [
+          400,
+          2500
+        ],
+        [
+          500,
+          2000
+        ],
+        [
+          600,
+          1500
+        ],
+        [
+          700,
+          1000
+        ],
+        [
+          800,
+          600
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "伊宁约600m",
+        "max": "那拉提约2000m",
+        "end": "伊宁"
+      },
+      "cumulative_elevation": 8000,
+      "campsites": [
+        {
+          "name": "沿途城镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途酒店/客栈/民宿(¥100-300/晚)"
+      ],
+      "camping_restriction": "任意(建议城镇内住宿)",
+      "signal_coverage": "移动 伊宁-霍城-昭苏-特克斯-那拉提-尼勒克环线大部分有4G/深山峡谷段偶断 / 电信 同移动 / 联通 县城有信号，偏远山路差",
+      "signal_dead_zones": "琼库什台山路部分段",
+      "last_signal_point": "沿途城镇",
+      "route_variants": [
+        "伊宁环线(800km/3-5天)",
+        "伊犁+独库大环线(1600km/7-10天)"
+      ],
+      "variant_differences": "小环线800km覆盖伊犁河谷核心区；大环线1600km串联伊犁+独库公路+库车",
+      "distance_km_v5": 1600,
+      "distance_note": "伊犁河谷环线+独库公路连接段，约1600km",
+      "verification_sources": [
+        "网易旅游(www.163.com/dy/article/KTAM099Q0556HBJ2)",
+        "永安旅行(wingontravel.com)",
+        "携程游记(gs.ctrip.com)"
+      ],
+      "confidence": "A",
+      "name_en": "Yili Valley Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_014",
+      "name_zh": "喀喇昆仑公路摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳5-10月(中巴公路全线通行窗口)；11-4月红其拉甫达坂因大雪封闭；中国境内喀什-塔县段全年可通行(极端天气除外)",
+      "water_points": [
+        "喀什(起点，加油站密集)",
+        "奥依塔克镇(有加油站)",
+        "盖孜检查站(有加油站)",
+        "塔什库尔干(塔县，有加油站)",
+        "红其拉甫口岸(无加油站，塔县加满)",
+        "巴基斯坦苏斯特(有加油站)",
+        "巴基斯坦吉尔吉特(有加油站)",
+        "巴基斯坦塔科特(终点加油站)"
+      ],
+      "retreat_points": [
+        "喀什(起点大交通枢纽，有机场/火车站)",
+        "塔什库尔干(有县医院，可北返喀什)",
+        "红其拉甫口岸(有边防检查站可求助)",
+        "巴基斯坦苏斯特口岸(有简易住宿)"
+      ],
+      "risk_tags": [
+        "国际骑行(需护照+ATA单证+巴基斯坦签证+边防证)",
+        "高海拔(红其拉甫达坂4733m)",
+        "边防证必须(喀什地区边境)",
+        "语言障碍(巴基斯坦段英语+乌尔都语)",
+        "边境敏感带(中巴边境军事区)",
+        "落石/塌方(喀喇昆仑峡谷段)",
+        "巴基斯坦段加油站不连续",
+        "车辆出境手续复杂(需ATA Carnet)"
+      ],
+      "emergency_access_score": "困难",
+      "emergency_access_note": "中国境内喀什-塔县段有公路救援(喀什120约2h到达)；巴基斯坦段紧急救援需联系当地或驻巴使领馆，响应不定；建议购买覆盖中巴两国的户外保险并注册外交部领事保护",
+      "access_status": "限制",
+      "permit_required": true,
+      "permit_how": "中国境内：喀什地区边防证；出境：护照+巴基斯坦签证+ATA单证册(车辆)+国际驾照或翻译件",
+      "regulation_note": "喀喇昆仑公路(G314)经红其拉甫口岸可达巴基斯坦，属边境国际公路",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "喀什徕宁国际机场(全国多城市直飞)+喀什火车站(乌鲁木齐方向)；喀什到塔县约300km/5h",
+      "return_from_endpoint": "巴基斯坦塔科特→吉尔吉特(可飞伊斯兰堡)→喀什(原路返回或飞回)",
+      "nearest_city": "喀什(起点)/吉尔吉特(巴基斯坦段)",
+      "nearest_transport_hub": "喀什徕宁国际机场/喀什站(起点)；巴基斯坦端：吉尔吉特机场(小机场，伊斯兰堡中转)",
+      "elevation_profile": [
+        [
+          0,
+          1300
+        ],
+        [
+          100,
+          2000
+        ],
+        [
+          200,
+          3000
+        ],
+        [
+          300,
+          3600
+        ],
+        [
+          400,
+          4200
+        ],
+        [
+          500,
+          4733
+        ],
+        [
+          600,
+          4000
+        ],
+        [
+          700,
+          3500
+        ],
+        [
+          800,
+          3000
+        ],
+        [
+          900,
+          2500
+        ],
+        [
+          1000,
+          2000
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "喀什约1300m",
+        "max": "红其拉甫达坂4733m",
+        "end": "塔科特约2000m"
+      },
+      "cumulative_elevation": 15000,
+      "campsites": [
+        {
+          "name": "沿途城镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "住宿"
+        }
+      ],
+      "huts": [
+        "喀什酒店(¥150-400)",
+        "塔县招待所(¥100-200)",
+        "巴基斯坦沿途Guesthouse(¥50-150)"
+      ],
+      "camping_restriction": "任意(建议城镇内住宿)",
+      "signal_coverage": "移动 喀什-塔县段大部分有4G(盖孜峡谷段无)/红其拉甫口岸有微弱/巴基斯坦段仅城镇有信号 / 电信 同移动，高原段稍好 / 联通 喀什市区有，出城后差",
+      "signal_dead_zones": "盖孜峡谷段、红其拉甫至巴基斯坦苏斯特段",
+      "last_signal_point": "喀什/塔什库尔干/巴基斯坦苏斯特",
+      "route_variants": [
+        "全程版(喀什→塔科特)"
+      ],
+      "variant_differences": "全程约420km(中国侧)+700km(巴基斯坦侧)=约1120km，全程柏油路",
+      "distance_km_v5": 420,
+      "distance_note": "中国段：喀什→红其拉甫口岸约420km(G314)为柏油路；巴段：苏斯特→塔科特约700km",
+      "verification_sources": [
+        "Wikipedia(zh.wikipedia.org/wiki/喀喇昆仑公路)",
+        "维基导游(zh.wikivoyage.org)",
+        "携程游记(you.ctrip.com)"
+      ],
+      "confidence": "A",
+      "name_en": "Karakoram Highway Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_015",
+      "name_zh": "海南环岛摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳11-4月(避寒骑行，气温18-25°C)；5-10月高温多雨/台风季(7-9月台风风险高)；东线避风优于西线",
+      "water_points": [
+        "海口(起点，加油站密集)",
+        "文昌(有加油站)",
+        "博鳌(有加油站)",
+        "万宁(有加油站)",
+        "陵水(有加油站)",
+        "三亚(加油站充足)",
+        "西线东方(有加油站)",
+        "西线昌江(有加油站)",
+        "西线儋州(有加油站)",
+        "西线澄迈(有加油站)"
+      ],
+      "retreat_points": [
+        "海口(美兰机场/火车站大交通)",
+        "三亚(凤凰机场可随时结束)",
+        "东方(有火车站可回海口)",
+        "儋州(有火车站)"
+      ],
+      "risk_tags": [
+        "台风风险(7-9月高风险，建议避开)",
+        "西线加油站稀疏(儋州-东方段间隔大)",
+        "西线路况部分段为县道等级",
+        "中线国道大货车多",
+        "高温(5-10月正午35°C+骑行需防暑)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "海南医疗覆盖完善，沿途各市县均有人民医院；海口/三亚有三甲医院；西线偏远段(昌江-东方)距县城约1h",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "海南全岛开放骑行，高速公路禁摩需走国道/省道",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "海口美兰机场(全国直飞)+海口站(环岛高铁起点)；三亚凤凰机场也可作为起点",
+      "return_from_endpoint": "环岛回到海口(飞回)；或三亚结束(凤凰机场)",
+      "nearest_city": "海口(起点)/三亚(终点)",
+      "nearest_transport_hub": "海口美兰机场/三亚凤凰机场(起终点均可)",
+      "elevation_profile": [
+        [
+          0,
+          10
+        ],
+        [
+          100,
+          20
+        ],
+        [
+          200,
+          30
+        ],
+        [
+          300,
+          50
+        ],
+        [
+          400,
+          100
+        ],
+        [
+          500,
+          50
+        ],
+        [
+          600,
+          30
+        ],
+        [
+          700,
+          20
+        ],
+        [
+          800,
+          10
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "海口约10m",
+        "max": "中部约200m(中线)",
+        "end": "海口约10m"
+      },
+      "cumulative_elevation": 2000,
+      "campsites": [
+        {
+          "name": "沿途市县",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "住宿"
+        }
+      ],
+      "huts": [
+        "沿途酒店/民宿(¥80-300/晚)"
+      ],
+      "camping_restriction": "允许露营(海滩/公园，需确认当地规定)",
+      "signal_coverage": "移动 全岛公路4G覆盖良好(含东线/西线/中线) / 电信 同移动 / 联通 城镇有信号，少量县道段弱",
+      "signal_dead_zones": "极少，五指山腹地部分段偶断",
+      "last_signal_point": "全岛大部分有信号",
+      "route_variants": [
+        "东线(海口→文昌→博鳌→万宁→陵水→三亚，约350km)",
+        "西线(海口→澄迈→儋州→昌江→东方→崖城→三亚，约450km)",
+        "全线东进西出(800km/4-7天)"
+      ],
+      "variant_differences": "东线350km路况好/配套完善/热门；西线450km更原生态/加油站稀疏/路况次之；全线800km约4-7天",
+      "distance_km_v5": 800,
+      "distance_note": "海南环岛G223+G225+G224国道环线，全程约800km",
+      "verification_sources": [
+        "海南在线(news.hainan.net)",
+        "两步路(2bulu.com)环岛攻略",
+        "什么值得买(post.smzdm.com/p/apw39o72)"
+      ],
+      "confidence": "A",
+      "name_en": "Hainan Circuit Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_016",
+      "name_zh": "滇缅公路摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳10-4月(旱季少雨)；5-9月雨季(龙陵-畹町段塌方较多)；全年可通行(大部分段已硬化)",
+      "water_points": [
+        "昆明(起点，加油站密集)",
+        "下关/大理(加油站充足)",
+        "保山(加油站密集)",
+        "龙陵(有加油站)",
+        "芒市(加油站)",
+        "瑞丽(有加油站)",
+        "畹町(终点加油站)"
+      ],
+      "retreat_points": [
+        "昆明(起点大交通枢纽)",
+        "大理(有机场/火车站)",
+        "保山(保山机场/保山站)",
+        "芒市(德宏芒市机场可飞昆明)",
+        "瑞丽(瑞丽站)"
+      ],
+      "risk_tags": [
+        "历史纪念路线(滇缅抗战公路)",
+        "雨季塌方(龙陵-畹町段山谷区)",
+        "大货车多(320国道为滇西运输要道)",
+        "晴隆24道拐(特殊路段需注意)",
+        "边境带(瑞丽/畹町为缅甸边境口岸)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "昆明/大理/保山/芒市均有较完善医疗；龙陵-畹町边境段距保山市约2-3h车程",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要(瑞丽/畹町边境区需身份检查)",
+      "regulation_note": "320国道为常规国道骑行；畹町/瑞丽为边境口岸，进入需接受边防检查",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "昆明长水机场/昆明站→昆明市区取车；终点畹町→瑞丽→芒市(有芒市机场/大瑞铁路)",
+      "return_from_endpoint": "终点为畹町；可从瑞丽飞回昆明(芒市机场)，或沿G320返回",
+      "nearest_city": "昆明(起点)/畹町(终点)",
+      "nearest_transport_hub": "昆明长水机场(起点)；德宏芒市机场/保山机场(终点方向)",
+      "elevation_profile": [
+        [
+          0,
+          1900
+        ],
+        [
+          100,
+          2000
+        ],
+        [
+          200,
+          1700
+        ],
+        [
+          300,
+          1500
+        ],
+        [
+          400,
+          1000
+        ],
+        [
+          500,
+          800
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "昆明约1900m",
+        "max": "昆明附近1900m",
+        "end": "畹町约800m"
+      },
+      "cumulative_elevation": 5000,
+      "campsites": [
+        {
+          "name": "沿途县城",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "住宿"
+        }
+      ],
+      "huts": [
+        "沿途酒店/客栈(¥80-200/晚)"
+      ],
+      "camping_restriction": "任意(建议住宿地)",
+      "signal_coverage": "移动 昆明-大理-保山-芒市-瑞丽全程有4G/龙陵-畹町段峡谷部分无 / 电信 同移动 / 联通 县城有信号，国道线大部分有",
+      "signal_dead_zones": "龙陵-畹町段峡谷区",
+      "last_signal_point": "沿途县城",
+      "route_variants": [
+        "经典段(昆明→下关→保山→龙陵→芒市→瑞丽→畹町)",
+        "延伸段(昆明→大理→保山→腾冲→猴桥口岸)"
+      ],
+      "variant_differences": "经典段约500km走G320到畹町(3-4天)；延伸段至腾冲猴桥口岸(史迪威公路中国端)，约700km",
+      "distance_km_v5": 500,
+      "distance_note": "昆明→畹町约500km(昆明至畹町经典段G320)",
+      "verification_sources": [
+        "车讯网(m.chexun.com/2024-05-01/114013197.html)",
+        "新华网(www.xinhuanet.com)",
+        "史迪威公路博物馆"
+      ],
+      "confidence": "A",
+      "name_en": "Burma Road Motorcycle Tour"
+    },
+    {
+      "route_id": "mc_017",
+      "name_zh": "黔东南摩旅环线",
+      "mode": "motorcycle",
+      "season_status": "最佳4-5月(杜鹃花开)、9-10月(秋高气爽)；7-8月夏季(注意暴雨)；11-2月冬季少雨但气温低(高地苗寨可至0°C)",
+      "water_points": [
+        "凯里(起点，加油站密集)",
+        "西江千户苗寨(景区外有加油站)",
+        "雷山(有加油站)",
+        "榕江(有加油站)",
+        "从江(有加油站)",
+        "黎平(有加油站)",
+        "锦屏(有加油站)",
+        "镇远(有加油站)",
+        "施秉(有加油站)",
+        "黄平(有加油站)"
+      ],
+      "retreat_points": [
+        "凯里(凯里南站高铁直达贵阳/广州，市医院完善)",
+        "西江千户苗寨(有卫生院，包车回凯里约1h)",
+        "镇远(有镇远站火车站可回凯里/贵阳)",
+        "黎平(有黎平机场可飞贵阳)"
+      ],
+      "risk_tags": [
+        "山路弯多(黔东南多为县道盘山路)",
+        "雨季山洪(6-8月暴雨可能冲毁乡村路)",
+        "浓雾(冬春季苗寨山区晨雾能见度低)",
+        "加油站间隔长(从江-黎平段个别山区站间距超80km)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "凯里市有三甲医院(黔东南州人民医院)；各县城均有县级医院；最偏远段(从江-黎平山区)距最近县城约1.5h车程",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规骑行路线；西江千户苗寨/肇兴侗寨等景区可能需要门票",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "贵阳龙洞堡机场→贵阳北站(高铁约40min)→凯里南站(拼车/公交到凯里市区)；凯里南站有直达西江的旅游车",
+      "return_from_endpoint": "环线返回凯里(高铁回贵阳/广州)；或从黎平机场飞回贵阳",
+      "nearest_city": "凯里(起点)",
+      "nearest_transport_hub": "贵阳龙洞堡机场(大交通)；凯里南站(高铁站，贵阳/广州方向)；黎平机场(可选)",
+      "elevation_profile": [
+        [
+          0,
+          700
+        ],
+        [
+          100,
+          800
+        ],
+        [
+          200,
+          600
+        ],
+        [
+          300,
+          500
+        ],
+        [
+          400,
+          700
+        ],
+        [
+          500,
+          600
+        ],
+        [
+          600,
+          500
+        ],
+        [
+          700,
+          700
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "凯里约700m",
+        "max": "雷公山约1800m",
+        "end": "凯里约700m"
+      },
+      "cumulative_elevation": 6000,
+      "campsites": [
+        {
+          "name": "沿途县城/镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/民宿(¥80-200/晚)"
+      ],
+      "camping_restriction": "任意(建议住宿地)",
+      "signal_coverage": "移动 凯里-雷山-榕江-黎平-镇远沿线大部分有4G/部分苗寨山区峡谷无 / 电信 同移动 / 联通 凯里市区有信号，偏远苗寨无",
+      "signal_dead_zones": "雷公山区域、从江-黎平山区段",
+      "last_signal_point": "沿途县城/镇",
+      "route_variants": [
+        "经典环线(凯里→西江→雷山→榕江→从江→黎平→锦屏→镇远→施秉→黄平→凯里)",
+        "小环线(凯里→西江→雷山→榕江→从江→肇兴→黎平→凯里)"
+      ],
+      "variant_differences": "经典环线约700km覆盖主要苗寨侗寨(5-7天)；小环线约400km可3-4天完成",
+      "distance_km_v5": 700,
+      "distance_note": "凯里出发环线，约700km(含主要苗侗文化区)",
+      "verification_sources": [
+        "携程游记(gs.ctrip.com)",
+        "chiphell摩旅分享(chiphell.com)"
+      ],
+      "confidence": "A",
+      "name_en": "Qian Southeast Motorcycle Circuit"
+    },
+    {
+      "route_id": "mc_018",
+      "name_zh": "丙察察摩旅",
+      "mode": "motorcycle",
+      "season_status": "最佳4-5月(雨季前)、9-10月(雨后秋景)；可行4-11月；7-8月雨季注意塌方/泥石流；11-3月高海拔段(白马雪山4292m)积雪结冰",
+      "water_points": "沿途山溪、丙中洛镇/察瓦龙乡有补给（建议自带水壶备水）；察隅有净水设施",
+      "retreat_points": "丙中洛、察瓦龙、察隅均有住宿和修车点；部分塌方段只能原地等待",
+      "risk_tags": [
+        "高海拔(最高红拉山垭口4448m，东达山垭口5130m)",
+        "横断山脉复杂地形(连续上下坡)",
+        "雨季塌方(盐井-芒康段多发)",
+        "大货车多(214国道为滇藏货运要道)",
+        "落石(峡谷路段，德钦-盐井段)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "中途可到乡镇卫生院",
+      "access_status": "开放",
+      "permit_required": false,
+      "permit_how": "不需要",
+      "regulation_note": "常规国道骑行，开放",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "西双版纳嘎洒机场(起点)或大理站/丽江三义机场(可选起点)；也可飞到大理或丽江直接开骑",
+      "return_from_endpoint": "察隅→丙中洛(班车/包车)",
+      "nearest_city": "贡山",
+      "nearest_transport_hub": "保山机场/大理站",
+      "elevation_profile": [
+        [
+          0,
+          940
+        ],
+        [
+          37,
+          1316
+        ],
+        [
+          75,
+          1692
+        ],
+        [
+          112,
+          2068
+        ],
+        [
+          150,
+          2444
+        ],
+        [
+          187,
+          2820
+        ],
+        [
+          225,
+          3196
+        ],
+        [
+          262,
+          3572
+        ],
+        [
+          300,
+          940
+        ]
+      ],
+      "key_altitude_points": {
+        "start": "丙中洛",
+        "max": "最高4700m",
+        "end": "察隅"
+      },
+      "cumulative_elevation": 8000,
+      "campsites": [
+        {
+          "name": "沿途镇",
+          "km": 0,
+          "altitude_m": 0,
+          "water": "有",
+          "capacity": "镇上有住宿"
+        }
+      ],
+      "huts": [
+        "沿途客栈/酒店(¥50-150)"
+      ],
+      "camping_restriction": "建议镇附近住宿",
+      "signal_coverage": "移动 大理-丽江-香格里拉-德钦 4G覆盖良好/德钦-芒康段部分山区隧道无 / 电信 同移动，覆盖稍广 / 联通 县城有信号，偏远山区差",
+      "signal_dead_zones": "山区隧道/峡谷段偶有盲区",
+      "last_signal_point": "起点城市",
+      "route_variants": [
+        "全程版",
+        "分段版"
+      ],
+      "variant_differences": "全程300km约4天；可选段骑行",
+      "distance_km_v5": 300,
+      "distance_note": "丙中洛→察隅，约300km",
+      "verification_sources": [
+        "web_search交叉验证"
+      ],
+      "confidence": "B",
+      "name_en": "Bingchacha Motorcycle Tour"
+    },
+    {
+      "route_id": "mt_001",
+      "name_zh": "四姑娘山大峰",
+      "mode": "mountaineering",
+      "season_status": "最佳6-10月(夏季/秋季)；11-5月积雪可过膝，技术难度增大；大峰为入门级5000m雪山",
+      "water_points": [
+        "四姑娘山镇(采买)",
+        "大峰大本营(溪流/客栈供水)"
+      ],
+      "retreat_points": [
+        "四姑娘山镇(撤回成都)",
+        "大峰大本营(可骑马撤回镇上)"
+      ],
+      "risk_tags": [
+        "高海拔(5025m，AMS风险)",
+        "积雪(11-5月可达膝盖深)",
+        "冲顶段有碎石坡",
+        "强制向导要求(景区规定)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "四姑娘山镇有卫生院，距小金县人民医院约60km/1.5h；大本营骑马至镇上约3h；景区管理完善有救援体系",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "必须在四姑娘山景区户外管理中心办理登山手续(¥150/人)，必须聘请有资质向导",
+      "regulation_note": "四姑娘山为5A级山地户外景区，管理规范；未办手续进入将被劝返",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "成都→四姑娘山镇(大巴¥120/4h)，景区观光车→大峰入口(海子沟)",
+      "return_from_endpoint": "原路返回四姑娘山镇→成都",
+      "nearest_city": "小金县(距四姑娘山镇约60km)",
+      "nearest_transport_hub": "成都双流机场(约220km/4h车程)",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "四姑娘山镇约3200m",
+        "max": "大峰顶5025m",
+        "end": "四姑娘山镇"
+      },
+      "cumulative_elevation": 1800,
+      "campsites": [
+        {
+          "name": "大峰大本营",
+          "km": 14,
+          "altitude_m": 4300,
+          "water": "有",
+          "capacity": "约50顶帐篷"
+        }
+      ],
+      "huts": [
+        "四姑娘山镇客栈(¥100-300)",
+        "大本营石头房(床位¥100)"
+      ],
+      "camping_restriction": "大本营指定区域可扎营",
+      "signal_coverage": "移动 镇上4G，大本营偶有信号，冲顶段无 / 电信 同",
+      "signal_dead_zones": "大本营→冲顶(约3h无信号)",
+      "last_signal_point": "大本营",
+      "route_variants": [
+        "2日(大本营→冲顶)",
+        "3日(含适应)"
+      ],
+      "variant_differences": "2日约29km/爬升1825m",
+      "distance_km_v5": 29,
+      "distance_note": "v5标注29km，数据合理",
+      "verification_sources": [
+        "西部印象(eelxs.com)",
+        "携程(ctrip.com)",
+        "知乎(zlhuanlan.zhihu.com)"
+      ],
+      "confidence": "A",
+      "name_en": "四姑娘山大峰"
+    },
+    {
+      "route_id": "mt_002",
+      "name_zh": "四姑娘山二峰",
+      "mode": "mountaineering",
+      "season_status": "最佳6-10月；11-5月积雪厚技术难度增大；二峰比大峰略陡，需要更好体能",
+      "water_points": [
+        "四姑娘山镇(采买)",
+        "二峰大本营(客栈供水)"
+      ],
+      "retreat_points": [
+        "四姑娘山镇(撤回成都)",
+        "二峰大本营(骑马撤回)"
+      ],
+      "risk_tags": [
+        "高海拔(5276m)",
+        "碎石坡滑坠(冲顶段有碎石)",
+        "强制向导(1:1推荐)",
+        "夜晚冲顶(凌晨2-3点出发)"
+      ],
+      "emergency_access_score": "良好",
+      "emergency_access_note": "同四姑娘山镇救援体系",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "户外管理中心办理手续(¥150)+向导(¥300-500/人)",
+      "regulation_note": "登山难度高于大峰，体能不足可能被劝返",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "成都→四姑娘山镇(大巴¥120/4h)",
+      "return_from_endpoint": "原路返回",
+      "nearest_city": "小金县",
+      "nearest_transport_hub": "成都双流机场",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "3200m",
+        "max": "二峰顶5276m",
+        "end": "3200m"
+      },
+      "cumulative_elevation": 2000,
+      "campsites": [
+        {
+          "name": "二峰大本营",
+          "km": 16,
+          "altitude_m": 4300,
+          "water": "有",
+          "capacity": "约30顶帐篷"
+        }
+      ],
+      "huts": [
+        "同大峰"
+      ],
+      "camping_restriction": "大本营指定区域",
+      "signal_coverage": "移动 同大峰",
+      "signal_dead_zones": "大本营以上无信号",
+      "last_signal_point": "大本营",
+      "route_variants": [
+        "2日标准",
+        "3日适应"
+      ],
+      "variant_differences": "2日约32km/爬升2076m",
+      "distance_km_v5": 32,
+      "distance_note": "v5标注32km",
+      "verification_sources": [
+        "携程(ctrip.com)",
+        "知乎(zlhuanlan.zhihu.com)"
+      ],
+      "confidence": "A",
+      "name_en": "四姑娘山二峰"
+    },
+    {
+      "route_id": "mt_003",
+      "name_zh": "四姑娘山三峰",
+      "mode": "mountaineering",
+      "season_status": "最佳6-10月；三峰为初级技术型雪山(需攀岩技术)，难度明显高于大峰/二峰",
+      "water_points": [
+        "四姑娘山镇(采买)",
+        "三峰大本营(供水)"
+      ],
+      "retreat_points": [
+        "四姑娘山镇",
+        "三峰大本营(可撤回)"
+      ],
+      "risk_tags": [
+        "高海拔(5355m)",
+        "技术攀登(需结组/攀岩/下降器)",
+        "岩石松动(传统路线部分段)",
+        "强制1:1向导(技术要求)"
+      ],
+      "emergency_access_score": "一般",
+      "emergency_access_note": "同四姑娘山镇救援体系，但技术要求高救援难度更大",
+      "access_status": "开放",
+      "permit_required": true,
+      "permit_how": "户外中心办手续(¥200)+技术向导(1:1，¥600-1000)",
+      "regulation_note": "三峰为技术山峰，无攀岩经验者不建议",
+      "last_verified_date": "2026-05-24",
+      "trailhead_access": "成都→四姑娘山镇",
+      "return_from_endpoint": "原路返回",
+      "nearest_city": "小金县",
+      "nearest_transport_hub": "成都双流机场",
+      "elevation_profile": [],
+      "key_altitude_points": {
+        "start": "3200m",
+        "max": "三峰顶5355m",
+        "end": "3200m"
+      },
+      "cumulative_elevation": 2150,
+      "campsites": [
+        {
+          "name": "三峰大本营",
+          "km": 14,
+          "altitude_m": 4400,
+          "water": "有",
+          "capacity": "约20顶帐篷"
+        }
+      ],
+      "huts": [
+        "同大峰"
+      ],
+      "camping_restriction": "指定区域",
+      "signal_coverage": "移动 同大峰",
+      "signal_dead_zones": "大本营以上无信号",
+      "last_signal_point": "大本营",
+      "route_variants": [
+        "2日技术攀登"
+      ],
+      "variant_differences": "2日约28km/爬升2150m含技术路段",
+      "distance_km_v5": 28,
+      "distance_note": "v5标注28km",
+      "verification_sources": [
+        "西部印象(eelxs.com)",
+        "知乎(zlhuanlan.zhihu.com)"
+      ],
+      "confidence": "A",
+      "name_en": "四姑娘山三峰"
+    }
+  ]
+}

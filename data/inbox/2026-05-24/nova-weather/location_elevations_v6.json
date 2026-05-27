@@ -1,0 +1,643 @@
+{
+  "version": "v6_elevations",
+  "total": 127,
+  "with_elevation": 127,
+  "failed": 0,
+  "elevations": [
+    {
+      "name": "四姑娘山镇",
+      "elevation_m": 4694.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "雨崩村",
+      "elevation_m": 3082.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "哈巴村",
+      "elevation_m": 2654.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "武功山",
+      "elevation_m": 953.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "虎跳峡",
+      "elevation_m": 2082.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "独库公路",
+      "elevation_m": 2515.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "青海湖",
+      "elevation_m": 3195.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "冈仁波齐",
+      "elevation_m": 4637.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "纳木错",
+      "elevation_m": 4746.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "贡嘎山",
+      "elevation_m": 4279.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "鳌太线",
+      "elevation_m": 1596.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "墨脱",
+      "elevation_m": 1092.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "喀拉峻草原",
+      "elevation_m": 2236.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "黄山光明顶",
+      "elevation_m": 1644.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "大理古城",
+      "elevation_m": 2015.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "泸沽湖",
+      "elevation_m": 2693.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "长白山天池",
+      "elevation_m": 2561.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "稻城亚丁",
+      "elevation_m": 4887.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "珠峰大本营",
+      "elevation_m": 5041.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "峨眉山金顶",
+      "elevation_m": 2500.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "梅里雪山飞来寺",
+      "elevation_m": 3420.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "扎尕那",
+      "elevation_m": 2719.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "亚丁村",
+      "elevation_m": 3907.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "林芝",
+      "elevation_m": 2990.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "色达五明佛学院",
+      "elevation_m": 4024.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "腾冲",
+      "elevation_m": 1640.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "羊卓雍错",
+      "elevation_m": 4438.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "张掖丹霞",
+      "elevation_m": 1735.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "赛里木湖",
+      "elevation_m": 2114.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "漠河",
+      "elevation_m": 438.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "吐鲁番",
+      "elevation_m": 103.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "九寨沟",
+      "elevation_m": 2852.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "喀纳斯湖",
+      "elevation_m": 2563.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "华山",
+      "elevation_m": 1886.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "张家界天子山",
+      "elevation_m": 852.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "梅里雪山雨崩上村",
+      "elevation_m": 3118.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "雨崩下村",
+      "elevation_m": 3275.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "库拉岗日",
+      "elevation_m": 5792.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "他念他翁",
+      "elevation_m": 4554.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "乌孙古道",
+      "elevation_m": 1810.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "夏塔古道",
+      "elevation_m": 2196.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "太白山拔仙台",
+      "elevation_m": 3602.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "漓江杨堤",
+      "elevation_m": 169.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "小五台山",
+      "elevation_m": 1851.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "海螺沟",
+      "elevation_m": 2413.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "莫干山",
+      "elevation_m": 417.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "雪乡",
+      "elevation_m": 441.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "五台山",
+      "elevation_m": 1994.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "雅鲁藏布大峡谷",
+      "elevation_m": 2962.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "念青唐古拉山",
+      "elevation_m": 4288.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "阿里暗夜公园",
+      "elevation_m": 4675.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "理塘",
+      "elevation_m": 3986.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "党岭",
+      "elevation_m": 3393.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "年保玉则",
+      "elevation_m": 4951.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "天山天池",
+      "elevation_m": 714.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "喀什古城",
+      "elevation_m": 1302.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "西双版纳热带雨林",
+      "elevation_m": 558.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "黄果树瀑布",
+      "elevation_m": 829.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "柴达木盆地翡翠湖",
+      "elevation_m": 3150.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "东极岛",
+      "elevation_m": 0.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "湄洲岛",
+      "elevation_m": 12.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "虎跳峡halfway客栈",
+      "elevation_m": 2216.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "大理苍山洗马潭",
+      "elevation_m": 2241.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "玉龙雪山云杉坪",
+      "elevation_m": 2933.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "南迦巴瓦峰",
+      "elevation_m": 5825.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Everest Base Camp (Nepal)",
+      "elevation_m": 8724.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Annapurna Base Camp",
+      "elevation_m": 4093.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Chamonix-Mont-Blanc",
+      "elevation_m": 1042.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Zermatt",
+      "elevation_m": 1613.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Kilimanjaro Base Camp",
+      "elevation_m": 5744.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Patagonia Torres del Paine",
+      "elevation_m": 953.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Inca Trail Machu Picchu",
+      "elevation_m": 2248.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Mount Fuji 5th Station",
+      "elevation_m": 3667.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Dolomites Alta Via 1",
+      "elevation_m": 1828.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Grand Canyon South Rim",
+      "elevation_m": 1783.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Yosemite Valley",
+      "elevation_m": 1228.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Banff Lake Louise",
+      "elevation_m": 1853.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Snowdonia National Park",
+      "elevation_m": 973.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Trolltunga, Norway",
+      "elevation_m": 0.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Mount Cook Village",
+      "elevation_m": 726.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Rinjani Crater Rim",
+      "elevation_m": 2976.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Mount Kinabalu",
+      "elevation_m": 3951.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Salkantay Trek, Peru",
+      "elevation_m": 3908.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Bergen, Norway",
+      "elevation_m": 4.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Death Valley Furnace Creek",
+      "elevation_m": -58.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Sahara Desert Merzouga",
+      "elevation_m": 698.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Reykjavik, Iceland",
+      "elevation_m": 37.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "海坨山",
+      "elevation_m": 1894.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "小五台",
+      "elevation_m": 1851.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "箭扣长城",
+      "elevation_m": 322.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "老掌沟",
+      "elevation_m": 1531.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "坝上",
+      "elevation_m": 1468.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "乌兰布统",
+      "elevation_m": 1502.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "库布齐沙漠",
+      "elevation_m": 1083.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "徽杭古道",
+      "elevation_m": 735.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "雁荡山",
+      "elevation_m": 550.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "太姥山",
+      "elevation_m": 834.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "武夷山徒步起点",
+      "elevation_m": 432.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "漓江徒步起点",
+      "elevation_m": 169.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "丹霞山",
+      "elevation_m": 99.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "鼎湖山",
+      "elevation_m": 394.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "七娘山",
+      "elevation_m": 24.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "东西冲",
+      "elevation_m": 0.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "喀纳斯徒步起点",
+      "elevation_m": 2563.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "禾木",
+      "elevation_m": 1130.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "白哈巴",
+      "elevation_m": 1262.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "夏塔古道起点",
+      "elevation_m": 1962.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "梅里北坡起点",
+      "elevation_m": 3157.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "格聂",
+      "elevation_m": 4371.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "七藏沟沟口",
+      "elevation_m": 3821.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "长白山北坡",
+      "elevation_m": 734.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "长白山西坡",
+      "elevation_m": 1074.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "北极村",
+      "elevation_m": 298.0,
+      "source": "open_meteo_grid"
+    },
+    {
+      "name": "Lukla",
+      "elevation_m": 2840,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Pokhara",
+      "elevation_m": 827,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Jomsom",
+      "elevation_m": 2743,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Namche Bazaar",
+      "elevation_m": 3440,
+      "source": "supplement_data"
+    },
+    {
+      "name": "富士山五合目",
+      "elevation_m": 2305,
+      "source": "supplement_data"
+    },
+    {
+      "name": "熊野古道起点",
+      "elevation_m": 50,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Chamonix",
+      "elevation_m": 1035,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Grindelwald",
+      "elevation_m": 1034,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Cortina d'Ampezzo",
+      "elevation_m": 1224,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Cusco",
+      "elevation_m": 3399,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Torres del Paine入口",
+      "elevation_m": 150,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Moshi",
+      "elevation_m": 890,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Kinabalu Park HQ",
+      "elevation_m": 1563,
+      "source": "supplement_data"
+    },
+    {
+      "name": "Doi Inthanon",
+      "elevation_m": 2565,
+      "source": "supplement_data"
+    }
+  ]
+}

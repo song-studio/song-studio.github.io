@@ -1,0 +1,842 @@
+{
+  "hk_001": {
+    "route_id": "hk_001",
+    "name_zh": "虎跳峡高路徒步",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "22km/1250m爬升，全程客栈补给，唯一难点是28道拐连续爬升，属经典入门级高原徒步"
+  },
+  "hk_002": {
+    "route_id": "hk_002",
+    "name_zh": "雨崩徒步",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "50km累计爬升2200m，高原含多个独立单日徒步(冰湖/神瀑/神湖)，最高海拔3900m，需较好体能和高原适应能力"
+  },
+  "hk_003": {
+    "route_id": "hk_003",
+    "name_zh": "贡嘎大环线",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "100km/3800m爬升/4900m最高海拔，高海拔多日徒步(5-7天)，需翻越日乌且垭口，无人区无信号补给"
+  },
+  "hk_009": {
+    "route_id": "hk_009",
+    "name_zh": "武功山反穿",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "25km/1800m爬升，沿途客栈密集补给方便，唯一难点是好汉坡/绝望坡连续陡坡，属入门级高原草甸徒步"
+  },
+  "hk_008": {
+    "route_id": "hk_008",
+    "name_zh": "鳌太穿越",
+    "mode": "hiking",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "高死亡率(6年14死4失踪)、石海区占30%、天气骤变极端、全程无人区>3400m海拔、2018年起官方禁止穿越"
+  },
+  "hk_011": {
+    "route_id": "hk_011",
+    "name_zh": "墨脱徒步",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "96km/4天连续徒步,翻越多雄拉山4221m,蚂蟥/塌方风险,需边防证"
+  },
+  "hk_005": {
+    "route_id": "hk_005",
+    "name_zh": "长穿毕",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "40km/1900m爬升,翻4668m垭口,第三天下坡碎石路为主难点,3天轻装可完成"
+  },
+  "hk_020": {
+    "route_id": "hk_020",
+    "name_zh": "珠峰东坡徒步",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "80km/4300m爬升/5344m最高垭口/7天高海拔露营/需翻2个5000m+垭口/全程无补给点"
+  },
+  "hk_010": {
+    "route_id": "hk_010",
+    "name_zh": "冈仁波齐转山",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "52km/2天,全程>4600m极高海拔,翻5630m卓玛拉山口,但路线成熟有补给"
+  },
+  "hk_004": {
+    "route_id": "hk_004",
+    "name_zh": "乌孙古道",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "120km/6-8天,涉水30-40次(冰河),翻阿克布拉克达坂,全程无信号无补给"
+  },
+  "hk_014": {
+    "route_id": "hk_014",
+    "name_zh": "夏特古道",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "120km/6天,需翻冰川+涉水冰河,全程无补给,已因多次事故禁穿"
+  },
+  "hk_036": {
+    "route_id": "hk_036",
+    "name_zh": "扎尕那穿越",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "55km/3-4天/连续翻16垭口/最高4140m/需有高原徒步经验"
+  },
+  "hk_023": {
+    "route_id": "hk_023",
+    "name_zh": "七藏沟徒步",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "45km/4天/最高4200m/翻红星垭口碎石坡危险/适合有高原徒步经验者"
+  },
+  "ma_002": {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "mode": "mountaineering",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "入门级5000m雪山,有护栏,无冰川无冰裂缝,路线成熟有马帮,适合第一座雪山"
+  },
+  "ma_004": {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "mode": "mountaineering",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "入门级雪山但冲顶段滑坠风险高,需冰爪冰镐技术,海拔5396m需注意高反"
+  },
+  "hk_019": {
+    "route_id": "hk_019",
+    "name_zh": "南太行徒步",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "50km/成熟路线/沿线村落补给/难点在峡谷悬崖段"
+  },
+  "hk_030": {
+    "route_id": "hk_030",
+    "name_zh": "徽杭古道",
+    "mode": "hiking",
+    "difficulty_level": 1,
+    "difficulty_label": "初级",
+    "difficulty_reason": "20km/8km爬升800m/全程成熟景区/补给密集/适合入门"
+  },
+  "hk_016": {
+    "route_id": "hk_016",
+    "name_zh": "漓江徒步",
+    "mode": "hiking",
+    "difficulty_level": 1,
+    "difficulty_label": "初级",
+    "difficulty_reason": "20km/几乎无爬升/全程沿江/休闲级"
+  },
+  "hk_041": {
+    "route_id": "hk_041",
+    "name_zh": "他念他翁穿越",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "120km/翻6个5000m垭口/无人区/极高强度"
+  },
+  "hk_037": {
+    "route_id": "hk_037",
+    "name_zh": "梅里外转",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "150km+/8-13天/翻3个4500m+垭口/前4天无补给"
+  },
+  "cy_011": {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "561km/3-5天骑行/连续翻达坂/路面好但车多"
+  },
+  "cy_003": {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "mode": "cycling",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "360km/3-4天/平路为主/唯一难点是大风"
+  },
+  "cy_004": {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "800km/5-7天/路面好/补给密集/难点在高温暴晒"
+  },
+  "cy_001": {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "mode": "cycling",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "2150km/20-25天/翻14座4000m+垭口/318大车流"
+  },
+  "cy_007": {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "mode": "cycling",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "2850km/连续多日>5000m海拔/无人区/补给不足"
+  },
+  "hk_017": {
+    "route_id": "hk_017",
+    "name_zh": "库拉岗日徒步",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "50km/3-4天/白马林措+介久措三湖/高海拔但路线短"
+  },
+  "ma_019": {
+    "route_id": "ma_019",
+    "name_zh": "希夏邦马峰",
+    "mode": "mountaineering",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "8012m/8000米级/需极高海拔技术攀登经验"
+  },
+  "mc_001": {
+    "route_id": "mc_001",
+    "name_zh": "318川藏南线摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "2150km摩旅/14座4000m+垭口/车流大"
+  },
+  "mc_006": {
+    "route_id": "mc_006",
+    "name_zh": "219新藏线摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "2100km/极高海拔连续/无人区/加油站间隔大"
+  },
+  "add_daocheng": {
+    "route_id": "add_daocheng",
+    "name_zh": "稻城亚丁",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "15km景区栈道+马道/成熟景区/需提前适应高原"
+  },
+  "add_kanas": {
+    "route_id": "add_kanas",
+    "name_zh": "喀纳斯环线",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "70km/4-5天/成熟景区路线/有马帮"
+  },
+  "add_dangling": {
+    "route_id": "add_dangling",
+    "name_zh": "党岭徒步",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "35km/2-3天/轻量级高原徒步"
+  },
+  "add_jiankou": {
+    "route_id": "add_jiankou",
+    "name_zh": "箭扣长城",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "15km野长城/鹰飞倒仰极度危险/非景区需攀爬技术"
+  },
+  "ma_039": {
+    "route_id": "ma_039",
+    "name_zh": "乔戈里峰(K2)",
+    "mode": "mountaineering",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "8611m/世界第二高峰/死亡率25%/技术要求极高/Bottleneck冰壁"
+  },
+  "ma_006": {
+    "route_id": "ma_006",
+    "name_zh": "半脊峰",
+    "mode": "mountaineering",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "5430m/技术入门级/45-80°冰坡/需技术装备"
+  },
+  "ma_017": {
+    "route_id": "ma_017",
+    "name_zh": "卓奥友峰",
+    "mode": "mountaineering",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "8201m/世界第6高峰/8000米级"
+  },
+  "ma_036": {
+    "route_id": "ma_036",
+    "name_zh": "启孜峰",
+    "mode": "mountaineering",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "6206m/训练级山峰/适合作6000米入门"
+  },
+  "ma_003": {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "mode": "mountaineering",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "5355m/初级技术型/最后100米需绳索/需向导"
+  },
+  "ma_001": {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "mode": "mountaineering",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "5025m/入门级雪山/无技术难度/适合第一次高原雪山体验"
+  },
+  "ma_037": {
+    "route_id": "ma_037",
+    "name_zh": "姜桑拉姆峰",
+    "mode": "mountaineering",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "6000m级/山势平缓/徒步型/适合初级登山者"
+  },
+  "ma_016": {
+    "route_id": "ma_016",
+    "name_zh": "宁金抗沙峰",
+    "mode": "mountaineering",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "7206m/7000米级/难度适中/适合业余登山者进阶"
+  },
+  "ma_011": {
+    "route_id": "ma_011",
+    "name_zh": "岗什卡峰",
+    "mode": "mountaineering",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "5254m/冰川入门训练/祁连山标志峰/适合技术训练"
+  },
+  "ma_040": {
+    "route_id": "ma_040",
+    "name_zh": "库拉岗日主峰",
+    "mode": "mountaineering",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "7538m/高难度技术攀登/山南最高峰"
+  },
+  "ma_009": {
+    "route_id": "ma_009",
+    "name_zh": "慕士塔格峰",
+    "mode": "mountaineering",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "7546m/7000m级,F级难度(7000m中最易)/主要挑战在高海拔适应而非技术"
+  },
+  "ma_007": {
+    "route_id": "ma_007",
+    "name_zh": "玉珠峰",
+    "mode": "mountaineering",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "6178m/南坡为6000米入门/无技术难度/主要挑战在高反"
+  },
+  "ma_018": {
+    "route_id": "ma_018",
+    "name_zh": "珠穆朗玛峰",
+    "mode": "mountaineering",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "8849m/世界最高峰/死亡区/需极高海拔经验/费用高昂"
+  },
+  "ma_020": {
+    "route_id": "ma_020",
+    "name_zh": "贡嘎山",
+    "mode": "mountaineering",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "7509m/死亡率>60%/登山难度远超珠峰/仅25人登顶"
+  },
+  "ma_005": {
+    "route_id": "ma_005",
+    "name_zh": "那玛峰",
+    "mode": "mountaineering",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "5588m/初级技术型/冰川裂缝+碎石坡/需冰爪冰镐/可做哈巴后进阶"
+  },
+  "ma_008": {
+    "route_id": "ma_008",
+    "name_zh": "雀儿山",
+    "mode": "mountaineering",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "6168m/冰裂缝密集/需结组/技术攀登/雀儿山为7000m前技术训练首选"
+  },
+  "ma_010": {
+    "route_id": "ma_010",
+    "name_zh": "雪宝顶",
+    "mode": "mountaineering",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "5588m/入门向技术过渡/骆驼背岩壁/需修路绳"
+  },
+  "gl_mount_kilimanjaro_010": {
+    "route_id": "gl_mount_kilimanjaro_010",
+    "name_zh": "乞力马扎罗马切梅路线",
+    "mode": "mountaineering",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "5895m海拔级登山,难度中级,需专业登山装备和向导"
+  },
+  "gl_mount_fuji_007": {
+    "route_id": "gl_mount_fuji_007",
+    "name_zh": "富士山吉田路线",
+    "mode": "mountaineering",
+    "difficulty_level": 1,
+    "difficulty_label": "初级",
+    "difficulty_reason": "3776m海拔级登山,难度初级,需专业登山装备和向导"
+  },
+  "mc_005": {
+    "route_id": "mc_005",
+    "name_zh": "214滇藏线摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "3000km摩旅/高海拔/横断山脉"
+  },
+  "mc_004": {
+    "route_id": "mc_004",
+    "name_zh": "317川藏北线摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "2350km摩旅/317沿线/条件艰苦"
+  },
+  "cn_cycling_bingcha_010": {
+    "route_id": "cn_cycling_bingcha_010",
+    "name_zh": "丙察察摩旅",
+    "mode": "cycling",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "300km/丙察察/大流沙塌方/非铺装"
+  },
+  "mc_003": {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "305km/非铺装路面270km/落石多"
+  },
+  "cy_009": {
+    "route_id": "cy_009",
+    "name_zh": "丝绸之路骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "1100km/312国道柏油路/难点在风沙和补给间隔"
+  },
+  "cy_010": {
+    "route_id": "cy_010",
+    "name_zh": "京杭大运河骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "1800km/全程平原/补给充足/难点仅长距离"
+  },
+  "mc_013": {
+    "route_id": "mc_013",
+    "name_zh": "伊犁河谷摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "1600km骑行,海拔3400m,难度专家"
+  },
+  "cy_018": {
+    "route_id": "cy_018",
+    "name_zh": "千岛湖环湖骑行",
+    "mode": "cycling",
+    "difficulty_level": 1,
+    "difficulty_label": "初级",
+    "difficulty_reason": "150km骑行,海拔300m,难度初级"
+  },
+  "mc_021": {
+    "route_id": "mc_021",
+    "name_zh": "喀喇昆仑公路摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "420km/高海拔/边境敏感/边防证"
+  },
+  "cy_008": {
+    "route_id": "cy_008",
+    "name_zh": "大香格里拉环线骑行",
+    "mode": "cycling",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "1500km/大香格里拉环线/高海拔盘山/风景绝美"
+  },
+  "cy_002": {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "mode": "cycling",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "2350km/翻众多4500m+达坂/补给稀疏/高原条件艰苦"
+  },
+  "mc_014": {
+    "route_id": "mc_014",
+    "name_zh": "川西大环线摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "1800km/川西大环线摩旅/极高海拔"
+  },
+  "cy_017": {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "1000km/高海拔/翻巴朗山/绝美风景/川西经典"
+  },
+  "cy_014": {
+    "route_id": "cy_014",
+    "name_zh": "广西沿边公路骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "725km/沿边公路/沥青路面/连续长坡/边境线骑行"
+  },
+  "cy_027": {
+    "route_id": "cy_027",
+    "name_zh": "张北草原天路骑行",
+    "mode": "cycling",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "132km骑行,海拔1800m,难度中级"
+  },
+  "cy_013": {
+    "route_id": "cy_013",
+    "name_zh": "沿312国道上海至乌鲁木齐",
+    "mode": "cycling",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "3900km/超长距离/横跨多气候带"
+  },
+  "mc_015": {
+    "route_id": "mc_015",
+    "name_zh": "海南环岛摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "800km骑行,海拔500m,难度高级"
+  },
+  "mc_009": {
+    "route_id": "mc_009",
+    "name_zh": "滇缅公路摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "500km/滇缅公路/历史路线/山路"
+  },
+  "cy_005": {
+    "route_id": "cy_005",
+    "name_zh": "滇藏线骑行",
+    "mode": "cycling",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "2325km/成熟进藏线/翻越多座5000m垭口"
+  },
+  "mc_002": {
+    "route_id": "mc_002",
+    "name_zh": "独库公路摩旅",
+    "mode": "motorcycle",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "561km/独库公路摩旅/风景线"
+  },
+  "cy_026": {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "mode": "cycling",
+    "difficulty_level": 1,
+    "difficulty_label": "初级",
+    "difficulty_reason": "240km骑行,海拔50m,难度初级"
+  },
+  "cy_016": {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "mode": "cycling",
+    "difficulty_level": 1,
+    "difficulty_label": "初级",
+    "difficulty_reason": "120km骑行,海拔2000m,难度初级"
+  },
+  "cy_021": {
+    "route_id": "cy_021",
+    "name_zh": "翁金线骑行",
+    "mode": "cycling",
+    "difficulty_level": 1,
+    "difficulty_label": "初级",
+    "difficulty_reason": "45km骑行,海拔10m,难度初级"
+  },
+  "cy_023": {
+    "route_id": "cy_023",
+    "name_zh": "阿尔山骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "450km/草原公路/补给少/风大/需自备补给"
+  },
+  "cy_019": {
+    "route_id": "cy_019",
+    "name_zh": "阿禾公路骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "225km/风景优美/高海拔/新疆北部骑行"
+  },
+  "cy_006": {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "mode": "cycling",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "1950km/翻越5座5000m+垭口/无人区补给不足"
+  },
+  "mc_008": {
+    "route_id": "mc_008",
+    "name_zh": "黔东南摩旅环线",
+    "mode": "motorcycle",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "700km/黔东南/山路摩旅"
+  },
+  "hk_007": {
+    "route_id": "hk_007",
+    "name_zh": "亚丁大转山",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "70km/6-8天/翻6-8个4500m+垭口/连续高海拔露营/无人区"
+  },
+  "hk_012": {
+    "route_id": "hk_012",
+    "name_zh": "喀拉峻草原穿越",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "70km/3-4天/无技术难度/主要风险在天气/适合入门高原徒步"
+  },
+  "hk_034": {
+    "route_id": "hk_034",
+    "name_zh": "大五台顺穿",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "70km/2-3天/5个台起伏/台顶天气极端多变"
+  },
+  "hk_035": {
+    "route_id": "hk_035",
+    "name_zh": "太白南南穿越",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "40km/2-3天/拔仙台3767m/石海路段/秦岭极端小气候"
+  },
+  "hk_015": {
+    "route_id": "hk_015",
+    "name_zh": "腾格里沙漠五湖连穿",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "50km/3天/沙漠环境极端(高温脱水沙暴)/但有保障车"
+  },
+  "hk_024": {
+    "route_id": "hk_024",
+    "name_zh": "库布齐沙漠穿越",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "35km/2天/沙漠环境/全程背水/但有公路平行可撤"
+  },
+  "hk_013": {
+    "route_id": "hk_013",
+    "name_zh": "狼塔C+V线",
+    "mode": "hiking",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "200km/11天/累计>10000m爬升/冰河涉水多次/2024年已禁穿/极高死亡率"
+  },
+  "hk_026": {
+    "route_id": "hk_026",
+    "name_zh": "格聂大环线",
+    "mode": "hiking",
+    "difficulty_level": 5,
+    "difficulty_label": "极限",
+    "difficulty_reason": "200km/10-14天/连续高海拔/无人区/超长距离"
+  },
+  "hk_006": {
+    "route_id": "hk_006",
+    "name_zh": "洛克线",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "70km/5-7天/翻多个4500m+垭口/无人区/洛克探险家经典线"
+  },
+  "hk_025": {
+    "route_id": "hk_025",
+    "name_zh": "神农架老君山穿越",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "30km/4天/原始森林/需向导/华中入门级高原徒步"
+  },
+  "hk_018": {
+    "route_id": "hk_018",
+    "name_zh": "孟克德古道",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "70km/4-5天/翻3495m达坂/新疆入门级多日徒步"
+  },
+  "hk_029": {
+    "route_id": "hk_029",
+    "name_zh": "年保玉则穿越",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "60km/翻2个垭口/高海拔/但景区已关闭"
+  },
+  "hk_047": {
+    "route_id": "hk_047",
+    "name_zh": "天山雪莲峰徒步",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "该线路数据存疑;雪莲峰为6627m技术山峰而非徒步路线"
+  },
+  "hk_046": {
+    "route_id": "hk_046",
+    "name_zh": "长白山南坡穿越",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "50km/窗口极短/自然保护区/长白山天池"
+  },
+  "hk_021": {
+    "route_id": "hk_021",
+    "name_zh": "梅里北坡徒步",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "65km/翻5200m垭口/极高海拔/冰川/梅里雪山近距离"
+  },
+  "hk_033": {
+    "route_id": "hk_033",
+    "name_zh": "麦理浩径",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "100km/4500m爬升/10段/补给密集/但需超强耐力"
+  },
+  "hk_048": {
+    "route_id": "hk_048",
+    "name_zh": "玉虚峰徒步",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "60km/高海拔/昆仑山区/需高原适应"
+  },
+  "cn_hiking_everest_005": {
+    "route_id": "cn_hiking_everest_005",
+    "name_zh": "珠峰东坡徒步(嘎玛沟)",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "80km/极高海拔/翻2个5000m垭口/与珠峰东坡重叠路线"
+  },
+  "gl_hiking_inca_004": {
+    "route_id": "gl_hiking_inca_004",
+    "name_zh": "印加古道",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "42km/4天/翻4215m垭口/印加遗址/需许可"
+  },
+  "gl_hiking_abc_002": {
+    "route_id": "gl_hiking_abc_002",
+    "name_zh": "安纳普尔娜大本营徒步(ABC)",
+    "mode": "hiking",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "115km/7-10天/茶馆路线/成熟/高海拔"
+  },
+  "gl_hiking_kumano_005": {
+    "route_id": "gl_hiking_kumano_005",
+    "name_zh": "熊野古道",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "75km/4-6天/成熟古道/UNESCO世界遗产/公交可撤"
+  },
+  "gl_hiking_tmb_003": {
+    "route_id": "gl_hiking_tmb_003",
+    "name_zh": "环勃朗峰徒步(TMB)",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "170km/10-12天/累爬10000m/翻10+垭口/世界顶级徒步线"
+  },
+  "gl_hiking_ebc_001": {
+    "route_id": "gl_hiking_ebc_001",
+    "name_zh": "珠峰大本营徒步(EBC)",
+    "mode": "hiking",
+    "difficulty_level": 4,
+    "difficulty_label": "专家",
+    "difficulty_reason": "130km/12-16天/最高5545m/茶馆路线/高反主要风险"
+  },
+  "gl_hiking_milford_008": {
+    "route_id": "gl_hiking_milford_008",
+    "name_zh": "米尔福德步道",
+    "mode": "hiking",
+    "difficulty_level": 2,
+    "difficulty_label": "中级",
+    "difficulty_reason": "53.5km/4天/新西兰Great Walk/成熟步道/主要问题是天气"
+  },
+  "gl_cycling_taiwan_006": {
+    "route_id": "gl_cycling_taiwan_006",
+    "name_zh": "台湾环岛骑行",
+    "mode": "cycling",
+    "difficulty_level": 3,
+    "difficulty_label": "高级",
+    "difficulty_reason": "900km/8-12天/公路骑行/补给密集/难点在强风和落石"
+  },
+  "gl_cycling_shimanami_009": {
+    "route_id": "gl_cycling_shimanami_009",
+    "name_zh": "岛波海道骑行",
+    "mode": "cycling",
+    "difficulty_level": 1,
+    "difficulty_label": "初级",
+    "difficulty_reason": "70km/跨6桥/日本休闲骑行/难度低/风景优美"
+  }
+}

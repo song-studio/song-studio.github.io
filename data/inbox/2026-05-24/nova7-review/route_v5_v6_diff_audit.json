@@ -1,0 +1,3093 @@
+{
+  "version": "v7_diff_audit",
+  "generated_at": "2026-05-24T10:00+08:00",
+  "summary": {
+    "v5_total": 101,
+    "v6_total": 134,
+    "rv6_verified_total": 103,
+    "route_ids_analyzed": 169,
+    "status_counts": {
+      "keep": 158,
+      "remove_candidate": 11
+    },
+    "issues_found": 11,
+    "duplicates_found": 11
+  },
+  "issues": [
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_cycling_shimanami_009",
+      "route_id_2": "gl_cycling_shimanami_009_2",
+      "name_zh": "岛波海道骑行",
+      "mode": "cycling",
+      "action": "remove_v6_2",
+      "note": "V6中gl_cycling_shimanami_009_2与gl_cycling_shimanami_009完全重复，gl_cycling_shimanami_009已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_hiking_abc_002",
+      "route_id_2": "gl_hiking_abc_002_2",
+      "name_zh": "安纳普尔娜大本营徒步(ABC)",
+      "mode": "hiking",
+      "action": "remove_v6_2",
+      "note": "V6中gl_hiking_abc_002_2与gl_hiking_abc_002完全重复，gl_hiking_abc_002已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_hiking_ebc_001",
+      "route_id_2": "gl_hiking_ebc_001_2",
+      "name_zh": "珠峰大本营徒步(EBC)",
+      "mode": "hiking",
+      "action": "remove_v6_2",
+      "note": "V6中gl_hiking_ebc_001_2与gl_hiking_ebc_001完全重复，gl_hiking_ebc_001已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_hiking_inca_004",
+      "route_id_2": "gl_hiking_inca_004_2",
+      "name_zh": "印加古道",
+      "mode": "hiking",
+      "action": "remove_v6_2",
+      "note": "V6中gl_hiking_inca_004_2与gl_hiking_inca_004完全重复，gl_hiking_inca_004已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_hiking_kumano_005",
+      "route_id_2": "gl_hiking_kumano_005_2",
+      "name_zh": "熊野古道",
+      "mode": "hiking",
+      "action": "remove_v6_2",
+      "note": "V6中gl_hiking_kumano_005_2与gl_hiking_kumano_005完全重复，gl_hiking_kumano_005已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_hiking_milford_008",
+      "route_id_2": "gl_hiking_milford_008_2",
+      "name_zh": "米尔福德步道",
+      "mode": "hiking",
+      "action": "remove_v6_2",
+      "note": "V6中gl_hiking_milford_008_2与gl_hiking_milford_008完全重复，gl_hiking_milford_008已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_hiking_tmb_003",
+      "route_id_2": "gl_hiking_tmb_003_2",
+      "name_zh": "环勃朗峰徒步(TMB)",
+      "mode": "hiking",
+      "action": "remove_v6_2",
+      "note": "V6中gl_hiking_tmb_003_2与gl_hiking_tmb_003完全重复，gl_hiking_tmb_003已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_mount_fuji_007",
+      "route_id_2": "gl_mount_fuji_007_2",
+      "name_zh": "富士山吉田路线",
+      "mode": "mountaineering",
+      "action": "remove_v6_2",
+      "note": "V6中gl_mount_fuji_007_2与gl_mount_fuji_007完全重复，gl_mount_fuji_007已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "gl_mount_kilimanjaro_010",
+      "route_id_2": "gl_mount_kilimanjaro_010_2",
+      "name_zh": "乞力马扎罗马切梅路线",
+      "mode": "mountaineering",
+      "action": "remove_v6_2",
+      "note": "V6中gl_mount_kilimanjaro_010_2与gl_mount_kilimanjaro_010完全重复，gl_mount_kilimanjaro_010已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "hk_026",
+      "route_id_2": "hk_026_2",
+      "name_zh": "喀纳斯环线",
+      "mode": "hiking",
+      "action": "remove_v6_2",
+      "note": "V6中hk_026_2与hk_026完全重复，hk_026已有完整数据"
+    },
+    {
+      "type": "duplicate_entry",
+      "severity": "high",
+      "route_id_1": "hk_030",
+      "route_id_2": "hk_030_2",
+      "name_zh": "箭扣长城",
+      "mode": "hiking",
+      "action": "remove_v6_2",
+      "note": "V6中hk_030_2与hk_030完全重复，hk_030已有完整数据"
+    }
+  ],
+  "routes": [
+    {
+      "route_id_v5": "cn_cycling_bingcha_010",
+      "route_id_v6": "cn_cycling_bingcha_010",
+      "route_id_rv6": null,
+      "name_zh": "丙察察摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cn_cycling_bingcha_010",
+          "rv6_id": "mc_005",
+          "note": "V5的cn_cycling_bingcha_010在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cn_hiking_everest_005",
+      "route_id_v6": "cn_hiking_everest_005",
+      "route_id_rv6": null,
+      "name_zh": "珠峰东坡徒步(嘎玛沟)",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "国内经典路线，V5已有但RV6遗漏",
+      "field_conflicts": {},
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_001",
+      "route_id_v6": "cy_001",
+      "route_id_rv6": "cy_001",
+      "name_zh": "川藏南线(318国道)骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 2150,
+          "rv6_km": 1100,
+          "diff_percent": 49,
+          "note": "里程差异>49%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_002",
+      "route_id_v6": "cy_002",
+      "route_id_rv6": "cy_002",
+      "name_zh": "川藏北线(317国道)骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 2350,
+          "rv6_km": 1800,
+          "diff_percent": 23,
+          "note": "里程差异>23%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_003",
+      "route_id_v6": "cy_003",
+      "route_id_rv6": "cy_003",
+      "name_zh": "环青海湖骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 360,
+          "rv6_km": 1500,
+          "diff_percent": 76,
+          "note": "里程差异>76%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_004",
+      "route_id_v6": "cy_004",
+      "route_id_rv6": "cy_004",
+      "name_zh": "环海南岛骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 800,
+          "rv6_km": 2350,
+          "diff_percent": 66,
+          "note": "里程差异>66%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_005",
+      "route_id_v6": "cy_005",
+      "route_id_rv6": "cy_005",
+      "name_zh": "滇藏线骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_006",
+      "route_id_v6": "cy_006",
+      "route_id_rv6": "cy_006",
+      "name_zh": "青藏线骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 1950,
+          "rv6_km": 900,
+          "diff_percent": 54,
+          "note": "里程差异>54%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_007",
+      "route_id_v6": "cy_007",
+      "route_id_rv6": "cy_007",
+      "name_zh": "新藏线骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 2850,
+          "rv6_km": 725,
+          "diff_percent": 75,
+          "note": "里程差异>75%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_008",
+      "route_id_v6": "cy_008",
+      "route_id_rv6": "cy_008",
+      "name_zh": "大香格里拉环线骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 1500,
+          "rv6_km": 2850,
+          "diff_percent": 47,
+          "note": "里程差异>47%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_009",
+      "route_id_v6": "cy_009",
+      "route_id_rv6": "cy_009",
+      "name_zh": "丝绸之路骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 1100,
+          "rv6_km": 3900,
+          "diff_percent": 72,
+          "note": "里程差异>72%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_010",
+      "route_id_v6": "cy_010",
+      "route_id_rv6": "cy_010",
+      "name_zh": "京杭大运河骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 1800,
+          "rv6_km": 2325,
+          "diff_percent": 23,
+          "note": "里程差异>23%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_011",
+      "route_id_v6": "cy_011",
+      "route_id_rv6": "cy_011",
+      "name_zh": "独库公路骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 561,
+          "rv6_km": 800,
+          "diff_percent": 30,
+          "note": "里程差异>30%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "cy_012",
+      "name_zh": "环青海湖骑行",
+      "mode": "cycling",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "cy_013",
+      "route_id_v6": "cy_013",
+      "route_id_rv6": null,
+      "name_zh": "沿312国道上海至乌鲁木齐",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_013",
+          "rv6_id": "cy_009",
+          "note": "V5的cy_013在RV6中重编号为cy_009"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_014",
+      "route_id_v6": "cy_014",
+      "route_id_rv6": null,
+      "name_zh": "广西沿边公路骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_014",
+          "rv6_id": "cy_007",
+          "note": "V5的cy_014在RV6中重编号为cy_007"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_016",
+      "route_id_v6": "cy_016",
+      "route_id_rv6": null,
+      "name_zh": "环洱海骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_016",
+          "rv6_id": "mc_005",
+          "note": "V5的cy_016在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_017",
+      "route_id_v6": "cy_017",
+      "route_id_rv6": null,
+      "name_zh": "川西小环线骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_017",
+          "rv6_id": "cy_006",
+          "note": "V5的cy_017在RV6中重编号为cy_006"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_018",
+      "route_id_v6": "cy_018",
+      "route_id_rv6": null,
+      "name_zh": "千岛湖环湖骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_018",
+          "rv6_id": "mc_005",
+          "note": "V5的cy_018在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_019",
+      "route_id_v6": "cy_019",
+      "route_id_rv6": null,
+      "name_zh": "阿禾公路骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_019",
+          "rv6_id": "mc_005",
+          "note": "V5的cy_019在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_021",
+      "route_id_v6": "cy_021",
+      "route_id_rv6": null,
+      "name_zh": "翁金线骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_021",
+          "rv6_id": "mc_005",
+          "note": "V5的cy_021在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_023",
+      "route_id_v6": "cy_023",
+      "route_id_rv6": null,
+      "name_zh": "阿尔山骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_023",
+          "rv6_id": "mc_005",
+          "note": "V5的cy_023在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_026",
+      "route_id_v6": "cy_026",
+      "route_id_rv6": null,
+      "name_zh": "环太湖骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_026",
+          "rv6_id": "mc_005",
+          "note": "V5的cy_026在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "cy_027",
+      "route_id_v6": "cy_027",
+      "route_id_rv6": null,
+      "name_zh": "张北草原天路骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "cy_027",
+          "rv6_id": "mc_005",
+          "note": "V5的cy_027在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "gl_cycling_shimanami_009",
+      "route_id_v6": "gl_cycling_shimanami_009",
+      "route_id_rv6": null,
+      "name_zh": "岛波海道骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_cycling_shimanami_009",
+          "rv6_id": "mc_005",
+          "note": "V5的gl_cycling_shimanami_009在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_cycling_shimanami_009_2",
+      "route_id_rv6": null,
+      "name_zh": "岛波海道骑行",
+      "mode": "cycling",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_cycling_shimanami_009内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "gl_cycling_taiwan_006",
+      "route_id_v6": "gl_cycling_taiwan_006",
+      "route_id_rv6": null,
+      "name_zh": "台湾环岛骑行",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_cycling_taiwan_006",
+          "rv6_id": "mc_005",
+          "note": "V5的gl_cycling_taiwan_006在RV6中重编号为mc_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "gl_hiking_abc_002",
+      "route_id_v6": "gl_hiking_abc_002",
+      "route_id_rv6": null,
+      "name_zh": "安纳普尔娜大本营徒步(ABC)",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_hiking_abc_002",
+          "rv6_id": "hk_041",
+          "note": "V5的gl_hiking_abc_002在RV6中重编号为hk_041"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_hiking_abc_002_2",
+      "route_id_rv6": null,
+      "name_zh": "安纳普尔娜大本营徒步(ABC)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_hiking_abc_002内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "gl_hiking_ebc_001",
+      "route_id_v6": "gl_hiking_ebc_001",
+      "route_id_rv6": null,
+      "name_zh": "珠峰大本营徒步(EBC)",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_hiking_ebc_001",
+          "rv6_id": "hk_036",
+          "note": "V5的gl_hiking_ebc_001在RV6中重编号为hk_036"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_hiking_ebc_001_2",
+      "route_id_rv6": null,
+      "name_zh": "珠峰大本营徒步(EBC)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_hiking_ebc_001内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "gl_hiking_inca_004",
+      "route_id_v6": "gl_hiking_inca_004",
+      "route_id_rv6": null,
+      "name_zh": "印加古道",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_hiking_inca_004",
+          "rv6_id": "hk_019",
+          "note": "V5的gl_hiking_inca_004在RV6中重编号为hk_019"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_hiking_inca_004_2",
+      "route_id_rv6": null,
+      "name_zh": "印加古道",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_hiking_inca_004内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "gl_hiking_kumano_005",
+      "route_id_v6": "gl_hiking_kumano_005",
+      "route_id_rv6": null,
+      "name_zh": "熊野古道",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_hiking_kumano_005",
+          "rv6_id": "hk_017",
+          "note": "V5的gl_hiking_kumano_005在RV6中重编号为hk_017"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_hiking_kumano_005_2",
+      "route_id_rv6": null,
+      "name_zh": "熊野古道",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_hiking_kumano_005内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "gl_hiking_milford_008",
+      "route_id_v6": "gl_hiking_milford_008",
+      "route_id_rv6": null,
+      "name_zh": "米尔福德步道",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_hiking_milford_008",
+          "rv6_id": "hk_018",
+          "note": "V5的gl_hiking_milford_008在RV6中重编号为hk_018"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_hiking_milford_008_2",
+      "route_id_rv6": null,
+      "name_zh": "米尔福德步道",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_hiking_milford_008内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "gl_hiking_tmb_003",
+      "route_id_v6": "gl_hiking_tmb_003",
+      "route_id_rv6": null,
+      "name_zh": "环勃朗峰徒步(TMB)",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_hiking_tmb_003",
+          "rv6_id": "hk_028",
+          "note": "V5的gl_hiking_tmb_003在RV6中重编号为hk_028"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_hiking_tmb_003_2",
+      "route_id_rv6": null,
+      "name_zh": "环勃朗峰徒步(TMB)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_hiking_tmb_003内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "gl_mount_fuji_007",
+      "route_id_v6": "gl_mount_fuji_007",
+      "route_id_rv6": null,
+      "name_zh": "富士山吉田路线",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_mount_fuji_007",
+          "rv6_id": "mt_020",
+          "note": "V5的gl_mount_fuji_007在RV6中重编号为mt_020"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_mount_fuji_007_2",
+      "route_id_rv6": null,
+      "name_zh": "富士山吉田路线",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_mount_fuji_007内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "gl_mount_kilimanjaro_010",
+      "route_id_v6": "gl_mount_kilimanjaro_010",
+      "route_id_rv6": null,
+      "name_zh": "乞力马扎罗马切梅路线",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "gl_mount_kilimanjaro_010",
+          "rv6_id": "mt_015",
+          "note": "V5的gl_mount_kilimanjaro_010在RV6中重编号为mt_015"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "gl_mount_kilimanjaro_010_2",
+      "route_id_rv6": null,
+      "name_zh": "乞力马扎罗马切梅路线",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与gl_mount_kilimanjaro_010内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "hk_001",
+      "route_id_v6": "hk_001",
+      "route_id_rv6": "hk_001",
+      "name_zh": "虎跳峡高路徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 22,
+          "rv6_km": 56,
+          "diff_percent": 61,
+          "note": "里程差异>61%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_002",
+      "route_id_v6": "hk_002",
+      "route_id_rv6": "hk_002",
+      "name_zh": "雨崩徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_003",
+      "route_id_v6": "hk_003",
+      "route_id_rv6": "hk_003",
+      "name_zh": "贡嘎大环线",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 100,
+          "rv6_km": 70,
+          "diff_percent": 30,
+          "note": "里程差异>30%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_004",
+      "route_id_v6": "hk_004",
+      "route_id_rv6": "hk_004",
+      "name_zh": "乌孙古道",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 120,
+          "rv6_km": 80,
+          "diff_percent": 33,
+          "note": "里程差异>33%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_005",
+      "route_id_v6": "hk_005",
+      "route_id_rv6": "hk_005",
+      "name_zh": "长穿毕",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 40,
+          "rv6_km": 80,
+          "diff_percent": 50,
+          "note": "里程差异>50%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_006",
+      "route_id_v6": "hk_006",
+      "route_id_rv6": "hk_006",
+      "name_zh": "洛克线",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 70,
+          "rv6_km": 100,
+          "diff_percent": 30,
+          "note": "里程差异>30%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_007",
+      "route_id_v6": "hk_007",
+      "route_id_rv6": "hk_007",
+      "name_zh": "亚丁大转山",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_008",
+      "route_id_v6": "hk_008",
+      "route_id_rv6": "hk_008",
+      "name_zh": "鳌太穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 81,
+          "rv6_km": 18,
+          "diff_percent": 78,
+          "note": "里程差异>78%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_009",
+      "route_id_v6": "hk_009",
+      "route_id_rv6": "hk_009",
+      "name_zh": "武功山反穿",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 25,
+          "rv6_km": 50,
+          "diff_percent": 50,
+          "note": "里程差异>50%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_010",
+      "route_id_v6": "hk_010",
+      "route_id_rv6": "hk_010",
+      "name_zh": "冈仁波齐转山",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_011",
+      "route_id_v6": "hk_011",
+      "route_id_rv6": "hk_011",
+      "name_zh": "墨脱徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 96,
+          "rv6_km": 55,
+          "diff_percent": 43,
+          "note": "里程差异>43%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_012",
+      "route_id_v6": "hk_012",
+      "route_id_rv6": "hk_012",
+      "name_zh": "喀拉峻草原穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 70,
+          "rv6_km": 27,
+          "diff_percent": 61,
+          "note": "里程差异>61%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_013",
+      "route_id_v6": "hk_013",
+      "route_id_rv6": "hk_013",
+      "name_zh": "狼塔C+V线",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 200,
+          "rv6_km": 120,
+          "diff_percent": 40,
+          "note": "里程差异>40%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_014",
+      "route_id_v6": "hk_014",
+      "route_id_rv6": "hk_014",
+      "name_zh": "夏特古道",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 120,
+          "rv6_km": 44,
+          "diff_percent": 63,
+          "note": "里程差异>63%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_015",
+      "route_id_v6": "hk_015",
+      "route_id_rv6": "hk_015",
+      "name_zh": "腾格里沙漠五湖连穿",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 50,
+          "rv6_km": 37,
+          "diff_percent": 26,
+          "note": "里程差异>26%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_016",
+      "route_id_v6": "hk_016",
+      "route_id_rv6": "hk_016",
+      "name_zh": "漓江徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 20,
+          "rv6_km": 65,
+          "diff_percent": 69,
+          "note": "里程差异>69%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_017",
+      "route_id_v6": "hk_017",
+      "route_id_rv6": "hk_017",
+      "name_zh": "库拉岗日徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 50,
+          "rv6_km": 70,
+          "diff_percent": 29,
+          "note": "里程差异>29%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_018",
+      "route_id_v6": "hk_018",
+      "route_id_rv6": "hk_018",
+      "name_zh": "孟克德古道",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 70,
+          "rv6_km": 53,
+          "diff_percent": 24,
+          "note": "里程差异>24%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_019",
+      "route_id_v6": "hk_019",
+      "route_id_rv6": "hk_019",
+      "name_zh": "南太行徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_020",
+      "route_id_v6": "hk_020",
+      "route_id_rv6": "hk_020",
+      "name_zh": "珠峰东坡徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 100,
+          "rv6_km": 20,
+          "diff_percent": 80,
+          "note": "里程差异>80%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_021",
+      "route_id_v6": "hk_021",
+      "route_id_rv6": null,
+      "name_zh": "梅里北坡徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "hk_021",
+          "rv6_id": "hk_009",
+          "note": "V5的hk_021在RV6中重编号为hk_009"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_022",
+      "name_zh": "墨脱徒步",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_023",
+      "route_id_v6": "hk_023",
+      "route_id_rv6": "hk_023",
+      "name_zh": "七藏沟徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_024",
+      "route_id_v6": "hk_024",
+      "route_id_rv6": null,
+      "name_zh": "库布齐沙漠穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "hk_024",
+          "rv6_id": "hk_037",
+          "note": "V5的hk_024在RV6中重编号为hk_037"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "hk_025",
+      "route_id_v6": "hk_025",
+      "route_id_rv6": "hk_025",
+      "name_zh": "神农架老君山穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 30,
+          "rv6_km": 145,
+          "diff_percent": 79,
+          "note": "里程差异>79%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_026",
+      "route_id_v6": "hk_026",
+      "route_id_rv6": "hk_026",
+      "name_zh": "格聂大环线",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 200,
+          "rv6_km": 50,
+          "diff_percent": 75,
+          "note": "里程差异>75%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "hk_026_2",
+      "route_id_rv6": null,
+      "name_zh": "喀纳斯环线",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与hk_026内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "hk_027",
+      "route_id_rv6": "hk_027",
+      "name_zh": "党岭徒步",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_028",
+      "name_zh": "环勃朗峰徒步(TMB)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_029",
+      "route_id_v6": "hk_029",
+      "route_id_rv6": "hk_029",
+      "name_zh": "年保玉则穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 60,
+          "rv6_km": 120,
+          "diff_percent": 50,
+          "note": "里程差异>50%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_030",
+      "route_id_v6": "hk_030",
+      "route_id_rv6": "hk_030",
+      "name_zh": "徽杭古道",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 20,
+          "rv6_km": 12,
+          "diff_percent": 40,
+          "note": "里程差异>40%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "hk_030_2",
+      "route_id_rv6": null,
+      "name_zh": "箭扣长城",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "remove_candidate",
+      "reason": "V6重复条目，与hk_030内容相同",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_031",
+      "name_zh": "武功山反穿",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_033",
+      "route_id_v6": "hk_033",
+      "route_id_rv6": null,
+      "name_zh": "麦理浩径",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "hk_033",
+          "rv6_id": "hk_040",
+          "note": "V5的hk_033在RV6中重编号为hk_040"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "hk_034",
+      "route_id_v6": "hk_034",
+      "route_id_rv6": "hk_034",
+      "name_zh": "大五台顺穿",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 70,
+          "rv6_km": 100,
+          "diff_percent": 30,
+          "note": "里程差异>30%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_035",
+      "route_id_v6": "hk_035",
+      "route_id_rv6": "hk_035",
+      "name_zh": "太白南南穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 40,
+          "rv6_km": 80,
+          "diff_percent": 50,
+          "note": "里程差异>50%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_036",
+      "route_id_v6": "hk_036",
+      "route_id_rv6": "hk_036",
+      "name_zh": "扎尕那穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 55,
+          "rv6_km": 130,
+          "diff_percent": 58,
+          "note": "里程差异>58%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_037",
+      "route_id_v6": "hk_037",
+      "route_id_rv6": "hk_037",
+      "name_zh": "梅里外转",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 145,
+          "rv6_km": 50,
+          "diff_percent": 66,
+          "note": "里程差异>66%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_038",
+      "name_zh": "腾格里沙漠五湖连穿",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_039",
+      "name_zh": "神农架老君山穿越",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_040",
+      "name_zh": "麦理浩径",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_041",
+      "route_id_v6": "hk_041",
+      "route_id_rv6": "hk_041",
+      "name_zh": "他念他翁穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_042",
+      "name_zh": "洛克线",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_043",
+      "name_zh": "亚丁大转山",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_044",
+      "name_zh": "年保玉则穿越",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "hk_045",
+      "name_zh": "天山雪莲峰徒步",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_046",
+      "route_id_v6": "hk_046",
+      "route_id_rv6": "hk_046",
+      "name_zh": "长白山南坡穿越",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 50,
+          "rv6_km": 70,
+          "diff_percent": 29,
+          "note": "里程差异>29%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_047",
+      "route_id_v6": "hk_047",
+      "route_id_rv6": "hk_047",
+      "name_zh": "天山雪莲峰徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 80,
+          "rv6_km": 200,
+          "diff_percent": 60,
+          "note": "里程差异>60%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "hk_048",
+      "route_id_v6": "hk_048",
+      "route_id_rv6": null,
+      "name_zh": "玉虚峰徒步",
+      "mode": "hiking",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "hk_048",
+          "rv6_id": "hk_013",
+          "note": "V5的hk_048在RV6中重编号为hk_013"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_010",
+      "route_id_rv6": null,
+      "name_zh": "安娜普尔纳大环线(ACT)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_011",
+      "route_id_rv6": null,
+      "name_zh": "朗当徒步(Langtang Valley)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_012",
+      "route_id_rv6": null,
+      "name_zh": "干城章嘉大本营徒步",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_013",
+      "route_id_rv6": null,
+      "name_zh": "多洛米蒂Alta Via 1",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_014",
+      "route_id_rv6": null,
+      "name_zh": "苏格兰西高地之路",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_015",
+      "route_id_rv6": null,
+      "name_zh": "圣地亚哥之路(法国之路最后100km)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_016",
+      "route_id_rv6": null,
+      "name_zh": "百内国家公园W线",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_017",
+      "route_id_rv6": null,
+      "name_zh": "百内国家公园O线",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_018",
+      "route_id_rv6": null,
+      "name_zh": "约翰缪尔之路",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_019",
+      "route_id_rv6": null,
+      "name_zh": "优胜美地半圆顶",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_020",
+      "route_id_rv6": null,
+      "name_zh": "肯尼亚山Naro Moru路线",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_021",
+      "route_id_rv6": null,
+      "name_zh": "京那巴鲁山(神山)攀登",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_022",
+      "route_id_rv6": null,
+      "name_zh": "林贾尼火山攀登",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_023",
+      "route_id_rv6": null,
+      "name_zh": "日本北阿尔卑斯纵走",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_024",
+      "route_id_rv6": null,
+      "name_zh": "科尔科瓦多山徒步(里约热内卢)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_025",
+      "route_id_rv6": null,
+      "name_zh": "科科达小径",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_026",
+      "route_id_rv6": null,
+      "name_zh": "圣克鲁兹徒步线(秘鲁)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_027",
+      "route_id_rv6": null,
+      "name_zh": "Cape to Cape徒步(澳大利亚)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_028",
+      "route_id_rv6": null,
+      "name_zh": "翡翠湖环湖徒步(加拿大)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_029",
+      "route_id_rv6": null,
+      "name_zh": "斯诺登尼亚登山(威尔士)",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": "intl_030",
+      "route_id_rv6": null,
+      "name_zh": "Rinjani火山湖环湖",
+      "mode": "hiking",
+      "in_v5": false,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "RV6新版数据"
+    },
+    {
+      "route_id_v5": "ma_001",
+      "route_id_v6": "ma_001",
+      "route_id_rv6": null,
+      "name_zh": "四姑娘山大峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_001",
+          "rv6_id": "mt_001",
+          "note": "V5的ma_001在RV6中重编号为mt_001"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_002",
+      "route_id_v6": "ma_002",
+      "route_id_rv6": null,
+      "name_zh": "四姑娘山二峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_002",
+          "rv6_id": "mt_002",
+          "note": "V5的ma_002在RV6中重编号为mt_002"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_003",
+      "route_id_v6": "ma_003",
+      "route_id_rv6": null,
+      "name_zh": "四姑娘山三峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_003",
+          "rv6_id": "mt_003",
+          "note": "V5的ma_003在RV6中重编号为mt_003"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_004",
+      "route_id_v6": "ma_004",
+      "route_id_rv6": null,
+      "name_zh": "哈巴雪山",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_004",
+          "rv6_id": "mt_004",
+          "note": "V5的ma_004在RV6中重编号为mt_004"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_005",
+      "route_id_v6": "ma_005",
+      "route_id_rv6": null,
+      "name_zh": "那玛峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_005",
+          "rv6_id": "mt_006",
+          "note": "V5的ma_005在RV6中重编号为mt_006"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_006",
+      "route_id_v6": "ma_006",
+      "route_id_rv6": null,
+      "name_zh": "半脊峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_006",
+          "rv6_id": "mt_009",
+          "note": "V5的ma_006在RV6中重编号为mt_009"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_007",
+      "route_id_v6": "ma_007",
+      "route_id_rv6": null,
+      "name_zh": "玉珠峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_007",
+          "rv6_id": "mt_005",
+          "note": "V5的ma_007在RV6中重编号为mt_005"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_008",
+      "route_id_v6": "ma_008",
+      "route_id_rv6": null,
+      "name_zh": "雀儿山",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_008",
+          "rv6_id": "mt_008",
+          "note": "V5的ma_008在RV6中重编号为mt_008"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_009",
+      "route_id_v6": "ma_009",
+      "route_id_rv6": null,
+      "name_zh": "慕士塔格峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_009",
+          "rv6_id": "mt_007",
+          "note": "V5的ma_009在RV6中重编号为mt_007"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_010",
+      "route_id_v6": "ma_010",
+      "route_id_rv6": null,
+      "name_zh": "雪宝顶",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_010",
+          "rv6_id": "mt_010",
+          "note": "V5的ma_010在RV6中重编号为mt_010"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_011",
+      "route_id_v6": "ma_011",
+      "route_id_rv6": null,
+      "name_zh": "岗什卡峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_011",
+          "rv6_id": "mt_012",
+          "note": "V5的ma_011在RV6中重编号为mt_012"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_016",
+      "route_id_v6": "ma_016",
+      "route_id_rv6": null,
+      "name_zh": "宁金抗沙峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_016",
+          "rv6_id": "ma_019",
+          "note": "V5的ma_016在RV6中重编号为ma_019"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_017",
+      "route_id_v6": "ma_017",
+      "route_id_rv6": "ma_017",
+      "name_zh": "卓奥友峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "ma_018",
+      "route_id_v6": "ma_018",
+      "route_id_rv6": "ma_018",
+      "name_zh": "珠穆朗玛峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 40,
+          "rv6_km": 30,
+          "diff_percent": 25,
+          "note": "里程差异>25%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "ma_019",
+      "route_id_v6": "ma_019",
+      "route_id_rv6": "ma_019",
+      "name_zh": "希夏邦马峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "ma_020",
+      "route_id_v6": "ma_020",
+      "route_id_rv6": "ma_020",
+      "name_zh": "贡嘎山",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 28,
+          "rv6_km": 14,
+          "diff_percent": 50,
+          "note": "里程差异>50%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "ma_021",
+      "name_zh": "姜桑拉姆峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "ma_022",
+      "name_zh": "库拉岗日主峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "ma_036",
+      "route_id_v6": "ma_036",
+      "route_id_rv6": null,
+      "name_zh": "启孜峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_036",
+          "rv6_id": "ma_020",
+          "note": "V5的ma_036在RV6中重编号为ma_020"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_037",
+      "route_id_v6": "ma_037",
+      "route_id_rv6": null,
+      "name_zh": "姜桑拉姆峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_037",
+          "rv6_id": "ma_021",
+          "note": "V5的ma_037在RV6中重编号为ma_021"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_039",
+      "route_id_v6": "ma_039",
+      "route_id_rv6": null,
+      "name_zh": "乔戈里峰(K2)",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_039",
+          "rv6_id": "mt_014",
+          "note": "V5的ma_039在RV6中重编号为mt_014"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "ma_040",
+      "route_id_v6": "ma_040",
+      "route_id_rv6": null,
+      "name_zh": "库拉岗日主峰",
+      "mode": "mountaineering",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "ma_040",
+          "rv6_id": "ma_022",
+          "note": "V5的ma_040在RV6中重编号为ma_022"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "mc_001",
+      "route_id_v6": "mc_001",
+      "route_id_rv6": null,
+      "name_zh": "318川藏南线摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "mc_001",
+          "rv6_id": "mc_007",
+          "note": "V5的mc_001在RV6中重编号为mc_007"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "mc_002",
+      "route_id_v6": "mc_002",
+      "route_id_rv6": null,
+      "name_zh": "独库公路摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "mc_002",
+          "rv6_id": "mc_010",
+          "note": "V5的mc_002在RV6中重编号为mc_010"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "mc_003",
+      "route_id_v6": "mc_003",
+      "route_id_rv6": null,
+      "name_zh": "丙察察线摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "mc_003",
+          "rv6_id": "mc_011",
+          "note": "V5的mc_003在RV6中重编号为mc_011"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "mc_004",
+      "route_id_v6": "mc_004",
+      "route_id_rv6": null,
+      "name_zh": "317川藏北线摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "mc_004",
+          "rv6_id": "mc_006",
+          "note": "V5的mc_004在RV6中重编号为mc_006"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "mc_005",
+      "route_id_v6": "mc_005",
+      "route_id_rv6": "mc_005",
+      "name_zh": "214滇藏线摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "distance_conflict": {
+          "v5_km": 3000,
+          "rv6_km": 1950,
+          "diff_percent": 35,
+          "note": "里程差异>35%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "mc_006",
+      "route_id_v6": "mc_006",
+      "route_id_rv6": "mc_006",
+      "name_zh": "219新藏线摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "mode_mismatch": {
+          "v5_value": "cycling",
+          "rv6_value": "motorcycle",
+          "note": "分类冲突：V5=cycling, RV6=motorcycle"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mc_007",
+      "name_zh": "318川藏南线摩旅",
+      "mode": "motorcycle",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "mc_008",
+      "route_id_v6": "mc_008",
+      "route_id_rv6": null,
+      "name_zh": "黔东南摩旅环线",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "mc_008",
+          "rv6_id": "mc_017",
+          "note": "V5的mc_008在RV6中重编号为mc_017"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": "mc_009",
+      "route_id_v6": "mc_009",
+      "route_id_rv6": "mc_009",
+      "name_zh": "滇缅公路摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "mode_mismatch": {
+          "v5_value": "cycling",
+          "rv6_value": "motorcycle",
+          "note": "分类冲突：V5=cycling, RV6=motorcycle"
+        },
+        "distance_conflict": {
+          "v5_km": 500,
+          "rv6_km": 2100,
+          "diff_percent": 76,
+          "note": "里程差异>76%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mc_010",
+      "name_zh": "独库公路摩旅",
+      "mode": "motorcycle",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mc_011",
+      "name_zh": "丙察察线摩旅",
+      "mode": "motorcycle",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mc_012",
+      "name_zh": "川西大环线摩旅",
+      "mode": "motorcycle",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "mc_013",
+      "route_id_v6": "mc_013",
+      "route_id_rv6": "mc_013",
+      "name_zh": "伊犁河谷摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "mode_mismatch": {
+          "v5_value": "cycling",
+          "rv6_value": "motorcycle",
+          "note": "分类冲突：V5=cycling, RV6=motorcycle"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "mc_014",
+      "route_id_v6": "mc_014",
+      "route_id_rv6": "mc_014",
+      "name_zh": "川西大环线摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "mode_mismatch": {
+          "v5_value": "cycling",
+          "rv6_value": "motorcycle",
+          "note": "分类冲突：V5=cycling, RV6=motorcycle"
+        },
+        "distance_conflict": {
+          "v5_km": 1800,
+          "rv6_km": 420,
+          "diff_percent": 77,
+          "note": "里程差异>77%，需核实"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "mc_015",
+      "route_id_v6": "mc_015",
+      "route_id_rv6": "mc_015",
+      "name_zh": "海南环岛摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "mode_mismatch": {
+          "v5_value": "cycling",
+          "rv6_value": "motorcycle",
+          "note": "分类冲突：V5=cycling, RV6=motorcycle"
+        }
+      },
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mc_016",
+      "name_zh": "滇缅公路摩旅",
+      "mode": "motorcycle",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mc_017",
+      "name_zh": "黔东南摩旅环线",
+      "mode": "motorcycle",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": "mc_021",
+      "route_id_v6": "mc_021",
+      "route_id_rv6": null,
+      "name_zh": "喀喇昆仑公路摩旅",
+      "mode": "cycling",
+      "in_v5": true,
+      "in_v6": true,
+      "in_rv6_verified": false,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {
+        "route_id_renumbered": {
+          "v5_id": "mc_021",
+          "rv6_id": "mc_014",
+          "note": "V5的mc_021在RV6中重编号为mc_014"
+        }
+      },
+      "recommended_final_fields": "以V5为准，补审后纳入"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_001",
+      "name_zh": "四姑娘山大峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_002",
+      "name_zh": "四姑娘山二峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_003",
+      "name_zh": "四姑娘山三峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_004",
+      "name_zh": "哈巴雪山",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_005",
+      "name_zh": "玉珠峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_006",
+      "name_zh": "那玛峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_007",
+      "name_zh": "慕士塔格峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_008",
+      "name_zh": "雀儿山",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_009",
+      "name_zh": "半脊峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_010",
+      "name_zh": "雪宝顶",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_011",
+      "name_zh": "贡嘎山",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_012",
+      "name_zh": "岗什卡峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_013",
+      "name_zh": "珠穆朗玛峰",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_014",
+      "name_zh": "乔戈里峰(K2)",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_015",
+      "name_zh": "乞力马扎罗马切梅路线",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    },
+    {
+      "route_id_v5": null,
+      "route_id_v6": null,
+      "route_id_rv6": "mt_020",
+      "name_zh": "富士山吉田路线",
+      "mode": "mountaineering",
+      "in_v5": false,
+      "in_v6": false,
+      "in_rv6_verified": true,
+      "status": "keep",
+      "reason": "数据一致，无需操作",
+      "field_conflicts": {},
+      "recommended_final_fields": "以RV6为准"
+    }
+  ]
+}

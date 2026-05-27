@@ -1,0 +1,947 @@
+{
+  "hk_001": {
+    "route_id": "hk_001",
+    "name_zh": "虎跳峡高路徒步",
+    "nearest_hospital": "香格里拉市人民医院(约100km)/丽江市人民医院(约90km)",
+    "nearest_road": "虎跳峡镇(景区公路直达)",
+    "signal_coverage": "全程移动/电信/联通有信号",
+    "rescue_phone": "景区管理处 400-670-6300 / 全国旅游投诉 12301",
+    "emergency_access": "良好"
+  },
+  "hk_002": {
+    "route_id": "hk_002",
+    "name_zh": "雨崩徒步",
+    "nearest_hospital": "德钦县人民医院(约40km飞来寺方向)",
+    "nearest_road": "尼农村(通公路至飞来寺)",
+    "signal_coverage": "电信覆盖较好，移动/联通在村内有信号，徒步过程中断断续续",
+    "rescue_phone": "德钦县应急管理局 0887-8413210 / 雨崩景区管理站",
+    "emergency_access": "一般(尼农峡谷可通车，但部分狭窄)"
+  },
+  "hk_003": {
+    "route_id": "hk_003",
+    "name_zh": "贡嘎大环线",
+    "nearest_hospital": "康定市人民医院/甘孜州人民医院(约100km)",
+    "nearest_road": "子梅村(通公路至沙德乡)/草科乡",
+    "signal_coverage": "全程大部分区域无信号；格西草原/贡嘎寺有微弱信号",
+    "rescue_phone": "康定市应急管理局 / 四川省登山协会 028-85556767",
+    "emergency_access": "一般(日乌且/莫溪沟段仅马道)"
+  },
+  "hk_009": {
+    "route_id": "hk_009",
+    "name_zh": "武功山反穿",
+    "nearest_hospital": "萍乡市人民医院(约60km)/芦溪县人民医院(约40km)",
+    "nearest_road": "龙山村/景区大门(公路直达)",
+    "signal_coverage": "移动/电信覆盖较好，全程大部分有信号，山谷区域可能无",
+    "rescue_phone": "武功山景区救援 0799-7636666 / 萍乡户外救援队",
+    "emergency_access": "良好(景区有索道/栈道，救援车可达吊马桩)"
+  },
+  "hk_008": {
+    "route_id": "hk_008",
+    "name_zh": "鳌太穿越",
+    "nearest_hospital": "太白县医院(约80km)/宝鸡市中心医院(约160km)",
+    "nearest_road": "塘口村(起点)/厚畛子(终点)/核桃坪(中途下撤点)",
+    "signal_coverage": "全程95%区域无信号；仅个别山脊高点偶有移动信号",
+    "rescue_phone": "太白县应急管理局 / 陕西森林公安 / 秦岭救援队",
+    "emergency_access": "困难(全程无人区无车行道，仅马道和石海，直升机救援受天气限制)"
+  },
+  "hk_011": {
+    "route_id": "hk_011",
+    "name_zh": "墨脱徒步",
+    "nearest_hospital": "墨脱县人民医院(终点)/林芝市人民医院(约350km)",
+    "nearest_road": "派镇(起)/墨脱(终)/背崩(中途可出)",
+    "signal_coverage": "派镇-多雄拉山段无信号;拉格后大部分无;背崩/墨脱有信号",
+    "rescue_phone": "墨脱县应急管理局 / 林芝户外救援队",
+    "emergency_access": "困难(全程徒步,仅派镇/背崩/墨脱可通车)"
+  },
+  "hk_005": {
+    "route_id": "hk_005",
+    "name_zh": "长穿毕",
+    "nearest_hospital": "四姑娘山镇卫生院/小金县人民医院(约50km)",
+    "nearest_road": "喇嘛寺(起点通公路)/毕棚沟上海子(终点通公路)",
+    "signal_coverage": "D1/喇嘛寺-木骡子段有信号;D2/D3大部分区域无信号;毕棚沟侧有信号",
+    "rescue_phone": "四姑娘山景区管理局 / 小金县应急管理局",
+    "emergency_access": "一般(终点可在毕棚沟坐景区交通车)"
+  },
+  "hk_020": {
+    "route_id": "hk_020",
+    "name_zh": "珠峰东坡徒步",
+    "nearest_hospital": "定日县人民医院(约150km)/日喀则市人民医院(约350km)",
+    "nearest_road": "曲当乡(起点通公路)/轮珠林村(终点通公路)",
+    "signal_coverage": "全程无信号(仅在曲当乡和部分山脊高点偶有)",
+    "rescue_phone": "定日县应急管理局 / 西藏自治区登山协会",
+    "emergency_access": "困难(全程徒步,直升机救援受高海拔和天气限制)"
+  },
+  "hk_010": {
+    "route_id": "hk_010",
+    "name_zh": "冈仁波齐转山",
+    "nearest_hospital": "普兰县人民医院(塔钦->普兰约80km)/阿里地区人民医院(狮泉河约300km)",
+    "nearest_road": "塔钦镇(219国道可达)",
+    "signal_coverage": "塔钦-止热寺段部分有移动信号;卓玛拉山口无信号;祖楚寺有微弱信号",
+    "rescue_phone": "普兰县应急管理局 / 阿里地区户外救援",
+    "emergency_access": "一般(塔钦至止热寺有马道,下撤可雇马帮或搭车)"
+  },
+  "hk_004": {
+    "route_id": "hk_004",
+    "name_zh": "乌孙古道",
+    "nearest_hospital": "特克斯县人民医院(起点约100km)/库车县人民医院(终点约150km)",
+    "nearest_road": "琼库什台(起点)/黑英山(终点,通新疆县道)",
+    "signal_coverage": "全程无信号(仅起点/终点乡镇有)",
+    "rescue_phone": "特克斯县应急管理局 / 库车县应急管理局 / 新疆登山协会 0991-3816875",
+    "emergency_access": "困难(全程无车行道,涉水段需徒步/骑马)"
+  },
+  "hk_014": {
+    "route_id": "hk_014",
+    "name_zh": "夏特古道",
+    "nearest_hospital": "昭苏县人民医院(起点约80km)/温宿县人民医院(终点约100km)",
+    "nearest_road": "夏塔乡(起点通公路)/破城子(终点通公路,但已封闭)",
+    "signal_coverage": "全程95%无信号;仅夏塔景区入口有",
+    "rescue_phone": "昭苏县应急管理局 / 夏塔景区管理处",
+    "emergency_access": "困难(全程徒步,冰川段需专业装备)"
+  },
+  "hk_036": {
+    "route_id": "hk_036",
+    "name_zh": "扎尕那穿越",
+    "nearest_hospital": "迭部县人民医院(约30km)/卓尼县医院(终点方向)",
+    "nearest_road": "扎尕那景区公路(起点)/卓尼公路(终点)",
+    "signal_coverage": "扎尕那村有信号;徒步中大部分无;翻垭口时偶有移动信号",
+    "rescue_phone": "迭部县应急管理局 / 扎尕那景区管理处",
+    "emergency_access": "一般(前后有公路但中间无车行道)"
+  },
+  "hk_023": {
+    "route_id": "hk_023",
+    "name_zh": "七藏沟徒步",
+    "nearest_hospital": "松潘县人民医院(约40km)/川主寺镇卫生院(约30km)",
+    "nearest_road": "阿翁沟口(通公路)/卡卡沟口(通公路)",
+    "signal_coverage": "大部分区域无信号;沟口/草海子偶有",
+    "rescue_phone": "松潘县应急管理局 / 黄龙景区管理局",
+    "emergency_access": "一般(有马帮协助,沟口可通车)"
+  },
+  "ma_002": {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "nearest_hospital": "四姑娘山镇卫生院(约12km)/小金县人民医院(约50km)",
+    "nearest_road": "四姑娘山镇(公路直达成都)",
+    "signal_coverage": "海子沟部分路段有电信信号;大本营无网络;镇上有信号",
+    "rescue_phone": "四姑娘山景区管理局 / 小金县应急管理局",
+    "emergency_access": "良好(全程有马帮/骑马可撤)"
+  },
+  "ma_004": {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "nearest_hospital": "虎跳峡镇卫生院(约50km)/香格里拉市人民医院(约100km)",
+    "nearest_road": "哈巴村(通公路至虎跳峡镇)",
+    "signal_coverage": "哈巴村有信号;大本营偶有移动信号;冲顶段大部分无信号",
+    "rescue_phone": "香格里拉市应急管理局 / 哈巴雪山向导协会",
+    "emergency_access": "一般(大本营可骑马下撤,但哈巴村以上无车行道)"
+  },
+  "hk_019": {
+    "route_id": "hk_019",
+    "name_zh": "南太行徒步",
+    "nearest_hospital": "辉县市人民医院/陵川县医院",
+    "nearest_road": "双底/八里沟景区公路",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "辉县应急管理局",
+    "emergency_access": "良好"
+  },
+  "hk_030": {
+    "route_id": "hk_030",
+    "name_zh": "徽杭古道",
+    "nearest_hospital": "绩溪县人民医院(约30km)/临安市人民医院(约50km)",
+    "nearest_road": "两端均为景区公路直达",
+    "signal_coverage": "全程有信号",
+    "rescue_phone": "徽杭古道景区管理处",
+    "emergency_access": "良好"
+  },
+  "hk_016": {
+    "route_id": "hk_016",
+    "name_zh": "漓江徒步",
+    "nearest_hospital": "阳朔县人民医院(约30km)",
+    "nearest_road": "沿岸公路",
+    "signal_coverage": "全程有信号",
+    "rescue_phone": "阳朔景区管理处",
+    "emergency_access": "良好"
+  },
+  "hk_041": {
+    "route_id": "hk_041",
+    "name_zh": "他念他翁穿越",
+    "nearest_hospital": "芒康县人民医院(约200km)/盐井卫生院",
+    "nearest_road": "盐井214国道",
+    "signal_coverage": "全程无信号",
+    "rescue_phone": "芒康县应急管理局",
+    "emergency_access": "困难"
+  },
+  "hk_037": {
+    "route_id": "hk_037",
+    "name_zh": "梅里外转",
+    "nearest_hospital": "德钦县人民医院(起点)/察瓦龙乡卫生院(中途)",
+    "nearest_road": "德钦/察瓦龙(有公路)",
+    "signal_coverage": "阿丙村前无信号;察瓦龙有",
+    "rescue_phone": "德钦县应急管理局",
+    "emergency_access": "一般"
+  },
+  "cy_011": {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "nearest_hospital": "沿途各镇有卫生院",
+    "nearest_road": "全程国道217",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "独库公路沿线交警",
+    "emergency_access": "良好"
+  },
+  "cy_003": {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "nearest_hospital": "刚察县/西海镇/黑马河有卫生院",
+    "nearest_road": "环湖公路",
+    "signal_coverage": "全程有信号",
+    "rescue_phone": "刚察县应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_004": {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "nearest_hospital": "沿线各城镇有医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "全程有信号",
+    "rescue_phone": "沿线交警",
+    "emergency_access": "良好"
+  },
+  "cy_001": {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "nearest_hospital": "沿线各县城有医院",
+    "nearest_road": "全程318国道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "318沿线交警",
+    "emergency_access": "良好"
+  },
+  "cy_007": {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "nearest_hospital": "狮泉河(阿里)/日土县",
+    "nearest_road": "全程219国道",
+    "signal_coverage": "大部分无信号",
+    "rescue_phone": "阿里地区应急管理局",
+    "emergency_access": "困难"
+  },
+  "hk_017": {
+    "route_id": "hk_017",
+    "name_zh": "库拉岗日徒步",
+    "nearest_hospital": "洛扎县人民医院(约30km)",
+    "nearest_road": "色乡(通公路)",
+    "signal_coverage": "部分有信号",
+    "rescue_phone": "洛扎县应急管理局",
+    "emergency_access": "良好"
+  },
+  "ma_019": {
+    "route_id": "ma_019",
+    "name_zh": "希夏邦马峰",
+    "nearest_hospital": "聂拉木县/日喀则市",
+    "nearest_road": "聂拉木县",
+    "signal_coverage": "BC有卫星信号",
+    "rescue_phone": "西藏登山协会",
+    "emergency_access": "困难(需直升机救援)"
+  },
+  "mc_001": {
+    "route_id": "mc_001",
+    "name_zh": "318川藏南线摩旅",
+    "nearest_hospital": "沿线县城",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "mc_006": {
+    "route_id": "mc_006",
+    "name_zh": "219新藏线摩旅",
+    "nearest_hospital": "狮泉河/日土",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "add_daocheng": {
+    "route_id": "add_daocheng",
+    "name_zh": "稻城亚丁",
+    "nearest_hospital": "稻城县人民医院(约110km)/香格里拉镇卫生院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "add_kanas": {
+    "route_id": "add_kanas",
+    "name_zh": "喀纳斯环线",
+    "nearest_hospital": "布尔津县人民医院(约140km)/喀纳斯景区医务室",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "add_dangling": {
+    "route_id": "add_dangling",
+    "name_zh": "党岭徒步",
+    "nearest_hospital": "丹巴县人民医院(约60km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "add_jiankou": {
+    "route_id": "add_jiankou",
+    "name_zh": "箭扣长城",
+    "nearest_hospital": "怀柔区医院(约50km)",
+    "nearest_road": "西栅子村有公路",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "怀柔区应急管理局",
+    "emergency_access": "一般"
+  },
+  "ma_039": {
+    "route_id": "ma_039",
+    "name_zh": "乔戈里峰(K2)",
+    "nearest_hospital": "喀什地区医院(约350km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "ma_006": {
+    "route_id": "ma_006",
+    "name_zh": "半脊峰",
+    "nearest_hospital": "理县医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般"
+  },
+  "ma_017": {
+    "route_id": "ma_017",
+    "name_zh": "卓奥友峰",
+    "nearest_hospital": "日喀则市医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "ma_036": {
+    "route_id": "ma_036",
+    "name_zh": "启孜峰",
+    "nearest_hospital": "当雄县医院(约90km)/拉萨",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般(BC近羊八井)"
+  },
+  "ma_003": {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "nearest_hospital": "四姑娘山镇卫生院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "ma_001": {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "nearest_hospital": "四姑娘山镇卫生院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "ma_037": {
+    "route_id": "ma_037",
+    "name_zh": "姜桑拉姆峰",
+    "nearest_hospital": "浪卡子县医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般"
+  },
+  "ma_016": {
+    "route_id": "ma_016",
+    "name_zh": "宁金抗沙峰",
+    "nearest_hospital": "江孜县医院/浪卡子县医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "ma_011": {
+    "route_id": "ma_011",
+    "name_zh": "岗什卡峰",
+    "nearest_hospital": "门源县医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好(停车场距BC近)"
+  },
+  "ma_040": {
+    "route_id": "ma_040",
+    "name_zh": "库拉岗日主峰",
+    "nearest_hospital": "",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "ma_009": {
+    "route_id": "ma_009",
+    "name_zh": "慕士塔格峰",
+    "nearest_hospital": "塔什库尔干县医院(约120km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般(BC可通车)"
+  },
+  "ma_007": {
+    "route_id": "ma_007",
+    "name_zh": "玉珠峰",
+    "nearest_hospital": "格尔木市医院(约200km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般(BC可通车)"
+  },
+  "ma_018": {
+    "route_id": "ma_018",
+    "name_zh": "珠穆朗玛峰",
+    "nearest_hospital": "日喀则市医院(约350km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难(直升机救援)"
+  },
+  "ma_020": {
+    "route_id": "ma_020",
+    "name_zh": "贡嘎山",
+    "nearest_hospital": "康定市医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "ma_005": {
+    "route_id": "ma_005",
+    "name_zh": "那玛峰",
+    "nearest_hospital": "康定市医院(约150km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般"
+  },
+  "ma_008": {
+    "route_id": "ma_008",
+    "name_zh": "雀儿山",
+    "nearest_hospital": "德格县医院(约80km)",
+    "nearest_road": "甘孜-德格公路(317国道)",
+    "signal_coverage": "BC有微弱信号,以上无",
+    "rescue_phone": "甘孜州登山协会",
+    "emergency_access": "困难"
+  },
+  "ma_010": {
+    "route_id": "ma_010",
+    "name_zh": "雪宝顶",
+    "nearest_hospital": "松潘县医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般(BC距公路1km)"
+  },
+  "gl_mount_kilimanjaro_010": {
+    "route_id": "gl_mount_kilimanjaro_010",
+    "name_zh": "乞力马扎罗马切梅路线",
+    "nearest_hospital": "最近城镇医院(待补)",
+    "nearest_road": "大本营通山路",
+    "signal_coverage": "BC有卫星通信",
+    "rescue_phone": "当地登山协会",
+    "emergency_access": "困难"
+  },
+  "gl_mount_fuji_007": {
+    "route_id": "gl_mount_fuji_007",
+    "name_zh": "富士山吉田路线",
+    "nearest_hospital": "最近城镇医院(待补)",
+    "nearest_road": "大本营通山路",
+    "signal_coverage": "BC有卫星通信",
+    "rescue_phone": "当地登山协会",
+    "emergency_access": "困难"
+  },
+  "mc_005": {
+    "route_id": "mc_005",
+    "name_zh": "214滇藏线摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_004": {
+    "route_id": "mc_004",
+    "name_zh": "317川藏北线摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cn_cycling_bingcha_010": {
+    "route_id": "cn_cycling_bingcha_010",
+    "name_zh": "丙察察摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_003": {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_009": {
+    "route_id": "cy_009",
+    "name_zh": "丝绸之路骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_010": {
+    "route_id": "cy_010",
+    "name_zh": "京杭大运河骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_013": {
+    "route_id": "mc_013",
+    "name_zh": "伊犁河谷摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_018": {
+    "route_id": "cy_018",
+    "name_zh": "千岛湖环湖骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_021": {
+    "route_id": "mc_021",
+    "name_zh": "喀喇昆仑公路摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_008": {
+    "route_id": "cy_008",
+    "name_zh": "大香格里拉环线骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_002": {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_014": {
+    "route_id": "mc_014",
+    "name_zh": "川西大环线摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_017": {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_014": {
+    "route_id": "cy_014",
+    "name_zh": "广西沿边公路骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_027": {
+    "route_id": "cy_027",
+    "name_zh": "张北草原天路骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_013": {
+    "route_id": "cy_013",
+    "name_zh": "沿312国道上海至乌鲁木齐",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_015": {
+    "route_id": "mc_015",
+    "name_zh": "海南环岛摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_009": {
+    "route_id": "mc_009",
+    "name_zh": "滇缅公路摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_005": {
+    "route_id": "cy_005",
+    "name_zh": "滇藏线骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_002": {
+    "route_id": "mc_002",
+    "name_zh": "独库公路摩旅",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_026": {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_016": {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_021": {
+    "route_id": "cy_021",
+    "name_zh": "翁金线骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_023": {
+    "route_id": "cy_023",
+    "name_zh": "阿尔山骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_019": {
+    "route_id": "cy_019",
+    "name_zh": "阿禾公路骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "cy_006": {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "mc_008": {
+    "route_id": "mc_008",
+    "name_zh": "黔东南摩旅环线",
+    "nearest_hospital": "沿线城镇医院",
+    "nearest_road": "全程国道/省道",
+    "signal_coverage": "大部分有信号",
+    "rescue_phone": "当地交警/应急管理局",
+    "emergency_access": "良好"
+  },
+  "hk_007": {
+    "route_id": "hk_007",
+    "name_zh": "亚丁大转山",
+    "nearest_hospital": "稻城县人民医院(约110km)/香格里拉镇卫生院",
+    "nearest_road": "亚丁景区公路",
+    "signal_coverage": "全程无信号(仅起点景区有)",
+    "rescue_phone": "稻城亚丁景区管理局",
+    "emergency_access": "困难"
+  },
+  "hk_012": {
+    "route_id": "hk_012",
+    "name_zh": "喀拉峻草原穿越",
+    "nearest_hospital": "特克斯县人民医院(约50km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "hk_034": {
+    "route_id": "hk_034",
+    "name_zh": "大五台顺穿",
+    "nearest_hospital": "五台山台怀镇卫生院/忻州市医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "hk_035": {
+    "route_id": "hk_035",
+    "name_zh": "太白南南穿越",
+    "nearest_hospital": "太白县医院/周至县医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般"
+  },
+  "hk_015": {
+    "route_id": "hk_015",
+    "name_zh": "腾格里沙漠五湖连穿",
+    "nearest_hospital": "阿拉善左旗医院(约100km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般(有保障车)"
+  },
+  "hk_024": {
+    "route_id": "hk_024",
+    "name_zh": "库布齐沙漠穿越",
+    "nearest_hospital": "杭锦旗医院(约80km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好(有景区公路)"
+  },
+  "hk_013": {
+    "route_id": "hk_013",
+    "name_zh": "狼塔C+V线",
+    "nearest_hospital": "呼图壁县医院(起点)/巴伦台镇(终点)",
+    "nearest_road": "起点呼图壁/终点218国道",
+    "signal_coverage": "全程无信号",
+    "rescue_phone": "无",
+    "emergency_access": "困难(已封禁无救援)"
+  },
+  "hk_026": {
+    "route_id": "hk_026",
+    "name_zh": "格聂大环线",
+    "nearest_hospital": "理塘县人民医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "hk_006": {
+    "route_id": "hk_006",
+    "name_zh": "洛克线",
+    "nearest_hospital": "木里县医院(约150km)/稻城县医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "hk_025": {
+    "route_id": "hk_025",
+    "name_zh": "神农架老君山穿越",
+    "nearest_hospital": "木鱼镇卫生院(约30km)/神农架林区医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般"
+  },
+  "hk_018": {
+    "route_id": "hk_018",
+    "name_zh": "孟克德古道",
+    "nearest_hospital": "尼勒克县医院(约80km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般"
+  },
+  "hk_029": {
+    "route_id": "hk_029",
+    "name_zh": "年保玉则穿越",
+    "nearest_hospital": "久治县医院(约30km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般(但景区关闭)"
+  },
+  "hk_047": {
+    "route_id": "hk_047",
+    "name_zh": "天山雪莲峰徒步",
+    "nearest_hospital": "阿克苏地区医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "hk_046": {
+    "route_id": "hk_046",
+    "name_zh": "长白山南坡穿越",
+    "nearest_hospital": "长白山保护开发区医院(约100km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好(景区可坐车)"
+  },
+  "hk_021": {
+    "route_id": "hk_021",
+    "name_zh": "梅里北坡徒步",
+    "nearest_hospital": "德钦县医院(约80km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "hk_033": {
+    "route_id": "hk_033",
+    "name_zh": "麦理浩径",
+    "nearest_hospital": "沿途各区的公立医院(香港医疗体系)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好(全程公交可达)"
+  },
+  "hk_048": {
+    "route_id": "hk_048",
+    "name_zh": "玉虚峰徒步",
+    "nearest_hospital": "格尔木市医院(约150km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "cn_hiking_everest_005": {
+    "route_id": "cn_hiking_everest_005",
+    "name_zh": "珠峰东坡徒步(嘎玛沟)",
+    "nearest_hospital": "定日县医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "困难"
+  },
+  "gl_hiking_inca_004": {
+    "route_id": "gl_hiking_inca_004",
+    "name_zh": "印加古道",
+    "nearest_hospital": "乌鲁班巴(Urubamba)医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般(轨道路线)"
+  },
+  "gl_hiking_abc_002": {
+    "route_id": "gl_hiking_abc_002",
+    "name_zh": "安纳普尔娜大本营徒步(ABC)",
+    "nearest_hospital": "博卡拉(Pokhara)医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "gl_hiking_kumano_005": {
+    "route_id": "gl_hiking_kumano_005",
+    "name_zh": "熊野古道",
+    "nearest_hospital": "田边市医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "gl_hiking_tmb_003": {
+    "route_id": "gl_hiking_tmb_003",
+    "name_zh": "环勃朗峰徒步(TMB)",
+    "nearest_hospital": "霞慕尼(Chamonix)医院",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "gl_hiking_ebc_001": {
+    "route_id": "gl_hiking_ebc_001",
+    "name_zh": "珠峰大本营徒步(EBC)",
+    "nearest_hospital": "加德满都(严重时需直升机)/Namche有诊所",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "一般(需直升机救援)"
+  },
+  "gl_hiking_milford_008": {
+    "route_id": "gl_hiking_milford_008",
+    "name_zh": "米尔福德步道",
+    "nearest_hospital": "蒂阿瑙(Te Anau)医院(约120km)",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好(终点可坐船)"
+  },
+  "gl_cycling_taiwan_006": {
+    "route_id": "gl_cycling_taiwan_006",
+    "name_zh": "台湾环岛骑行",
+    "nearest_hospital": "各大城镇医院",
+    "nearest_road": "全程公路",
+    "signal_coverage": "全程有信号",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  },
+  "gl_cycling_shimanami_009": {
+    "route_id": "gl_cycling_shimanami_009",
+    "name_zh": "岛波海道骑行",
+    "nearest_hospital": "",
+    "nearest_road": "",
+    "signal_coverage": "",
+    "rescue_phone": "",
+    "emergency_access": "良好"
+  }
+}

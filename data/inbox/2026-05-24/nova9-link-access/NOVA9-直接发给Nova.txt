@@ -1,0 +1,7 @@
+Nova，请执行这个任务书：
+/Users/song/Desktop/Codex/song-studio.github.io/song-studio.github.io-work/data/inbox/2026-05-24/nova9-link-access/NOVA9-轨迹链接公开可访问性复核任务书.md
+
+输出到：
+/Users/song/Desktop/Codex/song-studio.github.io/song-studio.github.io-work/data/inbox/2026-05-24/nova9-link-access/
+
+这次只做轨迹链接公开可访问性复核，不要扩充路线，不要写攻略。重点检查两步路链接是否私有、是否需要登录、是否能公开打开。平台首页和搜索页不能当成真实轨迹证据。

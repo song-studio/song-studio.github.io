@@ -1,0 +1,832 @@
+{
+  "version": "v9_link_upgrade_patch",
+  "generated_at": "2026-05-24T12:30+08:00",
+  "note": "仅包含浏览器验证可公开访问的轨迹链接。部分路由使用track/t-格式（WAF仅拦截自动化访问，浏览器正常可打开）。",
+  "updates": [
+    {
+      "route_id": "hk_001",
+      "name_zh": "虎跳峡高路徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=re6JQwFUMrrp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "虎跳峡高路(19.5km/2024)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_002",
+      "name_zh": "雨崩徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=5yRSUTXjwJvp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "雨崩合集(65km/2024)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_003",
+      "name_zh": "贡嘎大环线",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=rwkmXw6E0Jrp%252FR2KBg5Tzw%253D%253D",
+        "public_track_label": "贡嘎全线(53.8km)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_004",
+      "name_zh": "乌孙古道",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=1NFGFSpahBHp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "乌孙古道(116km)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_005",
+      "name_zh": "长穿毕",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=eDj%2Bk2L%2BH0zp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "长穿毕(54km/2024)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_006",
+      "name_zh": "洛克线",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=hGmqlSmap2Tp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "洛克线(51km)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_007",
+      "name_zh": "亚丁大转山",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=B4WX3o8stCXp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "亚丁大转山(68km)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_009",
+      "name_zh": "武功山反穿",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=gs0QFVWwsKvp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "武功山反穿(26.3km)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_010",
+      "name_zh": "冈仁波齐转山",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-%252BcZaJgunlOvp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "冈仁波齐转山(47.96km/3209下载)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_012",
+      "name_zh": "喀拉峻草原穿越",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-Vd%252Btg85TL4Dp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "喀拉峻小环线(439下载)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_014",
+      "name_zh": "夏特古道",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-rNuc2N%252FrLSPp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "夏特古道(170下载)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_019",
+      "name_zh": "南太行徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-Z5mv54G42Nbp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "南太行张沟-郭亮(23km/701下载)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_020",
+      "name_zh": "珠峰东坡徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=%2Bz%2BOgZkj3pLp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "珠峰东坡(82km)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_023",
+      "name_zh": "七藏沟徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=yZrTcP%252F8ydk%253D",
+        "public_track_label": "七藏沟(86.6km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_026",
+      "name_zh": "格聂大环线",
+      "patch_fields": {
+        "public_track_url": "https://app.2bulu.com/track/t-kMiMxD6W9sbp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "格聂大环线(71标注点/2025)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_026_2",
+      "name_zh": "喀纳斯环线",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=kSS6%2Bh4hI1Tp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "贾登峪-禾木-喀纳斯-白哈巴",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_027",
+      "name_zh": "党岭徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=N7f14wmPdZDp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "党岭甲衣拉措-葫芦海连穿",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_030_2",
+      "name_zh": "箭扣长城",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=rU7UNhSOnA7p%252FR2KBg5Tzw%253D%253D",
+        "public_track_label": "北京箭扣野长城环线",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_033",
+      "name_zh": "麦理浩径",
+      "patch_fields": {
+        "public_track_url": "https://www.oasistrek.com/mac_trail.php",
+        "public_track_label": "Oasistrek官方路线",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "hk_036",
+      "name_zh": "扎尕那穿越",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=I2lyasI2IhHp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "迭山措美峰穿越扎尕那",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "ma_002",
+      "name_zh": "四姑娘山二峰",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=TnnGYxyTJ9Dp%2FR2KBg5Tzw%3D%3D",
+        "public_track_label": "四姑娘二峰(14.8km)",
+        "track_grade_verified": "real_track",
+        "can_navigate": true,
+        "track_confidence": "A"
+      }
+    },
+    {
+      "route_id": "ma_004",
+      "name_zh": "哈巴雪山",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/share/share_track.htm;jsessionid=73B800242BA01E798DEDF3FD1275D4CE-n3?trackId=cllSPe8QJM%252Fp%252FR2KBg5Tzw%253D%253D",
+        "public_track_label": "哈巴雪山(25.9km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_034",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-04b69xg%252B2Pvp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "大五台顺穿(33标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_030",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-KWxc26zPvlTp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "徽杭古道徒步反穿(33标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_015",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-4U59gO6wC9rp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "腾格里沙漠穿越(42标注点/2026)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_013",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-I88tiOBA2vjp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "狼塔C+V(348标注点/2025.06)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_025",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-25iVUb0bmBfp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "神农架老君山小环线(0标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_037",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-C8CBm%252FWgbIXp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "梅里外转轨迹整合(881标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_016",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-RIwqOXO%252BGAjp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "桂林阳朔漓江徒步反穿(33标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_001",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-OdAP5SLFu7Dp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "四姑娘山大峰(起点到保护站)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_003",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-YSNoZEqoe2%252Fp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "四姑娘山三峰实走轨迹(19标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_005",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://2bulu.com/track/track_detail.htm?trackId=ZP7CxXLptU%252Fp%252FR2KBg5Tzw%253D%253D",
+        "public_track_label": "那玛峰攀登(225标注点/2025)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_007",
+      "name_zh": "",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-Pspj52MiITXp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "玉珠峰大本营到C1营地",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "gl_hiking_ebc_001",
+      "name_zh": "珠峰大本营徒步(EBC)",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/nepal/province-1/everest-base-camp-trek",
+        "public_track_label": "AllTrails: EBC (626条评价/53km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "gl_hiking_abc_002",
+      "name_zh": "安纳普尔娜大本营(ABC)",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/nepal/gandaki-pradesh/annapurna-base-camp-trek--2",
+        "public_track_label": "AllTrails: ABC+PoonHill变体",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "gl_hiking_tmb_003",
+      "name_zh": "环勃朗峰徒步(TMB)",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/france/haute-savoie/tour-du-mont-blanc-tmb",
+        "public_track_label": "AllTrails: TMB (1983条评价/164km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "gl_hiking_milford_008",
+      "name_zh": "米尔福德步道",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/new-zealand/milford-sound/milford-track",
+        "public_track_label": "AllTrails: Milford Track",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "gl_hiking_kumano_005",
+      "name_zh": "熊野古道",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/japan/wakayama/kumano-kodo-kohechi",
+        "public_track_label": "AllTrails: 熊野古道",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "gl_hiking_inca_004",
+      "name_zh": "印加古道",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/peru/cusco/inca-trail--5",
+        "public_track_label": "AllTrails: Inca Trail",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_009",
+      "name_zh": "约翰缪尔之路",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/us/california/john-muir-trail--6",
+        "public_track_label": "AllTrails: JMT (752条评价/356km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_007",
+      "name_zh": "百内W线",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/chile/magallanes/torres-del-paine-circuito-w",
+        "public_track_label": "AllTrails: 百内W线(1413条评价/74km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_008",
+      "name_zh": "百内O线",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/chile/magallanes/torres-del-paine-circuito-o-w",
+        "public_track_label": "AllTrails: 百内O+W(625条评价/118km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_005",
+      "name_zh": "苏格兰西高地之路",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/scotland/highland/west-highland-way--2",
+        "public_track_label": "AllTrails: West Highland Way",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_006",
+      "name_zh": "圣地亚哥之路",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/spain/galicia/camino-frances-sarria-to-santiago-de-compostela",
+        "public_track_label": "AllTrails: Camino Frances最后100km",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_041",
+      "name_zh": "他念他翁穿越",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-oIT6cPlgpBzp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：他念他翁(77标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_017",
+      "name_zh": "库拉岗日徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-XaJTBz2NjF%252Fp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：库拉岗日(18标注点/2026)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_011",
+      "name_zh": "墨脱徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-HMamz88%252BP%252FE%253D.htm",
+        "public_track_label": "两步路：墨脱徒步(20标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_021",
+      "name_zh": "梅里北坡徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-VIpcGMOXMjHp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：梅里北坡坡均环线(20标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_035",
+      "name_zh": "太白南南穿越",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-5bPlOOkvz%252B8%253D.htm",
+        "public_track_label": "两步路：太白南南线(3标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "hk_024",
+      "name_zh": "库布齐沙漠穿越",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-rvbbzTTYrDPp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：库布齐沙漠(18标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_006",
+      "name_zh": "半脊峰",
+      "patch_fields": {
+        "public_track_url": "https://app.2bulu.com/track/t-qJ0FKafQDx3p%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：半脊峰传统登顶(334标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_019",
+      "name_zh": "希夏邦马峰",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-5U8p4D2DypTp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：希夏邦马北穿南环线(136标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_016",
+      "name_zh": "宁金抗沙峰",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-0pkVIjhbCBHp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：宁金抗沙峰登山(51标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_036",
+      "name_zh": "启孜峰",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-8fwN9uPFet3p%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：西藏启孜峰",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_037",
+      "name_zh": "姜桑拉姆峰",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-4MLUvTQy99np%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：姜桑拉姆攀登(冲顶段)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_010",
+      "name_zh": "雪宝顶",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-IKc%252B0x7%252Bbmrp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：雪宝顶攀登(2025)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "ma_011",
+      "name_zh": "岗什卡峰",
+      "patch_fields": {
+        "public_track_url": "https://www.2bulu.com/track/t-q0wDuYcoXabp%252FR2KBg5Tzw%253D%253D.htm",
+        "public_track_label": "两步路：岗什卡雪山三峰(7标注点)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "gl_mount_kilimanjaro_010",
+      "name_zh": "乞力马扎罗马切梅",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/tanzania/kilimanjaro/mount-kilimanjaro-machame-route",
+        "public_track_label": "AllTrails: 乞力马扎罗马切梅(605评价)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_013",
+      "name_zh": "林贾尼火山攀登",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/indonesia/west-nusa-tenggara/mount-rinjani-sembalun-to-senaru",
+        "public_track_label": "AllTrails: 林贾尼火山Sembalun-Senaru",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_004",
+      "name_zh": "多洛米蒂Alta Via 1",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/lists/alpine-path-1-dolomites-alta-via-1-dolomiti",
+        "public_track_label": "AllTrails: Alta Via 1多洛米蒂(11段)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "gl_mount_fuji_007",
+      "name_zh": "富士山吉田路线",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/poi/japan/shizuoka/fujinomiya/%E5%AF%8C%E5%A3%AB%E5%B1%B1",
+        "public_track_label": "AllTrails: 富士山",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_012",
+      "name_zh": "京那巴鲁山(神山)攀登",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/malaysia/sabah/mount-kinabalu-trail",
+        "public_track_label": "AllTrails: 京那巴鲁山(258评价)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_016",
+      "name_zh": "科科达小径",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/papua-new-guinea/northern/kokoda",
+        "public_track_label": "AllTrails: Kokoda Track巴布亚新几内亚",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_001",
+      "name_zh": "安娜普尔纳大环线(ACT)",
+      "patch_fields": {
+        "public_track_url": "https://www.komoot.com/tour/1370797626",
+        "public_track_label": "Komoot: ACT安娜普尔纳大环线(258km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_010",
+      "name_zh": "优胜美地半圆顶",
+      "patch_fields": {
+        "public_track_url": "https://www.komoot.com/tour/64318304",
+        "public_track_label": "Komoot: 优胜美地半圆顶(24.2km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_002",
+      "name_zh": "朗当徒步(Langtang Valley)",
+      "patch_fields": {
+        "public_track_url": "https://www.komoot.com/collection/1835835/-langtang-national-park-nepal",
+        "public_track_label": "Komoot: 朗当国家公园路线合集",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_014",
+      "name_zh": "日本北阿尔卑斯纵走",
+      "patch_fields": {
+        "public_track_url": "https://www.komoot.com/guide/73370/mountain-hikes-in-the-japanese-alps",
+        "public_track_label": "Komoot: 日本阿尔卑斯登山路线",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_017",
+      "name_zh": "圣克鲁兹徒步线(秘鲁)",
+      "patch_fields": {
+        "public_track_url": "https://www.komoot.com/tour/52958667",
+        "public_track_label": "Komoot: Salkantay圣克鲁兹(65.9km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_018",
+      "name_zh": "Cape to Cape徒步(澳大利亚)",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/australia/western-australia/cape-to-cape-track--2",
+        "public_track_label": "AllTrails: Cape to Cape (284条评价/135km)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_011",
+      "name_zh": "肯尼亚山Naro Moru路线",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/kenya/central/mount-kenya-summit-naro-moru-route",
+        "public_track_label": "AllTrails: 肯尼亚山Naro Moru路线(29.4mi)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_021",
+      "name_zh": "Rinjani火山湖环湖",
+      "patch_fields": {
+        "public_track_url": "https://www.outdooractive.com/mobile/en/route/long-distance-hiking/lombok-timur/gunung-rinjani-3726-m-lombok-indonesia-3-days-moderate-trekking-/17591194",
+        "public_track_label": "Outdooractive: Rinjani火山湖环湖(3天)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_003",
+      "name_zh": "干城章嘉大本营徒步",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/nepal/koshi/kanchenjunga-north-base-camp-kanchenjunga-circuit-variant-tseram-ramche",
+        "public_track_label": "AllTrails: 干城章嘉北坡大本营",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_015",
+      "name_zh": "科尔科瓦多山徒步(里约)",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/brazil/rio-de-janeiro--2/trilha-do-corcovado",
+        "public_track_label": "AllTrails: 科尔科瓦多Corcovado(929条评价)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_020",
+      "name_zh": "斯诺登尼亚登山(威尔士)",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/en-gb/trail/wales/gwynedd/yr-wyddfa-snowdon-via-pyg-track",
+        "public_track_label": "AllTrails: 斯诺登尼亚Snowdon Pyg Track",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    },
+    {
+      "route_id": "intl_019",
+      "name_zh": "翡翠湖环湖徒步(加拿大)",
+      "patch_fields": {
+        "public_track_url": "https://www.alltrails.com/trail/canada/british-columbia/emerald-lake-loop",
+        "public_track_label": "AllTrails: 翡翠湖环湖(5.2km/Yoho国家公园)",
+        "track_grade_verified": "source_track",
+        "can_navigate": true,
+        "track_confidence": "B"
+      }
+    }
+  ]
+}

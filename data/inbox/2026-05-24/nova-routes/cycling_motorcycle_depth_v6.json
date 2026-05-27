@@ -1,0 +1,263 @@
+{
+  "meta": {
+    "description": "骑行与摩旅深度数据",
+    "generated_date": "2026-05-24",
+    "note": "surface_mix/shoulder_width/traffic_level 为自行车维度；fuel_stops/road_closure_risk/accommodation 为摩托车维度"
+  },
+  "bicycle": [
+    {
+      "name_zh": "丝绸之路骑行",
+      "surface_mix": "柏油90%+戈壁土路10%",
+      "shoulder_width": "窄",
+      "traffic_level": "中",
+      "route_id": "cy_001"
+    },
+    {
+      "name_zh": "京杭大运河骑行",
+      "surface_mix": "柏油95%+沿河土路5%",
+      "shoulder_width": "宽(城市)/窄(乡村)",
+      "traffic_level": "高(城市段)/低(乡村段)",
+      "route_id": "cy_002"
+    },
+    {
+      "name_zh": "千岛湖环湖骑行",
+      "surface_mix": "柏油90%+绿道10%",
+      "shoulder_width": "宽",
+      "traffic_level": "低(环湖绿道专用)",
+      "route_id": "cy_013"
+    },
+    {
+      "name_zh": "台湾环岛骑行",
+      "surface_mix": "柏油95%+乡道5%",
+      "shoulder_width": "宽(1号线)/窄(苏花段)",
+      "traffic_level": "中(东部车少，西部车多)",
+      "route_id": "cy_014"
+    },
+    {
+      "name_zh": "大香格里拉环线骑行",
+      "surface_mix": "柏油80%+碎石15%+土路5%",
+      "shoulder_width": "窄",
+      "traffic_level": "低(山区车少)",
+      "route_id": "cy_003"
+    },
+    {
+      "name_zh": "川藏北线(317国道)骑行",
+      "surface_mix": "柏油85%+土路15%",
+      "shoulder_width": "窄",
+      "traffic_level": "中",
+      "route_id": "cy_004"
+    },
+    {
+      "name_zh": "川藏南线(318国道)骑行",
+      "surface_mix": "柏油95%+土路5%",
+      "shoulder_width": "窄(山区)/宽(平路)",
+      "traffic_level": "高(大货车多)",
+      "route_id": "cy_005"
+    },
+    {
+      "name_zh": "川西小环线骑行",
+      "surface_mix": "柏油90%+碎石10%",
+      "shoulder_width": "窄",
+      "traffic_level": "中(旅游旺季高)",
+      "route_id": "cy_006"
+    },
+    {
+      "name_zh": "广西沿边公路骑行",
+      "surface_mix": "柏油85%+水泥15%",
+      "shoulder_width": "窄",
+      "traffic_level": "低(边境公路车少)",
+      "route_id": "cy_007"
+    },
+    {
+      "name_zh": "张北草原天路骑行",
+      "surface_mix": "柏油100%",
+      "shoulder_width": "窄",
+      "traffic_level": "高(旅游旺季7-8月)",
+      "route_id": "cy_015"
+    },
+    {
+      "name_zh": "新藏线骑行",
+      "surface_mix": "柏油90%(G219新建)+土路10%",
+      "shoulder_width": "窄",
+      "traffic_level": "低(无人区车少)",
+      "route_id": "cy_008"
+    },
+    {
+      "name_zh": "沿312国道上海至乌鲁木齐",
+      "surface_mix": "柏油95%+其他5%",
+      "shoulder_width": "宽(华东)/窄(西北)",
+      "traffic_level": "高(312为货运干线)",
+      "route_id": "cy_009"
+    },
+    {
+      "name_zh": "滇藏线骑行",
+      "surface_mix": "柏油90%+碎石10%",
+      "shoulder_width": "窄(山区)/宽(平路)",
+      "traffic_level": "中",
+      "route_id": "cy_010"
+    },
+    {
+      "name_zh": "独库公路骑行",
+      "surface_mix": "柏油100%",
+      "shoulder_width": "窄",
+      "traffic_level": "高(旺季6-9月)",
+      "route_id": "cy_016"
+    },
+    {
+      "name_zh": "环太湖骑行",
+      "surface_mix": "柏油85%+绿道15%",
+      "shoulder_width": "宽",
+      "traffic_level": "中(周末环湖车多)",
+      "route_id": "cy_017"
+    },
+    {
+      "name_zh": "环洱海骑行",
+      "surface_mix": "柏油90%+生态廊道10%",
+      "shoulder_width": "宽(生态廊道专用)",
+      "traffic_level": "高(旅游旺季)",
+      "route_id": "cy_018"
+    },
+    {
+      "name_zh": "环海南岛骑行",
+      "surface_mix": "柏油95%+其他5%",
+      "shoulder_width": "宽(国道)/窄(乡镇)",
+      "traffic_level": "中(东线高/西线低)",
+      "route_id": "cy_011"
+    },
+    {
+      "name_zh": "环青海湖骑行",
+      "surface_mix": "柏油100%",
+      "shoulder_width": "宽",
+      "traffic_level": "高(7-8月)/低(其他月份)",
+      "route_id": "cy_012"
+    },
+    {
+      "name_zh": "翁金线骑行",
+      "surface_mix": "柏油100%",
+      "shoulder_width": "宽",
+      "traffic_level": "低",
+      "route_id": "cy_019"
+    },
+    {
+      "name_zh": "阿尔山骑行",
+      "surface_mix": "柏油80%+土路20%",
+      "shoulder_width": "窄",
+      "traffic_level": "低",
+      "route_id": "cy_020"
+    },
+    {
+      "name_zh": "阿禾公路骑行",
+      "surface_mix": "柏油95%+土路5%",
+      "shoulder_width": "窄",
+      "traffic_level": "低",
+      "route_id": "cy_021"
+    },
+    {
+      "name_zh": "青藏线骑行",
+      "surface_mix": "柏油95%+土路5%",
+      "shoulder_width": "宽(G109国道)",
+      "traffic_level": "高(货运主干线)",
+      "route_id": "cy_023"
+    },
+    {
+      "name_zh": "岛波海道骑行",
+      "surface_mix": "柏油100%(专用骑行道)",
+      "shoulder_width": "宽(专用道)",
+      "traffic_level": "低(骑行专用)",
+      "route_id": "cy_022"
+    }
+  ],
+  "motorcycle": [
+    {
+      "name_zh": "214滇藏线摩旅",
+      "fuel_stops": "沿途城镇每50-80km有加油站，大理-丽江-香格里拉-德钦-芒康-左贡-八宿-然乌-波密-林芝-拉萨",
+      "road_closure_risk": "中(雨季塌方/泥石流，6-8月高发)",
+      "accommodation": "沿途每50km有住宿点(客栈/宾馆/招待所)",
+      "route_id": "mc_005"
+    },
+    {
+      "name_zh": "219新藏线摩旅",
+      "fuel_stops": "叶城加油→大红柳滩(约360km无加油站)→三十里营房(军站可加油)→狮泉河(约250km)→后续沿途县城",
+      "road_closure_risk": "高(冬季封路/夏季融雪塌方/边防管制临时关闭)",
+      "accommodation": "叶城→狮泉河段仅大红柳滩/三十里营房有住宿(条件差)；狮泉河后沿途县城有宾馆",
+      "route_id": "mc_009"
+    },
+    {
+      "name_zh": "317川藏北线摩旅",
+      "fuel_stops": "成都-汶川-理县-马尔康-炉霍-甘孜-德格-昌都-丁青-巴青-那曲-拉萨,最远间隔约120km(昌都-类乌齐)",
+      "road_closure_risk": "中(昌都-类乌齐修路频繁，雨季塌方)",
+      "accommodation": "县城有宾馆/招待所(¥80-200)",
+      "route_id": "mc_006"
+    },
+    {
+      "name_zh": "318川藏南线摩旅",
+      "fuel_stops": "成都→拉萨沿途每个县城均有加油站，最远间隔约80km",
+      "road_closure_risk": "中(雨季6-8月塌方高发，怒江峡谷/通麦段)",
+      "accommodation": "沿途密集(每个镇均有住宿)",
+      "route_id": "mc_007"
+    },
+    {
+      "name_zh": "丙察察线摩旅",
+      "fuel_stops": "丙中洛(加满油)→察瓦龙(有加油站/私油)→目若村(无)→察隅(加油)，全程约305km",
+      "road_closure_risk": "高(雨季6-9月塌方频繁可封路数天，冬雪封山11-4月)",
+      "accommodation": "丙中洛(客栈¥100-200)/察瓦龙(客栈¥80-150)/目若村(民居¥50)",
+      "route_id": "mc_011"
+    },
+    {
+      "name_zh": "伊犁河谷摩旅",
+      "fuel_stops": "南北疆沿途城镇密集，独库公路段乔尔玛/那拉提/巴音布鲁克有加油站",
+      "road_closure_risk": "中(独库公路11-5月封闭，独库段6-9月偶有临时塌方封路)",
+      "accommodation": "沿途城镇酒店密集(¥100-300)",
+      "route_id": "mc_013"
+    },
+    {
+      "name_zh": "喀喇昆仑公路摩旅",
+      "fuel_stops": "喀什→奥依塔克盖孜→塔什库尔干→红其拉甫，全程约420km，喀什/塔县可加油",
+      "road_closure_risk": "中(冬季雪山封路，夏季盖孜峡谷偶有塌方)",
+      "accommodation": "喀什(酒店密集)/塔县(宾馆¥100-200)",
+      "route_id": "mc_014"
+    },
+    {
+      "name_zh": "川西大环线摩旅",
+      "fuel_stops": "成都-雅安-康定-新都桥-塔公-丹巴-金川-马尔康-理县-成都,沿途加油站密集",
+      "road_closure_risk": "中(雨季丹巴-道孚段塌方，折多山冬季积雪封路)",
+      "accommodation": "沿途城镇密集(¥80-200)",
+      "route_id": "mc_012"
+    },
+    {
+      "name_zh": "海南环岛摩旅",
+      "fuel_stops": "全省加油站密集(最远间隔30km)",
+      "road_closure_risk": "低(台风的临时道路封闭，每年7-9月)",
+      "accommodation": "环岛住宿密集(¥80-300)",
+      "route_id": "mc_015"
+    },
+    {
+      "name_zh": "滇缅公路摩旅",
+      "fuel_stops": "昆明→大理→保山→龙陵→芒市→瑞丽，沿途加油站密集",
+      "road_closure_risk": "低(雨季保山-龙陵段偶发小塌方)",
+      "accommodation": "沿途城镇住宿充足(¥80-200)",
+      "route_id": "mc_016"
+    },
+    {
+      "name_zh": "独库公路摩旅",
+      "fuel_stops": "独山子(起点)→乔尔玛(加油站+食宿)→那拉提(加油站)→巴音布鲁克(加油站)→库车(终点)",
+      "road_closure_risk": "高(11-5月全线封闭，6-9月偶发突发降雪/塌方封路)",
+      "accommodation": "乔尔玛/那拉提/巴音布鲁克均有客栈(¥100-300)",
+      "route_id": "mc_010"
+    },
+    {
+      "name_zh": "黔东南摩旅环线",
+      "fuel_stops": "沿途城镇密集(每30-50km有加油站)",
+      "road_closure_risk": "低(偶发乡村路施工)",
+      "accommodation": "沿途县城/古镇住宿密集(¥80-200)",
+      "route_id": "mc_017"
+    },
+    {
+      "name_zh": "丙察察摩旅",
+      "surface_mix": "土路70%+碎石30%",
+      "shoulder_width": "无",
+      "traffic_level": "极低",
+      "route_id": "mc_018"
+    }
+  ]
+}

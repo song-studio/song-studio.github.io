@@ -1,0 +1,5686 @@
+{
+  "hk_001": {
+    "route_id": "hk_001",
+    "name_zh": "虎跳峡高路徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 22,
+      "source_note": "第一天纳西雅阁→Halfway约17km+第二天Halfway→中虎跳5-6km",
+      "method": "实测汇总(文旅头条/8264)"
+    },
+    "elevation_gain_m": {
+      "value": 1250,
+      "source_note": "28道拐连续爬升+全程起伏",
+      "method": "实测(文旅头条攻略)"
+    },
+    "max_altitude_m": {
+      "value": 2670,
+      "source_note": "Halfway客栈海拔",
+      "method": "实测"
+    },
+    "season": {
+      "best": "4-6月,9-10月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "4-6月春末/9-10月秋季最佳，玉龙雪山清晰可见；6-8月雨季水量大但落石风险升高；冬季可行但寒冷",
+      "source": "文旅头条/马蜂窝/8264攻略交叉验证"
+    },
+    "water_points": [
+      "纳西雅阁",
+      "茶马客栈",
+      "Halfway",
+      "Tina's客栈",
+      "张老师客栈"
+    ],
+    "water_note": "沿途客栈密集，可随时补水，无需背水",
+    "retreat_points": [
+      "纳西雅阁(搭车)",
+      "茶马客栈(搭车)",
+      "Halfway(搭车)",
+      "Tina's(搭车)"
+    ],
+    "retreat_note": "全程多处可搭车下撤至虎跳峡镇公路",
+    "risk_tags": [
+      "落石(雨季)",
+      "悬崖路段",
+      "高海拔(2670m)",
+      "28道拐陡坡"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/track/t-rHSjvzepVnLp%252FR2KBg5Tzw%253D%253D.htm",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "虎跳峡高路全线：茶马→halfway→一线天→张老师"
+      },
+      {
+        "url": "https://app.2bulu.com/track/t-Oa9hTROb2onp%252FR2KBg5Tzw%253D%253D.htm",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "纳西雅阁→Halfway段"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 2,
+    "difficulty_reason": "22km/1250m爬升，全程客栈补给，唯一难点是28道拐连续爬升，属经典入门级高原徒步",
+    "emergency": {
+      "nearest_hospital": "香格里拉市人民医院(约100km)/丽江市人民医院(约90km)",
+      "nearest_road": "虎跳峡镇(景区公路直达)",
+      "signal": "全程移动/电信/联通有信号",
+      "rescue_phone": "景区管理处 400-670-6300 / 全国旅游投诉 12301",
+      "access": "良好"
+    }
+  },
+  "hk_002": {
+    "route_id": "hk_002",
+    "name_zh": "雨崩徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "尼农进出约30km+冰湖往返16km+神瀑往返12km≈50-55km(视路线组合)",
+      "method": "实测数据(两步路/携程攻略)"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "含进村爬升1000m+冰湖900m+神瀑600m，累计约2200-2500m",
+      "method": "实测汇总"
+    },
+    "max_altitude_m": {
+      "value": 3900,
+      "source_note": "冰湖海拔3864m，神湖海拔4426m(未计入)，取冰湖数据",
+      "method": "实测(携程攻略/健行笔记)"
+    },
+    "season": {
+      "best": "9-11月(秋季)",
+      "feasible": "5-11月",
+      "closed": "12-4月(大雪)",
+      "note": "9-11月秋季空气洁净日照金山高概率；5-6月高山杜鹃盛开；7-8月雨季但气温舒适，松茸上市；12-4月可能有积雪",
+      "source": "两步路社区/携程攻略/健行笔记交叉验证"
+    },
+    "water_points": [
+      "雨崩上村(客栈)",
+      "雨崩下村(客栈)",
+      "笑农大本营(泡面/饮料)",
+      "神瀑沿途溪流(需净化)"
+    ],
+    "water_note": "在村内住宿补给充足，徒步日需自备当日饮水",
+    "retreat_points": [
+      "尼农村(搭车回飞来寺)",
+      "雨崩村(原路返回)",
+      "西当(修路中暂封闭)"
+    ],
+    "retreat_note": "全程有马帮/摩托可救援，尼农峡谷有皮卡接驳",
+    "risk_tags": [
+      "高海拔(3900m)",
+      "落石(尼农峡谷)",
+      "雪崩区(冬季)",
+      "蚂蟥(雨季)",
+      "迷路(神湖线无路标)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?trackId=JNdesDzpffDp%252FR2KBg5Tzw%253D%253D",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "雨崩上村-冰湖轨迹"
+      },
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=SNigJn5Iet1w7i76dm%2Fh3w%3D%3D",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "key_points",
+        "note": "雨崩攻略含完整路线说明"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 3,
+    "difficulty_reason": "50km累计爬升2200m，高原含多个独立单日徒步(冰湖/神瀑/神湖)，最高海拔3900m，需较好体能和高原适应能力",
+    "emergency": {
+      "nearest_hospital": "德钦县人民医院(约40km飞来寺方向)",
+      "nearest_road": "尼农村(通公路至飞来寺)",
+      "signal": "电信覆盖较好，移动/联通在村内有信号，徒步过程中断断续续",
+      "rescue_phone": "德钦县应急管理局 0887-8413210 / 雨崩景区管理站",
+      "access": "一般(尼农峡谷可通车，但部分狭窄)"
+    }
+  },
+  "hk_003": {
+    "route_id": "hk_003",
+    "name_zh": "贡嘎大环线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 100,
+      "source_note": "老榆林->草科全程约85-100km(含乘车段)，纯徒步约70-85km",
+      "method": "两步路社区/游侠客攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3800,
+      "source_note": "累计爬升约3500-4000m，含日乌且垭口4830m翻越",
+      "method": "两步路活动页"
+    },
+    "max_altitude_m": {
+      "value": 4920,
+      "source_note": "日乌且垭口4830m(游侠客)/4920m(GOOGLE地形)，取4920m",
+      "method": "两步路攻略"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-3月",
+      "note": "9-10月秋色最佳；4-5月春季天气稳定；6-8月雨季云雾多；冬季大雪封山",
+      "source": "游侠客/两步路社区"
+    },
+    "water_points": [
+      "格西草原(溪流)",
+      "两岔河",
+      "上日乌且营地(溪流)",
+      "莫溪沟(溪流)",
+      "贡嘎寺"
+    ],
+    "water_note": "沿途河谷/溪流水源充足，需净化后饮用",
+    "retreat_points": [
+      "两岔河(可右转盘盘山撤出)",
+      "上日乌且(雇佣马匹下撤)",
+      "贡嘎寺(有公路)",
+      "子梅村(有公路/小车)"
+    ],
+    "retreat_note": "多处可骑马/搭车撤至公路；日乌且垭口前可从盘盘山口撤",
+    "risk_tags": [
+      "高海拔(4900m)",
+      "高反",
+      "失温",
+      "落石",
+      "无人区多日无信号"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://2bulu.com/track/track_detail.htm?track_id=627074",
+        "source": "两步路(贡嘎大环线)",
+        "quality": "B",
+        "type": "real_track",
+        "note": "贡嘎大环线完整轨迹"
+      },
+      {
+        "url": "https://2bulu.com/tsu/EvAFjq",
+        "source": "两步路活动页",
+        "quality": "B",
+        "type": "key_points",
+        "note": "7天标准行程"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 4,
+    "difficulty_reason": "100km/3800m爬升/4900m最高海拔，高海拔多日徒步(5-7天)，需翻越日乌且垭口，无人区无信号补给",
+    "emergency": {
+      "nearest_hospital": "康定市人民医院/甘孜州人民医院(约100km)",
+      "nearest_road": "子梅村(通公路至沙德乡)/草科乡",
+      "signal": "全程大部分区域无信号；格西草原/贡嘎寺有微弱信号",
+      "rescue_phone": "康定市应急管理局 / 四川省登山协会 028-85556767",
+      "access": "一般(日乌且/莫溪沟段仅马道)"
+    }
+  },
+  "hk_009": {
+    "route_id": "hk_009",
+    "name_zh": "武功山反穿",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 25,
+      "source_note": "龙山村->金顶约25-28km(反穿)，Day1约11km+Day2约14-16km",
+      "method": "携程攻略/ProcessOn/向野行交叉验证"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "累计爬升约1700-1900m，含龙山村到发云界连续爬升1100m",
+      "method": "实测数据"
+    },
+    "max_altitude_m": {
+      "value": 1918,
+      "source_note": "金顶海拔1918.3m(官方数据)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "3-11月",
+      "closed": "12-2月(有冰雪但部分封路)",
+      "note": "5-6月绿色草甸、9-10月金色草甸+云海最高概率；6-7月雨季注意雷暴；冬季需冰爪",
+      "source": "向野行/携程攻略交叉验证"
+    },
+    "water_points": [
+      "发云界(多家客栈)",
+      "好汉坡(客栈)",
+      "武发客栈",
+      "吊马桩(免费热水)",
+      "金顶(小卖部)"
+    ],
+    "water_note": "从发云界开始沿途每隔0.5-1小时有客栈或补给点，水10-15元/瓶",
+    "retreat_points": [
+      "发云界(可下撤至龙山村)",
+      "武发客栈(可撤至东江村)",
+      "吊马桩(索道/徒步下山)",
+      "金顶(索道+步行下山)"
+    ],
+    "retreat_note": "全程多处可下撤，景区范围内吊马桩后有索道，安全性较高",
+    "risk_tags": [
+      "陡坡(好汉坡/绝望坡连续上坡)",
+      "雷暴(6-8月)",
+      "失温(山顶大风)",
+      "暴晒(草甸无遮挡)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=587136",
+        "source": "两步路",
+        "quality": "A",
+        "type": "real_track",
+        "note": "龙山村-金顶反穿完整轨迹"
+      },
+      {
+        "url": "https://www.go20s.com/qnw/2993.html",
+        "source": "向野行",
+        "quality": "B",
+        "type": "key_points",
+        "note": "详细分段攻略"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 2,
+    "difficulty_reason": "25km/1800m爬升，沿途客栈密集补给方便，唯一难点是好汉坡/绝望坡连续陡坡，属入门级高原草甸徒步",
+    "emergency": {
+      "nearest_hospital": "萍乡市人民医院(约60km)/芦溪县人民医院(约40km)",
+      "nearest_road": "龙山村/景区大门(公路直达)",
+      "signal": "移动/电信覆盖较好，全程大部分有信号，山谷区域可能无",
+      "rescue_phone": "武功山景区救援 0799-7636666 / 萍乡户外救援队",
+      "access": "良好(景区有索道/栈道，救援车可达吊马桩)"
+    }
+  },
+  "hk_008": {
+    "route_id": "hk_008",
+    "name_zh": "鳌太穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 81,
+      "source_note": "常用标称81km(塘口->厚畛子)，GPS实测85-120km，含石海绕行后中国探险协会称>170km(含起伏累计)",
+      "method": "两步路轨迹/中国探险协会报告交叉验证",
+      "precision_note": "现有81km偏低，建议标为85-120km范围"
+    },
+    "elevation_gain_m": {
+      "value": 4200,
+      "source_note": "多个来源标称4200-6000m(多次爬升下降)，取保守值4200m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 3767,
+      "source_note": "拔仙台海拔3767.2m(官方测量)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月(安全窗口)",
+      "feasible": "5月中旬-10月上旬",
+      "closed": "10月中旬-5月上旬(冬季极端危险)",
+      "note": "6-9月是相对安全窗口但仍有极端天气；5月和10月偶有大雪须高度警惕；冬季严禁(违禁线路)。2018年起官方禁止穿越",
+      "source": "中国探险协会/中青报/太白山管理局交叉验证"
+    },
+    "water_points": [
+      "药王庙(溪流,季节性)",
+      "2900营地(水源)",
+      "西塬(溪流)",
+      "大石河(水源)",
+      "厚畛子(补给)"
+    ],
+    "water_note": "沿途水源季节性，旱季部分溪流干涸，必须携带净水设备+至少4L备用",
+    "retreat_points": [
+      "药王庙(撤至塘口)",
+      "2800营地(撤至核桃坪)",
+      "大石河(撤至厚畛子)",
+      "拔仙台(景区方向可撤)"
+    ],
+    "retreat_note": "石海区无救援通道，撤退只能在营地/有水源处分岔口撤出；多处为自然保护区核心区，撤退需报备",
+    "risk_tags": [
+      "极高死亡率(6年14死4失踪)",
+      "失温(最大杀手)",
+      "石海迷路(30%路段为巨石区)",
+      "天气骤变(30℃→-30℃)",
+      "非法穿越(2018年禁令)",
+      "高反(全程>3400m)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=0bcMeblYo%2FlgHLiGXJSSNA%3D%3D",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "鳌太穿越完整轨迹(两步路社区)"
+      },
+      {
+        "url": "https://caa1993.org.cn/content/86/2827.shtml",
+        "source": "中国探险协会",
+        "quality": "A",
+        "type": "key_points",
+        "note": "鳌太线安全报告含详细数据"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 5,
+    "difficulty_reason": "高死亡率(6年14死4失踪)、石海区占30%、天气骤变极端、全程无人区>3400m海拔、2018年起官方禁止穿越",
+    "emergency": {
+      "nearest_hospital": "太白县医院(约80km)/宝鸡市中心医院(约160km)",
+      "nearest_road": "塘口村(起点)/厚畛子(终点)/核桃坪(中途下撤点)",
+      "signal": "全程95%区域无信号；仅个别山脊高点偶有移动信号",
+      "rescue_phone": "太白县应急管理局 / 陕西森林公安 / 秦岭救援队",
+      "access": "困难(全程无人区无车行道，仅马道和石海，直升机救援受天气限制)",
+      "legal_note": "⚠️ 2018年起鳌太穿越为非法行为(自然保护区核心区)，违者将面临罚款/行政处罚"
+    }
+  },
+  "hk_011": {
+    "route_id": "hk_011",
+    "name_zh": "墨脱徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 96,
+      "source_note": "派镇->松林口->拉格38km+拉格->汗密30km+汗密->背崩28km=96km,不含背崩->墨脱35km",
+      "method": "GreatTibetTour/两步路活动页"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "含翻越多雄拉山口4221m,整体呈下降趋势(终点墨脱800m)",
+      "method": "常见攻略值"
+    },
+    "max_altitude_m": {
+      "value": 4200,
+      "source_note": "多雄拉山口海拔4221m",
+      "method": "GreatTibetTour"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-11月",
+      "closed": "12-4月(多雄拉山积雪封山)",
+      "note": "5-6月杜鹃花季;9-10月秋色少雨;7-8月雨季塌方高发",
+      "source": "GreatTibetTour/两步路社区"
+    },
+    "water_points": [
+      "拉格(溪流)",
+      "汗密(客栈水源)",
+      "背崩(城镇)",
+      "沿途多瀑布/溪流"
+    ],
+    "water_note": "雨量充沛水源丰富,但需净化;蚂蟥区注意不直接饮用生水",
+    "retreat_points": [
+      "派镇(起点有公路)",
+      "拉格(可原路返回派镇)",
+      "背崩(有小路至公路)",
+      "墨脱县城(通公路)"
+    ],
+    "retreat_note": "拉格前可原路返回;汗密后只能前行至背崩/墨脱",
+    "risk_tags": [
+      "蚂蟥(汗密-背崩段5-9月密集)",
+      "塌方(雨季7-8月)",
+      "边防证(需提前办理)",
+      "多雄拉山积雪(5月前)",
+      "泥石流(雨季)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/event/business_event.htm?outingId=79164",
+        "source": "两步路",
+        "quality": "B",
+        "type": "key_points",
+        "note": "墨脱徒步8日完整行程"
+      },
+      {
+        "url": "https://www.2bulu.com/event/business_event.htm?outingId=249236",
+        "source": "两步路",
+        "quality": "B",
+        "type": "key_points",
+        "note": "墨脱徒步经典线路"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 4,
+    "difficulty_reason": "96km/4天连续徒步,翻越多雄拉山4221m,蚂蟥/塌方风险,需边防证",
+    "emergency": {
+      "nearest_hospital": "墨脱县人民医院(终点)/林芝市人民医院(约350km)",
+      "nearest_road": "派镇(起)/墨脱(终)/背崩(中途可出)",
+      "signal": "派镇-多雄拉山段无信号;拉格后大部分无;背崩/墨脱有信号",
+      "rescue_phone": "墨脱县应急管理局 / 林芝户外救援队",
+      "access": "困难(全程徒步,仅派镇/背崩/墨脱可通车)"
+    }
+  },
+  "hk_005": {
+    "route_id": "hk_005",
+    "name_zh": "长穿毕",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 40,
+      "source_note": "D1喇嘛寺-木骡子12km+D2木骡子-叉子沟尾11km+D3翻垭口-毕棚沟约17km,合计40km",
+      "method": "两步路社区/游侠客/脸书攻略交叉验证"
+    },
+    "elevation_gain_m": {
+      "value": 1900,
+      "source_note": "含翻垭口768m+其他起伏累计",
+      "method": "近似值"
+    },
+    "max_altitude_m": {
+      "value": 4668,
+      "source_note": "叉子沟尾垭口海拔4668m(两步路)/4650m(游侠客)",
+      "method": "两步路实测"
+    },
+    "season": {
+      "best": "9月中旬-10月下旬(秋色)",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "秋季红叶彩林最美;5-6月花海季但多雨;7-8月雨季;垭口积雪期11-4月危险",
+      "source": "两步路/游侠客"
+    },
+    "water_points": [
+      "木骡子营地(河流)",
+      "叉子沟尾营地(溪流)",
+      "沿途河溪密集"
+    ],
+    "water_note": "长坪沟河谷水源充沛，净化后可直饮",
+    "retreat_points": [
+      "枯树滩(可骑马返回)",
+      "木骡子(原路返回喇嘛寺)",
+      "毕棚沟景区(终点可坐交通车)"
+    ],
+    "retreat_note": "D1/D2可原路返回;D3翻垭口后只能往前至毕棚沟(无回头路)",
+    "risk_tags": [
+      "高海拔(4668m垭口)",
+      "碎石坡(第三天下坡12km)",
+      "垭口积雪(9月后)",
+      "失温(垭口凌晨3点出发)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=m8KEcuABYi8nyjUTPm2E7Q%3D%3D",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "key_points",
+        "note": "长穿毕3天完整攻略"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 3,
+    "difficulty_reason": "40km/1900m爬升,翻4668m垭口,第三天下坡碎石路为主难点,3天轻装可完成",
+    "emergency": {
+      "nearest_hospital": "四姑娘山镇卫生院/小金县人民医院(约50km)",
+      "nearest_road": "喇嘛寺(起点通公路)/毕棚沟上海子(终点通公路)",
+      "signal": "D1/喇嘛寺-木骡子段有信号;D2/D3大部分区域无信号;毕棚沟侧有信号",
+      "rescue_phone": "四姑娘山景区管理局 / 小金县应急管理局",
+      "access": "一般(终点可在毕棚沟坐景区交通车)"
+    }
+  },
+  "hk_020": {
+    "route_id": "hk_020",
+    "name_zh": "珠峰东坡徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 80,
+      "source_note": "搜狐/两步路:纯徒步约60-80km(7天),现有100km含拉萨-曲当车程偏高,建议修正为80km",
+      "method": "搜狐文章/两步路社区"
+    },
+    "elevation_gain_m": {
+      "value": 4300,
+      "source_note": "两步路实测累计上升4300m,现有4500m略微偏高",
+      "method": "两步路实测"
+    },
+    "max_altitude_m": {
+      "value": 5344,
+      "source_note": "郎玛拉垭口5344m(搜狐/两步路),现有5300m接近",
+      "method": "两步路/搜狐"
+    },
+    "season": {
+      "best": "5月中-6月中,9月中-10月初",
+      "feasible": "5月下旬-10月中旬",
+      "closed": "10月下旬-5月上旬(大雪封山/政府封山)",
+      "note": "5-6月花季;9-10月秋色最佳;7-8月雨季云雾多但也有云海;10月后政府封山",
+      "source": "搜狐/两步路/LoveTibet"
+    },
+    "water_points": [
+      "晓乌措(湖)",
+      "卓湘营地(溪流)",
+      "措朗湖",
+      "汤湘营地(溪流)",
+      "措学仁玛(湖)"
+    ],
+    "water_note": "沿途湖泊/溪流丰富,但需净化后饮用;干旱年份措学仁玛可能水源不足",
+    "retreat_points": [
+      "曲当乡(起点/终点)",
+      "晓乌措(可原路返回)",
+      "卓湘(可撤回曲当)",
+      "措学仁玛(最后下撤点)"
+    ],
+    "retreat_note": "翻郎玛拉垭口前可原路返回;之后只能向前至轮珠林村;全程无公路救援,仅徒步",
+    "risk_tags": [
+      "极高海拔(5344m垭口)",
+      "失温",
+      "多日无信号(7晚露营)",
+      "翻越2个5000m级垭口",
+      "边防证(需办理)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=65104304",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "real_track",
+        "note": "珠峰东坡大环线完整轨迹/分段数据"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 4,
+    "difficulty_reason": "80km/4300m爬升/5344m最高垭口/7天高海拔露营/需翻2个5000m+垭口/全程无补给点",
+    "emergency": {
+      "nearest_hospital": "定日县人民医院(约150km)/日喀则市人民医院(约350km)",
+      "nearest_road": "曲当乡(起点通公路)/轮珠林村(终点通公路)",
+      "signal": "全程无信号(仅在曲当乡和部分山脊高点偶有)",
+      "rescue_phone": "定日县应急管理局 / 西藏自治区登山协会",
+      "access": "困难(全程徒步,直升机救援受高海拔和天气限制)"
+    }
+  },
+  "hk_010": {
+    "route_id": "hk_010",
+    "name_zh": "冈仁波齐转山",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 52,
+      "source_note": "外圈52km(山口起算)/56km(塔钦起算)",
+      "method": "多家攻略一致"
+    },
+    "elevation_gain_m": {
+      "value": 2100,
+      "source_note": "塔钦4675m->卓玛拉5630m->塔钦4675m,累计约2100m",
+      "method": "攻略估算"
+    },
+    "max_altitude_m": {
+      "value": 5630,
+      "source_note": "卓玛拉山口5630-5648m(各来源略有差异)",
+      "method": "多家攻略一致"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪封山)",
+      "note": "2026年是藏历马年,转山1圈=常年13圈功德;5-6月/9-10月天气最稳定;冬季封山",
+      "source": "卓玛旅游/TibetCN"
+    },
+    "water_points": [
+      "曲古寺(茶馆)",
+      "止热寺(住宿有热水)",
+      "卓玛拉山口下(慈悲湖)",
+      "祖楚寺(住宿)",
+      "沿途帐篷补给站多处"
+    ],
+    "water_note": "沿途补给点较多(约每2-3小时有一个),但建议自带保温杯1L以上",
+    "retreat_points": [
+      "塔钦(起点全程有车)",
+      "曲古寺(可搭车回塔钦)",
+      "止热寺(可雇背马下撤)",
+      "祖楚寺(可搭车)"
+    ],
+    "retreat_note": "全程有马帮/背夫服务;紧急情况可联系补给站安排下撤车辆",
+    "risk_tags": [
+      "极高海拔(5630m)",
+      "高反(全程>4600m)",
+      "碎石陡坡(下卓玛拉山口段)",
+      "低温大风(垭口)",
+      "边防证(阿里地区必需)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.tibetcn.com/guide/15509.html",
+        "source": "TibetCN攻略",
+        "quality": "B",
+        "type": "key_points",
+        "note": "2026年转山全攻略,含详细分段数据"
+      }
+    ],
+    "gpx_found": false,
+    "gpx_note": "两步路冈仁波齐轨迹较多但URL未直接搜索到,标注为待获取",
+    "difficulty_level": 3,
+    "difficulty_reason": "52km/2天,全程>4600m极高海拔,翻5630m卓玛拉山口,但路线成熟有补给",
+    "emergency": {
+      "nearest_hospital": "普兰县人民医院(塔钦->普兰约80km)/阿里地区人民医院(狮泉河约300km)",
+      "nearest_road": "塔钦镇(219国道可达)",
+      "signal": "塔钦-止热寺段部分有移动信号;卓玛拉山口无信号;祖楚寺有微弱信号",
+      "rescue_phone": "普兰县应急管理局 / 阿里地区户外救援",
+      "access": "一般(塔钦至止热寺有马道,下撤可雇马帮或搭车)"
+    }
+  },
+  "hk_004": {
+    "route_id": "hk_004",
+    "name_zh": "乌孙古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 120,
+      "source_note": "琼库什台->黑英山山口约110-130km,雪豹乐活说125km,常标120km",
+      "method": "两步路社区/活动页"
+    },
+    "elevation_gain_m": {
+      "value": 4200,
+      "source_note": "含翻阿克布拉克达坂及多次上下起伏,雪豹说累计较大",
+      "method": "常见攻略值"
+    },
+    "max_altitude_m": {
+      "value": 3860,
+      "source_note": "阿克布拉克达坂3860m(两步路说3860/活动页3800)",
+      "method": "两步路攻略"
+    },
+    "season": {
+      "best": "6-9月(秋季9月最佳)",
+      "feasible": "6月上旬-10月上旬",
+      "closed": "10月中旬-5月(大雪封山/冰河危险)",
+      "note": "7-8月水量大过河危险;9月秋色最佳+水量减少;6月花季雪较厚",
+      "source": "两步路社区/活动页"
+    },
+    "water_points": [
+      "科克苏河(奶白色需过滤)",
+      "天堂湖(阿克库勒)",
+      "沿途河谷溪流(需涉水)"
+    ],
+    "water_note": "全程沿河谷行走水源丰富,但需涉水过河30-40次,必须备溯溪鞋;科克苏河水流湍急需警惕",
+    "retreat_points": [
+      "琼库什台(起点有公路)",
+      "科克苏河边(骑马下撤)",
+      "黑英山山口(终点)"
+    ],
+    "retreat_note": "全程无公路救援;骑马可部分段撤退;涉水段无法骑马只能徒步",
+    "risk_tags": [
+      "涉水(冰河,7-8月水量大危险)",
+      "阿克布拉克达坂(急升雪坡)",
+      "科克苏河(过河索道危险)",
+      "原始森林(密林迷路)",
+      "无信号全程"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=75245891",
+        "source": "两步路社区",
+        "quality": "A",
+        "type": "real_track",
+        "note": "乌孙古道最全攻略含完整分段数据和轨迹"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 4,
+    "difficulty_reason": "120km/6-8天,涉水30-40次(冰河),翻阿克布拉克达坂,全程无信号无补给",
+    "emergency": {
+      "nearest_hospital": "特克斯县人民医院(起点约100km)/库车县人民医院(终点约150km)",
+      "nearest_road": "琼库什台(起点)/黑英山(终点,通新疆县道)",
+      "signal": "全程无信号(仅起点/终点乡镇有)",
+      "rescue_phone": "特克斯县应急管理局 / 库车县应急管理局 / 新疆登山协会 0991-3816875",
+      "access": "困难(全程无车行道,涉水段需徒步/骑马)"
+    }
+  },
+  "hk_014": {
+    "route_id": "hk_014",
+    "name_zh": "夏特古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 120,
+      "source_note": "夏塔乡->破城子全程120km(传统),现已禁穿仅开放夏塔景区段约46km",
+      "method": "携程攻略/苹果旅行/域龙旅行社"
+    },
+    "elevation_gain_m": {
+      "value": 3600,
+      "source_note": "累计爬升约3600m(含翻越哈达木孜达坂及冰川段)",
+      "method": "常见攻略值"
+    },
+    "max_altitude_m": {
+      "value": 4850,
+      "source_note": "木扎尔特冰川区域最高点约4850m",
+      "method": "常见攻略值"
+    },
+    "season": {
+      "best": "6月中旬-7月中旬",
+      "feasible": "5月下旬-10月上旬",
+      "closed": "10月中旬-5月中旬(大雪封山)",
+      "note": "秋季(10月)水量减少但已偏冷;夏季(6-7月)花海最佳;夏塔景区5-10月开放;途中下午易雷雨/冰雹",
+      "source": "携程/域龙旅行社/苹果旅行"
+    },
+    "water_points": [
+      "夏塔河(上游需净化)",
+      "冰川融水(需净化)",
+      "沿途溪流(季节性)"
+    ],
+    "water_note": "冰川融水丰富,需充分净化;全程无水补给点需自备净水设备",
+    "retreat_points": [
+      "夏塔温泉(起点可乘车)",
+      "哈达木孜达坂前(可原路返回)",
+      "冰川湖(原路返回)"
+    ],
+    "retreat_note": "已禁止全程穿越,目前仅景区夏塔-木扎尔特冰川段合法,哈达木孜达坂后无救援",
+    "risk_tags": [
+      "冰川徒步(木扎尔特冰川),多次遇难事故(已禁穿)",
+      "冰裂缝",
+      "涉水(冰河)",
+      "古道已禁止全程穿越(违法)",
+      "下午雷暴/冰雹(夏季)",
+      "无信号全程"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://apple-trip.com/%E5%A4%8F%E5%A1%94%E5%8F%A4%E9%81%93%E5%BE%92%E6%AD%A5",
+        "source": "苹果旅行",
+        "quality": "B",
+        "type": "key_points",
+        "note": "夏塔古道详细攻略5日行程"
+      }
+    ],
+    "gpx_found": false,
+    "gpx_note": "两步路有夏特轨迹但URL未直接搜索到",
+    "difficulty_level": 4,
+    "difficulty_reason": "120km/6天,需翻冰川+涉水冰河,全程无补给,已因多次事故禁穿",
+    "emergency": {
+      "nearest_hospital": "昭苏县人民医院(起点约80km)/温宿县人民医院(终点约100km)",
+      "nearest_road": "夏塔乡(起点通公路)/破城子(终点通公路,但已封闭)",
+      "signal": "全程95%无信号;仅夏塔景区入口有",
+      "rescue_phone": "昭苏县应急管理局 / 夏塔景区管理处",
+      "access": "困难(全程徒步,冰川段需专业装备)"
+    }
+  },
+  "hk_036": {
+    "route_id": "hk_036",
+    "name_zh": "扎尕那穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 55,
+      "source_note": "扎尕那->卓尼(三角石)约55-70km,Columbia指南说近70km,常标55km",
+      "method": "Columbia 100条/两步路社区"
+    },
+    "elevation_gain_m": {
+      "value": 2800,
+      "source_note": "连续翻越16个垭口(含喀拉克4140m)",
+      "method": "攻略值"
+    },
+    "max_altitude_m": {
+      "value": 4140,
+      "source_note": "喀拉克垭口4140m(Columbia GPS实测)",
+      "method": "Columbia指南"
+    },
+    "season": {
+      "best": "6-8月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪垭口封闭)",
+      "note": "6-8月花海草甸最美;9-10月秋色;冬季大雪无法穿越",
+      "source": "Columbia/两步路"
+    },
+    "water_points": [
+      "冬才营地(溪流)",
+      "无名营地(溪流)",
+      "安子库(河流)",
+      "沿途多处溪流"
+    ],
+    "water_note": "沿线溪流丰富但需净化;部分垭口段无水需背水",
+    "retreat_points": [
+      "扎尕那村(起点可撤)",
+      "冬才(可原路返回)",
+      "喀拉克垭口前(可折返)"
+    ],
+    "retreat_note": "前2天可原路返回;翻喀拉克垭口后只能向前至卓尼",
+    "risk_tags": [
+      "连续翻越16个垭口",
+      "碎石坡(喀拉克垭口)",
+      "高海拔(全程>3500m)",
+      "滑坡隐患(雨天泥泞)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=75761359",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "real_track",
+        "note": "扎尕那4天穿越完整攻略"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 3,
+    "difficulty_reason": "55km/3-4天/连续翻16垭口/最高4140m/需有高原徒步经验",
+    "emergency": {
+      "nearest_hospital": "迭部县人民医院(约30km)/卓尼县医院(终点方向)",
+      "nearest_road": "扎尕那景区公路(起点)/卓尼公路(终点)",
+      "signal": "扎尕那村有信号;徒步中大部分无;翻垭口时偶有移动信号",
+      "rescue_phone": "迭部县应急管理局 / 扎尕那景区管理处",
+      "access": "一般(前后有公路但中间无车行道)"
+    }
+  },
+  "hk_023": {
+    "route_id": "hk_023",
+    "name_zh": "七藏沟徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 45,
+      "source_note": "二号线:卡卡沟口->长海子->草海子->红星海子->草海子->阿翁沟,约45-55km",
+      "method": "Columbia 100条/两步路社区"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "Columbia说海拔上升~1000m但含多次起伏累计约1800m",
+      "method": "Columbia指南"
+    },
+    "max_altitude_m": {
+      "value": 4200,
+      "source_note": "红星海子4200m(红星垭口4600m但非必经)",
+      "method": "Columbia指南"
+    },
+    "season": {
+      "best": "6-10月",
+      "feasible": "5月中旬-11月上旬",
+      "closed": "11月中旬-5月上旬(大雪)",
+      "note": "6月高山杜鹃;10月满山秋色;7-8月雨季但花盛",
+      "source": "Columbia指南"
+    },
+    "water_points": [
+      "卡卡沟口(溪流)",
+      "长海子(湖)",
+      "草海子营地(水源)",
+      "红星海子(湖)"
+    ],
+    "water_note": "沿途有溪流/海子水源,需净化;草海子营地位处湿地水源充沛",
+    "retreat_points": [
+      "草海子(中心节点,可撤出至阿翁沟)",
+      "卡卡沟口(原路返回)"
+    ],
+    "retreat_note": "草海子是中心岔路,可向阿翁沟/红星沟/卡卡沟三方向撤出;全线有马帮服务",
+    "risk_tags": [
+      "红星垭口(4600m近乎垂直碎石坡)",
+      "翻垭口危险(曾有小腿骨折+断肋骨事故)",
+      "涉水过河",
+      "高海拔"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.columbiasports.cn/campaign/gonglue/qizanggou.pdf",
+        "source": "Columbia官方指南",
+        "quality": "B",
+        "type": "key_points",
+        "note": "Columbia与8264联合出品七藏沟详细攻略PDF"
+      }
+    ],
+    "gpx_found": false,
+    "gpx_note": "已有Columbia官方分段数据,两步路有轨迹但URL未检索到,GPS坐标在PDF中",
+    "difficulty_level": 3,
+    "difficulty_reason": "45km/4天/最高4200m/翻红星垭口碎石坡危险/适合有高原徒步经验者",
+    "emergency": {
+      "nearest_hospital": "松潘县人民医院(约40km)/川主寺镇卫生院(约30km)",
+      "nearest_road": "阿翁沟口(通公路)/卡卡沟口(通公路)",
+      "signal": "大部分区域无信号;沟口/草海子偶有",
+      "rescue_phone": "松潘县应急管理局 / 黄龙景区管理局",
+      "access": "一般(有马帮协助,沟口可通车)"
+    }
+  },
+  "ma_002": {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 16,
+      "source_note": "海子沟口->大本营约12km+冲顶往返约10km,合计约16km(不含车程)",
+      "method": "两步路活动页/大鹅文化"
+    },
+    "elevation_gain_m": {
+      "value": 2100,
+      "source_note": "四姑娘山镇3200m->大本营4200m(爬升~1100m)+冲顶段4200->5276m(爬升~1050m),累计约2100m",
+      "method": "两步路活动页"
+    },
+    "max_altitude_m": {
+      "value": 5276,
+      "source_note": "二峰顶5276m(官方测量)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(积雪期)",
+      "note": "12-5月积雪期雪厚;7-11月雪少或无;6-9月天气稳定适合入门",
+      "source": "两步路活动页"
+    },
+    "water_points": [
+      "四姑娘山镇(补给)",
+      "打尖包(小卖部)",
+      "二峰大本营(营地供水)"
+    ],
+    "water_note": "大本营有营地餐供水;冲顶路段无水需自备",
+    "retreat_points": [
+      "二峰大本营(可骑马下山)",
+      "打尖包(可撤)",
+      "各检查站"
+    ],
+    "retreat_note": "冲顶关门时间9:00;全程有马帮服务;大本营到镇上有马道",
+    "risk_tags": [
+      "高海拔(5276m)",
+      "滑坠(冲顶碎石坡)",
+      "高反",
+      "冲顶关门时间(9:00)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/event/business_event.htm?outingId=128355",
+        "source": "两步路活动页",
+        "quality": "B",
+        "type": "key_points",
+        "note": "二峰攀登3日标准行程"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 2,
+    "difficulty_reason": "入门级5000m雪山,有护栏,无冰川无冰裂缝,路线成熟有马帮,适合第一座雪山",
+    "emergency": {
+      "nearest_hospital": "四姑娘山镇卫生院(约12km)/小金县人民医院(约50km)",
+      "nearest_road": "四姑娘山镇(公路直达成都)",
+      "signal": "海子沟部分路段有电信信号;大本营无网络;镇上有信号",
+      "rescue_phone": "四姑娘山景区管理局 / 小金县应急管理局",
+      "access": "良好(全程有马帮/骑马可撤)"
+    }
+  },
+  "ma_004": {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 16,
+      "source_note": "【建议修正为24-28km】现有16km仅算大本营-顶峰往返;向野行说28km(含哈巴村->大本营8km)",
+      "method": "向野行/携程攻略"
+    },
+    "elevation_gain_m": {
+      "value": 2100,
+      "source_note": "【建议修正为2700m】向野行说总爬升2696m(哈巴村2700->顶峰5396)",
+      "method": "向野行"
+    },
+    "max_altitude_m": {
+      "value": 5396,
+      "source_note": "哈巴雪山官方高度5396m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "4-6月,9-11月",
+      "feasible": "4-11月",
+      "closed": "12-3月(风速大/寒冷)",
+      "note": "4-6月风力小无雨水+杜鹃花开;9-11月几乎无风;7-8月雨季泥泞;12-3月风速大",
+      "source": "携程攻略/向野行"
+    },
+    "water_points": [
+      "哈巴村(民宿补给)",
+      "大本营(营地供水)",
+      "沿途无水源(需自备)"
+    ],
+    "water_note": "大本营以上冲顶段全程无水需自备;哈巴村和大本营有供水",
+    "retreat_points": [
+      "哈巴村(起点)",
+      "大本营(可骑马下撤)",
+      "冲顶段任意点(关门时间后强制下撤)"
+    ],
+    "retreat_note": "全程有马帮/向导;冲顶关门时间通常为12:00;可骑马从大本营下山",
+    "risk_tags": [
+      "滑坠(冲顶段雪坡)",
+      "高反(5396m)",
+      "雪坡(冰爪/冰镐必需)",
+      "大风(12-3月)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.go20s.com/qnw/3063.html",
+        "source": "向野行",
+        "quality": "B",
+        "type": "key_points",
+        "note": "哈巴雪山最全攻略"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 3,
+    "difficulty_reason": "入门级雪山但冲顶段滑坠风险高,需冰爪冰镐技术,海拔5396m需注意高反",
+    "emergency": {
+      "nearest_hospital": "虎跳峡镇卫生院(约50km)/香格里拉市人民医院(约100km)",
+      "nearest_road": "哈巴村(通公路至虎跳峡镇)",
+      "signal": "哈巴村有信号;大本营偶有移动信号;冲顶段大部分无信号",
+      "rescue_phone": "香格里拉市应急管理局 / 哈巴雪山向导协会",
+      "access": "一般(大本营可骑马下撤,但哈巴村以上无车行道)"
+    }
+  },
+  "hk_019": {
+    "route_id": "hk_019",
+    "name_zh": "南太行徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "双底->马武寨->抱犊村->八里沟->王莽岭标准穿越约50km",
+      "method": "8264/游侠客攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累计爬升约1200-1500m(多次上下)",
+      "method": "攻略值"
+    },
+    "max_altitude_m": {
+      "value": 1700,
+      "source_note": "王莽岭海拔约1700m",
+      "method": "常见值"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "3-11月",
+      "closed": "12-2月(部分防火封山)",
+      "note": "春秋最佳;7-8月雨季峡谷路段山洪危险;冬季部分山区防火封山",
+      "source": "新浪/游侠客"
+    },
+    "water_points": [
+      "马武寨(村落水源)",
+      "抱犊村(村落)",
+      "八里沟(溪流/景区)",
+      "沿途多处溪流"
+    ],
+    "water_note": "沿线村落密集可补给,峡谷段溪水丰富需净化",
+    "retreat_points": [
+      "马武寨(有公路)",
+      "抱犊村(铁索通道/可撤)",
+      "八里沟(景区可坐车)"
+    ],
+    "retreat_note": "沿线多处村庄有公路;抱犊村为山西唯一不通公路的村但可从铁索撤出",
+    "risk_tags": [
+      "落石(峡谷段)",
+      "悬崖路段(抱犊-八里沟)",
+      "山洪(雨季7-8月)",
+      "部分石阶湿滑"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=75613198",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "南太行双底-王莽岭穿越"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 2,
+    "difficulty_reason": "50km/成熟路线/沿线村落补给/难点在峡谷悬崖段",
+    "emergency": {
+      "nearest_hospital": "辉县市人民医院/陵川县医院",
+      "nearest_road": "双底/八里沟景区公路",
+      "signal": "大部分有信号",
+      "rescue_phone": "辉县应急管理局",
+      "access": "良好"
+    }
+  },
+  "hk_030": {
+    "route_id": "hk_030",
+    "name_zh": "徽杭古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 20,
+      "source_note": "江南第一关->蓝天凹->永来村全程约18-20km",
+      "method": "多家攻略一致"
+    },
+    "elevation_gain_m": {
+      "value": 800,
+      "source_note": "安徽绩溪303m->蓝天凹1050m爬升约750-800m",
+      "method": "攻略值"
+    },
+    "max_altitude_m": {
+      "value": 1050,
+      "source_note": "蓝天凹海拔1050m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "春季杜鹃+秋季红叶;冬季可行但寒冷;夏季有雷雨",
+      "source": "携程/徽州旅游"
+    },
+    "water_points": [
+      "施茶亭(补给)",
+      "黄茅培(客栈)",
+      "下雪堂(农家)",
+      "蓝天凹(客栈)"
+    ],
+    "water_note": "沿途客栈/补给点密集,每1-2小时有补给",
+    "retreat_points": [
+      "江南第一关(景区入口)",
+      "施茶亭(可搭车)",
+      "黄茅培(有公路)",
+      "蓝天凹(可原路返回)"
+    ],
+    "retreat_note": "全程成熟景区,多处可撤出",
+    "risk_tags": [
+      "雨天路滑(石阶)",
+      "低(适合新手)"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "gpx_note": "成熟景区路线,无需GPX",
+    "difficulty_level": 1,
+    "difficulty_reason": "20km/8km爬升800m/全程成熟景区/补给密集/适合入门",
+    "emergency": {
+      "nearest_hospital": "绩溪县人民医院(约30km)/临安市人民医院(约50km)",
+      "nearest_road": "两端均为景区公路直达",
+      "signal": "全程有信号",
+      "rescue_phone": "徽杭古道景区管理处",
+      "access": "良好"
+    }
+  },
+  "hk_016": {
+    "route_id": "hk_016",
+    "name_zh": "漓江徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 20,
+      "source_note": "杨堤->兴坪精华段约20km(含过渡)",
+      "method": "常见攻略值"
+    },
+    "elevation_gain_m": {
+      "value": 200,
+      "source_note": "无明显爬升,沿江平路",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 200,
+      "source_note": "漓江沿岸海拔",
+      "method": "估算"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "春雨漓江/秋日晴朗;夏季湿热注意防暑",
+      "source": "经验值"
+    },
+    "water_points": [
+      "杨堤(码头/村镇)",
+      "九马画山(小卖部)",
+      "兴坪(城镇)"
+    ],
+    "water_note": "沿途村镇密集可随时补水",
+    "retreat_points": [
+      "杨堤(可坐车)",
+      "九马画山(过渡回对岸)",
+      "兴坪(终点有交通)"
+    ],
+    "retreat_note": "全程沿公路/景区道路,随时可叫车",
+    "risk_tags": [
+      "低(适合新手)",
+      "夏季暴晒",
+      "过渡船注意安全"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "gpx_note": "成熟景区无需GPX",
+    "difficulty_level": 1,
+    "difficulty_reason": "20km/几乎无爬升/全程沿江/休闲级",
+    "emergency": {
+      "nearest_hospital": "阳朔县人民医院(约30km)",
+      "nearest_road": "沿岸公路",
+      "signal": "全程有信号",
+      "rescue_phone": "阳朔景区管理处",
+      "access": "良好"
+    }
+  },
+  "hk_041": {
+    "route_id": "hk_041",
+    "name_zh": "他念他翁穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 120,
+      "source_note": "盐登线约117km(经典);大米勇环线约56km(轻装)",
+      "method": "两步路/8264"
+    },
+    "elevation_gain_m": {
+      "value": 5000,
+      "source_note": "【建议修正】盐登线累升>9600m,现有5000m偏低;翻6个5000m垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4900,
+      "source_note": "多个垭口5000m+,徒步最高约4900-5000m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "6-7月(花期),10月中(天气稳定)",
+      "feasible": "6-10月",
+      "closed": "11-5月(大雪)",
+      "note": "6-7月花海;10月中天气稳定看揉错蓝色;7-9月雨季湿滑",
+      "source": "两步路社区"
+    },
+    "water_points": [
+      "加米错(湖)",
+      "揉错(湖,4700m)",
+      "各垭口溪流(季节性)",
+      "河谷营地"
+    ],
+    "water_note": "揉错为经典蓝色海子但不可饮用,需自备净水器;部分垭口段无水需背水",
+    "retreat_points": [
+      "拉岗村(起点)",
+      "地泵(中途可撤)",
+      "终点盐井"
+    ],
+    "retreat_note": "中途撤出困难,多处为无人区;建议全程完成后撤至盐井",
+    "risk_tags": [
+      "翻6个5000m+垭口",
+      "无人区多日无补给",
+      "塌方路段",
+      "极高强度(累升>9600m)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=73687644",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "real_track",
+        "note": "他念他翁完整轨迹"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 4,
+    "difficulty_reason": "120km/翻6个5000m垭口/无人区/极高强度",
+    "emergency": {
+      "nearest_hospital": "芒康县人民医院(约200km)/盐井卫生院",
+      "nearest_road": "盐井214国道",
+      "signal": "全程无信号",
+      "rescue_phone": "芒康县应急管理局",
+      "access": "困难"
+    }
+  },
+  "hk_037": {
+    "route_id": "hk_037",
+    "name_zh": "梅里外转",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 145,
+      "source_note": "【建议修正为150-170km】传统外转路线约150-170km,另有说>250km含绕行",
+      "method": "携程/域龙/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "翻多克拉4480m+说拉4815m+达古拉等多个垭口,累升约6000m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4815,
+      "source_note": "说拉垭口4815m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "10-11月(秋季)",
+      "feasible": "10-5月",
+      "closed": "6-9月(雨季/气候不稳定)",
+      "note": "10月底-11月看日照金山最佳;12-2月寒冷但可走;6-8月雨季不宜",
+      "source": "携程/域龙"
+    },
+    "water_points": [
+      "永久村(起点)",
+      "曲那塘(驿站)",
+      "阿丙村(补给)",
+      "察瓦龙(城镇)"
+    ],
+    "water_note": "前4天可能无固定补给;需自备至少3天饮用水",
+    "retreat_points": [
+      "阿丙村(有公路)",
+      "察瓦龙(有信号/交通)"
+    ],
+    "retreat_note": "阿丙村到察瓦龙可包车通过炎热河谷;多处偏远离公路撤退困难",
+    "risk_tags": [
+      "极长距离(150km+)",
+      "翻3个4500m+垭口",
+      "说拉垭口(艰险)",
+      "察瓦龙河谷(炎热无遮挡)",
+      "边防证(入藏部分)"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=73798184",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "real_track",
+        "note": "梅里外转完整轨迹"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 4,
+    "difficulty_reason": "150km+/8-13天/翻3个4500m+垭口/前4天无补给",
+    "emergency": {
+      "nearest_hospital": "德钦县人民医院(起点)/察瓦龙乡卫生院(中途)",
+      "nearest_road": "德钦/察瓦龙(有公路)",
+      "signal": "阿丙村前无信号;察瓦龙有",
+      "rescue_phone": "德钦县应急管理局",
+      "access": "一般"
+    }
+  },
+  "cy_011": {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 561,
+      "source_note": "独山子-库车全长561km(官方)",
+      "method": "官方公路里程"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "累爬约8000m含多次翻达坂(哈希勒根/玉希莫勒盖/铁力买提等)",
+      "method": "攻略估算"
+    },
+    "max_altitude_m": {
+      "value": 3400,
+      "source_note": "哈希勒根达坂约3400m/铁力买提达坂3220m",
+      "method": "攻略值"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6月中旬-10月上旬",
+      "closed": "10月中旬-6月上旬(大雪封山)",
+      "note": "每年6月初-10月通车;7-8月旺季车多;9月秋色好车少",
+      "source": "公路局公告/攻略"
+    },
+    "water_points": [
+      "独山子(起)",
+      "乔尔玛(小镇)",
+      "那拉提(镇)",
+      "巴音布鲁克(镇)",
+      "库车(终)"
+    ],
+    "surface_mix": "柏油100%",
+    "crosswind_exposure": "中(巴音布鲁克草原段横风大)",
+    "resupply_interval": "一般(每50-80km有加油站/镇,但中间有长无人段)",
+    "risk_tags": [
+      "高海拔(3400m)",
+      "长陡坡(连续上坡数十公里)",
+      "落石(峡谷段)",
+      "冬季封山",
+      "大货车多(旅游旺季)"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "561km/3-5天骑行/连续翻达坂/路面好但车多",
+    "emergency": {
+      "nearest_hospital": "沿途各镇有卫生院",
+      "nearest_road": "全程国道217",
+      "signal": "大部分有信号",
+      "rescue_phone": "独库公路沿线交警",
+      "access": "良好"
+    }
+  },
+  "cy_003": {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 360,
+      "source_note": "环湖一周约360km(官方公路里程)",
+      "method": "官方"
+    },
+    "elevation_gain_m": {
+      "value": 1200,
+      "source_note": "环湖起伏,累爬约1000-1200m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 3250,
+      "source_note": "青海湖海拔3196m,周边最高约3250m",
+      "method": "实测"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(寒冷)",
+      "note": "7-8月油菜花季最佳但人多车多;冬季寒冷风大不宜骑行",
+      "source": "骑行攻略"
+    },
+    "water_points": [
+      "西海镇(起)",
+      "151基地",
+      "黑马河",
+      "刚察县",
+      "西海镇(终)"
+    ],
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "高(青海湖西岸/北岸横风大,可达7-8级)",
+    "resupply_interval": "充足(每20-30km有乡镇)",
+    "risk_tags": [
+      "高海拔(3200m)",
+      "大风(西岸横风)",
+      "暴晒(无遮挡)",
+      "大货车多(环湖东路)"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "360km/3-4天/平路为主/唯一难点是大风",
+    "emergency": {
+      "nearest_hospital": "刚察县/西海镇/黑马河有卫生院",
+      "nearest_road": "环湖公路",
+      "signal": "全程有信号",
+      "rescue_phone": "刚察县应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_004": {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 800,
+      "source_note": "东西线环岛约800km(东线420+西线380)",
+      "method": "官方"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "东线丘陵起伏+西线平坦,累爬约2000m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 500,
+      "source_note": "海南最高点五指山1867m,沿海骑行海拔<500m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "11-2月",
+      "feasible": "10-4月",
+      "closed": "5-9月(台风+酷暑)",
+      "note": "冬季最舒适;5-9月台风季和酷暑不宜;春节高峰期住宿贵",
+      "source": "骑行攻略"
+    },
+    "water_points": [
+      "海口(起)",
+      "文昌",
+      "博鳌",
+      "三亚",
+      "东方",
+      "海口(终)"
+    ],
+    "surface_mix": "柏油90%+水泥10%",
+    "crosswind_exposure": "低-中(东线沿海偶有海风)",
+    "resupply_interval": "充足(每10-20km有村镇)",
+    "risk_tags": [
+      "暴晒(紫外线强)",
+      "台风(5-9月)",
+      "高温(夏季)",
+      "旅游旺季交通复杂"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "800km/5-7天/路面好/补给密集/难点在高温暴晒",
+    "emergency": {
+      "nearest_hospital": "沿线各城镇有医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "全程有信号",
+      "rescue_phone": "沿线交警",
+      "access": "良好"
+    }
+  },
+  "cy_001": {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2150,
+      "source_note": "成都-拉萨318国道约2150km",
+      "method": "官方公路里程"
+    },
+    "elevation_gain_m": {
+      "value": 35000,
+      "source_note": "翻14座4000m+垭口(东达山5130m),累爬约35000m",
+      "method": "骑行攻略"
+    },
+    "max_altitude_m": {
+      "value": 5130,
+      "source_note": "东达山垭口5130m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月(冰雪)",
+      "note": "7-8月雨季塌方高发;5-6月春季天气稳定;9-10月秋色",
+      "source": "骑行攻略"
+    },
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般(每20-40km有乡镇)",
+    "risk_tags": [
+      "高反(东达山5130m)",
+      "大车流(318国道车多)",
+      "塌方(雨季)",
+      "长距离上坡(连续数日)"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "2150km/20-25天/翻14座4000m+垭口/318大车流",
+    "emergency": {
+      "nearest_hospital": "沿线各县城有医院",
+      "nearest_road": "全程318国道",
+      "signal": "大部分有信号",
+      "rescue_phone": "318沿线交警",
+      "access": "良好"
+    }
+  },
+  "cy_007": {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2850,
+      "source_note": "叶城-拉孜约2850km(含狮泉河段)",
+      "method": "官方公路里程"
+    },
+    "elevation_gain_m": {
+      "value": 45000,
+      "source_note": "翻多个5000m+达坂,累爬极大",
+      "method": "骑行攻略"
+    },
+    "max_altitude_m": {
+      "value": 5400,
+      "source_note": "红土达坂5380m/界山达坂5347m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-9月",
+      "closed": "10-4月",
+      "note": "极高海拔无人区;窗口极短;7-8月雨季但可走",
+      "source": "骑行攻略"
+    },
+    "surface_mix": "柏油60%+碎石30%+土路10%",
+    "crosswind_exposure": "高(阿里无人区段大风)",
+    "resupply_interval": "不足(最长无补给段约200km+无人区)",
+    "risk_tags": [
+      "极高海拔(>5000m连续多日)",
+      "无人区多日",
+      "搓板路",
+      "补给间隔极大"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 5,
+    "difficulty_reason": "2850km/连续多日>5000m海拔/无人区/补给不足",
+    "emergency": {
+      "nearest_hospital": "狮泉河(阿里)/日土县",
+      "nearest_road": "全程219国道",
+      "signal": "大部分无信号",
+      "rescue_phone": "阿里地区应急管理局",
+      "access": "困难"
+    }
+  },
+  "hk_017": {
+    "route_id": "hk_017",
+    "name_zh": "库拉岗日徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "色乡-白马林措-介久措-折公措三湖线约40-50km",
+      "method": "攻略值"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "累爬约2000m(翻垭口+湖边起伏)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4900,
+      "source_note": "折公措垭口约4900m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "5-6月天气稳定看雪山倒影;9-10月秋色+稳定",
+      "source": "西藏旅游攻略"
+    },
+    "water_points": [
+      "白马林措(湖)",
+      "介久措(湖)",
+      "折公措(湖)",
+      "色乡(补给)"
+    ],
+    "retreat_points": [
+      "色乡(起点/终点有公路)",
+      "白马林措(原路返回)"
+    ],
+    "risk_tags": [
+      "高海拔(4900m)",
+      "边防证(山南地区)",
+      "高反"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "50km/3-4天/白马林措+介久措三湖/高海拔但路线短",
+    "emergency": {
+      "nearest_hospital": "洛扎县人民医院(约30km)",
+      "nearest_road": "色乡(通公路)",
+      "signal": "部分有信号",
+      "rescue_phone": "洛扎县应急管理局",
+      "access": "良好"
+    }
+  },
+  "ma_019": {
+    "route_id": "ma_019",
+    "name_zh": "希夏邦马峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 30,
+      "source_note": "BC-C1-C2-C3-冲顶,前进路线约25-35km",
+      "method": "登山攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3000,
+      "source_note": "BC约5000m->顶峰8012m,爬升约3000m",
+      "method": "登山攻略"
+    },
+    "max_altitude_m": {
+      "value": 8012,
+      "source_note": "希夏邦马顶峰8012m(世界第14)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "4-5月,9-10月",
+      "closed": "11-3月(严寒),6-8月(季风)",
+      "note": "8000m级登山窗口极短;春秋两季",
+      "source": "登山指南"
+    },
+    "water_points": [
+      "BC(冰川融水)",
+      "C1/C2/C3各营地"
+    ],
+    "retreat_points": [
+      "各营地均可下撤回BC"
+    ],
+    "risk_tags": [
+      "8000米级",
+      "极高海拔",
+      "强风",
+      "唯一全境在中国8000m峰"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 5,
+    "difficulty_reason": "8012m/8000米级/需极高海拔技术攀登经验",
+    "emergency": {
+      "nearest_hospital": "聂拉木县/日喀则市",
+      "nearest_road": "聂拉木县",
+      "signal": "BC有卫星信号",
+      "rescue_phone": "西藏登山协会",
+      "access": "困难(需直升机救援)"
+    }
+  },
+  "mc_001": {
+    "route_id": "mc_001",
+    "name_zh": "318川藏南线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2150,
+      "source_note": "成都-拉萨,与骑行同线",
+      "method": "官方"
+    },
+    "elevation_gain_m": {
+      "value": 35000,
+      "source_note": "翻14座4000m+垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5130,
+      "source_note": "东达山",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月",
+      "source": "摩旅攻略"
+    },
+    "water_points": [
+      "沿线县城加油站/住宿"
+    ],
+    "risk_tags": [
+      "高反",
+      "大车流",
+      "塌方(雨季)",
+      "冰雪路面(达坂)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "2150km摩旅/14座4000m+垭口/车流大",
+    "emergency": {
+      "nearest_hospital": "沿线县城",
+      "access": "良好"
+    }
+  },
+  "mc_006": {
+    "route_id": "mc_006",
+    "name_zh": "219新藏线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2100,
+      "source_note": "叶城-拉孜(219国道)",
+      "method": "官方"
+    },
+    "elevation_gain_m": {
+      "value": 45000,
+      "source_note": "极高起伏",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5400,
+      "source_note": "红土达坂5380m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-9月",
+      "closed": "10-4月",
+      "source": "摩旅攻略"
+    },
+    "water_points": [
+      "沿线城镇/兵站"
+    ],
+    "risk_tags": [
+      "极高海拔",
+      "无人区",
+      "油箱续航不足(>300km无人区)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 5,
+    "difficulty_reason": "2100km/极高海拔连续/无人区/加油站间隔大",
+    "emergency": {
+      "nearest_hospital": "狮泉河/日土",
+      "access": "困难"
+    }
+  },
+  "add_daocheng": {
+    "route_id": "add_daocheng",
+    "name_zh": "稻城亚丁",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 15,
+      "source_note": "洛绒牛场-牛奶海-五色海往返约15km(景区短线)",
+      "method": "景区数据"
+    },
+    "elevation_gain_m": {
+      "value": 600,
+      "source_note": "洛绒牛场4100m->五色海4700m,爬升约600m",
+      "method": "景区"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "五色海/牛奶海约4600-4700m",
+      "method": "景区"
+    },
+    "season": {
+      "best": "9-10月(秋色)",
+      "feasible": "4-11月",
+      "closed": "12-3月(大雪封闭)",
+      "note": "9-10月秋色最美;7-8月雨季云雾多",
+      "source": "景区公告"
+    },
+    "water_points": [
+      "洛绒牛场(补给站)",
+      "沿途溪流",
+      "亚丁村(住宿)"
+    ],
+    "risk_tags": [
+      "高海拔(4700m)",
+      "高反",
+      "暴晒",
+      "登山杖必备"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "15km景区栈道+马道/成熟景区/需提前适应高原",
+    "emergency": {
+      "nearest_hospital": "稻城县人民医院(约110km)/香格里拉镇卫生院",
+      "access": "良好"
+    }
+  },
+  "add_kanas": {
+    "route_id": "add_kanas",
+    "name_zh": "喀纳斯环线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "贾登峪-禾木-喀纳斯三村环线约60-80km",
+      "method": "攻略值"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "累爬约2000m(上升/下降各约1000m)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 2400,
+      "source_note": "沿途最高点约2400m(观鱼台)",
+      "method": "景区"
+    },
+    "season": {
+      "best": "6-8月(绿),9-10月(秋)",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪封山)",
+      "note": "9月下旬-10月初秋色金红最美;6-8月绿意盎然",
+      "source": "新疆旅游攻略"
+    },
+    "water_points": [
+      "贾登峪(起)",
+      "禾木村(补给)",
+      "喀纳斯村(补给)",
+      "沿途河溪"
+    ],
+    "risk_tags": [
+      "熊(夏季)",
+      "泥泞(雨季)",
+      "边防证(白哈巴)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "70km/4-5天/成熟景区路线/有马帮",
+    "emergency": {
+      "nearest_hospital": "布尔津县人民医院(约140km)/喀纳斯景区医务室",
+      "access": "良好"
+    }
+  },
+  "add_dangling": {
+    "route_id": "add_dangling",
+    "name_zh": "党岭徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 35,
+      "source_note": "党岭村-葫芦海-卓雍措往返约30-40km",
+      "method": "攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "党岭村3300m->葫芦海4100m,爬升约800m+起伏",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4300,
+      "source_note": "卓雍措约4300m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "6-8月(花海),10月(秋色)",
+      "feasible": "5-11月",
+      "closed": "12-4月(大雪)",
+      "note": "10月秋色最美;6-8月花海+绿意",
+      "source": "四川旅游攻略"
+    },
+    "water_points": [
+      "党岭村(补给)",
+      "葫芦海(湖)",
+      "沿途溪流"
+    ],
+    "risk_tags": [
+      "高海拔(4300m)",
+      "泥泞(雨季)",
+      "熊(夏季)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "35km/2-3天/轻量级高原徒步",
+    "emergency": {
+      "nearest_hospital": "丹巴县人民医院(约60km)",
+      "access": "良好"
+    }
+  },
+  "add_jiankou": {
+    "route_id": "add_jiankou",
+    "name_zh": "箭扣长城",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 15,
+      "source_note": "西大墙-北京结-鹰飞倒仰-天梯-正北楼约10-20km",
+      "method": "攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1000,
+      "source_note": "累爬约800-1000m(长城上下起伏大)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 1000,
+      "source_note": "正北楼约1000m",
+      "method": "实测"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "4-11月",
+      "closed": "12-3月(冰雪+部分封闭)",
+      "note": "秋季红叶最美;春季山花;夏季雷雨危险(鹰飞倒仰段雷击)",
+      "source": "北京户外攻略"
+    },
+    "water_points": [
+      "西栅子村(起/终补给)",
+      "沿途无水源(需背水)"
+    ],
+    "risk_tags": [
+      "野长城(非景区)",
+      "鹰飞倒仰(极高坠崖风险)",
+      "雷击(夏季)",
+      "部分坍塌路段",
+      "非法攀爬(保护条例)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "15km野长城/鹰飞倒仰极度危险/非景区需攀爬技术",
+    "emergency": {
+      "nearest_hospital": "怀柔区医院(约50km)",
+      "nearest_road": "西栅子村有公路",
+      "signal": "大部分有信号",
+      "rescue_phone": "怀柔区应急管理局",
+      "access": "一般"
+    }
+  },
+  "ma_039": {
+    "route_id": "ma_039",
+    "name_zh": "乔戈里峰(K2)",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 35,
+      "source_note": "BC(4900m)-C1-C2-C3-C4-冲顶(8611m)约30-40km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3600,
+      "source_note": "BC4900m->顶峰8611m,爬升约3700m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 8611,
+      "source_note": "K2世界第二高峰8611m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-7月",
+      "feasible": "6-8月",
+      "closed": "9-5月",
+      "note": "K2登峰季极短,仅6-7月;死亡率约25%",
+      "source": "登山指南"
+    },
+    "water_points": [
+      "各营地冰川融水(化雪)"
+    ],
+    "risk_tags": [
+      "8000米级",
+      "死亡率极高(约25%)",
+      "技术攀登难度",
+      "Bottleneck冰壁",
+      "冰崩/雪崩"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 5,
+    "difficulty_reason": "8611m/世界第二高峰/死亡率25%/技术要求极高/Bottleneck冰壁",
+    "emergency": {
+      "nearest_hospital": "喀什地区医院(约350km)",
+      "access": "困难"
+    }
+  },
+  "ma_006": {
+    "route_id": "ma_006",
+    "name_zh": "半脊峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 10,
+      "source_note": "BC(3500m)-C1(4500m)-C2(5000m)-顶峰(5430m),约10-12km",
+      "method": "买户外/搜狐"
+    },
+    "elevation_gain_m": {
+      "value": 1600,
+      "source_note": "BC3500m->顶峰5430m,爬升约1930m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5430,
+      "source_note": "半脊峰5430m",
+      "method": "维基百科"
+    },
+    "season": {
+      "best": "7-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "7-10月气候稳定;5月尚有积雪",
+      "source": "买户外"
+    },
+    "risk_tags": [
+      "入门技术型(冰川/冰壁)",
+      "45-80°坡度段",
+      "冰裂缝",
+      "C2以上雪岩混合"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "5430m/技术入门级/45-80°冰坡/需技术装备",
+    "emergency": {
+      "nearest_hospital": "理县医院",
+      "access": "一般"
+    }
+  },
+  "ma_017": {
+    "route_id": "ma_017",
+    "name_zh": "卓奥友峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 35,
+      "source_note": "BC-C1-C2-C3-顶峰约30-40km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "BC约5000m->顶峰8201m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 8201,
+      "source_note": "卓奥友峰8201m(世界第6)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "4-5月,9-10月",
+      "closed": "11-3月(严寒),6-8月(季风)",
+      "note": "8000m级,春秋两季窗口",
+      "source": "登山指南"
+    },
+    "risk_tags": [
+      "8000米级(8201m)",
+      "冰川",
+      "低压缺氧",
+      "冻伤",
+      "冰裂缝"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 5,
+    "difficulty_reason": "8201m/世界第6高峰/8000米级",
+    "emergency": {
+      "nearest_hospital": "日喀则市医院",
+      "access": "困难"
+    }
+  },
+  "ma_036": {
+    "route_id": "ma_036",
+    "name_zh": "启孜峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 14,
+      "source_note": "BC(5200m)-C1(5600m)-顶峰(6206m)约12-15km",
+      "method": "维基百科/新浪"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "BC5200m->顶峰6206m,约1000m+进山段",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 6206,
+      "source_note": "启孜峰6206m(念青唐古拉山)",
+      "method": "维基百科"
+    },
+    "season": {
+      "best": "6月,8月底-9月初",
+      "feasible": "5-9月",
+      "closed": "10-4月(严寒)",
+      "note": "6月/8月底-9月初最佳;7-8月雨季",
+      "source": "新华社/维基百科"
+    },
+    "risk_tags": [
+      "冰裂缝(5800-6000m密集)",
+      "Bell Mouth 70度雪坡",
+      "狭长雪脊(5900m-顶峰)",
+      "6000m级训练峰"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "6206m/训练级山峰/适合作6000米入门",
+    "emergency": {
+      "nearest_hospital": "当雄县医院(约90km)/拉萨",
+      "access": "一般(BC近羊八井)"
+    }
+  },
+  "ma_003": {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 14,
+      "source_note": "四姑娘山镇-三峰BC-冲顶约14km",
+      "method": "景区官方"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "约2200m累计爬升",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5355,
+      "source_note": "三峰5355m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "与四姑娘山其他峰一致",
+      "source": "景区"
+    },
+    "risk_tags": [
+      "技术攀登",
+      "落石",
+      "高海拔",
+      "最后100m需绳索"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "5355m/初级技术型/最后100米需绳索/需向导",
+    "emergency": {
+      "nearest_hospital": "四姑娘山镇卫生院",
+      "access": "良好"
+    }
+  },
+  "ma_001": {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 12,
+      "source_note": "四姑娘山镇-大峰BC-冲顶约12km",
+      "method": "景区官方"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "四姑娘山镇3200m->大峰5025m累计约1800m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5025,
+      "source_note": "大峰5025m(官方测量)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(积雪)",
+      "note": "四姑娘山6-9月最佳;5月有积雪但可攀登",
+      "source": "景区官方"
+    },
+    "risk_tags": [
+      "高海拔(5025m)",
+      "高反",
+      "碎石坡"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "5025m/入门级雪山/无技术难度/适合第一次高原雪山体验",
+    "emergency": {
+      "nearest_hospital": "四姑娘山镇卫生院",
+      "access": "良好"
+    }
+  },
+  "ma_037": {
+    "route_id": "ma_037",
+    "name_zh": "姜桑拉姆峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 12,
+      "source_note": "BC(4800m)-顶峰约10km",
+      "method": "户外资料网"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "BC4800m->顶峰约6558m,累计约1800m",
+      "method": "户外资料网"
+    },
+    "max_altitude_m": {
+      "value": 6558,
+      "source_note": "姜桑拉姆实际6558m(户外资料网标注),原数据6324m有误",
+      "method": "户外资料网"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "山势平缓,冰雪丰富,有大片裂缝区;适合初级登山者",
+      "source": "户外资料网"
+    },
+    "water_points": [
+      "BC冰川融水"
+    ],
+    "retreat_points": [
+      "BC可下撤"
+    ],
+    "risk_tags": [
+      "冰裂缝区",
+      "徒步型雪山",
+      "冰雪坡",
+      "高海拔"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "6000m级/山势平缓/徒步型/适合初级登山者",
+    "emergency": {
+      "nearest_hospital": "浪卡子县医院",
+      "access": "一般"
+    }
+  },
+  "ma_016": {
+    "route_id": "ma_016",
+    "name_zh": "宁金抗沙峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 25,
+      "source_note": "BC(4800m)-C1-C2-顶峰(7206m)约20-30km,百度百科",
+      "method": "百度百科/Summitpost"
+    },
+    "elevation_gain_m": {
+      "value": 2800,
+      "source_note": "BC4800m->顶峰7206m,爬升约2400m+",
+      "method": "百度百科"
+    },
+    "max_altitude_m": {
+      "value": 7206,
+      "source_note": "宁金抗沙峰7206m(百度百科/维基百科)",
+      "method": "百度百科/Wikipedia"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "4-5月,9-10月",
+      "closed": "6-8月(雨季),11-3月(严寒)",
+      "note": "百度百科明确记载登山适宜期4-5月及9-10月;7000m级适合业余登山者尝试",
+      "source": "百度百科"
+    },
+    "water_points": [
+      "BC冰川融水(需净化)",
+      "卡若拉冰川融水"
+    ],
+    "water_note": "卡若拉冰川发育丰富,水源充足需净化",
+    "retreat_points": [
+      "BC/各营地可下撤"
+    ],
+    "risk_tags": [
+      "7000米级",
+      "强风",
+      "冰川",
+      "技术攀登"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "7206m/7000米级/难度适中/适合业余登山者进阶",
+    "emergency": {
+      "nearest_hospital": "江孜县医院/浪卡子县医院",
+      "access": "困难"
+    }
+  },
+  "ma_011": {
+    "route_id": "ma_011",
+    "name_zh": "岗什卡峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 12,
+      "source_note": "七彩瀑停车场-BC-C1-顶峰约10-15km",
+      "method": "光明网"
+    },
+    "elevation_gain_m": {
+      "value": 1400,
+      "source_note": "停车场约3800m->顶峰5254m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 5254,
+      "source_note": "岗什卡峰5254.5m(祁连山东段最高)",
+      "method": "官方测量"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-9月",
+      "closed": "10-4月(严寒)",
+      "note": "7-8月冰川训练佳",
+      "source": "光明网"
+    },
+    "risk_tags": [
+      "冰川入门",
+      "碎石/岩壁/冰雪混合",
+      "冰裂缝(冰川区)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "5254m/冰川入门训练/祁连山标志峰/适合技术训练",
+    "emergency": {
+      "nearest_hospital": "门源县医院",
+      "access": "良好(停车场距BC近)"
+    }
+  },
+  "ma_040": {
+    "route_id": "ma_040",
+    "name_zh": "库拉岗日主峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 20,
+      "source_note": "BC-C1-C2-顶峰(7538m)约20-25km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "BC约4300m->顶峰7538m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 7538,
+      "source_note": "库拉岗日主峰7538m(山南最高)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "春秋窗口",
+      "source": "西藏登山指南"
+    },
+    "risk_tags": [
+      "7000米级",
+      "技术攀登",
+      "冰川",
+      "强风",
+      "高难度"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "7538m/高难度技术攀登/山南最高峰",
+    "emergency": {
+      "access": "困难"
+    }
+  },
+  "ma_009": {
+    "route_id": "ma_009",
+    "name_zh": "慕士塔格峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 30,
+      "source_note": "BC(4400m)-ABC(5100m)-C1(5500m)-C2(6300m)-C3(6900m)-冲顶(7546m)约30km",
+      "method": "登山指南/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "BC4400m->顶峰7546m,累计爬升约3100-3200m",
+      "method": "登山指南"
+    },
+    "max_altitude_m": {
+      "value": 7546,
+      "source_note": "慕士塔格峰7546m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "7月",
+      "feasible": "6月底-8月底",
+      "closed": "9-5月(严寒)",
+      "note": "7000m级,登峰季集中6月底-8月;7月最佳;其它时间极端寒冷",
+      "source": "登山指南"
+    },
+    "water_points": [
+      "BC(4300m融水)",
+      "ABC(5100m冰川)",
+      "C1/C2/C3(冰川融水需化雪)"
+    ],
+    "retreat_points": [
+      "各营地均可下撤"
+    ],
+    "risk_tags": [
+      "极高海拔(7546m)",
+      "冰裂缝(C1-C2段密集)",
+      "长时间高海拔暴露",
+      "强风(峰顶)",
+      "冻伤风险"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "7546m/7000m级,F级难度(7000m中最易)/主要挑战在高海拔适应而非技术",
+    "emergency": {
+      "nearest_hospital": "塔什库尔干县医院(约120km)",
+      "access": "一般(BC可通车)"
+    }
+  },
+  "ma_007": {
+    "route_id": "ma_007",
+    "name_zh": "玉珠峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 15,
+      "source_note": "BC(5050m)-C1(5600m)-顶峰(6178m),约10-15km",
+      "method": "维基百科/携程"
+    },
+    "elevation_gain_m": {
+      "value": 1700,
+      "source_note": "BC(5050m)-C1(5600m)-顶峰(6178m),累计约1100-1700m",
+      "method": "携程攻略"
+    },
+    "max_altitude_m": {
+      "value": 6178,
+      "source_note": "玉珠峰6178m(昆仑山东段最高)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "7-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(严寒)",
+      "note": "7-9月气候稳定;5月/10月气温较低;南坡易",
+      "source": "维基百科"
+    },
+    "risk_tags": [
+      "6000米级入门",
+      "高反(含氧量低于同海拔)",
+      "南坡简单/北坡冰裂缝"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "6178m/南坡为6000米入门/无技术难度/主要挑战在高反",
+    "emergency": {
+      "nearest_hospital": "格尔木市医院(约200km)",
+      "access": "一般(BC可通车)"
+    }
+  },
+  "ma_018": {
+    "route_id": "ma_018",
+    "name_zh": "珠穆朗玛峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 40,
+      "source_note": "BC(5300m)-C1-C2-C3-C4-南峰-顶峰(8849m)约35-50km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3650,
+      "source_note": "BC5300m->顶峰8849m,爬升约3550m",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 8849,
+      "source_note": "珠穆朗玛峰8849m(中国官方)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "4月中旬-5月底(春季)",
+      "feasible": "4月中旬-5月底",
+      "closed": "6-3月(夏季季风+冬季严寒)",
+      "note": "春季窗口(4月下旬-5月底)是唯一登峰期;秋季偶尔也有但窗口短;冬季不可",
+      "source": "西藏登协"
+    },
+    "water_points": [
+      "各营地冰川融水(化雪)",
+      "BC有供水"
+    ],
+    "retreat_points": [
+      "各营地均可下撤",
+      "南坡/北坡各有固定路线"
+    ],
+    "risk_tags": [
+      "8000米级(8849m)",
+      "死亡区(>7500m)",
+      "雪崩/冰崩",
+      "冻伤/截肢风险",
+      "希拉里台阶(南坡)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 5,
+    "difficulty_reason": "8849m/世界最高峰/死亡区/需极高海拔经验/费用高昂",
+    "emergency": {
+      "nearest_hospital": "日喀则市医院(约350km)",
+      "access": "困难(直升机救援)"
+    }
+  },
+  "ma_020": {
+    "route_id": "ma_020",
+    "name_zh": "贡嘎山",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 28,
+      "source_note": "BC-C1-C2-顶峰约25-30km",
+      "method": "登山指南"
+    },
+    "elevation_gain_m": {
+      "value": 3800,
+      "source_note": "BC约3700m->顶峰7509m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 7509,
+      "source_note": "贡嘎山7509m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "9-10月",
+      "feasible": "9-10月",
+      "closed": "11-8月",
+      "note": "贡嘎窗口极短,仅9-10月;死亡率>60%,比8000m峰更难",
+      "source": "登山指南"
+    },
+    "water_points": [
+      "冰川融水(需大量净化)"
+    ],
+    "risk_tags": [
+      "极高难度(死亡率>60%)",
+      "陡峭(坡度>70°)",
+      "远超8000米级难度",
+      "冰壁/岩壁混合",
+      "仅有25人登顶"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 5,
+    "difficulty_reason": "7509m/死亡率>60%/登山难度远超珠峰/仅25人登顶",
+    "emergency": {
+      "nearest_hospital": "康定市医院",
+      "access": "困难"
+    }
+  },
+  "ma_005": {
+    "route_id": "ma_005",
+    "name_zh": "那玛峰",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 18,
+      "source_note": "子梅村(3200m)-BC(4200m)-C1(4800m)-顶峰(5588m)约18km",
+      "method": "维基百科/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "子梅村3200m->顶峰5588m,累计约1800m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5588,
+      "source_note": "那玛峰5588m(贡嘎卫峰)",
+      "method": "维基百科"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-11月",
+      "closed": "12-4月(大雪)",
+      "note": "春秋最佳;7-8月雨季冰川裂缝风险增加",
+      "source": "维基百科/两步路"
+    },
+    "risk_tags": [
+      "技术攀登(初级)",
+      "冰川裂缝",
+      "碎石坡",
+      "高海拔(5588m)",
+      "贡嘎地区气候多变"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "5588m/初级技术型/冰川裂缝+碎石坡/需冰爪冰镐/可做哈巴后进阶",
+    "emergency": {
+      "nearest_hospital": "康定市医院(约150km)",
+      "access": "一般"
+    }
+  },
+  "ma_008": {
+    "route_id": "ma_008",
+    "name_zh": "雀儿山",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 20,
+      "source_note": "BC(4050m)-C1(4850m)-C2(5350m)-C3(5585m)-冲顶(6168m)约20km",
+      "method": "搜狐/维基百科"
+    },
+    "elevation_gain_m": {
+      "value": 2400,
+      "source_note": "BC4050m->顶峰6168m,约2100m+营地间上下",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 6168,
+      "source_note": "雀儿山主峰6168m",
+      "method": "维基百科"
+    },
+    "season": {
+      "best": "4-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月(严寒)",
+      "note": "春秋两季最佳;7-8月冰川融水多冰裂缝更危险",
+      "source": "维基百科/搜狐"
+    },
+    "water_points": [
+      "BC(新路海冰川融水)",
+      "C1-C3各营地冰川融水(需大量净化)"
+    ],
+    "water_note": "冰川融水为主,需充分净化和煮沸",
+    "retreat_points": [
+      "BC(起点/终点)",
+      "C1/C2/C3均可下撤"
+    ],
+    "retreat_note": "各营地均可下撤;冰裂缝区需结组确保安全",
+    "risk_tags": [
+      "冰裂缝密集(技术型山峰最大风险)",
+      "落石(C1段)",
+      "冰壁攀登(冲顶段高差600m)",
+      "高海拔(6168m)",
+      "刃脊行走"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "6168m/冰裂缝密集/需结组/技术攀登/雀儿山为7000m前技术训练首选",
+    "emergency": {
+      "nearest_hospital": "德格县医院(约80km)",
+      "nearest_road": "甘孜-德格公路(317国道)",
+      "signal": "BC有微弱信号,以上无",
+      "rescue_phone": "甘孜州登山协会",
+      "access": "困难"
+    }
+  },
+  "ma_010": {
+    "route_id": "ma_010",
+    "name_zh": "雪宝顶",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 12,
+      "source_note": "BC(4200m)-C1-顶峰(5588m)约10-15km",
+      "method": "搜狐旅游"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "BC约3800m->顶峰5588m,累计约1800m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5588,
+      "source_note": "雪宝顶5588m(岷山主峰)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "7-8月",
+      "feasible": "5-9月",
+      "closed": "10-4月(旱季大雪)",
+      "note": "7-8月雨水少最佳;5-6月有雪;10-4月旱季但雪线高",
+      "source": "搜狐/携程"
+    },
+    "risk_tags": [
+      "骆驼背(7m垂直落差岩壁)",
+      "黑色走廊(碎石坡)",
+      "冰雪山脊(雪檐)",
+      "技术型/入门过渡"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "5588m/入门向技术过渡/骆驼背岩壁/需修路绳",
+    "emergency": {
+      "nearest_hospital": "松潘县医院",
+      "access": "一般(BC距公路1km)"
+    }
+  },
+  "gl_mount_kilimanjaro_010": {
+    "route_id": "gl_mount_kilimanjaro_010",
+    "name_zh": "乞力马扎罗马切梅路线",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 62,
+      "source_note": "登山路线,距离为近似值",
+      "confidence": "medium"
+    },
+    "elevation_gain_m": {
+      "value": 4200,
+      "source_note": "累计爬升,含冲顶段",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 5895,
+      "source_note": "峰顶海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-10月(旱季)",
+      "feasible": "全年",
+      "closed": "雨季登顶率低",
+      "note": "乞力马扎罗旱季最佳"
+    },
+    "water_points": [
+      "各营地有蓄水",
+      "BC营地水源",
+      "冰川融水(需净化)"
+    ],
+    "water_note": "冰川融水需净化;BC有供水",
+    "retreat_points": [
+      "可原路返回",
+      "BC可下撤"
+    ],
+    "retreat_note": "各营地均可下撤至BC",
+    "risk_tags": [
+      "下降段雨林湿热",
+      "AMS(急性高反)",
+      "顶峰-20°C",
+      "技术攀登",
+      "天气变化"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "5895m海拔级登山,难度中级,需专业登山装备和向导",
+    "emergency": {
+      "nearest_hospital": "最近城镇医院(待补)",
+      "nearest_road": "大本营通山路",
+      "signal": "BC有卫星通信",
+      "rescue_phone": "当地登山协会",
+      "access": "困难"
+    }
+  },
+  "gl_mount_fuji_007": {
+    "route_id": "gl_mount_fuji_007",
+    "name_zh": "富士山吉田路线",
+    "mode": "mountaineering",
+    "distance_km": {
+      "value": 8,
+      "source_note": "登山路线,距离为近似值",
+      "confidence": "medium"
+    },
+    "elevation_gain_m": {
+      "value": 1470,
+      "source_note": "累计爬升,含冲顶段",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 3776,
+      "source_note": "峰顶海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "7-9月",
+      "feasible": "7-9月",
+      "closed": "10-6月",
+      "note": "富士山7-9月开放登山"
+    },
+    "water_points": [
+      "五合目购买",
+      "山间小屋可买(高价)",
+      "BC营地水源",
+      "冰川融水(需净化)"
+    ],
+    "water_note": "冰川融水需净化;BC有供水",
+    "retreat_points": [
+      "各合目可下山",
+      "BC可下撤"
+    ],
+    "retreat_note": "各营地均可下撤至BC",
+    "risk_tags": [
+      "低温",
+      "雷暴",
+      "高反(3776m)",
+      "技术攀登",
+      "天气变化"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 1,
+    "difficulty_reason": "3776m海拔级登山,难度初级,需专业登山装备和向导",
+    "emergency": {
+      "nearest_hospital": "最近城镇医院(待补)",
+      "nearest_road": "大本营通山路",
+      "signal": "BC有卫星通信",
+      "rescue_phone": "当地登山协会",
+      "access": "困难"
+    }
+  },
+  "mc_005": {
+    "route_id": "mc_005",
+    "name_zh": "214滇藏线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 3000,
+      "source_note": "214国道滇藏线全程",
+      "method": "公路"
+    },
+    "elevation_gain_m": {
+      "value": 40000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 5000,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-11月",
+      "closed": "12-3月",
+      "note": "214滇藏线摩旅"
+    },
+    "water_points": [
+      "沿线城镇密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油80%+碎石15%+土路5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "县城"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "降雨多",
+      "横断山脉复杂地形",
+      "交通事故",
+      "高海拔",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "3000km摩旅/高海拔/横断山脉",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_004": {
+    "route_id": "mc_004",
+    "name_zh": "317川藏北线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 2350,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 38000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 5200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月",
+      "note": "317川藏北线"
+    },
+    "water_points": [
+      "沿线县城",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油75%+碎石20%+土路5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "县城"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "路况差于318",
+      "交通事故",
+      "人烟稀少",
+      "塌方",
+      "高海拔"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "2350km摩旅/317沿线/条件艰苦",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cn_cycling_bingcha_010": {
+    "route_id": "cn_cycling_bingcha_010",
+    "name_zh": "丙察察摩旅",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 300,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "丙察察冬季雪封"
+    },
+    "water_points": [
+      "沿途溪流",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油30%+碎石50%+土路20%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "察瓦龙可返回",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "大流沙塌方",
+      "雨季泥石流",
+      "目若村淤泥",
+      "交通事故",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "300km/丙察察/大流沙塌方/非铺装",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_003": {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 305,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "丙察察摩旅"
+    },
+    "water_points": [
+      "察瓦龙",
+      "目若村",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油30%+碎石50%+土路20%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "丙中洛",
+      "目若村",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "大流沙",
+      "非铺装路面270km",
+      "交通事故",
+      "泥石流",
+      "塌方150+"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "305km/非铺装路面270km/落石多",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_009": {
+    "route_id": "cy_009",
+    "name_zh": "丝绸之路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1100,
+      "source_note": "西安-兰州-嘉峪关-敦煌段约1100km,完整丝路>4000km",
+      "method": "新浪博客骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 4000,
+      "source_note": "兰州1500m->敦煌1100m,缓降",
+      "method": "新浪博客"
+    },
+    "max_altitude_m": {
+      "value": 2700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月(严寒)",
+      "note": "312国道,路况良好平坦柏油路;兰州-嘉峪关段40-50km无补给;气候干燥风沙大",
+      "source": "新浪博客/网易"
+    },
+    "water_points": [
+      "沿途城镇密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "高(河西走廊风口多,甘肃风沙大)",
+    "resupply_interval": "一般(兰州-嘉峪关段40-50km无补给)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "干燥(补给间隔大)",
+      "大风(河西走廊)",
+      "暴晒(戈壁)",
+      "昼夜温差大"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 3,
+    "difficulty_reason": "1100km/312国道柏油路/难点在风沙和补给间隔",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_010": {
+    "route_id": "cy_010",
+    "name_zh": "京杭大运河骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1800,
+      "source_note": "北京-杭州全程约1800km,苏北段平坦",
+      "method": "什么值得买/攻略"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "平原为主极少起伏",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "3-11月",
+      "closed": "12-2月(北方寒冷)",
+      "note": "苏北段30km有修车点和补给站;全程平坦",
+      "source": "什么值得买骑行攻略"
+    },
+    "water_points": [
+      "城镇密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "充足(苏北30km有补给,南段更密)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "长距离(1800km)",
+      "城市路段交通复杂",
+      "雾霾(北方段)"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "1800km/全程平原/补给充足/难点仅长距离",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_013": {
+    "route_id": "mc_013",
+    "name_zh": "伊犁河谷摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 1600,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 18000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 3400,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9月",
+      "feasible": "5-9月",
+      "closed": "10-4月",
+      "note": "伊犁河谷摩旅"
+    },
+    "water_points": [
+      "沿线城镇",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "各县城",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "长距离",
+      "交通事故",
+      "冰雪达坂",
+      "落石",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "1600km骑行,海拔3400m,难度专家",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_018": {
+    "route_id": "cy_018",
+    "name_zh": "千岛湖环湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 150,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 1000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 300,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "千岛湖全年可骑"
+    },
+    "water_points": [
+      "沿途密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油90%+水泥10%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "低",
+      "交通事故",
+      "适合休闲",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 1,
+    "difficulty_reason": "150km骑行,海拔300m,难度初级",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_021": {
+    "route_id": "mc_021",
+    "name_zh": "喀喇昆仑公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 420,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 5000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4733,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "喀喇昆仑"
+    },
+    "water_points": [
+      "塔县",
+      "喀什",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油70%+碎石25%+土路5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "喀什",
+      "沿线公路",
+      "塔县"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "边防证",
+      "边境敏感",
+      "低温达坂",
+      "交通事故",
+      "高海拔"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "420km/高海拔/边境敏感/边防证",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_008": {
+    "route_id": "cy_008",
+    "name_zh": "大香格里拉环线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1500,
+      "source_note": "丽江-香格里拉-稻城-理塘-泸沽湖-丽江约1400-1600km",
+      "method": "骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 25000,
+      "source_note": "翻越数十个4000m+垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月",
+      "note": "丽江-香格里拉-稻城-理塘-泸沽湖大环线",
+      "source": "骑行攻略"
+    },
+    "water_points": [
+      "沿途城镇",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油70%+水泥15%+碎石15%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般(乡镇间隔30-80km)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "县城可搭车"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "高海拔(连续>4000m)",
+      "盘山路多",
+      "雨季塌方",
+      "部分段无手机信号"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "1500km/大香格里拉环线/高海拔盘山/风景绝美",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_002": {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2350,
+      "source_note": "成都-那曲-拉萨G317约2350km",
+      "method": "公路数据/TibetWay"
+    },
+    "elevation_gain_m": {
+      "value": 38000,
+      "source_note": "翻雀儿山4889m/巴郎山4520m等众多达坂",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "5月/9-10月最佳;7-8月雨季塌方多;海拔较318更高",
+      "source": "TibetWay/骑行攻略"
+    },
+    "water_points": [
+      "沿途县城和乡镇",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油75%+碎石15%+土路10%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "不足(补给点较318稀疏)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "县城可搭车"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "高海拔(雀儿山4889m)",
+      "补给稀疏",
+      "沙石路段",
+      "比318更加艰苦",
+      "大车流(那曲段)"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "2350km/翻众多4500m+达坂/补给稀疏/高原条件艰苦",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_014": {
+    "route_id": "mc_014",
+    "name_zh": "川西大环线摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 1800,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 30000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4700,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-11月",
+      "closed": "12-3月",
+      "note": "川西大环线"
+    },
+    "water_points": [
+      "沿线县城",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油75%+水泥15%+碎石10%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "各县城",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "雨季塌方",
+      "油站间隔大",
+      "交通事故",
+      "多垭口",
+      "极高海拔"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "1800km/川西大环线摩旅/极高海拔",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_017": {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1000,
+      "source_note": "约1000km(新浪骑行攻略),现有数据900km偏低",
+      "method": "新浪骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 15000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 4300,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-11月",
+      "closed": "12-3月(冰雪)",
+      "note": "含四姑娘山/亚拉雪山/贡嘎雪山;翻巴朗山等",
+      "source": "新浪/腾讯新闻"
+    },
+    "water_points": [
+      "沿途乡镇",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油80%+水泥12%+碎石8%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般(乡镇间隔30-50km)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "县城可搭车"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "交通事故",
+      "落石",
+      "高海拔",
+      "暴晒",
+      "盘山公路"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "1000km/高海拔/翻巴朗山/绝美风景/川西经典",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_014": {
+    "route_id": "cy_014",
+    "name_zh": "广西沿边公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 725,
+      "source_note": "东兴竹山村-那坡弄合村,全长725km(百度攻略)",
+      "method": "百度/8264"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "连续长坡多,累爬大",
+      "method": "骑行攻略"
+    },
+    "max_altitude_m": {
+      "value": 800,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "10-12月,2-4月",
+      "feasible": "10-4月",
+      "closed": "5-9月(雨季湿热)",
+      "note": "三级公路(部分二级),沥青路面宽6m;连续十几公里长坡",
+      "source": "百度/骑行之家"
+    },
+    "water_points": [
+      "沿途乡镇",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油80%+水泥20%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般(乡镇间隔30-60km)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "乡镇可搭车"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "连续长坡",
+      "边境敏感区",
+      "湿热(夏季)",
+      "上坡多"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "725km/沿边公路/沥青路面/连续长坡/边境线骑行",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_027": {
+    "route_id": "cy_027",
+    "name_zh": "张北草原天路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 132,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 1800,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "春秋",
+      "feasible": "全年",
+      "closed": "冬季",
+      "note": ""
+    },
+    "water_points": [
+      "沿途农家乐",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油80%+碎石15%+土路5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "交通事故",
+      "旅游旺季车多",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "132km骑行,海拔1800m,难度中级",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_013": {
+    "route_id": "cy_013",
+    "name_zh": "沿312国道上海至乌鲁木齐",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 3900,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 12000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 2200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月",
+      "note": "312国道横跨多气候"
+    },
+    "water_points": [
+      "沿线城镇密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般(城镇间隔50-80km)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "长距离",
+      "风沙",
+      "大货车多",
+      "交通事故",
+      "戈壁"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "3900km/超长距离/横跨多气候带",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_015": {
+    "route_id": "mc_015",
+    "name_zh": "海南环岛摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 800,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 2000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 500,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "11-2月",
+      "feasible": "10-4月",
+      "closed": "5-9月",
+      "note": "海南环岛"
+    },
+    "water_points": [
+      "沿线密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油90%+水泥10%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "交通事故",
+      "高温",
+      "台风季",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "800km骑行,海拔500m,难度高级",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_009": {
+    "route_id": "mc_009",
+    "name_zh": "滇缅公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 500,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 4000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 2000,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "11-2月",
+      "feasible": "10-4月",
+      "closed": "5-9月",
+      "note": "滇缅公路"
+    },
+    "water_points": [
+      "沿线密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油80%+水泥15%+碎石5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "山路",
+      "雨雾",
+      "交通事故",
+      "湿热",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "500km/滇缅公路/历史路线/山路",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_005": {
+    "route_id": "cy_005",
+    "name_zh": "滇藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 2325,
+      "source_note": "昆明-大理-香格里拉-林芝-拉萨约2300-2400km",
+      "method": "骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 35000,
+      "source_note": "翻白马雪山/红拉山/东达山等",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5000,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-10月",
+      "closed": "11-3月",
+      "note": "春秋最佳;7-8月雨季塌方;冬季大雪封山",
+      "source": "骑行攻略"
+    },
+    "water_points": [
+      "沿途城镇",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油80%+水泥15%+碎石5%",
+    "crosswind_exposure": "低-中",
+    "resupply_interval": "一般(每30-60km有乡镇)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "县城可搭车"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "高反(东达山5130m)",
+      "长上坡(白马雪山)",
+      "雨季塌方",
+      "大车流(214国道)"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "2325km/成熟进藏线/翻越多座5000m垭口",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_002": {
+    "route_id": "mc_002",
+    "name_zh": "独库公路摩旅",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 561,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 3400,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6-10月",
+      "closed": "11-5月",
+      "note": "独库公路"
+    },
+    "water_points": [
+      "库车",
+      "那拉提",
+      "巴音布鲁克",
+      "独山子"
+    ],
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "沿途乡镇"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "一日四季",
+      "冰雪路面",
+      "交通事故",
+      "陡坡弯道",
+      "落石"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "561km/独库公路摩旅/风景线",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_026": {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 240,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 200,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 50,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "环太湖休闲"
+    },
+    "water_points": [
+      "沿途城市密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油100%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "低",
+      "交通事故",
+      "暴晒",
+      "城市路段"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 1,
+    "difficulty_reason": "240km骑行,海拔50m,难度初级",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_016": {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 120,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 300,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 2000,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "环洱海休闲"
+    },
+    "water_points": [
+      "沿途村镇密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "交通事故",
+      "机动车多",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 1,
+    "difficulty_reason": "120km骑行,海拔2000m,难度初级",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_021": {
+    "route_id": "cy_021",
+    "name_zh": "翁金线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 45,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 50,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 10,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "4-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "翁金线沿海"
+    },
+    "water_points": [
+      "沿途村镇密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油90%+水泥10%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "随时可停",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "低",
+      "交通事故",
+      "适合新手",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 1,
+    "difficulty_reason": "45km骑行,海拔10m,难度初级",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_023": {
+    "route_id": "cy_023",
+    "name_zh": "阿尔山骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 450,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 1100,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-8月",
+      "feasible": "6-9月",
+      "closed": "10-5月(严寒)",
+      "note": "草原公路补给间隔大;几十公里无商业设施;需自备路餐",
+      "source": "马蜂窝骑行攻略"
+    },
+    "water_points": [
+      "沿线城镇",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油75%+砂石20%+土路5%",
+    "crosswind_exposure": "高(呼伦贝尔草原大风)",
+    "resupply_interval": "不足(草原段几十公里无补给)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线可搭车",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "草原大风",
+      "补给间隔极大",
+      "暴晒(无遮挡)",
+      "低温(即使夏季)"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "450km/草原公路/补给少/风大/需自备补给",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_019": {
+    "route_id": "cy_019",
+    "name_zh": "阿禾公路骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 225,
+      "source_note": "阿勒泰-禾木,全长约200km,现有225km接近",
+      "method": "知乎/新疆旅游"
+    },
+    "elevation_gain_m": {
+      "value": 3770,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 2400,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪封闭)",
+      "note": "阿禾公路连接阿勒泰与禾木,新疆最美自驾/骑行路线之一",
+      "source": "知乎"
+    },
+    "water_points": [
+      "贾登峪",
+      "禾木",
+      "阿勒泰",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油85%+水泥10%+碎石5%",
+    "crosswind_exposure": "中",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "贾登峪",
+      "沿线公路",
+      "阿勒泰"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "长爬坡",
+      "交通事故",
+      "高海拔",
+      "暴晒",
+      "天气骤变"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "225km/风景优美/高海拔/新疆北部骑行",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "cy_006": {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 1950,
+      "source_note": "西宁-格尔木-唐古拉山口-拉萨约1950km",
+      "method": "公路数据"
+    },
+    "elevation_gain_m": {
+      "value": 15000,
+      "source_note": "翻昆仑山口4767m/唐古拉山口5231m/风火山5010m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5231,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "5-6月,9月",
+      "feasible": "5-9月",
+      "closed": "10-4月",
+      "note": "青藏线窗口短;7-8月雨季但可走;冬季大风+严寒",
+      "source": "骑行攻略"
+    },
+    "water_points": [
+      "道班",
+      "兵站",
+      "县城",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油85%+碎石10%+土路5%",
+    "crosswind_exposure": "高(可可西里无人区段大风)",
+    "resupply_interval": "不足(最长无补给段>200km无人区)",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线可搭车",
+      "沿线公路"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "极高海拔(唐古拉5231m)",
+      "无人区长间隔",
+      "大风(可可西里)",
+      "大货车多(青藏运输线)"
+    ],
+    "gpx_links": [
+      {
+        "url": "http://www.biketo.com/tour/22440.html",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 4,
+    "difficulty_reason": "1950km/翻越5座5000m+垭口/无人区补给不足",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "mc_008": {
+    "route_id": "mc_008",
+    "name_zh": "黔东南摩旅环线",
+    "mode": "motorcycle",
+    "distance_km": {
+      "value": 700,
+      "source_note": "公路里程",
+      "confidence": "high"
+    },
+    "elevation_gain_m": {
+      "value": 8000,
+      "source_note": "累计爬升估算",
+      "confidence": "medium"
+    },
+    "max_altitude_m": {
+      "value": 1200,
+      "source_note": "最高点海拔",
+      "confidence": "high"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "黔东南摩旅"
+    },
+    "water_points": [
+      "沿线密集",
+      "沿线加油站/城镇"
+    ],
+    "surface_mix": "柏油80%+水泥20%",
+    "crosswind_exposure": "低",
+    "resupply_interval": "一般",
+    "water_note": "沿线城镇/加油站补给",
+    "retreat_points": [
+      "沿线公路",
+      "县城"
+    ],
+    "retreat_note": "全程公路撤退",
+    "risk_tags": [
+      "雨雾",
+      "交通事故",
+      "山路弯多",
+      "湿滑",
+      "暴晒"
+    ],
+    "gpx_links": [],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "700km/黔东南/山路摩旅",
+    "emergency": {
+      "nearest_hospital": "沿线城镇医院",
+      "nearest_road": "全程国道/省道",
+      "signal": "大部分有信号",
+      "rescue_phone": "当地交警/应急管理局",
+      "access": "良好"
+    }
+  },
+  "hk_007": {
+    "route_id": "hk_007",
+    "name_zh": "亚丁大转山",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "7天行程约74-85km,常标70km",
+      "method": "游侠客/户外俱乐部"
+    },
+    "elevation_gain_m": {
+      "value": 3400,
+      "source_note": "累计爬升3360-5500m,翻6-8个4500m+垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4900,
+      "source_note": "且萨嘎丁垭口约4900m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "9-10月(秋色)",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪封山)",
+      "note": "9-10月秋色最美;5-6月花季;7-8月雨季",
+      "source": "游侠客/亚丁官网"
+    },
+    "water_points": [
+      "波用措(湖)",
+      "新果牛场(溪流)",
+      "蛇湖",
+      "沿途海拔4000m+海子"
+    ],
+    "water_note": "沿途海子/溪流丰富,需净化后饮用",
+    "retreat_points": [
+      "亚丁村(起点/终点)",
+      "蛇湖(可撤至景区)",
+      "洛绒牛场(景区可撤)"
+    ],
+    "retreat_note": "多处可撤至亚丁景区;徒步中大部分为无人区",
+    "risk_tags": [
+      "极高海拔(连续>4000m 6-8天)",
+      "翻6-8个4500m+垭口",
+      "高反高发",
+      "边防证",
+      "天气多变"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/track/track_search.htm?key=亚丁大转山",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "两步路搜索亚丁大转山"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 4,
+    "difficulty_reason": "70km/6-8天/翻6-8个4500m+垭口/连续高海拔露营/无人区",
+    "emergency": {
+      "nearest_hospital": "稻城县人民医院(约110km)/香格里拉镇卫生院",
+      "nearest_road": "亚丁景区公路",
+      "signal": "全程无信号(仅起点景区有)",
+      "rescue_phone": "稻城亚丁景区管理局",
+      "access": "困难"
+    }
+  },
+  "hk_012": {
+    "route_id": "hk_012",
+    "name_zh": "喀拉峻草原穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "琼库什台-喀拉峻-塔里木-伊宁约70km",
+      "method": "新疆旅游攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1800,
+      "source_note": "累计爬升约1800m(含多次上下)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 2600,
+      "source_note": "喀拉峻草原最高点约2600m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "6-8月(花海)",
+      "feasible": "5-9月",
+      "closed": "10-4月(大雪)",
+      "note": "6月花海最美;7-8月绿色草原;5月草未绿;9月秋色",
+      "source": "新疆旅游"
+    },
+    "water_points": [
+      "琼库什台(村落)",
+      "喀拉峻(牧民毡房)",
+      "塔里木(村庄)"
+    ],
+    "water_note": "沿途牧民毡房可补给,溪流丰富",
+    "retreat_points": [
+      "琼库什台(起点)",
+      "喀拉峻(有公路)",
+      "塔里木(终点有公路)"
+    ],
+    "risk_tags": [
+      "暴雨(夏季下午)",
+      "雷电(草原空旷)",
+      "泥泞(雨天)",
+      "牧民骑马碰撞"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "70km/3-4天/无技术难度/主要风险在天气/适合入门高原徒步",
+    "emergency": {
+      "nearest_hospital": "特克斯县人民医院(约50km)",
+      "access": "良好"
+    }
+  },
+  "hk_034": {
+    "route_id": "hk_034",
+    "name_zh": "大五台顺穿",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "鸿门岩-东台-北台-中台-西台-南台-佛母洞约65-75km",
+      "method": "五台山攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3000,
+      "source_note": "累爬约3000m(含5个台往返起伏)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 3061,
+      "source_note": "北台叶斗峰3061m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-8月",
+      "feasible": "5-9月",
+      "closed": "10-4月(严寒)",
+      "note": "6-8月最适宜;7月下旬有佛教活动;冬季-30°C+大雪",
+      "source": "五台山景区"
+    },
+    "water_points": [
+      "鸿门岩(起点)",
+      "台怀镇(补给)",
+      "各台寺庙(可补水)"
+    ],
+    "water_note": "各台寺庙提供热水/斋饭;沿途无超市需自备",
+    "retreat_points": [
+      "台怀镇(全程可撤)",
+      "各台均有公路",
+      "佛母洞"
+    ],
+    "risk_tags": [
+      "高海拔(3061m)",
+      "雷暴(夏季台顶)",
+      "大风(台顶常7-8级)",
+      "失温(天气骤变)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "70km/2-3天/5个台起伏/台顶天气极端多变",
+    "emergency": {
+      "nearest_hospital": "五台山台怀镇卫生院/忻州市医院",
+      "access": "良好"
+    }
+  },
+  "hk_035": {
+    "route_id": "hk_035",
+    "name_zh": "太白南南穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 40,
+      "source_note": "厚畛子-三合宫-拔仙台-南天门-厚畛子约35-45km",
+      "method": "陕西户外攻略"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "累爬约2200m(含拔仙台登顶)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 3767,
+      "source_note": "拔仙台3767m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "5-10月",
+      "closed": "11-4月(大雪)",
+      "note": "6-9月安全窗口;10月后山顶有积雪;秦岭小气候多变",
+      "source": "8264攻略"
+    },
+    "water_points": [
+      "厚畛子(起/终)",
+      "三合宫(溪流)",
+      "南天门(季节性)",
+      "大爷海(湖)"
+    ],
+    "water_note": "大爷海水源可靠但需净化;石海区段无水",
+    "retreat_points": [
+      "厚畛子(起点有公路)",
+      "三合宫(可原路返回)",
+      "南天门(可撤至太白山景区)"
+    ],
+    "risk_tags": [
+      "石海(太白特征地形)",
+      "失温(小气候)",
+      "高海拔(3767m)",
+      "迷路(大雾)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "40km/2-3天/拔仙台3767m/石海路段/秦岭极端小气候",
+    "emergency": {
+      "nearest_hospital": "太白县医院/周至县医院",
+      "access": "一般"
+    }
+  },
+  "hk_015": {
+    "route_id": "hk_015",
+    "name_zh": "腾格里沙漠五湖连穿",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "天鹅湖-乌兰湖-太阳湖-月亮湖等五湖连穿约45-55km",
+      "method": "沙漠徒步攻略"
+    },
+    "elevation_gain_m": {
+      "value": 200,
+      "source_note": "沙漠起伏,沙丘爬坡累积约200m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 1435,
+      "source_note": "阿拉善左旗海拔约1400-1500m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "3-5月,9-11月",
+      "closed": "12-2月(严寒),6-8月(酷暑>40°C)",
+      "note": "沙漠徒步只能在春秋;夏季地表温度>60°C危险;冬季严寒",
+      "source": "沙漠徒步攻略"
+    },
+    "water_points": [
+      "天鹅湖(营地有水)",
+      "乌兰湖(湖水不可饮)",
+      "太阳湖(营地有水)"
+    ],
+    "water_note": "营地有桶装水补给,全程需背水(至少3L/天),不可饮湖水",
+    "retreat_points": [
+      "起点(保障车可撤)",
+      "各湖营地(有车队)"
+    ],
+    "retreat_note": "全程有沙漠越野车保障,可随时撤回",
+    "risk_tags": [
+      "高温(夏季地表>60°C)",
+      "脱水(必须保证饮水)",
+      "沙暴(春季)",
+      "迷路(沙丘无参照)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "50km/3天/沙漠环境极端(高温脱水沙暴)/但有保障车",
+    "emergency": {
+      "nearest_hospital": "阿拉善左旗医院(约100km)",
+      "access": "一般(有保障车)"
+    }
+  },
+  "hk_024": {
+    "route_id": "hk_024",
+    "name_zh": "库布齐沙漠穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 35,
+      "source_note": "夜鸣沙-七星湖约30-40km",
+      "method": "沙漠攻略"
+    },
+    "elevation_gain_m": {
+      "value": 150,
+      "source_note": "沙丘起伏,累计约150m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 1200,
+      "source_note": "库布齐沙漠海拔约1000-1200m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "3-5月,9-11月",
+      "feasible": "3-5月,9-11月",
+      "closed": "12-2月,6-8月",
+      "note": "沙漠线只能在春秋季走;夏季酷暑冬季严寒",
+      "source": "沙漠徒步攻略"
+    },
+    "water_points": [
+      "夜鸣沙(起)",
+      "七星湖(终)",
+      "沿途无水需全程背水"
+    ],
+    "water_note": "全程无水需背水(至少3-4L/天),终点七星湖有补给",
+    "retreat_points": [
+      "起点(公路可达)",
+      "七星湖(景区可撤)"
+    ],
+    "retreat_note": "短线穿越,且有景区道路在旁边,可随时撤至公路",
+    "risk_tags": [
+      "高温(夏季)",
+      "脱水",
+      "沙暴",
+      "风沙"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "35km/2天/沙漠环境/全程背水/但有公路平行可撤",
+    "emergency": {
+      "nearest_hospital": "杭锦旗医院(约80km)",
+      "access": "良好(有景区公路)"
+    }
+  },
+  "hk_013": {
+    "route_id": "hk_013",
+    "name_zh": "狼塔C+V线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 200,
+      "source_note": "C线120km+V线80km=200km,常标180-200km",
+      "method": "163新闻/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 8500,
+      "source_note": "【建议修正为10000m】累升约10000m,现有8500偏低",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4010,
+      "source_note": "乌拉布图达坂4008m/天格尔达坂3760m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6月中旬-9月上旬",
+      "closed": "9月中旬-6月上旬(大雪+冰河)",
+      "note": "⚠️ 2024年6月已全面封禁,非法穿越违法;7-8月水量大过河危险",
+      "source": "163新闻/政府公告"
+    },
+    "water_points": [
+      "沿途河溪(冰川融水)",
+      "绿湖(不可饮)",
+      "台普希克马河(过河点)"
+    ],
+    "water_note": "冰河融水丰富但需充分净化;过河是最主要风险(冰河刺骨/水流急)",
+    "retreat_points": [
+      "呼图壁(起点)",
+      "巴伦台(终点)",
+      "途中多处可骑马撤出"
+    ],
+    "retreat_note": "⚠️ 已封禁无救援;全程无人区无车行道",
+    "risk_tags": [
+      "极高强度(200km/11天)",
+      "冰河涉水(最大杀手)",
+      "2024年已禁穿(违法)",
+      "累升>10000m",
+      "全程无信号无人区"
+    ],
+    "gpx_links": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=58997169",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "狼塔C+V完整轨迹"
+      }
+    ],
+    "gpx_found": true,
+    "difficulty_level": 5,
+    "difficulty_reason": "200km/11天/累计>10000m爬升/冰河涉水多次/2024年已禁穿/极高死亡率",
+    "emergency": {
+      "nearest_hospital": "呼图壁县医院(起点)/巴伦台镇(终点)",
+      "nearest_road": "起点呼图壁/终点218国道",
+      "signal": "全程无信号",
+      "rescue_phone": "无",
+      "access": "困难(已封禁无救援)"
+    }
+  },
+  "hk_026": {
+    "route_id": "hk_026",
+    "name_zh": "格聂大环线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 200,
+      "source_note": "格聂C线+大环约180-220km,常标200km",
+      "method": "格聂攻略"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "累爬约5500-6500m,含多次翻垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4900,
+      "source_note": "格聂神山周边垭口约4800-5000m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "7-10月",
+      "feasible": "6月中旬-10月中旬",
+      "closed": "10月下旬-6月上旬(大雪)",
+      "note": "9-10月秋色最佳;7-8月花海雨季;窗口较短",
+      "source": "格聂攻略"
+    },
+    "water_points": [
+      "格聂之眼(不可饮)",
+      "冷谷寺(水源)",
+      "沿途溪流(需净化)"
+    ],
+    "retreat_points": [
+      "理塘(起/终)",
+      "冷谷寺(有公路)",
+      "格聂镇"
+    ],
+    "risk_tags": [
+      "超长距离(200km)",
+      "高海拔(连续>4000m)",
+      "无人区",
+      "高反"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 5,
+    "difficulty_reason": "200km/10-14天/连续高海拔/无人区/超长距离",
+    "emergency": {
+      "nearest_hospital": "理塘县人民医院",
+      "access": "困难"
+    }
+  },
+  "hk_006": {
+    "route_id": "hk_006",
+    "name_zh": "洛克线",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "木里-嘟噜村-白水河-呷洛-稻城亚丁约70-80km",
+      "method": "洛克攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3200,
+      "source_note": "翻多个4500m+垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4750,
+      "source_note": "垭口最高约4750m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "9-10月(秋色)",
+      "feasible": "5-11月",
+      "closed": "12-4月",
+      "note": "9-10月秋色最美;7-8月雨季",
+      "source": "洛克攻略"
+    },
+    "water_points": [
+      "白水河(溪流)",
+      "呷洛(村落)",
+      "蛇湖",
+      "沿途溪流"
+    ],
+    "retreat_points": [
+      "嘟噜村(起点)",
+      "亚丁景区(终点)"
+    ],
+    "risk_tags": [
+      "高海拔(最高4750m)",
+      "高反",
+      "无人区",
+      "雨天泥泞"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "70km/5-7天/翻多个4500m+垭口/无人区/洛克探险家经典线",
+    "emergency": {
+      "nearest_hospital": "木里县医院(约150km)/稻城县医院",
+      "access": "困难"
+    }
+  },
+  "hk_025": {
+    "route_id": "hk_025",
+    "name_zh": "神农架老君山穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 30,
+      "source_note": "25-30km小环线(4天3晚)",
+      "method": "游侠客/湖北旅游"
+    },
+    "elevation_gain_m": {
+      "value": 1400,
+      "source_note": "四天累计爬升约1400m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 2900,
+      "source_note": "老君山约2936m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-6月(杜鹃),9-10月(秋)",
+      "feasible": "5-10月",
+      "closed": "12-4月(大雪/保护区封闭)",
+      "note": "5月杜鹃花海;7-8月雨季;9-10月秋色",
+      "source": "游侠客/湖北旅游"
+    },
+    "water_points": [
+      "杜鹃林营地(溪流)",
+      "水磨屋场营地(溪流)"
+    ],
+    "water_note": "沿途溪流丰富但需净化;全程无人区无商店",
+    "retreat_points": [
+      "云盘保护站(起点)",
+      "彩旗保护站(终点)"
+    ],
+    "retreat_note": "需当地向导带领,不可独立穿越;神农架核心保护区",
+    "risk_tags": [
+      "自然保护区(需向导)",
+      "野兽(黑熊/野猪)",
+      "原始森林迷路",
+      "天气多变"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "30km/4天/原始森林/需向导/华中入门级高原徒步",
+    "emergency": {
+      "nearest_hospital": "木鱼镇卫生院(约30km)/神农架林区医院",
+      "access": "一般"
+    }
+  },
+  "hk_018": {
+    "route_id": "hk_018",
+    "name_zh": "孟克德古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 70,
+      "source_note": "独库634km-唐布拉约70km",
+      "method": "新疆旅游/苹果旅行"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "含翻门克廷达坂3450m",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 3495,
+      "source_note": "门克廷达坂3495m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "7-10月",
+      "feasible": "6月初-10月上旬",
+      "closed": "10月中旬-5月(大雪)",
+      "note": "6-7月花海;9-10月秋色最美;10月初最佳",
+      "source": "新疆旅游"
+    },
+    "water_points": [
+      "苦杨林营地(奎屯河)",
+      "天湖(乌兰萨德克湖)",
+      "孟克德河谷(溪流)"
+    ],
+    "water_note": "沿途河溪/天湖水源充足需净化",
+    "retreat_points": [
+      "独库公路(起点)",
+      "唐布拉(终点有315省道)"
+    ],
+    "retreat_note": "部分段可在独库公路退出",
+    "risk_tags": [
+      "涉水(过奎屯河支流)",
+      "防晒(日照>15h)",
+      "全程无信号",
+      "野兽(北山羊/熊)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "70km/4-5天/翻3495m达坂/新疆入门级多日徒步",
+    "emergency": {
+      "nearest_hospital": "尼勒克县医院(约80km)",
+      "access": "一般"
+    }
+  },
+  "hk_029": {
+    "route_id": "hk_029",
+    "name_zh": "年保玉则穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 60,
+      "source_note": "经典穿越约40-65km(含仙女湖-妖女湖-日干措)",
+      "method": "攻略"
+    },
+    "elevation_gain_m": {
+      "value": 2200,
+      "source_note": "含翻2个4500m垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4600,
+      "source_note": "垭口最高约4600m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6-9月(但景区关闭)",
+      "closed": "封闭中(2018年关闭至今)",
+      "note": "⚠️ 2018年起因环保关闭,确认仍关闭中,实际不可穿越",
+      "source": "新华社/央视报道"
+    },
+    "water_points": [
+      "仙女湖(景区)",
+      "妖女湖",
+      "日干措(湖)"
+    ],
+    "water_note": "湖水资源丰富但需净化",
+    "retreat_points": [
+      "景区入口(起点)",
+      "仙女湖(可撤)"
+    ],
+    "retreat_note": "⚠️ 景区已关闭禁止进入",
+    "risk_tags": [
+      "景区关闭(2018年至今)",
+      "高海拔(4600m)",
+      "涉水",
+      "蚂蟥(8月雨季)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "60km/翻2个垭口/高海拔/但景区已关闭",
+    "emergency": {
+      "nearest_hospital": "久治县医院(约30km)",
+      "access": "一般(但景区关闭)"
+    }
+  },
+  "hk_047": {
+    "route_id": "hk_047",
+    "name_zh": "天山雪莲峰徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 80,
+      "source_note": "【数据存疑】该峰为技术攀登山峰6627m,非徒步路线,现有80km/4200m可能为周边转山数据",
+      "method": "Wikipedia/百度百科"
+    },
+    "elevation_gain_m": {
+      "value": 3000,
+      "source_note": "存疑,待进一步核实",
+      "method": "Wikipedia"
+    },
+    "max_altitude_m": {
+      "value": 4200,
+      "source_note": "【需修正】Wikipedia记载雪莲峰主峰6627m,非4200m",
+      "method": "Wikipedia"
+    },
+    "season": {
+      "best": "6-8月",
+      "feasible": "6-8月",
+      "closed": "9-5月",
+      "note": "雪莲峰是技术型山峰(6627m),非徒步路线;开花期6-8月",
+      "source": "Wikipedia"
+    },
+    "water_points": [
+      "冰川融水(需净化)"
+    ],
+    "retreat_points": [
+      "大本营"
+    ],
+    "risk_tags": [
+      "技术攀登(非徒步)",
+      "冰川",
+      "海拔6627m(非4200m)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "该线路数据存疑;雪莲峰为6627m技术山峰而非徒步路线",
+    "emergency": {
+      "nearest_hospital": "阿克苏地区医院",
+      "access": "困难"
+    }
+  },
+  "hk_046": {
+    "route_id": "hk_046",
+    "name_zh": "长白山南坡穿越",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 50,
+      "source_note": "南坡景区-天池-西坡约40-60km",
+      "method": "长白山攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累计爬升约1500m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 2691,
+      "source_note": "长白山白云峰2691m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6-9月",
+      "feasible": "6月中旬-9月",
+      "closed": "10-5月(大雪封山)",
+      "note": "南坡每年6月中-9月开放;窗口极短;冬季关闭",
+      "source": "长白山景区公告"
+    },
+    "water_points": [
+      "天池(不可直接饮用)",
+      "沿途溪流(需净化)"
+    ],
+    "retreat_points": [
+      "南坡景区入口(起点)",
+      "西坡景区(终点)"
+    ],
+    "risk_tags": [
+      "自然保护区(需许可)",
+      "窗口极短(3个月)",
+      "野生动物(熊)",
+      "低温(山顶常年低温)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "50km/窗口极短/自然保护区/长白山天池",
+    "emergency": {
+      "nearest_hospital": "长白山保护开发区医院(约100km)",
+      "access": "良好(景区可坐车)"
+    }
+  },
+  "hk_021": {
+    "route_id": "hk_021",
+    "name_zh": "梅里北坡徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 65,
+      "source_note": "亚贡村-坡均-坡均错-双湖-亚贡约60-75km",
+      "method": "梅里北坡攻略"
+    },
+    "elevation_gain_m": {
+      "value": 3500,
+      "source_note": "翻越多个4500m垭口",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5200,
+      "source_note": "滇藏垭口5200m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "5-6月,9-10月",
+      "feasible": "4-11月",
+      "closed": "12-3月(大雪)",
+      "note": "9-10月秋色+看梅里概率高",
+      "source": "梅里攻略"
+    },
+    "water_points": [
+      "坡均营地(溪流)",
+      "双湖",
+      "沿途冰川融水"
+    ],
+    "retreat_points": [
+      "亚贡村(起点)",
+      "坡均(可原路撤回)"
+    ],
+    "risk_tags": [
+      "极高海拔(5200m垭口)",
+      "陡坡",
+      "落石",
+      "冰川徒步"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "65km/翻5200m垭口/极高海拔/冰川/梅里雪山近距离",
+    "emergency": {
+      "nearest_hospital": "德钦县医院(约80km)",
+      "access": "困难"
+    }
+  },
+  "hk_033": {
+    "route_id": "hk_033",
+    "name_zh": "麦理浩径",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 100,
+      "source_note": "官方标称100km(北潭涌-屯门)",
+      "method": "香港官方"
+    },
+    "elevation_gain_m": {
+      "value": 4500,
+      "source_note": "累计爬升约4500m(含10段上下起伏)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 957,
+      "source_note": "大帽山957m(香港最高)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-2月(秋冬)",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "夏季湿热暴晒;秋冬干燥舒适",
+      "source": "香港渔农署"
+    },
+    "water_points": [
+      "北潭涌(起点)",
+      "沿途各段士多店/水龙头",
+      "终点屯门"
+    ],
+    "water_note": "沿途士多店/自动售货机密集,城市近郊补给充足",
+    "retreat_points": [
+      "各段终点均有公共交通退出",
+      "全城公路可达"
+    ],
+    "retreat_note": "10段每段均可独立退出,公共交通发达",
+    "risk_tags": [
+      "长距离(100km)",
+      "累计爬升大(4500m)",
+      "暴晒(夏季)",
+      "部分段无遮挡"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "100km/4500m爬升/10段/补给密集/但需超强耐力",
+    "emergency": {
+      "nearest_hospital": "沿途各区的公立医院(香港医疗体系)",
+      "access": "良好(全程公交可达)"
+    }
+  },
+  "hk_048": {
+    "route_id": "hk_048",
+    "name_zh": "玉虚峰徒步",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 60,
+      "source_note": "昆仑山玉虚峰周边徒步约50-70km",
+      "method": "青海攻略"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累爬约1500m",
+      "method": "估算"
+    },
+    "max_altitude_m": {
+      "value": 4500,
+      "source_note": "玉虚峰海拔约4500m(非指主峰)",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "5-9月",
+      "feasible": "5-9月",
+      "closed": "10-4月(严寒)",
+      "note": "昆仑山高海拔寒冷,窗口有限",
+      "source": "青海旅游"
+    },
+    "water_points": [
+      "冰川融水",
+      "昆仑河(需净化)"
+    ],
+    "retreat_points": [
+      "格尔木(起/终)",
+      "昆仑山口(公路)"
+    ],
+    "risk_tags": [
+      "高海拔(4500m+)",
+      "寒冷(即使夏季)",
+      "野生动物(藏羚羊/野牦牛)",
+      "偏远"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "60km/高海拔/昆仑山区/需高原适应",
+    "emergency": {
+      "nearest_hospital": "格尔木市医院(约150km)",
+      "access": "困难"
+    }
+  },
+  "cn_hiking_everest_005": {
+    "route_id": "cn_hiking_everest_005",
+    "name_zh": "珠峰东坡徒步(嘎玛沟)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 80,
+      "source_note": "嘎玛沟入口-珠峰东坡BC-出山约70-90km",
+      "method": "搜狐/两步路"
+    },
+    "elevation_gain_m": {
+      "value": 4500,
+      "source_note": "累计爬升约4500m,与珠峰东坡路线重叠",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5350,
+      "source_note": "朗玛拉垭口5344m,取5350m",
+      "method": "攻略"
+    },
+    "season": {
+      "best": "5月中-6月中,9月中-10月初",
+      "feasible": "5月下旬-10月中旬",
+      "closed": "10月下旬-5月上旬(封山)",
+      "note": "与珠峰东坡窗口一致;5月杜鹃花期",
+      "source": "搜狐/两步路"
+    },
+    "water_points": [
+      "沿途溪流/湖泊丰富(需净化)"
+    ],
+    "retreat_points": [
+      "曲当乡(起点)",
+      "轮珠林村(终点)"
+    ],
+    "risk_tags": [
+      "极高海拔(>5300m)",
+      "翻2个5000m+垭口",
+      "多日无信号",
+      "边防证"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "80km/极高海拔/翻2个5000m垭口/与珠峰东坡重叠路线",
+    "emergency": {
+      "nearest_hospital": "定日县医院",
+      "access": "困难"
+    }
+  },
+  "gl_hiking_inca_004": {
+    "route_id": "gl_hiking_inca_004",
+    "name_zh": "印加古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 42,
+      "source_note": "官方标称42km(Piscacucho-太阳门-马丘比丘)",
+      "method": "维基百科/官方"
+    },
+    "elevation_gain_m": {
+      "value": 2800,
+      "source_note": "累爬约2800m(翻死女人山口4215m)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 4215,
+      "source_note": "死女人山口(Dead Woman Pass)4215m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "5-9月(旱季)",
+      "feasible": "4-10月",
+      "closed": "11-3月(雨季关闭)",
+      "note": "11-3月雨季关闭维护",
+      "source": "维基百科"
+    },
+    "water_points": [
+      "沿途营地(溪流需净化)",
+      "Wiñay Wayna(水源)"
+    ],
+    "retreat_points": [
+      "KM82起点(可撤回)",
+      "马丘比丘(终点)"
+    ],
+    "risk_tags": [
+      "高反(4215m)",
+      "雨季(11-3月封闭)",
+      "湿热",
+      "需提前数月预订Permit"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "42km/4天/翻4215m垭口/印加遗址/需许可",
+    "emergency": {
+      "nearest_hospital": "乌鲁班巴(Urubamba)医院",
+      "access": "一般(轨道路线)"
+    }
+  },
+  "gl_hiking_abc_002": {
+    "route_id": "gl_hiking_abc_002",
+    "name_zh": "安纳普尔娜大本营徒步(ABC)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 115,
+      "source_note": "博卡拉-Nayapul-ABC-博卡拉约105-120km",
+      "method": "维基百科/LP"
+    },
+    "elevation_gain_m": {
+      "value": 3800,
+      "source_note": "累爬约3800m(含ABC 4130m)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 4130,
+      "source_note": "安纳普尔娜大本营4130m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-11月,3-4月",
+      "feasible": "全年",
+      "closed": "无(但雨季云雾多)",
+      "note": "春秋最佳;雨季(6-9月)云雾多",
+      "source": "维基百科"
+    },
+    "water_points": [
+      "沿途茶馆密集(every 1-2h)",
+      "客栈可补水"
+    ],
+    "retreat_points": [
+      "Nayapul(起点)",
+      "沿途大量村庄可撤"
+    ],
+    "risk_tags": [
+      "高反(4130m)",
+      "下午云雾(雨季)",
+      "阶梯多(3300级台阶)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "115km/7-10天/茶馆路线/成熟/高海拔",
+    "emergency": {
+      "nearest_hospital": "博卡拉(Pokhara)医院",
+      "access": "良好"
+    }
+  },
+  "gl_hiking_kumano_005": {
+    "route_id": "gl_hiking_kumano_005",
+    "name_zh": "熊野古道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 75,
+      "source_note": "中边路全程(Takijiri-Hongu约75km)",
+      "method": "UNESCO"
+    },
+    "elevation_gain_m": {
+      "value": 3500,
+      "source_note": "累爬约3500m(山地起伏)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 1100,
+      "source_note": "最高点约1100m",
+      "method": "地形"
+    },
+    "season": {
+      "best": "4-5月(樱),10-11月(红叶)",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "春秋最佳;夏季湿热有蚂蟥;8-9月台风",
+      "source": "UNESCO/日本旅游"
+    },
+    "water_points": [
+      "沿途村落(自动售货机)",
+      "温泉酒店"
+    ],
+    "retreat_points": [
+      "沿途公交车站(可随时退出)",
+      "熊野本宫大社"
+    ],
+    "risk_tags": [
+      "山蚂蟥(夏季)",
+      "台风(8-9月)",
+      "湿热(夏季)",
+      "台阶多"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "75km/4-6天/成熟古道/UNESCO世界遗产/公交可撤",
+    "emergency": {
+      "nearest_hospital": "田边市医院",
+      "access": "良好"
+    }
+  },
+  "gl_hiking_tmb_003": {
+    "route_id": "gl_hiking_tmb_003",
+    "name_zh": "环勃朗峰徒步(TMB)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 170,
+      "source_note": "官方TMB全程约170km(法意瑞三国)",
+      "method": "官方TMB路线"
+    },
+    "elevation_gain_m": {
+      "value": 10000,
+      "source_note": "累爬约10000m(含10个+垭口)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 2665,
+      "source_note": "Col de la Seigne/Col du Bonhomme约2665m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "6月下旬-9月上旬",
+      "feasible": "5月下旬-10月中旬",
+      "closed": "10月下旬-5月中旬(大雪)",
+      "note": "7-8月旺季木屋需提前预订;6月尚有积雪",
+      "source": "官方TMB网站"
+    },
+    "water_points": [
+      "沿途小镇/山屋(密集补给)",
+      "山泉(需净化)"
+    ],
+    "retreat_points": [
+      "沿途小镇(公交/缆车可撤回)",
+      "Les Houches/Chamonix"
+    ],
+    "risk_tags": [
+      "高山冰雪",
+      "雷暴(7-8月午后)",
+      "长距离(170km)",
+      "大量爬升(10000m)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "170km/10-12天/累爬10000m/翻10+垭口/世界顶级徒步线",
+    "emergency": {
+      "nearest_hospital": "霞慕尼(Chamonix)医院",
+      "access": "良好"
+    }
+  },
+  "gl_hiking_ebc_001": {
+    "route_id": "gl_hiking_ebc_001",
+    "name_zh": "珠峰大本营徒步(EBC)",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 130,
+      "source_note": "卢克拉-Lukla-EBC-Gokyo-卢克拉约130-150km(大环线)",
+      "method": "维基百科/LP"
+    },
+    "elevation_gain_m": {
+      "value": 5000,
+      "source_note": "累爬约5000m(含Kala Patthar 5545m)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 5545,
+      "source_note": "Kala Patthar观景点5545m(EBC本身5364m)",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-11月,3-4月",
+      "feasible": "9-11月,2-5月",
+      "closed": "12-1月(严寒),6-8月(季风雨季)",
+      "note": "10-11月秋高气爽看峰最佳;3-4月春花开;12-1月极端寒冷",
+      "source": "LP/维基百科"
+    },
+    "water_points": [
+      "沿途茶馆(Lukla-Namche-EBC全线茶馆密集)",
+      "需买瓶装水或净化"
+    ],
+    "retreat_points": [
+      "卢克拉(起/终,可飞回加都)",
+      "Namche Bazaar(直升机救援点)"
+    ],
+    "risk_tags": [
+      "AMS(急性高反,>3000m)",
+      "下午云层(遮挡雪山)",
+      "冬季大雪",
+      "卢克拉机场(世界最危险机场之一)"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 4,
+    "difficulty_reason": "130km/12-16天/最高5545m/茶馆路线/高反主要风险",
+    "emergency": {
+      "nearest_hospital": "加德满都(严重时需直升机)/Namche有诊所",
+      "access": "一般(需直升机救援)"
+    }
+  },
+  "gl_hiking_milford_008": {
+    "route_id": "gl_hiking_milford_008",
+    "name_zh": "米尔福德步道",
+    "mode": "hiking",
+    "distance_km": {
+      "value": 53.5,
+      "source_note": "官方标称53.5km(Glade Wharf-Sandfly Point)",
+      "method": "新西兰DOC官方"
+    },
+    "elevation_gain_m": {
+      "value": 1500,
+      "source_note": "累爬约1500m(翻MacKinnon Pass 1154m)",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 1154,
+      "source_note": "MacKinnon Pass 1154m",
+      "method": "官方"
+    },
+    "season": {
+      "best": "10-4月(新西兰夏)",
+      "feasible": "全年",
+      "closed": "无",
+      "note": "新西兰夏季(10-4月)最佳;冬季可能有雪",
+      "source": "新西兰环保部"
+    },
+    "water_points": [
+      "沿途山屋(雨水收集)",
+      "溪流(需净化)"
+    ],
+    "retreat_points": [
+      "Glade Wharf(起点)",
+      "Sandfly Point(终点可坐船)"
+    ],
+    "risk_tags": [
+      "峡湾暴雨(年200天降雨)",
+      "沙蝇(夏季密集)",
+      "溪流涨水",
+      "需提前数月预订"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 2,
+    "difficulty_reason": "53.5km/4天/新西兰Great Walk/成熟步道/主要问题是天气",
+    "emergency": {
+      "nearest_hospital": "蒂阿瑙(Te Anau)医院(约120km)",
+      "access": "良好(终点可坐船)"
+    }
+  },
+  "gl_cycling_taiwan_006": {
+    "route_id": "gl_cycling_taiwan_006",
+    "name_zh": "台湾环岛骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 900,
+      "source_note": "大环线约900-1000km(台北-台东-垦丁-台中-台北)",
+      "method": "台湾骑行攻略"
+    },
+    "elevation_gain_m": {
+      "value": 6000,
+      "source_note": "累爬约6000m(含苏花/南回等山路)",
+      "method": "攻略"
+    },
+    "max_altitude_m": {
+      "value": 400,
+      "source_note": "台湾沿海公路海拔较低,山区路段除外",
+      "method": "地形"
+    },
+    "season": {
+      "best": "10-12月,3-4月",
+      "feasible": "全年",
+      "closed": "7-9月(台风季)",
+      "note": "秋冬春三季;夏季台风危险",
+      "source": "骑行攻略"
+    },
+    "water_points": [
+      "沿途便利店密集(7-11/全家)"
+    ],
+    "surface_mix": "柏油95%+水泥5%",
+    "crosswind_exposure": "中(苏花/东北角强风)",
+    "resupply_interval": "充足",
+    "risk_tags": [
+      "苏花公路落石",
+      "东北季风(冬季)",
+      "台风(7-9月)",
+      "车辆多"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 3,
+    "difficulty_reason": "900km/8-12天/公路骑行/补给密集/难点在强风和落石",
+    "emergency": {
+      "access": "良好",
+      "nearest_hospital": "各大城镇医院",
+      "nearest_road": "全程公路",
+      "signal": "全程有信号"
+    }
+  },
+  "gl_cycling_shimanami_009": {
+    "route_id": "gl_cycling_shimanami_009",
+    "name_zh": "岛波海道骑行",
+    "mode": "cycling",
+    "distance_km": {
+      "value": 70,
+      "source_note": "尾道-今治约70km(跨6座大桥)",
+      "method": "日本官方"
+    },
+    "elevation_gain_m": {
+      "value": 500,
+      "source_note": "桥上坡起伏累计约500m",
+      "method": "官方"
+    },
+    "max_altitude_m": {
+      "value": 100,
+      "source_note": "跨海大桥高度",
+      "method": "地形"
+    },
+    "season": {
+      "best": "4-5月(樱),10-11月(红叶)",
+      "feasible": "3-11月",
+      "closed": "12-2月(寒冷)",
+      "note": "春秋最佳;夏季炎热",
+      "source": "日本观光"
+    },
+    "water_points": [
+      "各岛(休息站/便利店)",
+      "大桥服务区"
+    ],
+    "surface_mix": "柏油100%",
+    "crosswind_exposure": "高(跨海大桥风力大)",
+    "resupply_interval": "充足",
+    "risk_tags": [
+      "台风(7-9月)",
+      "冬季寒冷",
+      "大桥侧风"
+    ],
+    "gpx_found": false,
+    "difficulty_level": 1,
+    "difficulty_reason": "70km/跨6桥/日本休闲骑行/难度低/风景优美",
+    "emergency": {
+      "access": "良好"
+    }
+  }
+}

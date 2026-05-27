@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "description": "30条核心线路两步路(2bulu.com)轨迹链接",
+    "generated_date": "2026-05-24",
+    "quality_definitions": {
+      "A": "多条成熟轨迹，页面上有详细爬升/距离/标注点",
+      "B": "有轨迹但数量少或年份较老",
+      "C": "找不到独立轨迹页，仅搜索页面"
+    }
+  },
+  "routes": [
+    {
+      "name_zh": "虎跳峡高路",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E8%99%8E%E8%B7%B3%E5%B3%A1",
+      "sample_track_url": "https://www.2bulu.com/track/t-EAvGBCiRZozp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "多条成熟轨迹，15km/8km变体"
+    },
+    {
+      "name_zh": "雨崩徒步",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E9%9B%A8%E5%B4%A9",
+      "sample_track_url": "https://www.2bulu.com/track/t-j8A493BD4Sjp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "轨迹丰富，冰湖/神瀑/尼农多线"
+    },
+    {
+      "name_zh": "武功山反穿",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E6%AD%A6%E5%8A%9F%E5%B1%B1%E5%8F%8D%E7%A9%BF",
+      "sample_track_url": "https://www.2bulu.com/track/t-j35rFnnINffp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "轨迹极多，龙山村→金顶标准反穿"
+    },
+    {
+      "name_zh": "鳌太穿越",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E9%B3%8C%E5%A4%AA%E7%A9%BF%E8%B6%8A",
+      "sample_track_url": "https://www.2bulu.com/track/t-OEt94mjostPp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "多条轨迹，但注意全线禁穿"
+    },
+    {
+      "name_zh": "墨脱徒步",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%A2%A8%E8%84%B1%E5%BE%92%E6%AD%A5",
+      "sample_track_url": "https://app.2bulu.com/track/t-track_detail.htm?trackId=st6H5PE5AvA%3D",
+      "track_quality": "B",
+      "notes": "两步路社区攻略提及（派镇-拉格-汉密-背崩经典线），无独立轨迹页"
+    },
+    {
+      "name_zh": "珠峰东坡",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E7%8F%A0%E5%B3%B0%E4%B8%9C%E5%9D%A1",
+      "sample_track_url": "https://www.2bulu.com/track/t-Fm99ygsCz4np%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "多条成熟轨迹，70km/8天标准"
+    },
+    {
+      "name_zh": "长穿毕",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E9%95%BF%E7%A9%BF%E6%AF%95",
+      "sample_track_url": "https://www.2bulu.com/track/t-tKc264iE%252F3zp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "2024年10月实走轨迹，3天标准行程，标注点完整"
+    },
+    {
+      "name_zh": "扎尕那穿越",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E6%89%8E%E5%91%8C%E9%82%A3%E7%A9%BF%E8%B6%8A",
+      "sample_track_url": "https://www.2bulu.com/track/t-wBsXyTtrqWvp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "多条穿越轨迹，迭部→卓尼"
+    },
+    {
+      "name_zh": "七藏沟徒步",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E4%B8%83%E8%97%8F%E6%B2%9F",
+      "sample_track_url": "https://www.2bulu.com/track/t-uUDOOl8Vnrzp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "卡卡沟进→长沟村出标准线"
+    },
+    {
+      "name_zh": "四姑娘山二峰",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%9B%9B%E5%A7%91%E5%A8%98%E5%B1%B1%E4%BA%8C%E5%B3%B0",
+      "sample_track_url": "https://www.2bulu.com/track/t-b493jsRzE1np%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "B",
+      "notes": "二峰登顶轨迹，含路线汇总（391标注点），成熟度高"
+    },
+    {
+      "name_zh": "哈巴雪山",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%93%88%E5%B7%B4%E9%9B%AA%E5%B1%B1",
+      "sample_track_url": "https://www.2bulu.com/track/t-06bAX5PfG0bp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "多条攀登轨迹"
+    },
+    {
+      "name_zh": "冈仁波齐转山",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%86%88%E4%BB%81%E6%B3%A2%E9%BD%90%E8%BD%AC%E5%B1%B1",
+      "sample_track_url": "https://www.2bulu.com/track/t-LoD55yLrGpLp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "44.7km完整转山轨迹，2022年记录，含海拔/爬升完整数据"
+    },
+    {
+      "name_zh": "梅里外转",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E6%A2%85%E9%87%8C%E5%A4%96%E8%BD%AC",
+      "sample_track_url": "https://www.2bulu.com/track/t-743ktqNhc1Hp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "2024年9月实走，6天16467m下降/15541m爬升，标注点完整"
+    },
+    {
+      "name_zh": "独库公路",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E7%8B%AC%E5%BA%93%E5%85%AC%E8%B7%AF",
+      "sample_track_url": "https://www.2bulu.com/track/t-KegAXBCseqvp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "全程轨迹含489标注点，累计爬升6920m，成熟骑行线"
+    },
+    {
+      "name_zh": "318川藏南线",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=318%E5%B7%9D%E8%97%8F%E5%8D%97%E7%BA%BF",
+      "sample_track_url": "https://www.2bulu.com/track/t-U4LuJuMSf6Dp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "B",
+      "notes": "2024年骑行全程轨迹（57川藏服务站→布达拉宫），36标注点"
+    },
+    {
+      "name_zh": "环青海湖",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E7%8E%AF%E9%9D%92%E6%B5%B7%E6%B9%96",
+      "sample_track_url": "https://www.2bulu.com/track/t-yJByKn%252B1t4np%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "B",
+      "notes": "2020年3天环湖+茶卡盐湖轨迹，61标注点，常用参考轨迹"
+    },
+    {
+      "name_zh": "环海南岛",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E7%8E%AF%E6%B5%B7%E5%8D%97%E5%B2%9B",
+      "sample_track_url": "https://www.2bulu.com/track/t-DSbrtkLmOKrp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "B",
+      "notes": "2025年12月环岛骑行轨迹，974km/3723m爬升，含详细路程"
+    },
+    {
+      "name_zh": "箭扣长城",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E7%AE%AD%E6%89%A3%E9%95%BF%E5%9F%8E",
+      "sample_track_url": "https://www.2bulu.com/track/t-TbEj0pZD3urp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "B",
+      "notes": "箭扣大环（九眼楼-正北楼）完整轨迹，9标注点，经典线路"
+    },
+    {
+      "name_zh": "南太行徒步",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%8D%97%E5%A4%AA%E8%A1%8C",
+      "sample_track_url": "https://app.2bulu.com/track/t-cJuiVwAfWO7p%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "B",
+      "notes": "2024年12月双底-马武寨-抱犊村段轨迹（冬季南太行D1）"
+    },
+    {
+      "name_zh": "徽杭古道",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%BE%BD%E6%9D%AD%E5%8F%A4%E9%81%93",
+      "sample_track_url": "https://app.2bulu.com/track/t-bZ1tF%252FXnHSbp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "杭徽线（浙川村-绩溪）轨迹，41标注点，成熟景区路线"
+    },
+    {
+      "name_zh": "漓江徒步",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E6%BC%93%E6%B1%9F%E5%BE%92%E6%AD%A5",
+      "sample_track_url": "https://www.2bulu.com/track/t-aT%252BzDFOschXp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "大墟古镇-杨堤-兴坪精华段轨迹，含详细标注"
+    },
+    {
+      "name_zh": "稻城亚丁",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E7%A8%BB%E5%9F%8E%E4%BA%9A%E4%B8%81",
+      "sample_track_url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=6LIxeTRIXyE%253D",
+      "track_quality": "A",
+      "notes": "亚丁Z线（洛克线+景区线+卡斯地狱谷）攻略含相关轨迹"
+    },
+    {
+      "name_zh": "他念他翁",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E4%BB%96%E5%BF%B5%E4%BB%96%E7%BF%81",
+      "sample_track_url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=76007439",
+      "track_quality": "A",
+      "notes": "多条重装轨迹，盐扎线常见"
+    },
+    {
+      "name_zh": "乌孙古道",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E4%B9%8C%E5%AD%99%E5%8F%A4%E9%81%93",
+      "sample_track_url": "https://www.2bulu.com/share/share_track.htm?trackId=1NFGFSpahBHp%2FR2KBg5Tzw%3D%3D",
+      "track_quality": "A",
+      "notes": "2022年7月琼库什台-天堂湖-库车全程轨迹，51标注点，经典穿越"
+    },
+    {
+      "name_zh": "夏塔古道",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%A4%8F%E5%A1%94%E5%8F%A4%E9%81%93",
+      "sample_track_url": "https://www.2bulu.com/track/t-h7WDxKQDAyXp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "B",
+      "notes": "2024年夏塔景区徒步（将军桥往返），适合景区短途参考"
+    },
+    {
+      "name_zh": "喀纳斯环线",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%96%80%E7%BA%B3%E6%96%AF%E7%8E%AF%E7%BA%BF",
+      "sample_track_url": "https://app.2bulu.com/track/t-8Xsf06jI9rbp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "喀纳斯大环线轨迹（75标注点），北疆经典徒步线路"
+    },
+    {
+      "name_zh": "党岭徒步",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%85%9A%E5%B2%AD",
+      "sample_track_url": "https://www.2bulu.com/track/t-Ihtk7NyvwhLp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "2023年10月党岭-葫芦海徒步轨迹，秋季经典赏景线"
+    },
+    {
+      "name_zh": "库拉岗日",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%BA%93%E6%8B%89%E5%B2%97%E6%97%A5",
+      "sample_track_url": "https://app.2bulu.com/track/t-C5714kWTPvfp%252FR2KBg5Tzw%253D%253D.htm",
+      "track_quality": "A",
+      "notes": "库拉岗日徒步精华段轨迹（34标注点），西藏经典徒步线"
+    },
+    {
+      "name_zh": "希夏邦马",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E5%B8%8C%E5%A4%8F%E9%82%A6%E9%A9%AC",
+      "sample_track_url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=hBFa%2F1stLGaRhHdOolouvw%3D%3D",
+      "track_quality": "B",
+      "notes": "北坡穿南坡轨迹"
+    },
+    {
+      "name_zh": "新藏线",
+      "search_url": "https://www.2bulu.com/track/track_search.htm?key=%E6%96%B0%E8%97%8F%E7%BA%BF",
+      "sample_track_url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=170999",
+      "track_quality": "C",
+      "notes": "两步路攻略提及的十大骑行线路之一，无独立轨迹页"
+    }
+  ]
+}

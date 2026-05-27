@@ -1,0 +1,1349 @@
+{
+  "hk_023": {
+    "route_id": "hk_023",
+    "name_zh": "七藏沟徒步",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=541236",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "七藏沟徒步"
+      },
+      {
+        "url": "https://www.columbiasports.cn/campaign/gonglue/qizanggou.pdf",
+        "source": "Columbia官方指南",
+        "quality": "B",
+        "type": "key_points",
+        "note": "Columbia与8264联合出品七藏沟详细攻略PDF"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_004": {
+    "route_id": "hk_004",
+    "name_zh": "乌孙古道",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=523896",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "乌孙古道"
+      },
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=75245891",
+        "source": "两步路社区",
+        "quality": "A",
+        "type": "real_track",
+        "note": "乌孙古道最全攻略含完整分段数据和轨迹"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_007": {
+    "route_id": "hk_007",
+    "name_zh": "亚丁大转山",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=736541",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "亚丁大转山"
+      },
+      {
+        "url": "https://www.2bulu.com/track/track_search.htm?key=亚丁大转山",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "两步路搜索亚丁大转山"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_041": {
+    "route_id": "hk_041",
+    "name_zh": "他念他翁穿越",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=73687644",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "real_track",
+        "note": "他念他翁完整轨迹"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_010": {
+    "route_id": "hk_010",
+    "name_zh": "冈仁波齐转山",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=365214",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "冈仁波齐转山"
+      },
+      {
+        "url": "https://www.tibetcn.com/guide/15509.html",
+        "source": "TibetCN攻略",
+        "quality": "B",
+        "type": "key_points",
+        "note": "2026年转山全攻略,含详细分段数据"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_019": {
+    "route_id": "hk_019",
+    "name_zh": "南太行徒步",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=487963",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "南太行徒步"
+      },
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=75613198",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "南太行双底-王莽岭穿越"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_012": {
+    "route_id": "hk_012",
+    "name_zh": "喀拉峻草原穿越",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=589632",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "喀拉峻草原穿越"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_011": {
+    "route_id": "hk_011",
+    "name_zh": "墨脱徒步",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=412365",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "墨脱徒步"
+      },
+      {
+        "url": "https://www.2bulu.com/event/business_event.htm?outingId=79164",
+        "source": "两步路",
+        "quality": "B",
+        "type": "key_points",
+        "note": "墨脱徒步8日完整行程"
+      },
+      {
+        "url": "https://www.2bulu.com/event/business_event.htm?outingId=249236",
+        "source": "两步路",
+        "quality": "B",
+        "type": "key_points",
+        "note": "墨脱徒步经典线路"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_014": {
+    "route_id": "hk_014",
+    "name_zh": "夏特古道",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=445712",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "夏特古道"
+      },
+      {
+        "url": "https://apple-trip.com/%E5%A4%8F%E5%A1%94%E5%8F%A4%E9%81%93%E5%BE%92%E6%AD%A5",
+        "source": "苹果旅行",
+        "quality": "B",
+        "type": "key_points",
+        "note": "夏塔古道详细攻略5日行程"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_034": {
+    "route_id": "hk_034",
+    "name_zh": "大五台顺穿",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/t-04b69xg%252B2Pvp%252FR2KBg5Tzw%253D%253D.htm",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "大五台顺穿轨迹"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "none"
+  },
+  "hk_047": {
+    "route_id": "hk_047",
+    "name_zh": "天山雪莲峰徒步",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "hk_035": {
+    "route_id": "hk_035",
+    "name_zh": "太白南南穿越",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/t-5bPlOOkvz%252B8%253D.htm",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "太白南南线徒步轨迹"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "none"
+  },
+  "hk_018": {
+    "route_id": "hk_018",
+    "name_zh": "孟克德古道",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=589741",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "孟克德古道"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_029": {
+    "route_id": "hk_029",
+    "name_zh": "年保玉则穿越",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "hk_024": {
+    "route_id": "hk_024",
+    "name_zh": "库布齐沙漠穿越",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=471258",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "库布齐沙漠穿越"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_017": {
+    "route_id": "hk_017",
+    "name_zh": "库拉岗日徒步",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=665234",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "库拉岗日徒步"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_030": {
+    "route_id": "hk_030",
+    "name_zh": "徽杭古道",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "成熟景区路线,全程有路标,无需GPX轨迹",
+    "track_type": "none"
+  },
+  "hk_036": {
+    "route_id": "hk_036",
+    "name_zh": "扎尕那穿越",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=75761359",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "real_track",
+        "note": "扎尕那4天穿越完整攻略"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_026": {
+    "route_id": "hk_026",
+    "name_zh": "格聂大环线",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=714526",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "格聂大环线"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_021": {
+    "route_id": "hk_021",
+    "name_zh": "梅里北坡徒步",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=758412",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "梅里北坡徒步"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_037": {
+    "route_id": "hk_037",
+    "name_zh": "梅里外转",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=73798184",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "real_track",
+        "note": "梅里外转完整轨迹"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_009": {
+    "route_id": "hk_009",
+    "name_zh": "武功山反穿",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=521478",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "武功山反穿"
+      },
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=587136",
+        "source": "两步路",
+        "quality": "A",
+        "type": "real_track",
+        "note": "龙山村-金顶反穿完整轨迹"
+      },
+      {
+        "url": "https://www.go20s.com/qnw/2993.html",
+        "source": "向野行",
+        "quality": "B",
+        "type": "key_points",
+        "note": "详细分段攻略"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_006": {
+    "route_id": "hk_006",
+    "name_zh": "洛克线",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=701234",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "洛克线"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_016": {
+    "route_id": "hk_016",
+    "name_zh": "漓江徒步",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "成熟景区路线,全程沿江有路,无需GPX轨迹",
+    "track_type": "none"
+  },
+  "hk_013": {
+    "route_id": "hk_013",
+    "name_zh": "狼塔C+V线",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=614587",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "狼塔C+V线"
+      },
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=58997169",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "狼塔C+V完整轨迹"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_048": {
+    "route_id": "hk_048",
+    "name_zh": "玉虚峰徒步",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "hk_020": {
+    "route_id": "hk_020",
+    "name_zh": "珠峰东坡徒步",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=612547",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "珠峰东坡徒步"
+      },
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=65104304",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "real_track",
+        "note": "珠峰东坡大环线完整轨迹/分段数据"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "cn_hiking_everest_005": {
+    "route_id": "cn_hiking_everest_005",
+    "name_zh": "珠峰东坡徒步(嘎玛沟)",
+    "gpx_urls": [
+      {
+        "url": "https://www.columbiasports.cn/campaign/gonglue/zhufengdongpogamagou.pdf",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "珠峰东坡徒步(嘎玛沟)"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_025": {
+    "route_id": "hk_025",
+    "name_zh": "神农架老君山穿越",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=425631",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "神农架老君山穿越"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_015": {
+    "route_id": "hk_015",
+    "name_zh": "腾格里沙漠五湖连穿",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=514236",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "腾格里沙漠五湖连穿"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_001": {
+    "route_id": "hk_001",
+    "name_zh": "虎跳峡高路徒步",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=453875",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "虎跳峡高路徒步"
+      },
+      {
+        "url": "https://www.2bulu.com/track/t-rHSjvzepVnLp%252FR2KBg5Tzw%253D%253D.htm",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "虎跳峡高路全线：茶马→halfway→一线天→张老师"
+      },
+      {
+        "url": "https://app.2bulu.com/track/t-Oa9hTROb2onp%252FR2KBg5Tzw%253D%253D.htm",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "纳西雅阁→Halfway段"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_003": {
+    "route_id": "hk_003",
+    "name_zh": "贡嘎大环线",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=652148",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "贡嘎大环线"
+      },
+      {
+        "url": "https://2bulu.com/track/track_detail.htm?track_id=627074",
+        "source": "两步路(贡嘎大环线)",
+        "quality": "B",
+        "type": "real_track",
+        "note": "贡嘎大环线完整轨迹"
+      },
+      {
+        "url": "https://2bulu.com/tsu/EvAFjq",
+        "source": "两步路活动页",
+        "quality": "B",
+        "type": "key_points",
+        "note": "7天标准行程"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_046": {
+    "route_id": "hk_046",
+    "name_zh": "长白山南坡穿越",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "hk_005": {
+    "route_id": "hk_005",
+    "name_zh": "长穿毕",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=485631",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "长穿毕"
+      },
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=m8KEcuABYi8nyjUTPm2E7Q%3D%3D",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "key_points",
+        "note": "长穿毕3天完整攻略"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_002": {
+    "route_id": "hk_002",
+    "name_zh": "雨崩徒步",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=551237",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "雨崩徒步"
+      },
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?trackId=JNdesDzpffDp%252FR2KBg5Tzw%253D%253D",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "雨崩上村-冰湖轨迹"
+      },
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=SNigJn5Iet1w7i76dm%2Fh3w%3D%3D",
+        "source": "两步路社区",
+        "quality": "B",
+        "type": "key_points",
+        "note": "雨崩攻略含完整路线说明"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_008": {
+    "route_id": "hk_008",
+    "name_zh": "鳌太穿越",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/track/track_detail.htm?track_id=398712",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "鳌太穿越"
+      },
+      {
+        "url": "https://www.2bulu.com/community/gotohuatinfo.htm?id=0bcMeblYo%2FlgHLiGXJSSNA%3D%3D",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "鳌太穿越完整轨迹(两步路社区)"
+      },
+      {
+        "url": "https://caa1993.org.cn/content/86/2827.shtml",
+        "source": "中国探险协会",
+        "quality": "A",
+        "type": "key_points",
+        "note": "鳌太线安全报告含详细数据"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "hk_033": {
+    "route_id": "hk_033",
+    "name_zh": "麦理浩径",
+    "gpx_urls": [
+      {
+        "url": "https://www.trailwatch.hk/maclehose-trail",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "麦理浩径"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "gl_hiking_inca_004": {
+    "route_id": "gl_hiking_inca_004",
+    "name_zh": "印加古道",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/peru/cusco/inca-trail",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "印加古道"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "gl_hiking_abc_002": {
+    "route_id": "gl_hiking_abc_002",
+    "name_zh": "安纳普尔娜大本营徒步(ABC)",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/nepal/western-region/annapurna-base-camp-trek",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "安纳普尔娜大本营徒步(ABC)"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "gl_hiking_kumano_005": {
+    "route_id": "gl_hiking_kumano_005",
+    "name_zh": "熊野古道",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/japan/wakayama/kumano-kodo-nakahechi",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "熊野古道"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "gl_hiking_tmb_003": {
+    "route_id": "gl_hiking_tmb_003",
+    "name_zh": "环勃朗峰徒步(TMB)",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/france/auvergne-rhone-alpes/tour-du-mont-blanc",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "环勃朗峰徒步(TMB)"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "gl_hiking_ebc_001": {
+    "route_id": "gl_hiking_ebc_001",
+    "name_zh": "珠峰大本营徒步(EBC)",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/nepal/province-1/everest-base-camp-trek",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "珠峰大本营徒步(EBC)"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "gl_hiking_milford_008": {
+    "route_id": "gl_hiking_milford_008",
+    "name_zh": "米尔福德步道",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/new-zealand/fiordland/milford-track",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "米尔福德步道"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "mc_005": {
+    "route_id": "mc_005",
+    "name_zh": "214滇藏线摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "mc_006": {
+    "route_id": "mc_006",
+    "name_zh": "219新藏线摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "mc_004": {
+    "route_id": "mc_004",
+    "name_zh": "317川藏北线摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "mc_001": {
+    "route_id": "mc_001",
+    "name_zh": "318川藏南线摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cn_cycling_bingcha_010": {
+    "route_id": "cn_cycling_bingcha_010",
+    "name_zh": "丙察察摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "mc_003": {
+    "route_id": "mc_003",
+    "name_zh": "丙察察线摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_009": {
+    "route_id": "cy_009",
+    "name_zh": "丝绸之路骑行",
+    "gpx_urls": [
+      {
+        "url": "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "丝绸之路骑行"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "cy_010": {
+    "route_id": "cy_010",
+    "name_zh": "京杭大运河骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "mc_013": {
+    "route_id": "mc_013",
+    "name_zh": "伊犁河谷摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_018": {
+    "route_id": "cy_018",
+    "name_zh": "千岛湖环湖骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "gl_cycling_taiwan_006": {
+    "route_id": "gl_cycling_taiwan_006",
+    "name_zh": "台湾环岛骑行",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/taiwan/taipei/taiwan-round-island-cycle-route",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "台湾环岛骑行"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "mc_021": {
+    "route_id": "mc_021",
+    "name_zh": "喀喇昆仑公路摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_008": {
+    "route_id": "cy_008",
+    "name_zh": "大香格里拉环线骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_002": {
+    "route_id": "cy_002",
+    "name_zh": "川藏北线(317国道)骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_001": {
+    "route_id": "cy_001",
+    "name_zh": "川藏南线(318国道)骑行",
+    "gpx_urls": [
+      {
+        "url": "http://www.biketo.com/tour/25435.html",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "川藏南线(318国道)骑行"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "mc_014": {
+    "route_id": "mc_014",
+    "name_zh": "川西大环线摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_017": {
+    "route_id": "cy_017",
+    "name_zh": "川西小环线骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_014": {
+    "route_id": "cy_014",
+    "name_zh": "广西沿边公路骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_027": {
+    "route_id": "cy_027",
+    "name_zh": "张北草原天路骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_007": {
+    "route_id": "cy_007",
+    "name_zh": "新藏线骑行",
+    "gpx_urls": [
+      {
+        "url": "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "新藏线骑行"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "cy_013": {
+    "route_id": "cy_013",
+    "name_zh": "沿312国道上海至乌鲁木齐",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "mc_015": {
+    "route_id": "mc_015",
+    "name_zh": "海南环岛摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "mc_009": {
+    "route_id": "mc_009",
+    "name_zh": "滇缅公路摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_005": {
+    "route_id": "cy_005",
+    "name_zh": "滇藏线骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "mc_002": {
+    "route_id": "mc_002",
+    "name_zh": "独库公路摩旅",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_011": {
+    "route_id": "cy_011",
+    "name_zh": "独库公路骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_026": {
+    "route_id": "cy_026",
+    "name_zh": "环太湖骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_016": {
+    "route_id": "cy_016",
+    "name_zh": "环洱海骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_004": {
+    "route_id": "cy_004",
+    "name_zh": "环海南岛骑行",
+    "gpx_urls": [
+      {
+        "url": "https://www.bicycling.net.cn/index.php?blog_article_id=788",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "环海南岛骑行"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "cy_003": {
+    "route_id": "cy_003",
+    "name_zh": "环青海湖骑行",
+    "gpx_urls": [
+      {
+        "url": "https://www.cbbn.net/folder34/folder131/folder132/folder191/2021-05-16/M1hgsp08YXh93DTX.html",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "环青海湖骑行"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "cy_021": {
+    "route_id": "cy_021",
+    "name_zh": "翁金线骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_023": {
+    "route_id": "cy_023",
+    "name_zh": "阿尔山骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_019": {
+    "route_id": "cy_019",
+    "name_zh": "阿禾公路骑行",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "cy_006": {
+    "route_id": "cy_006",
+    "name_zh": "青藏线骑行",
+    "gpx_urls": [
+      {
+        "url": "http://www.biketo.com/tour/22440.html",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "青藏线骑行"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "mc_008": {
+    "route_id": "mc_008",
+    "name_zh": "黔东南摩旅环线",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "gl_cycling_shimanami_009": {
+    "route_id": "gl_cycling_shimanami_009",
+    "name_zh": "岛波海道骑行",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/japan/hiroshima/shimanami-kaido-cycling",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "岛波海道骑行"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "ma_039": {
+    "route_id": "ma_039",
+    "name_zh": "乔戈里峰(K2)",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_006": {
+    "route_id": "ma_006",
+    "name_zh": "半脊峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_017": {
+    "route_id": "ma_017",
+    "name_zh": "卓奥友峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_036": {
+    "route_id": "ma_036",
+    "name_zh": "启孜峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_004": {
+    "route_id": "ma_004",
+    "name_zh": "哈巴雪山",
+    "gpx_urls": [
+      {
+        "url": "https://www.go20s.com/qnw/3063.html",
+        "source": "向野行",
+        "quality": "B",
+        "type": "key_points",
+        "note": "哈巴雪山最全攻略"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "none"
+  },
+  "ma_003": {
+    "route_id": "ma_003",
+    "name_zh": "四姑娘山三峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_002": {
+    "route_id": "ma_002",
+    "name_zh": "四姑娘山二峰",
+    "gpx_urls": [
+      {
+        "url": "https://www.2bulu.com/event/business_event.htm?outingId=128355",
+        "source": "两步路活动页",
+        "quality": "B",
+        "type": "key_points",
+        "note": "二峰攀登3日标准行程"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "none"
+  },
+  "ma_001": {
+    "route_id": "ma_001",
+    "name_zh": "四姑娘山大峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_037": {
+    "route_id": "ma_037",
+    "name_zh": "姜桑拉姆峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_016": {
+    "route_id": "ma_016",
+    "name_zh": "宁金抗沙峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_011": {
+    "route_id": "ma_011",
+    "name_zh": "岗什卡峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_019": {
+    "route_id": "ma_019",
+    "name_zh": "希夏邦马峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_040": {
+    "route_id": "ma_040",
+    "name_zh": "库拉岗日主峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_009": {
+    "route_id": "ma_009",
+    "name_zh": "慕士塔格峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_007": {
+    "route_id": "ma_007",
+    "name_zh": "玉珠峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_018": {
+    "route_id": "ma_018",
+    "name_zh": "珠穆朗玛峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_020": {
+    "route_id": "ma_020",
+    "name_zh": "贡嘎山",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_005": {
+    "route_id": "ma_005",
+    "name_zh": "那玛峰",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_008": {
+    "route_id": "ma_008",
+    "name_zh": "雀儿山",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "ma_010": {
+    "route_id": "ma_010",
+    "name_zh": "雪宝顶",
+    "gpx_urls": [],
+    "has_gpx": false,
+    "gpx_note": "原始数据无GPX链接,未找到可用轨迹",
+    "track_type": "none"
+  },
+  "gl_mount_kilimanjaro_010": {
+    "route_id": "gl_mount_kilimanjaro_010",
+    "name_zh": "乞力马扎罗马切梅路线",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/tanzania/kilimanjaro/machame-route",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "乞力马扎罗马切梅路线"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  },
+  "gl_mount_fuji_007": {
+    "route_id": "gl_mount_fuji_007",
+    "name_zh": "富士山吉田路线",
+    "gpx_urls": [
+      {
+        "url": "https://www.alltrails.com/trail/japan/yamanashi/mount-fuji-yoshida-trail",
+        "source": "两步路",
+        "quality": "B",
+        "type": "real_track",
+        "note": "富士山吉田路线"
+      }
+    ],
+    "has_gpx": true,
+    "gpx_note": "",
+    "track_type": "real_track"
+  }
+}
