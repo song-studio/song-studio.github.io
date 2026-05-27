@@ -2242,7 +2242,18 @@ const REWARD_BADGE_ASSETS={
   memorial:'assets/fan-cards/rewards/badges/memorial.png',
   easter_egg:'assets/fan-cards/rewards/badges/easter_egg.png'
 };
+const REWARD_BADGE_VISIBLE_BOUNDS={
+  tier_unawarded:{x:68,y:68,w:299,h:423},
+  tier_bronze:{x:68,y:68,w:281,h:423},
+  tier_silver:{x:67,y:68,w:292,h:429},
+  tier_gold:{x:40,y:68,w:322,h:475},
+  bonus_same_team:{x:68,y:52,w:303,h:437},
+  narrative:{x:67,y:52,w:309,h:438},
+  memorial:{x:55,y:53,w:312,h:438},
+  easter_egg:{x:42,y:50,w:314,h:441}
+};
 const rewardBadgeImageCache={};
+const rewardBadgeMatteCache={};
 function loadRewardBadgeImage(type){
   const src=REWARD_BADGE_ASSETS[type];
   if(!src)return Promise.resolve(null);
@@ -2286,11 +2297,11 @@ const REWARD_FRAME_TEMPLATE_SRC='assets/fan-cards/rewards/templates/reward-frame
 const REWARD_FRAME_TEMPLATE_SIZE={w:1024,h:1536};
 const REWARD_FRAME_CARD_SLOT={x:164,y:260,w:692,h:1024};
 const REWARD_BADGE_SLOTS=[
-  {x:480,y:415,w:705,rot:-7,name:'top-left-hero'},
-  {x:1415,y:525,w:520,rot:7,name:'top-right-support'},
-  {x:420,y:2255,w:620,rot:-5,name:'bottom-left-support'},
-  {x:1385,y:2255,w:620,rot:5,name:'bottom-right-support'},
-  {x:900,y:2315,w:380,rot:0,name:'bottom-center-mini'}
+  {x:450,y:500,w:590,rot:-7,name:'top-left-hero'},
+  {x:1450,y:550,w:410,rot:7,name:'top-right-support'},
+  {x:455,y:2115,w:440,rot:-5,name:'bottom-left-support'},
+  {x:1365,y:2115,w:450,rot:5,name:'bottom-right-support'},
+  {x:900,y:2240,w:295,rot:0,name:'bottom-center-mini'}
 ];
 let rewardFrameTemplatePromise=null;
 function loadRewardFrameTemplate(){
@@ -2325,13 +2336,49 @@ function drawRewardFrame(ctx,img,frame,w,h){
   drawRewardCoverImage(ctx,img,slot.x,slot.y,slot.w,slot.h);
   ctx.drawImage(frame,0,0,w,h);
 }
-function drawRewardBadgeAsset(ctx,img,slot,role){
+function rewardBadgeMatteCanvas(img,src,type){
+  const key=`${type}:${src.x},${src.y},${src.w},${src.h}`;
+  if(rewardBadgeMatteCache[key])return rewardBadgeMatteCache[key];
+  const c=document.createElement('canvas');
+  c.width=src.w;c.height=src.h;
+  const m=c.getContext('2d');
+  m.imageSmoothingEnabled=true;m.imageSmoothingQuality='high';
+  m.drawImage(img,src.x,src.y,src.w,src.h,0,0,src.w,src.h);
+  m.globalCompositeOperation='source-in';
+  const g=m.createLinearGradient(0,0,src.w,src.h);
+  g.addColorStop(0,'#fff4df');
+  g.addColorStop(.55,'#d8c4a4');
+  g.addColorStop(1,'#8b7659');
+  m.fillStyle=g;
+  m.fillRect(0,0,src.w,src.h);
+  rewardBadgeMatteCache[key]=c;
+  return c;
+}
+function drawRewardBadgeAsset(ctx,img,slot,type){
   if(!img)return;
-  const ratio=img.height/img.width;
+  const src=REWARD_BADGE_VISIBLE_BOUNDS[type]||{x:0,y:0,w:img.width,h:img.height};
+  const ratio=src.h/src.w;
   const dw=slot.w,dh=dw*ratio;
+  const matte=rewardBadgeMatteCanvas(img,src,type);
+  const matteScale=1.075;
   ctx.save();ctx.translate(slot.x,slot.y);ctx.rotate((slot.rot||0)*Math.PI/180);
-  ctx.shadowColor='rgba(33,22,12,.38)';ctx.shadowBlur=30;ctx.shadowOffsetY=20;
-  ctx.drawImage(img,-dw/2,-dh/2,dw,dh);
+  ctx.shadowColor='rgba(24,14,7,.45)';ctx.shadowBlur=38;ctx.shadowOffsetX=9;ctx.shadowOffsetY=28;
+  ctx.drawImage(matte,-dw*matteScale/2,-dh*matteScale/2,dw*matteScale,dh*matteScale);
+  ctx.shadowColor='rgba(65,45,24,.22)';ctx.shadowBlur=10;ctx.shadowOffsetX=2;ctx.shadowOffsetY=5;
+  ctx.globalAlpha=.86;
+  ctx.drawImage(matte,-dw*1.025/2,-dh*1.025/2,dw*1.025,dh*1.025);
+  ctx.globalAlpha=1;
+  ctx.shadowColor='rgba(26,16,8,.32)';ctx.shadowBlur=18;ctx.shadowOffsetX=4;ctx.shadowOffsetY=12;
+  ctx.drawImage(img,src.x,src.y,src.w,src.h,-dw/2,-dh/2,dw,dh);
+  ctx.shadowColor='transparent';
+  ctx.globalCompositeOperation='screen';
+  ctx.globalAlpha=.16;
+  const shine=ctx.createLinearGradient(-dw*.42,-dh*.44,dw*.24,dh*.18);
+  shine.addColorStop(0,'rgba(255,255,255,.55)');
+  shine.addColorStop(.55,'rgba(255,255,255,.12)');
+  shine.addColorStop(1,'rgba(255,255,255,0)');
+  ctx.fillStyle=shine;
+  ctx.beginPath();ctx.ellipse(-dw*.12,-dh*.16,dw*.36,dh*.22,-Math.PI/10,0,Math.PI*2);ctx.fill();
   ctx.restore();
 }
 function paperPalette(theme='gold'){
@@ -2403,7 +2450,7 @@ async function downloadRewardCard(teamId){
     const hits=meta.marks.hits||0;
     const slots=rewardSlotsForBadges(badges);
     const badgeImages=await Promise.all(badges.map(b=>loadRewardBadgeImage(b.type)));
-    badgeImages.forEach((badgeImg,i)=>drawRewardBadgeAsset(ctx,badgeImg,slots[i],badges[i].role));
+    badgeImages.forEach((badgeImg,i)=>drawRewardBadgeAsset(ctx,badgeImg,slots[i],badges[i].type));
     const a=document.createElement('a');a.download=`${T(team.id==='china'?'彩蛋卡':team.name)}-${T('奖励盖章卡')}.png`;a.href=canvas.toDataURL('image/png');a.click();toast(T('奖励盖章卡已下载。'))
   }catch(e){const a=document.createElement('a');a.download=`${T(team.name)}-${T('卡牌')}.webp`;a.href=team.image;a.click();toast(T('高清生成失败，已下载原始卡牌。'))}
 }
