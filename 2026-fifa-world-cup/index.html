@@ -10,11 +10,11 @@
 <meta name="keywords" content="2026世界杯,FIFA世界杯,世界杯赛程,世界杯球队,世界杯比分,2026WorldCup,美墨加世界杯,球迷卡牌赛,世界杯预测">
 <meta property="og:title" content="2026 FIFA World Cup · 赛程 · 球队 · 比分">
 <meta property="og:description" content="2026 FIFA世界杯完整赛程、48支球队、12小组对阵、淘汰赛与实时比分。美墨加联合主办。">
-<meta property="og:image" content="https://song-studio.github.io/2026-FIFA-World-Cup/assets/fan-cards/base/thumb/argentina.webp">
-<meta property="og:url" content="https://song-studio.github.io/2026-FIFA-World-Cup/">
+<meta property="og:image" content="https://song-studio.github.io/2026-fifa-world-cup/assets/fan-cards/base/thumb/argentina.webp">
+<meta property="og:url" content="https://song-studio.github.io/2026-fifa-world-cup/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://song-studio.github.io/2026-FIFA-World-Cup/">
+<link rel="canonical" href="https://song-studio.github.io/2026-fifa-world-cup/">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9RBX1DLW"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-TR9RBX1DLW')</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css">
@@ -2826,7 +2826,7 @@ function exportFavICS(){
   toast(`✅ ${cnt} ${lang==='en'?'matches exported':'场已导出'}`);
 }
 function shareSchedule(){
-  const mainUrl='https://song-studio.github.io/2026-FIFA-World-Cup/';
+  const mainUrl='https://song-studio.github.io/2026-fifa-world-cup/';
   const text=(lang==='en'?'🏆 2026 FIFA World Cup Schedule\n':'🏆 2026 FIFA 世界杯赛程查询\n')+mainUrl;
   copyText(text,lang==='en'?'✅ Link copied!':'✅ 链接已复制');
 }
@@ -2836,7 +2836,7 @@ function shareMainAndCards(){
 function openSharePanel(){document.getElementById('share-sheet')?.classList.add('open')}
 function closeSharePanel(){document.getElementById('share-sheet')?.classList.remove('open')}
 function copyForWeChat(){
-  const text=`世界杯赛程：\nhttps://song-studio.github.io/2026-FIFA-World-Cup/\n\n球迷卡牌赛：\nhttps://song-studio.github.io/2026-FIFA-World-Cup/fan-cards.html`;
+  const text=`世界杯赛程：\nhttps://song-studio.github.io/2026-fifa-world-cup/\n\n球迷卡牌赛：\nhttps://song-studio.github.io/2026-fifa-world-cup/fan-cards.html`;
   copyText(text,"✅ 已复制");
   closeSharePanel();
 }
@@ -2849,7 +2849,7 @@ function openWeChatApp(){
 function shareFavSchedule(){
   const teams=favs.map(n=>{const td=TEAMS[n];return lang==='en'&&td?td.en:n;}).join(', ');
   const text=`⭐ ${lang==='en'?'My 2026 World Cup picks':'我的2026世界杯收藏'}: ${teams}
-https://song-studio.github.io/2026-FIFA-World-Cup/`;
+https://song-studio.github.io/2026-fifa-world-cup/`;
   copyText(text,'✅ Copied');
 }
 function reminderICS(l,i){
@@ -2872,7 +2872,7 @@ function shareMatch(l,i){
 ${teamN(m.h)} VS ${teamN(m.a)}
 📅 ${m.de} · ${m.t==='待确认'?'TBC':'BJT '+m.t}${edt?' / '+edt:''}
 🏟️ ${m.v} · ${m.ce}
-https://song-studio.github.io/2026-FIFA-World-Cup/`;
+https://song-studio.github.io/2026-fifa-world-cup/`;
   copyText(text,'✅ Copied');
 }
 function copyMatchText(l,i){
