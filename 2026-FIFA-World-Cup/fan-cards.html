@@ -2329,12 +2329,77 @@ function rewardSlotsForBadges(badges){
   if(count===3)return [REWARD_BADGE_SLOTS[0],REWARD_BADGE_SLOTS[1],REWARD_BADGE_SLOTS[2]];
   return REWARD_BADGE_SLOTS.slice(0,count);
 }
+function rewardRoundRectPath(ctx,x,y,w,h,r){
+  ctx.moveTo(x+r,y);
+  ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.closePath();
+}
+function drawRewardClassicBackdrop(ctx,w,h){
+  const protectedSlot=scaleRewardTemplateRect(REWARD_FRAME_CARD_SLOT,w,h);
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(0,0,w,h);
+  rewardRoundRectPath(ctx,protectedSlot.x+10,protectedSlot.y+10,protectedSlot.w-20,protectedSlot.h-20,28);
+  ctx.clip('evenodd');
+
+  const paper=ctx.createLinearGradient(0,0,w,h);
+  paper.addColorStop(0,'rgba(255,244,224,.24)');
+  paper.addColorStop(.52,'rgba(224,194,151,.16)');
+  paper.addColorStop(1,'rgba(129,88,42,.13)');
+  ctx.fillStyle=paper;
+  ctx.fillRect(0,0,w,h);
+
+  const dark=ctx.createLinearGradient(w*.58,0,w,h);
+  dark.addColorStop(0,'rgba(41,37,32,0)');
+  dark.addColorStop(.40,'rgba(37,34,30,.18)');
+  dark.addColorStop(1,'rgba(24,22,20,.58)');
+  ctx.fillStyle=dark;
+  ctx.beginPath();
+  ctx.moveTo(w*.62,0);
+  ctx.lineTo(w,0);
+  ctx.lineTo(w,h);
+  ctx.lineTo(w*.72,h);
+  ctx.closePath();
+  ctx.fill();
+
+  const glow=ctx.createRadialGradient(w*.12,h*.08,0,w*.12,h*.08,w*.78);
+  glow.addColorStop(0,'rgba(255,244,213,.38)');
+  glow.addColorStop(.58,'rgba(247,211,159,.12)');
+  glow.addColorStop(1,'rgba(247,211,159,0)');
+  ctx.fillStyle=glow;
+  ctx.fillRect(0,0,w,h);
+
+  const vignette=ctx.createRadialGradient(w*.5,h*.45,w*.18,w*.5,h*.45,w*.82);
+  vignette.addColorStop(0,'rgba(0,0,0,0)');
+  vignette.addColorStop(.72,'rgba(0,0,0,0)');
+  vignette.addColorStop(1,'rgba(38,24,11,.18)');
+  ctx.fillStyle=vignette;
+  ctx.fillRect(0,0,w,h);
+
+  ctx.globalAlpha=.22;
+  for(let i=0;i<150;i++){
+    const x=(i*173)%w;
+    const y=(i*269)%h;
+    const a=.16+(i%5)*.035;
+    ctx.fillStyle=`rgba(95,69,38,${a})`;
+    ctx.fillRect(x,y,1+(i%3),1+(i%2));
+  }
+  ctx.restore();
+}
 function drawRewardFrame(ctx,img,frame,w,h){
   // Locked reward-card style: card art is inserted behind this approved paper-sculpture template.
   const slot=scaleRewardTemplateRect(REWARD_FRAME_CARD_SLOT,w,h);
   ctx.clearRect(0,0,w,h);
   drawRewardCoverImage(ctx,img,slot.x,slot.y,slot.w,slot.h);
   ctx.drawImage(frame,0,0,w,h);
+  drawRewardClassicBackdrop(ctx,w,h);
 }
 function rewardBadgeMatteCanvas(img,src,type){
   const key=`${type}:${src.x},${src.y},${src.w},${src.h}`;
