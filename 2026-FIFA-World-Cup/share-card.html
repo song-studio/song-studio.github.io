@@ -7,140 +7,137 @@
 <meta name="description" content="一站进入：2026世界杯赛程 + 球迷卡牌赛。">
 <meta property="og:title" content="2026世界杯赛程与球迷卡牌赛">
 <meta property="og:description" content="点击进入世界杯赛程与球迷卡牌赛。">
-<meta property="og:image" content="https://song-studio.github.io/2026-FIFA-World-Cup/assets/fan-cards/highlights/messi-wechat.jpg">
+<meta property="og:image" content="https://song-studio.github.io/2026-FIFA-World-Cup/assets/fan-cards/highlights/yamal-paper-card.png">
 <meta property="og:url" content="https://song-studio.github.io/2026-FIFA-World-Cup/share-card.html">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://song-studio.github.io/2026-FIFA-World-Cup/share-card.html">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR9RBX1DLW"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-TR9RBX1DLW')</script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());
+gtag('config','G-TR9RBX1DLW');
+</script>
 <style>
-html,body{width:100%;max-width:100%;overflow-x:hidden}
+:root{
+  --bg:#071121;
+  --panel:#101d34;
+  --line:rgba(255,255,255,.16);
+  --text:#eef4ff;
+  --muted:#c3d0e8;
+  --gold:#f5c518;
+}
 *{box-sizing:border-box}
+html,body{margin:0;min-height:100%;overflow-x:hidden}
 body{
-  margin:0;
-  font-family:"Source Han Serif SC","Noto Serif SC","STSong",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  background:
-    radial-gradient(800px 360px at 15% -8%,rgba(238,198,111,.15),transparent 42%),
-    radial-gradient(900px 420px at 95% -10%,rgba(78,129,223,.16),transparent 46%),
-    #070d18;
-  color:#f2f6ff;
+  font-family:"Source Han Sans SC","Noto Sans SC","PingFang SC",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  background:radial-gradient(900px 360px at 50% -20%,rgba(96,165,250,.2),transparent 55%),var(--bg);
+  color:var(--text);
   display:grid;
   place-items:center;
-  min-height:100vh;
-  padding:20px 14px 28px;
+  padding:18px 12px 22px;
 }
 .wrap{
-  width:min(760px,calc(100vw - 26px));
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:24px;
-  padding:20px 20px 18px;
-  background:linear-gradient(160deg,#132343,#0a152b);
-  box-shadow:0 24px 72px rgba(0,0,0,.52);
-  position:relative;
-  overflow:hidden;
+  width:min(780px,100%);
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(150deg,var(--panel),#0a152a 70%);
+  box-shadow:0 22px 54px rgba(0,0,0,.45);
+  padding:16px;
 }
-.wrap::before{
-  content:"";
-  position:absolute;
-  width:180px;height:180px;
-  border-radius:999px;
-  right:-56px;top:-62px;
-  background:radial-gradient(circle,rgba(238,198,111,.22),rgba(238,198,111,0));
-  pointer-events:none;
-}
-.kicker{
-  display:inline-flex;
-  padding:6px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.2);
-  background:rgba(255,255,255,.06);
-  font-size:12px;
-  letter-spacing:.08em;
-  color:#eed091;
-  margin-bottom:10px;
-}
-h1{
-  font-size:clamp(24px,6.4vw,34px);
-  margin:0 0 8px;
-  line-height:1.15;
-  letter-spacing:.01em;
-}
-p{
-  opacity:.9;
-  margin:0 0 14px;
-  line-height:1.7;
-  color:#d8deea;
-  font-size:15px;
-}
+.kicker{margin:0 0 8px;font-size:12px;letter-spacing:.09em;color:#b8c7e3}
+h1{margin:0 0 8px;font-size:clamp(24px,5.4vw,34px);line-height:1.2}
+.desc{margin:0 0 12px;color:var(--muted);font-size:15px;line-height:1.7}
 .preview{
-  border:1px solid rgba(255,255,255,.14);
-  border-radius:16px;
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:14px;
   overflow:hidden;
-  background:#0b1222;
+  background:#091225;
 }
-.img{
-  width:100%;
-  max-height:min(48vh,420px);
-  object-fit:cover;
-  object-position:center top;
-  display:block;
+.preview img{width:100%;height:auto;display:block}
+.switcher{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+  margin-top:10px;
 }
+.thumb{
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;
+  overflow:hidden;
+  background:#0b162d;
+  cursor:pointer;
+  padding:0;
+}
+.thumb img{width:100%;height:66px;object-fit:cover;display:block}
+.thumb.active{border-color:rgba(245,197,24,.65);box-shadow:0 0 0 1px rgba(245,197,24,.32) inset}
 .actions{
+  margin-top:14px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
-  margin-top:14px;
 }
 .btn{
-  color:#fff;
   text-decoration:none;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.18);
-  background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
   text-align:center;
-  font-size:15px;
-  font-weight:700;
-  transition:transform .2s ease,border-color .2s ease,background .2s ease;
-}
-.btn:hover{
-  transform:translateY(-2px);
-  border-color:rgba(238,198,111,.58);
-  background:linear-gradient(145deg,rgba(238,198,111,.24),rgba(238,198,111,.12));
+  padding:12px 10px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.03em;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
 }
 .btn.primary{
-  border-color:rgba(238,198,111,.44);
-  color:#ffefca;
+  border-color:rgba(245,197,24,.5);
+  background:rgba(245,197,24,.12);
+  color:#ffe8ad;
 }
-.foot{
-  margin-top:10px;
-  font-size:12px;
-  color:#b7c0d1;
-  opacity:.9;
-}
-@media (max-width:620px){
-  .wrap{padding:16px 14px 14px;border-radius:20px}
-  h1{font-size:clamp(22px,7vw,28px)}
+@media (max-width:640px){
+  .wrap{padding:14px}
+  .switcher{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .thumb img{height:78px}
   .actions{grid-template-columns:1fr}
-  .btn{padding:12px 12px}
-  .img{max-height:42vh}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-<div class="kicker">WORLD CUP 2026 · FAN GATE</div>
-<h1>2026世界杯赛程与球迷卡牌赛</h1>
-<p>一个入口，直接进入赛事赛程与卡牌玩法。</p>
-<div class="preview">
-<img class="img" src="assets/fan-cards/highlights/messi-wechat.jpg" alt="世界杯球迷卡牌">
-</div>
-<div class="actions">
-<a class="btn" href="index.html">进入世界杯赛程</a>
-<a class="btn primary" href="fan-cards.html">进入球迷卡牌赛</a>
-</div>
-<div class="foot">手机端已适配：单击按钮即可直达目标页面。</div>
-</div>
+<main class="wrap">
+  <p class="kicker">WORLD CUP 2026 · QUICK ENTRY</p>
+  <h1>世界杯赛程与球迷卡牌赛</h1>
+  <p class="desc">先看赛程，再玩卡牌。一个入口，两个页面。</p>
+
+  <figure class="preview">
+    <img id="heroImg" src="assets/fan-cards/highlights/yamal-paper-card.png" alt="亚马尔纸雕主视觉">
+  </figure>
+
+  <div class="switcher" aria-label="视觉切换">
+    <button class="thumb active" data-src="assets/fan-cards/highlights/yamal-paper-card.png" data-alt="亚马尔纸雕主视觉"><img src="assets/fan-cards/highlights/yamal-paper-card.png" alt="亚马尔图"></button>
+    <button class="thumb" data-src="assets/fan-cards/highlights/messi-wechat.jpg" data-alt="梅西纸雕主视觉"><img src="assets/fan-cards/highlights/messi-wechat.jpg" alt="梅西图"></button>
+    <button class="thumb" data-src="assets/fan-cards/highlights/highlight-1.png" data-alt="世界杯卡牌视觉一"><img src="assets/fan-cards/highlights/highlight-1.png" alt="高亮图1"></button>
+    <button class="thumb" data-src="assets/fan-cards/highlights/highlight-2.png" data-alt="世界杯卡牌视觉二"><img src="assets/fan-cards/highlights/highlight-2.png" alt="高亮图2"></button>
+    <button class="thumb" data-src="assets/fan-cards/highlights/highlight-3.png" data-alt="世界杯卡牌视觉三"><img src="assets/fan-cards/highlights/highlight-3.png" alt="高亮图3"></button>
+  </div>
+
+  <nav class="actions" aria-label="入口">
+    <a class="btn" href="index.html">进入世界杯赛程</a>
+    <a class="btn primary" href="fan-cards.html">进入球迷卡牌赛</a>
+  </nav>
+</main>
+
+<script>
+const heroImg=document.getElementById('heroImg');
+const thumbs=[...document.querySelectorAll('.thumb')];
+thumbs.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    thumbs.forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');
+    heroImg.src=btn.dataset.src;
+    heroImg.alt=btn.dataset.alt;
+  });
+});
+</script>
 </body>
 </html>
