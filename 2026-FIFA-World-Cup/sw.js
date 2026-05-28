@@ -1,9 +1,9 @@
 const CACHE = 'fan-cards-v1';
 const FILES = [
-  '/2026-fifa-world-cup/fan-cards.html',
-  '/2026-fifa-world-cup/manifest.json',
-  '/2026-fifa-world-cup/assets/icon-192.png',
-  '/2026-fifa-world-cup/assets/icon-512.png'
+  '/2026-FIFA-World-Cup/fan-cards.html',
+  '/2026-FIFA-World-Cup/manifest.json',
+  '/2026-FIFA-World-Cup/assets/icon-192.png',
+  '/2026-FIFA-World-Cup/assets/icon-512.png'
 ];
 
 self.addEventListener('install', e => {

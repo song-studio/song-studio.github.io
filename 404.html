@@ -7,12 +7,11 @@
 <script>
 (function(){
   var path = window.location.pathname;
-  var lower = path.toLowerCase();
-  if (lower !== path) {
-    // Redirect uppercase paths to lowercase (e.g. /2026-FIFA-World-Cup/ → /2026-fifa-world-cup/)
-    window.location.replace(lower + window.location.search + window.location.hash);
+  // Fix case: lowercase 2026-fifa-world-cup → uppercase 2026-FIFA-World-Cup
+  var fixed = path.replace(/2026-fifa-world-cup/gi, '2026-FIFA-World-Cup');
+  if (fixed !== path) {
+    window.location.replace(fixed + window.location.search + window.location.hash);
   } else {
-    // Genuine 404 — show a simple page
     document.write('<meta http-equiv="refresh" content="3;url=/">');
     document.title = 'Page Not Found';
   }
