@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Redirecting...</title>
+<script>
+(function(){
+  var path = window.location.pathname;
+  var lower = path.toLowerCase();
+  if (lower !== path) {
+    // Redirect uppercase paths to lowercase (e.g. /2026-FIFA-World-Cup/ → /2026-fifa-world-cup/)
+    window.location.replace(lower + window.location.search + window.location.hash);
+  } else {
+    // Genuine 404 — show a simple page
+    document.write('<meta http-equiv="refresh" content="3;url=/">');
+    document.title = 'Page Not Found';
+  }
+})();
+</script>
+<noscript>
+<meta http-equiv="refresh" content="0;url=/">
+</noscript>
+<style>
+body{font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#fdfdfc;color:#1c1c1c}
+p{text-align:center;font-size:16px;line-height:1.6}
+a{color:#e65f3b}
+</style>
+</head>
+<body>
+<p>页面不存在，3秒后返回<a href="/">首页</a>。</p>
+</body>
+</html>
