@@ -1,6 +1,33 @@
 {
-  "updatedAt": "2026-05-20",
+  "updatedAt": "2026-06-11",
   "mode": "manual-results-feed",
-  "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡牌奖励。",
-  "today": []
+  "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡牌奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
+  "today": [
+    {
+      "id": "group-a-m1",
+      "group": "A",
+      "home": "墨西哥",
+      "away": "南非",
+      "homeId": "mexico",
+      "awayId": "south-africa",
+      "date": "2026-06-12",
+      "time": "03:00",
+      "venue": "Estadio Azteca",
+      "city": "墨西哥城",
+      "status": "not_started"
+    },
+    {
+      "id": "group-a-m2",
+      "group": "A",
+      "home": "韩国",
+      "away": "捷克",
+      "homeId": "korea-republic",
+      "awayId": "czechia",
+      "date": "2026-06-12",
+      "time": "10:00",
+      "venue": "Estadio Akron",
+      "city": "瓜达拉哈拉",
+      "status": "not_started"
+    }
+  ]
 }
