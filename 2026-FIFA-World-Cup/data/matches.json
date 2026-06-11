@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11",
+  "updatedAt": "2026-06-12",
   "mode": "manual-results-feed",
   "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡牌奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
   "today": [
@@ -14,7 +14,10 @@
       "time": "03:00",
       "venue": "Estadio Azteca",
       "city": "墨西哥城",
-      "status": "not_started"
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 2,
+      "awayScore": 0
     },
     {
       "id": "group-a-m2",
