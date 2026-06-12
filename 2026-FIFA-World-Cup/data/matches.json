@@ -30,7 +30,10 @@
       "time": "10:00",
       "venue": "Estadio Akron",
       "city": "瓜达拉哈拉",
-      "status": "not_started"
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 2,
+      "awayScore": 1
     }
   ]
 }
