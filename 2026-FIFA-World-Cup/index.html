@@ -3813,79 +3813,32 @@ initHeroGlobe();
 
 
 
+
+
+
 <script>
 (function(){
-  var done=false;
-  function injectScores(){
-    if(window.__scoresDone) return;
+  function inj(){
     fetch('data/matches.json').then(function(r){return r.json()}).then(function(d){
-      var today=d.today||[],scores={};
-      for(var i=0;i<today.length;i++){
-        var m=today[i];
-        if(m.status==='finished') scores[m.home]=m;
-      }
-      // Find all match rows
-      var rows=document.querySelectorAll('.match-row');
+      var t=d.today||[],scores={},rows=document.querySelectorAll('.match-row');
+      for(var i=0;i<t.length;i++){var m=t[i];if(m.status==='finished')scores[m.home]=m;}
       for(var j=0;j<rows.length;j++){
-        var row=rows[j];
-        var names=row.querySelectorAll('.mr-name');
-        if(names.length>=2){
-          var h=names[0].textContent.trim();
-          var a=names[1].textContent.trim();
-          var s=scores[h];
-          if(s && s.away===a){
-            var vs=row.querySelector('.mr-vs');
-            if(vs){
-              vs.innerHTML='<span style="color:#f5c518;font-weight:700;font-size:14px;">'+s.homeScore+' - '+s.awayScore+'</span>';
-              vs.style.minWidth='44px';
-            }
+        var n=rows[j].querySelectorAll('.mr-name');
+        if(n.length>=2){
+          var hn=n[0].textContent.trim(),an=n[1].textContent.trim(),s=scores[hn];
+          if(s&&s.away===an){
+            var vs=rows[j].querySelector('.mr-vs');
+            if(vs) vs.innerHTML='<span style="color:#f5c518;font-weight:700">'+s.homeScore+' - '+s.awayScore+'</span>';
           }
         }
       }
-      window.__scoresDone=true;
     }).catch(function(){});
   }
-  // Run on page load and when group detail opens
-  setTimeout(injectScores,600);
-  var obs=new MutationObserver(function(){setTimeout(injectScores,300);});
-  var gd=document.getElementById('gd-wrap');
-  if(gd) obs.observe(gd,{childList:true,subtree:true});{
-    if(done) return;
-    var gd=document.getElementById('gd-wrap');
-    if(!gd||!gd.children.length) return setTimeout(injectScores,300);
-    fetch('data/matches.json').then(function(r){return r.json()}).then(function(d){
-      var scores={};
-      (d.today||[]).forEach(function(m){
-        if(m.status==='finished') scores[m.home+'|'+m.away]=m;
-      });
-      var cards=gd.querySelectorAll('.ko-match-card,.match-card,.fixture-card,[class*="match"]');
-      if(!cards.length){
-        // fallback: scan all text nodes
-        var walker=document.createTreeWalker(gd,NodeFilter.SHOW_TEXT);
-        var textNodes=[];
-        while(walker.nextNode()) textNodes.push(walker.currentNode);
-        for(var i=0;i<textNodes.length;i++){
-          for(var key in scores){
-            var parts=key.split('|');
-            var txt=textNodes[i].textContent;
-            if(txt.indexOf(parts[0])>=0&&txt.indexOf(parts[1])>=0){
-              textNodes[i].textContent=txt.replace(parts[1],parts[1]+' '+scores[key].homeScore+'-'+scores[key].awayScore);
-            }
-          }
-        }
-      }
-      done=true;
-    }).catch(function(){});
-  }
-  // Watch for group detail page opening
-  var obs=new MutationObserver(function(){injectScores();});
-  var gd=document.getElementById('gd-wrap');
-  if(gd) obs.observe(gd,{childList:true,subtree:true});
-  // Also watch page switches
-  document.addEventListener('click',function(e){
-    if(e.target.closest('.group-card,[onclick*="group"]')) setTimeout(injectScores,500);
-  });
-  injectScores();
+  setTimeout(inj,400);
+  var o=new MutationObserver(function(){setTimeout(inj,200);});
+  var g=document.getElementById('gd-wrap');
+  if(g) o.observe(g,{childList:true,subtree:true});
+  document.addEventListener('click',function(e){if(e.target.closest('.group-card'))setTimeout(inj,600);});
 })();
 </script>
 
