@@ -3805,5 +3805,41 @@ initHeroGlobe();
   </div>
 </div>
 
+
+<div id="today-scores" style="position:fixed;bottom:20px;right:20px;z-index:9999;background:linear-gradient(150deg,rgba(14,32,65,.95),rgba(5,18,40,.97));border:1px solid rgba(245,197,24,.3);border-radius:16px;padding:16px;max-width:280px;box-shadow:0 8px 32px rgba(0,0,0,.5);backdrop-filter:blur(20px);">
+<div style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onclick="var c=this.nextElementSibling;c.style.display=c.style.display==='none'?'block':'none';">
+<span style="font-size:13px;font-weight:700;color:#f5c518;">⚽ 今日赛果</span>
+<span style="font-size:11px;color:var(--text-muted);" id="ts-date"></span>
+<button style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:16px;padding:0 4px;" onclick="event.stopPropagation();this.parentElement.parentElement.remove();">×</button>
+</div>
+<div id="ts-body" style="margin-top:10px;font-size:12px;color:#e8f0ff;line-height:1.8;"></div>
+</div>
+<script>
+(function(){
+  fetch('data/matches.json').then(r=>r.json()).then(d=>{
+    var t=d.today||[];
+    if(!t.length) return;
+    document.getElementById('ts-date').textContent=d.updatedAt||'';
+    var h='';
+    for(var i=0;i<t.length;i++){
+      var m=t[i];
+      if(m.status==='finished'){
+        h+='<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);">';
+        h+='<span style="font-weight:600;">'+m.home+'</span> ';
+        h+='<span style="color:#f5c518;font-weight:700;">'+m.homeScore+'</span>';
+        h+=' <span style="color:var(--text-muted);">-</span> ';
+        h+='<span style="color:#f5c518;font-weight:700;">'+m.awayScore+'</span>';
+        h+=' <span style="font-weight:600;">'+m.away+'</span>';
+        h+='</div>';
+      } else {
+        h+='<div style="padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);color:var(--text-muted);">';
+        h+=m.home+' vs '+m.away+' <span style="font-size:10px;">'+m.time+'</span>';
+        h+='</div>';
+      }
+    }
+    document.getElementById('ts-body').innerHTML=h||'暂无赛果';
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
