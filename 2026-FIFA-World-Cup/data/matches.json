@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-12",
+  "updatedAt": "2026-06-13",
   "mode": "manual-results-feed",
-  "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡牌奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
+  "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡片奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
   "today": [
     {
       "id": "group-a-m1",
@@ -34,6 +34,38 @@
       "winner": "home",
       "homeScore": 2,
       "awayScore": 1
+    },
+    {
+      "id": "group-b-m1",
+      "group": "B",
+      "home": "加拿大",
+      "away": "波黑",
+      "homeId": "canada",
+      "awayId": "bosnia-herzegovina",
+      "date": "2026-06-13",
+      "time": "03:00",
+      "venue": "BMO Field",
+      "city": "多伦多",
+      "status": "finished",
+      "winner": "draw",
+      "homeScore": 1,
+      "awayScore": 1
+    },
+    {
+      "id": "group-d-m1",
+      "group": "D",
+      "home": "美国",
+      "away": "巴拉圭",
+      "homeId": "usa",
+      "awayId": "paraguay",
+      "date": "2026-06-13",
+      "time": "09:00",
+      "venue": "SoFi Stadium",
+      "city": "英格尔伍德",
+      "status": "scheduled",
+      "winner": "",
+      "homeScore": null,
+      "awayScore": null
     }
   ]
 }
