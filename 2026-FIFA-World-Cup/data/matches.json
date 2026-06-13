@@ -66,6 +66,58 @@
       "winner": "home",
       "homeScore": 4,
       "awayScore": 1
+    },
+    {
+      "id": "group-b-m2",
+      "group": "B",
+      "home": "卡塔尔",
+      "away": "瑞士",
+      "homeId": "qatar",
+      "awayId": "switzerland",
+      "date": "2026-06-14",
+      "time": "03:00",
+      "venue": "SoFi Stadium",
+      "city": "旧金山湾区",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-c-m1",
+      "group": "C",
+      "home": "巴西",
+      "away": "摩洛哥",
+      "homeId": "brazil",
+      "awayId": "morocco",
+      "date": "2026-06-14",
+      "time": "06:00",
+      "venue": "MetLife Stadium",
+      "city": "纽约/新泽西",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-c-m2",
+      "group": "C",
+      "home": "海地",
+      "away": "苏格兰",
+      "homeId": "haiti",
+      "awayId": "scotland",
+      "date": "2026-06-14",
+      "time": "09:00",
+      "venue": "Gillette Stadium",
+      "city": "波士顿",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-d-m2",
+      "group": "D",
+      "home": "澳大利亚",
+      "away": "土耳其",
+      "homeId": "australia",
+      "awayId": "turkiye",
+      "date": "2026-06-14",
+      "time": "12:00",
+      "venue": "BC Place",
+      "city": "温哥华",
+      "status": "scheduled"
     }
   ]
 }
