@@ -861,7 +861,7 @@ document.getElementById=function(id){return _gid(id)||document.createElement('di
 /* ══ TRANSLATIONS ══ */
 const TR={
 zh:{
-  nav:['首页','小组赛','我的','淘汰赛','场馆','战绩','热门'],
+  nav:['首页','小组赛','我的','淘汰赛','场馆','战绩','热门','AI预测'],
   eye:'FIFA · 2026 · USA · MEXICO · CANADA',
   title:'世界杯',sub:'美 墨 加',
   intro:'查赛程、看球队，或直接进入世界杯球迷卡牌赛：选主队、点亮卡牌、参与比赛预测。',
@@ -965,7 +965,7 @@ zh:{
   h2h_last:'最近交手',
 },
 en:{
-  nav:['Home','Groups','Mine','Knockout','Venues','History','Hot'],
+  nav:['Home','Groups','Mine','Knockout','Venues','History','Hot','AI Predict'],
   eye:'FIFA · 2026 · USA · MEXICO · CANADA',
   title:'World Cup',sub:'USA · MEX · CAN',
   intro:'Schedules, teams, scores, and Fan Card Match live here. Check the fixture map, or jump into cards: pick a team, collect nations, and predict matchdays.',
@@ -3817,6 +3817,39 @@ initHeroGlobe();
 (function(){
   var done=false;
   function injectScores(){
+    if(window.__scoresDone) return;
+    fetch('data/matches.json').then(function(r){return r.json()}).then(function(d){
+      var today=d.today||[],scores={};
+      for(var i=0;i<today.length;i++){
+        var m=today[i];
+        if(m.status==='finished') scores[m.home]=m;
+      }
+      // Find all match rows
+      var rows=document.querySelectorAll('.match-row');
+      for(var j=0;j<rows.length;j++){
+        var row=rows[j];
+        var names=row.querySelectorAll('.mr-name');
+        if(names.length>=2){
+          var h=names[0].textContent.trim();
+          var a=names[1].textContent.trim();
+          var s=scores[h];
+          if(s && s.away===a){
+            var vs=row.querySelector('.mr-vs');
+            if(vs){
+              vs.innerHTML='<span style="color:#f5c518;font-weight:700;font-size:14px;">'+s.homeScore+' - '+s.awayScore+'</span>';
+              vs.style.minWidth='44px';
+            }
+          }
+        }
+      }
+      window.__scoresDone=true;
+    }).catch(function(){});
+  }
+  // Run on page load and when group detail opens
+  setTimeout(injectScores,600);
+  var obs=new MutationObserver(function(){setTimeout(injectScores,300);});
+  var gd=document.getElementById('gd-wrap');
+  if(gd) obs.observe(gd,{childList:true,subtree:true});{
     if(done) return;
     var gd=document.getElementById('gd-wrap');
     if(!gd||!gd.children.length) return setTimeout(injectScores,300);
