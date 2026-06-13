@@ -1780,10 +1780,10 @@ function updateCD(){
   const diff=KICKOFF-new Date();
   if(diff<=0){document.getElementById('countdown-banner').innerHTML='<div style="text-align:center;font-size:18px;font-weight:700;color:var(--gold)">🎉 '+(lang==='en'?'World Cup is ON!':'世界杯正在进行！')+'</div>';return;}
   const d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
-  document.getElementById('cd-d').textContent=p2(d);
-  document.getElementById('cd-h').textContent=p2(h);
-  document.getElementById('cd-m').textContent=p2(m);
-  document.getElementById('cd-s').textContent=p2(s);
+  var e=document.getElementById('cd-d');if(e)e.textContent=p2(d);
+  var e=document.getElementById('cd-h');if(e)e.textContent=p2(h);
+  var e=document.getElementById('cd-m');if(e)e.textContent=p2(m);
+  var e=document.getElementById('cd-s');if(e)e.textContent=p2(s);
 }
 
 /* ══ APPLY LANG ══ */
