@@ -62,10 +62,10 @@
       "time": "09:00",
       "venue": "SoFi Stadium",
       "city": "英格尔伍德",
-      "status": "scheduled",
-      "winner": "",
-      "homeScore": null,
-      "awayScore": null
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 4,
+      "awayScore": 1
     }
   ]
 }
