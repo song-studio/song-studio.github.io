@@ -1864,7 +1864,7 @@ function _updateAILangOld(){
 function applyLang(){
   document.documentElement.lang=lang==='en'?'en':'zh-CN';
   // Nav
-  const navIds=['nb-home','nb-groups','nb-fav','nb-ko','nb-venues','nb-history','nb-hot'];
+  const navIds=['nb-home','nb-groups','nb-fav','nb-ko','nb-venues','nb-history','nb-hot','nb-aipred'];
   const navT=T('nav');
   navIds.forEach((id,i)=>{
     const el=document.getElementById(id);
@@ -1957,7 +1957,7 @@ function renderNavTabs(){
     {id:'nb-ko',fn:()=>goPage('knockout')},
     {id:'nb-venues',fn:()=>goPage('venues')},
     {id:'nb-history',fn:()=>goPage('history')},
-    {id:'nb-hot',fn:()=>goPage('hot')}
+    {id:'nb-hot',fn:()=>goPage('hot')},{id:'nb-aipred',fn:()=>goPage('aipred')}
   ];
   const nav_t=T('nav');
   const container=document.getElementById('nav-tabs');
@@ -3810,25 +3810,50 @@ initHeroGlobe();
 
 
 
-<div id="today-scores" style="position:fixed;bottom:16px;right:16px;z-index:9999;background:linear-gradient(150deg,rgba(14,32,65,.96),rgba(5,18,40,.98));border:1px solid rgba(245,197,24,.35);border-radius:14px;padding:12px 14px;max-width:240px;box-shadow:0 8px 32px rgba(0,0,0,.5);backdrop-filter:blur(20px);font-size:12px;font-family:system-ui,sans-serif;">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-<b style="color:#f5c518;">⚽ 今日赛果</b>
-<span style="font-size:10px;color:#888;" id="ts-date"></span>
-<button onclick="this.parentElement.parentElement.remove()" style="background:none;border:none;color:#888;font-size:14px;padding:0 2px;">×</button>
-</div>
-<div id="ts-body" style="color:#e8f0ff;line-height:1.7;font-size:11px;">加载中…</div>
-</div>
+
+
+
 <script>
-fetch('data/matches.json').then(function(r){return r.json()}).then(function(d){
-var t=d.today||[],h='';
-for(var i=0;i<t.length;i++){var m=t[i];
-h+='<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,.05);">';
-if(m.status==='finished')h+=m.home+' <b style="color:#f5c518;">'+m.homeScore+'-'+m.awayScore+'</b> '+m.away;
-else h+=m.home+' vs '+m.away+' <span style="color:#888;font-size:10px;">'+(m.time||'')+'</span>';
-h+='</div>';}
-document.getElementById('ts-body').innerHTML=h||'暂无赛果';
-document.getElementById('ts-date').textContent=d.updatedAt||'';
-}).catch(function(){document.getElementById('ts-body').innerHTML='加载失败';});
+(function(){
+  var done=false;
+  function injectScores(){
+    if(done) return;
+    var gd=document.getElementById('gd-wrap');
+    if(!gd||!gd.children.length) return setTimeout(injectScores,300);
+    fetch('data/matches.json').then(function(r){return r.json()}).then(function(d){
+      var scores={};
+      (d.today||[]).forEach(function(m){
+        if(m.status==='finished') scores[m.home+'|'+m.away]=m;
+      });
+      var cards=gd.querySelectorAll('.ko-match-card,.match-card,.fixture-card,[class*="match"]');
+      if(!cards.length){
+        // fallback: scan all text nodes
+        var walker=document.createTreeWalker(gd,NodeFilter.SHOW_TEXT);
+        var textNodes=[];
+        while(walker.nextNode()) textNodes.push(walker.currentNode);
+        for(var i=0;i<textNodes.length;i++){
+          for(var key in scores){
+            var parts=key.split('|');
+            var txt=textNodes[i].textContent;
+            if(txt.indexOf(parts[0])>=0&&txt.indexOf(parts[1])>=0){
+              textNodes[i].textContent=txt.replace(parts[1],parts[1]+' '+scores[key].homeScore+'-'+scores[key].awayScore);
+            }
+          }
+        }
+      }
+      done=true;
+    }).catch(function(){});
+  }
+  // Watch for group detail page opening
+  var obs=new MutationObserver(function(){injectScores();});
+  var gd=document.getElementById('gd-wrap');
+  if(gd) obs.observe(gd,{childList:true,subtree:true});
+  // Also watch page switches
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.group-card,[onclick*="group"]')) setTimeout(injectScores,500);
+  });
+  injectScores();
+})();
 </script>
 
 </body></html>
