@@ -296,6 +296,71 @@ svg{border-radius:14px;border-color:rgba(211,245,213,.12);background:rgba(3,10,1
   }
 }
 
+
+/* Route map must stay literal: no decorative contour/grid lines over map tiles. */
+.mapWrap:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:410;
+  background:none!important;
+  mix-blend-mode:normal!important;
+}
+#map{filter:saturate(1.06) contrast(1.02) brightness(1.02);}
+@media(max-width:640px){
+  .mapWrap:after{background:none!important;}
+  #map{filter:saturate(1.08) contrast(1.03) brightness(1.03);}
+}
+
+
+/* Route mobile controls: small fixed sets should be fully visible, not horizontal scrollers. */
+@media(max-width:640px){
+  .modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;overflow:visible;padding-bottom:0;}
+  .regions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;overflow:visible;padding-bottom:0;}
+  .tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;overflow:visible;padding-bottom:0;}
+  .mode,.region,.tab{min-width:0;width:100%;padding:10px 4px;font-size:12px;}
+  .tabs .tab{font-size:13px;padding:10px 4px;}
+  .tools:after{display:none;}
+}
+@media(max-width:360px){
+  .mode,.region{font-size:11px;padding-left:2px;padding-right:2px;}
+  .tabs .tab{font-size:12px;}
+}
+
+
+/* Route mobile final: no scrollers for small control groups, no decorative lines on maps. */
+body:before{display:none!important;}
+@media(max-width:640px){
+  .modes{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important;overflow:visible!important;padding-bottom:0!important;}
+  .regions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;overflow:visible!important;padding-bottom:0!important;}
+  .tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;overflow:visible!important;padding-bottom:0!important;}
+  .modes .mode,.regions .region,.tabs .tab,.mode,.region,.tab{min-width:0!important;width:100%!important;max-width:100%!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;}
+  .modes .mode{font-size:11px!important;padding:10px 2px!important;}
+  .regions .region{font-size:11px!important;padding:10px 2px!important;}
+  .tabs .tab{font-size:12px!important;padding:10px 2px!important;}
+  .tools:after{display:none!important;}
+}
+
+
+/* Route mobile controls final layout: complete, no horizontal scrolling. */
+@media(max-width:640px){
+  .modes{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;overflow:visible!important;padding-bottom:0!important;}
+  .regions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important;overflow:visible!important;padding-bottom:0!important;}
+  .tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important;overflow:visible!important;padding-bottom:0!important;}
+  .modes .mode,.regions .region,.tabs .tab{min-width:0!important;width:100%!important;max-width:100%!important;}
+  .modes .mode{font-size:13px!important;padding:11px 6px!important;}
+  .regions .region{font-size:11px!important;padding:10px 3px!important;}
+  .tabs .tab{font-size:13px!important;padding:10px 6px!important;}
+  .tools:after{display:none!important;}
+}
+
+
+/* Route sheet width guard: never exceed the viewport, even outside media-query emulation. */
+.sheet{width:min(480px,calc(100vw - 16px))!important;max-width:calc(100vw - 16px)!important;}
+.tools,.content{max-width:100%;overflow-x:hidden;}
+.modes,.regions,.tabs,.searchLine,.ab{max-width:100%;min-width:0;}
+
 </style></head>
 <body><div class="app"><header class="top"><a class="brand" href="https://song-studio.github.io/" aria-label="路线决策台"><img class="brandLogo" src="assets/brand/route-wordmark.png" alt="路线决策台"></a><a class="weather" href="weather-pro.html">气象山野</a></header><main class="mapWrap"><div id="map"></div><div class="legend" id="legend">轨迹说明：真实轨迹 / 来源轨迹 / 关键点示意 / 待核验</div><div class="mapControls"><button data-layer="std" class="active">标准图</button><button data-layer="sat">卫星图</button><button data-layer="hyb">叠路网</button></div><section class="sheet"><div class="grab"></div><div class="tools"><div class="modes" id="modes"><button class="mode active" data-mode="hiking">徒步</button><button class="mode" data-mode="cycling">骑行</button><button class="mode" data-mode="motorcycle">摩旅</button><button class="mode" data-mode="mountaineering">登山</button></div><div class="regions" id="regions"><button class="region active" data-region="all">全部地区</button><button class="region" data-region="domestic">国内主线</button><button class="region" data-region="global">国外精选</button></div><div class="filterNote">任意点和起终点只提供地图基础参考；专业户外判断以库内线路资料为准。</div><div class="tabs"><button type="button" class="tab active" data-tab="search">搜线路或地点</button><button type="button" class="tab" data-tab="ab">起点 → 终点</button></div><form id="form"><div id="searchBox" class="searchLine"><input id="q" placeholder="武功山 / 雨崩 / 独库 / 四姑娘山"><button type="submit">查</button></div><div id="abBox" class="ab" style="display:none"><input id="from" placeholder="起点"><input id="to" placeholder="终点"><button type="submit" class="planBtn" style="grid-column:1/-1">规划草案</button></div></form></div><div class="mini" id="mini"></div><div class="content"><button class="backList" onclick="showList()">返回线路列表</button><div class="count" id="count">正在读取线路库</div><div class="list" id="list"></div><div class="detail" id="detail"></div></div></section></main></div><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
 const PROCESSED='data/processed/outdoor_routes_v13.json',AMAP_KEY='39a8c2f6ef75e494198f3e3751701ebe';const $=s=>document.querySelector(s);let S={mode:'hiking',region:'all',tab:'search',routes:[],sel:null,map:null,layer:null,base:{},baseNow:null};
