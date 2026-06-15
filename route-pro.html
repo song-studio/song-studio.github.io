@@ -23,6 +23,279 @@
 @media(max-width:640px){.top{height:56px;padding:0 10px}.brand:before{display:none}.brand:after{font-size:26px;letter-spacing:-.05em}.weather{font-size:12px}.mapWrap{height:calc(100vh - 56px)}.mapWrap:after{background:linear-gradient(180deg,rgba(15,23,42,.02),rgba(15,23,42,.06))}.legend{top:8px;left:8px;right:auto;max-width:150px;font-size:9px;line-height:1.35;padding:7px 8px}.mapControls{top:8px;right:8px;gap:5px}.mapControls button{font-size:9px;padding:7px 8px}.sheet{left:6px;right:6px;bottom:6px;top:auto;width:auto;max-height:52dvh;border-radius:0}.sheet:before{display:none}.grab{height:16px}.tools{padding:0 10px 9px}.modes{grid-template-columns:repeat(4,1fr);gap:5px}.regions{grid-template-columns:repeat(3,1fr);gap:5px}.mode,.region{font-size:12px;padding:10px 3px;min-height:42px}.filterNote{font-size:11px;line-height:1.45;margin-bottom:7px;padding:8px}.tabs{gap:5px;margin-bottom:7px}.tab{font-size:13px;padding:10px 6px}.searchLine{grid-template-columns:1fr 52px;gap:6px}.searchLine input,.ab input{height:46px;font-size:16px;padding:11px}.searchLine button,.planBtn{min-height:46px;font-size:14px;padding:0 10px}.content{padding:8px 10px 10px}.count{font-size:10px;margin-bottom:7px}.list{gap:7px}.route{padding:10px}.route h3{font-size:16px}.route p{font-size:11px}.badge{font-size:9px;padding:3px 5px}.sheet.detailMode{max-height:45dvh}.sheet.detailMode .detail h2{font-size:28px}.detailTop{gap:8px}.mapBtn{padding:8px 9px;font-size:12px}.summary{font-size:13px;line-height:1.5}.metrics{grid-template-columns:repeat(2,1fr)}.metric{padding:7px}.metric b{font-size:13px}.cards{grid-template-columns:1fr;gap:7px}.card{padding:9px}.item{font-size:12px;line-height:1.45}.src{font-size:12px;padding:9px}.leaflet-control-zoom{margin-bottom:43dvh!important}}
 @media(max-width:360px){.brand:after{font-size:23px}.weather{font-size:11px}.mode,.region{font-size:11px}.tab{font-size:12px}.sheet{max-height:50dvh}.legend{display:none}}
 
+
+/* Product-design visual polish: keep content and logic unchanged. */
+:root{
+  --bg:#07110f;
+  --ink:#f7fbf4;
+  --muted:#aab8ad;
+  --line:rgba(211,245,213,.14);
+  --paper:rgba(12,22,30,.78);
+  --panel:rgba(15,45,42,.72);
+  --field:rgba(4,11,16,.72);
+  --green:#77f2a1;
+  --amber:#f0a33a;
+  --red:#ff6b5f;
+  --shadow:0 28px 90px rgba(0,0,0,.42),0 1px 0 rgba(255,255,255,.05) inset;
+  --radius-lg:28px;
+  --radius-md:18px;
+  --radius-sm:12px;
+}
+html{background:#07110f;}
+body{
+  background:
+    radial-gradient(circle at 12% -12%,rgba(119,242,161,.24),transparent 32%),
+    radial-gradient(circle at 88% 8%,rgba(240,163,58,.16),transparent 34%),
+    radial-gradient(circle at 72% 72%,rgba(55,132,255,.10),transparent 42%),
+    linear-gradient(135deg,#07110f 0%,#0d1828 48%,#07151b 100%);
+}
+body:before{
+  opacity:.82;
+  background:
+    repeating-radial-gradient(ellipse at 26% 18%,transparent 0 56px,rgba(119,242,161,.075) 57px 58px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(255,255,255,.028) 1px,transparent 1px),
+    repeating-linear-gradient(112deg,transparent 0 48px,rgba(240,163,58,.045) 48px 49px);
+  background-size:auto,52px 52px,52px 52px,auto;
+  mask-image:linear-gradient(180deg,black 0%,rgba(0,0,0,.85) 54%,transparent 100%);
+}
+.frame{padding:30px clamp(18px,3vw,42px) 76px;}
+.mast,.top{
+  border-radius:22px;
+  background:linear-gradient(135deg,rgba(18,29,45,.84),rgba(9,20,26,.72));
+  border:1px solid rgba(211,245,213,.16);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(22px) saturate(1.18);
+}
+.top{margin:18px 20px 0;height:70px;}
+.brand:before{color:var(--green);text-shadow:0 0 22px rgba(119,242,161,.28);}
+.brand:after{letter-spacing:-.075em;text-shadow:0 18px 42px rgba(0,0,0,.38);}
+.routeLink,.weather{
+  border:1px solid rgba(211,245,213,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  padding:10px 14px;
+  transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
+}
+.routeLink:hover,.weather:hover{transform:translateY(-1px);color:#fff;background:rgba(119,242,161,.12);border-color:rgba(119,242,161,.35);}
+.console,.loc,.now,.board,.ref,.src,.sheet,.legend,.mapControls button{
+  border:1px solid rgba(211,245,213,.15);
+  border-radius:var(--radius-lg);
+  background:linear-gradient(160deg,rgba(19,31,48,.82),rgba(7,17,22,.74));
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px) saturate(1.12);
+}
+.console{padding:32px;overflow:hidden;}
+.console:after,.sheet:after{
+  content:"";
+  position:absolute;
+  inset:1px;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.10),transparent 26%,transparent 70%,rgba(119,242,161,.08));
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  padding:1px;
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+.title h1:after{font-size:clamp(50px,4.35vw,68px);line-height:.98;letter-spacing:-.085em;}
+.title p{color:#b9c6bc;}
+.feature,.risk,.hour,.day,.module,.metric,.route,.card,.filterNote,.search,.status,.mapFrame,.tab,.mode,.region,.badge,.empty{
+  border-radius:var(--radius-md);
+  border:1px solid rgba(211,245,213,.11);
+  background:linear-gradient(155deg,rgba(8,18,28,.86),rgba(7,16,20,.64));
+  box-shadow:0 12px 34px rgba(0,0,0,.20),0 1px 0 rgba(255,255,255,.045) inset;
+}
+.feature{transition:transform .2s ease,border-color .2s ease,background .2s ease;}
+.feature:hover{transform:translateY(-2px);border-color:rgba(119,242,161,.32);background:linear-gradient(155deg,rgba(15,37,39,.88),rgba(8,18,28,.74));}
+.feature b:before{background:var(--green);box-shadow:0 0 20px rgba(119,242,161,.55);}
+.search{padding:18px;background:linear-gradient(155deg,rgba(5,13,20,.92),rgba(13,33,32,.72));}
+.search:before{letter-spacing:-.04em;}
+.query input,.searchLine input,.ab input{
+  border:1px solid rgba(211,245,213,.10);
+  border-radius:16px;
+  background:rgba(3,10,15,.72);
+  color:#f8fff9;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.query button,.searchLine button,.planBtn,.mapBtn,.mini button,.externalFrame a{
+  border-radius:16px;
+  background:linear-gradient(135deg,#f3b14d,#db7605);
+  color:#160e05;
+  box-shadow:0 18px 34px rgba(219,118,5,.24),0 1px 0 rgba(255,255,255,.28) inset;
+  transition:transform .16s ease,filter .16s ease,box-shadow .16s ease;
+}
+.searchLine button,.planBtn,.mapBtn,.mini button,.externalFrame a{background:linear-gradient(135deg,#91ffb0,#41d778);color:#06130b;}
+.query button:hover,.searchLine button:hover,.planBtn:hover,.mapBtn:hover,.mini button:hover,.externalFrame a:hover{transform:translateY(-1px);filter:saturate(1.08);}
+.chip,.badge{
+  border:1px solid rgba(119,242,161,.14);
+  border-radius:999px;
+  background:rgba(119,242,161,.09);
+  color:#c8f8d4;
+}
+.status{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  border-style:solid;
+  color:#b8c8bd;
+}
+.hero{position:relative;}
+.hero:after{
+  content:"";
+  position:absolute;
+  right:3%;top:16%;width:min(48vw,640px);height:min(48vw,640px);
+  pointer-events:none;z-index:-1;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(119,242,161,.12),rgba(119,242,161,.035) 42%,transparent 67%);
+  filter:blur(2px);
+}
+.now{background:linear-gradient(145deg,rgba(18,62,55,.82),rgba(8,17,25,.82));}
+.temp{color:#fff;text-shadow:0 0 36px rgba(119,242,161,.14);}
+.board h3,.route h3,.detail h2{letter-spacing:-.045em;}
+svg{border-radius:14px;border-color:rgba(211,245,213,.12);background:rgba(3,10,15,.56);}
+
+/* Route page refinements */
+.app{background:transparent;}
+.mapWrap{background:#071511;}
+.mapWrap:after{
+  background:
+    radial-gradient(circle at 72% 32%,rgba(119,242,161,.12),transparent 30%),
+    repeating-radial-gradient(ellipse at 70% 40%,transparent 0 54px,rgba(119,242,161,.14) 55px 56px),
+    linear-gradient(90deg,rgba(7,17,22,.30) 0 520px,rgba(7,17,22,.06) 520px 100%);
+}
+.sheet{left:28px;top:28px;bottom:28px;width:480px;position:absolute;overflow:auto;}
+.sheet:before{padding:22px 24px 0;color:var(--green);}
+.tools{padding:0 24px 18px;}
+.content{padding:16px 24px 24px;}
+.grab:before{background:linear-gradient(90deg,var(--green),var(--amber));box-shadow:0 0 24px rgba(119,242,161,.36);}
+.mode,.region,.tab{
+  color:#eaf6ee;
+  transition:transform .16s ease,background .16s ease,color .16s ease,border-color .16s ease;
+}
+.mode:hover,.region:hover,.tab:hover,.mapControls button:hover{transform:translateY(-1px);border-color:rgba(119,242,161,.30);}
+.mode.active,.region.active,.mapControls button.active{
+  background:linear-gradient(135deg,#91ffb0,#40d576);
+  color:#06130b;
+  box-shadow:0 14px 32px rgba(65,215,120,.22),0 1px 0 rgba(255,255,255,.24) inset;
+}
+.tab.active{background:linear-gradient(135deg,#f3b14d,#db7605);color:#160e05;}
+.route{overflow:hidden;transition:transform .18s ease,border-color .18s ease,background .18s ease;}
+.route:hover{transform:translateY(-2px);border-color:rgba(119,242,161,.30);background:linear-gradient(155deg,rgba(17,49,45,.86),rgba(8,18,28,.72));}
+.route:before{height:3px;background:linear-gradient(90deg,var(--green),var(--amber),rgba(255,255,255,.18));}
+.legend,.mapControls button{border-radius:18px;background:rgba(10,21,28,.78);}
+.leaflet-control-zoom a{background:rgba(10,21,28,.90)!important;color:#eaffef!important;border-color:rgba(211,245,213,.14)!important;}
+
+@media(max-width:859px){
+  .top{margin:8px 8px 0;border-radius:18px;}
+  .sheet{left:8px;right:8px;bottom:8px;width:auto;border-radius:24px;}
+}
+@media(max-width:640px){
+  .frame{padding:9px 10px 72px;}
+  .mast{border-radius:18px;}
+  .console{border-radius:24px;padding:14px;}
+  .search,.status,.feature,.risk,.hour,.day,.module,.metric,.route,.card,.filterNote,.loc,.now,.board,.ref,.src{border-radius:18px;}
+  .title h1:after{font-size:36px;line-height:1.04;}
+  .query input,.query button,.searchLine input,.ab input,.searchLine button,.planBtn{border-radius:14px;}
+  .sheet{max-height:54dvh;}
+  .legend,.mapControls button{border-radius:14px;}
+}
+
+
+/* Mobile overflow fix: keep controls inside the viewport. */
+@media(max-width:640px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
+  .frame,.hero,.console,.search,.status,.title,.query,.chips,.mapWrap,.sheet,.tools,.content{max-width:100%;min-width:0;box-sizing:border-box;}
+  .search{align-self:stretch;width:100%;justify-self:stretch;}
+  .query{width:100%;min-width:0;}
+  .query input{width:100%;min-width:0;}
+  .query button{width:100%;}
+  .sheet{left:8px!important;right:8px!important;top:auto!important;bottom:8px!important;width:auto!important;max-width:calc(100vw - 16px);overflow-x:hidden;}
+  .modes{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .regions{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .tabs,.searchLine,.ab{min-width:0;max-width:100%;}
+  .mode,.region,.tab,.searchLine button,.planBtn{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .searchLine input,.ab input{min-width:0;width:100%;}
+}
+@media(max-width:390px){
+  .mode,.region{font-size:11px;padding-left:2px;padding-right:2px;}
+}
+
+
+/* Mobile-first priority pass: phone layout must be clean before desktop polish. */
+@media(max-width:640px){
+  body{min-width:0;}
+  .mast,.top{height:56px;margin:8px 8px 0;padding:0 12px;border-radius:18px;}
+  .brand:after{font-size:28px;line-height:1;}
+  .routeLink,.weather{padding:7px 10px;font-size:12px;}
+  .console{display:flex;flex-direction:column;gap:12px;}
+  .search{order:-1;margin:0;align-self:stretch;}
+  .title{padding-top:4px;}
+  .status{margin-top:0;}
+  footer{padding-left:18px!important;padding-right:18px!important;text-align:left!important;}
+
+  .mapWrap{height:calc(100vh - 64px);overflow:hidden;}
+  .sheet{max-height:52dvh;overflow-y:auto;overflow-x:hidden;}
+  .tools{padding:0 10px 10px;}
+  .content{padding:8px 10px 12px;}
+  .modes,.regions,.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px;}
+  .modes::-webkit-scrollbar,.regions::-webkit-scrollbar,.tabs::-webkit-scrollbar{display:none;}
+  .mode,.region,.tab{flex:0 0 auto;min-width:104px;padding:12px 14px;}
+  .modes .mode{min-width:105px;}
+  .regions .region{min-width:128px;}
+  .tabs .tab{min-width:170px;}
+  .searchLine{grid-template-columns:minmax(0,1fr) 64px;}
+  .searchLine button{width:64px;}
+  .filterNote{font-size:12px;}
+  .legend{max-width:160px;z-index:470;}
+  .mapControls{right:8px;top:110px;z-index:470;}
+  .leaflet-control-zoom{margin-left:10px!important;margin-bottom:44dvh!important;}
+  .route{padding:12px;}
+  .route h3{font-size:18px;}
+  .route p{font-size:12px;}
+}
+@media(max-width:430px){
+  .brand:after{font-size:26px;}
+  .sheet{max-height:51dvh;}
+  .mode,.region,.tab{min-height:44px;}
+  .modes .mode{min-width:104px;}
+  .regions .region{min-width:126px;}
+  .tabs .tab{min-width:166px;}
+  .mapControls button{padding:8px 9px;}
+}
+
+
+/* Route map clarity: do not wash out the actual map tiles. */
+.mapWrap:after{
+  background:
+    radial-gradient(circle at 72% 32%,rgba(119,242,161,.045),transparent 34%),
+    linear-gradient(90deg,rgba(7,17,22,.12) 0 520px,rgba(7,17,22,.015) 520px 100%)!important;
+  mix-blend-mode:multiply;
+}
+#map{filter:saturate(1.12) contrast(1.05) brightness(1.03);}
+@media(max-width:640px){
+  .mapWrap:after{
+    background:linear-gradient(180deg,rgba(7,17,22,.015),rgba(7,17,22,.04))!important;
+    mix-blend-mode:multiply;
+  }
+  #map{filter:saturate(1.16) contrast(1.07) brightness(1.05);}
+}
+
+
+/* Mobile scroll hint for horizontal filter groups. */
+@media(max-width:640px){
+  .tools{position:relative;}
+  .tools:after{
+    content:"";
+    position:absolute;
+    right:10px;top:20px;bottom:10px;width:34px;
+    pointer-events:none;
+    background:linear-gradient(90deg,transparent,rgba(9,20,26,.86));
+    border-radius:0 18px 18px 0;
+  }
+}
+
 </style></head>
 <body><div class="app"><header class="top"><a class="brand" href="https://song-studio.github.io/" aria-label="路线决策台"><img class="brandLogo" src="assets/brand/route-wordmark.png" alt="路线决策台"></a><a class="weather" href="weather-pro.html">气象山野</a></header><main class="mapWrap"><div id="map"></div><div class="legend" id="legend">轨迹说明：真实轨迹 / 来源轨迹 / 关键点示意 / 待核验</div><div class="mapControls"><button data-layer="std" class="active">标准图</button><button data-layer="sat">卫星图</button><button data-layer="hyb">叠路网</button></div><section class="sheet"><div class="grab"></div><div class="tools"><div class="modes" id="modes"><button class="mode active" data-mode="hiking">徒步</button><button class="mode" data-mode="cycling">骑行</button><button class="mode" data-mode="motorcycle">摩旅</button><button class="mode" data-mode="mountaineering">登山</button></div><div class="regions" id="regions"><button class="region active" data-region="all">全部地区</button><button class="region" data-region="domestic">国内主线</button><button class="region" data-region="global">国外精选</button></div><div class="filterNote">任意点和起终点只提供地图基础参考；专业户外判断以库内线路资料为准。</div><div class="tabs"><button type="button" class="tab active" data-tab="search">搜线路或地点</button><button type="button" class="tab" data-tab="ab">起点 → 终点</button></div><form id="form"><div id="searchBox" class="searchLine"><input id="q" placeholder="武功山 / 雨崩 / 独库 / 四姑娘山"><button type="submit">查</button></div><div id="abBox" class="ab" style="display:none"><input id="from" placeholder="起点"><input id="to" placeholder="终点"><button type="submit" class="planBtn" style="grid-column:1/-1">规划草案</button></div></form></div><div class="mini" id="mini"></div><div class="content"><button class="backList" onclick="showList()">返回线路列表</button><div class="count" id="count">正在读取线路库</div><div class="list" id="list"></div><div class="detail" id="detail"></div></div></section></main></div><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
 const PROCESSED='data/processed/outdoor_routes_v13.json',AMAP_KEY='39a8c2f6ef75e494198f3e3751701ebe';const $=s=>document.querySelector(s);let S={mode:'hiking',region:'all',tab:'search',routes:[],sel:null,map:null,layer:null,base:{},baseNow:null};

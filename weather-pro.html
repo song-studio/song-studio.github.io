@@ -22,6 +22,248 @@
 @media(max-width:640px){.frame{padding:8px 9px 72px}.mast{height:56px;margin-bottom:10px;padding:0 10px}.brand:after{font-size:27px}.brand:before{display:none}.routeLink{font-size:12px;padding:7px 4px}.hero{display:block}.console{min-height:auto;padding:12px;display:flex;flex-direction:column;gap:12px}.console:before{display:none}.search{order:-1;margin:0;padding:12px;gap:10px}.search:before{font-size:17px}.query{grid-template-columns:1fr}.query input{height:48px;font-size:16px;padding:12px}.query button{height:46px;min-height:46px;font-size:16px}.chips{padding-bottom:2px}.chip{font-size:12px;padding:7px 9px}.title{padding-top:0}.title h1:after{content:"先校准位置\A再看窗口";font-size:34px;line-height:1.08;letter-spacing:-.05em}.title p{white-space:normal;font-size:13px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.featureGrid{display:none}.status{font-size:13px;padding:12px;line-height:1.55}.station.show{display:grid;grid-template-columns:1fr;gap:10px}.loc,.now,.board,.ref,.src{box-shadow:0 14px 34px rgba(0,0,0,.22)}.loc{padding:12px}.locTop{display:grid}.confidence{text-align:left}.riskTape{grid-template-columns:repeat(2,1fr);gap:6px}.now{padding:12px}.temp{font-size:42px}.metrics{grid-template-columns:repeat(2,1fr)}.boards{gap:10px}.board{padding:12px}.board h3{font-size:18px}.hours{grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}.moduleGrid,.refs{grid-template-columns:1fr}.mapFrame{height:180px}.row{grid-template-columns:42px 1fr}.rowLabel{font-size:9px}}
 @media(max-width:360px){.brand:after{font-size:24px}.title h1:after{font-size:30px}.query input{font-size:15px}.chip{font-size:11px}.risk b{font-size:15px}}
 
+
+/* Product-design visual polish: keep content and logic unchanged. */
+:root{
+  --bg:#07110f;
+  --ink:#f7fbf4;
+  --muted:#aab8ad;
+  --line:rgba(211,245,213,.14);
+  --paper:rgba(12,22,30,.78);
+  --panel:rgba(15,45,42,.72);
+  --field:rgba(4,11,16,.72);
+  --green:#77f2a1;
+  --amber:#f0a33a;
+  --red:#ff6b5f;
+  --shadow:0 28px 90px rgba(0,0,0,.42),0 1px 0 rgba(255,255,255,.05) inset;
+  --radius-lg:28px;
+  --radius-md:18px;
+  --radius-sm:12px;
+}
+html{background:#07110f;}
+body{
+  background:
+    radial-gradient(circle at 12% -12%,rgba(119,242,161,.24),transparent 32%),
+    radial-gradient(circle at 88% 8%,rgba(240,163,58,.16),transparent 34%),
+    radial-gradient(circle at 72% 72%,rgba(55,132,255,.10),transparent 42%),
+    linear-gradient(135deg,#07110f 0%,#0d1828 48%,#07151b 100%);
+}
+body:before{
+  opacity:.82;
+  background:
+    repeating-radial-gradient(ellipse at 26% 18%,transparent 0 56px,rgba(119,242,161,.075) 57px 58px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(255,255,255,.028) 1px,transparent 1px),
+    repeating-linear-gradient(112deg,transparent 0 48px,rgba(240,163,58,.045) 48px 49px);
+  background-size:auto,52px 52px,52px 52px,auto;
+  mask-image:linear-gradient(180deg,black 0%,rgba(0,0,0,.85) 54%,transparent 100%);
+}
+.frame{padding:30px clamp(18px,3vw,42px) 76px;}
+.mast,.top{
+  border-radius:22px;
+  background:linear-gradient(135deg,rgba(18,29,45,.84),rgba(9,20,26,.72));
+  border:1px solid rgba(211,245,213,.16);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(22px) saturate(1.18);
+}
+.top{margin:18px 20px 0;height:70px;}
+.brand:before{color:var(--green);text-shadow:0 0 22px rgba(119,242,161,.28);}
+.brand:after{letter-spacing:-.075em;text-shadow:0 18px 42px rgba(0,0,0,.38);}
+.routeLink,.weather{
+  border:1px solid rgba(211,245,213,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  padding:10px 14px;
+  transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
+}
+.routeLink:hover,.weather:hover{transform:translateY(-1px);color:#fff;background:rgba(119,242,161,.12);border-color:rgba(119,242,161,.35);}
+.console,.loc,.now,.board,.ref,.src,.sheet,.legend,.mapControls button{
+  border:1px solid rgba(211,245,213,.15);
+  border-radius:var(--radius-lg);
+  background:linear-gradient(160deg,rgba(19,31,48,.82),rgba(7,17,22,.74));
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px) saturate(1.12);
+}
+.console{padding:32px;overflow:hidden;}
+.console:after,.sheet:after{
+  content:"";
+  position:absolute;
+  inset:1px;
+  border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.10),transparent 26%,transparent 70%,rgba(119,242,161,.08));
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  padding:1px;
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+.title h1:after{font-size:clamp(50px,4.35vw,68px);line-height:.98;letter-spacing:-.085em;}
+.title p{color:#b9c6bc;}
+.feature,.risk,.hour,.day,.module,.metric,.route,.card,.filterNote,.search,.status,.mapFrame,.tab,.mode,.region,.badge,.empty{
+  border-radius:var(--radius-md);
+  border:1px solid rgba(211,245,213,.11);
+  background:linear-gradient(155deg,rgba(8,18,28,.86),rgba(7,16,20,.64));
+  box-shadow:0 12px 34px rgba(0,0,0,.20),0 1px 0 rgba(255,255,255,.045) inset;
+}
+.feature{transition:transform .2s ease,border-color .2s ease,background .2s ease;}
+.feature:hover{transform:translateY(-2px);border-color:rgba(119,242,161,.32);background:linear-gradient(155deg,rgba(15,37,39,.88),rgba(8,18,28,.74));}
+.feature b:before{background:var(--green);box-shadow:0 0 20px rgba(119,242,161,.55);}
+.search{padding:18px;background:linear-gradient(155deg,rgba(5,13,20,.92),rgba(13,33,32,.72));}
+.search:before{letter-spacing:-.04em;}
+.query input,.searchLine input,.ab input{
+  border:1px solid rgba(211,245,213,.10);
+  border-radius:16px;
+  background:rgba(3,10,15,.72);
+  color:#f8fff9;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.query button,.searchLine button,.planBtn,.mapBtn,.mini button,.externalFrame a{
+  border-radius:16px;
+  background:linear-gradient(135deg,#f3b14d,#db7605);
+  color:#160e05;
+  box-shadow:0 18px 34px rgba(219,118,5,.24),0 1px 0 rgba(255,255,255,.28) inset;
+  transition:transform .16s ease,filter .16s ease,box-shadow .16s ease;
+}
+.searchLine button,.planBtn,.mapBtn,.mini button,.externalFrame a{background:linear-gradient(135deg,#91ffb0,#41d778);color:#06130b;}
+.query button:hover,.searchLine button:hover,.planBtn:hover,.mapBtn:hover,.mini button:hover,.externalFrame a:hover{transform:translateY(-1px);filter:saturate(1.08);}
+.chip,.badge{
+  border:1px solid rgba(119,242,161,.14);
+  border-radius:999px;
+  background:rgba(119,242,161,.09);
+  color:#c8f8d4;
+}
+.status{
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  border-style:solid;
+  color:#b8c8bd;
+}
+.hero{position:relative;}
+.hero:after{
+  content:"";
+  position:absolute;
+  right:3%;top:16%;width:min(48vw,640px);height:min(48vw,640px);
+  pointer-events:none;z-index:-1;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(119,242,161,.12),rgba(119,242,161,.035) 42%,transparent 67%);
+  filter:blur(2px);
+}
+.now{background:linear-gradient(145deg,rgba(18,62,55,.82),rgba(8,17,25,.82));}
+.temp{color:#fff;text-shadow:0 0 36px rgba(119,242,161,.14);}
+.board h3,.route h3,.detail h2{letter-spacing:-.045em;}
+svg{border-radius:14px;border-color:rgba(211,245,213,.12);background:rgba(3,10,15,.56);}
+
+/* Route page refinements */
+.app{background:transparent;}
+.mapWrap{background:#071511;}
+.mapWrap:after{
+  background:
+    radial-gradient(circle at 72% 32%,rgba(119,242,161,.12),transparent 30%),
+    repeating-radial-gradient(ellipse at 70% 40%,transparent 0 54px,rgba(119,242,161,.14) 55px 56px),
+    linear-gradient(90deg,rgba(7,17,22,.30) 0 520px,rgba(7,17,22,.06) 520px 100%);
+}
+.sheet{left:28px;top:28px;bottom:28px;width:480px;position:absolute;overflow:auto;}
+.sheet:before{padding:22px 24px 0;color:var(--green);}
+.tools{padding:0 24px 18px;}
+.content{padding:16px 24px 24px;}
+.grab:before{background:linear-gradient(90deg,var(--green),var(--amber));box-shadow:0 0 24px rgba(119,242,161,.36);}
+.mode,.region,.tab{
+  color:#eaf6ee;
+  transition:transform .16s ease,background .16s ease,color .16s ease,border-color .16s ease;
+}
+.mode:hover,.region:hover,.tab:hover,.mapControls button:hover{transform:translateY(-1px);border-color:rgba(119,242,161,.30);}
+.mode.active,.region.active,.mapControls button.active{
+  background:linear-gradient(135deg,#91ffb0,#40d576);
+  color:#06130b;
+  box-shadow:0 14px 32px rgba(65,215,120,.22),0 1px 0 rgba(255,255,255,.24) inset;
+}
+.tab.active{background:linear-gradient(135deg,#f3b14d,#db7605);color:#160e05;}
+.route{overflow:hidden;transition:transform .18s ease,border-color .18s ease,background .18s ease;}
+.route:hover{transform:translateY(-2px);border-color:rgba(119,242,161,.30);background:linear-gradient(155deg,rgba(17,49,45,.86),rgba(8,18,28,.72));}
+.route:before{height:3px;background:linear-gradient(90deg,var(--green),var(--amber),rgba(255,255,255,.18));}
+.legend,.mapControls button{border-radius:18px;background:rgba(10,21,28,.78);}
+.leaflet-control-zoom a{background:rgba(10,21,28,.90)!important;color:#eaffef!important;border-color:rgba(211,245,213,.14)!important;}
+
+@media(max-width:859px){
+  .top{margin:8px 8px 0;border-radius:18px;}
+  .sheet{left:8px;right:8px;bottom:8px;width:auto;border-radius:24px;}
+}
+@media(max-width:640px){
+  .frame{padding:9px 10px 72px;}
+  .mast{border-radius:18px;}
+  .console{border-radius:24px;padding:14px;}
+  .search,.status,.feature,.risk,.hour,.day,.module,.metric,.route,.card,.filterNote,.loc,.now,.board,.ref,.src{border-radius:18px;}
+  .title h1:after{font-size:36px;line-height:1.04;}
+  .query input,.query button,.searchLine input,.ab input,.searchLine button,.planBtn{border-radius:14px;}
+  .sheet{max-height:54dvh;}
+  .legend,.mapControls button{border-radius:14px;}
+}
+
+
+/* Mobile overflow fix: keep controls inside the viewport. */
+@media(max-width:640px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden;}
+  .frame,.hero,.console,.search,.status,.title,.query,.chips,.mapWrap,.sheet,.tools,.content{max-width:100%;min-width:0;box-sizing:border-box;}
+  .search{align-self:stretch;width:100%;justify-self:stretch;}
+  .query{width:100%;min-width:0;}
+  .query input{width:100%;min-width:0;}
+  .query button{width:100%;}
+  .sheet{left:8px!important;right:8px!important;top:auto!important;bottom:8px!important;width:auto!important;max-width:calc(100vw - 16px);overflow-x:hidden;}
+  .modes{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .regions{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .tabs,.searchLine,.ab{min-width:0;max-width:100%;}
+  .mode,.region,.tab,.searchLine button,.planBtn{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .searchLine input,.ab input{min-width:0;width:100%;}
+}
+@media(max-width:390px){
+  .mode,.region{font-size:11px;padding-left:2px;padding-right:2px;}
+}
+
+
+/* Mobile-first priority pass: phone layout must be clean before desktop polish. */
+@media(max-width:640px){
+  body{min-width:0;}
+  .mast,.top{height:56px;margin:8px 8px 0;padding:0 12px;border-radius:18px;}
+  .brand:after{font-size:28px;line-height:1;}
+  .routeLink,.weather{padding:7px 10px;font-size:12px;}
+  .console{display:flex;flex-direction:column;gap:12px;}
+  .search{order:-1;margin:0;align-self:stretch;}
+  .title{padding-top:4px;}
+  .status{margin-top:0;}
+  footer{padding-left:18px!important;padding-right:18px!important;text-align:left!important;}
+
+  .mapWrap{height:calc(100vh - 64px);overflow:hidden;}
+  .sheet{max-height:52dvh;overflow-y:auto;overflow-x:hidden;}
+  .tools{padding:0 10px 10px;}
+  .content{padding:8px 10px 12px;}
+  .modes,.regions,.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px;}
+  .modes::-webkit-scrollbar,.regions::-webkit-scrollbar,.tabs::-webkit-scrollbar{display:none;}
+  .mode,.region,.tab{flex:0 0 auto;min-width:104px;padding:12px 14px;}
+  .modes .mode{min-width:105px;}
+  .regions .region{min-width:128px;}
+  .tabs .tab{min-width:170px;}
+  .searchLine{grid-template-columns:minmax(0,1fr) 64px;}
+  .searchLine button{width:64px;}
+  .filterNote{font-size:12px;}
+  .legend{max-width:160px;z-index:470;}
+  .mapControls{right:8px;top:110px;z-index:470;}
+  .leaflet-control-zoom{margin-left:10px!important;margin-bottom:44dvh!important;}
+  .route{padding:12px;}
+  .route h3{font-size:18px;}
+  .route p{font-size:12px;}
+}
+@media(max-width:430px){
+  .brand:after{font-size:26px;}
+  .sheet{max-height:51dvh;}
+  .mode,.region,.tab{min-height:44px;}
+  .modes .mode{min-width:104px;}
+  .regions .region{min-width:126px;}
+  .tabs .tab{min-width:166px;}
+  .mapControls button{padding:8px 9px;}
+}
+
 </style>
 </head><body><div class="frame"><header class="mast"><a class="brand" href="https://song-studio.github.io/" aria-label="气象山野"><img class="brandLogo" src="assets/brand/weather-wordmark.png" alt="气象山野"></a><a class="routeLink" href="route-pro.html">路线决策</a></header><section class="hero"><div class="console"><div class="title"><div class="eyebrow">METEO DECISION DESK</div><h1>气象山野</h1><p>查城市，也查村庄、垭口、登山口和营地。普通天气应用容易定位偏的点，这里先校准位置，再看天气窗口。</p><div class="featureGrid"><div class="feature"><b>127个校准地点</b><span>高德定位、人工坐标和海拔校验并用</span></div><div class="feature"><b>只看行动指标</b><span>阵风、能见度、露点、气压、CAPE，优先看会影响出行的指标</span></div><div class="feature"><b>行动阈值</b><span>把数字翻译成提醒：适合、谨慎、暂缓</span></div><div class="feature"><b>多源交叉参考</b><span>保留 Windy、Meteoblue 入口，便于复核风场和多模型</span></div></div></div><form class="search" id="form"><div class="query"><input id="q" placeholder="雨崩村 / 四姑娘山镇 / 30.996,102.830"><button>查气象</button></div><div class="chips" id="chips"></div></form></div><main id="main"><div class="status">输入城市、景区、村庄、营地或经纬度。小地点建议加省份或路线名，例如“云南 德钦 雨崩村”。</div></main></section></div><script>
 const AMAP_KEY='39a8c2f6ef75e494198f3e3751701ebe',WEATHER_PROCESSED='data/processed/weather_console_v7.json';const $=s=>document.querySelector(s);let rules=[],schema=[],sources=[],fallbacks=[],modules=[];const WMO={0:'晴',1:'少云',2:'多云',3:'阴',45:'雾',48:'冻雾',51:'小毛毛雨',53:'毛毛雨',55:'强毛毛雨',61:'小雨',63:'中雨',65:'大雨',71:'小雪',73:'中雪',75:'大雪',80:'阵雨',81:'强阵雨',82:'暴雨',95:'雷暴',96:'雷暴冰雹',99:'强雷暴'};
