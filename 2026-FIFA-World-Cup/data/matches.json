@@ -206,7 +206,10 @@
             "time": "06:00",
             "venue": "Lumen Field",
             "city": "西雅图",
-            "status": "scheduled"
+            "status": "finished",
+            "winner": "draw",
+            "homeScore": 1,
+            "awayScore": 1
         },
         {
             "id": "group-g-m2",
@@ -219,7 +222,10 @@
             "time": "12:00",
             "venue": "SoFi Stadium",
             "city": "洛杉矶",
-            "status": "scheduled"
+            "status": "finished",
+            "winner": "draw",
+            "homeScore": 2,
+            "awayScore": 2
         },
         {
             "id": "group-h-m1",
@@ -232,7 +238,10 @@
             "time": "00:00",
             "venue": "Mercedes-Benz Stadium",
             "city": "亚特兰大",
-            "status": "scheduled"
+            "status": "finished",
+            "winner": "draw",
+            "homeScore": 0,
+            "awayScore": 0
         },
         {
             "id": "group-h-m2",
@@ -245,7 +254,10 @@
             "time": "06:00",
             "venue": "Hard Rock Stadium",
             "city": "迈阿密",
-            "status": "scheduled"
+            "status": "finished",
+            "winner": "draw",
+            "homeScore": 1,
+            "awayScore": 1
         }
     ]
 }
