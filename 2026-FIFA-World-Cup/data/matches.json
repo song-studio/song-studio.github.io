@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-20T10:01:00+08:00",
+  "updatedAt": "2026-06-20T11:44:00+08:00",
   "mode": "manual-results-feed",
-  "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡片奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
+  "note": "修正时间: 土耳其vs巴拉圭11:00(非12:00)进行中; 日本vs突尼斯6/21(非6/20)12:00",
   "today": [
     {
       "id": "group-a-m1",
@@ -506,10 +506,13 @@
       "homeId": "turkiye",
       "awayId": "paraguay",
       "date": "2026-06-20",
-      "time": "12:00",
+      "time": "11:00",
       "venue": "Levi's Stadium",
       "city": "旧金山湾区",
-      "status": "scheduled"
+      "status": "live",
+      "homeScore": 0,
+      "awayScore": 1,
+      "score": "0-1"
     },
     {
       "id": "group-f-m3",
@@ -518,7 +521,7 @@
       "away": "突尼斯",
       "homeId": "japan",
       "awayId": "tunisia",
-      "date": "2026-06-20",
+      "date": "2026-06-21",
       "time": "12:00",
       "venue": "Estadio BBVA",
       "city": "蒙特雷",
