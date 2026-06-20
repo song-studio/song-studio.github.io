@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-20",
+  "updatedAt": "2026-06-20T10:01:00+08:00",
   "mode": "manual-results-feed",
   "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡片奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
   "today": [
@@ -462,7 +462,11 @@
       "time": "03:00",
       "venue": "Lumen Field",
       "city": "西雅图",
-      "status": "scheduled"
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 2,
+      "awayScore": 0,
+      "score": "2-0"
     },
     {
       "id": "group-c-m3",
@@ -475,7 +479,11 @@
       "time": "06:00",
       "venue": "Gillette Stadium",
       "city": "波士顿",
-      "status": "scheduled"
+      "status": "finished",
+      "winner": "away",
+      "homeScore": 0,
+      "awayScore": 1,
+      "score": "0-1"
     },
     {
       "id": "group-c-m4",
