@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-20T11:44:00+08:00",
+  "updatedAt": "2026-06-21",
   "mode": "manual-results-feed",
-  "note": "修正时间: 土耳其vs巴拉圭11:00(非12:00)进行中; 日本vs突尼斯6/21(非6/20)12:00",
+  "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡片奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
   "today": [
     {
       "id": "group-a-m1",
@@ -465,8 +465,7 @@
       "status": "finished",
       "winner": "home",
       "homeScore": 2,
-      "awayScore": 0,
-      "score": "2-0"
+      "awayScore": 0
     },
     {
       "id": "group-c-m3",
@@ -482,8 +481,7 @@
       "status": "finished",
       "winner": "away",
       "homeScore": 0,
-      "awayScore": 1,
-      "score": "0-1"
+      "awayScore": 1
     },
     {
       "id": "group-c-m4",
@@ -496,7 +494,10 @@
       "time": "09:00",
       "venue": "Lincoln Financial Field",
       "city": "费城",
-      "status": "scheduled"
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 3,
+      "awayScore": 0
     },
     {
       "id": "group-d-m4",
@@ -509,10 +510,10 @@
       "time": "11:00",
       "venue": "Levi's Stadium",
       "city": "旧金山湾区",
-      "status": "live",
+      "status": "finished",
+      "winner": "away",
       "homeScore": 0,
-      "awayScore": 1,
-      "score": "0-1"
+      "awayScore": 1
     },
     {
       "id": "group-f-m3",
@@ -525,6 +526,58 @@
       "time": "12:00",
       "venue": "Estadio BBVA",
       "city": "蒙特雷",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-h-m3",
+      "group": "H",
+      "home": "西班牙",
+      "away": "沙特",
+      "homeId": "spain",
+      "awayId": "saudi-arabia",
+      "date": "2026-06-22",
+      "time": "00:00",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "亚特兰大",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-h-m4",
+      "group": "H",
+      "home": "乌拉圭",
+      "away": "佛得角",
+      "homeId": "uruguay",
+      "awayId": "cabo-verde",
+      "date": "2026-06-22",
+      "time": "06:00",
+      "venue": "Hard Rock Stadium",
+      "city": "迈阿密",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-g-m3",
+      "group": "G",
+      "home": "比利时",
+      "away": "伊朗",
+      "homeId": "belgium",
+      "awayId": "iran",
+      "date": "2026-06-22",
+      "time": "03:00",
+      "venue": "SoFi Stadium",
+      "city": "洛杉矶",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-g-m4",
+      "group": "G",
+      "home": "新西兰",
+      "away": "埃及",
+      "homeId": "new-zealand",
+      "awayId": "egypt",
+      "date": "2026-06-22",
+      "time": "09:00",
+      "venue": "BC Place",
+      "city": "温哥华",
       "status": "scheduled"
     }
   ]
