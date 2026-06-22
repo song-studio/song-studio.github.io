@@ -638,9 +638,10 @@
       "time": "09:00",
       "venue": "BC Place",
       "city": "温哥华",
-      "status": "live",
+      "status": "finished",
       "homeScore": 1,
-      "awayScore": 0
+      "awayScore": 3,
+      "winner": "away"
     },
     {
       "id": "group-j-m3",
