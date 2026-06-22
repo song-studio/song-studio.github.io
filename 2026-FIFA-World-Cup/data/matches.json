@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-21",
+  "updatedAt": "2026-06-22",
   "mode": "manual-results-feed",
   "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡片奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
   "today": [
@@ -516,6 +516,54 @@
       "awayScore": 1
     },
     {
+      "id": "group-e-m3",
+      "group": "E",
+      "home": "德国",
+      "away": "科特迪瓦",
+      "homeId": "germany",
+      "awayId": "cote-divoire",
+      "date": "2026-06-21",
+      "time": "04:00",
+      "venue": "BMO Field",
+      "city": "多伦多",
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 2,
+      "awayScore": 1
+    },
+    {
+      "id": "group-e-m4",
+      "group": "E",
+      "home": "厄瓜多尔",
+      "away": "库拉索",
+      "homeId": "ecuador",
+      "awayId": "curacao",
+      "date": "2026-06-21",
+      "time": "08:00",
+      "venue": "GEHA Field",
+      "city": "堪萨斯城",
+      "status": "finished",
+      "winner": "draw",
+      "homeScore": 0,
+      "awayScore": 0
+    },
+    {
+      "id": "group-f-m4",
+      "group": "F",
+      "home": "荷兰",
+      "away": "瑞典",
+      "homeId": "netherlands",
+      "awayId": "sweden",
+      "date": "2026-06-21",
+      "time": "01:00",
+      "venue": "NRG Stadium",
+      "city": "休斯顿",
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 5,
+      "awayScore": 1
+    },
+    {
       "id": "group-f-m3",
       "group": "F",
       "home": "日本",
@@ -526,7 +574,10 @@
       "time": "12:00",
       "venue": "Estadio BBVA",
       "city": "蒙特雷",
-      "status": "scheduled"
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 4,
+      "awayScore": 0
     },
     {
       "id": "group-h-m3",
@@ -539,7 +590,10 @@
       "time": "00:00",
       "venue": "Mercedes-Benz Stadium",
       "city": "亚特兰大",
-      "status": "scheduled"
+      "status": "finished",
+      "winner": "home",
+      "homeScore": 4,
+      "awayScore": 0
     },
     {
       "id": "group-h-m4",
@@ -552,7 +606,10 @@
       "time": "06:00",
       "venue": "Hard Rock Stadium",
       "city": "迈阿密",
-      "status": "scheduled"
+      "status": "finished",
+      "winner": "draw",
+      "homeScore": 2,
+      "awayScore": 2
     },
     {
       "id": "group-g-m3",
@@ -565,7 +622,10 @@
       "time": "03:00",
       "venue": "SoFi Stadium",
       "city": "洛杉矶",
-      "status": "scheduled"
+      "status": "finished",
+      "winner": "draw",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "id": "group-g-m4",
@@ -578,6 +638,60 @@
       "time": "09:00",
       "venue": "BC Place",
       "city": "温哥华",
+      "status": "live",
+      "homeScore": 1,
+      "awayScore": 0
+    },
+    {
+      "id": "group-j-m3",
+      "group": "J",
+      "home": "阿根廷",
+      "away": "奥地利",
+      "homeId": "argentina",
+      "awayId": "austria",
+      "date": "2026-06-23",
+      "time": "01:00",
+      "venue": "GEHA Field",
+      "city": "堪萨斯城",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-i-m3",
+      "group": "I",
+      "home": "法国",
+      "away": "伊拉克",
+      "homeId": "france",
+      "awayId": "iraq",
+      "date": "2026-06-23",
+      "time": "05:00",
+      "venue": "Lincoln Financial Field",
+      "city": "费城",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-i-m4",
+      "group": "I",
+      "home": "挪威",
+      "away": "塞内加尔",
+      "homeId": "norway",
+      "awayId": "senegal",
+      "date": "2026-06-23",
+      "time": "08:00",
+      "venue": "MetLife Stadium",
+      "city": "纽约/新泽西",
+      "status": "scheduled"
+    },
+    {
+      "id": "group-j-m4",
+      "group": "J",
+      "home": "约旦",
+      "away": "阿尔及利亚",
+      "homeId": "jordan",
+      "awayId": "algeria",
+      "date": "2026-06-23",
+      "time": "11:00",
+      "venue": "AT&T Stadium",
+      "city": "达拉斯",
       "status": "scheduled"
     }
   ]
