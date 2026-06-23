@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-23",
+  "updatedAt": "2026-06-24",
   "mode": "manual-results-feed",
   "note": "开赛后维护 today 列表：填入当日比赛和赛果 winner（home/draw/away）后，页面会自动显示预测入口并结算卡片奖励。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
   "today": [
@@ -714,8 +714,8 @@
       "away": "乌兹别克斯坦",
       "homeId": "portugal",
       "awayId": "uzbekistan",
-      "date": "2026-06-24",
-      "time": "01:00",
+      "date": "2026-06-23",
+      "time": "12:00",
       "venue": "NRG Stadium",
       "city": "休斯顿",
       "status": "scheduled"
@@ -727,8 +727,8 @@
       "away": "加纳",
       "homeId": "england",
       "awayId": "ghana",
-      "date": "2026-06-24",
-      "time": "04:00",
+      "date": "2026-06-23",
+      "time": "16:00",
       "venue": "Gillette Stadium",
       "city": "波士顿",
       "status": "scheduled"
@@ -740,8 +740,8 @@
       "away": "克罗地亚",
       "homeId": "panama",
       "awayId": "croatia",
-      "date": "2026-06-24",
-      "time": "07:00",
+      "date": "2026-06-23",
+      "time": "19:00",
       "venue": "BMO Field",
       "city": "多伦多",
       "status": "scheduled"
@@ -753,8 +753,8 @@
       "away": "刚果（金）",
       "homeId": "colombia",
       "awayId": "congo-dr",
-      "date": "2026-06-24",
-      "time": "10:00",
+      "date": "2026-06-23",
+      "time": "20:00",
       "venue": "Estadio Akron",
       "city": "瓜达拉哈拉",
       "status": "scheduled"
