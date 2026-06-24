@@ -3821,12 +3821,11 @@ initHeroGlobe();
   function inj(){
     fetch('data/matches.json').then(function(r){return r.json()}).then(function(d){
       var t=d.today||[],scores={},rows=document.querySelectorAll('.match-row');
-      for(var i=0;i<t.length;i++){var m=t[i];if(m.status==='finished')scores[m.home]=m;}
+      for(var i=0;i<t.length;i++){var m=t[i];if(m.status==='finished')scores[m.home+'|'+m.away]=m;}
       for(var j=0;j<rows.length;j++){
         var n=rows[j].querySelectorAll('.mr-name');
         if(n.length>=2){
-          var hn=n[0].textContent.trim(),an=n[1].textContent.trim(),s=scores[hn];
-          if(s&&s.away===an){
+          var hn=n[0].textContent.trim(),an=n[1].textContent.trim(),s=scores[hn+'|'+an];
             var vs=rows[j].querySelector('.mr-vs');
             if(vs) vs.innerHTML='<span style="color:#f5c518;font-weight:700">'+s.homeScore+' - '+s.awayScore+'</span>';
           }
