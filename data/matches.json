@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-06-24",
+  "updatedAt": "2026-06-25",
   "mode": "manual-results-feed",
-  "note": "72场小组赛全部录入。winner: home=主胜 away=客胜 draw=平局。小组赛可平局。",
+  "note": "Results updated for June 25 BJT (6 matches)",
   "today": [
     {
       "id": "group-a-m1",
@@ -78,7 +78,10 @@
       "time": "09:00",
       "venue": "Estadio Azteca",
       "city": "墨西哥城",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 0,
+      "awayScore": 3,
+      "winner": "away"
     },
     {
       "id": "group-a-m6",
@@ -91,7 +94,10 @@
       "time": "09:00",
       "venue": "Estadio BBVA",
       "city": "蒙特雷",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 0,
+      "winner": "home"
     },
     {
       "id": "group-b-m1",
@@ -168,7 +174,10 @@
       "time": "03:00",
       "venue": "Lumen Field",
       "city": "温哥华",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 2,
+      "awayScore": 1,
+      "winner": "home"
     },
     {
       "id": "group-b-m6",
@@ -181,7 +190,10 @@
       "time": "03:00",
       "venue": "Lumen Field",
       "city": "西雅图",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 3,
+      "awayScore": 1,
+      "winner": "home"
     },
     {
       "id": "group-c-m1",
@@ -258,7 +270,10 @@
       "time": "06:00",
       "venue": "Hard Rock Stadium",
       "city": "迈阿密",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 0,
+      "awayScore": 3,
+      "winner": "away"
     },
     {
       "id": "group-c-m6",
@@ -271,7 +286,10 @@
       "time": "06:00",
       "venue": "Mercedes-Benz Stadium",
       "city": "亚特兰大",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 4,
+      "awayScore": 2,
+      "winner": "home"
     },
     {
       "id": "group-d-m1",
