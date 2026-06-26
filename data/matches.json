@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-25",
+  "updatedAt": "2026-06-26",
   "mode": "manual-results-feed",
   "note": "Results updated for June 25 BJT (6 matches)",
   "today": [
@@ -366,7 +366,10 @@
       "time": "10:00",
       "venue": "SoFi Stadium",
       "city": "洛杉矶",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 3,
+      "awayScore": 2,
+      "winner": "home"
     },
     {
       "id": "group-d-m6",
@@ -379,7 +382,10 @@
       "time": "10:00",
       "venue": "Levi's Stadium",
       "city": "旧金山湾区",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 0,
+      "awayScore": 0,
+      "winner": "draw"
     },
     {
       "id": "group-e-m1",
@@ -456,7 +462,10 @@
       "time": "04:00",
       "venue": "MetLife Stadium",
       "city": "纽约/新泽西",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 2,
+      "awayScore": 1,
+      "winner": "home"
     },
     {
       "id": "group-e-m6",
@@ -469,7 +478,10 @@
       "time": "04:00",
       "venue": "Lincoln Financial Field",
       "city": "费城",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 0,
+      "awayScore": 2,
+      "winner": "away"
     },
     {
       "id": "group-f-m1",
@@ -546,7 +558,10 @@
       "time": "07:00",
       "venue": "AT&T Stadium",
       "city": "达拉斯",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 1,
+      "winner": "draw"
     },
     {
       "id": "group-f-m6",
@@ -559,7 +574,10 @@
       "time": "07:00",
       "venue": "GEHA Field",
       "city": "堪萨斯城",
-      "status": "scheduled"
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 3,
+      "winner": "away"
     },
     {
       "id": "group-g-m1",
