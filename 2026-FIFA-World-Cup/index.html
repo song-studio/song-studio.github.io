@@ -581,6 +581,19 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
 .mcp-chip-wrap{position:absolute;top:18px;right:18px;z-index:10}
 .mcp-chip{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:5px 12px 5px 8px;display:flex;align-items:center;gap:6px;cursor:pointer;color:#fff;font-size:11px;font-weight:700;letter-spacing:.5px;transition:all .2s;box-shadow:0 2px 12px rgba(0,0,0,.2)}
 .mcp-dot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 6px #34d399;display:inline-block;animation:mcpPulse 2s ease-in-out infinite}
+.event-hub{margin:26px 0 24px;padding:18px;border-radius:18px;background:linear-gradient(145deg,rgba(12,28,58,.9),rgba(4,15,34,.94));border:1px solid rgba(245,197,24,.18)}
+.event-hub-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:14px}
+.event-hub-title{font-size:20px;font-weight:900}.event-hub-asof{font-size:11px;color:var(--text-muted);text-align:right}
+.event-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:14px}
+.event-tab{min-height:42px;border:1px solid var(--border);border-radius:11px;background:rgba(255,255,255,.035);color:var(--text-dim);font:700 12px var(--fn);cursor:pointer;padding:7px 5px}
+.event-tab.active{color:var(--gold);border-color:rgba(245,197,24,.38);background:rgba(245,197,24,.1)}
+.event-tab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.event-list{display:flex;flex-direction:column;gap:8px}.event-match{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:10px;padding:11px 12px;border-radius:11px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.055)}
+.event-meta{font-size:11px;color:var(--text-muted);line-height:1.45}.event-teams{min-width:0;font-size:13px;font-weight:700}.event-score{font-size:17px;font-weight:900;color:var(--gold);white-space:nowrap}.event-status{font-size:11px;color:var(--text-muted);white-space:nowrap}
+.event-group{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)}.event-group+.event-group{margin-top:8px}.event-group summary{cursor:pointer;padding:12px 14px;font-size:13px;font-weight:800;color:var(--text);display:flex;justify-content:space-between;list-style:none}.event-group summary::-webkit-details-marker{display:none}.event-group-body{padding:0 9px 9px}
+.standing-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:11px}.standing-table{width:100%;border-collapse:collapse;min-width:480px;font-size:12px}.standing-table th,.standing-table td{padding:9px 7px;text-align:center;border-bottom:1px solid var(--border)}.standing-table th{font-size:10px;color:var(--text-muted);font-weight:700}.standing-table tr:last-child td{border-bottom:0}.standing-table .standing-team{text-align:left;font-weight:700;white-space:nowrap}.standing-pos{color:var(--gold);font-weight:900}.standing-pts{color:var(--gold);font-weight:900}
+.group-standing{margin:22px 0}.event-error{padding:18px;border-radius:11px;background:rgba(239,68,68,.08);color:#fca5a5;font-size:13px;line-height:1.6}
+@media(max-width:520px){.event-hub{padding:14px;margin-left:-2px;margin-right:-2px}.event-tabs{grid-template-columns:1fr 1fr}.event-match{grid-template-columns:58px 1fr auto;padding:10px 9px;gap:7px}.event-teams{font-size:12px}.event-score{font-size:15px}.event-hub-head{align-items:flex-start;flex-direction:column}.event-hub-asof{text-align:left}}
 </style>
 </head><body>
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -675,11 +688,21 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
     <div class="prog-bar"><div class="prog-fill" style="width:100%"></div></div>
   </div>
   <div class="overview-grid stagger">
-    <div class="ov-card glass"><div class="ov-icon"><svg><use href="#I-check"/></svg></div><div><div class="ov-num">72</div><div class="ov-lbl" id="ov1"></div></div></div>
-    <div class="ov-card glass"><div class="ov-icon"><svg><use href="#I-check"/></svg></div><div><div class="ov-num">0</div><div class="ov-lbl" id="ov2"></div></div></div>
+    <div class="ov-card glass"><div class="ov-icon"><svg><use href="#I-check"/></svg></div><div><div class="ov-num" id="ov-finished">--</div><div class="ov-lbl" id="ov1"></div></div></div>
+    <div class="ov-card glass"><div class="ov-icon"><svg><use href="#I-cal"/></svg></div><div><div class="ov-num" id="ov-scheduled">--</div><div class="ov-lbl" id="ov2"></div></div></div>
     <div class="ov-card glass"><div class="ov-icon"><svg><use href="#I-cal"/></svg></div><div><div class="ov-num">6/12</div><div class="ov-lbl" id="ov3"></div></div></div>
     <div class="ov-card glass"><div class="ov-icon"><svg><use href="#I-trophy"/></svg></div><div><div class="ov-num">7/20</div><div class="ov-lbl" id="ov4"></div></div></div>
   </div>
+  <section class="event-hub" id="event-hub" aria-labelledby="event-hub-title">
+    <div class="event-hub-head"><div><div class="event-hub-title" id="event-hub-title">赛事中心</div><div class="sec-sub">比分、赛程、积分榜与淘汰赛</div></div><div class="event-hub-asof" id="event-hub-asof">正在读取最新赛果…</div></div>
+    <div class="event-tabs" role="tablist" aria-label="赛事中心栏目">
+      <button class="event-tab active" type="button" data-event-tab="today" onclick="renderEventHub('today')">今日比赛</button>
+      <button class="event-tab" type="button" data-event-tab="all" onclick="renderEventHub('all')">完整赛程</button>
+      <button class="event-tab" type="button" data-event-tab="standings" onclick="renderEventHub('standings')">小组积分榜</button>
+      <button class="event-tab" type="button" onclick="goPage('knockout')">淘汰赛</button>
+    </div>
+    <div id="event-hub-content" aria-live="polite"><div class="event-status">加载中…</div></div>
+  </section>
   <div class="fav-banner" onclick="goPage('fav')">
     <svg width="22" height="22"><use href="#I-star-fill"/></svg>
     <div class="fav-banner-text" id="fav-banner-el"></div>
@@ -950,7 +973,7 @@ zh:{
   recent:'近期状态',players:'核心球员',notes:'备注',
   fav_btn:'收藏球队',fav_active:'✅ 已收藏',
   sp:'搜索球队名称…',sc:'关闭',se:'输入球队名称开始搜索',sn:'未找到',sf:'找到 {n} 场比赛',
-  foot:'数据来源：央视体育 · 网易体育 · 新华社 · FIFA官网<br>所有时间显示北京时间（BJT, UTC+8）及美东时间（EDT, UTC-4）<br>📮 xss3000@outlook.com · 最后更新 2026-05-16 · 附加赛数据已更新',
+  foot:'数据来源：FIFA官网 · Sky Sports<br>所有时间显示北京时间（BJT, UTC+8）及美东时间（EDT, UTC-4）<br>📮 xss3000@outlook.com · 比分更新至 2026-06-27 11:00 BJT',
   ai_t:'AI 胜负预测',ai_s:'FIFA排名·近期状态·历史·概率 四维算法',ai_note:'FIFA排名35%+近期状态25%+历史20%+概率20%。纯JS，仅供参考。',ai_home:'主胜',ai_draw:'平局',ai_away:'客胜',
   extra:[['场馆','16个场馆<br>容量详情'],['历史战绩','48支球队<br>历届成绩'],['夺冠热门','权威媒体<br>综合预测']],
   detail_hint:'← 点击查看',
@@ -1054,7 +1077,7 @@ en:{
   recent:'Recent Form',players:'Key Players',notes:'Notes',
   fav_btn:'Follow Team',fav_active:'✅ Following',
   sp:'Search team name…',sc:'Close',se:'Type a team name to search',sn:'Not found',sf:'Found {n} matches',
-  foot:'Sources: CCTV · Netease · Xinhua · FIFA Official<br>All times shown in Beijing Time (BJT, UTC+8) and US Eastern (EDT, UTC-4)<br>📮 xss3000@outlook.com · Updated 2026-05-16',
+  foot:'Sources: FIFA Official · Sky Sports<br>All times shown in Beijing Time (BJT, UTC+8) and US Eastern (EDT, UTC-4)<br>📮 xss3000@outlook.com · Scores updated Jun 27, 2026 11:00 BJT',
   ai_t:'AI Predictions',ai_s:'FIFA·Form·H2H·Odds 4-factor',ai_note:'FIFA 35%+Form 25%+H2H 20%+Odds 20%. Pure JS, for fun only.',ai_home:'Home Win',ai_draw:'Draw',ai_away:'Away Win',
   extra:[['Venues','16 stadiums<br>Capacity details'],['History','48 teams<br>All-time records'],['Hot','Expert picks<br>Media consensus']],
   detail_hint:'← Tap for details',
@@ -2086,7 +2109,12 @@ function mrHTML(m,l,i){
   const statusDot=m.ok
     ?'<span style="width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:3px"></span>'
     :'';
-  return`<div class="match-row glass" onclick="openDrawer('${l}',${i})">
+  const matchId=`group-${l.toLowerCase()}-m${i+1}`;
+  const result=m.result;
+  const score=result&&result.status==='finished'
+    ?`<span style="color:#f5c518;font-weight:900">${result.homeScore} - ${result.awayScore}</span>`
+    :(lang==='en'?'VS':'待赛');
+  return`<div class="match-row glass" data-match-id="${matchId}" onclick="openDrawer('${l}',${i})">
     <div class="mr-top">
       <div class="mr-left">
         <div style="display:flex;align-items:center;gap:5px">
@@ -2103,7 +2131,7 @@ function mrHTML(m,l,i){
     </div>
     <div class="mr-teams">
       <div class="mr-team"><span class="mr-flag" style="font-size:0;display:inline-flex;align-items:center">${renderFlag(m.h.f,"xl")}</span><span class="mr-name">${teamN(m.h)}</span></div>
-      <div class="mr-vs">VS</div>
+      <div class="mr-vs">${score}</div>
       <div class="mr-team right"><span class="mr-flag" style="font-size:0;display:inline-flex;align-items:center">${renderFlag(m.a.f,"xl")}</span><span class="mr-name">${teamN(m.a)}</span></div>
     </div>
     <div class="mr-venue">
@@ -2152,6 +2180,7 @@ function openGroup(l){
     </div>
     <div class="matches-label"><svg><use href="#I-flag"/></svg>${T('ml')}</div>
     <div class="match-list stagger">${g.matches.map((m,i)=>mrHTML(m,l,i)).join('')}</div>
+    ${typeof groupStandingsHTML==='function'?groupStandingsHTML(l):''}
     ${groupAnalysisHTML(l)}`;
   setPage('group-detail');setNav('groups');
 }
@@ -2739,6 +2768,7 @@ function toggleLang(){
   btn.textContent=lang==='zh'?'EN':'中';
   btn.classList.toggle('active',lang==='en');
   applyLang();_updateAILang();
+  if(typeof renderEventHub==='function')renderEventHub(window.WC_ACTIVE_TAB||'today');
   _cmtPage=0;loadComments(false);
   // Re-render current page if group detail is open
   if(document.getElementById('page-group-detail').classList.contains('active')){
@@ -3817,28 +3847,80 @@ initHeroGlobe();
 
 
 <script>
-(function(){
-  function inj(){
-    fetch('data/matches.json').then(function(r){return r.json()}).then(function(d){
-      var t=d.today||[],scores={},rows=document.querySelectorAll('.match-row');
-      for(var i=0;i<t.length;i++){var m=t[i];if(m.status==='finished')scores[m.home+'|'+m.away]=m;}
-      for(var j=0;j<rows.length;j++){
-        var n=rows[j].querySelectorAll('.mr-name');
-        if(n.length>=2){
-          var hn=n[0].textContent.trim(),an=n[1].textContent.trim(),s=scores[hn+'|'+an];
-            var vs=rows[j].querySelector('.mr-vs');
-            if(vs) vs.innerHTML='<span style="color:#f5c518;font-weight:700">'+s.homeScore+' - '+s.awayScore+'</span>';
-          }
-        }
-      }
-    }).catch(function(){});
+window.WC_DATA={matches:[],today:[],standings:{groups:{}}};
+window.WC_ACTIVE_TAB='today';
+
+function wcEscape(value){
+  return String(value??'').replace(/[&<>'"]/g,function(char){return{'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]});
+}
+function wcMatchCard(match){
+  var isFinished=match.status==='finished';
+  var score=isFinished?'<span class="event-score">'+match.homeScore+' - '+match.awayScore+'</span>':'<span class="event-status">'+(lang==='en'?'Scheduled':'待赛')+'</span>';
+  var date=match.date.slice(5).replace('-','/');
+  var home=lang==='en'?(match.homeEn||match.home):match.home;
+  var away=lang==='en'?(match.awayEn||match.away):match.away;
+  return '<article class="event-match" data-event-match-id="'+wcEscape(match.id)+'">'
+    +'<div class="event-meta"><b>'+wcEscape(date)+'</b><br>'+wcEscape(match.time)+'<br>'+(lang==='en'?'Group ':'')+wcEscape(match.group)+(lang==='en'?'':'组')+'</div>'
+    +'<div class="event-teams">'+wcEscape(home)+'<br><span style="color:var(--text-muted);font-weight:500">'+wcEscape(away)+'</span></div>'+score+'</article>';
+}
+function standingsTableHTML(rows){
+  if(!rows||!rows.length)return '<div class="event-status">'+(lang==='en'?'Standings pending':'积分榜待更新')+'</div>';
+  return '<div class="standing-wrap"><table class="standing-table"><thead><tr><th>#</th><th style="text-align:left">'+(lang==='en'?'Team':'球队')+'</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead><tbody>'
+    +rows.map(function(row){var name=lang==='en'?row.englishName:row.name;return '<tr><td class="standing-pos">'+row.position+'</td><td class="standing-team">'+wcEscape(row.flag)+' '+wcEscape(name)+'</td><td>'+row.p+'</td><td>'+row.w+'</td><td>'+row.d+'</td><td>'+row.l+'</td><td>'+row.gf+'</td><td>'+row.ga+'</td><td>'+(row.gd>0?'+':'')+row.gd+'</td><td class="standing-pts">'+row.pts+'</td></tr>';}).join('')
+    +'</tbody></table></div>';
+}
+function groupStandingsHTML(group){
+  var rows=window.WC_DATA.standings.groups[group];
+  if(!rows)return '';
+  return '<section class="group-standing"><div class="matches-label"><svg><use href="#I-trending"/></svg>'+(lang==='en'?'Group standings':'小组积分榜')+'</div>'+standingsTableHTML(rows)+'</section>';
+}
+function renderEventHub(tab){
+  window.WC_ACTIVE_TAB=tab||'today';
+  var content=document.getElementById('event-hub-content');
+  if(!content)return;
+  document.getElementById('event-hub-title').textContent=lang==='en'?'Match Centre':'赛事中心';
+  document.querySelector('#event-hub-title + .sec-sub').textContent=lang==='en'?'Scores, fixtures, standings and knockouts':'比分、赛程、积分榜与淘汰赛';
+  var tabLabels=lang==='en'?['Today','Full schedule','Standings']:['今日比赛','完整赛程','小组积分榜'];
+  document.querySelectorAll('[data-event-tab]').forEach(function(button,index){button.textContent=tabLabels[index];});
+  document.querySelector('.event-tabs button:last-child').textContent=lang==='en'?'Knockout':'淘汰赛';
+  document.querySelectorAll('[data-event-tab]').forEach(function(button){button.classList.toggle('active',button.dataset.eventTab===window.WC_ACTIVE_TAB);});
+  var data=window.WC_DATA;
+  if(data.asOf)document.getElementById('event-hub-asof').textContent=(lang==='en'?'Updated ':'更新至 ')+data.asOf.replace('T',' ').replace('+08:00',' BJT');
+  if(data.matches.length){var finished=data.matches.filter(function(match){return match.status==='finished';}).length;document.getElementById('ov1').textContent=lang==='en'?'Finished':'已完场';document.getElementById('ov2').textContent=lang==='en'?'Scheduled':'待赛';document.getElementById('ov-finished').textContent=finished;document.getElementById('ov-scheduled').textContent=data.matches.length-finished;}
+  if(data.error){content.innerHTML='<div class="event-error">'+(lang==='en'?'Scores failed to load. The static schedule is still available.':'比分数据加载失败，静态赛程仍可浏览。')+'</div>';return;}
+  if(!data.matches.length){content.innerHTML='<div class="event-status">'+(lang==='en'?'Loading…':'加载中…')+'</div>';return;}
+  if(window.WC_ACTIVE_TAB==='today'){
+    content.innerHTML='<div class="event-list">'+data.today.map(wcMatchCard).join('')+'</div>';
+    return;
   }
-  setTimeout(inj,400);
-  var o=new MutationObserver(function(){setTimeout(inj,200);});
-  var g=document.getElementById('gd-wrap');
-  if(g) o.observe(g,{childList:true,subtree:true});
-  document.addEventListener('click',function(e){if(e.target.closest('.group-card'))setTimeout(inj,600);});
-})();
+  if(window.WC_ACTIVE_TAB==='all'){
+    content.innerHTML='ABCDEFGHIJKL'.split('').map(function(group){var list=data.matches.filter(function(match){return match.group===group;});var finished=list.filter(function(match){return match.status==='finished';}).length;return '<details class="event-group"'+(group==='A'?' open':'')+'><summary><span>'+(lang==='en'?'Group ':'')+group+(lang==='en'?'':' 组')+'</span><span style="color:var(--text-muted)">'+finished+'/6 '+(lang==='en'?'finished':'已完场')+'</span></summary><div class="event-group-body event-list">'+list.map(wcMatchCard).join('')+'</div></details>';}).join('');
+    return;
+  }
+  content.innerHTML='ABCDEFGHIJKL'.split('').map(function(group){return '<details class="event-group"'+(group==='A'?' open':'')+'><summary><span>'+(lang==='en'?'Group ':'')+group+(lang==='en'?'':' 组')+'</span><span style="color:var(--gold)">Pts</span></summary><div class="event-group-body">'+standingsTableHTML(data.standings.groups[group])+'</div></details>';}).join('');
+}
+function applyTournamentData(matchesData,standingsData){
+  window.WC_DATA={matches:matchesData.matches||[],today:matchesData.today||[],standings:standingsData,asOf:matchesData.asOf};
+  window.WC_DATA.matches.forEach(function(result){
+    var group=G[result.group];
+    var matchNumber=parseInt(result.id.split('-m')[1],10)-1;
+    if(group&&group.matches[matchNumber])group.matches[matchNumber].result=result;
+  });
+  var finished=window.WC_DATA.matches.filter(function(match){return match.status==='finished';}).length;
+  document.getElementById('ov-finished').textContent=finished;
+  document.getElementById('ov-scheduled').textContent=window.WC_DATA.matches.length-finished;
+  document.getElementById('ov1').textContent=lang==='en'?'Finished':'已完场';
+  document.getElementById('ov2').textContent=lang==='en'?'Scheduled':'待赛';
+  document.querySelector('.prog-row span:last-child').textContent=Math.round(finished/72*100)+'%';
+  document.querySelector('.prog-fill').style.width=(finished/72*100)+'%';
+  document.getElementById('event-hub-asof').textContent=(lang==='en'?'Updated ':'更新至 ')+matchesData.asOf.replace('T',' ').replace('+08:00',' BJT');
+  renderEventHub(window.WC_ACTIVE_TAB);
+  if(document.getElementById('page-group-detail').classList.contains('active')){var letter=document.querySelector('.gd-letter');if(letter)openGroup(letter.textContent.trim());}
+}
+Promise.all([
+  fetch('data/matches.json',{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('matches '+response.status);return response.json();}),
+  fetch('data/standings.json',{cache:'no-store'}).then(function(response){if(!response.ok)throw new Error('standings '+response.status);return response.json();})
+]).then(function(data){applyTournamentData(data[0],data[1]);}).catch(function(error){window.WC_DATA.error=error;renderEventHub('today');console.error('World Cup data load failed:',error);});
 </script>
 
 </body></html>

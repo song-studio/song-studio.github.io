@@ -12,7 +12,18 @@
 
 ## Data Model
 
-V1 stores user-owned cards, the fate card, daily draw status, and prediction choices in browser localStorage. Match data can start as static JSON and later be updated by GitHub Actions.
+User-owned cards, the fate card, daily draw status, and prediction choices live in browser localStorage.
+
+`data/matches.json` contains two match collections:
+
+- `matches`: all 72 group-stage matches, including finished scores.
+- `today`: Beijing-time matchday entries consumed by the Fan Cards prediction page.
+
+`data/standings.json` is generated from finished matches. Rebuild both files with:
+
+```bash
+node qa/build-world-cup-data.mjs
+```
 
 ## QA Smoke Check
 

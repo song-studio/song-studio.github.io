@@ -5,6 +5,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 FAN="$ROOT/fan-cards.html"
 SHARE="$ROOT/share-card.html"
 MATCHES="$ROOT/data/matches.json"
+VALIDATOR="$ROOT/qa/validate-world-cup-data.mjs"
 
 pass() { printf "✅ %s\n" "$1"; }
 fail() { printf "❌ %s\n" "$1"; exit 1; }
@@ -57,6 +58,13 @@ if [[ "$TODAY_COUNT" -ge 0 ]]; then
   pass "matches.json today 字段存在（当前数量: ${TODAY_COUNT}）"
 else
   fail "matches.json 缺少 today 数组"
+fi
+
+# 6) Full schedule, standings, team IDs, scores, and inline script syntax
+if node "$VALIDATOR"; then
+  pass "世界杯完整赛程、积分榜与页面脚本校验通过"
+else
+  fail "世界杯完整数据校验失败"
 fi
 
 echo "== PASS: smoke check completed =="
