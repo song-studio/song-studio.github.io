@@ -9,9 +9,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const indexPath = path.join(root, 'index.html');
 const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
+const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-06-27T11:00:00+08:00';
-const todayBjt = '2026-06-27';
+const asOf = '2026-06-28T15:00:00+08:00';
+const todayBjt = '2026-06-28';
 
 const index = fs.readFileSync(indexPath, 'utf8');
 const start = index.indexOf('const G=');
@@ -22,8 +23,15 @@ vm.createContext(context);
 vm.runInContext(`${index.slice(start, end).replace('const G=', 'G=')};`, context);
 const schedule = context.G;
 
+const translationsStart = index.indexOf('const TR=');
+const translationsEnd = index.indexOf('\n\n/* ══ US EASTERN TIME CONVERSION', translationsStart);
+if (translationsStart < 0 || translationsEnd < 0) throw new Error('无法从 index.html 读取淘汰赛模板');
+vm.runInContext(`${index.slice(translationsStart, translationsEnd).replace('const TR=', 'TR=')};`, context);
+const translations = context.TR;
+
 const cards = JSON.parse(fs.readFileSync(cardsPath, 'utf8'));
 const byName = new Map(cards.teams.filter(team => team.qualified).map(team => [team.name, team]));
+const byId = new Map(cards.teams.filter(team => team.qualified).map(team => [team.id, team]));
 const aliases = new Map([
   ['沙特', '沙特阿拉伯'],
 ]);
@@ -33,7 +41,7 @@ const cardFor = name => {
   return team;
 };
 
-// 赛果逐场与 FIFA 官方赛程页、Sky Sports 赛果页核对；截至北京时间 6 月 27 日 11:00。
+// 赛果逐场与 FIFA、AP、Sky Sports 和 beIN 赛果页核对；截至北京时间 6 月 28 日 15:00。
 const results = {
   'group-a-m1':[2,0], 'group-a-m2':[2,1], 'group-a-m3':[1,1], 'group-a-m4':[1,0], 'group-a-m5':[0,3], 'group-a-m6':[1,0],
   'group-b-m1':[1,1], 'group-b-m2':[1,1], 'group-b-m3':[4,1], 'group-b-m4':[6,0], 'group-b-m5':[2,1], 'group-b-m6':[3,1],
@@ -41,12 +49,12 @@ const results = {
   'group-d-m1':[4,1], 'group-d-m2':[2,0], 'group-d-m3':[2,0], 'group-d-m4':[0,1], 'group-d-m5':[3,2], 'group-d-m6':[0,0],
   'group-e-m1':[7,1], 'group-e-m2':[1,0], 'group-e-m3':[2,1], 'group-e-m4':[0,0], 'group-e-m5':[2,1], 'group-e-m6':[0,2],
   'group-f-m1':[2,2], 'group-f-m2':[5,1], 'group-f-m3':[4,0], 'group-f-m4':[5,1], 'group-f-m5':[1,1], 'group-f-m6':[1,3],
-  'group-g-m1':[1,1], 'group-g-m2':[2,2], 'group-g-m3':[0,0], 'group-g-m4':[1,3],
+  'group-g-m1':[1,1], 'group-g-m2':[2,2], 'group-g-m3':[0,0], 'group-g-m4':[1,3], 'group-g-m5':[1,1], 'group-g-m6':[1,5],
   'group-h-m1':[0,0], 'group-h-m2':[1,1], 'group-h-m3':[4,0], 'group-h-m4':[2,2], 'group-h-m5':[0,0], 'group-h-m6':[0,1],
   'group-i-m1':[3,1], 'group-i-m2':[1,4], 'group-i-m3':[3,0], 'group-i-m4':[3,2], 'group-i-m5':[1,4], 'group-i-m6':[5,0],
-  'group-j-m1':[3,0], 'group-j-m2':[3,1], 'group-j-m3':[2,0], 'group-j-m4':[1,2],
-  'group-k-m1':[1,1], 'group-k-m2':[1,3], 'group-k-m3':[5,0], 'group-k-m4':[1,0],
-  'group-l-m1':[4,2], 'group-l-m2':[1,0], 'group-l-m3':[0,0], 'group-l-m4':[0,1],
+  'group-j-m1':[3,0], 'group-j-m2':[3,1], 'group-j-m3':[2,0], 'group-j-m4':[1,2], 'group-j-m5':[3,3], 'group-j-m6':[1,3],
+  'group-k-m1':[1,1], 'group-k-m2':[1,3], 'group-k-m3':[5,0], 'group-k-m4':[1,0], 'group-k-m5':[0,0], 'group-k-m6':[3,1],
+  'group-l-m1':[4,2], 'group-l-m2':[1,0], 'group-l-m3':[0,0], 'group-l-m4':[0,1], 'group-l-m5':[0,2], 'group-l-m6':[2,1],
 };
 
 const toDate = value => {
@@ -89,7 +97,7 @@ for (const [group, groupData] of Object.entries(schedule)) {
 }
 
 const matchesData = {
-  updatedAt: '2026-06-27',
+  updatedAt: todayBjt,
   asOf,
   timezone: 'Asia/Shanghai',
   mode: 'manual-results-feed',
@@ -133,7 +141,7 @@ for (const [group, groupData] of Object.entries(schedule)) {
 }
 
 const standingsData = {
-  updatedAt: '2026-06-27',
+  updatedAt: todayBjt,
   asOf,
   stage: 'group-stage',
   tiebreakersImplemented: ['points', 'goalDifference', 'goalsFor', 'originalGroupOrder'],
@@ -141,6 +149,99 @@ const standingsData = {
   groups: standings,
 };
 
+const roundKeys = ['round-of-32', 'round-of-16', 'quarter-finals', 'semi-finals', 'third-place', 'final'];
+const roundOf32Pairs = [
+  ['south-africa', 'canada'],
+  ['germany', 'paraguay'],
+  ['netherlands', 'morocco'],
+  ['brazil', 'japan'],
+  ['france', 'sweden'],
+  ['ivory-coast', 'norway'],
+  ['mexico', 'ecuador'],
+  ['england', 'dr-congo'],
+  ['united-states', 'bosnia-herzegovina'],
+  ['belgium', 'senegal'],
+  ['portugal', 'croatia'],
+  ['spain', 'austria'],
+  ['switzerland', 'algeria'],
+  ['argentina', 'cabo-verde'],
+  ['colombia', 'ghana'],
+  ['australia', 'egypt'],
+];
+
+const knockoutRounds = roundKeys.map((key, roundIndex) => {
+  const zhStage = translations.zh.ko_stages[roundIndex];
+  const enStage = translations.en.ko_stages[roundIndex];
+  const zhMatches = translations.zh.ko_matches[roundIndex];
+  const enMatches = translations.en.ko_matches[roundIndex];
+  return {
+    key,
+    nameZh: translations.zh.ko_rounds[roundIndex],
+    nameEn: translations.en.ko_rounds[roundIndex],
+    dateZh: zhStage[1],
+    dateEn: enStage[1],
+    descriptionZh: zhStage[2],
+    descriptionEn: enStage[2],
+    matches: zhMatches.map((match, matchIndex) => {
+      const englishMatch = enMatches[matchIndex];
+      const matchId = match.m === '3rd' ? 103 : match.m === '🏆' ? 104 : match.m;
+      const item = {
+        id: matchId,
+        stage: key,
+        dateLabelZh: match.d,
+        dateLabelEn: englishMatch.d,
+        timeBjt: match.t,
+        edtLabel: englishMatch.e,
+        venue: match.v,
+        cityZh: match.c,
+        cityEn: englishMatch.c,
+        status: 'scheduled',
+      };
+      if (roundIndex === 0) {
+        const [homeId, awayId] = roundOf32Pairs[matchIndex];
+        const home = byId.get(homeId);
+        const away = byId.get(awayId);
+        if (!home || !away) throw new Error(`32 强球队 ID 无效：${homeId} / ${awayId}`);
+        Object.assign(item, {
+          homeId,
+          awayId,
+          homeZh: home.name,
+          awayZh: away.name,
+          homeEn: home.englishName,
+          awayEn: away.englishName,
+        });
+      } else {
+        item.homePlaceholderZh = match.t1;
+        item.awayPlaceholderZh = match.t2;
+        item.homePlaceholderEn = englishMatch.t1;
+        item.awayPlaceholderEn = englishMatch.t2;
+      }
+      return item;
+    }),
+  };
+});
+
+const knockoutData = {
+  updatedAt: todayBjt,
+  asOf,
+  timezone: 'Asia/Shanghai',
+  stage: 'round-of-32',
+  note: '32 强对阵已确认；后续轮次将在赛果产生后填入晋级球队。',
+  sources: [
+    {
+      name: 'FIFA World Cup 2026 knockout bracket',
+      url: 'https://www.fifa.com/en/articles/knockout-stage-match-schedule-bracket',
+    },
+    {
+      name: 'beIN Sports final Round of 32 line-up',
+      url: 'https://www.beinsports.com/en-mena/football/fifa-world-cup-2026/articles-video/final-round-of-32-line-up-confirmed-2026-06-28',
+    },
+  ],
+  qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],
+  rounds: knockoutRounds,
+};
+
 fs.writeFileSync(matchesPath, `${JSON.stringify(matchesData, null, 2)}\n`);
 fs.writeFileSync(standingsPath, `${JSON.stringify(standingsData, null, 2)}\n`);
-console.log(`Wrote ${matches.length} matches (${Object.keys(results).length} finished) and 12 group tables.`);
+fs.writeFileSync(knockoutPath, `${JSON.stringify(knockoutData, null, 2)}\n`);
+console.log(`Wrote ${matches.length} matches (${Object.keys(results).length} finished), 12 group tables, and ${roundOf32Pairs.length} Round of 32 fixtures.`);

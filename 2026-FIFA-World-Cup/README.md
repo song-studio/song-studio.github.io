@@ -9,6 +9,7 @@
 - `assets/fan-cards/base`: optimized card art for the 48 qualified teams plus China gold card.
 - `assets/fan-cards/special`: eight story cards plus China special gold card.
 - `data`: static JSON for teams, cards, matches, standings, and card status.
+- `data/knockout.json`: confirmed knockout fixtures and future elimination results.
 
 ## Data Model
 
@@ -24,6 +25,8 @@ User-owned cards, the fate card, daily draw status, and prediction choices live 
 ```bash
 node qa/build-world-cup-data.mjs
 ```
+
+The same command also writes `data/knockout.json`. Update the verified score map and Round of 32 pairs in the builder, then run the smoke check before publishing.
 
 ## QA Smoke Check
 
