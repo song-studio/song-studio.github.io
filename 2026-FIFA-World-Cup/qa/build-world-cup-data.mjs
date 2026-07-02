@@ -11,8 +11,8 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-06-28T15:00:00+08:00';
-const todayBjt = '2026-06-28';
+const asOf = '2026-07-02T12:00:00+08:00';
+const todayBjt = '2026-07-02';
 
 const index = fs.readFileSync(indexPath, 'utf8');
 const start = index.indexOf('const G=');
@@ -101,7 +101,7 @@ const matchesData = {
   asOf,
   timezone: 'Asia/Shanghai',
   mode: 'manual-results-feed',
-  note: 'matches 保存 72 场完整小组赛；today 只保存北京时间当天比赛，供球迷卡牌赛预测。winner: home=主胜、away=客胜、draw=平局。',
+  note: 'matches 保存 72 场完整小组赛；results 保存已结束的淘汰赛；today 只保存北京时间当天比赛，供球迷卡牌赛结算。winner: home=主队晋级、away=客队晋级、draw=平局。',
   sources: [
     {
       name: 'FIFA World Cup 2026 fixtures and results',
@@ -111,8 +111,13 @@ const matchesData = {
       name: 'Sky Sports World Cup results',
       url: 'https://www.skysports.com/football/competitions/world-cup/results/world-cup-scores-fixtures',
     },
+    {
+      name: 'ESPN FIFA World Cup scoreboard',
+      url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard',
+    },
   ],
-  today: matches.filter(match => match.date === todayBjt),
+  today: [],
+  results: [],
   matches,
 };
 
@@ -169,6 +174,21 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
+// Final scores verified through 12:00 BJT on July 2. For shootouts, winner is
+// the advancing team while homeScore/awayScore remain the match score.
+const knockoutResults = new Map([
+  [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
+  [74, { homeScore:1, awayScore:1, winner:'away', decidedBy:'penalties', homeShootoutScore:3, awayShootoutScore:4 }],
+  [75, { homeScore:1, awayScore:1, winner:'away', decidedBy:'penalties', homeShootoutScore:2, awayShootoutScore:3 }],
+  [76, { homeScore:2, awayScore:1, winner:'home', decidedBy:'regular' }],
+  [77, { homeScore:3, awayScore:0, winner:'home', decidedBy:'regular' }],
+  [78, { homeScore:1, awayScore:2, winner:'away', decidedBy:'regular' }],
+  [79, { homeScore:2, awayScore:0, winner:'home', decidedBy:'regular' }],
+  [80, { homeScore:2, awayScore:1, winner:'home', decidedBy:'regular' }],
+  [81, { homeScore:2, awayScore:0, winner:'home', decidedBy:'regular' }],
+  [82, { homeScore:3, awayScore:2, winner:'home', decidedBy:'extra-time' }],
+]);
+
 const knockoutRounds = roundKeys.map((key, roundIndex) => {
   const zhStage = translations.zh.ko_stages[roundIndex];
   const enStage = translations.en.ko_stages[roundIndex];
@@ -210,6 +230,16 @@ const knockoutRounds = roundKeys.map((key, roundIndex) => {
           homeEn: home.englishName,
           awayEn: away.englishName,
         });
+        const result = knockoutResults.get(matchId);
+        if (result) {
+          const qualifiedTeamId = result.winner === 'home' ? homeId : awayId;
+          const eliminatedTeamId = result.winner === 'home' ? awayId : homeId;
+          Object.assign(item, result, {
+            status: 'finished',
+            qualifiedTeamIds: [qualifiedTeamId],
+            eliminatedTeamIds: [eliminatedTeamId],
+          });
+        }
       } else {
         item.homePlaceholderZh = match.t1;
         item.awayPlaceholderZh = match.t2;
@@ -221,12 +251,29 @@ const knockoutRounds = roundKeys.map((key, roundIndex) => {
   };
 });
 
+const roundOf32 = knockoutRounds[0].matches;
+const winnerByMatchId = new Map(roundOf32.filter(match => match.status === 'finished').map(match => [match.id, match.qualifiedTeamIds[0]]));
+const roundOf16Sources = [[74,77],[73,75],[76,78],[79,80],[83,84],[81,82],[86,88],[85,87]];
+knockoutRounds[1].matches.forEach((match, matchIndex) => {
+  const [homeSource, awaySource] = roundOf16Sources[matchIndex];
+  const assignTeam = (side, sourceId) => {
+    const teamId = winnerByMatchId.get(sourceId);
+    if (!teamId) return;
+    const team = byId.get(teamId);
+    match[`${side}Id`] = teamId;
+    match[`${side}Zh`] = team.name;
+    match[`${side}En`] = team.englishName;
+  };
+  assignTeam('home', homeSource);
+  assignTeam('away', awaySource);
+});
+
 const knockoutData = {
   updatedAt: todayBjt,
   asOf,
   timezone: 'Asia/Shanghai',
   stage: 'round-of-32',
-  note: '32 强对阵已确认；后续轮次将在赛果产生后填入晋级球队。',
+  note: '截至北京时间 7 月 2 日 12:00，32 强赛已完成 10 场；已产生的 16 强对阵同步填入。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -236,10 +283,44 @@ const knockoutData = {
       name: 'beIN Sports final Round of 32 line-up',
       url: 'https://www.beinsports.com/en-mena/football/fifa-world-cup-2026/articles-video/final-round-of-32-line-up-confirmed-2026-06-28',
     },
+    {
+      name: 'ESPN FIFA World Cup scoreboard',
+      url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard',
+    },
   ],
   qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],
   rounds: knockoutRounds,
 };
+
+const knockoutMatchesForCards = roundOf32.filter(match => match.status === 'finished').map(match => ({
+  id: `knockout-${match.id}`,
+  matchId: match.id,
+  stage: match.stage,
+  home: match.homeZh,
+  away: match.awayZh,
+  homeEn: match.homeEn,
+  awayEn: match.awayEn,
+  homeId: match.homeId,
+  awayId: match.awayId,
+  date: `2026-${match.dateLabelZh.slice(0, match.dateLabelZh.indexOf(' ')).split('/').map(part => part.padStart(2, '0')).join('-')}`,
+  time: match.timeBjt,
+  timezone: 'Asia/Shanghai',
+  venue: match.venue,
+  city: match.cityZh,
+  status: match.status,
+  homeScore: match.homeScore,
+  awayScore: match.awayScore,
+  winner: match.winner,
+  decidedBy: match.decidedBy,
+  ...(match.decidedBy === 'penalties' ? {
+    homeShootoutScore: match.homeShootoutScore,
+    awayShootoutScore: match.awayShootoutScore,
+  } : {}),
+  qualifiedTeamIds: match.qualifiedTeamIds,
+  eliminatedTeamIds: match.eliminatedTeamIds,
+}));
+matchesData.results = knockoutMatchesForCards;
+matchesData.today = knockoutMatchesForCards.filter(match => match.date === todayBjt);
 
 fs.writeFileSync(matchesPath, `${JSON.stringify(matchesData, null, 2)}\n`);
 fs.writeFileSync(standingsPath, `${JSON.stringify(standingsData, null, 2)}\n`);

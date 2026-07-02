@@ -1109,7 +1109,7 @@ const I18N_EN={
   '可出战卡':'Playable cards','张（主队卡 + 已点亮国家卡）。稀有叙事卡也能按本队出战，同时额外解锁长期题；彩蛋卡不参加单场预测。':' cards (main team + revealed national cards). Rare story cards can also play for their teams and unlock long-term questions; Easter Egg card cannot play single matches.','操作入口：进入本区后，给每场比赛先选“出战卡”，再点主胜/平局/客胜提交。':'How to play: enter this section, pick a card for each match, then submit home win / draw / away win.',
   '每天可触发一次彩蛋剧场，领取 +8 能量；留言一次再领 +10 能量。今天':'Trigger Easter Egg Theater once per day for +8 energy; one message adds +10 more. Today ',
   '今日比赛':'Today’s Match','选出战卡后提交主胜、平局或客胜。':'After choosing a card, submit home win, draw, or away win.','完整赛程在世界杯首页。这里读取 data/matches.json 的当天比赛，维护后自动出现预测列表。':'Full schedule stays on the World Cup homepage. This page reads today’s matches from `data/matches.json` and auto-shows prediction entries.','奖励规则':'Reward Rules','命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。':'Hit +1 star; if your card is a team in that match, hit +2 stars; draw returns with no extra star.'
-  ,'开幕前':'Pre-kickoff','待出征':'Ready','场外彩蛋':'Off-field Easter Egg','待收集':'Unrevealed','查看完整赛程':'View Full Schedule','今日已签到':'Checked In Today'
+  ,'开幕前':'Pre-kickoff','待出征':'Ready','场外彩蛋':'Off-field Easter Egg','待收集':'Unrevealed','查看完整赛程':'View Full Schedule','今日已签到':'Checked In Today','点球':'pens','加时':'AET','赛果已写入，已有预测会自动结算。':'Result recorded. Existing predictions settle automatically.'
 };
 Object.assign(I18N_EN,{
   '现在可下载主队海报。赛程推进后会汇总为完整档案：主队轨迹、单场预测结果与叙事题命中记录。':'You can download your main team poster now. As matches progress, it will become a full archive with main team history, match predictions, and rare story results.',
@@ -1963,6 +1963,12 @@ function renderBattle(){
       const p=matchDisplayParts(m);
       const el=document.createElement('article');
       el.className='match-card';
+      if(isMatchFinished(m)){
+        const detail=m.decidedBy==='penalties'?` · ${T('点球')} ${m.homeShootoutScore}-${m.awayShootoutScore}`:m.decidedBy==='extra-time'?` · ${T('加时')}`:'';
+        el.innerHTML=`<h3>${p.title||T('今日比赛')}</h3><p>${p.home||''} ${m.homeScore}-${m.awayScore} ${p.away||''}${detail}</p><p class="micro" style="margin-top:8px">${T('赛果已写入，已有预测会自动结算。')}</p>`;
+        lab.appendChild(el);
+        return;
+      }
       const options=cards.length?cards.map(t=>`<option value="${t.id}">${t.flag} ${t.name}</option>`).join(''):'<option value="">暂无可用卡</option>';
       el.innerHTML=`<h3>${p.title||T('今日比赛')}</h3><p>${p.home||''} ${m.time||''} ${p.away||''}</p><p class="micro" style="margin-top:8px">${T('选择本场出战卡')}</p><select class="pick-card" style="margin-top:8px;width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:oklch(100% .01 80 / .06);color:var(--ink)">${options}</select><div class="pick-row"><button data-pick="home">${T('主胜')}</button><button data-pick="draw">${T('平局')}</button><button data-pick="away">${T('客胜')}</button></div>`;
       const sel=el.querySelector('.pick-card');

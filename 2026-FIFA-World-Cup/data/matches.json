@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-06-28",
-  "asOf": "2026-06-28T15:00:00+08:00",
+  "updatedAt": "2026-07-02",
+  "asOf": "2026-07-02T12:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "mode": "manual-results-feed",
-  "note": "matches 保存 72 场完整小组赛；today 只保存北京时间当天比赛，供球迷卡牌赛预测。winner: home=主胜、away=客胜、draw=平局。",
+  "note": "matches 保存 72 场完整小组赛；results 保存已结束的淘汰赛；today 只保存北京时间当天比赛，供球迷卡牌赛结算。winner: home=主队晋级、away=客队晋级、draw=平局。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 fixtures and results",
@@ -12,128 +12,369 @@
     {
       "name": "Sky Sports World Cup results",
       "url": "https://www.skysports.com/football/competitions/world-cup/results/world-cup-scores-fixtures"
+    },
+    {
+      "name": "ESPN FIFA World Cup scoreboard",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
     }
   ],
   "today": [
     {
-      "id": "group-j-m5",
-      "stage": "group",
-      "group": "J",
-      "home": "阿尔及利亚",
-      "away": "奥地利",
-      "homeEn": "Algeria",
-      "awayEn": "Austria",
-      "homeId": "algeria",
-      "awayId": "austria",
-      "date": "2026-06-28",
-      "time": "10:00",
-      "timezone": "Asia/Shanghai",
-      "venue": "GEHA Field",
-      "city": "堪萨斯城",
-      "status": "finished",
-      "homeScore": 3,
-      "awayScore": 3,
-      "winner": "draw"
-    },
-    {
-      "id": "group-j-m6",
-      "stage": "group",
-      "group": "J",
-      "home": "约旦",
-      "away": "阿根廷",
-      "homeEn": "Jordan",
-      "awayEn": "Argentina",
-      "homeId": "jordan",
-      "awayId": "argentina",
-      "date": "2026-06-28",
-      "time": "10:00",
-      "timezone": "Asia/Shanghai",
-      "venue": "AT&T Stadium",
-      "city": "达拉斯",
-      "status": "finished",
-      "homeScore": 1,
-      "awayScore": 3,
-      "winner": "away"
-    },
-    {
-      "id": "group-k-m5",
-      "stage": "group",
-      "group": "K",
-      "home": "哥伦比亚",
-      "away": "葡萄牙",
-      "homeEn": "Colombia",
-      "awayEn": "Portugal",
-      "homeId": "colombia",
-      "awayId": "portugal",
-      "date": "2026-06-28",
-      "time": "07:30",
-      "timezone": "Asia/Shanghai",
-      "venue": "Hard Rock Stadium",
-      "city": "迈阿密",
-      "status": "finished",
-      "homeScore": 0,
-      "awayScore": 0,
-      "winner": "draw"
-    },
-    {
-      "id": "group-k-m6",
-      "stage": "group",
-      "group": "K",
-      "home": "刚果（金）",
-      "away": "乌兹别克斯坦",
-      "homeEn": "DR Congo",
-      "awayEn": "Uzbekistan",
-      "homeId": "dr-congo",
-      "awayId": "uzbekistan",
-      "date": "2026-06-28",
-      "time": "07:30",
+      "id": "knockout-80",
+      "matchId": 80,
+      "stage": "round-of-32",
+      "home": "英格兰",
+      "away": "刚果（金）",
+      "homeEn": "England",
+      "awayEn": "DR Congo",
+      "homeId": "england",
+      "awayId": "dr-congo",
+      "date": "2026-07-02",
+      "time": "00:00",
       "timezone": "Asia/Shanghai",
       "venue": "Mercedes-Benz Stadium",
       "city": "亚特兰大",
       "status": "finished",
-      "homeScore": 3,
+      "homeScore": 2,
       "awayScore": 1,
-      "winner": "home"
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "england"
+      ],
+      "eliminatedTeamIds": [
+        "dr-congo"
+      ]
     },
     {
-      "id": "group-l-m5",
-      "stage": "group",
-      "group": "L",
-      "home": "巴拿马",
-      "away": "英格兰",
-      "homeEn": "Panama",
-      "awayEn": "England",
-      "homeId": "panama",
-      "awayId": "england",
-      "date": "2026-06-28",
+      "id": "knockout-81",
+      "matchId": 81,
+      "stage": "round-of-32",
+      "home": "美国",
+      "away": "波黑",
+      "homeEn": "United States",
+      "awayEn": "Bosnia and Herzegovina",
+      "homeId": "united-states",
+      "awayId": "bosnia-herzegovina",
+      "date": "2026-07-02",
+      "time": "08:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Levi's Stadium",
+      "city": "旧金山湾区",
+      "status": "finished",
+      "homeScore": 2,
+      "awayScore": 0,
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "united-states"
+      ],
+      "eliminatedTeamIds": [
+        "bosnia-herzegovina"
+      ]
+    },
+    {
+      "id": "knockout-82",
+      "matchId": 82,
+      "stage": "round-of-32",
+      "home": "比利时",
+      "away": "塞内加尔",
+      "homeEn": "Belgium",
+      "awayEn": "Senegal",
+      "homeId": "belgium",
+      "awayId": "senegal",
+      "date": "2026-07-02",
+      "time": "04:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Lumen Field",
+      "city": "西雅图",
+      "status": "finished",
+      "homeScore": 3,
+      "awayScore": 2,
+      "winner": "home",
+      "decidedBy": "extra-time",
+      "qualifiedTeamIds": [
+        "belgium"
+      ],
+      "eliminatedTeamIds": [
+        "senegal"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "knockout-73",
+      "matchId": 73,
+      "stage": "round-of-32",
+      "home": "南非",
+      "away": "加拿大",
+      "homeEn": "South Africa",
+      "awayEn": "Canada",
+      "homeId": "south-africa",
+      "awayId": "canada",
+      "date": "2026-06-29",
+      "time": "03:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "SoFi Stadium",
+      "city": "洛杉矶",
+      "status": "finished",
+      "homeScore": 0,
+      "awayScore": 1,
+      "winner": "away",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "canada"
+      ],
+      "eliminatedTeamIds": [
+        "south-africa"
+      ]
+    },
+    {
+      "id": "knockout-74",
+      "matchId": 74,
+      "stage": "round-of-32",
+      "home": "德国",
+      "away": "巴拉圭",
+      "homeEn": "Germany",
+      "awayEn": "Paraguay",
+      "homeId": "germany",
+      "awayId": "paraguay",
+      "date": "2026-06-30",
+      "time": "04:30",
+      "timezone": "Asia/Shanghai",
+      "venue": "Gillette Stadium",
+      "city": "波士顿",
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 1,
+      "winner": "away",
+      "decidedBy": "penalties",
+      "homeShootoutScore": 3,
+      "awayShootoutScore": 4,
+      "qualifiedTeamIds": [
+        "paraguay"
+      ],
+      "eliminatedTeamIds": [
+        "germany"
+      ]
+    },
+    {
+      "id": "knockout-75",
+      "matchId": 75,
+      "stage": "round-of-32",
+      "home": "荷兰",
+      "away": "摩洛哥",
+      "homeEn": "Netherlands",
+      "awayEn": "Morocco",
+      "homeId": "netherlands",
+      "awayId": "morocco",
+      "date": "2026-06-30",
+      "time": "09:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Estadio BBVA",
+      "city": "蒙特雷",
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 1,
+      "winner": "away",
+      "decidedBy": "penalties",
+      "homeShootoutScore": 2,
+      "awayShootoutScore": 3,
+      "qualifiedTeamIds": [
+        "morocco"
+      ],
+      "eliminatedTeamIds": [
+        "netherlands"
+      ]
+    },
+    {
+      "id": "knockout-76",
+      "matchId": 76,
+      "stage": "round-of-32",
+      "home": "巴西",
+      "away": "日本",
+      "homeEn": "Brazil",
+      "awayEn": "Japan",
+      "homeId": "brazil",
+      "awayId": "japan",
+      "date": "2026-06-30",
+      "time": "01:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "NRG Stadium",
+      "city": "休斯顿",
+      "status": "finished",
+      "homeScore": 2,
+      "awayScore": 1,
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "brazil"
+      ],
+      "eliminatedTeamIds": [
+        "japan"
+      ]
+    },
+    {
+      "id": "knockout-77",
+      "matchId": 77,
+      "stage": "round-of-32",
+      "home": "法国",
+      "away": "瑞典",
+      "homeEn": "France",
+      "awayEn": "Sweden",
+      "homeId": "france",
+      "awayId": "sweden",
+      "date": "2026-07-01",
       "time": "05:00",
       "timezone": "Asia/Shanghai",
       "venue": "MetLife Stadium",
       "city": "纽约/新泽西",
       "status": "finished",
-      "homeScore": 0,
-      "awayScore": 2,
-      "winner": "away"
+      "homeScore": 3,
+      "awayScore": 0,
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "france"
+      ],
+      "eliminatedTeamIds": [
+        "sweden"
+      ]
     },
     {
-      "id": "group-l-m6",
-      "stage": "group",
-      "group": "L",
-      "home": "克罗地亚",
-      "away": "加纳",
-      "homeEn": "Croatia",
-      "awayEn": "Ghana",
-      "homeId": "croatia",
-      "awayId": "ghana",
-      "date": "2026-06-28",
-      "time": "05:00",
+      "id": "knockout-78",
+      "matchId": 78,
+      "stage": "round-of-32",
+      "home": "科特迪瓦",
+      "away": "挪威",
+      "homeEn": "Cote d’Ivoire",
+      "awayEn": "Norway",
+      "homeId": "ivory-coast",
+      "awayId": "norway",
+      "date": "2026-07-01",
+      "time": "01:00",
       "timezone": "Asia/Shanghai",
-      "venue": "Lincoln Financial Field",
-      "city": "费城",
+      "venue": "AT&T Stadium",
+      "city": "达拉斯",
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 2,
+      "winner": "away",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "norway"
+      ],
+      "eliminatedTeamIds": [
+        "ivory-coast"
+      ]
+    },
+    {
+      "id": "knockout-79",
+      "matchId": 79,
+      "stage": "round-of-32",
+      "home": "墨西哥",
+      "away": "厄瓜多尔",
+      "homeEn": "Mexico",
+      "awayEn": "Ecuador",
+      "homeId": "mexico",
+      "awayId": "ecuador",
+      "date": "2026-07-01",
+      "time": "09:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Estadio Azteca",
+      "city": "墨西哥城",
+      "status": "finished",
+      "homeScore": 2,
+      "awayScore": 0,
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "mexico"
+      ],
+      "eliminatedTeamIds": [
+        "ecuador"
+      ]
+    },
+    {
+      "id": "knockout-80",
+      "matchId": 80,
+      "stage": "round-of-32",
+      "home": "英格兰",
+      "away": "刚果（金）",
+      "homeEn": "England",
+      "awayEn": "DR Congo",
+      "homeId": "england",
+      "awayId": "dr-congo",
+      "date": "2026-07-02",
+      "time": "00:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "亚特兰大",
       "status": "finished",
       "homeScore": 2,
       "awayScore": 1,
-      "winner": "home"
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "england"
+      ],
+      "eliminatedTeamIds": [
+        "dr-congo"
+      ]
+    },
+    {
+      "id": "knockout-81",
+      "matchId": 81,
+      "stage": "round-of-32",
+      "home": "美国",
+      "away": "波黑",
+      "homeEn": "United States",
+      "awayEn": "Bosnia and Herzegovina",
+      "homeId": "united-states",
+      "awayId": "bosnia-herzegovina",
+      "date": "2026-07-02",
+      "time": "08:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Levi's Stadium",
+      "city": "旧金山湾区",
+      "status": "finished",
+      "homeScore": 2,
+      "awayScore": 0,
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "united-states"
+      ],
+      "eliminatedTeamIds": [
+        "bosnia-herzegovina"
+      ]
+    },
+    {
+      "id": "knockout-82",
+      "matchId": 82,
+      "stage": "round-of-32",
+      "home": "比利时",
+      "away": "塞内加尔",
+      "homeEn": "Belgium",
+      "awayEn": "Senegal",
+      "homeId": "belgium",
+      "awayId": "senegal",
+      "date": "2026-07-02",
+      "time": "04:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Lumen Field",
+      "city": "西雅图",
+      "status": "finished",
+      "homeScore": 3,
+      "awayScore": 2,
+      "winner": "home",
+      "decidedBy": "extra-time",
+      "qualifiedTeamIds": [
+        "belgium"
+      ],
+      "eliminatedTeamIds": [
+        "senegal"
+      ]
     }
   ],
   "matches": [

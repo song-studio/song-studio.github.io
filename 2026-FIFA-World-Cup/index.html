@@ -973,7 +973,7 @@ zh:{
   recent:'近期状态',players:'核心球员',notes:'备注',
   fav_btn:'收藏球队',fav_active:'✅ 已收藏',
   sp:'搜索球队名称…',sc:'关闭',se:'输入球队名称开始搜索',sn:'未找到',sf:'找到 {n} 场比赛',
-  foot:'数据来源：FIFA官网 · Sky Sports · beIN Sports<br>所有时间显示北京时间（BJT, UTC+8）及美东时间（EDT, UTC-4）<br>📮 xss3000@outlook.com · 小组赛及32强对阵更新至 2026-06-28 15:00 BJT',
+  foot:'数据来源：FIFA官网 · Sky Sports · beIN Sports · ESPN<br>所有时间显示北京时间（BJT, UTC+8）及美东时间（EDT, UTC-4）<br>📮 xss3000@outlook.com · 32强赛果更新至 2026-07-02 12:00 BJT',
   ai_t:'AI 胜负预测',ai_s:'FIFA排名·近期状态·历史·概率 四维算法',ai_note:'FIFA排名35%+近期状态25%+历史20%+概率20%。纯JS，仅供参考。',ai_home:'主胜',ai_draw:'平局',ai_away:'客胜',
   extra:[['场馆','16个场馆<br>容量详情'],['历史战绩','48支球队<br>历届成绩'],['夺冠热门','权威媒体<br>综合预测']],
   detail_hint:'← 点击查看',
@@ -1077,7 +1077,7 @@ en:{
   recent:'Recent Form',players:'Key Players',notes:'Notes',
   fav_btn:'Follow Team',fav_active:'✅ Following',
   sp:'Search team name…',sc:'Close',se:'Type a team name to search',sn:'Not found',sf:'Found {n} matches',
-  foot:'Sources: FIFA Official · Sky Sports · beIN Sports<br>All times shown in Beijing Time (BJT, UTC+8) and US Eastern (EDT, UTC-4)<br>📮 xss3000@outlook.com · Group results and Round of 32 updated Jun 28, 2026 15:00 BJT',
+  foot:'Sources: FIFA Official · Sky Sports · beIN Sports · ESPN<br>All times shown in Beijing Time (BJT, UTC+8) and US Eastern (EDT, UTC-4)<br>📮 xss3000@outlook.com · Round of 32 results updated Jul 2, 2026 12:00 BJT',
   ai_t:'AI Predictions',ai_s:'FIFA·Form·H2H·Odds 4-factor',ai_note:'FIFA 35%+Form 25%+H2H 20%+Odds 20%. Pure JS, for fun only.',ai_home:'Home Win',ai_draw:'Draw',ai_away:'Away Win',
   extra:[['Venues','16 stadiums<br>Capacity details'],['History','48 teams<br>All-time records'],['Hot','Expert picks<br>Media consensus']],
   detail_hint:'← Tap for details',
@@ -2405,7 +2405,10 @@ function knockoutMatches(){
         t2:lang==='en'?(match.awayEn||match.awayPlaceholderEn):(match.awayZh||match.awayPlaceholderZh),
         status:match.status,
         homeScore:match.homeScore,
-        awayScore:match.awayScore
+        awayScore:match.awayScore,
+        decidedBy:match.decidedBy,
+        homeShootoutScore:match.homeShootoutScore,
+        awayShootoutScore:match.awayShootoutScore
       };
     });
   });
@@ -2442,8 +2445,11 @@ function openKORound(i){
     var ni=nightIdx(m.t);
     var nightLbl=T('night')[ni.i];
     var isFinal=m.m==='🏆'||m.m==='3rd';
+    var resultNote=m.decidedBy==='penalties'
+      ?(lang==='en'?'pens '+m.homeShootoutScore+' - '+m.awayShootoutScore:'点球 '+m.homeShootoutScore+' - '+m.awayShootoutScore)
+      :m.decidedBy==='extra-time'?(lang==='en'?'AET':'加时'):'';
     var centre=m.status==='finished'&&Number.isInteger(m.homeScore)&&Number.isInteger(m.awayScore)
-      ?'<div class="mr-vs" style="color:var(--gold);font-size:17px">'+m.homeScore+' - '+m.awayScore+'</div>'
+      ?'<div class="mr-vs" style="color:var(--gold);font-size:17px">'+m.homeScore+' - '+m.awayScore+(resultNote?'<small style="display:block;font-size:9px;color:var(--text-muted);margin-top:3px">'+resultNote+'</small>':'')+'</div>'
       :'<div class="mr-vs">VS</div>';
     html+='<div class="match-row glass'+(isFinal?' ko-final':'')+'">'
       +'<div class="mr-top">'
@@ -3887,12 +3893,14 @@ function wcEscape(value){
 }
 function wcMatchCard(match){
   var isFinished=match.status==='finished';
-  var score=isFinished?'<span class="event-score">'+match.homeScore+' - '+match.awayScore+'</span>':'<span class="event-status">'+(lang==='en'?'Scheduled':'待赛')+'</span>';
+  var shootout=match.decidedBy==='penalties'?'<small style="display:block;font-size:9px;color:var(--text-muted)">'+(lang==='en'?'pens ':'点球 ')+match.homeShootoutScore+' - '+match.awayShootoutScore+'</small>':'';
+  var extraTime=match.decidedBy==='extra-time'?'<small style="display:block;font-size:9px;color:var(--text-muted)">'+(lang==='en'?'AET':'加时')+'</small>':'';
+  var score=isFinished?'<span class="event-score">'+match.homeScore+' - '+match.awayScore+shootout+extraTime+'</span>':'<span class="event-status">'+(lang==='en'?'Scheduled':'待赛')+'</span>';
   var date=match.date.slice(5).replace('-','/');
   var home=lang==='en'?(match.homeEn||match.home):match.home;
   var away=lang==='en'?(match.awayEn||match.away):match.away;
   return '<article class="event-match" data-event-match-id="'+wcEscape(match.id)+'">'
-    +'<div class="event-meta"><b>'+wcEscape(date)+'</b><br>'+wcEscape(match.time)+'<br>'+(lang==='en'?'Group ':'')+wcEscape(match.group)+(lang==='en'?'':'组')+'</div>'
+    +'<div class="event-meta"><b>'+wcEscape(date)+'</b><br>'+wcEscape(match.time)+'<br>'+(match.stage==='group'?((lang==='en'?'Group ':'')+wcEscape(match.group)+(lang==='en'?'':'组')):(lang==='en'?'Round of 32':'32 强赛'))+'</div>'
     +'<div class="event-teams">'+wcEscape(home)+'<br><span style="color:var(--text-muted);font-weight:500">'+wcEscape(away)+'</span></div>'+score+'</article>';
 }
 function standingsTableHTML(rows){
@@ -3932,7 +3940,7 @@ function renderEventHub(tab){
   content.innerHTML='ABCDEFGHIJKL'.split('').map(function(group){return '<details class="event-group"'+(group==='A'?' open':'')+'><summary><span>'+(lang==='en'?'Group ':'')+group+(lang==='en'?'':' 组')+'</span><span style="color:var(--gold)">Pts</span></summary><div class="event-group-body">'+standingsTableHTML(data.standings.groups[group])+'</div></details>';}).join('');
 }
 function applyTournamentData(matchesData,standingsData,knockoutData){
-  window.WC_DATA={matches:matchesData.matches||[],today:matchesData.today||[],standings:standingsData,asOf:matchesData.asOf};
+  window.WC_DATA={matches:matchesData.matches||[],results:matchesData.results||[],today:matchesData.today||[],standings:standingsData,asOf:matchesData.asOf};
   window.WC_KNOCKOUT=knockoutData;
   window.WC_DATA.matches.forEach(function(result){
     var group=G[result.group];

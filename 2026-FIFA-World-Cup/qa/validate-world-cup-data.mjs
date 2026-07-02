@@ -41,11 +41,17 @@ if (!Array.isArray(matches) || matches.length !== 72) {
 
 if (!Array.isArray(matchesData.today)) fail('matches.json 缺少 today 数组');
 else {
-  const allIds = new Set(Array.isArray(matches) ? matches.map(match => match.id) : []);
+  const allIds = new Set([...(Array.isArray(matches) ? matches : []), ...(Array.isArray(matchesData.results) ? matchesData.results : [])].map(match => match.id));
   const invalidToday = matchesData.today.find(match => !allIds.has(match.id) || match.date !== matchesData.updatedAt);
   if (invalidToday) fail(`today 场次不是完整赛程中的北京时间当日比赛：${invalidToday.id}`);
   else pass(`matches.json 包含 ${matchesData.today.length} 场北京时间今日比赛`);
 }
+
+const knockoutResults = matchesData.results || [];
+if (!Array.isArray(knockoutResults)) fail('matches.json 的 results 必须是数组');
+else if (knockoutResults.length !== 10) fail(`截至 7 月 2 日 12:00 应有 10 场淘汰赛完场，当前为 ${knockoutResults.length}`);
+else if (knockoutResults.some(match => match.status !== 'finished' || !match.winner)) fail('淘汰赛 results 存在未完场或缺少 winner 的比赛');
+else pass('matches.json 包含截至 7 月 2 日 12:00 的 10 场淘汰赛结果');
 
 if (Array.isArray(matches)) {
   const seen = new Set();
@@ -95,6 +101,11 @@ const invalidKnockoutTeam = roundOf32TeamIds.find(teamId => !teamIds.has(teamId)
 if (invalidKnockoutTeam) fail(`32 强使用了 cards.json 中不存在的球队 ID：${invalidKnockoutTeam}`);
 else if (roundOf32TeamIds.length !== 32 || new Set(roundOf32TeamIds).size !== 32) fail('32 强必须包含 32 支不重复球队');
 else pass('32 强包含 32 支不重复且有效的球队');
+
+const finishedRoundOf32 = roundOf32.filter(match => match.status === 'finished');
+if (finishedRoundOf32.length !== 10) fail(`32 强应有 10 场完赛，当前为 ${finishedRoundOf32.length}`);
+else if (finishedRoundOf32.some(match => !Array.isArray(match.qualifiedTeamIds) || !Array.isArray(match.eliminatedTeamIds))) fail('已完赛 32 强比赛缺少晋级或淘汰球队');
+else pass('32 强 10 场赛果均含晋级与淘汰球队');
 
 const qualifiedIds = knockoutData.qualifiedTeamIds || [];
 const qualifiedMismatch = qualifiedIds.length !== 32

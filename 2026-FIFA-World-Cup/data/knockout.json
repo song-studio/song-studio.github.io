@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-06-28",
-  "asOf": "2026-06-28T15:00:00+08:00",
+  "updatedAt": "2026-07-02",
+  "asOf": "2026-07-02T12:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "stage": "round-of-32",
-  "note": "32 强对阵已确认；后续轮次将在赛果产生后填入晋级球队。",
+  "note": "截至北京时间 7 月 2 日 12:00，32 强赛已完成 10 场；已产生的 16 强对阵同步填入。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -12,6 +12,10 @@
     {
       "name": "beIN Sports final Round of 32 line-up",
       "url": "https://www.beinsports.com/en-mena/football/fifa-world-cup-2026/articles-video/final-round-of-32-line-up-confirmed-2026-06-28"
+    },
+    {
+      "name": "ESPN FIFA World Cup scoreboard",
+      "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
     }
   ],
   "qualifiedTeamIds": [
@@ -68,13 +72,23 @@
           "venue": "SoFi Stadium",
           "cityZh": "洛杉矶",
           "cityEn": "Los Angeles",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "south-africa",
           "awayId": "canada",
           "homeZh": "南非",
           "awayZh": "加拿大",
           "homeEn": "South Africa",
-          "awayEn": "Canada"
+          "awayEn": "Canada",
+          "homeScore": 0,
+          "awayScore": 1,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "canada"
+          ],
+          "eliminatedTeamIds": [
+            "south-africa"
+          ]
         },
         {
           "id": 74,
@@ -86,13 +100,25 @@
           "venue": "Gillette Stadium",
           "cityZh": "波士顿",
           "cityEn": "Boston",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "germany",
           "awayId": "paraguay",
           "homeZh": "德国",
           "awayZh": "巴拉圭",
           "homeEn": "Germany",
-          "awayEn": "Paraguay"
+          "awayEn": "Paraguay",
+          "homeScore": 1,
+          "awayScore": 1,
+          "winner": "away",
+          "decidedBy": "penalties",
+          "homeShootoutScore": 3,
+          "awayShootoutScore": 4,
+          "qualifiedTeamIds": [
+            "paraguay"
+          ],
+          "eliminatedTeamIds": [
+            "germany"
+          ]
         },
         {
           "id": 75,
@@ -104,13 +130,25 @@
           "venue": "Estadio BBVA",
           "cityZh": "蒙特雷",
           "cityEn": "Monterrey",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "netherlands",
           "awayId": "morocco",
           "homeZh": "荷兰",
           "awayZh": "摩洛哥",
           "homeEn": "Netherlands",
-          "awayEn": "Morocco"
+          "awayEn": "Morocco",
+          "homeScore": 1,
+          "awayScore": 1,
+          "winner": "away",
+          "decidedBy": "penalties",
+          "homeShootoutScore": 2,
+          "awayShootoutScore": 3,
+          "qualifiedTeamIds": [
+            "morocco"
+          ],
+          "eliminatedTeamIds": [
+            "netherlands"
+          ]
         },
         {
           "id": 76,
@@ -122,13 +160,23 @@
           "venue": "NRG Stadium",
           "cityZh": "休斯顿",
           "cityEn": "Houston",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "brazil",
           "awayId": "japan",
           "homeZh": "巴西",
           "awayZh": "日本",
           "homeEn": "Brazil",
-          "awayEn": "Japan"
+          "awayEn": "Japan",
+          "homeScore": 2,
+          "awayScore": 1,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "brazil"
+          ],
+          "eliminatedTeamIds": [
+            "japan"
+          ]
         },
         {
           "id": 77,
@@ -140,13 +188,23 @@
           "venue": "MetLife Stadium",
           "cityZh": "纽约/新泽西",
           "cityEn": "NY/New Jersey",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "france",
           "awayId": "sweden",
           "homeZh": "法国",
           "awayZh": "瑞典",
           "homeEn": "France",
-          "awayEn": "Sweden"
+          "awayEn": "Sweden",
+          "homeScore": 3,
+          "awayScore": 0,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "france"
+          ],
+          "eliminatedTeamIds": [
+            "sweden"
+          ]
         },
         {
           "id": 78,
@@ -158,13 +216,23 @@
           "venue": "AT&T Stadium",
           "cityZh": "达拉斯",
           "cityEn": "Dallas",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "ivory-coast",
           "awayId": "norway",
           "homeZh": "科特迪瓦",
           "awayZh": "挪威",
           "homeEn": "Cote d’Ivoire",
-          "awayEn": "Norway"
+          "awayEn": "Norway",
+          "homeScore": 1,
+          "awayScore": 2,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "norway"
+          ],
+          "eliminatedTeamIds": [
+            "ivory-coast"
+          ]
         },
         {
           "id": 79,
@@ -176,13 +244,23 @@
           "venue": "Estadio Azteca",
           "cityZh": "墨西哥城",
           "cityEn": "Mexico City",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "mexico",
           "awayId": "ecuador",
           "homeZh": "墨西哥",
           "awayZh": "厄瓜多尔",
           "homeEn": "Mexico",
-          "awayEn": "Ecuador"
+          "awayEn": "Ecuador",
+          "homeScore": 2,
+          "awayScore": 0,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "mexico"
+          ],
+          "eliminatedTeamIds": [
+            "ecuador"
+          ]
         },
         {
           "id": 80,
@@ -194,13 +272,23 @@
           "venue": "Mercedes-Benz Stadium",
           "cityZh": "亚特兰大",
           "cityEn": "Atlanta",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "england",
           "awayId": "dr-congo",
           "homeZh": "英格兰",
           "awayZh": "刚果（金）",
           "homeEn": "England",
-          "awayEn": "DR Congo"
+          "awayEn": "DR Congo",
+          "homeScore": 2,
+          "awayScore": 1,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "england"
+          ],
+          "eliminatedTeamIds": [
+            "dr-congo"
+          ]
         },
         {
           "id": 81,
@@ -212,13 +300,23 @@
           "venue": "Levi's Stadium",
           "cityZh": "旧金山湾区",
           "cityEn": "San Francisco",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "united-states",
           "awayId": "bosnia-herzegovina",
           "homeZh": "美国",
           "awayZh": "波黑",
           "homeEn": "United States",
-          "awayEn": "Bosnia and Herzegovina"
+          "awayEn": "Bosnia and Herzegovina",
+          "homeScore": 2,
+          "awayScore": 0,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "united-states"
+          ],
+          "eliminatedTeamIds": [
+            "bosnia-herzegovina"
+          ]
         },
         {
           "id": 82,
@@ -230,13 +328,23 @@
           "venue": "Lumen Field",
           "cityZh": "西雅图",
           "cityEn": "Seattle",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "belgium",
           "awayId": "senegal",
           "homeZh": "比利时",
           "awayZh": "塞内加尔",
           "homeEn": "Belgium",
-          "awayEn": "Senegal"
+          "awayEn": "Senegal",
+          "homeScore": 3,
+          "awayScore": 2,
+          "winner": "home",
+          "decidedBy": "extra-time",
+          "qualifiedTeamIds": [
+            "belgium"
+          ],
+          "eliminatedTeamIds": [
+            "senegal"
+          ]
         },
         {
           "id": 83,
@@ -371,7 +479,13 @@
           "homePlaceholderZh": "M74胜者",
           "awayPlaceholderZh": "M77胜者",
           "homePlaceholderEn": "Winner M74",
-          "awayPlaceholderEn": "Winner M77"
+          "awayPlaceholderEn": "Winner M77",
+          "homeId": "paraguay",
+          "homeZh": "巴拉圭",
+          "homeEn": "Paraguay",
+          "awayId": "france",
+          "awayZh": "法国",
+          "awayEn": "France"
         },
         {
           "id": 90,
@@ -387,7 +501,13 @@
           "homePlaceholderZh": "M73胜者",
           "awayPlaceholderZh": "M75胜者",
           "homePlaceholderEn": "Winner M73",
-          "awayPlaceholderEn": "Winner M75"
+          "awayPlaceholderEn": "Winner M75",
+          "homeId": "canada",
+          "homeZh": "加拿大",
+          "homeEn": "Canada",
+          "awayId": "morocco",
+          "awayZh": "摩洛哥",
+          "awayEn": "Morocco"
         },
         {
           "id": 91,
@@ -403,7 +523,13 @@
           "homePlaceholderZh": "M76胜者",
           "awayPlaceholderZh": "M78胜者",
           "homePlaceholderEn": "Winner M76",
-          "awayPlaceholderEn": "Winner M78"
+          "awayPlaceholderEn": "Winner M78",
+          "homeId": "brazil",
+          "homeZh": "巴西",
+          "homeEn": "Brazil",
+          "awayId": "norway",
+          "awayZh": "挪威",
+          "awayEn": "Norway"
         },
         {
           "id": 92,
@@ -419,7 +545,13 @@
           "homePlaceholderZh": "M79胜者",
           "awayPlaceholderZh": "M80胜者",
           "homePlaceholderEn": "Winner M79",
-          "awayPlaceholderEn": "Winner M80"
+          "awayPlaceholderEn": "Winner M80",
+          "homeId": "mexico",
+          "homeZh": "墨西哥",
+          "homeEn": "Mexico",
+          "awayId": "england",
+          "awayZh": "英格兰",
+          "awayEn": "England"
         },
         {
           "id": 93,
@@ -451,7 +583,13 @@
           "homePlaceholderZh": "M81胜者",
           "awayPlaceholderZh": "M82胜者",
           "homePlaceholderEn": "Winner M81",
-          "awayPlaceholderEn": "Winner M82"
+          "awayPlaceholderEn": "Winner M82",
+          "homeId": "united-states",
+          "homeZh": "美国",
+          "homeEn": "United States",
+          "awayId": "belgium",
+          "awayZh": "比利时",
+          "awayEn": "Belgium"
         },
         {
           "id": 95,
