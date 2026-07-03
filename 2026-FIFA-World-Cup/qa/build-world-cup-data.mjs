@@ -11,8 +11,8 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-07-02T12:00:00+08:00';
-const todayBjt = '2026-07-02';
+const asOf = '2026-07-03T20:00:00+08:00';
+const todayBjt = '2026-07-03';
 
 const index = fs.readFileSync(indexPath, 'utf8');
 const start = index.indexOf('const G=');
@@ -174,7 +174,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 12:00 BJT on July 2. For shootouts, winner is
+// Final scores verified through 20:00 BJT on July 3. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -187,6 +187,9 @@ const knockoutResults = new Map([
   [80, { homeScore:2, awayScore:1, winner:'home', decidedBy:'regular' }],
   [81, { homeScore:2, awayScore:0, winner:'home', decidedBy:'regular' }],
   [82, { homeScore:3, awayScore:2, winner:'home', decidedBy:'extra-time' }],
+  [83, { homeScore:2, awayScore:1, winner:'home', decidedBy:'regular' }],
+  [84, { homeScore:3, awayScore:0, winner:'home', decidedBy:'regular' }],
+  [85, { homeScore:2, awayScore:0, winner:'home', decidedBy:'regular' }],
 ]);
 
 const knockoutRounds = roundKeys.map((key, roundIndex) => {
@@ -273,7 +276,7 @@ const knockoutData = {
   asOf,
   timezone: 'Asia/Shanghai',
   stage: 'round-of-32',
-  note: '截至北京时间 7 月 2 日 12:00，32 强赛已完成 10 场；已产生的 16 强对阵同步填入。',
+  note: '截至北京时间 7 月 3 日 20:00，32 强赛已完成 13 场；已产生的 16 强对阵同步填入。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',

@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-02",
-  "asOf": "2026-07-02T12:00:00+08:00",
+  "updatedAt": "2026-07-03",
+  "asOf": "2026-07-03T20:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "stage": "round-of-32",
-  "note": "截至北京时间 7 月 2 日 12:00，32 强赛已完成 10 场；已产生的 16 强对阵同步填入。",
+  "note": "截至北京时间 7 月 3 日 20:00，32 强赛已完成 13 场；已产生的 16 强对阵同步填入。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -356,13 +356,23 @@
           "venue": "BMO Field",
           "cityZh": "多伦多",
           "cityEn": "Toronto",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "portugal",
           "awayId": "croatia",
           "homeZh": "葡萄牙",
           "awayZh": "克罗地亚",
           "homeEn": "Portugal",
-          "awayEn": "Croatia"
+          "awayEn": "Croatia",
+          "homeScore": 2,
+          "awayScore": 1,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "portugal"
+          ],
+          "eliminatedTeamIds": [
+            "croatia"
+          ]
         },
         {
           "id": 84,
@@ -374,13 +384,23 @@
           "venue": "SoFi Stadium",
           "cityZh": "洛杉矶",
           "cityEn": "Los Angeles",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "spain",
           "awayId": "austria",
           "homeZh": "西班牙",
           "awayZh": "奥地利",
           "homeEn": "Spain",
-          "awayEn": "Austria"
+          "awayEn": "Austria",
+          "homeScore": 3,
+          "awayScore": 0,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "spain"
+          ],
+          "eliminatedTeamIds": [
+            "austria"
+          ]
         },
         {
           "id": 85,
@@ -392,13 +412,23 @@
           "venue": "BC Place",
           "cityZh": "温哥华",
           "cityEn": "Vancouver",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "switzerland",
           "awayId": "algeria",
           "homeZh": "瑞士",
           "awayZh": "阿尔及利亚",
           "homeEn": "Switzerland",
-          "awayEn": "Algeria"
+          "awayEn": "Algeria",
+          "homeScore": 2,
+          "awayScore": 0,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "switzerland"
+          ],
+          "eliminatedTeamIds": [
+            "algeria"
+          ]
         },
         {
           "id": 86,
@@ -567,7 +597,13 @@
           "homePlaceholderZh": "M83胜者",
           "awayPlaceholderZh": "M84胜者",
           "homePlaceholderEn": "Winner M83",
-          "awayPlaceholderEn": "Winner M84"
+          "awayPlaceholderEn": "Winner M84",
+          "homeId": "portugal",
+          "homeZh": "葡萄牙",
+          "homeEn": "Portugal",
+          "awayId": "spain",
+          "awayZh": "西班牙",
+          "awayEn": "Spain"
         },
         {
           "id": 94,
@@ -621,7 +657,10 @@
           "homePlaceholderZh": "M85胜者",
           "awayPlaceholderZh": "M87胜者",
           "homePlaceholderEn": "Winner M85",
-          "awayPlaceholderEn": "Winner M87"
+          "awayPlaceholderEn": "Winner M87",
+          "homeId": "switzerland",
+          "homeZh": "瑞士",
+          "homeEn": "Switzerland"
         }
       ]
     },
