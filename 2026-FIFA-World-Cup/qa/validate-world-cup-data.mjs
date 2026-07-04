@@ -49,9 +49,9 @@ else {
 
 const knockoutResults = matchesData.results || [];
 if (!Array.isArray(knockoutResults)) fail('matches.json 的 results 必须是数组');
-else if (knockoutResults.length !== 13) fail(`截至 7 月 3 日 20:00 应有 13 场淘汰赛完场，当前为 ${knockoutResults.length}`);
+else if (knockoutResults.length !== 16) fail(`32 强赛应有 16 场完场，当前为 ${knockoutResults.length}`);
 else if (knockoutResults.some(match => match.status !== 'finished' || !match.winner)) fail('淘汰赛 results 存在未完场或缺少 winner 的比赛');
-else pass('matches.json 包含截至 7 月 3 日 20:00 的 13 场淘汰赛结果');
+else pass('matches.json 包含全部 16 场 32 强赛结果');
 
 if (Array.isArray(matches)) {
   const seen = new Set();
@@ -103,9 +103,16 @@ else if (roundOf32TeamIds.length !== 32 || new Set(roundOf32TeamIds).size !== 32
 else pass('32 强包含 32 支不重复且有效的球队');
 
 const finishedRoundOf32 = roundOf32.filter(match => match.status === 'finished');
-if (finishedRoundOf32.length !== 13) fail(`32 强应有 13 场完赛，当前为 ${finishedRoundOf32.length}`);
+if (finishedRoundOf32.length !== 16) fail(`32 强应有 16 场完赛，当前为 ${finishedRoundOf32.length}`);
 else if (finishedRoundOf32.some(match => !Array.isArray(match.qualifiedTeamIds) || !Array.isArray(match.eliminatedTeamIds))) fail('已完赛 32 强比赛缺少晋级或淘汰球队');
-else pass('32 强 13 场赛果均含晋级与淘汰球队');
+else pass('32 强 16 场赛果均含晋级与淘汰球队');
+
+const roundOf16 = knockoutRounds?.[1]?.matches || [];
+const roundOf16TeamIds = roundOf16.flatMap(match => [match.homeId, match.awayId]);
+if (roundOf16TeamIds.some(teamId => !teamId)) fail('16 强对阵仍有未确认球队占位');
+else if (roundOf16TeamIds.length !== 16 || new Set(roundOf16TeamIds).size !== 16) fail('16 强必须包含 16 支不重复球队');
+else if ((knockoutData.roundOf16TeamIds || []).join(',') !== roundOf16TeamIds.join(',')) fail('roundOf16TeamIds 与 16 强对阵不一致');
+else pass('16 强 8 场对阵已全部确认，包含 16 支不重复球队');
 
 const qualifiedIds = knockoutData.qualifiedTeamIds || [];
 const qualifiedMismatch = qualifiedIds.length !== 32

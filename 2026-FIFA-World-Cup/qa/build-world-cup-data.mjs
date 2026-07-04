@@ -11,8 +11,8 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-07-03T20:00:00+08:00';
-const todayBjt = '2026-07-03';
+const asOf = '2026-07-04T11:44:00+08:00';
+const todayBjt = '2026-07-04';
 
 const index = fs.readFileSync(indexPath, 'utf8');
 const start = index.indexOf('const G=');
@@ -174,7 +174,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 20:00 BJT on July 3. For shootouts, winner is
+// Final scores verified through 11:44 BJT on July 4. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -190,6 +190,9 @@ const knockoutResults = new Map([
   [83, { homeScore:2, awayScore:1, winner:'home', decidedBy:'regular' }],
   [84, { homeScore:3, awayScore:0, winner:'home', decidedBy:'regular' }],
   [85, { homeScore:2, awayScore:0, winner:'home', decidedBy:'regular' }],
+  [86, { homeScore:3, awayScore:2, winner:'home', decidedBy:'extra-time' }],
+  [87, { homeScore:1, awayScore:0, winner:'home', decidedBy:'regular' }],
+  [88, { homeScore:1, awayScore:1, winner:'away', decidedBy:'penalties', homeShootoutScore:2, awayShootoutScore:4 }],
 ]);
 
 const knockoutRounds = roundKeys.map((key, roundIndex) => {
@@ -275,8 +278,8 @@ const knockoutData = {
   updatedAt: todayBjt,
   asOf,
   timezone: 'Asia/Shanghai',
-  stage: 'round-of-32',
-  note: '截至北京时间 7 月 3 日 20:00，32 强赛已完成 13 场；已产生的 16 强对阵同步填入。',
+  stage: 'round-of-16',
+  note: '截至北京时间 7 月 4 日 11:44，32 强赛 16 场全部结束；16 强 8 场对阵已全部确认。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -292,6 +295,7 @@ const knockoutData = {
     },
   ],
   qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],
+  roundOf16TeamIds: knockoutRounds[1].matches.flatMap(match => [match.homeId, match.awayId]),
   rounds: knockoutRounds,
 };
 

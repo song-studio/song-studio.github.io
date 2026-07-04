@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-03",
-  "asOf": "2026-07-03T20:00:00+08:00",
+  "updatedAt": "2026-07-04",
+  "asOf": "2026-07-04T11:44:00+08:00",
   "timezone": "Asia/Shanghai",
-  "stage": "round-of-32",
-  "note": "截至北京时间 7 月 3 日 20:00，32 强赛已完成 13 场；已产生的 16 强对阵同步填入。",
+  "stage": "round-of-16",
+  "note": "截至北京时间 7 月 4 日 11:44，32 强赛 16 场全部结束；16 强 8 场对阵已全部确认。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -51,6 +51,24 @@
     "ghana",
     "australia",
     "egypt"
+  ],
+  "roundOf16TeamIds": [
+    "paraguay",
+    "france",
+    "canada",
+    "morocco",
+    "brazil",
+    "norway",
+    "mexico",
+    "england",
+    "portugal",
+    "spain",
+    "united-states",
+    "belgium",
+    "argentina",
+    "egypt",
+    "switzerland",
+    "colombia"
   ],
   "rounds": [
     {
@@ -440,13 +458,23 @@
           "venue": "Hard Rock Stadium",
           "cityZh": "迈阿密",
           "cityEn": "Miami",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "argentina",
           "awayId": "cabo-verde",
           "homeZh": "阿根廷",
           "awayZh": "佛得角",
           "homeEn": "Argentina",
-          "awayEn": "Cabo Verde"
+          "awayEn": "Cabo Verde",
+          "homeScore": 3,
+          "awayScore": 2,
+          "winner": "home",
+          "decidedBy": "extra-time",
+          "qualifiedTeamIds": [
+            "argentina"
+          ],
+          "eliminatedTeamIds": [
+            "cabo-verde"
+          ]
         },
         {
           "id": 87,
@@ -458,13 +486,23 @@
           "venue": "Arrowhead Stadium",
           "cityZh": "堪萨斯城",
           "cityEn": "Kansas City",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "colombia",
           "awayId": "ghana",
           "homeZh": "哥伦比亚",
           "awayZh": "加纳",
           "homeEn": "Colombia",
-          "awayEn": "Ghana"
+          "awayEn": "Ghana",
+          "homeScore": 1,
+          "awayScore": 0,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "colombia"
+          ],
+          "eliminatedTeamIds": [
+            "ghana"
+          ]
         },
         {
           "id": 88,
@@ -476,13 +514,25 @@
           "venue": "AT&T Stadium",
           "cityZh": "达拉斯",
           "cityEn": "Dallas",
-          "status": "scheduled",
+          "status": "finished",
           "homeId": "australia",
           "awayId": "egypt",
           "homeZh": "澳大利亚",
           "awayZh": "埃及",
           "homeEn": "Australia",
-          "awayEn": "Egypt"
+          "awayEn": "Egypt",
+          "homeScore": 1,
+          "awayScore": 1,
+          "winner": "away",
+          "decidedBy": "penalties",
+          "homeShootoutScore": 2,
+          "awayShootoutScore": 4,
+          "qualifiedTeamIds": [
+            "egypt"
+          ],
+          "eliminatedTeamIds": [
+            "australia"
+          ]
         }
       ]
     },
@@ -641,7 +691,13 @@
           "homePlaceholderZh": "M86胜者",
           "awayPlaceholderZh": "M88胜者",
           "homePlaceholderEn": "Winner M86",
-          "awayPlaceholderEn": "Winner M88"
+          "awayPlaceholderEn": "Winner M88",
+          "homeId": "argentina",
+          "homeZh": "阿根廷",
+          "homeEn": "Argentina",
+          "awayId": "egypt",
+          "awayZh": "埃及",
+          "awayEn": "Egypt"
         },
         {
           "id": 96,
@@ -660,7 +716,10 @@
           "awayPlaceholderEn": "Winner M87",
           "homeId": "switzerland",
           "homeZh": "瑞士",
-          "homeEn": "Switzerland"
+          "homeEn": "Switzerland",
+          "awayId": "colombia",
+          "awayZh": "哥伦比亚",
+          "awayEn": "Colombia"
         }
       ]
     },
