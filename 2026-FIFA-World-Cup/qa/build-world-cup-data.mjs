@@ -11,8 +11,8 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-07-04T11:44:00+08:00';
-const todayBjt = '2026-07-04';
+const asOf = '2026-07-07T00:00:00+08:00';
+const todayBjt = '2026-07-07';
 
 const index = fs.readFileSync(indexPath, 'utf8');
 const start = index.indexOf('const G=');
@@ -174,7 +174,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 11:44 BJT on July 4. For shootouts, winner is
+// Final scores verified through 00:00 BJT on July 7. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -193,6 +193,18 @@ const knockoutResults = new Map([
   [86, { homeScore:3, awayScore:2, winner:'home', decidedBy:'extra-time' }],
   [87, { homeScore:1, awayScore:0, winner:'home', decidedBy:'regular' }],
   [88, { homeScore:1, awayScore:1, winner:'away', decidedBy:'penalties', homeShootoutScore:2, awayShootoutScore:4 }],
+  [89, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
+  [90, { homeScore:0, awayScore:3, winner:'away', decidedBy:'regular' }],
+  [91, { homeScore:1, awayScore:2, winner:'away', decidedBy:'regular' }],
+  [92, { homeScore:2, awayScore:3, winner:'away', decidedBy:'regular' }],
+]);
+
+const scheduleOverrides = new Map([
+  [91, { dateLabelZh:'7/6 周一', dateLabelEn:'Mon 7/6', timeBjt:'04:00', edtLabel:'Sun 7/5 16:00' }],
+  [92, { dateLabelZh:'7/6 周一', dateLabelEn:'Mon 7/6', timeBjt:'09:00', edtLabel:'Sun 7/5 21:00' }],
+  [93, { dateLabelZh:'7/7 周二', dateLabelEn:'Tue 7/7', timeBjt:'03:00', edtLabel:'Mon 7/6 15:00' }],
+  [94, { dateLabelZh:'7/7 周二', dateLabelEn:'Tue 7/7', timeBjt:'08:00', edtLabel:'Mon 7/6 20:00' }],
+  [95, { dateLabelZh:'7/8 周三', dateLabelEn:'Wed 7/8', timeBjt:'00:00', edtLabel:'Tue 7/7 12:00' }],
 ]);
 
 const knockoutRounds = roundKeys.map((key, roundIndex) => {
@@ -236,16 +248,6 @@ const knockoutRounds = roundKeys.map((key, roundIndex) => {
           homeEn: home.englishName,
           awayEn: away.englishName,
         });
-        const result = knockoutResults.get(matchId);
-        if (result) {
-          const qualifiedTeamId = result.winner === 'home' ? homeId : awayId;
-          const eliminatedTeamId = result.winner === 'home' ? awayId : homeId;
-          Object.assign(item, result, {
-            status: 'finished',
-            qualifiedTeamIds: [qualifiedTeamId],
-            eliminatedTeamIds: [eliminatedTeamId],
-          });
-        }
       } else {
         item.homePlaceholderZh = match.t1;
         item.awayPlaceholderZh = match.t2;
@@ -257,11 +259,47 @@ const knockoutRounds = roundKeys.map((key, roundIndex) => {
   };
 });
 
+knockoutRounds.flatMap(round => round.matches).forEach(match => {
+  const override = scheduleOverrides.get(match.id);
+  if (override) Object.assign(match, override);
+});
+
+const applyKnownResult = match => {
+  const result = knockoutResults.get(match.id);
+  if (!result || !match.homeId || !match.awayId) return;
+  const qualifiedTeamId = result.winner === 'home' ? match.homeId : match.awayId;
+  const eliminatedTeamId = result.winner === 'home' ? match.awayId : match.homeId;
+  Object.assign(match, result, {
+    status: 'finished',
+    qualifiedTeamIds: [qualifiedTeamId],
+    eliminatedTeamIds: [eliminatedTeamId],
+  });
+};
+
 const roundOf32 = knockoutRounds[0].matches;
+roundOf32.forEach(applyKnownResult);
 const winnerByMatchId = new Map(roundOf32.filter(match => match.status === 'finished').map(match => [match.id, match.qualifiedTeamIds[0]]));
 const roundOf16Sources = [[74,77],[73,75],[76,78],[79,80],[83,84],[81,82],[86,88],[85,87]];
 knockoutRounds[1].matches.forEach((match, matchIndex) => {
   const [homeSource, awaySource] = roundOf16Sources[matchIndex];
+  const assignTeam = (side, sourceId) => {
+    const teamId = winnerByMatchId.get(sourceId);
+    if (!teamId) return;
+    const team = byId.get(teamId);
+    match[`${side}Id`] = teamId;
+    match[`${side}Zh`] = team.name;
+    match[`${side}En`] = team.englishName;
+  };
+  assignTeam('home', homeSource);
+  assignTeam('away', awaySource);
+});
+
+const roundOf16 = knockoutRounds[1].matches;
+roundOf16.forEach(applyKnownResult);
+roundOf16.filter(match => match.status === 'finished').forEach(match => winnerByMatchId.set(match.id, match.qualifiedTeamIds[0]));
+const quarterFinalSources = [[89,90],[93,94],[91,92],[95,96]];
+knockoutRounds[2].matches.forEach((match, matchIndex) => {
+  const [homeSource, awaySource] = quarterFinalSources[matchIndex];
   const assignTeam = (side, sourceId) => {
     const teamId = winnerByMatchId.get(sourceId);
     if (!teamId) return;
@@ -279,7 +317,7 @@ const knockoutData = {
   asOf,
   timezone: 'Asia/Shanghai',
   stage: 'round-of-16',
-  note: '截至北京时间 7 月 4 日 11:44，32 强赛 16 场全部结束；16 强 8 场对阵已全部确认。',
+  note: '截至北京时间 7 月 7 日 00:00，16 强赛已完成 4 场；法国、摩洛哥、挪威和英格兰晋级八强。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -299,7 +337,7 @@ const knockoutData = {
   rounds: knockoutRounds,
 };
 
-const knockoutMatchesForCards = roundOf32.filter(match => match.status === 'finished').map(match => ({
+const knockoutMatchesForCards = knockoutRounds.flatMap(round => round.matches).filter(match => match.homeId && match.awayId).map(match => ({
   id: `knockout-${match.id}`,
   matchId: match.id,
   stage: match.stage,
@@ -326,7 +364,7 @@ const knockoutMatchesForCards = roundOf32.filter(match => match.status === 'fini
   qualifiedTeamIds: match.qualifiedTeamIds,
   eliminatedTeamIds: match.eliminatedTeamIds,
 }));
-matchesData.results = knockoutMatchesForCards;
+matchesData.results = knockoutMatchesForCards.filter(match => match.status === 'finished');
 matchesData.today = knockoutMatchesForCards.filter(match => match.date === todayBjt);
 
 fs.writeFileSync(matchesPath, `${JSON.stringify(matchesData, null, 2)}\n`);

@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-04",
-  "asOf": "2026-07-04T11:44:00+08:00",
+  "updatedAt": "2026-07-07",
+  "asOf": "2026-07-07T00:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "stage": "round-of-16",
-  "note": "截至北京时间 7 月 4 日 11:44，32 强赛 16 场全部结束；16 强 8 场对阵已全部确认。",
+  "note": "截至北京时间 7 月 7 日 00:00，16 强赛已完成 4 场；法国、摩洛哥、挪威和英格兰晋级八强。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -555,7 +555,7 @@
           "venue": "Lincoln Financial Field",
           "cityZh": "费城",
           "cityEn": "Philadelphia",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M74胜者",
           "awayPlaceholderZh": "M77胜者",
           "homePlaceholderEn": "Winner M74",
@@ -565,7 +565,17 @@
           "homeEn": "Paraguay",
           "awayId": "france",
           "awayZh": "法国",
-          "awayEn": "France"
+          "awayEn": "France",
+          "homeScore": 0,
+          "awayScore": 1,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "france"
+          ],
+          "eliminatedTeamIds": [
+            "paraguay"
+          ]
         },
         {
           "id": 90,
@@ -577,7 +587,7 @@
           "venue": "NRG Stadium",
           "cityZh": "休斯顿",
           "cityEn": "Houston",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M73胜者",
           "awayPlaceholderZh": "M75胜者",
           "homePlaceholderEn": "Winner M73",
@@ -587,19 +597,29 @@
           "homeEn": "Canada",
           "awayId": "morocco",
           "awayZh": "摩洛哥",
-          "awayEn": "Morocco"
+          "awayEn": "Morocco",
+          "homeScore": 0,
+          "awayScore": 3,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "morocco"
+          ],
+          "eliminatedTeamIds": [
+            "canada"
+          ]
         },
         {
           "id": 91,
           "stage": "round-of-16",
           "dateLabelZh": "7/6 周一",
           "dateLabelEn": "Mon 7/6",
-          "timeBjt": "08:00",
-          "edtLabel": "Sun 7/5 20:00",
+          "timeBjt": "04:00",
+          "edtLabel": "Sun 7/5 16:00",
           "venue": "MetLife Stadium",
           "cityZh": "纽约/新泽西",
           "cityEn": "NY/New Jersey",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M76胜者",
           "awayPlaceholderZh": "M78胜者",
           "homePlaceholderEn": "Winner M76",
@@ -609,19 +629,29 @@
           "homeEn": "Brazil",
           "awayId": "norway",
           "awayZh": "挪威",
-          "awayEn": "Norway"
+          "awayEn": "Norway",
+          "homeScore": 1,
+          "awayScore": 2,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "norway"
+          ],
+          "eliminatedTeamIds": [
+            "brazil"
+          ]
         },
         {
           "id": 92,
           "stage": "round-of-16",
-          "dateLabelZh": "7/7 周二",
-          "dateLabelEn": "Tue 7/7",
-          "timeBjt": "00:00",
-          "edtLabel": "Mon 7/6 12:00",
+          "dateLabelZh": "7/6 周一",
+          "dateLabelEn": "Mon 7/6",
+          "timeBjt": "09:00",
+          "edtLabel": "Sun 7/5 21:00",
           "venue": "Estadio Azteca",
           "cityZh": "墨西哥城",
           "cityEn": "Mexico City",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M79胜者",
           "awayPlaceholderZh": "M80胜者",
           "homePlaceholderEn": "Winner M79",
@@ -631,15 +661,25 @@
           "homeEn": "Mexico",
           "awayId": "england",
           "awayZh": "英格兰",
-          "awayEn": "England"
+          "awayEn": "England",
+          "homeScore": 2,
+          "awayScore": 3,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "england"
+          ],
+          "eliminatedTeamIds": [
+            "mexico"
+          ]
         },
         {
           "id": 93,
           "stage": "round-of-16",
           "dateLabelZh": "7/7 周二",
           "dateLabelEn": "Tue 7/7",
-          "timeBjt": "04:00",
-          "edtLabel": "Mon 7/6 16:00",
+          "timeBjt": "03:00",
+          "edtLabel": "Mon 7/6 15:00",
           "venue": "AT&T Stadium",
           "cityZh": "达拉斯",
           "cityEn": "Dallas",
@@ -658,10 +698,10 @@
         {
           "id": 94,
           "stage": "round-of-16",
-          "dateLabelZh": "7/8 周三",
-          "dateLabelEn": "Wed 7/8",
-          "timeBjt": "03:00",
-          "edtLabel": "Tue 7/7 15:00",
+          "dateLabelZh": "7/7 周二",
+          "dateLabelEn": "Tue 7/7",
+          "timeBjt": "08:00",
+          "edtLabel": "Mon 7/6 20:00",
           "venue": "Lumen Field",
           "cityZh": "西雅图",
           "cityEn": "Seattle",
@@ -682,8 +722,8 @@
           "stage": "round-of-16",
           "dateLabelZh": "7/8 周三",
           "dateLabelEn": "Wed 7/8",
-          "timeBjt": "08:00",
-          "edtLabel": "Tue 7/7 20:00",
+          "timeBjt": "00:00",
+          "edtLabel": "Tue 7/7 12:00",
           "venue": "Mercedes-Benz Stadium",
           "cityZh": "亚特兰大",
           "cityEn": "Atlanta",
@@ -746,7 +786,13 @@
           "homePlaceholderZh": "M89胜者",
           "awayPlaceholderZh": "M90胜者",
           "homePlaceholderEn": "Winner M89",
-          "awayPlaceholderEn": "Winner M90"
+          "awayPlaceholderEn": "Winner M90",
+          "homeId": "france",
+          "homeZh": "法国",
+          "homeEn": "France",
+          "awayId": "morocco",
+          "awayZh": "摩洛哥",
+          "awayEn": "Morocco"
         },
         {
           "id": 98,
@@ -778,7 +824,13 @@
           "homePlaceholderZh": "M91胜者",
           "awayPlaceholderZh": "M92胜者",
           "homePlaceholderEn": "Winner M91",
-          "awayPlaceholderEn": "Winner M92"
+          "awayPlaceholderEn": "Winner M92",
+          "homeId": "norway",
+          "homeZh": "挪威",
+          "homeEn": "Norway",
+          "awayId": "england",
+          "awayZh": "英格兰",
+          "awayEn": "England"
         },
         {
           "id": 100,
