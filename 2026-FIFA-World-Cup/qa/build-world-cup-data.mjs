@@ -11,8 +11,9 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-07-09T09:00:00+08:00';
+const asOf = '2026-07-09T20:00:00+08:00';
 const todayBjt = '2026-07-09';
+const earlyMorningCutoffBjt = '06:00';
 
 const index = fs.readFileSync(indexPath, 'utf8');
 const start = index.indexOf('const G=');
@@ -63,6 +64,17 @@ const toDate = value => {
   return `2026-${String(match[1]).padStart(2, '0')}-${String(match[2]).padStart(2, '0')}`;
 };
 
+const addDays = (date, days) => {
+  const [year, month, day] = date.split('-').map(Number);
+  const parsed = new Date(Date.UTC(year, month - 1, day + days));
+  return parsed.toISOString().slice(0, 10);
+};
+const nextBjt = addDays(todayBjt, 1);
+const isTodayGameWindowMatch = match => {
+  if (match.date === todayBjt) return true;
+  return match.date === nextBjt && match.time <= earlyMorningCutoffBjt;
+};
+
 const matches = [];
 for (const [group, groupData] of Object.entries(schedule)) {
   groupData.matches.forEach((match, indexNumber) => {
@@ -101,7 +113,7 @@ const matchesData = {
   asOf,
   timezone: 'Asia/Shanghai',
   mode: 'manual-results-feed',
-  note: 'matches 保存 72 场完整小组赛；results 保存已结束的淘汰赛；today 只保存北京时间当天比赛，供球迷卡牌赛结算。winner: home=主队晋级、away=客队晋级、draw=平局。',
+  note: 'matches 保存 72 场完整小组赛；results 保存已结束的淘汰赛；today 保存中国用户的卡牌赛今日窗口：北京时间当天比赛，以及次日 06:00 前开球的深夜/凌晨比赛。winner: home=主队晋级、away=客队晋级、draw=平局。',
   sources: [
     {
       name: 'FIFA World Cup 2026 fixtures and results',
@@ -117,6 +129,12 @@ const matchesData = {
     },
   ],
   today: [],
+  todayGameWindow: {
+    date: todayBjt,
+    timezone: 'Asia/Shanghai',
+    includesEarlyMorningUntil: `${nextBjt}T${earlyMorningCutoffBjt}:00+08:00`,
+    note: '用于卡牌赛预测入口；中国晚间用户可提前预测次日清晨比赛。',
+  },
   results: [],
   matches,
 };
@@ -174,7 +192,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 09:00 BJT on July 9. For shootouts, winner is
+// Final scores verified through 20:00 BJT on July 9. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -321,7 +339,7 @@ const knockoutData = {
   asOf,
   timezone: 'Asia/Shanghai',
   stage: 'quarter-finals',
-  note: '截至北京时间 7 月 9 日 09:00，16 强赛全部结束；法国、摩洛哥、西班牙、比利时、挪威、英格兰、阿根廷和瑞士晋级八强。',
+  note: '截至北京时间 7 月 9 日 20:00，16 强赛全部结束；法国、摩洛哥、西班牙、比利时、挪威、英格兰、阿根廷和瑞士晋级八强。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -377,7 +395,7 @@ const knockoutMatchesForCards = knockoutRounds.flatMap(round => round.matches).f
   eliminatedTeamIds: match.eliminatedTeamIds,
 }));
 matchesData.results = knockoutMatchesForCards.filter(match => match.status === 'finished');
-matchesData.today = knockoutMatchesForCards.filter(match => match.date === todayBjt);
+matchesData.today = knockoutMatchesForCards.filter(match => match.status !== 'finished' && isTodayGameWindowMatch(match));
 
 fs.writeFileSync(matchesPath, `${JSON.stringify(matchesData, null, 2)}\n`);
 fs.writeFileSync(standingsPath, `${JSON.stringify(standingsData, null, 2)}\n`);

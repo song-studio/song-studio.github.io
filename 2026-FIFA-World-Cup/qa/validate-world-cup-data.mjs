@@ -32,6 +32,13 @@ const standingsData = readJson('data/standings.json');
 const knockoutData = readJson('data/knockout.json');
 const teamIds = new Set(cards.teams.filter(team => team.qualified).map(team => team.id));
 const matches = matchesData.matches;
+const matchStartsAt = match => `${match.date}T${match.time || '00:00'}:00+08:00`;
+const isWithinTodayGameWindow = match => {
+  const windowStart = matchesData.todayGameWindow?.date || matchesData.updatedAt;
+  const windowEnd = matchesData.todayGameWindow?.includesEarlyMorningUntil || `${windowStart}T23:59:59+08:00`;
+  const startsAt = matchStartsAt(match);
+  return startsAt >= `${windowStart}T00:00:00+08:00` && startsAt <= windowEnd;
+};
 
 if (!Array.isArray(matches) || matches.length !== 72) {
   fail(`matches.json 必须包含 72 场完整小组赛，当前为 ${Array.isArray(matches) ? matches.length : 0}`);
@@ -43,14 +50,14 @@ if (!Array.isArray(matchesData.today)) fail('matches.json 缺少 today 数组');
 else {
   const knockoutFixtureIds = (knockoutData.rounds || []).flatMap(round => round.matches || []).map(match => `knockout-${match.id}`);
   const allIds = new Set([...(Array.isArray(matches) ? matches.map(match => match.id) : []), ...knockoutFixtureIds]);
-  const invalidToday = matchesData.today.find(match => !allIds.has(match.id) || match.date !== matchesData.updatedAt);
-  if (invalidToday) fail(`today 场次不是完整赛程中的北京时间当日比赛：${invalidToday.id}`);
-  else pass(`matches.json 包含 ${matchesData.today.length} 场北京时间今日比赛`);
+  const invalidToday = matchesData.today.find(match => !allIds.has(match.id) || !isWithinTodayGameWindow(match));
+  if (invalidToday) fail(`today 场次不在卡牌赛今日窗口内：${invalidToday.id}`);
+  else pass(`matches.json 包含 ${matchesData.today.length} 场卡牌赛今日窗口比赛`);
 }
 
 const knockoutResults = matchesData.results || [];
 if (!Array.isArray(knockoutResults)) fail('matches.json 的 results 必须是数组');
-else if (knockoutResults.length !== 24) fail(`截至 7 月 9 日 09:00 应有 24 场淘汰赛完场，当前为 ${knockoutResults.length}`);
+else if (knockoutResults.length !== 24) fail(`截至 7 月 9 日 20:00 应有 24 场淘汰赛完场，当前为 ${knockoutResults.length}`);
 else if (knockoutResults.some(match => match.status !== 'finished' || !match.winner)) fail('淘汰赛 results 存在未完场或缺少 winner 的比赛');
 else pass('matches.json 包含 16 场 32 强及 8 场 16 强赛结果');
 
