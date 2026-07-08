@@ -50,9 +50,9 @@ else {
 
 const knockoutResults = matchesData.results || [];
 if (!Array.isArray(knockoutResults)) fail('matches.json 的 results 必须是数组');
-else if (knockoutResults.length !== 20) fail(`截至 7 月 7 日 00:00 应有 20 场淘汰赛完场，当前为 ${knockoutResults.length}`);
+else if (knockoutResults.length !== 24) fail(`截至 7 月 9 日 09:00 应有 24 场淘汰赛完场，当前为 ${knockoutResults.length}`);
 else if (knockoutResults.some(match => match.status !== 'finished' || !match.winner)) fail('淘汰赛 results 存在未完场或缺少 winner 的比赛');
-else pass('matches.json 包含 16 场 32 强及 4 场 16 强赛结果');
+else pass('matches.json 包含 16 场 32 强及 8 场 16 强赛结果');
 
 if (Array.isArray(matches)) {
   const seen = new Set();
@@ -116,12 +116,12 @@ else if ((knockoutData.roundOf16TeamIds || []).join(',') !== roundOf16TeamIds.jo
 else pass('16 强 8 场对阵已全部确认，包含 16 支不重复球队');
 
 const finishedRoundOf16 = roundOf16.filter(match => match.status === 'finished');
-if (finishedRoundOf16.length !== 4) fail(`16 强应有 4 场完赛，当前为 ${finishedRoundOf16.length}`);
-else pass('16 强已完成 4 场，赛果状态正确');
+if (finishedRoundOf16.length !== 8) fail(`16 强应有 8 场完赛，当前为 ${finishedRoundOf16.length}`);
+else pass('16 强 8 场已全部完赛，赛果状态正确');
 
 const confirmedQuarterFinals = (knockoutRounds?.[2]?.matches || []).filter(match => match.homeId && match.awayId);
-if (confirmedQuarterFinals.length !== 2) fail(`应确认 2 场八强对阵，当前为 ${confirmedQuarterFinals.length}`);
-else pass('法国 vs 摩洛哥、挪威 vs 英格兰两场八强对阵已确认');
+if (confirmedQuarterFinals.length !== 4) fail(`应确认 4 场八强对阵，当前为 ${confirmedQuarterFinals.length}`);
+else pass('八强 4 场对阵已全部确认');
 
 const qualifiedIds = knockoutData.qualifiedTeamIds || [];
 const qualifiedMismatch = qualifiedIds.length !== 32

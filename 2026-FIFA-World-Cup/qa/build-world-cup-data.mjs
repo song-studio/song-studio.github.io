@@ -11,8 +11,8 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-07-07T00:00:00+08:00';
-const todayBjt = '2026-07-07';
+const asOf = '2026-07-09T09:00:00+08:00';
+const todayBjt = '2026-07-09';
 
 const index = fs.readFileSync(indexPath, 'utf8');
 const start = index.indexOf('const G=');
@@ -174,7 +174,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 00:00 BJT on July 7. For shootouts, winner is
+// Final scores verified through 09:00 BJT on July 9. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -197,6 +197,10 @@ const knockoutResults = new Map([
   [90, { homeScore:0, awayScore:3, winner:'away', decidedBy:'regular' }],
   [91, { homeScore:1, awayScore:2, winner:'away', decidedBy:'regular' }],
   [92, { homeScore:2, awayScore:3, winner:'away', decidedBy:'regular' }],
+  [93, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
+  [94, { homeScore:1, awayScore:4, winner:'away', decidedBy:'regular' }],
+  [95, { homeScore:3, awayScore:2, winner:'home', decidedBy:'regular' }],
+  [96, { homeScore:0, awayScore:0, winner:'home', decidedBy:'penalties', homeShootoutScore:4, awayShootoutScore:3 }],
 ]);
 
 const scheduleOverrides = new Map([
@@ -316,8 +320,8 @@ const knockoutData = {
   updatedAt: todayBjt,
   asOf,
   timezone: 'Asia/Shanghai',
-  stage: 'round-of-16',
-  note: '截至北京时间 7 月 7 日 00:00，16 强赛已完成 4 场；法国、摩洛哥、挪威和英格兰晋级八强。',
+  stage: 'quarter-finals',
+  note: '截至北京时间 7 月 9 日 09:00，16 强赛全部结束；法国、摩洛哥、西班牙、比利时、挪威、英格兰、阿根廷和瑞士晋级八强。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -330,6 +334,14 @@ const knockoutData = {
     {
       name: 'ESPN FIFA World Cup scoreboard',
       url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard',
+    },
+    {
+      name: 'ESPN FIFA World Cup fixtures and results',
+      url: 'https://www.espn.com/soccer/story/_/id/48939282/2026-fifa-world-cup-fixtures-results-match-schedule-group-stage-knockout-rounds-bracket',
+    },
+    {
+      name: 'SB Nation Round of 16 scores',
+      url: 'https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule',
     },
   ],
   qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],

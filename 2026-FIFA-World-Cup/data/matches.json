@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-07",
-  "asOf": "2026-07-07T00:00:00+08:00",
+  "updatedAt": "2026-07-09",
+  "asOf": "2026-07-09T09:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "mode": "manual-results-feed",
   "note": "matches 保存 72 场完整小组赛；results 保存已结束的淘汰赛；today 只保存北京时间当天比赛，供球迷卡牌赛结算。winner: home=主队晋级、away=客队晋级、draw=平局。",
@@ -18,42 +18,7 @@
       "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
     }
   ],
-  "today": [
-    {
-      "id": "knockout-93",
-      "matchId": 93,
-      "stage": "round-of-16",
-      "home": "葡萄牙",
-      "away": "西班牙",
-      "homeEn": "Portugal",
-      "awayEn": "Spain",
-      "homeId": "portugal",
-      "awayId": "spain",
-      "date": "2026-07-07",
-      "time": "03:00",
-      "timezone": "Asia/Shanghai",
-      "venue": "AT&T Stadium",
-      "city": "达拉斯",
-      "status": "scheduled"
-    },
-    {
-      "id": "knockout-94",
-      "matchId": 94,
-      "stage": "round-of-16",
-      "home": "美国",
-      "away": "比利时",
-      "homeEn": "United States",
-      "awayEn": "Belgium",
-      "homeId": "united-states",
-      "awayId": "belgium",
-      "date": "2026-07-07",
-      "time": "08:00",
-      "timezone": "Asia/Shanghai",
-      "venue": "Lumen Field",
-      "city": "西雅图",
-      "status": "scheduled"
-    }
-  ],
+  "today": [],
   "results": [
     {
       "id": "knockout-73",
@@ -599,6 +564,116 @@
       ],
       "eliminatedTeamIds": [
         "mexico"
+      ]
+    },
+    {
+      "id": "knockout-93",
+      "matchId": 93,
+      "stage": "round-of-16",
+      "home": "葡萄牙",
+      "away": "西班牙",
+      "homeEn": "Portugal",
+      "awayEn": "Spain",
+      "homeId": "portugal",
+      "awayId": "spain",
+      "date": "2026-07-07",
+      "time": "03:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "AT&T Stadium",
+      "city": "达拉斯",
+      "status": "finished",
+      "homeScore": 0,
+      "awayScore": 1,
+      "winner": "away",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "spain"
+      ],
+      "eliminatedTeamIds": [
+        "portugal"
+      ]
+    },
+    {
+      "id": "knockout-94",
+      "matchId": 94,
+      "stage": "round-of-16",
+      "home": "美国",
+      "away": "比利时",
+      "homeEn": "United States",
+      "awayEn": "Belgium",
+      "homeId": "united-states",
+      "awayId": "belgium",
+      "date": "2026-07-07",
+      "time": "08:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Lumen Field",
+      "city": "西雅图",
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 4,
+      "winner": "away",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "belgium"
+      ],
+      "eliminatedTeamIds": [
+        "united-states"
+      ]
+    },
+    {
+      "id": "knockout-95",
+      "matchId": 95,
+      "stage": "round-of-16",
+      "home": "阿根廷",
+      "away": "埃及",
+      "homeEn": "Argentina",
+      "awayEn": "Egypt",
+      "homeId": "argentina",
+      "awayId": "egypt",
+      "date": "2026-07-08",
+      "time": "00:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "亚特兰大",
+      "status": "finished",
+      "homeScore": 3,
+      "awayScore": 2,
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "argentina"
+      ],
+      "eliminatedTeamIds": [
+        "egypt"
+      ]
+    },
+    {
+      "id": "knockout-96",
+      "matchId": 96,
+      "stage": "round-of-16",
+      "home": "瑞士",
+      "away": "哥伦比亚",
+      "homeEn": "Switzerland",
+      "awayEn": "Colombia",
+      "homeId": "switzerland",
+      "awayId": "colombia",
+      "date": "2026-07-08",
+      "time": "04:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "BC Place",
+      "city": "温哥华",
+      "status": "finished",
+      "homeScore": 0,
+      "awayScore": 0,
+      "winner": "home",
+      "decidedBy": "penalties",
+      "homeShootoutScore": 4,
+      "awayShootoutScore": 3,
+      "qualifiedTeamIds": [
+        "switzerland"
+      ],
+      "eliminatedTeamIds": [
+        "colombia"
       ]
     }
   ],

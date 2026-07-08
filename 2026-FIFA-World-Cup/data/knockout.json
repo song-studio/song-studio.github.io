@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-07",
-  "asOf": "2026-07-07T00:00:00+08:00",
+  "updatedAt": "2026-07-09",
+  "asOf": "2026-07-09T09:00:00+08:00",
   "timezone": "Asia/Shanghai",
-  "stage": "round-of-16",
-  "note": "截至北京时间 7 月 7 日 00:00，16 强赛已完成 4 场；法国、摩洛哥、挪威和英格兰晋级八强。",
+  "stage": "quarter-finals",
+  "note": "截至北京时间 7 月 9 日 09:00，16 强赛全部结束；法国、摩洛哥、西班牙、比利时、挪威、英格兰、阿根廷和瑞士晋级八强。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -16,6 +16,14 @@
     {
       "name": "ESPN FIFA World Cup scoreboard",
       "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
+    },
+    {
+      "name": "ESPN FIFA World Cup fixtures and results",
+      "url": "https://www.espn.com/soccer/story/_/id/48939282/2026-fifa-world-cup-fixtures-results-match-schedule-group-stage-knockout-rounds-bracket"
+    },
+    {
+      "name": "SB Nation Round of 16 scores",
+      "url": "https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule"
     }
   ],
   "qualifiedTeamIds": [
@@ -683,7 +691,7 @@
           "venue": "AT&T Stadium",
           "cityZh": "达拉斯",
           "cityEn": "Dallas",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M83胜者",
           "awayPlaceholderZh": "M84胜者",
           "homePlaceholderEn": "Winner M83",
@@ -693,7 +701,17 @@
           "homeEn": "Portugal",
           "awayId": "spain",
           "awayZh": "西班牙",
-          "awayEn": "Spain"
+          "awayEn": "Spain",
+          "homeScore": 0,
+          "awayScore": 1,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "spain"
+          ],
+          "eliminatedTeamIds": [
+            "portugal"
+          ]
         },
         {
           "id": 94,
@@ -705,7 +723,7 @@
           "venue": "Lumen Field",
           "cityZh": "西雅图",
           "cityEn": "Seattle",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M81胜者",
           "awayPlaceholderZh": "M82胜者",
           "homePlaceholderEn": "Winner M81",
@@ -715,7 +733,17 @@
           "homeEn": "United States",
           "awayId": "belgium",
           "awayZh": "比利时",
-          "awayEn": "Belgium"
+          "awayEn": "Belgium",
+          "homeScore": 1,
+          "awayScore": 4,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "belgium"
+          ],
+          "eliminatedTeamIds": [
+            "united-states"
+          ]
         },
         {
           "id": 95,
@@ -727,7 +755,7 @@
           "venue": "Mercedes-Benz Stadium",
           "cityZh": "亚特兰大",
           "cityEn": "Atlanta",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M86胜者",
           "awayPlaceholderZh": "M88胜者",
           "homePlaceholderEn": "Winner M86",
@@ -737,7 +765,17 @@
           "homeEn": "Argentina",
           "awayId": "egypt",
           "awayZh": "埃及",
-          "awayEn": "Egypt"
+          "awayEn": "Egypt",
+          "homeScore": 3,
+          "awayScore": 2,
+          "winner": "home",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "argentina"
+          ],
+          "eliminatedTeamIds": [
+            "egypt"
+          ]
         },
         {
           "id": 96,
@@ -749,7 +787,7 @@
           "venue": "BC Place",
           "cityZh": "温哥华",
           "cityEn": "Vancouver",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M85胜者",
           "awayPlaceholderZh": "M87胜者",
           "homePlaceholderEn": "Winner M85",
@@ -759,7 +797,19 @@
           "homeEn": "Switzerland",
           "awayId": "colombia",
           "awayZh": "哥伦比亚",
-          "awayEn": "Colombia"
+          "awayEn": "Colombia",
+          "homeScore": 0,
+          "awayScore": 0,
+          "winner": "home",
+          "decidedBy": "penalties",
+          "homeShootoutScore": 4,
+          "awayShootoutScore": 3,
+          "qualifiedTeamIds": [
+            "switzerland"
+          ],
+          "eliminatedTeamIds": [
+            "colombia"
+          ]
         }
       ]
     },
@@ -808,7 +858,13 @@
           "homePlaceholderZh": "M93胜者",
           "awayPlaceholderZh": "M94胜者",
           "homePlaceholderEn": "Winner M93",
-          "awayPlaceholderEn": "Winner M94"
+          "awayPlaceholderEn": "Winner M94",
+          "homeId": "spain",
+          "homeZh": "西班牙",
+          "homeEn": "Spain",
+          "awayId": "belgium",
+          "awayZh": "比利时",
+          "awayEn": "Belgium"
         },
         {
           "id": 99,
@@ -846,7 +902,13 @@
           "homePlaceholderZh": "M95胜者",
           "awayPlaceholderZh": "M96胜者",
           "homePlaceholderEn": "Winner M95",
-          "awayPlaceholderEn": "Winner M96"
+          "awayPlaceholderEn": "Winner M96",
+          "homeId": "argentina",
+          "homeZh": "阿根廷",
+          "homeEn": "Argentina",
+          "awayId": "switzerland",
+          "awayZh": "瑞士",
+          "awayEn": "Switzerland"
         }
       ]
     },
