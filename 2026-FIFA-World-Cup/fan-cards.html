@@ -1245,6 +1245,17 @@ function predictionWindowText(){
   const end=String(w.includesEarlyMorningUntil||'').slice(5,16).replace('-','/').replace('T',' ');
   return `${T('卡牌赛今日窗口')}：${start} 00:00 - ${end} ${T('北京时间')}。${T('中国晚间可提前预测次日清晨比赛。')}`;
 }
+function recentFinishedKnockoutResults(limit=4){
+  return [...(matchesData?.results||[])]
+    .filter(m=>String(m?.id||'').startsWith('knockout-')&&isMatchFinished(m))
+    .sort((a,b)=>`${a.date||''}T${a.time||''}`.localeCompare(`${b.date||''}T${b.time||''}`))
+    .slice(-limit);
+}
+function resultSummaryLine(m){
+  const p=matchDisplayParts(m);
+  const detail=m.decidedBy==='penalties'?` · ${T('点球')} ${m.homeShootoutScore}-${m.awayShootoutScore}`:m.decidedBy==='extra-time'?` · ${T('加时')}`:'';
+  return `${matchKickoffLabel(m)} · ${p.home||''} ${m.homeScore}-${m.awayScore} ${p.away||''}${detail}`;
+}
 function localizeNode(root=document.body){
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){
     if(!node.nodeValue.trim())return NodeFilter.FILTER_REJECT;
@@ -2022,10 +2033,12 @@ function renderBattle(){
     return
   }
 
-  $('#battleSub').textContent=T('完整赛程在世界杯首页。卡牌赛这里只显示今日/明晨可预测窗口：维护 data/matches.json 的 today 后，本区会自动生成预测列表。');
+  $('#battleSub').textContent=T('今天休赛，暂无新的今日/明晨预测入口；八强比分已进入卡牌赛自动结算池。');
   const wait=document.createElement('article');
   wait.className='match-card';
-  wait.innerHTML=`<h3>${T('比赛日预测入口')}</h3><p>${T('完整赛程已经在世界杯首页维护。卡牌赛读取 <b>data/matches.json</b> 里的 today 对阵：今日/明晨窗口有比赛时，这里显示胜平负预测；填入赛果 winner 后自动结算星级和奖励。')}</p><p class="micro" style="margin-top:8px">${T('稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。')}</p><div class="hero-actions" style="margin-top:14px"><a class="secondary-btn" href="index.html">${T('查看完整赛程')}</a><button class="secondary-btn" type="button" onclick="loadDemoMatchesForPractice()">${T('加载预测演示')}</button></div>`;
+  const recent=recentFinishedKnockoutResults(4);
+  const recentHtml=recent.length?`<p class="micro" style="margin-top:12px"><b>${T('最近写入赛果')}</b></p><div class="mini-rules">${recent.map(m=>`<div class="mini-rule"><b>${m.matchId?'M'+m.matchId:T('赛果')}</b><span>${resultSummaryLine(m)}</span></div>`).join('')}</div>`:'';
+  wait.innerHTML=`<h3>${T('比赛日预测入口')}</h3><p>${T('今天是休赛日，暂无新的今日/明晨预测入口；八强比分已经写入 results，已有预测会在打开页面时自动结算。')}</p><p class="micro" style="margin-top:8px">${T('稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。')}</p>${recentHtml}<div class="hero-actions" style="margin-top:14px"><a class="secondary-btn" href="index.html">${T('查看完整赛程')}</a><button class="secondary-btn" type="button" onclick="loadDemoMatchesForPractice()">${T('加载预测演示')}</button></div>`;
   lab.appendChild(wait)
 }
 function loadDemoMatchesForPractice(){
@@ -2713,8 +2726,10 @@ function renderMobileApp(){
     battleList.innerHTML=matchesData.today.slice(0,5).map(m=>`<div class="m-list-item"><b>${m.title||T('今日比赛')}</b><span>${matchKickoffLabel(m)} · ${m.home||''} vs ${m.away||''}。${T('选出战卡后提交主胜、平局或客胜。')}</span></div>`).join('');
     $('#mBattleText').textContent=`${T('今日/明晨可预测比赛已开放。')} ${predictionWindowText()} ${T('每场先选一张主队卡或已点亮国家卡，再提交胜平负。赛果写入后自动结算星级奖励。')}`;
   }else{
-    battleList.innerHTML=`<div class="m-list-item"><b>${T('比赛日预测入口')}</b><span>${T('完整赛程在世界杯首页。这里读取 data/matches.json 的今日/明晨可预测窗口，维护后自动出现预测列表。')}</span></div><div class="m-list-item"><b>${T('奖励规则')}</b><span>${T('命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。')}</span></div>`;
-    $('#mBattleText').textContent=T('比赛日规则已准备好：主队卡和已点亮国家卡可出战。稀有叙事卡也按本队参加单场预测，它的长期题另在稀有叙事区填写。');
+    const recent=recentFinishedKnockoutResults(4);
+    const recentRows=recent.map(m=>`<div class="m-list-item"><b>${m.matchId?'M'+m.matchId:T('已写入赛果')}</b><span>${resultSummaryLine(m)}。${T('已进入自动结算池。')}</span></div>`).join('');
+    battleList.innerHTML=(recentRows||`<div class="m-list-item"><b>${T('比赛日预测入口')}</b><span>${T('完整赛程在世界杯首页。这里读取 data/matches.json 的今日/明晨可预测窗口，维护后自动出现预测列表。')}</span></div>`)+`<div class="m-list-item"><b>${T('奖励规则')}</b><span>${T('命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。')}</span></div>`;
+    $('#mBattleText').textContent=T('今天休赛，暂无新的今日/明晨预测入口；八强比分已进入卡牌赛自动结算池。');
   }
 
   const allTeamOptions=allTeams.filter(t=>t.qualified&&t.id!=='china').map(t=>`<option value="${t.id}">${t.flag} ${t.name}</option>`).join('');

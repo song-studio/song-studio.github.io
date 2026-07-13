@@ -57,9 +57,9 @@ else {
 
 const knockoutResults = matchesData.results || [];
 if (!Array.isArray(knockoutResults)) fail('matches.json 的 results 必须是数组');
-else if (knockoutResults.length !== 24) fail(`截至 7 月 9 日 20:00 应有 24 场淘汰赛完场，当前为 ${knockoutResults.length}`);
+else if (knockoutResults.length !== 28) fail(`截至 7 月 13 日 15:01 应有 28 场淘汰赛完场，当前为 ${knockoutResults.length}`);
 else if (knockoutResults.some(match => match.status !== 'finished' || !match.winner)) fail('淘汰赛 results 存在未完场或缺少 winner 的比赛');
-else pass('matches.json 包含 16 场 32 强及 8 场 16 强赛结果');
+else pass('matches.json 包含 16 场 32 强、8 场 16 强及 4 场八强赛结果');
 
 if (Array.isArray(matches)) {
   const seen = new Set();
@@ -129,6 +129,18 @@ else pass('16 强 8 场已全部完赛，赛果状态正确');
 const confirmedQuarterFinals = (knockoutRounds?.[2]?.matches || []).filter(match => match.homeId && match.awayId);
 if (confirmedQuarterFinals.length !== 4) fail(`应确认 4 场八强对阵，当前为 ${confirmedQuarterFinals.length}`);
 else pass('八强 4 场对阵已全部确认');
+
+const finishedQuarterFinals = (knockoutRounds?.[2]?.matches || []).filter(match => match.status === 'finished');
+if (finishedQuarterFinals.length !== 4) fail(`八强应有 4 场完赛，当前为 ${finishedQuarterFinals.length}`);
+else if (finishedQuarterFinals.some(match => !Array.isArray(match.qualifiedTeamIds) || !Array.isArray(match.eliminatedTeamIds))) fail('已完赛八强比赛缺少晋级或淘汰球队');
+else pass('八强 4 场已全部完赛，赛果状态正确');
+
+const confirmedSemiFinals = (knockoutRounds?.[3]?.matches || []).filter(match => match.homeId && match.awayId);
+if (confirmedSemiFinals.length !== 2) fail(`应确认 2 场半决赛对阵，当前为 ${confirmedSemiFinals.length}`);
+else pass('半决赛 2 场对阵已全部确认');
+
+if (knockoutData.stage !== 'semi-finals') fail(`knockout.json stage 应为 semi-finals，当前为 ${knockoutData.stage}`);
+else pass('knockout.json 已进入半决赛阶段');
 
 const qualifiedIds = knockoutData.qualifiedTeamIds || [];
 const qualifiedMismatch = qualifiedIds.length !== 32

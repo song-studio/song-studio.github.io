@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-09",
-  "asOf": "2026-07-09T20:00:00+08:00",
+  "updatedAt": "2026-07-13",
+  "asOf": "2026-07-13T15:01:52+08:00",
   "timezone": "Asia/Shanghai",
   "mode": "manual-results-feed",
   "note": "matches 保存 72 场完整小组赛；results 保存已结束的淘汰赛；today 保存中国用户的卡牌赛今日窗口：北京时间当天比赛，以及次日 06:00 前开球的深夜/凌晨比赛。winner: home=主队晋级、away=客队晋级、draw=平局。",
@@ -18,29 +18,11 @@
       "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
     }
   ],
-  "today": [
-    {
-      "id": "knockout-97",
-      "matchId": 97,
-      "stage": "quarter-finals",
-      "home": "法国",
-      "away": "摩洛哥",
-      "homeEn": "France",
-      "awayEn": "Morocco",
-      "homeId": "france",
-      "awayId": "morocco",
-      "date": "2026-07-10",
-      "time": "04:00",
-      "timezone": "Asia/Shanghai",
-      "venue": "Gillette Stadium",
-      "city": "波士顿",
-      "status": "scheduled"
-    }
-  ],
+  "today": [],
   "todayGameWindow": {
-    "date": "2026-07-09",
+    "date": "2026-07-13",
     "timezone": "Asia/Shanghai",
-    "includesEarlyMorningUntil": "2026-07-10T06:00:00+08:00",
+    "includesEarlyMorningUntil": "2026-07-14T06:00:00+08:00",
     "note": "用于卡牌赛预测入口；中国晚间用户可提前预测次日清晨比赛。"
   },
   "results": [
@@ -698,6 +680,114 @@
       ],
       "eliminatedTeamIds": [
         "colombia"
+      ]
+    },
+    {
+      "id": "knockout-97",
+      "matchId": 97,
+      "stage": "quarter-finals",
+      "home": "法国",
+      "away": "摩洛哥",
+      "homeEn": "France",
+      "awayEn": "Morocco",
+      "homeId": "france",
+      "awayId": "morocco",
+      "date": "2026-07-10",
+      "time": "04:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Gillette Stadium",
+      "city": "波士顿",
+      "status": "finished",
+      "homeScore": 2,
+      "awayScore": 0,
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "france"
+      ],
+      "eliminatedTeamIds": [
+        "morocco"
+      ]
+    },
+    {
+      "id": "knockout-98",
+      "matchId": 98,
+      "stage": "quarter-finals",
+      "home": "西班牙",
+      "away": "比利时",
+      "homeEn": "Spain",
+      "awayEn": "Belgium",
+      "homeId": "spain",
+      "awayId": "belgium",
+      "date": "2026-07-11",
+      "time": "03:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "SoFi Stadium",
+      "city": "洛杉矶",
+      "status": "finished",
+      "homeScore": 2,
+      "awayScore": 1,
+      "winner": "home",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "spain"
+      ],
+      "eliminatedTeamIds": [
+        "belgium"
+      ]
+    },
+    {
+      "id": "knockout-99",
+      "matchId": 99,
+      "stage": "quarter-finals",
+      "home": "挪威",
+      "away": "英格兰",
+      "homeEn": "Norway",
+      "awayEn": "England",
+      "homeId": "norway",
+      "awayId": "england",
+      "date": "2026-07-12",
+      "time": "05:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Hard Rock Stadium",
+      "city": "迈阿密",
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 2,
+      "winner": "away",
+      "decidedBy": "extra-time",
+      "qualifiedTeamIds": [
+        "england"
+      ],
+      "eliminatedTeamIds": [
+        "norway"
+      ]
+    },
+    {
+      "id": "knockout-100",
+      "matchId": 100,
+      "stage": "quarter-finals",
+      "home": "阿根廷",
+      "away": "瑞士",
+      "homeEn": "Argentina",
+      "awayEn": "Switzerland",
+      "homeId": "argentina",
+      "awayId": "switzerland",
+      "date": "2026-07-12",
+      "time": "09:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Arrowhead Stadium",
+      "city": "堪萨斯城",
+      "status": "finished",
+      "homeScore": 3,
+      "awayScore": 1,
+      "winner": "home",
+      "decidedBy": "extra-time",
+      "qualifiedTeamIds": [
+        "argentina"
+      ],
+      "eliminatedTeamIds": [
+        "switzerland"
       ]
     }
   ],

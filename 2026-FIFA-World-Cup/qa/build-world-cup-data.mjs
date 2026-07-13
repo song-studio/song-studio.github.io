@@ -11,8 +11,8 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-07-09T20:00:00+08:00';
-const todayBjt = '2026-07-09';
+const asOf = '2026-07-13T15:01:52+08:00';
+const todayBjt = '2026-07-13';
 const earlyMorningCutoffBjt = '06:00';
 
 const index = fs.readFileSync(indexPath, 'utf8');
@@ -192,7 +192,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 20:00 BJT on July 9. For shootouts, winner is
+// Final scores verified through 15:01 BJT on July 13. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -219,6 +219,10 @@ const knockoutResults = new Map([
   [94, { homeScore:1, awayScore:4, winner:'away', decidedBy:'regular' }],
   [95, { homeScore:3, awayScore:2, winner:'home', decidedBy:'regular' }],
   [96, { homeScore:0, awayScore:0, winner:'home', decidedBy:'penalties', homeShootoutScore:4, awayShootoutScore:3 }],
+  [97, { homeScore:2, awayScore:0, winner:'home', decidedBy:'regular' }],
+  [98, { homeScore:2, awayScore:1, winner:'home', decidedBy:'regular' }],
+  [99, { homeScore:1, awayScore:2, winner:'away', decidedBy:'extra-time' }],
+  [100, { homeScore:3, awayScore:1, winner:'home', decidedBy:'extra-time' }],
 ]);
 
 const scheduleOverrides = new Map([
@@ -334,12 +338,30 @@ knockoutRounds[2].matches.forEach((match, matchIndex) => {
   assignTeam('away', awaySource);
 });
 
+const quarterFinals = knockoutRounds[2].matches;
+quarterFinals.forEach(applyKnownResult);
+quarterFinals.filter(match => match.status === 'finished').forEach(match => winnerByMatchId.set(match.id, match.qualifiedTeamIds[0]));
+const semiFinalSources = [[97,98],[99,100]];
+knockoutRounds[3].matches.forEach((match, matchIndex) => {
+  const [homeSource, awaySource] = semiFinalSources[matchIndex];
+  const assignTeam = (side, sourceId) => {
+    const teamId = winnerByMatchId.get(sourceId);
+    if (!teamId) return;
+    const team = byId.get(teamId);
+    match[`${side}Id`] = teamId;
+    match[`${side}Zh`] = team.name;
+    match[`${side}En`] = team.englishName;
+  };
+  assignTeam('home', homeSource);
+  assignTeam('away', awaySource);
+});
+
 const knockoutData = {
   updatedAt: todayBjt,
   asOf,
   timezone: 'Asia/Shanghai',
-  stage: 'quarter-finals',
-  note: '截至北京时间 7 月 9 日 20:00，16 强赛全部结束；法国、摩洛哥、西班牙、比利时、挪威、英格兰、阿根廷和瑞士晋级八强。',
+  stage: 'semi-finals',
+  note: '截至北京时间 7 月 13 日 15:01，八强赛全部结束；法国、西班牙、英格兰和阿根廷晋级四强，半决赛对阵为法国 vs 西班牙、英格兰 vs 阿根廷。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -360,6 +382,14 @@ const knockoutData = {
     {
       name: 'SB Nation Round of 16 scores',
       url: 'https://www.sbnation.com/soccer/1121525/2026-world-cup-round-of-16-scores-schedule',
+    },
+    {
+      name: 'AP Argentina 3-1 Switzerland quarter-final report',
+      url: 'https://apnews.com/article/world-cup-argentina-switzerland-score-d47ccb4ac5b3af67eca1f82228155174',
+    },
+    {
+      name: 'FourFourTwo 2026 World Cup scores and fixtures',
+      url: 'https://www.fourfourtwo.com/competition/all-of-the-world-cup-scores-so-far-at-the-2026-tournament',
     },
   ],
   qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],
