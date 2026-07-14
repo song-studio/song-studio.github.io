@@ -1995,7 +1995,7 @@ function renderNavTabs(){
   const nav_t=T('nav');
   const container=document.getElementById('nav-tabs');
   var navHtml='';
-  var navFns=["goHome()","goPage('groups')","goPage('fav')","goPage('knockout')","goPage('venues')","goPage('history')","goPage('hot')"];
+  var navFns=["goHome()","goPage('groups')","goPage('fav')","goPage('knockout')","goPage('venues')","goPage('history')","goPage('hot')","goPage('aipred')"];
   for(var i=0;i<tabs.length;i++){
     var t=tabs[i];
     var active=i===0?' active':'';
@@ -2891,7 +2891,7 @@ function goPage(n){
     document.documentElement.scrollTop=0;
     document.body.scrollTop=0;
     window.scroll(0,0);
-    document.getElementById('ai-content').innerHTML='<div style="text-align:center;padding:60px 20px"><div style="font-size:48px;margin-bottom:16px">🔧</div><div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px">'+(lang!=='en'?'功能升级中':'Under Maintenance')+'</div><div style="font-size:12px;color:var(--text-muted)">'+(lang!=='en'?'AI预测功能暂时关闭，请关注其他栏目':'AI prediction is temporarily offline. Check out other sections!')+'</div></div>';
+    renderAIPred();
   }
 }
 
