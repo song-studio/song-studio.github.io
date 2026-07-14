@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-13",
-  "asOf": "2026-07-13T15:01:52+08:00",
+  "updatedAt": "2026-07-14",
+  "asOf": "2026-07-14T22:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "mode": "manual-results-feed",
   "note": "matches 保存 72 场完整小组赛；results 保存已结束的淘汰赛；today 保存中国用户的卡牌赛今日窗口：北京时间当天比赛，以及次日 06:00 前开球的深夜/凌晨比赛。winner: home=主队晋级、away=客队晋级、draw=平局。",
@@ -18,11 +18,29 @@
       "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
     }
   ],
-  "today": [],
+  "today": [
+    {
+      "id": "knockout-101",
+      "matchId": 101,
+      "stage": "semi-finals",
+      "home": "法国",
+      "away": "西班牙",
+      "homeEn": "France",
+      "awayEn": "Spain",
+      "homeId": "france",
+      "awayId": "spain",
+      "date": "2026-07-15",
+      "time": "03:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "AT&T Stadium",
+      "city": "达拉斯",
+      "status": "scheduled"
+    }
+  ],
   "todayGameWindow": {
-    "date": "2026-07-13",
+    "date": "2026-07-14",
     "timezone": "Asia/Shanghai",
-    "includesEarlyMorningUntil": "2026-07-14T06:00:00+08:00",
+    "includesEarlyMorningUntil": "2026-07-15T06:00:00+08:00",
     "note": "用于卡牌赛预测入口；中国晚间用户可提前预测次日清晨比赛。"
   },
   "results": [

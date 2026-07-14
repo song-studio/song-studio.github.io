@@ -11,8 +11,8 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-07-13T15:01:52+08:00';
-const todayBjt = '2026-07-13';
+const asOf = '2026-07-14T22:00:00+08:00';
+const todayBjt = '2026-07-14';
 const earlyMorningCutoffBjt = '06:00';
 
 const index = fs.readFileSync(indexPath, 'utf8');
@@ -192,7 +192,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 15:01 BJT on July 13. For shootouts, winner is
+// Final scores verified through 22:00 BJT on July 14. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -361,7 +361,7 @@ const knockoutData = {
   asOf,
   timezone: 'Asia/Shanghai',
   stage: 'semi-finals',
-  note: '截至北京时间 7 月 13 日 15:01，八强赛全部结束；法国、西班牙、英格兰和阿根廷晋级四强，半决赛对阵为法国 vs 西班牙、英格兰 vs 阿根廷。',
+  note: '截至北京时间 7 月 14 日 22:00，八强赛全部结束且暂无新增完赛比分；法国 vs 西班牙半决赛进入中国用户今晚/明晨卡牌预测窗口，英格兰 vs 阿根廷仍为 7 月 16 日 03:00。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
