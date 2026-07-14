@@ -584,10 +584,13 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
 .event-hub{margin:26px 0 24px;padding:18px;border-radius:18px;background:linear-gradient(145deg,rgba(12,28,58,.9),rgba(4,15,34,.94));border:1px solid rgba(245,197,24,.18)}
 .event-hub-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:14px}
 .event-hub-title{font-size:20px;font-weight:900}.event-hub-asof{font-size:11px;color:var(--text-muted);text-align:right}
-.event-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:14px}
+.event-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-bottom:14px}
 .event-tab{min-height:42px;border:1px solid var(--border);border-radius:11px;background:rgba(255,255,255,.035);color:var(--text-dim);font:700 12px var(--fn);cursor:pointer;padding:7px 5px}
 .event-tab.active{color:var(--gold);border-color:rgba(245,197,24,.38);background:rgba(245,197,24,.1)}
 .event-tab:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.knockout-spotlight{position:relative;margin:28px 0 30px;padding:18px;border-radius:24px;overflow:hidden;background:radial-gradient(circle at 12% 0,rgba(245,197,24,.22),transparent 28%),radial-gradient(circle at 94% 18%,rgba(96,165,250,.18),transparent 30%),linear-gradient(145deg,rgba(15,34,68,.96),rgba(4,14,34,.98));border:1px solid rgba(245,197,24,.26);box-shadow:0 24px 70px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.10)}
+.knockout-spotlight::before{content:"";position:absolute;inset:-1px;pointer-events:none;background:linear-gradient(120deg,transparent,rgba(245,197,24,.16),transparent);opacity:.58}.ko-live-top,.ko-live-grid,.ko-live-actions{position:relative;z-index:1}.ko-live-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:16px}.ko-live-kicker{font-size:10px;font-weight:900;letter-spacing:2.4px;color:var(--gold);text-transform:uppercase;margin-bottom:5px}.ko-live-title{font-size:clamp(28px,7vw,48px);line-height:1;font-weight:950;letter-spacing:-1.2px;color:#fff;text-shadow:0 0 34px rgba(245,197,24,.16)}.ko-live-sub{font-size:13px;color:var(--text-dim);line-height:1.7;margin-top:8px;max-width:520px}.ko-live-asof{border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 10px;color:var(--text-muted);font-size:10px;font-weight:800;background:rgba(255,255,255,.04);white-space:nowrap}.ko-live-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(210px,.8fr);gap:12px}.ko-live-main{border-radius:20px;padding:16px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.12)}.ko-live-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(34,197,94,.32);background:rgba(34,197,94,.12);color:#86efac;border-radius:999px;padding:5px 9px;font-size:10px;font-weight:900;margin-bottom:12px}.ko-live-match{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:8px 0 12px}.ko-live-team{min-width:0;font-size:18px;font-weight:950;color:#fff;line-height:1.16}.ko-live-team.right{text-align:right}.ko-live-vs{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:12px;font-weight:950;border:1px solid rgba(245,197,24,.34);background:rgba(245,197,24,.10);box-shadow:0 0 24px rgba(245,197,24,.12)}.ko-live-meta{font-size:12px;color:var(--text-dim);line-height:1.75}.ko-live-side{display:grid;gap:10px}.ko-live-statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.ko-live-stat{border:1px solid rgba(255,255,255,.10);border-radius:15px;padding:11px 9px;background:rgba(255,255,255,.04)}.ko-live-stat b{display:block;color:var(--gold);font-size:22px;line-height:1;font-weight:950}.ko-live-stat span{display:block;margin-top:5px;color:var(--text-muted);font-size:10px;font-weight:800}.ko-live-mini{border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:12px;background:rgba(255,255,255,.035)}.ko-live-mini-title{font-size:11px;font-weight:900;color:var(--text-dim);margin-bottom:8px}.ko-live-mini-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 0;border-top:1px solid rgba(255,255,255,.07);font-size:12px;color:var(--text-dim)}.ko-live-mini-row:first-of-type{border-top:0}.ko-live-mini-row b{color:#fff}.ko-live-result{color:var(--gold);font-weight:950;white-space:nowrap}.ko-live-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.ko-live-btn{border:1px solid rgba(245,197,24,.38);border-radius:999px;padding:10px 14px;background:rgba(245,197,24,.12);color:#fff3c8;font:900 12px var(--fn);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.ko-live-btn.secondary{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.055);color:var(--text)}.ko-live-btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+@media(max-width:620px){.ko-live-top{flex-direction:column}.ko-live-asof{white-space:normal}.ko-live-grid{grid-template-columns:1fr}.ko-live-match{gap:7px}.ko-live-team{font-size:16px}.ko-live-vs{width:40px;height:40px}.ko-live-statrow{grid-template-columns:repeat(3,1fr)}.ko-live-actions .ko-live-btn{flex:1 1 auto;text-align:center}}
 .event-list{display:flex;flex-direction:column;gap:8px}.event-match{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:10px;padding:11px 12px;border-radius:11px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.055)}
 .event-meta{font-size:11px;color:var(--text-muted);line-height:1.45}.event-teams{min-width:0;font-size:13px;font-weight:700}.event-score{font-size:17px;font-weight:900;color:var(--gold);white-space:nowrap}.event-status{font-size:11px;color:var(--text-muted);white-space:nowrap}
 .event-group{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02)}.event-group+.event-group{margin-top:8px}.event-group summary{cursor:pointer;padding:12px 14px;font-size:13px;font-weight:800;color:var(--text);display:flex;justify-content:space-between;list-style:none}.event-group summary::-webkit-details-marker{display:none}.event-group-body{padding:0 9px 9px}
@@ -694,12 +697,11 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
     <div class="ov-card glass"><div class="ov-icon"><svg><use href="#I-trophy"/></svg></div><div><div class="ov-num">7/20</div><div class="ov-lbl" id="ov4"></div></div></div>
   </div>
   <section class="event-hub" id="event-hub" aria-labelledby="event-hub-title">
-    <div class="event-hub-head"><div><div class="event-hub-title" id="event-hub-title">赛事中心</div><div class="sec-sub">比分、赛程、积分榜与淘汰赛</div></div><div class="event-hub-asof" id="event-hub-asof">正在读取最新赛果…</div></div>
+    <div class="event-hub-head"><div><div class="event-hub-title" id="event-hub-title">赛事中心</div><div class="sec-sub">比分、赛程与小组积分</div></div><div class="event-hub-asof" id="event-hub-asof">正在读取最新赛果…</div></div>
     <div class="event-tabs" role="tablist" aria-label="赛事中心栏目">
       <button class="event-tab active" type="button" data-event-tab="today" onclick="renderEventHub('today')">今日比赛</button>
       <button class="event-tab" type="button" data-event-tab="all" onclick="renderEventHub('all')">完整赛程</button>
       <button class="event-tab" type="button" data-event-tab="standings" onclick="renderEventHub('standings')">小组积分榜</button>
-      <button class="event-tab" type="button" onclick="goPage('knockout')">淘汰赛</button>
     </div>
     <div id="event-hub-content" aria-live="polite"><div class="event-status">加载中…</div></div>
   </section>
@@ -707,9 +709,9 @@ footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);fo
     <svg width="22" height="22"><use href="#I-star-fill"/></svg>
     <div class="fav-banner-text" id="fav-banner-el"></div>
   </div>
+  <div id="ko-home-entry"></div>
   <div class="sec-head"><div class="sec-title" id="home-g-t"></div><div class="sec-sub" id="home-g-s"></div></div>
   <div class="groups-grid stagger" id="gg-home"></div>
-  <div id="ko-home-entry" style="margin-top:20px"></div>
   <div class="sec-head" style="margin-top:28px"><div class="sec-title" id="home-more"></div></div>
   <div class="extra-cards stagger" id="extra-home"></div>
   <!-- AI功能区 -->
@@ -897,7 +899,7 @@ zh:{
   prog:'赛程确认进度',
   ov:['已确认场次','待确认场次','揭幕战','决赛日'],
   fav_banner:'<b>我的赛程收藏</b>收藏感兴趣的球队，生成专属赛程表 →',
-  g_title:'12 个小组',g_sub:'点击小组查看赛程 · 点击球队查看详情',
+  g_title:'小组赛归档',g_sub:'小组赛已结束：保留 12 个小组赛程、球队详情和积分资料。',
   more:'更多功能',
   back_home:'返回首页',back_groups:'返回小组列表',
   gp_title:'小组赛',gp_sub:'12个小组 · 72场 · 点击进入详情',
@@ -908,7 +910,7 @@ zh:{
   fav_empty_t:'还没有收藏任何球队',fav_empty_s:'进入小组赛 → 点击球队旁的 ☆ 图标开始收藏',
   fav_exp:'导出我的赛程',fav_share:'分享我的赛程',
   related:'相关赛程',
-  ko_t:'淘汰赛赛制',ko_s:'32强至决赛 · 2026年6月29日起（北京时间）',ko_entry_t:'🏆 淘汰赛',ko_entry_s:'32强→决赛 · 6月29日开战',
+  ko_t:'淘汰赛赛制',ko_s:'32强至决赛 · 2026年6月29日起（北京时间）',ko_entry_t:'🏆 淘汰赛独立看板',ko_entry_s:'四强进行中 · 半决赛、赛果和晋级路线集中查看',
   ko_stages:[
     ['32 强赛','6月29日 — 7月4日','16场 · 单场淘汰制 · 日期场馆已确认 ✅'],
     ['16 强赛','7月5日 — 7月8日','8场 · 单场淘汰制 · 日期场馆已确认 ✅'],
@@ -1001,7 +1003,7 @@ en:{
   prog:'Schedule Progress',
   ov:['Confirmed','Pending','Opening','Final'],
   fav_banner:'<b>My Schedule</b>Follow teams · Build your personal schedule →',
-  g_title:'12 Groups',g_sub:'Tap a group for schedule · Tap a team for details',
+  g_title:'Group Stage Archive',g_sub:'Group stage is complete: schedules, teams and standings remain here as reference.',
   more:'More',
   back_home:'Back to Home',back_groups:'Back to Groups',
   gp_title:'Group Stage',gp_sub:'12 groups · 72 matches · Tap to view',
@@ -1012,7 +1014,7 @@ en:{
   fav_empty_t:'No teams followed yet',fav_empty_s:'Go to Groups → tap ☆ next to any team',
   fav_exp:'Export My Schedule',fav_share:'Share My Schedule',
   related:'Related Matches',
-  ko_t:'Knockout Stage',ko_s:'Round of 32 to Final · From Jun 29, 2026 BJT',ko_entry_t:'🏆 Knockout',ko_entry_s:'32→Final · Starts Jun 29',
+  ko_t:'Knockout Stage',ko_s:'Round of 32 to Final · From Jun 29, 2026 BJT',ko_entry_t:'🏆 Knockout Hub',ko_entry_s:'Semi-finals live · results, route and matchday entry in one place',
   ko_stages:[
     ['Round of 32','Jun 29 — Jul 4','16 matches · Single elimination · ✅ Confirmed'],
     ['Round of 16','Jul 5 — Jul 8','8 matches · Single elimination · ✅ Confirmed'],
@@ -2064,15 +2066,58 @@ function renderExtra(){
 function renderKOEntry(){
   const el=document.getElementById('ko-home-entry');
   if(!el)return;
-  el.innerHTML=`
-    <div class="ko-home-card glass" onclick="goPage('knockout')">
-      <div class="ko-home-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M17 3H7l1 9a4 4 0 0 0 8 0l1-9Z"/></svg></div>
-      <div>
-        <div class="ko-home-title">${T('ko_entry_t')}</div>
-        <div class="ko-home-sub">${T('ko_entry_s')}</div>
+  const knockout=window.WC_KNOCKOUT;
+  const rounds=knockout&&Array.isArray(knockout.rounds)?knockout.rounds:[];
+  const semis=(rounds[3]&&rounds[3].matches)||[];
+  const results=[...(window.WC_DATA?.results||[])].filter(m=>String(m.id||'').startsWith('knockout-'));
+  const today=[...(window.WC_DATA?.today||[])];
+  const next=today[0]||semis.find(m=>m.status!=='finished')||null;
+  const asOf=(window.WC_DATA?.asOf||knockout?.asOf||'').replace('T',' ').replace('+08:00',' BJT');
+  const teamName=m=>lang==='en'?(m.homeEn||m.home||m.homePlaceholderEn):(m.homeZh||m.home||m.homePlaceholderZh);
+  const awayName=m=>lang==='en'?(m.awayEn||m.away||m.awayPlaceholderEn):(m.awayZh||m.away||m.awayPlaceholderZh);
+  const nextHome=next?(lang==='en'?(next.homeEn||next.homeZh||next.home):(next.home||next.homeZh||next.homePlaceholderZh)):(lang==='en'?'Semi-final':'半决赛');
+  const nextAway=next?(lang==='en'?(next.awayEn||next.awayZh||next.away):(next.away||next.awayZh||next.awayPlaceholderZh)):(lang==='en'?'Match':'对阵');
+  const nextDate=next?(next.date?next.date.slice(5).replace('-','/'):(next.dateLabelZh||next.dateLabelEn||'')):'';
+  const nextTime=next?(next.time||next.timeBjt||''):'';
+  const nextVenue=next?`${next.venue||''}${next.city||next.cityZh||next.cityEn?' · '+(lang==='en'?(next.cityEn||next.city||next.cityZh):(next.city||next.cityZh||next.cityEn)):''}`:'';
+  const recent=results.slice(-4).reverse();
+  const resultLine=m=>{
+    const detail=m.decidedBy==='penalties'?(lang==='en'?` · pens ${m.homeShootoutScore}-${m.awayShootoutScore}`:` · 点球 ${m.homeShootoutScore}-${m.awayShootoutScore}`):m.decidedBy==='extra-time'?(lang==='en'?' · AET':' · 加时'):'';
+    const h=lang==='en'?(m.homeEn||m.home):m.home;
+    const a=lang==='en'?(m.awayEn||m.away):m.away;
+    return `${h} <span class="ko-live-result">${m.homeScore}-${m.awayScore}</span> ${a}${detail}`;
+  };
+  const semiRows=semis.map(m=>`<div class="ko-live-mini-row"><span>${lang==='en'?(m.dateLabelEn||m.dateLabelZh||''):(m.dateLabelZh||m.dateLabelEn||'')} ${m.timeBjt||''}</span><b>${teamName(m)} vs ${awayName(m)}</b></div>`).join('');
+  const recentRows=recent.map(m=>`<div class="ko-live-mini-row"><span>${m.date?m.date.slice(5).replace('-','/'):''}</span><b>${resultLine(m)}</b></div>`).join('');
+  const liveLabel=lang==='en'?'Tonight / early morning':'今晚/明晨';
+  const title=lang==='en'?'Knockout Takes Over':'淘汰赛单独看';
+  const sub=lang==='en'?'Group stage is archived below. Semi-finals, latest results and the road to the trophy now live in one dedicated hub.':'小组赛已经归档在下方。半决赛、最近赛果、晋级路线现在集中在这里看。';
+  const matchMeta=next?`${nextDate} ${nextTime} ${lang==='en'?'BJT':'北京时间'}${nextVenue?' · '+nextVenue:''}`:(lang==='en'?'Bracket is ready':'淘汰赛树已就绪');
+  el.innerHTML=`<section class="knockout-spotlight" aria-label="${lang==='en'?'Knockout hub':'淘汰赛看板'}">
+    <div class="ko-live-top">
+      <div><div class="ko-live-kicker">KNOCKOUT LIVE</div><div class="ko-live-title">${title}</div><div class="ko-live-sub">${sub}</div></div>
+      <div class="ko-live-asof">${asOf?(lang==='en'?'Updated ':'更新至 ')+asOf:(lang==='en'?'Live data':'实时数据')}</div>
+    </div>
+    <div class="ko-live-grid">
+      <div class="ko-live-main">
+        <div class="ko-live-pill"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 9px #22c55e"></span>${liveLabel}</div>
+        <div class="ko-live-match"><div class="ko-live-team">${wcEscape(nextHome)}</div><div class="ko-live-vs">VS</div><div class="ko-live-team right">${wcEscape(nextAway)}</div></div>
+        <div class="ko-live-meta">${wcEscape(matchMeta)}</div>
       </div>
-      <div class="ko-home-arrow">›</div>
-    </div>`;
+      <div class="ko-live-side">
+        <div class="ko-live-statrow">
+          <div class="ko-live-stat"><b>${results.length}</b><span>${lang==='en'?'KO results':'淘汰赛赛果'}</span></div>
+          <div class="ko-live-stat"><b>4</b><span>${lang==='en'?'Semi-finalists':'四强球队'}</span></div>
+          <div class="ko-live-stat"><b>2</b><span>${lang==='en'?'Semis':'半决赛'}</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ko-live-grid" style="margin-top:12px">
+      <div class="ko-live-mini"><div class="ko-live-mini-title">${lang==='en'?'Semi-final route':'四强对阵'}</div>${semiRows||'<div class="ko-live-mini-row"><span>--</span><b>TBD</b></div>'}</div>
+      <div class="ko-live-mini"><div class="ko-live-mini-title">${lang==='en'?'Latest knockout results':'最近淘汰赛赛果'}</div>${recentRows||'<div class="ko-live-mini-row"><span>--</span><b>--</b></div>'}</div>
+    </div>
+    <div class="ko-live-actions"><button class="ko-live-btn" type="button" onclick="goPage('knockout')">${lang==='en'?'Open bracket':'查看淘汰赛树'}</button><a class="ko-live-btn secondary" href="fan-cards.html#battle">${lang==='en'?'Fan card prediction':'卡牌赛预测入口'}</a></div>
+  </section>`;
 }
 
 function renderFilterExport(){
@@ -3925,10 +3970,9 @@ function renderEventHub(tab){
   var content=document.getElementById('event-hub-content');
   if(!content)return;
   document.getElementById('event-hub-title').textContent=lang==='en'?'Match Centre':'赛事中心';
-  document.querySelector('#event-hub-title + .sec-sub').textContent=lang==='en'?'Scores, fixtures, standings and knockouts':'比分、赛程、积分榜与淘汰赛';
+  document.querySelector('#event-hub-title + .sec-sub').textContent=lang==='en'?'Scores, fixtures and group standings':'比分、赛程与小组积分';
   var tabLabels=lang==='en'?['Today','Full schedule','Standings']:['今日比赛','完整赛程','小组积分榜'];
   document.querySelectorAll('[data-event-tab]').forEach(function(button,index){button.textContent=tabLabels[index];});
-  document.querySelector('.event-tabs button:last-child').textContent=lang==='en'?'Knockout':'淘汰赛';
   document.querySelectorAll('[data-event-tab]').forEach(function(button){button.classList.toggle('active',button.dataset.eventTab===window.WC_ACTIVE_TAB);});
   var data=window.WC_DATA;
   if(data.asOf)document.getElementById('event-hub-asof').textContent=(lang==='en'?'Updated ':'更新至 ')+data.asOf.replace('T',' ').replace('+08:00',' BJT');
@@ -3962,6 +4006,7 @@ function applyTournamentData(matchesData,standingsData,knockoutData){
   document.querySelector('.prog-fill').style.width=(finished/72*100)+'%';
   document.getElementById('event-hub-asof').textContent=(lang==='en'?'Updated ':'更新至 ')+matchesData.asOf.replace('T',' ').replace('+08:00',' BJT');
   renderEventHub(window.WC_ACTIVE_TAB);
+  renderKOEntry();
   if(document.getElementById('page-knockout').classList.contains('active'))renderKO();
   if(document.getElementById('page-group-detail').classList.contains('active')){var letter=document.querySelector('.gd-letter');if(letter)openGroup(letter.textContent.trim());}
 }
