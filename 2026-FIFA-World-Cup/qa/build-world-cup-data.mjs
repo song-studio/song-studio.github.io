@@ -11,8 +11,9 @@ const matchesPath = path.join(root, 'data/matches.json');
 const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
-const asOf = '2026-07-14T22:00:00+08:00';
-const todayBjt = '2026-07-14';
+const cardStatusPath = path.join(root, 'data/card-status.json');
+const asOf = '2026-07-15T09:00:00+08:00';
+const todayBjt = '2026-07-15';
 const earlyMorningCutoffBjt = '06:00';
 
 const index = fs.readFileSync(indexPath, 'utf8');
@@ -192,7 +193,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 22:00 BJT on July 14. For shootouts, winner is
+// Final scores verified through 09:00 BJT on July 15. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -223,6 +224,7 @@ const knockoutResults = new Map([
   [98, { homeScore:2, awayScore:1, winner:'home', decidedBy:'regular' }],
   [99, { homeScore:1, awayScore:2, winner:'away', decidedBy:'extra-time' }],
   [100, { homeScore:3, awayScore:1, winner:'home', decidedBy:'extra-time' }],
+  [101, { homeScore:0, awayScore:2, winner:'away', decidedBy:'regular' }],
 ]);
 
 const scheduleOverrides = new Map([
@@ -305,6 +307,7 @@ const applyKnownResult = match => {
 const roundOf32 = knockoutRounds[0].matches;
 roundOf32.forEach(applyKnownResult);
 const winnerByMatchId = new Map(roundOf32.filter(match => match.status === 'finished').map(match => [match.id, match.qualifiedTeamIds[0]]));
+const loserByMatchId = new Map(roundOf32.filter(match => match.status === 'finished').map(match => [match.id, match.eliminatedTeamIds[0]]));
 const roundOf16Sources = [[74,77],[73,75],[76,78],[79,80],[83,84],[81,82],[86,88],[85,87]];
 knockoutRounds[1].matches.forEach((match, matchIndex) => {
   const [homeSource, awaySource] = roundOf16Sources[matchIndex];
@@ -322,7 +325,10 @@ knockoutRounds[1].matches.forEach((match, matchIndex) => {
 
 const roundOf16 = knockoutRounds[1].matches;
 roundOf16.forEach(applyKnownResult);
-roundOf16.filter(match => match.status === 'finished').forEach(match => winnerByMatchId.set(match.id, match.qualifiedTeamIds[0]));
+roundOf16.filter(match => match.status === 'finished').forEach(match => {
+  winnerByMatchId.set(match.id, match.qualifiedTeamIds[0]);
+  loserByMatchId.set(match.id, match.eliminatedTeamIds[0]);
+});
 const quarterFinalSources = [[89,90],[93,94],[91,92],[95,96]];
 knockoutRounds[2].matches.forEach((match, matchIndex) => {
   const [homeSource, awaySource] = quarterFinalSources[matchIndex];
@@ -340,7 +346,10 @@ knockoutRounds[2].matches.forEach((match, matchIndex) => {
 
 const quarterFinals = knockoutRounds[2].matches;
 quarterFinals.forEach(applyKnownResult);
-quarterFinals.filter(match => match.status === 'finished').forEach(match => winnerByMatchId.set(match.id, match.qualifiedTeamIds[0]));
+quarterFinals.filter(match => match.status === 'finished').forEach(match => {
+  winnerByMatchId.set(match.id, match.qualifiedTeamIds[0]);
+  loserByMatchId.set(match.id, match.eliminatedTeamIds[0]);
+});
 const semiFinalSources = [[97,98],[99,100]];
 knockoutRounds[3].matches.forEach((match, matchIndex) => {
   const [homeSource, awaySource] = semiFinalSources[matchIndex];
@@ -356,12 +365,79 @@ knockoutRounds[3].matches.forEach((match, matchIndex) => {
   assignTeam('away', awaySource);
 });
 
+const semiFinals = knockoutRounds[3].matches;
+semiFinals.forEach(applyKnownResult);
+semiFinals.filter(match => match.status === 'finished').forEach(match => {
+  winnerByMatchId.set(match.id, match.qualifiedTeamIds[0]);
+  loserByMatchId.set(match.id, match.eliminatedTeamIds[0]);
+});
+
+const assignKnockoutTeam = (match, side, teamId) => {
+  if (!match || !teamId) return;
+  const team = byId.get(teamId);
+  if (!team) return;
+  match[`${side}Id`] = teamId;
+  match[`${side}Zh`] = team.name;
+  match[`${side}En`] = team.englishName;
+};
+const thirdPlaceMatch = knockoutRounds[4].matches[0];
+assignKnockoutTeam(thirdPlaceMatch, 'home', loserByMatchId.get(101));
+assignKnockoutTeam(thirdPlaceMatch, 'away', loserByMatchId.get(102));
+const finalMatch = knockoutRounds[5].matches[0];
+assignKnockoutTeam(finalMatch, 'home', winnerByMatchId.get(101));
+assignKnockoutTeam(finalMatch, 'away', winnerByMatchId.get(102));
+
+const allKnockoutMatches = knockoutRounds.flatMap(round => round.matches);
+const currentMatchIdsByTeam = new Map();
+for (const match of allKnockoutMatches.filter(match => match.status !== 'finished' && (match.homeId || match.awayId))) {
+  if (match.homeId) currentMatchIdsByTeam.set(match.homeId, match.id);
+  if (match.awayId) currentMatchIdsByTeam.set(match.awayId, match.id);
+}
+const statusForStage = stage => {
+  if (stage === 'round-of-32') return { stage:'32强', state:'止步32强', badge:'淘汰', alive:false };
+  if (stage === 'round-of-16') return { stage:'16强', state:'止步16强', badge:'淘汰', alive:false };
+  if (stage === 'quarter-finals') return { stage:'八强', state:'止步八强', badge:'淘汰', alive:false };
+  if (stage === 'semi-finals') return { stage:'三四名赛', state:'待战季军赛', badge:'季军赛', alive:true };
+  if (stage === 'third-place') return { stage:'三四名赛', state:'季军赛完赛', badge:'收官', alive:false };
+  if (stage === 'final') return { stage:'决赛', state:'亚军', badge:'亚军', alive:false };
+  return { stage:'淘汰赛', state:'已淘汰', badge:'淘汰', alive:false };
+};
+const cardStatusData = {};
+for (const team of cards.teams) {
+  if (!team.qualified) {
+    cardStatusData[team.id] = { team: team.name, stage:'场外', state:'场外彩蛋', badge:'彩蛋', alive:false, updatedAt: todayBjt };
+  } else if (!roundOf32Pairs.flat().includes(team.id)) {
+    cardStatusData[team.id] = { team: team.name, stage:'小组赛', state:'小组出局', badge:'出局', alive:false, updatedAt: todayBjt };
+  } else {
+    cardStatusData[team.id] = { team: team.name, stage:'淘汰赛', state:'晋级中', badge:'晋级', alive:true, updatedAt: todayBjt };
+  }
+}
+for (const match of allKnockoutMatches.filter(match => match.status === 'finished')) {
+  (match.eliminatedTeamIds || []).forEach(teamId => {
+    const team = byId.get(teamId);
+    if (!team) return;
+    cardStatusData[teamId] = { team: team.name, ...statusForStage(match.stage), updatedAt: todayBjt };
+  });
+}
+for (const [teamId, matchId] of currentMatchIdsByTeam.entries()) {
+  const team = byId.get(teamId);
+  const match = allKnockoutMatches.find(item => item.id === matchId);
+  if (!team || !match) continue;
+  if (match.stage === 'final') {
+    cardStatusData[teamId] = { team: team.name, stage:'决赛', state:'晋级决赛', badge:'决赛', alive:true, updatedAt: todayBjt };
+  } else if (match.stage === 'third-place') {
+    cardStatusData[teamId] = { team: team.name, stage:'三四名赛', state:'待战季军赛', badge:'季军赛', alive:true, updatedAt: todayBjt };
+  } else if (match.stage === 'semi-finals') {
+    cardStatusData[teamId] = { team: team.name, stage:'半决赛', state:'半决赛待战', badge:'四强', alive:true, updatedAt: todayBjt };
+  }
+}
+
 const knockoutData = {
   updatedAt: todayBjt,
   asOf,
   timezone: 'Asia/Shanghai',
   stage: 'semi-finals',
-  note: '截至北京时间 7 月 14 日 22:00，八强赛全部结束且暂无新增完赛比分；法国 vs 西班牙半决赛进入中国用户今晚/明晨卡牌预测窗口，英格兰 vs 阿根廷仍为 7 月 16 日 03:00。',
+  note: '截至北京时间 7 月 15 日 09:00，法国 0-2 西班牙，西班牙率先晋级决赛，法国进入三四名赛；英格兰 vs 阿根廷仍为 7 月 16 日 03:00。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -390,6 +466,14 @@ const knockoutData = {
     {
       name: 'FourFourTwo 2026 World Cup scores and fixtures',
       url: 'https://www.fourfourtwo.com/competition/all-of-the-world-cup-scores-so-far-at-the-2026-tournament',
+    },
+    {
+      name: 'AP Spain 2-0 France semifinal report',
+      url: 'https://apnews.com/article/87fb7740fa552edf4bfd28d0e8727c23',
+    },
+    {
+      name: 'Guardian France 0-2 Spain semifinal live report',
+      url: 'https://www.theguardian.com/football/live/2026/jul/14/france-v-spain-world-cup-2026-semi-final-live',
     },
   ],
   qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],
@@ -430,4 +514,5 @@ matchesData.today = knockoutMatchesForCards.filter(match => match.status !== 'fi
 fs.writeFileSync(matchesPath, `${JSON.stringify(matchesData, null, 2)}\n`);
 fs.writeFileSync(standingsPath, `${JSON.stringify(standingsData, null, 2)}\n`);
 fs.writeFileSync(knockoutPath, `${JSON.stringify(knockoutData, null, 2)}\n`);
-console.log(`Wrote ${matches.length} matches (${Object.keys(results).length} finished), 12 group tables, and ${roundOf32Pairs.length} Round of 32 fixtures.`);
+fs.writeFileSync(cardStatusPath, `${JSON.stringify(cardStatusData, null, 2)}\n`);
+console.log(`Wrote ${matches.length} matches (${Object.keys(results).length} finished), 12 group tables, ${roundOf32Pairs.length} Round of 32 fixtures, and ${Object.keys(cardStatusData).length} card statuses.`);

@@ -5,6 +5,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 FAN="$ROOT/fan-cards.html"
 SHARE="$ROOT/share-card.html"
 MATCHES="$ROOT/data/matches.json"
+CARD_STATUS="$ROOT/data/card-status.json"
 VALIDATOR="$ROOT/qa/validate-world-cup-data.mjs"
 
 pass() { printf "✅ %s\n" "$1"; }
@@ -61,6 +62,23 @@ if [[ "$TODAY_COUNT" -ge 0 ]]; then
 else
   fail "matches.json 缺少 today 数组"
 fi
+
+node - "$MATCHES" "$CARD_STATUS" <<'NODE'
+const fs = require('fs');
+const matches = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
+const status = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
+const fail = message => { console.error(message); process.exit(1); };
+if (!matches.results.some(match => match.id === 'knockout-101' && match.homeScore === 0 && match.awayScore === 2 && match.winner === 'away')) {
+  fail('缺少 M101 法国 0-2 西班牙半决赛赛果');
+}
+if (!matches.today.some(match => match.id === 'knockout-102' && match.homeId === 'england' && match.awayId === 'argentina')) {
+  fail('today 未开放英格兰 vs 阿根廷预测窗口');
+}
+if (status.spain?.stage !== '决赛' || status.france?.stage !== '三四名赛') {
+  fail('卡牌状态未同步西班牙决赛 / 法国三四名赛');
+}
+NODE
+pass "半决赛比分、今日预测窗口与卡牌状态同步"
 
 # 6) Full schedule, standings, team IDs, scores, and inline script syntax
 if node "$VALIDATOR"; then

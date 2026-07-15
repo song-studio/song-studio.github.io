@@ -1,394 +1,394 @@
 {
   "algeria": {
     "team": "阿尔及利亚",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "argentina": {
     "team": "阿根廷",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
+    "stage": "半决赛",
+    "state": "半决赛待战",
+    "badge": "四强",
     "alive": true,
-    "updatedAt": "2026-05-18"
+    "updatedAt": "2026-07-15"
   },
   "egypt": {
     "team": "埃及",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "16强",
+    "state": "止步16强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "austria": {
     "team": "奥地利",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "australia": {
     "team": "澳大利亚",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "paraguay": {
     "team": "巴拉圭",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "16强",
+    "state": "止步16强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "panama": {
     "team": "巴拿马",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "brazil": {
     "team": "巴西",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "16强",
+    "state": "止步16强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "belgium": {
     "team": "比利时",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "八强",
+    "state": "止步八强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "bosnia-herzegovina": {
     "team": "波黑",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "germany": {
     "team": "德国",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "ecuador": {
     "team": "厄瓜多尔",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "france": {
     "team": "法国",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
+    "stage": "三四名赛",
+    "state": "待战季军赛",
+    "badge": "季军赛",
     "alive": true,
-    "updatedAt": "2026-05-18"
+    "updatedAt": "2026-07-15"
   },
   "cabo-verde": {
     "team": "佛得角",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "dr-congo": {
     "team": "刚果（金）",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "colombia": {
     "team": "哥伦比亚",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "16强",
+    "state": "止步16强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "haiti": {
     "team": "海地",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "korea-republic": {
     "team": "韩国",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "netherlands": {
     "team": "荷兰",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "canada": {
     "team": "加拿大",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "16强",
+    "state": "止步16强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "ghana": {
     "team": "加纳",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "czechia": {
     "team": "捷克",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "qatar": {
     "team": "卡塔尔",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "ivory-coast": {
     "team": "科特迪瓦",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "croatia": {
     "team": "克罗地亚",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "curacao": {
     "team": "库拉索",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "united-states": {
     "team": "美国",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "16强",
+    "state": "止步16强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "morocco": {
     "team": "摩洛哥",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "八强",
+    "state": "止步八强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "mexico": {
     "team": "墨西哥",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "16强",
+    "state": "止步16强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "south-africa": {
     "team": "南非",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "norway": {
     "team": "挪威",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "八强",
+    "state": "止步八强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "portugal": {
     "team": "葡萄牙",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "16强",
+    "state": "止步16强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "japan": {
     "team": "日本",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "sweden": {
     "team": "瑞典",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "switzerland": {
     "team": "瑞士",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "八强",
+    "state": "止步八强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "senegal": {
     "team": "塞内加尔",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "32强",
+    "state": "止步32强",
+    "badge": "淘汰",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "saudi-arabia": {
     "team": "沙特阿拉伯",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "scotland": {
     "team": "苏格兰",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "tunisia": {
     "team": "突尼斯",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "turkey": {
     "team": "土耳其",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "uruguay": {
     "team": "乌拉圭",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "uzbekistan": {
     "team": "乌兹别克斯坦",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "spain": {
     "team": "西班牙",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
+    "stage": "决赛",
+    "state": "晋级决赛",
+    "badge": "决赛",
     "alive": true,
-    "updatedAt": "2026-05-18"
+    "updatedAt": "2026-07-15"
   },
   "new-zealand": {
     "team": "新西兰",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "iraq": {
     "team": "伊拉克",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "iran": {
     "team": "伊朗",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "england": {
     "team": "英格兰",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
+    "stage": "半决赛",
+    "state": "半决赛待战",
+    "badge": "四强",
     "alive": true,
-    "updatedAt": "2026-05-18"
+    "updatedAt": "2026-07-15"
   },
   "jordan": {
     "team": "约旦",
-    "stage": "开幕前",
-    "state": "待出征",
-    "badge": "本命候选",
-    "alive": true,
-    "updatedAt": "2026-05-18"
+    "stage": "小组赛",
+    "state": "小组出局",
+    "badge": "出局",
+    "alive": false,
+    "updatedAt": "2026-07-15"
   },
   "china": {
     "team": "中国",
-    "stage": "开幕前",
-    "state": "场外金卡",
-    "badge": "金卡",
+    "stage": "场外",
+    "state": "场外彩蛋",
+    "badge": "彩蛋",
     "alive": false,
-    "updatedAt": "2026-05-18"
+    "updatedAt": "2026-07-15"
   }
 }

@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-14",
-  "asOf": "2026-07-14T22:00:00+08:00",
+  "updatedAt": "2026-07-15",
+  "asOf": "2026-07-15T09:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "stage": "semi-finals",
-  "note": "截至北京时间 7 月 14 日 22:00，八强赛全部结束且暂无新增完赛比分；法国 vs 西班牙半决赛进入中国用户今晚/明晨卡牌预测窗口，英格兰 vs 阿根廷仍为 7 月 16 日 03:00。",
+  "note": "截至北京时间 7 月 15 日 09:00，法国 0-2 西班牙，西班牙率先晋级决赛，法国进入三四名赛；英格兰 vs 阿根廷仍为 7 月 16 日 03:00。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -32,6 +32,14 @@
     {
       "name": "FourFourTwo 2026 World Cup scores and fixtures",
       "url": "https://www.fourfourtwo.com/competition/all-of-the-world-cup-scores-so-far-at-the-2026-tournament"
+    },
+    {
+      "name": "AP Spain 2-0 France semifinal report",
+      "url": "https://apnews.com/article/87fb7740fa552edf4bfd28d0e8727c23"
+    },
+    {
+      "name": "Guardian France 0-2 Spain semifinal live report",
+      "url": "https://www.theguardian.com/football/live/2026/jul/14/france-v-spain-world-cup-2026-semi-final-live"
     }
   ],
   "qualifiedTeamIds": [
@@ -979,7 +987,7 @@
           "venue": "AT&T Stadium",
           "cityZh": "达拉斯",
           "cityEn": "Dallas",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M97胜者",
           "awayPlaceholderZh": "M98胜者",
           "homePlaceholderEn": "Winner M97",
@@ -989,7 +997,17 @@
           "homeEn": "France",
           "awayId": "spain",
           "awayZh": "西班牙",
-          "awayEn": "Spain"
+          "awayEn": "Spain",
+          "homeScore": 0,
+          "awayScore": 2,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "spain"
+          ],
+          "eliminatedTeamIds": [
+            "france"
+          ]
         },
         {
           "id": 102,
@@ -1038,7 +1056,10 @@
           "homePlaceholderZh": "M101败者",
           "awayPlaceholderZh": "M102败者",
           "homePlaceholderEn": "Loser M101",
-          "awayPlaceholderEn": "Loser M102"
+          "awayPlaceholderEn": "Loser M102",
+          "homeId": "france",
+          "homeZh": "法国",
+          "homeEn": "France"
         }
       ]
     },
@@ -1065,7 +1086,10 @@
           "homePlaceholderZh": "M101胜者",
           "awayPlaceholderZh": "M102胜者",
           "homePlaceholderEn": "Winner M101",
-          "awayPlaceholderEn": "Winner M102"
+          "awayPlaceholderEn": "Winner M102",
+          "homeId": "spain",
+          "homeZh": "西班牙",
+          "homeEn": "Spain"
         }
       ]
     }

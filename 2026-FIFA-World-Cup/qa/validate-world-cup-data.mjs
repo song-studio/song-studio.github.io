@@ -57,9 +57,9 @@ else {
 
 const knockoutResults = matchesData.results || [];
 if (!Array.isArray(knockoutResults)) fail('matches.json 的 results 必须是数组');
-else if (knockoutResults.length !== 28) fail(`截至 7 月 13 日 15:01 应有 28 场淘汰赛完场，当前为 ${knockoutResults.length}`);
+else if (knockoutResults.length !== 29) fail(`截至 7 月 15 日 09:00 应有 29 场淘汰赛完场，当前为 ${knockoutResults.length}`);
 else if (knockoutResults.some(match => match.status !== 'finished' || !match.winner)) fail('淘汰赛 results 存在未完场或缺少 winner 的比赛');
-else pass('matches.json 包含 16 场 32 强、8 场 16 强及 4 场八强赛结果');
+else pass('matches.json 包含 16 场 32 强、8 场 16 强、4 场八强及 1 场半决赛结果');
 
 if (Array.isArray(matches)) {
   const seen = new Set();
@@ -138,6 +138,22 @@ else pass('八强 4 场已全部完赛，赛果状态正确');
 const confirmedSemiFinals = (knockoutRounds?.[3]?.matches || []).filter(match => match.homeId && match.awayId);
 if (confirmedSemiFinals.length !== 2) fail(`应确认 2 场半决赛对阵，当前为 ${confirmedSemiFinals.length}`);
 else pass('半决赛 2 场对阵已全部确认');
+
+const finishedSemiFinals = (knockoutRounds?.[3]?.matches || []).filter(match => match.status === 'finished');
+if (finishedSemiFinals.length !== 1) fail(`截至 7 月 15 日 09:00 应有 1 场半决赛完赛，当前为 ${finishedSemiFinals.length}`);
+else if (finishedSemiFinals[0].id !== 101 || finishedSemiFinals[0].homeScore !== 0 || finishedSemiFinals[0].awayScore !== 2 || finishedSemiFinals[0].winner !== 'away') {
+  fail('M101 半决赛赛果应为法国 0-2 西班牙，西班牙晋级');
+} else {
+  pass('M101 半决赛法国 0-2 西班牙已写入');
+}
+
+const thirdPlaceMatch = knockoutRounds?.[4]?.matches?.[0];
+if (thirdPlaceMatch?.homeId !== 'france') fail('三四名赛应已写入 M101 败者法国');
+else pass('法国已进入三四名赛占位');
+
+const finalMatch = knockoutRounds?.[5]?.matches?.[0];
+if (finalMatch?.homeId !== 'spain') fail('决赛应已写入 M101 胜者西班牙');
+else pass('西班牙已进入决赛占位');
 
 if (knockoutData.stage !== 'semi-finals') fail(`knockout.json stage 应为 semi-finals，当前为 ${knockoutData.stage}`);
 else pass('knockout.json 已进入半决赛阶段');
