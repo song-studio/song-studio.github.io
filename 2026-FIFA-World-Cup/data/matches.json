@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-07-15",
-  "asOf": "2026-07-15T09:00:00+08:00",
+  "updatedAt": "2026-07-16",
+  "asOf": "2026-07-16T09:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "mode": "manual-results-feed",
   "note": "matches 保存 72 场完整小组赛；results 保存已结束的淘汰赛；today 保存中国用户的卡牌赛今日窗口：北京时间当天比赛，以及次日 06:00 前开球的深夜/凌晨比赛。winner: home=主队晋级、away=客队晋级、draw=平局。",
@@ -18,29 +18,11 @@
       "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
     }
   ],
-  "today": [
-    {
-      "id": "knockout-102",
-      "matchId": 102,
-      "stage": "semi-finals",
-      "home": "英格兰",
-      "away": "阿根廷",
-      "homeEn": "England",
-      "awayEn": "Argentina",
-      "homeId": "england",
-      "awayId": "argentina",
-      "date": "2026-07-16",
-      "time": "03:00",
-      "timezone": "Asia/Shanghai",
-      "venue": "Mercedes-Benz Stadium",
-      "city": "亚特兰大",
-      "status": "scheduled"
-    }
-  ],
+  "today": [],
   "todayGameWindow": {
-    "date": "2026-07-15",
+    "date": "2026-07-16",
     "timezone": "Asia/Shanghai",
-    "includesEarlyMorningUntil": "2026-07-16T06:00:00+08:00",
+    "includesEarlyMorningUntil": "2026-07-17T06:00:00+08:00",
     "note": "用于卡牌赛预测入口；中国晚间用户可提前预测次日清晨比赛。"
   },
   "results": [
@@ -833,6 +815,33 @@
       ],
       "eliminatedTeamIds": [
         "france"
+      ]
+    },
+    {
+      "id": "knockout-102",
+      "matchId": 102,
+      "stage": "semi-finals",
+      "home": "英格兰",
+      "away": "阿根廷",
+      "homeEn": "England",
+      "awayEn": "Argentina",
+      "homeId": "england",
+      "awayId": "argentina",
+      "date": "2026-07-16",
+      "time": "03:00",
+      "timezone": "Asia/Shanghai",
+      "venue": "Mercedes-Benz Stadium",
+      "city": "亚特兰大",
+      "status": "finished",
+      "homeScore": 1,
+      "awayScore": 2,
+      "winner": "away",
+      "decidedBy": "regular",
+      "qualifiedTeamIds": [
+        "argentina"
+      ],
+      "eliminatedTeamIds": [
+        "england"
       ]
     }
   ],

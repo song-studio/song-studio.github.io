@@ -57,9 +57,9 @@ else {
 
 const knockoutResults = matchesData.results || [];
 if (!Array.isArray(knockoutResults)) fail('matches.json 的 results 必须是数组');
-else if (knockoutResults.length !== 29) fail(`截至 7 月 15 日 09:00 应有 29 场淘汰赛完场，当前为 ${knockoutResults.length}`);
+else if (knockoutResults.length !== 30) fail(`截至 7 月 16 日 09:00 应有 30 场淘汰赛完场，当前为 ${knockoutResults.length}`);
 else if (knockoutResults.some(match => match.status !== 'finished' || !match.winner)) fail('淘汰赛 results 存在未完场或缺少 winner 的比赛');
-else pass('matches.json 包含 16 场 32 强、8 场 16 强、4 场八强及 1 场半决赛结果');
+else pass('matches.json 包含 16 场 32 强、8 场 16 强、4 场八强及 2 场半决赛结果');
 
 if (Array.isArray(matches)) {
   const seen = new Set();
@@ -140,23 +140,25 @@ if (confirmedSemiFinals.length !== 2) fail(`应确认 2 场半决赛对阵，当
 else pass('半决赛 2 场对阵已全部确认');
 
 const finishedSemiFinals = (knockoutRounds?.[3]?.matches || []).filter(match => match.status === 'finished');
-if (finishedSemiFinals.length !== 1) fail(`截至 7 月 15 日 09:00 应有 1 场半决赛完赛，当前为 ${finishedSemiFinals.length}`);
-else if (finishedSemiFinals[0].id !== 101 || finishedSemiFinals[0].homeScore !== 0 || finishedSemiFinals[0].awayScore !== 2 || finishedSemiFinals[0].winner !== 'away') {
+if (finishedSemiFinals.length !== 2) fail(`截至 7 月 16 日 09:00 应有 2 场半决赛完赛，当前为 ${finishedSemiFinals.length}`);
+else if (!finishedSemiFinals.some(match => match.id === 101 && match.homeScore === 0 && match.awayScore === 2 && match.winner === 'away')) {
   fail('M101 半决赛赛果应为法国 0-2 西班牙，西班牙晋级');
+} else if (!finishedSemiFinals.some(match => match.id === 102 && match.homeScore === 1 && match.awayScore === 2 && match.winner === 'away')) {
+  fail('M102 半决赛赛果应为英格兰 1-2 阿根廷，阿根廷晋级');
 } else {
-  pass('M101 半决赛法国 0-2 西班牙已写入');
+  pass('两场半决赛赛果均已写入');
 }
 
 const thirdPlaceMatch = knockoutRounds?.[4]?.matches?.[0];
-if (thirdPlaceMatch?.homeId !== 'france') fail('三四名赛应已写入 M101 败者法国');
-else pass('法国已进入三四名赛占位');
+if (thirdPlaceMatch?.homeId !== 'france' || thirdPlaceMatch?.awayId !== 'england') fail('三四名赛应为法国 vs 英格兰');
+else pass('三四名决赛法国 vs 英格兰已确认');
 
 const finalMatch = knockoutRounds?.[5]?.matches?.[0];
-if (finalMatch?.homeId !== 'spain') fail('决赛应已写入 M101 胜者西班牙');
-else pass('西班牙已进入决赛占位');
+if (finalMatch?.homeId !== 'spain' || finalMatch?.awayId !== 'argentina') fail('冠亚军决赛应为西班牙 vs 阿根廷');
+else pass('冠亚军决赛西班牙 vs 阿根廷已确认');
 
-if (knockoutData.stage !== 'semi-finals') fail(`knockout.json stage 应为 semi-finals，当前为 ${knockoutData.stage}`);
-else pass('knockout.json 已进入半决赛阶段');
+if (knockoutData.stage !== 'final') fail(`knockout.json stage 应为 final，当前为 ${knockoutData.stage}`);
+else pass('knockout.json 已进入决赛阶段');
 
 const qualifiedIds = knockoutData.qualifiedTeamIds || [];
 const qualifiedMismatch = qualifiedIds.length !== 32

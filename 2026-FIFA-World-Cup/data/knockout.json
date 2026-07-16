@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-15",
-  "asOf": "2026-07-15T09:00:00+08:00",
+  "updatedAt": "2026-07-16",
+  "asOf": "2026-07-16T09:00:00+08:00",
   "timezone": "Asia/Shanghai",
-  "stage": "semi-finals",
-  "note": "截至北京时间 7 月 15 日 09:00，法国 0-2 西班牙，西班牙率先晋级决赛，法国进入三四名赛；英格兰 vs 阿根廷仍为 7 月 16 日 03:00。",
+  "stage": "final",
+  "note": "截至北京时间 7 月 16 日 09:00，两场半决赛全部结束：西班牙 vs 阿根廷会师冠亚军决赛，法国 vs 英格兰进入三四名决赛。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -40,6 +40,14 @@
     {
       "name": "Guardian France 0-2 Spain semifinal live report",
       "url": "https://www.theguardian.com/football/live/2026/jul/14/france-v-spain-world-cup-2026-semi-final-live"
+    },
+    {
+      "name": "AP Argentina 2-1 England semifinal report",
+      "url": "https://apnews.com/article/afa13ed9fa933f8b75bd56eb16546031"
+    },
+    {
+      "name": "Guardian England 1-2 Argentina semifinal report",
+      "url": "https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report"
     }
   ],
   "qualifiedTeamIds": [
@@ -1019,7 +1027,7 @@
           "venue": "Mercedes-Benz Stadium",
           "cityZh": "亚特兰大",
           "cityEn": "Atlanta",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M99胜者",
           "awayPlaceholderZh": "M100胜者",
           "homePlaceholderEn": "Winner M99",
@@ -1029,7 +1037,17 @@
           "homeEn": "England",
           "awayId": "argentina",
           "awayZh": "阿根廷",
-          "awayEn": "Argentina"
+          "awayEn": "Argentina",
+          "homeScore": 1,
+          "awayScore": 2,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "argentina"
+          ],
+          "eliminatedTeamIds": [
+            "england"
+          ]
         }
       ]
     },
@@ -1059,7 +1077,10 @@
           "awayPlaceholderEn": "Loser M102",
           "homeId": "france",
           "homeZh": "法国",
-          "homeEn": "France"
+          "homeEn": "France",
+          "awayId": "england",
+          "awayZh": "英格兰",
+          "awayEn": "England"
         }
       ]
     },
@@ -1089,7 +1110,10 @@
           "awayPlaceholderEn": "Winner M102",
           "homeId": "spain",
           "homeZh": "西班牙",
-          "homeEn": "Spain"
+          "homeEn": "Spain",
+          "awayId": "argentina",
+          "awayZh": "阿根廷",
+          "awayEn": "Argentina"
         }
       ]
     }

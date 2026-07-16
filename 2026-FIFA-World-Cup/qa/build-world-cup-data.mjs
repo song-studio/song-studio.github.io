@@ -12,8 +12,8 @@ const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
 const cardStatusPath = path.join(root, 'data/card-status.json');
-const asOf = '2026-07-15T09:00:00+08:00';
-const todayBjt = '2026-07-15';
+const asOf = '2026-07-16T09:00:00+08:00';
+const todayBjt = '2026-07-16';
 const earlyMorningCutoffBjt = '06:00';
 
 const index = fs.readFileSync(indexPath, 'utf8');
@@ -193,7 +193,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 09:00 BJT on July 15. For shootouts, winner is
+// Final scores verified through 09:00 BJT on July 16. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -225,6 +225,7 @@ const knockoutResults = new Map([
   [99, { homeScore:1, awayScore:2, winner:'away', decidedBy:'extra-time' }],
   [100, { homeScore:3, awayScore:1, winner:'home', decidedBy:'extra-time' }],
   [101, { homeScore:0, awayScore:2, winner:'away', decidedBy:'regular' }],
+  [102, { homeScore:1, awayScore:2, winner:'away', decidedBy:'regular' }],
 ]);
 
 const scheduleOverrides = new Map([
@@ -436,8 +437,8 @@ const knockoutData = {
   updatedAt: todayBjt,
   asOf,
   timezone: 'Asia/Shanghai',
-  stage: 'semi-finals',
-  note: '截至北京时间 7 月 15 日 09:00，法国 0-2 西班牙，西班牙率先晋级决赛，法国进入三四名赛；英格兰 vs 阿根廷仍为 7 月 16 日 03:00。',
+  stage: 'final',
+  note: '截至北京时间 7 月 16 日 09:00，两场半决赛全部结束：西班牙 vs 阿根廷会师冠亚军决赛，法国 vs 英格兰进入三四名决赛。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -474,6 +475,14 @@ const knockoutData = {
     {
       name: 'Guardian France 0-2 Spain semifinal live report',
       url: 'https://www.theguardian.com/football/live/2026/jul/14/france-v-spain-world-cup-2026-semi-final-live',
+    },
+    {
+      name: 'AP Argentina 2-1 England semifinal report',
+      url: 'https://apnews.com/article/afa13ed9fa933f8b75bd56eb16546031',
+    },
+    {
+      name: 'Guardian England 1-2 Argentina semifinal report',
+      url: 'https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report',
     },
   ],
   qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],
