@@ -12,8 +12,8 @@ const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
 const cardStatusPath = path.join(root, 'data/card-status.json');
-const asOf = '2026-07-16T09:00:00+08:00';
-const todayBjt = '2026-07-16';
+const asOf = '2026-07-19T11:00:00+08:00';
+const todayBjt = '2026-07-19';
 const earlyMorningCutoffBjt = '06:00';
 
 const index = fs.readFileSync(indexPath, 'utf8');
@@ -384,6 +384,15 @@ const assignKnockoutTeam = (match, side, teamId) => {
 const thirdPlaceMatch = knockoutRounds[4].matches[0];
 assignKnockoutTeam(thirdPlaceMatch, 'home', loserByMatchId.get(101));
 assignKnockoutTeam(thirdPlaceMatch, 'away', loserByMatchId.get(102));
+Object.assign(thirdPlaceMatch, {
+  status: 'finished',
+  homeScore: 4,
+  awayScore: 6,
+  winner: 'away',
+  decidedBy: 'regular',
+  qualifiedTeamIds: ['england'],
+  eliminatedTeamIds: ['france'],
+});
 const finalMatch = knockoutRounds[5].matches[0];
 assignKnockoutTeam(finalMatch, 'home', winnerByMatchId.get(101));
 assignKnockoutTeam(finalMatch, 'away', winnerByMatchId.get(102));
@@ -399,7 +408,7 @@ const statusForStage = stage => {
   if (stage === 'round-of-16') return { stage:'16强', state:'止步16强', badge:'淘汰', alive:false };
   if (stage === 'quarter-finals') return { stage:'八强', state:'止步八强', badge:'淘汰', alive:false };
   if (stage === 'semi-finals') return { stage:'三四名赛', state:'待战季军赛', badge:'季军赛', alive:true };
-  if (stage === 'third-place') return { stage:'三四名赛', state:'季军赛完赛', badge:'收官', alive:false };
+  if (stage === 'third-place') return { stage:'第四名', state:'获得第四名', badge:'殿军', alive:false };
   if (stage === 'final') return { stage:'决赛', state:'亚军', badge:'亚军', alive:false };
   return { stage:'淘汰赛', state:'已淘汰', badge:'淘汰', alive:false };
 };
@@ -419,13 +428,20 @@ for (const match of allKnockoutMatches.filter(match => match.status === 'finishe
     if (!team) return;
     cardStatusData[teamId] = { team: team.name, ...statusForStage(match.stage), updatedAt: todayBjt };
   });
+  if (match.stage === 'third-place') {
+    (match.qualifiedTeamIds || []).forEach(teamId => {
+      const team = byId.get(teamId);
+      if (!team) return;
+      cardStatusData[teamId] = { team: team.name, stage:'季军', state:'获得季军', badge:'铜牌', alive:false, updatedAt: todayBjt };
+    });
+  }
 }
 for (const [teamId, matchId] of currentMatchIdsByTeam.entries()) {
   const team = byId.get(teamId);
   const match = allKnockoutMatches.find(item => item.id === matchId);
   if (!team || !match) continue;
   if (match.stage === 'final') {
-    cardStatusData[teamId] = { team: team.name, stage:'决赛', state:'晋级决赛', badge:'决赛', alive:true, updatedAt: todayBjt };
+    cardStatusData[teamId] = { team: team.name, stage:'决赛', state:'决赛待战', badge:'决赛', alive:true, updatedAt: todayBjt };
   } else if (match.stage === 'third-place') {
     cardStatusData[teamId] = { team: team.name, stage:'三四名赛', state:'待战季军赛', badge:'季军赛', alive:true, updatedAt: todayBjt };
   } else if (match.stage === 'semi-finals') {
@@ -438,7 +454,7 @@ const knockoutData = {
   asOf,
   timezone: 'Asia/Shanghai',
   stage: 'final',
-  note: '截至北京时间 7 月 16 日 09:00，两场半决赛全部结束：西班牙 vs 阿根廷会师冠亚军决赛，法国 vs 英格兰进入三四名决赛。',
+  note: '截至北京时间 7 月 19 日 11:00，三四名决赛结束：英格兰 6-4 法国获得季军，法国第四；本届世界杯只剩西班牙 vs 阿根廷冠亚军决赛。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -483,6 +499,14 @@ const knockoutData = {
     {
       name: 'Guardian England 1-2 Argentina semifinal report',
       url: 'https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report',
+    },
+    {
+      name: 'AP England 6-4 France third-place report',
+      url: 'https://apnews.com/article/52f94eda6ff6d268d38aaefbc446c525',
+    },
+    {
+      name: 'FIFA Spain v Argentina final preview',
+      url: 'https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-v-argentina-live-stream-team-news-tickets-and-more',
     },
   ],
   qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],

@@ -1112,6 +1112,8 @@ const I18N_EN={
   ,'开幕前':'Pre-kickoff','待出征':'Ready','场外彩蛋':'Off-field Easter Egg','待收集':'Unrevealed','查看完整赛程':'View Full Schedule','今日已签到':'Checked In Today','点球':'pens','加时':'AET','赛果已写入，已有预测会自动结算。':'Result recorded. Existing predictions settle automatically.'
 };
 Object.assign(I18N_EN,{
+  '今天休赛，暂无新的今日/明晨预测入口；三四名赛果已进入卡牌赛自动结算池，只剩冠亚军决赛。':'Today is a rest day: no new today/early-morning prediction entry. The third-place result is in the card game settlement pool; only the final remains.',
+  '今天是休赛日，暂无新的今日/明晨预测入口；三四名赛果已经写入 results，已有预测会在打开页面时自动结算。下一轮只剩西班牙 vs 阿根廷冠亚军决赛。':'Today is a rest day: no new today/early-morning prediction entry. The third-place result is in results; existing predictions settle automatically when the page opens. Next up: Spain vs Argentina in the final.',
   '现在可下载主队海报。赛程推进后会汇总为完整档案：主队轨迹、单场预测结果与叙事题命中记录。':'You can download your main team poster now. As matches progress, it will become a full archive with main team history, match predictions, and rare story results.',
   '下载我的主队海报':'Download My Main Team Poster',
   '主队海报':'Main Team Poster',
@@ -2033,12 +2035,12 @@ function renderBattle(){
     return
   }
 
-  $('#battleSub').textContent=T('今天休赛，暂无新的今日/明晨预测入口；半决赛赛果已进入卡牌赛自动结算池，等待三四名决赛和冠亚军决赛。');
+  $('#battleSub').textContent=T('今天休赛，暂无新的今日/明晨预测入口；三四名赛果已进入卡牌赛自动结算池，只剩冠亚军决赛。');
   const wait=document.createElement('article');
   wait.className='match-card';
   const recent=recentFinishedKnockoutResults(4);
   const recentHtml=recent.length?`<p class="micro" style="margin-top:12px"><b>${T('最近写入赛果')}</b></p><div class="mini-rules">${recent.map(m=>`<div class="mini-rule"><b>${m.matchId?'M'+m.matchId:T('赛果')}</b><span>${resultSummaryLine(m)}</span></div>`).join('')}</div>`:'';
-  wait.innerHTML=`<h3>${T('比赛日预测入口')}</h3><p>${T('今天是休赛日，暂无新的今日/明晨预测入口；半决赛赛果已经写入 results，已有预测会在打开页面时自动结算。下一轮等待三四名决赛和冠亚军决赛。')}</p><p class="micro" style="margin-top:8px">${T('稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。')}</p>${recentHtml}<div class="hero-actions" style="margin-top:14px"><a class="secondary-btn" href="index.html">${T('查看完整赛程')}</a><button class="secondary-btn" type="button" onclick="loadDemoMatchesForPractice()">${T('加载预测演示')}</button></div>`;
+  wait.innerHTML=`<h3>${T('比赛日预测入口')}</h3><p>${T('今天是休赛日，暂无新的今日/明晨预测入口；三四名赛果已经写入 results，已有预测会在打开页面时自动结算。下一轮只剩西班牙 vs 阿根廷冠亚军决赛。')}</p><p class="micro" style="margin-top:8px">${T('稀有叙事卡如果已点亮，也能按对应国家参加单场预测；它的长期题在「八张稀有叙事卡预测」区填写。')}</p>${recentHtml}<div class="hero-actions" style="margin-top:14px"><a class="secondary-btn" href="index.html">${T('查看完整赛程')}</a><button class="secondary-btn" type="button" onclick="loadDemoMatchesForPractice()">${T('加载预测演示')}</button></div>`;
   lab.appendChild(wait)
 }
 function loadDemoMatchesForPractice(){
@@ -2751,7 +2753,7 @@ function renderMobileApp(){
     const recent=recentFinishedKnockoutResults(4);
     const recentRows=recent.map(m=>`<div class="m-list-item"><b>${m.matchId?'M'+m.matchId:T('已写入赛果')}</b><span>${resultSummaryLine(m)}。${T('已进入自动结算池。')}</span></div>`).join('');
     battleList.innerHTML=(recentRows||`<div class="m-list-item"><b>${T('比赛日预测入口')}</b><span>${T('完整赛程在世界杯首页。这里读取 data/matches.json 的今日/明晨可预测窗口，维护后自动出现预测列表。')}</span></div>`)+`<div class="m-list-item"><b>${T('奖励规则')}</b><span>${T('命中+1星；出战卡正好是本场球队时命中+2星；平局退还不加星。')}</span></div>`;
-    $('#mBattleText').textContent=T('今天休赛，暂无新的今日/明晨预测入口；半决赛赛果已进入卡牌赛自动结算池，等待三四名决赛和冠亚军决赛。');
+    $('#mBattleText').textContent=T('今天休赛，暂无新的今日/明晨预测入口；三四名赛果已进入卡牌赛自动结算池，只剩冠亚军决赛。');
   }
 
   const allTeamOptions=allTeams.filter(t=>t.qualified&&t.id!=='china').map(t=>`<option value="${t.id}">${t.flag} ${t.name}</option>`).join('');

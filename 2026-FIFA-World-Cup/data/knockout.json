@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-16",
-  "asOf": "2026-07-16T09:00:00+08:00",
+  "updatedAt": "2026-07-19",
+  "asOf": "2026-07-19T11:00:00+08:00",
   "timezone": "Asia/Shanghai",
   "stage": "final",
-  "note": "截至北京时间 7 月 16 日 09:00，两场半决赛全部结束：西班牙 vs 阿根廷会师冠亚军决赛，法国 vs 英格兰进入三四名决赛。",
+  "note": "截至北京时间 7 月 19 日 11:00，三四名决赛结束：英格兰 6-4 法国获得季军，法国第四；本届世界杯只剩西班牙 vs 阿根廷冠亚军决赛。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -48,6 +48,14 @@
     {
       "name": "Guardian England 1-2 Argentina semifinal report",
       "url": "https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report"
+    },
+    {
+      "name": "AP England 6-4 France third-place report",
+      "url": "https://apnews.com/article/52f94eda6ff6d268d38aaefbc446c525"
+    },
+    {
+      "name": "FIFA Spain v Argentina final preview",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-v-argentina-live-stream-team-news-tickets-and-more"
     }
   ],
   "qualifiedTeamIds": [
@@ -1070,7 +1078,7 @@
           "venue": "Hard Rock Stadium",
           "cityZh": "迈阿密",
           "cityEn": "Miami",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M101败者",
           "awayPlaceholderZh": "M102败者",
           "homePlaceholderEn": "Loser M101",
@@ -1080,7 +1088,17 @@
           "homeEn": "France",
           "awayId": "england",
           "awayZh": "英格兰",
-          "awayEn": "England"
+          "awayEn": "England",
+          "homeScore": 4,
+          "awayScore": 6,
+          "winner": "away",
+          "decidedBy": "regular",
+          "qualifiedTeamIds": [
+            "england"
+          ],
+          "eliminatedTeamIds": [
+            "france"
+          ]
         }
       ]
     },
