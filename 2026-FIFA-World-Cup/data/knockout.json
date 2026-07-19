@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-07-19",
-  "asOf": "2026-07-19T11:00:00+08:00",
+  "updatedAt": "2026-07-20",
+  "asOf": "2026-07-20T06:07:25+08:00",
   "timezone": "Asia/Shanghai",
-  "stage": "final",
-  "note": "截至北京时间 7 月 19 日 11:00，三四名决赛结束：英格兰 6-4 法国获得季军，法国第四；本届世界杯只剩西班牙 vs 阿根廷冠亚军决赛。",
+  "stage": "complete",
+  "note": "截至北京时间 7 月 20 日 06:07，2026 世界杯全部结束：西班牙 1-0 阿根廷夺冠，阿根廷亚军，英格兰 6-4 法国获得季军，法国第四。",
   "sources": [
     {
       "name": "FIFA World Cup 2026 knockout bracket",
@@ -56,6 +56,10 @@
     {
       "name": "FIFA Spain v Argentina final preview",
       "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-v-argentina-live-stream-team-news-tickets-and-more"
+    },
+    {
+      "name": "AP Spain 1-0 Argentina final report",
+      "url": "https://apnews.com/article/fccc26aa12d9226e63d06b601b770617"
     }
   ],
   "qualifiedTeamIds": [
@@ -1121,7 +1125,7 @@
           "venue": "MetLife Stadium",
           "cityZh": "纽约/新泽西",
           "cityEn": "NY/New Jersey",
-          "status": "scheduled",
+          "status": "finished",
           "homePlaceholderZh": "M101胜者",
           "awayPlaceholderZh": "M102胜者",
           "homePlaceholderEn": "Winner M101",
@@ -1131,7 +1135,17 @@
           "homeEn": "Spain",
           "awayId": "argentina",
           "awayZh": "阿根廷",
-          "awayEn": "Argentina"
+          "awayEn": "Argentina",
+          "homeScore": 1,
+          "awayScore": 0,
+          "winner": "home",
+          "decidedBy": "extra-time",
+          "qualifiedTeamIds": [
+            "spain"
+          ],
+          "eliminatedTeamIds": [
+            "argentina"
+          ]
         }
       ]
     }

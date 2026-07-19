@@ -12,8 +12,8 @@ const standingsPath = path.join(root, 'data/standings.json');
 const knockoutPath = path.join(root, 'data/knockout.json');
 const cardsPath = path.join(root, 'data/cards.json');
 const cardStatusPath = path.join(root, 'data/card-status.json');
-const asOf = '2026-07-19T11:00:00+08:00';
-const todayBjt = '2026-07-19';
+const asOf = '2026-07-20T06:07:25+08:00';
+const todayBjt = '2026-07-20';
 const earlyMorningCutoffBjt = '06:00';
 
 const index = fs.readFileSync(indexPath, 'utf8');
@@ -193,7 +193,7 @@ const roundOf32Pairs = [
   ['australia', 'egypt'],
 ];
 
-// Final scores verified through 09:00 BJT on July 16. For shootouts, winner is
+// Final scores verified through the tournament close on July 20 BJT. For shootouts, winner is
 // the advancing team while homeScore/awayScore remain the match score.
 const knockoutResults = new Map([
   [73, { homeScore:0, awayScore:1, winner:'away', decidedBy:'regular' }],
@@ -396,6 +396,15 @@ Object.assign(thirdPlaceMatch, {
 const finalMatch = knockoutRounds[5].matches[0];
 assignKnockoutTeam(finalMatch, 'home', winnerByMatchId.get(101));
 assignKnockoutTeam(finalMatch, 'away', winnerByMatchId.get(102));
+Object.assign(finalMatch, {
+  status: 'finished',
+  homeScore: 1,
+  awayScore: 0,
+  winner: 'home',
+  decidedBy: 'extra-time',
+  qualifiedTeamIds: ['spain'],
+  eliminatedTeamIds: ['argentina'],
+});
 
 const allKnockoutMatches = knockoutRounds.flatMap(round => round.matches);
 const currentMatchIdsByTeam = new Map();
@@ -435,6 +444,13 @@ for (const match of allKnockoutMatches.filter(match => match.status === 'finishe
       cardStatusData[teamId] = { team: team.name, stage:'季军', state:'获得季军', badge:'铜牌', alive:false, updatedAt: todayBjt };
     });
   }
+  if (match.stage === 'final') {
+    (match.qualifiedTeamIds || []).forEach(teamId => {
+      const team = byId.get(teamId);
+      if (!team) return;
+      cardStatusData[teamId] = { team: team.name, stage:'冠军', state:'获得冠军', badge:'冠军', alive:false, updatedAt: todayBjt };
+    });
+  }
 }
 for (const [teamId, matchId] of currentMatchIdsByTeam.entries()) {
   const team = byId.get(teamId);
@@ -453,8 +469,8 @@ const knockoutData = {
   updatedAt: todayBjt,
   asOf,
   timezone: 'Asia/Shanghai',
-  stage: 'final',
-  note: '截至北京时间 7 月 19 日 11:00，三四名决赛结束：英格兰 6-4 法国获得季军，法国第四；本届世界杯只剩西班牙 vs 阿根廷冠亚军决赛。',
+  stage: 'complete',
+  note: '截至北京时间 7 月 20 日 06:07，2026 世界杯全部结束：西班牙 1-0 阿根廷夺冠，阿根廷亚军，英格兰 6-4 法国获得季军，法国第四。',
   sources: [
     {
       name: 'FIFA World Cup 2026 knockout bracket',
@@ -507,6 +523,10 @@ const knockoutData = {
     {
       name: 'FIFA Spain v Argentina final preview',
       url: 'https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/spain-v-argentina-live-stream-team-news-tickets-and-more',
+    },
+    {
+      name: 'AP Spain 1-0 Argentina final report',
+      url: 'https://apnews.com/article/fccc26aa12d9226e63d06b601b770617',
     },
   ],
   qualifiedTeamIds: [...new Set(roundOf32Pairs.flat())],

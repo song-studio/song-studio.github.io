@@ -77,14 +77,17 @@ if (!matches.results.some(match => match.id === 'knockout-102' && match.homeScor
 if (!matches.results.some(match => match.id === 'knockout-103' && match.homeScore === 4 && match.awayScore === 6 && match.winner === 'away')) {
   fail('缺少 M103 法国 4-6 英格兰三四名赛果');
 }
-if (matches.today.length !== 1 || matches.today[0]?.id !== 'knockout-104' || matches.today[0]?.stage !== 'final') {
-  fail('7/19 今日窗口应只包含西班牙 vs 阿根廷冠亚军决赛');
+if (!matches.results.some(match => match.id === 'knockout-104' && match.homeScore === 1 && match.awayScore === 0 && match.winner === 'home' && match.decidedBy === 'extra-time')) {
+  fail('缺少 M104 西班牙 1-0 阿根廷冠亚军决赛赛果');
 }
-if (status.spain?.stage !== '决赛' || status.argentina?.stage !== '决赛' || status.france?.stage !== '第四名' || status.england?.stage !== '季军') {
-  fail('卡牌状态未同步决赛待战 / 英格兰季军 / 法国第四');
+if (matches.today.length !== 0) {
+  fail('世界杯已结束，今日预测窗口应为空');
+}
+if (status.spain?.stage !== '冠军' || status.spain?.badge !== '冠军' || status.argentina?.stage !== '决赛' || status.argentina?.badge !== '亚军' || status.france?.stage !== '第四名' || status.england?.stage !== '季军') {
+  fail('卡牌状态未同步冠军 / 亚军 / 季军 / 第四名');
 }
 NODE
-pass "三四名比分、决赛预测窗口与卡牌状态同步"
+pass "决赛比分、收官状态与卡牌状态同步"
 
 # 6) Full schedule, standings, team IDs, scores, and inline script syntax
 if node "$VALIDATOR"; then

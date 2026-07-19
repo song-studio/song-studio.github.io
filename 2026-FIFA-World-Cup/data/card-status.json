@@ -5,15 +5,15 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "argentina": {
     "team": "阿根廷",
     "stage": "决赛",
-    "state": "决赛待战",
-    "badge": "决赛",
-    "alive": true,
-    "updatedAt": "2026-07-19"
+    "state": "亚军",
+    "badge": "亚军",
+    "alive": false,
+    "updatedAt": "2026-07-20"
   },
   "egypt": {
     "team": "埃及",
@@ -21,7 +21,7 @@
     "state": "止步16强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "austria": {
     "team": "奥地利",
@@ -29,7 +29,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "australia": {
     "team": "澳大利亚",
@@ -37,7 +37,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "paraguay": {
     "team": "巴拉圭",
@@ -45,7 +45,7 @@
     "state": "止步16强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "panama": {
     "team": "巴拿马",
@@ -53,7 +53,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "brazil": {
     "team": "巴西",
@@ -61,7 +61,7 @@
     "state": "止步16强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "belgium": {
     "team": "比利时",
@@ -69,7 +69,7 @@
     "state": "止步八强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "bosnia-herzegovina": {
     "team": "波黑",
@@ -77,7 +77,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "germany": {
     "team": "德国",
@@ -85,7 +85,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "ecuador": {
     "team": "厄瓜多尔",
@@ -93,7 +93,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "france": {
     "team": "法国",
@@ -101,7 +101,7 @@
     "state": "获得第四名",
     "badge": "殿军",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "cabo-verde": {
     "team": "佛得角",
@@ -109,7 +109,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "dr-congo": {
     "team": "刚果（金）",
@@ -117,7 +117,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "colombia": {
     "team": "哥伦比亚",
@@ -125,7 +125,7 @@
     "state": "止步16强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "haiti": {
     "team": "海地",
@@ -133,7 +133,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "korea-republic": {
     "team": "韩国",
@@ -141,7 +141,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "netherlands": {
     "team": "荷兰",
@@ -149,7 +149,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "canada": {
     "team": "加拿大",
@@ -157,7 +157,7 @@
     "state": "止步16强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "ghana": {
     "team": "加纳",
@@ -165,7 +165,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "czechia": {
     "team": "捷克",
@@ -173,7 +173,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "qatar": {
     "team": "卡塔尔",
@@ -181,7 +181,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "ivory-coast": {
     "team": "科特迪瓦",
@@ -189,7 +189,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "croatia": {
     "team": "克罗地亚",
@@ -197,7 +197,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "curacao": {
     "team": "库拉索",
@@ -205,7 +205,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "united-states": {
     "team": "美国",
@@ -213,7 +213,7 @@
     "state": "止步16强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "morocco": {
     "team": "摩洛哥",
@@ -221,7 +221,7 @@
     "state": "止步八强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "mexico": {
     "team": "墨西哥",
@@ -229,7 +229,7 @@
     "state": "止步16强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "south-africa": {
     "team": "南非",
@@ -237,7 +237,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "norway": {
     "team": "挪威",
@@ -245,7 +245,7 @@
     "state": "止步八强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "portugal": {
     "team": "葡萄牙",
@@ -253,7 +253,7 @@
     "state": "止步16强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "japan": {
     "team": "日本",
@@ -261,7 +261,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "sweden": {
     "team": "瑞典",
@@ -269,7 +269,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "switzerland": {
     "team": "瑞士",
@@ -277,7 +277,7 @@
     "state": "止步八强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "senegal": {
     "team": "塞内加尔",
@@ -285,7 +285,7 @@
     "state": "止步32强",
     "badge": "淘汰",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "saudi-arabia": {
     "team": "沙特阿拉伯",
@@ -293,7 +293,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "scotland": {
     "team": "苏格兰",
@@ -301,7 +301,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "tunisia": {
     "team": "突尼斯",
@@ -309,7 +309,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "turkey": {
     "team": "土耳其",
@@ -317,7 +317,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "uruguay": {
     "team": "乌拉圭",
@@ -325,7 +325,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "uzbekistan": {
     "team": "乌兹别克斯坦",
@@ -333,15 +333,15 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "spain": {
     "team": "西班牙",
-    "stage": "决赛",
-    "state": "决赛待战",
-    "badge": "决赛",
-    "alive": true,
-    "updatedAt": "2026-07-19"
+    "stage": "冠军",
+    "state": "获得冠军",
+    "badge": "冠军",
+    "alive": false,
+    "updatedAt": "2026-07-20"
   },
   "new-zealand": {
     "team": "新西兰",
@@ -349,7 +349,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "iraq": {
     "team": "伊拉克",
@@ -357,7 +357,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "iran": {
     "team": "伊朗",
@@ -365,7 +365,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "england": {
     "team": "英格兰",
@@ -373,7 +373,7 @@
     "state": "获得季军",
     "badge": "铜牌",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "jordan": {
     "team": "约旦",
@@ -381,7 +381,7 @@
     "state": "小组出局",
     "badge": "出局",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   },
   "china": {
     "team": "中国",
@@ -389,6 +389,6 @@
     "state": "场外彩蛋",
     "badge": "彩蛋",
     "alive": false,
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-20"
   }
 }

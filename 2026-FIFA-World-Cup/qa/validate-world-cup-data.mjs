@@ -57,9 +57,9 @@ else {
 
 const knockoutResults = matchesData.results || [];
 if (!Array.isArray(knockoutResults)) fail('matches.json 的 results 必须是数组');
-else if (knockoutResults.length !== 31) fail(`截至 7 月 19 日 11:00 应有 31 场淘汰赛完场，当前为 ${knockoutResults.length}`);
+else if (knockoutResults.length !== 32) fail(`截至 7 月 20 日 06:07 应有 32 场淘汰赛完场，当前为 ${knockoutResults.length}`);
 else if (knockoutResults.some(match => match.status !== 'finished' || !match.winner)) fail('淘汰赛 results 存在未完场或缺少 winner 的比赛');
-else pass('matches.json 包含 16 场 32 强、8 场 16 强、4 场八强、2 场半决赛及三四名赛结果');
+else pass('matches.json 包含 16 场 32 强、8 场 16 强、4 场八强、2 场半决赛、三四名赛及决赛结果');
 
 if (Array.isArray(matches)) {
   const seen = new Set();
@@ -140,7 +140,7 @@ if (confirmedSemiFinals.length !== 2) fail(`应确认 2 场半决赛对阵，当
 else pass('半决赛 2 场对阵已全部确认');
 
 const finishedSemiFinals = (knockoutRounds?.[3]?.matches || []).filter(match => match.status === 'finished');
-if (finishedSemiFinals.length !== 2) fail(`截至 7 月 19 日 11:00 应有 2 场半决赛完赛，当前为 ${finishedSemiFinals.length}`);
+if (finishedSemiFinals.length !== 2) fail(`半决赛应有 2 场完赛，当前为 ${finishedSemiFinals.length}`);
 else if (!finishedSemiFinals.some(match => match.id === 101 && match.homeScore === 0 && match.awayScore === 2 && match.winner === 'away')) {
   fail('M101 半决赛赛果应为法国 0-2 西班牙，西班牙晋级');
 } else if (!finishedSemiFinals.some(match => match.id === 102 && match.homeScore === 1 && match.awayScore === 2 && match.winner === 'away')) {
@@ -156,18 +156,14 @@ else pass('三四名决赛法国 4-6 英格兰已写入');
 
 const finalMatch = knockoutRounds?.[5]?.matches?.[0];
 if (finalMatch?.homeId !== 'spain' || finalMatch?.awayId !== 'argentina') fail('冠亚军决赛应为西班牙 vs 阿根廷');
-else if (finalMatch.status !== 'scheduled') fail('冠亚军决赛应保持待赛状态');
-else pass('冠亚军决赛西班牙 vs 阿根廷已确认且待赛');
+else if (finalMatch.status !== 'finished' || finalMatch.homeScore !== 1 || finalMatch.awayScore !== 0 || finalMatch.winner !== 'home' || finalMatch.decidedBy !== 'extra-time') fail('冠亚军决赛赛果应为西班牙 1-0 阿根廷，西班牙冠军');
+else pass('冠亚军决赛西班牙 1-0 阿根廷已写入');
 
-const finalToday = matchesData.today?.find(match => match.id === 'knockout-104');
-if (!finalToday || finalToday.stage !== 'final' || finalToday.homeId !== 'spain' || finalToday.awayId !== 'argentina') {
-  fail('7/19 卡牌赛 today 窗口应包含西班牙 vs 阿根廷决赛');
-} else {
-  pass('7/19 卡牌赛 today 窗口包含冠亚军决赛');
-}
+if (matchesData.today.length !== 0) fail('世界杯已结束，卡牌赛 today 应为空');
+else pass('卡牌赛 today 窗口已清空');
 
-if (knockoutData.stage !== 'final') fail(`knockout.json stage 应为 final，当前为 ${knockoutData.stage}`);
-else pass('knockout.json 已进入决赛阶段');
+if (knockoutData.stage !== 'complete') fail(`knockout.json stage 应为 complete，当前为 ${knockoutData.stage}`);
+else pass('knockout.json 已进入收官纪念阶段');
 
 const qualifiedIds = knockoutData.qualifiedTeamIds || [];
 const qualifiedMismatch = qualifiedIds.length !== 32
