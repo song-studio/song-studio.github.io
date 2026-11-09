@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://song-studio.github.io/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2026-06-08</lastmod></url>
-<url><loc>https://song-studio.github.io/2026-FIFA-World-Cup/</loc><changefreq>daily</changefreq><priority>0.9</priority><lastmod>2026-06-08</lastmod></url>
-<url><loc>https://song-studio.github.io/2026-FIFA-World-Cup/fan-cards</loc><changefreq>daily</changefreq><priority>0.9</priority><lastmod>2026-06-08</lastmod></url>
-<url><loc>https://song-studio.github.io/weather-pro.html</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2026-06-08</lastmod></url>
-<url><loc>https://song-studio.github.io/route-pro.html</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2026-06-08</lastmod></url>
+<url><loc>https://xmoon.si/</loc><changefreq>weekly</changefreq><priority>1.0</priority><lastmod>2026-11-09</lastmod></url>
+<url><loc>https://xmoon.si/2026-FIFA-World-Cup/</loc><changefreq>daily</changefreq><priority>0.9</priority><lastmod>2026-11-09</lastmod></url>
+<url><loc>https://xmoon.si/2026-FIFA-World-Cup/fan-cards</loc><changefreq>daily</changefreq><priority>0.9</priority><lastmod>2026-11-09</lastmod></url>
+<url><loc>https://xmoon.si/weather-pro.html</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2026-11-09</lastmod></url>
+<url><loc>https://xmoon.si/route-pro.html</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2026-11-09</lastmod></url>
 </urlset>
